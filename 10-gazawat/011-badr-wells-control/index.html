@@ -1,0 +1,692 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Wells of Badr — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:700px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:8px;margin-bottom:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.game-area canvas{border-radius:8px;cursor:pointer;width:100%;max-width:660px;touch-action:none}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:10px}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+.dialog-box{background:var(--bg2);border:1px solid var(--accent);border-radius:10px;padding:10px 14px;margin-bottom:10px;font-size:11px;line-height:1.7;color:var(--text);max-width:660px;width:100%}
+.dialog-box .speaker{font-weight:700;color:var(--accent);font-family:'Outfit',sans-serif}
+.dialog-box .speaker.prophet{color:gold}
+.lesson-box{background:var(--abg);border:1px solid var(--abr);border-radius:10px;padding:12px 14px;margin-bottom:10px;font-size:11px;line-height:1.7;color:var(--text);max-width:660px;width:100%}
+.lesson-box h3{font-family:'Outfit',sans-serif;color:var(--accent);font-size:13px;margin-bottom:6px}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Wells of Badr</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Control the water, control the battle</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Secure the wells before Quraysh arrive. Use shura and strategy!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Wells of Badr</h1><span class="pill" id="scorePill">0 / 5</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<div class="ctrl">
+<select id="diffSel" onchange="setDiff()"><option value="easy">Easy</option><option value="medium" selected>Medium</option><option value="hard">Hard</option></select>
+<button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+<button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="status" id="status">Drag scouts from camp to secure the wells!</div>
+<div class="game-area" id="gameArea"><canvas id="cvs" width="660" height="500"></canvas></div>
+<div id="dialogZone"></div>
+<div class="score-row"><div class="score-item"><div class="score-label">Wells Secured</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Wells Blocked</div><div class="score-num" id="blk">0</div></div><div class="score-item"><div class="score-label">Enemy Thirst</div><div class="score-num" id="thirst">0%</div></div></div>
+<div class="progress"><div class="progress-bar" id="prog" style="width:100%"></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Wells of Badr v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Wells of Badr?</summary><p>A strategy game where you control the wells at the Battle of Badr. Secure water for the Muslim army and block Quraysh from accessing it, following Hubab ibn al-Mundhir's advice.</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop. Use touch to drag scouts.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Watch the shura dialogue between the Prophet (peace be upon him) and Hubab</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Drag scout units from the green camp (south) to blue wells</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Click a secured well to build a water reservoir (fill it)</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>Click enemy wells (north) to block them with sand</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Secure all 5 wells before the Quraysh timer runs out</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Watch the enemy weaken from thirst as they have no water access</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Press ▶ New Game to play again with a different difficulty</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Learn about the Battle of Badr's strategic water control. Hubab ibn al-Mundhir advised the Prophet (peace be upon him) to move to the nearest well, secure it, and block the rest — a key factor in the Muslim victory.</p></div>
+        <div class="wiki-entry"><h3>📖 The Shura</h3><p>Before the battle, Hubab asked: "Is this position from divine revelation, or is it strategy?" When told it was strategy, he advised moving to the wells. The Prophet (peace be upon him) accepted this advice — teaching us the value of consultation (shura).</p></div>
+        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Fran&ccedil;ais, العربية. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Toggle with 🔊 button.</p></div>
+        <div class="wiki-entry"><h3>💡 Lessons</h3><p>Shura (consultation), accepting good advice regardless of rank, strategic thinking, and resource control in conflict.</p></div>
+        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else if(t==="fill"){o.frequency.value=440;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.12);o.start(n);o.stop(n+.12);}else if(t==="block"){o.frequency.value=150;o.type="triangle";g.gain.exponentialRampToValueAtTime(.001,n+.2);o.start(n);o.stop(n+.2);}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+/* ===== GAME ENGINE ===== */
+const cvs=document.getElementById("cvs"),ctx=cvs.getContext("2d");
+let W=660,H=500,dpr=1;
+function resizeCanvas(){
+  const r=cvs.parentElement.clientWidth;
+  dpr=window.devicePixelRatio||1;
+  const w=Math.min(660,r-16);
+  const h=Math.round(w*500/660);
+  cvs.width=w*dpr;cvs.height=h*dpr;
+  cvs.style.width=w+"px";cvs.style.height=h+"px";
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  W=w;H=h;
+}
+
+const DIFF={easy:{time:90,speed:0.3},medium:{time:60,speed:0.5},hard:{time:40,speed:0.7}};
+let diff="medium",gameRunning=false,gameOver=false,timeLeft=60,timerInterval;
+let wells=[],scouts=[],enemyUnits=[],camp={},dragging=null,dragStart=null;
+let wellsSecured=0,wellsBlocked=0,enemyThirst=0,shuraPhase=0,shuraTimer=0;
+let qurayshY=0,qurayshSpeed=0.5;
+let animFrame;
+
+function initWells(){
+  const sx=W*0.12,ex=W*0.88,sy=H*0.25,ey=H*0.55;
+  wells=[
+    {x:W*0.5,y:H*0.3,r:18,state:"neutral",fill:0,name:"Well 1"},
+    {x:W*0.2,y:H*0.4,r:18,state:"neutral",fill:0,name:"Well 2"},
+    {x:W*0.8,y:H*0.4,r:18,state:"neutral",fill:0,name:"Well 3"},
+    {x:W*0.35,y:H*0.55,r:18,state:"neutral",fill:0,name:"Well 4"},
+    {x:W*0.65,y:H*0.55,r:18,state:"neutral",fill:0,name:"Well 5"},
+  ];
+}
+
+function initGame(){
+  resizeCanvas();
+  const d=DIFF[diff];
+  timeLeft=d.time;
+  qurayshSpeed=d.speed;
+  qurayshY=-20;
+  gameRunning=false;gameOver=false;
+  wellsSecured=0;wellsBlocked=0;enemyThirst=0;
+  shuraPhase=0;shuraTimer=0;
+  scouts=[];enemyUnits=[];dragging=null;
+  camp={x:W*0.5,y:H*0.85,r:30};
+  initWells();
+  updateUI();
+  clearInterval(timerInterval);
+  document.getElementById("dialogZone").innerHTML="";
+  showShura();
+}
+
+function showShura(){
+  const dz=document.getElementById("dialogZone");
+  shuraPhase=1;
+  dz.innerHTML='<div class="dialog-box"><span class="speaker">Hubab ibn al-Mundhir:</span> "O Messenger of Allah, is this position you have chosen one that Allah has revealed to you, or is it a matter of strategy and war?"</div>';
+  log("Shura begins...","");
+  setTimeout(()=>{
+    if(shuraPhase<1)return;
+    shuraPhase=2;
+    dz.innerHTML+='<div class="dialog-box"><span class="speaker prophet">Prophet Muhammad ﷺ:</span> "It is a matter of strategy and war."</div>';
+    log("Prophet ﷺ: It is strategy.","");
+  },2500);
+  setTimeout(()=>{
+    if(shuraPhase<2)return;
+    shuraPhase=3;
+    dz.innerHTML+='<div class="dialog-box"><span class="speaker">Hubab ibn al-Mundhir:</span> "Then this is not the right place. Let us move to the nearest well to the enemy, camp there, block the wells beyond it, and build a reservoir so we may drink while they cannot."</div>';
+    log("Hubab advises: Move to the wells!","success");
+  },5500);
+  setTimeout(()=>{
+    if(shuraPhase<3)return;
+    shuraPhase=4;
+    dz.innerHTML+='<div class="dialog-box"><span class="speaker prophet">Prophet Muhammad ﷺ:</span> "You have given good counsel."</div>';
+    log("Prophet ﷺ accepts the advice.","success");
+  },9000);
+  setTimeout(()=>{
+    if(shuraPhase<4)return;
+    shuraPhase=5;
+    dz.innerHTML='<div class="lesson-box"><h3>Your Mission</h3><p>Drag scout units from camp (green circle) to the blue wells to secure them. Click a secured well to fill its reservoir. Block enemy wells with sand by clicking neutral wells near the top. Secure all wells before Quraysh arrive!</p></div>';
+    startRound();
+  },12000);
+}
+
+function startRound(){
+  gameRunning=true;gameOver=false;
+  startTimer();
+  // Spawn initial scouts at camp
+  for(let i=0;i<5;i++){
+    scouts.push({x:camp.x+(Math.random()-0.5)*40,y:camp.y+(Math.random()-0.5)*20,r:8,assigned:false,targetWell:null,moving:false,tx:0,ty:0});
+  }
+  // Enemy approach
+  qurayshY=-20;
+  cancelAnimationFrame(animFrame);
+  gameLoop();
+}
+
+function startTimer(){
+  clearInterval(timerInterval);
+  timerInterval=setInterval(()=>{
+    if(!gameRunning)return;
+    timeLeft--;
+    document.getElementById("timerPill").textContent=Math.floor(timeLeft/60)+":"+(timeLeft%60<10?"0":"")+(timeLeft%60);
+    document.getElementById("prog").style.width=(timeLeft/DIFF[diff].time*100)+"%";
+    if(timeLeft<=0){
+      clearInterval(timerInterval);
+      endGame(false);
+    }
+  },1000);
+}
+
+function setDiff(){diff=document.getElementById("diffSel").value;}
+
+function endGame(won){
+  gameRunning=false;gameOver=true;
+  clearInterval(timerInterval);
+  cancelAnimationFrame(animFrame);
+  if(won){
+    document.getElementById("status").textContent="Victory! You controlled the wells of Badr!";
+    document.getElementById("status").className="status win";
+    snd("win");
+    log("Victory! All wells secured.","success");
+    // Show lesson
+    const dz=document.getElementById("dialogZone");
+    dz.innerHTML='<div class="lesson-box"><h3>Lessons of Badr</h3><p><strong>Shura (Consultation):</strong> The Prophet ﷺ listened to Hubab\'s advice even though he was the leader. Good leaders consult others.<br><strong>Strategic Thinking:</strong> Controlling water was key to victory. Plan ahead and use resources wisely.<br><strong>Accepting Advice:</strong> When someone gives good counsel, accept it regardless of their rank. The best idea wins, not the loudest voice.</p></div>';
+    // Compute score
+    const pct=Math.round((wellsSecured*20+wellsBlocked*10+Math.max(0,timeLeft))/1.5);
+    checkHS(pct);
+  }else{
+    document.getElementById("status").textContent="Quraysh reached the wells! Try again.";
+    document.getElementById("status").className="status lose";
+    snd("err");
+    log("Defeat. Quraysh reached the wells first.","error");
+    checkHS(0);
+  }
+  draw();
+}
+
+function updateUI(){
+  document.getElementById("sc").textContent=wellsSecured;
+  document.getElementById("blk").textContent=wellsBlocked;
+  document.getElementById("thirst").textContent=Math.round(enemyThirst)+"%";
+  document.getElementById("scorePill").textContent=wellsSecured+" / 5";
+  document.getElementById("timerPill").textContent=Math.floor(timeLeft/60)+":"+(timeLeft%60<10?"0":"")+(timeLeft%60);
+  document.getElementById("prog").style.width=(timeLeft/DIFF[diff].time*100)+"%";
+}
+
+function gameLoop(){
+  if(gameOver)return;
+  update();
+  draw();
+  animFrame=requestAnimationFrame(gameLoop);
+}
+
+function update(){
+  if(!gameRunning)return;
+  // Move scouts toward their target well
+  scouts.forEach(s=>{
+    if(s.moving&&s.targetWell!==null){
+      const w=wells[s.targetWell];
+      const dx=w.x-s.x,dy=w.y-s.y,dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<5){
+        s.x=w.x;s.y=w.y;s.moving=false;
+        if(w.state==="neutral"){
+          w.state="secured";wellsSecured++;
+          snd("ok");
+          log("Well secured: "+w.name,"success");
+          updateUI();
+          if(wellsSecured+wellsBlocked>=5)endGame(true);
+        }
+      }else{
+        const spd=3;
+        s.x+=dx/dist*spd;
+        s.y+=dy/dist*spd;
+      }
+    }
+  });
+  // Quraysh approach
+  qurayshY+=qurayshSpeed*0.4;
+  // Calculate enemy thirst based on blocked/secured wells
+  const controlled=wellsSecured+wellsBlocked;
+  enemyThirst=Math.min(100,controlled*20+(qurayshY>H*0.15?Math.min(30,(qurayshY-H*0.15)*0.3):0));
+  updateUI();
+  // If quraysh reach the well line and we haven't secured all
+  if(qurayshY>H*0.6&&wellsSecured+wellsBlocked<5){
+    endGame(false);
+  }
+}
+
+function draw(){
+  // Get computed style for theme colors
+  const cs=getComputedStyle(document.documentElement);
+  const bgCol=cs.getPropertyValue("--bg").trim()||"#0a0c10";
+  const bg2=cs.getPropertyValue("--bg2").trim()||"#0d1117";
+  const bg3=cs.getPropertyValue("--bg3").trim()||"#161b22";
+  const accentCol=cs.getPropertyValue("--accent").trim()||"#00ff88";
+  const textCol=cs.getPropertyValue("--text").trim()||"#c9d1d9";
+  const text2=cs.getPropertyValue("--text2").trim()||"#8b949e";
+  const headCol=cs.getPropertyValue("--heading").trim()||"#e6edf3";
+  const borderCol=cs.getPropertyValue("--border").trim()||"#21262d";
+
+  ctx.clearRect(0,0,W,H);
+
+  // Desert background gradient
+  const grad=ctx.createLinearGradient(0,0,0,H);
+  grad.addColorStop(0,bg2);
+  grad.addColorStop(0.5,bgCol);
+  grad.addColorStop(1,bg3);
+  ctx.fillStyle=grad;
+  ctx.fillRect(0,0,W,H);
+
+  // Grid lines (subtle)
+  ctx.strokeStyle=borderCol;
+  ctx.lineWidth=0.5;
+  ctx.globalAlpha=0.3;
+  for(let i=0;i<W;i+=40){ctx.beginPath();ctx.moveTo(i,0);ctx.lineTo(i,H);ctx.stroke();}
+  for(let i=0;i<H;i+=40){ctx.beginPath();ctx.moveTo(0,i);ctx.lineTo(W,i);ctx.stroke();}
+  ctx.globalAlpha=1;
+
+  // Valley label
+  ctx.fillStyle=text2;
+  ctx.font="bold 10px 'Outfit',sans-serif";
+  ctx.textAlign="center";
+  ctx.fillText("BADR VALLEY",W/2,16);
+
+  // North label (Quraysh)
+  ctx.fillStyle="#ff4444";
+  ctx.font="bold 9px 'IBM Plex Mono',monospace";
+  ctx.fillText("▼ QURAYSH APPROACHING ▼",W/2,32);
+
+  // South label (Muslim Camp)
+  ctx.fillStyle=accentCol;
+  ctx.fillText("▲ MUSLIM CAMP ▲",W/2,H-10);
+
+  // Draw Quraysh army (row of red units approaching from north)
+  const qy=Math.max(5,qurayshY);
+  for(let i=0;i<7;i++){
+    const qx=W*0.2+i*(W*0.6/6);
+    ctx.beginPath();
+    ctx.arc(qx,qy+40,8,0,Math.PI*2);
+    ctx.fillStyle="rgba(255,68,68,0.7)";
+    ctx.fill();
+    ctx.strokeStyle="#ff4444";
+    ctx.lineWidth=1.5;
+    ctx.stroke();
+    // Thirst indicator on enemy
+    if(enemyThirst>0){
+      ctx.fillStyle="rgba(255,255,0,0.5)";
+      ctx.fillRect(qx-8,qy+50,16*(1-enemyThirst/100),3);
+      ctx.fillStyle="rgba(255,0,0,0.8)";
+      ctx.fillRect(qx-8+16*(1-enemyThirst/100),qy+50,16*(enemyThirst/100),3);
+    }
+  }
+  // Quraysh thirst label
+  if(enemyThirst>20){
+    ctx.fillStyle="rgba(255,200,50,0.8)";
+    ctx.font="bold 9px 'Outfit',sans-serif";
+    ctx.fillText("Thirst: "+Math.round(enemyThirst)+"%",W/2,qy+65);
+  }
+
+  // Draw wells
+  wells.forEach((w,i)=>{
+    ctx.beginPath();
+    ctx.arc(w.x,w.y,w.r+4,0,Math.PI*2);
+    if(w.state==="secured"){
+      ctx.fillStyle="rgba(0,150,255,0.15)";
+      ctx.fill();
+      ctx.strokeStyle=accentCol;
+    }else if(w.state==="blocked"){
+      ctx.fillStyle="rgba(180,140,60,0.15)";
+      ctx.fill();
+      ctx.strokeStyle="#b48c3c";
+    }else{
+      ctx.fillStyle="rgba(0,120,255,0.08)";
+      ctx.fill();
+      ctx.strokeStyle="rgba(0,150,255,0.5)";
+    }
+    ctx.lineWidth=2;
+    ctx.stroke();
+
+    // Well circle
+    ctx.beginPath();
+    ctx.arc(w.x,w.y,w.r,0,Math.PI*2);
+    if(w.state==="secured"){
+      // Fill indicator
+      const fillH=w.r*2*(w.fill/100);
+      ctx.save();
+      ctx.clip();
+      ctx.fillStyle="rgba(0,100,200,0.3)";
+      ctx.fillRect(w.x-w.r,w.y+w.r-fillH,w.r*2,fillH);
+      ctx.restore();
+      ctx.beginPath();ctx.arc(w.x,w.y,w.r,0,Math.PI*2);
+      ctx.strokeStyle=accentCol;ctx.lineWidth=2;ctx.stroke();
+      // Checkmark
+      ctx.fillStyle=accentCol;
+      ctx.font="bold 14px 'Outfit',sans-serif";
+      ctx.textAlign="center";ctx.textBaseline="middle";
+      ctx.fillText("✓",w.x,w.y);
+    }else if(w.state==="blocked"){
+      ctx.fillStyle="rgba(180,140,60,0.4)";
+      ctx.fill();
+      ctx.strokeStyle="#b48c3c";ctx.lineWidth=2;ctx.stroke();
+      ctx.fillStyle="#b48c3c";
+      ctx.font="bold 12px 'Outfit',sans-serif";
+      ctx.textAlign="center";ctx.textBaseline="middle";
+      ctx.fillText("SAND",w.x,w.y);
+    }else{
+      ctx.fillStyle="rgba(0,120,255,0.2)";
+      ctx.fill();
+      ctx.strokeStyle="rgba(0,150,255,0.6)";ctx.lineWidth=2;ctx.stroke();
+      // Water drop icon
+      ctx.fillStyle="rgba(0,150,255,0.8)";
+      ctx.font="14px sans-serif";
+      ctx.textAlign="center";ctx.textBaseline="middle";
+      ctx.fillText("💧",w.x,w.y);
+    }
+    // Well name
+    ctx.fillStyle=text2;
+    ctx.font="9px 'IBM Plex Mono',monospace";
+    ctx.textAlign="center";ctx.textBaseline="top";
+    ctx.fillText(w.name,w.x,w.y+w.r+6);
+
+    // Fill bar for secured wells
+    if(w.state==="secured"&&w.fill<100){
+      ctx.fillStyle=bg3;
+      ctx.fillRect(w.x-15,w.y+w.r+16,30,4);
+      ctx.fillStyle="rgba(0,150,255,0.8)";
+      ctx.fillRect(w.x-15,w.y+w.r+16,30*(w.fill/100),4);
+    }
+  });
+
+  // Draw camp
+  ctx.beginPath();
+  ctx.arc(camp.x,camp.y,camp.r,0,Math.PI*2);
+  ctx.fillStyle="rgba(0,255,136,0.08)";
+  ctx.fill();
+  ctx.strokeStyle=accentCol;
+  ctx.lineWidth=2;
+  ctx.setLineDash([4,4]);
+  ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle=accentCol;
+  ctx.font="bold 10px 'Outfit',sans-serif";
+  ctx.textAlign="center";ctx.textBaseline="middle";
+  ctx.fillText("CAMP",camp.x,camp.y-6);
+  ctx.font="8px 'IBM Plex Mono',monospace";
+  ctx.fillText("drag →",camp.x,camp.y+8);
+
+  // Draw scouts
+  scouts.forEach(s=>{
+    ctx.beginPath();
+    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    ctx.fillStyle=s.assigned?accentCol:"rgba(0,255,136,0.6)";
+    ctx.fill();
+    ctx.strokeStyle=accentCol;
+    ctx.lineWidth=1;
+    ctx.stroke();
+    // Little person icon
+    ctx.fillStyle=bgCol;
+    ctx.font="bold 8px sans-serif";
+    ctx.textAlign="center";ctx.textBaseline="middle";
+    ctx.fillText("⚔",s.x,s.y);
+  });
+
+  // Dragging line
+  if(dragging!==null&&dragStart){
+    ctx.beginPath();
+    ctx.moveTo(scouts[dragging].x,scouts[dragging].y);
+    ctx.lineTo(dragStart.mx,dragStart.my);
+    ctx.strokeStyle=accentCol;
+    ctx.lineWidth=1;
+    ctx.setLineDash([3,3]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  // Game over overlay
+  if(gameOver){
+    ctx.fillStyle="rgba(0,0,0,0.5)";
+    ctx.fillRect(0,0,W,H);
+    ctx.fillStyle=headCol;
+    ctx.font="bold 24px 'Outfit',sans-serif";
+    ctx.textAlign="center";ctx.textBaseline="middle";
+    const won=wellsSecured+wellsBlocked>=5;
+    ctx.fillText(won?"Victory at Badr!":"Quraysh reached the wells!",W/2,H/2-15);
+    ctx.font="13px 'Outfit',sans-serif";
+    ctx.fillStyle=text2;
+    ctx.fillText("Press ▶ New Game to try again",W/2,H/2+15);
+  }
+}
+
+/* ===== INPUT HANDLING ===== */
+function getPos(e){
+  const rect=cvs.getBoundingClientRect();
+  const scaleX=W/rect.width,scaleY=H/rect.height;
+  let cx,cy;
+  if(e.touches){cx=e.touches[0].clientX;cy=e.touches[0].clientY;}
+  else{cx=e.clientX;cy=e.clientY;}
+  return{x:(cx-rect.left)*scaleX,y:(cy-rect.top)*scaleY};
+}
+
+function dist(a,b){return Math.sqrt((a.x-b.x)**2+(a.y-b.y)**2);}
+
+cvs.addEventListener("mousedown",onDown);
+cvs.addEventListener("touchstart",onDown,{passive:false});
+cvs.addEventListener("mousemove",onMove);
+cvs.addEventListener("touchmove",onMove,{passive:false});
+cvs.addEventListener("mouseup",onUp);
+cvs.addEventListener("touchend",onUp);
+
+function onDown(e){
+  e.preventDefault();
+  if(!gameRunning)return;
+  const p=getPos(e);
+
+  // Check if clicking a secured well to fill it
+  for(let i=0;i<wells.length;i++){
+    const w=wells[i];
+    if(dist(p,w)<w.r+6){
+      if(w.state==="secured"&&w.fill<100){
+        w.fill=Math.min(100,w.fill+34);
+        snd("fill");
+        log("Filling reservoir: "+w.name+" ("+w.fill+"%)","success");
+        updateUI();
+        draw();
+        return;
+      }
+      // Block neutral wells that are in the north half (enemy side)
+      if(w.state==="neutral"&&w.y<H*0.45){
+        w.state="blocked";wellsBlocked++;
+        snd("block");
+        log("Blocked with sand: "+w.name,"success");
+        updateUI();
+        if(wellsSecured+wellsBlocked>=5)endGame(true);
+        draw();
+        return;
+      }
+    }
+  }
+
+  // Check if clicking a scout to drag
+  for(let i=0;i<scouts.length;i++){
+    const s=scouts[i];
+    if(!s.assigned&&!s.moving&&dist(p,s)<s.r+8){
+      dragging=i;
+      dragStart={mx:p.x,my:p.y};
+      return;
+    }
+  }
+}
+
+function onMove(e){
+  e.preventDefault();
+  if(dragging===null)return;
+  const p=getPos(e);
+  dragStart.mx=p.x;
+  dragStart.my=p.y;
+  draw();
+}
+
+function onUp(e){
+  if(dragging===null)return;
+  const p=dragStart||{mx:0,my:0};
+  // Check if dropped on a neutral well (south half for securing)
+  for(let i=0;i<wells.length;i++){
+    const w=wells[i];
+    if(w.state==="neutral"&&dist({x:p.mx,y:p.my},w)<w.r+12){
+      scouts[dragging].assigned=true;
+      scouts[dragging].moving=true;
+      scouts[dragging].targetWell=i;
+      snd("click");
+      log("Scout dispatched to "+w.name,"");
+      break;
+    }
+  }
+  dragging=null;dragStart=null;
+  draw();
+}
+
+/* ===== HIGH SCORE ===== */
+const HS_KEY="wdiy-hs-badr-wells";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
+function checkHS(pct){
+  if(pct===undefined)pct=0;
+  if(saveHS(pct)){log("NEW HIGH SCORE: "+pct+"%!","success");}
+  showHS();
+}
+
+function newGame(){
+  document.getElementById("logBox").innerHTML="";
+  document.getElementById("status").textContent="Drag scouts from camp to secure the wells!";
+  document.getElementById("status").className="status";
+  diff=document.getElementById("diffSel").value;
+  cancelAnimationFrame(animFrame);
+  clearInterval(timerInterval);
+  initGame();
+}
+
+/* ===== INIT ===== */
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");if(gameRunning||gameOver)draw();}));
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+
+  // Keyboard shortcuts
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+    // Number keys 1-5 to quick-secure wells
+    if(e.key>="1"&&e.key<="5"&&gameRunning){
+      const wi=parseInt(e.key)-1;
+      if(wells[wi]&&wells[wi].state==="neutral"){
+        // Find free scout
+        const si=scouts.findIndex(s=>!s.assigned&&!s.moving);
+        if(si>=0){
+          scouts[si].assigned=true;scouts[si].moving=true;scouts[si].targetWell=wi;
+          snd("click");log("Scout dispatched to "+wells[wi].name+" (key "+e.key+")","");
+        }
+      }else if(wells[wi]&&wells[wi].state==="secured"&&wells[wi].fill<100){
+        wells[wi].fill=Math.min(100,wells[wi].fill+34);
+        snd("fill");log("Filling "+wells[wi].name+" ("+wells[wi].fill+"%)","success");
+        updateUI();
+      }
+    }
+    // B key to block nearest neutral north well
+    if(e.key==="b"||e.key==="B"){
+      if(gameRunning){
+        const nw=wells.find(w=>w.state==="neutral"&&w.y<H*0.45);
+        if(nw){nw.state="blocked";wellsBlocked++;snd("block");log("Blocked: "+nw.name,"success");updateUI();if(wellsSecured+wellsBlocked>=5)endGame(true);}
+      }
+    }
+  });
+
+  window.addEventListener("resize",()=>{resizeCanvas();initWells();draw();});
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

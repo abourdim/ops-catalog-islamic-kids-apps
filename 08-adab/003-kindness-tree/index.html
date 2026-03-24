@@ -1,0 +1,480 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Kindness Tree — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:600px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:13px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px;line-height:1.5}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.canvas-wrap{width:100%;display:flex;justify-content:center}
+.canvas-wrap canvas{border-radius:8px;max-width:100%;height:auto}
+.scenario-box{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px 16px;width:100%;text-align:center}
+.scenario-text{font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:var(--heading);margin-bottom:4px;line-height:1.5}
+.scenario-sub{font-size:10px;color:var(--text3);margin-bottom:0}
+.answer-row{display:flex;gap:8px;align-items:stretch;justify-content:center;flex-wrap:wrap;width:100%}
+.answer-btn{flex:1;min-width:120px;padding:10px 12px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;text-align:center;line-height:1.4}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.hadith-box{background:var(--abg);border:1px solid var(--abr);border-radius:8px;padding:10px 14px;width:100%;text-align:center;display:none}
+.hadith-text{font-size:11px;color:var(--accent);line-height:1.6;font-style:italic}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Kindness Tree</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Grow your tree with good deeds</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Answer kindness scenarios and watch your tree bloom!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Kindness Tree</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="10">Easy (10)</option><option value="20" selected>Medium (20)</option><option value="30">Hard (30)</option></select>
+    <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+    <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="status" id="status">Choose the kindest response!</div>
+<div class="game-area">
+<div class="canvas-wrap"><canvas id="treeCanvas" width="360" height="340"></canvas></div>
+<div class="scenario-box"><div class="scenario-text" id="scenarioText">Press New Game to begin!</div><div class="scenario-sub" id="scenarioSub"></div></div>
+<div class="answer-row" id="choices"></div>
+<div class="hadith-box" id="hadithBox"><div class="hadith-text" id="hadithText"></div></div>
+<div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+</div>
+<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Leaves</div><div class="score-num" id="leaves">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Kindness Tree v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Kindness Tree?</summary><p>A game where you grow a tree by choosing kind Islamic responses to everyday scenarios. Each correct answer adds leaves and fruits to your tree!</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>What are the difficulty levels?</summary><p>Easy = 10 scenarios, Medium = 20, Hard = 30. Higher difficulty includes trickier situations!</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Choose your difficulty (Easy, Medium, Hard)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Press ▶ New Game to begin</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Read the scenario and pick the kindest Islamic response</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>Watch your tree grow with each correct answer!</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Learn from the hadith shown after each answer</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Try to fill the whole tree with leaves and fruits</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>🌳 Purpose</h3><p>Teach children Islamic adab (manners) and kindness through interactive scenarios. Each correct answer grows a virtual tree, reinforcing positive behavior.</p></div>
+        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Fran&#231;ais, العربية. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Correct = rising tone, wrong = buzz, win = melody. Toggle with 🔊 button.</p></div>
+        <div class="wiki-entry"><h3>📖 Islamic Teachings</h3><p>Each scenario is paired with a hadith or Quranic teaching about kindness, mercy, and good character.</p></div>
+        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else if(t==="grow"){o.frequency.value=440;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.04;o2.frequency.value=554;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.25);o2.start(n+.1);o2.stop(n+.25);const o3=actx.createOscillator(),g3=actx.createGain();o3.connect(g3);g3.connect(actx.destination);g3.gain.value=.03;o3.frequency.value=659;o3.type="sine";g3.gain.exponentialRampToValueAtTime(.001,n+.35);o3.start(n+.2);o3.stop(n+.35);}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// === SCENARIOS DATA ===
+const SCENARIOS=[
+{q:"Your mom asks you to help set the table for dinner. What do you do?",a:"Help happily and say Bismillah",opts:["Ignore her","Say you're too tired","Help happily and say Bismillah"],h:"The Prophet (pbuh) said: The best of you are those who are best to their families."},
+{q:"Your younger sibling broke your favorite toy by accident. How do you respond?",a:"Forgive them and say it's okay",opts:["Yell at them","Break their toy too","Forgive them and say it's okay"],h:"The Prophet (pbuh) said: The strong person is not the one who wrestles, but the one who controls themselves when angry."},
+{q:"An elderly neighbor needs help carrying groceries. What do you do?",a:"Offer to help and carry the bags",opts:["Walk past quickly","Offer to help and carry the bags","Watch from a distance"],h:"The Prophet (pbuh) said: He is not a believer who eats his fill while his neighbor is hungry."},
+{q:"Your friend forgot their lunch at school. What should you do?",a:"Share your lunch with them",opts:["Eat yours and ignore them","Share your lunch with them","Laugh at them"],h:"The Prophet (pbuh) said: None of you truly believes until he loves for his brother what he loves for himself."},
+{q:"Someone at school is making fun of a new student. How do you react?",a:"Stand up for the new student and be their friend",opts:["Join in the laughing","Stand up for the new student and be their friend","Walk away silently"],h:"The Prophet (pbuh) said: Help your brother whether he is an oppressor or is oppressed."},
+{q:"You find money on the school playground. What do you do?",a:"Take it to the teacher to find the owner",opts:["Keep it for yourself","Take it to the teacher to find the owner","Hide it somewhere"],h:"The Prophet (pbuh) said: Give back the trust to the one who entrusted you."},
+{q:"You see a stray cat that looks hungry. What should you do?",a:"Give it some food and water",opts:["Chase it away","Ignore it","Give it some food and water"],h:"The Prophet (pbuh) told of a woman who entered Paradise for giving water to a thirsty dog."},
+{q:"You accidentally bump into someone at the masjid. What do you say?",a:"Say sorry and ask if they are okay",opts:["Walk away quickly","Say sorry and ask if they are okay","Blame them for being in the way"],h:"The Prophet (pbuh) said: A good word is charity."},
+{q:"Your friend is feeling sad because they failed a test. What do you do?",a:"Comfort them and offer to study together",opts:["Tell them they should have studied harder","Comfort them and offer to study together","Ignore them"],h:"The Prophet (pbuh) said: Whoever relieves a believer of distress, Allah will relieve them of distress on the Day of Judgment."},
+{q:"You see litter on the ground near the masjid. What should you do?",a:"Pick it up and put it in the bin",opts:["Step over it","Pick it up and put it in the bin","Wait for someone else to clean it"],h:"The Prophet (pbuh) said: Removing harm from the road is charity."},
+{q:"Your parents ask you to turn off your game and do homework. What do you do?",a:"Obey cheerfully and start your homework",opts:["Argue and complain","Obey cheerfully and start your homework","Pretend you didn't hear"],h:"Allah says in the Quran: And We have enjoined upon man goodness to parents (29:8)."},
+{q:"A classmate drops their books in the hallway. What do you do?",a:"Help them pick up their books",opts:["Laugh and walk past","Help them pick up their books","Step on the books accidentally"],h:"The Prophet (pbuh) said: Allah helps the servant as long as the servant helps his brother."},
+{q:"You hear your neighbor is sick. What is the kind thing to do?",a:"Visit them and bring them soup or fruit",opts:["Ignore it","Visit them and bring them soup or fruit","Talk about it with friends"],h:"The Prophet (pbuh) said: Visit the sick, feed the hungry, and free the captive."},
+{q:"Your sibling wants to play but you're busy. What do you do?",a:"Take a break and play with them for a while",opts:["Tell them to go away","Take a break and play with them for a while","Lock your door"],h:"The Prophet (pbuh) said: The merciful are shown mercy by the Most Merciful."},
+{q:"Someone says something mean to you at school. How do you respond?",a:"Stay calm, forgive them, and walk away",opts:["Say something mean back","Stay calm, forgive them, and walk away","Tell everyone what they said"],h:"The Prophet (pbuh) said: Whoever controls their anger when able to act, Allah will fill their heart with peace."},
+{q:"You have extra snacks and see a classmate with none. What do you do?",a:"Offer them some of your snacks",opts:["Eat everything yourself","Offer them some of your snacks","Hide your snacks"],h:"The Prophet (pbuh) said: The hand that gives is better than the hand that receives."},
+{q:"It's time for Salah but you're playing a fun game. What do you do?",a:"Stop playing and pray on time",opts:["Keep playing and pray later","Stop playing and pray on time","Skip the prayer"],h:"The Prophet (pbuh) said: The first thing a person will be asked about on the Day of Judgment is their prayer."},
+{q:"Your teacher asks who drew on the wall. You did it. What do you do?",a:"Tell the truth even though it's hard",opts:["Blame someone else","Stay quiet","Tell the truth even though it's hard"],h:"The Prophet (pbuh) said: Truthfulness leads to righteousness, and righteousness leads to Paradise."},
+{q:"A new kid at school is sitting alone at lunch. What do you do?",a:"Invite them to sit with you and your friends",opts:["Ignore them","Invite them to sit with you and your friends","Stare at them from far away"],h:"The Prophet (pbuh) said: Spread peace, feed the hungry, and pray at night — you will enter Paradise in peace."},
+{q:"You see your friend about to cheat on a test. What do you do?",a:"Quietly tell them it's wrong and encourage them to be honest",opts:["Help them cheat","Quietly tell them it's wrong and encourage them to be honest","Tell the teacher loudly"],h:"The Prophet (pbuh) said: A believer is a mirror to his brother. He protects him from ruin."},
+{q:"Your grandmother visits and tells a long story you've heard before. What do you do?",a:"Listen patiently and respectfully",opts:["Tell her you already heard it","Walk away","Listen patiently and respectfully"],h:"The Prophet (pbuh) said: He is not one of us who does not show mercy to the young and respect to the elderly."},
+{q:"You promised to help a friend but something more fun came up. What do you do?",a:"Keep your promise and help your friend",opts:["Go do the fun thing instead","Keep your promise and help your friend","Make an excuse"],h:"The Prophet (pbuh) said: The signs of a hypocrite are three: when they speak they lie, when they promise they break it, and when they are trusted they betray."},
+{q:"You wake up for Fajr and feel very sleepy. What do you do?",a:"Make dua for strength and pray Fajr",opts:["Go back to sleep","Make dua for strength and pray Fajr","Complain about being tired"],h:"The Prophet (pbuh) said: The most difficult prayers for the hypocrites are Isha and Fajr."},
+{q:"Your friend got a better grade than you. How do you feel?",a:"Say MashaAllah and feel happy for them",opts:["Feel jealous and angry","Say MashaAllah and feel happy for them","Stop talking to them"],h:"The Prophet (pbuh) said: Do not envy one another, and do not hate one another. Be brothers."},
+{q:"You're at the store and see a child crying because they're lost. What do you do?",a:"Help them find a store worker or their parents",opts:["Ignore them","Help them find a store worker or their parents","Walk away quickly"],h:"The Prophet (pbuh) said: The one who looks after a widow or a poor person is like a fighter in the path of Allah."},
+{q:"Your mom is tired after a long day. What can you do?",a:"Make her tea and ask if she needs anything",opts:["Ask her to make you dinner","Make her tea and ask if she needs anything","Go play in your room"],h:"The Prophet (pbuh) said: Paradise lies at the feet of mothers."},
+{q:"Someone gave you a gift you don't really like. What do you say?",a:"Thank them sincerely and appreciate the gesture",opts:["Say you don't like it","Thank them sincerely and appreciate the gesture","Throw it aside"],h:"The Prophet (pbuh) said: Whoever does not thank people does not thank Allah."},
+{q:"You see someone being bullied at the park. What do you do?",a:"Tell an adult and comfort the person being bullied",opts:["Watch and do nothing","Tell an adult and comfort the person being bullied","Join the bullies"],h:"The Prophet (pbuh) said: Whoever sees a wrong, let them change it with their hand; if not, then with their tongue; if not, then with their heart."},
+{q:"You want the last piece of cake but so does your sibling. What do you do?",a:"Let your sibling have it or share it equally",opts:["Grab it quickly","Let your sibling have it or share it equally","Argue about it"],h:"The Prophet (pbuh) said: None of you truly believes until he loves for his brother what he loves for himself."},
+{q:"You make dua only for yourself. What could you do better?",a:"Include your family, friends, and all Muslims in your dua",opts:["Only make dua when you want something","Include your family, friends, and all Muslims in your dua","Stop making dua"],h:"The Prophet (pbuh) said: The dua of a Muslim for his brother in his absence is answered. An angel says: And for you the same."}
+];
+
+let total=20,current=0,correct=0,ans,locked=false,leafCount=0;
+let treeLeaves=[],treeFruits=[];
+const canvas=document.getElementById("treeCanvas");
+const ctx=canvas.getContext("2d");
+
+// Pre-calculated leaf/fruit positions on the tree crown
+const LEAF_POSITIONS=[];
+const FRUIT_POSITIONS=[];
+(function initPositions(){
+  // Generate leaf positions in a crown shape
+  for(let i=0;i<30;i++){
+    const angle=Math.random()*Math.PI*2;
+    const r=40+Math.random()*70;
+    const cx=180,cy=120;
+    const x=cx+Math.cos(angle)*r*(0.8+Math.random()*0.4);
+    const y=cy+Math.sin(angle)*r*0.7-Math.random()*20;
+    LEAF_POSITIONS.push({x,y,size:8+Math.random()*8,rot:Math.random()*Math.PI*2});
+  }
+  for(let i=0;i<30;i++){
+    const angle=Math.random()*Math.PI*2;
+    const r=30+Math.random()*55;
+    const cx=180,cy=130;
+    const x=cx+Math.cos(angle)*r*(0.7+Math.random()*0.3);
+    const y=cy+Math.sin(angle)*r*0.6;
+    FRUIT_POSITIONS.push({x,y,size:4+Math.random()*3,color:["#ff6b6b","#ffa94d","#ffd43b","#ff8787","#e64980"][Math.floor(Math.random()*5)]});
+  }
+})();
+
+// Animation state
+let animLeaves=[],animFruits=[];
+let animFrame=0,animating=false;
+
+function getThemeColors(){
+  const s=getComputedStyle(document.documentElement);
+  return{
+    bg:s.getPropertyValue("--bg2").trim()||"#0d1117",
+    trunk:"#8B6914",
+    trunkDark:"#654a0e",
+    leafGreen:"#2ecc71",
+    leafDark:"#27ae60",
+    accent:s.getPropertyValue("--accent").trim()||"#00ff88",
+    ground:"#3d2b1f",
+    sky:s.getPropertyValue("--bg").trim()||"#0a0c10"
+  };
+}
+
+function drawTree(){
+  const c=getThemeColors();
+  const W=canvas.width,H=canvas.height;
+  ctx.clearRect(0,0,W,H);
+
+  // Ground
+  ctx.fillStyle=c.ground;
+  ctx.beginPath();
+  ctx.ellipse(W/2,H-20,W/2+20,30,0,0,Math.PI*2);
+  ctx.fill();
+
+  // Trunk
+  ctx.strokeStyle=c.trunk;
+  ctx.lineWidth=18;
+  ctx.lineCap="round";
+  ctx.beginPath();
+  ctx.moveTo(180,H-30);
+  ctx.bezierCurveTo(178,H-80,175,H-140,180,H-190);
+  ctx.stroke();
+
+  // Trunk shadow/detail
+  ctx.strokeStyle=c.trunkDark;
+  ctx.lineWidth=6;
+  ctx.beginPath();
+  ctx.moveTo(176,H-35);
+  ctx.bezierCurveTo(174,H-85,173,H-135,176,H-185);
+  ctx.stroke();
+
+  // Branches
+  ctx.strokeStyle=c.trunk;
+  ctx.lineWidth=8;
+  ctx.lineCap="round";
+  // Left branch
+  ctx.beginPath();ctx.moveTo(180,H-170);ctx.bezierCurveTo(160,H-190,130,H-200,110,H-210);ctx.stroke();
+  // Right branch
+  ctx.beginPath();ctx.moveTo(180,H-175);ctx.bezierCurveTo(200,H-195,230,H-205,250,H-210);ctx.stroke();
+  // Small left
+  ctx.lineWidth=5;
+  ctx.beginPath();ctx.moveTo(145,H-200);ctx.bezierCurveTo(130,H-215,115,H-230,100,H-225);ctx.stroke();
+  // Small right
+  ctx.beginPath();ctx.moveTo(215,H-200);ctx.bezierCurveTo(235,H-220,250,H-235,265,H-225);ctx.stroke();
+  // Top branch
+  ctx.lineWidth=6;
+  ctx.beginPath();ctx.moveTo(180,H-190);ctx.bezierCurveTo(180,H-210,178,H-240,180,H-260);ctx.stroke();
+
+  // Draw existing leaves with glow
+  animLeaves.forEach(function(leaf){
+    ctx.save();
+    ctx.globalAlpha=leaf.alpha||1;
+    ctx.translate(leaf.x,leaf.y);
+    ctx.rotate(leaf.rot);
+    // Leaf shape
+    ctx.fillStyle=leaf.dark?c.leafDark:c.leafGreen;
+    ctx.beginPath();
+    ctx.ellipse(0,0,leaf.size,leaf.size*0.6,0,0,Math.PI*2);
+    ctx.fill();
+    // Highlight
+    ctx.fillStyle="rgba(255,255,255,0.15)";
+    ctx.beginPath();
+    ctx.ellipse(-leaf.size*0.2,-leaf.size*0.15,leaf.size*0.4,leaf.size*0.25,0,0,Math.PI*2);
+    ctx.fill();
+    ctx.restore();
+  });
+
+  // Draw existing fruits
+  animFruits.forEach(function(fruit){
+    ctx.save();
+    ctx.globalAlpha=fruit.alpha||1;
+    ctx.fillStyle=fruit.color;
+    ctx.beginPath();
+    ctx.arc(fruit.x,fruit.y,fruit.size,0,Math.PI*2);
+    ctx.fill();
+    // Highlight
+    ctx.fillStyle="rgba(255,255,255,0.3)";
+    ctx.beginPath();
+    ctx.arc(fruit.x-fruit.size*0.3,fruit.y-fruit.size*0.3,fruit.size*0.35,0,Math.PI*2);
+    ctx.fill();
+    ctx.restore();
+  });
+
+  // Leaf/fruit counter on tree
+  if(animLeaves.length>0||animFruits.length>0){
+    ctx.fillStyle=c.accent;
+    ctx.font="bold 11px Outfit, sans-serif";
+    ctx.textAlign="center";
+    ctx.fillText("🌿 "+animLeaves.length+" 🍎 "+animFruits.length,180,H-5);
+  }
+}
+
+function addLeafAnim(){
+  if(LEAF_POSITIONS.length<=animLeaves.length&&FRUIT_POSITIONS.length<=animFruits.length)return;
+  const idx=animLeaves.length+animFruits.length;
+  // Alternate: 2 leaves then 1 fruit
+  if(idx%3===2&&animFruits.length<FRUIT_POSITIONS.length){
+    const fp=FRUIT_POSITIONS[animFruits.length];
+    const fruit={...fp,alpha:0,targetAlpha:1};
+    animFruits.push(fruit);
+    animateGrow(fruit);
+  }else if(animLeaves.length<LEAF_POSITIONS.length){
+    const lp=LEAF_POSITIONS[animLeaves.length];
+    const leaf={...lp,alpha:0,targetAlpha:1,dark:Math.random()>0.5};
+    animLeaves.push(leaf);
+    animateGrow(leaf);
+  }
+  leafCount=animLeaves.length;
+  document.getElementById("leaves").textContent=animLeaves.length+animFruits.length;
+}
+
+function animateGrow(item){
+  let progress=0;
+  function step(){
+    progress+=0.08;
+    item.alpha=Math.min(1,progress);
+    item.size=(item.size||8)*(0.5+Math.min(0.5,progress*0.5));
+    drawTree();
+    if(progress<1)requestAnimationFrame(step);
+    else{item.alpha=1;drawTree();}
+  }
+  // Reset size to original for animation
+  const origSize=item.size;
+  item.size=0;
+  let p=0;
+  function step2(){
+    p+=0.06;
+    item.alpha=Math.min(1,p);
+    item.size=origSize*Math.min(1,p);
+    drawTree();
+    if(p<1)requestAnimationFrame(step2);
+    else{item.alpha=1;item.size=origSize;drawTree();}
+  }
+  requestAnimationFrame(step2);
+}
+
+function setDiff(){total=parseInt(document.getElementById("diffSel").value);}
+
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+let shuffled=[];
+function newGame(){
+  startTimer();
+  total=document.getElementById("diffSel")?parseInt(document.getElementById("diffSel").value):20;
+  current=0;correct=0;leafCount=0;
+  animLeaves=[];animFruits=[];
+  document.getElementById("sc").textContent="0";
+  document.getElementById("tot").textContent="0";
+  document.getElementById("leaves").textContent="0";
+  document.getElementById("scorePill").textContent="0 / 0";
+  document.getElementById("hadithBox").style.display="none";
+  // Shuffle scenarios
+  shuffled=[...SCENARIOS].sort(()=>Math.random()-0.5).slice(0,total);
+  drawTree();
+  nextQ();
+}
+
+function nextQ(){
+  if(current>=total){
+    checkHS();stopTimer();snd("win");
+    document.getElementById("status").textContent="🏆 Masha'Allah! "+correct+"/"+total+" — Your tree is beautiful!";
+    document.getElementById("status").className="status win";
+    log("🏆 Score: "+correct+"/"+total,"success");
+    document.getElementById("choices").innerHTML="";
+    document.getElementById("scenarioText").textContent="Alhamdulillah! You completed all scenarios!";
+    document.getElementById("scenarioSub").textContent="Press ▶ New Game to play again";
+    return;
+  }
+  locked=false;
+  const sc=shuffled[current];
+  document.getElementById("scenarioText").textContent=sc.q;
+  document.getElementById("scenarioSub").textContent="Scenario "+(current+1)+" of "+total;
+  document.getElementById("hadithBox").style.display="none";
+  ans=sc.a;
+  const el=document.getElementById("choices");
+  el.innerHTML="";
+  const opts=[...sc.opts].sort(()=>Math.random()-0.5);
+  opts.forEach((o,i)=>{
+    const b=document.createElement("button");
+    b.className="answer-btn";
+    b.textContent=o;
+    b.onclick=()=>pick(b,o,sc);
+    el.appendChild(b);
+  });
+  document.getElementById("status").textContent="Choose the kindest response!";
+  document.getElementById("status").className="status";
+  document.getElementById("prog").style.width=(current/total*100)+"%";
+}
+
+function pick(btn,val,sc){
+  if(locked)return;locked=true;current++;
+  if(String(val)===String(ans)){
+    correct++;btn.classList.add("correct");snd("grow");
+    log("✓ Correct! "+val,"success");
+    addLeafAnim();
+  }else{
+    btn.classList.add("wrong");snd("err");
+    log("✗ The kind answer was: "+ans,"error");
+    document.querySelectorAll(".answer-btn").forEach(b=>{if(b.textContent===ans)b.classList.add("correct");});
+  }
+  // Show hadith
+  document.getElementById("hadithText").textContent=sc.h;
+  document.getElementById("hadithBox").style.display="block";
+  document.getElementById("sc").textContent=correct;
+  document.getElementById("tot").textContent=current;
+  document.getElementById("scorePill").textContent=correct+" / "+current;
+  document.getElementById("prog").style.width=(current/total*100)+"%";
+  setTimeout(nextQ,2200);
+}
+
+// High Score
+const HS_KEY="wdiy-hs-kindness-tree";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
+function checkHS(){
+  if(typeof correct!=="undefined"&&typeof total!=="undefined"&&current>=total){
+    const pct=Math.round(correct/total*100);
+    if(saveHS(pct)){log("🏆 NEW HIGH SCORE: "+pct+"%!","success");}
+  }
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");drawTree();}));
+  showHS();
+  drawTree();
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+// Keyboard shortcuts: 1-3 for answers, Enter for next
+document.addEventListener("keydown",function(e){
+if(e.key>="1"&&e.key<="3"){const btns=document.querySelectorAll(".answer-btn");const i=parseInt(e.key)-1;if(btns[i])btns[i].click();}
+if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

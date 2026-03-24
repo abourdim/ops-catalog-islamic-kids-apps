@@ -1,0 +1,530 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Battlefield Medic — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:600px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:12px;min-height:200px;position:relative;overflow:hidden}
+.big-text{font-family:'Outfit',sans-serif;font-size:32px;font-weight:800;color:var(--heading);text-align:center}
+.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;cursor:pointer;transition:all .15s;min-width:50px}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.progress{width:100%;max-width:400px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden;margin:0 auto}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-top:8px}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:">";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+canvas{width:100%;border-radius:8px;cursor:pointer;display:block}
+.treat-bar{display:flex;gap:6px;justify-content:center;margin:8px 0;flex-wrap:wrap}
+.treat-btn{padding:8px 14px;border-radius:8px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s}
+.treat-btn:hover{border-color:var(--accent);background:var(--abg)}
+.treat-btn.active{border-color:var(--accent);background:var(--abg);color:var(--accent)}
+.treat-btn.transport{border-color:#4488ff;color:#4488ff}
+.treat-btn.transport:hover,.treat-btn.transport.active{background:rgba(68,136,255,.15)}
+.info-bar{display:flex;gap:12px;justify-content:center;font-size:11px;color:var(--text2);margin:6px 0;flex-wrap:wrap;font-family:'Outfit',sans-serif}
+.info-bar span{display:flex;align-items:center;gap:4px}
+.sev-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Battlefield Medic</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Rufaydah al-Aslamiyyah</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Triage wounded soldiers. Treat the most critical first.<br>Save lives like the first Muslim nurse!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Battlefield Medic</h1><span class="pill" id="scorePill">0 saved</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="easy">Easy</option><option value="medium" selected>Medium</option><option value="hard">Hard</option></select>
+    <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+    <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="status" id="status">Select a wounded soldier, treat, then transport!</div>
+<div class="game-area" id="gameArea">
+  <canvas id="canvas" width="560" height="380"></canvas>
+  <div class="info-bar"><span><span class="sev-dot" style="background:#ff4444"></span> Critical</span><span><span class="sev-dot" style="background:#ffaa00"></span> Moderate</span><span><span class="sev-dot" style="background:#44cc44"></span> Light</span></div>
+  <div class="treat-bar" id="treatBar">
+    <button class="treat-btn" data-treat="bandage">🩹 Bandage</button>
+    <button class="treat-btn" data-treat="splint">🦴 Splint</button>
+    <button class="treat-btn" data-treat="herbal">🌿 Herbal</button>
+    <button class="treat-btn transport" data-treat="transport">🏥 Transport</button>
+  </div>
+  <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+</div>
+<div class="score-row"><div class="score-item"><div class="score-label">Saved</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Lost</div><div class="score-num" id="lost">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">15</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Battlefield Medic v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Battlefield Medic?</summary><p>A triage game inspired by Rufaydah al-Aslamiyyah, the first Muslim nurse. Treat wounded soldiers on the battlefield by prioritizing the most critical cases first.</p></details>
+        <details class="help-item"><summary>How do I triage?</summary><p>Click on a wounded soldier to select them. Critical (red) patients should be treated first — they lose health fastest. Apply the correct treatment, then transport to the hospital tent.</p></details>
+        <details class="help-item"><summary>What treatments are available?</summary><p>Bandage (for bleeding wounds), Splint (for broken bones), and Herbal medicine (for fever/infection). Each patient needs a specific treatment shown by their icon.</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Choose difficulty: Easy (more time), Medium, or Hard (less time)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Press New Game to begin — 15 patients appear on the battlefield</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Click a wounded soldier to select them (prioritize red/critical first!)</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>Choose the correct treatment: Bandage, Splint, or Herbal medicine</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>After treating, click Transport to send them to the hospital tent</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Patients lose health over time — treat critical ones before they expire!</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Save as many as possible to achieve a high score</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>Rufaydah al-Aslamiyyah</h3><p>Rufaydah bint Sa'ad al-Aslamiyyah was the first female Muslim nurse. She set up field hospital tents near the battlefield during the time of Prophet Muhammad (peace be upon him) and treated wounded soldiers with herbal remedies and bandaging techniques. She is considered a pioneer of Islamic medicine and nursing.</p></div>
+        <div class="wiki-entry"><h3>Triage System</h3><p>Triage means sorting patients by severity. Critical (red) = life-threatening, treat immediately. Moderate (yellow) = serious but stable for a short time. Light (green) = minor injuries, can wait. Good medics prioritize the most critical cases first.</p></div>
+        <div class="wiki-entry"><h3>Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>Languages</h3><p>Trilingual: English, Francais, al-Arabiyyah. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>Sound</h3><p>Web Audio API — no files needed. Toggle with the speaker button.</p></div>
+        <div class="wiki-entry"><h3>Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+<script>
+/* ── Helpers: sidebar, lang, theme, sound, log ── */
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else if(t==="urgent"){o.frequency.value=440;o.type="sawtooth";g.gain.value=.03;g.gain.exponentialRampToValueAtTime(.001,n+.3);o.start(n);o.stop(n+.3);}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+/* ── Game State ── */
+const PATIENT_COUNT=15;
+const SEVERITIES=[
+  {name:"critical",color:"#ff4444",decay:1.8,icon:"🩸"},
+  {name:"moderate",color:"#ffaa00",decay:1.0,icon:"🤕"},
+  {name:"light",color:"#44cc44",decay:0.4,icon:"🩹"}
+];
+const TREATMENTS=[
+  {id:"bandage",label:"Bandage",icon:"🩹",desc:"bleeding"},
+  {id:"splint",label:"Splint",icon:"🦴",desc:"fracture"},
+  {id:"herbal",label:"Herbal",icon:"🌿",desc:"infection"}
+];
+const DIFF={easy:{timeScale:0.5,bonus:60},medium:{timeScale:1.0,bonus:40},hard:{timeScale:1.6,bonus:25}};
+let patients=[],selectedIdx=-1,activeTreat=null,saved=0,lost=0,gameOver=false,gameRunning=false;
+let timerInterval,timerSeconds=0,difficulty="medium";
+let canvas,ctx,cw,ch,animId;
+const TENT_X=20,TENT_Y=20,TENT_W=80,TENT_H=60;
+
+/* ── Patient Generation ── */
+function makePatients(){
+  patients=[];
+  const margin=60,tentSafe=120;
+  for(let i=0;i<PATIENT_COUNT;i++){
+    const sev=SEVERITIES[i<5?0:i<10?1:2];
+    const treat=TREATMENTS[Math.floor(Math.random()*TREATMENTS.length)];
+    let x,y,tries=0;
+    do{
+      x=margin+Math.random()*(cw-margin*2);
+      y=margin+Math.random()*(ch-margin*2);
+      tries++;
+    }while(x<tentSafe&&y<tentSafe+20&&tries<50);
+    patients.push({
+      x,y,sev,treat,
+      health:100,
+      treated:false,
+      transported:false,
+      dead:false,
+      transportAnim:0,
+      pulse:Math.random()*Math.PI*2
+    });
+  }
+  // shuffle so they aren't grouped by severity visually
+  for(let i=patients.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[patients[i],patients[j]]=[patients[j],patients[i]];}
+}
+
+/* ── Canvas Drawing ── */
+function resizeCanvas(){
+  const ga=document.getElementById("gameArea");
+  cw=Math.min(560,ga.clientWidth-24);
+  ch=380;
+  canvas.width=cw;canvas.height=ch;
+}
+
+function drawTent(){
+  // Rufaydah's hospital tent
+  ctx.save();
+  ctx.fillStyle="#8B6914";
+  ctx.beginPath();
+  ctx.moveTo(TENT_X,TENT_Y+TENT_H);
+  ctx.lineTo(TENT_X+TENT_W/2,TENT_Y);
+  ctx.lineTo(TENT_X+TENT_W,TENT_Y+TENT_H);
+  ctx.closePath();
+  ctx.fill();
+  ctx.strokeStyle="#6B4E10";ctx.lineWidth=2;ctx.stroke();
+  // cross/crescent
+  ctx.fillStyle="#fff";
+  ctx.font="bold 18px Outfit";ctx.textAlign="center";ctx.textBaseline="middle";
+  ctx.fillText("☪",TENT_X+TENT_W/2,TENT_Y+TENT_H*0.55);
+  // label
+  ctx.fillStyle="#ddd";ctx.font="8px 'IBM Plex Mono'";
+  ctx.fillText("Hospital",TENT_X+TENT_W/2,TENT_Y+TENT_H+10);
+  ctx.restore();
+}
+
+function drawPatient(p,i){
+  if(p.transported||p.dead)return;
+  const isSelected=i===selectedIdx;
+  const sz=isSelected?20:16;
+
+  // transport animation
+  if(p.transportAnim>0){
+    const t=p.transportAnim;
+    const tx=TENT_X+TENT_W/2;const ty=TENT_Y+TENT_H/2;
+    p.x+=(tx-p.x)*0.1;p.y+=(ty-p.y)*0.1;
+    p.transportAnim-=1;
+    if(p.transportAnim<=0){p.transported=true;saved++;updateScores();snd("ok");log("Saved! Patient transported to hospital","success");return;}
+  }
+
+  ctx.save();
+  // pulse glow for critical
+  p.pulse+=0.05;
+  if(p.sev.name==="critical"){
+    const glowR=sz+4+Math.sin(p.pulse)*3;
+    ctx.beginPath();ctx.arc(p.x,p.y,glowR,0,Math.PI*2);
+    ctx.fillStyle="rgba(255,68,68,0.15)";ctx.fill();
+  }
+
+  // body circle
+  ctx.beginPath();ctx.arc(p.x,p.y,sz,0,Math.PI*2);
+  const hp=p.health/100;
+  ctx.fillStyle=p.sev.color;ctx.globalAlpha=0.3+hp*0.7;
+  ctx.fill();
+  ctx.globalAlpha=1;
+  ctx.strokeStyle=isSelected?("#fff"):(p.sev.color);
+  ctx.lineWidth=isSelected?3:1.5;
+  ctx.stroke();
+
+  // health bar
+  const bw=sz*2,bh=4,bx=p.x-sz,by=p.y-sz-8;
+  ctx.fillStyle="rgba(0,0,0,0.5)";
+  ctx.fillRect(bx,by,bw,bh);
+  const hpColor=hp>0.5?"#44cc44":hp>0.25?"#ffaa00":"#ff4444";
+  ctx.fillStyle=hpColor;
+  ctx.fillRect(bx,by,bw*hp,bh);
+
+  // treatment need icon
+  ctx.font=(isSelected?"14":"11")+"px sans-serif";
+  ctx.textAlign="center";ctx.textBaseline="middle";
+  ctx.fillText(p.treat.icon,p.x,p.y-2);
+
+  // treated checkmark
+  if(p.treated){
+    ctx.fillStyle="#44ff44";ctx.font="bold 12px sans-serif";
+    ctx.fillText("✓",p.x+sz-2,p.y-sz+2);
+  }
+
+  // severity initial
+  ctx.fillStyle="#fff";ctx.font="bold 9px 'IBM Plex Mono'";
+  ctx.fillText(p.sev.name[0].toUpperCase(),p.x,p.y+sz+10);
+
+  ctx.restore();
+}
+
+function drawBattlefield(){
+  // ground
+  const cs=getComputedStyle(document.documentElement);
+  const bg2=cs.getPropertyValue("--bg2").trim()||"#0d1117";
+  const bg3=cs.getPropertyValue("--bg3").trim()||"#161b22";
+  ctx.fillStyle=bg2;ctx.fillRect(0,0,cw,ch);
+
+  // sand/ground texture
+  ctx.fillStyle=bg3;
+  for(let i=0;i<30;i++){
+    const rx=Math.sin(i*37.7)*cw/2+cw/2;
+    const ry=Math.cos(i*23.3)*ch/2+ch/2;
+    ctx.fillRect(rx,ry,Math.random()*40+10,2);
+  }
+
+  drawTent();
+  patients.forEach((p,i)=>drawPatient(p,i));
+
+  // game over overlay
+  if(gameOver){
+    ctx.fillStyle="rgba(0,0,0,0.6)";ctx.fillRect(0,0,cw,ch);
+    ctx.fillStyle="#fff";ctx.font="bold 28px Outfit";ctx.textAlign="center";ctx.textBaseline="middle";
+    ctx.fillText("Mission Complete",cw/2,ch/2-20);
+    ctx.font="16px Outfit";
+    ctx.fillText(saved+" / "+PATIENT_COUNT+" lives saved",cw/2,ch/2+15);
+    ctx.font="12px 'IBM Plex Mono'";ctx.fillStyle="#aaa";
+    ctx.fillText("Press New Game to play again",cw/2,ch/2+45);
+  }
+}
+
+/* ── Game Loop ── */
+function gameLoop(){
+  if(!gameRunning){drawBattlefield();return;}
+  const ds=DIFF[difficulty].timeScale;
+  let allDone=true;
+  patients.forEach(p=>{
+    if(p.transported||p.dead)return;
+    allDone=false;
+    if(p.transportAnim>0)return;
+    p.health-=p.sev.decay*ds*0.016*60/60; // ~1x per frame at 60fps
+    if(p.health<=0){
+      p.health=0;p.dead=true;lost++;
+      updateScores();snd("err");
+      log("Lost patient! ("+p.sev.name+", needed "+p.treat.label+")","error");
+    }
+  });
+  if(allDone&&!gameOver){endGame();}
+  drawBattlefield();
+  animId=requestAnimationFrame(gameLoop);
+}
+
+/* ── Click Handling ── */
+function onCanvasClick(e){
+  if(gameOver||!gameRunning)return;
+  const rect=canvas.getBoundingClientRect();
+  const scaleX=cw/rect.width,scaleY=ch/rect.height;
+  const mx=(e.clientX-rect.left)*scaleX;
+  const my=(e.clientY-rect.top)*scaleY;
+
+  // find nearest alive patient
+  let best=-1,bestDist=999;
+  patients.forEach((p,i)=>{
+    if(p.transported||p.dead||p.transportAnim>0)return;
+    const d=Math.hypot(p.x-mx,p.y-my);
+    if(d<30&&d<bestDist){bestDist=d;best=i;}
+  });
+  if(best>=0){
+    selectedIdx=best;
+    const p=patients[best];
+    snd("click");
+    document.getElementById("status").textContent="Selected: "+p.sev.name+" patient — needs "+p.treat.label+" ("+p.treat.desc+")";
+    document.getElementById("status").className="status";
+  }
+}
+
+/* ── Treatment Handling ── */
+function onTreat(treatId){
+  if(gameOver||!gameRunning)return;
+  if(selectedIdx<0){document.getElementById("status").textContent="Select a patient first!";snd("err");return;}
+  const p=patients[selectedIdx];
+  if(p.transported||p.dead)return;
+
+  if(treatId==="transport"){
+    if(!p.treated){
+      document.getElementById("status").textContent="Treat the patient before transporting!";
+      document.getElementById("status").className="status lose";
+      snd("err");return;
+    }
+    p.transportAnim=30;
+    snd("click");
+    document.getElementById("status").textContent="Transporting to Rufaydah's hospital tent...";
+    document.getElementById("status").className="status";
+    selectedIdx=-1;
+    return;
+  }
+
+  if(p.treated){
+    document.getElementById("status").textContent="Already treated! Click Transport.";
+    snd("click");return;
+  }
+
+  if(treatId===p.treat.id){
+    p.treated=true;
+    p.health=Math.min(100,p.health+DIFF[difficulty].bonus);
+    snd("ok");
+    log("Treated "+p.sev.name+" patient with "+p.treat.label,"success");
+    document.getElementById("status").textContent="Treatment applied! Now transport to hospital.";
+    document.getElementById("status").className="status win";
+  }else{
+    p.health=Math.max(0,p.health-10);
+    snd("err");
+    log("Wrong treatment! Patient needs "+p.treat.label,"error");
+    document.getElementById("status").textContent="Wrong treatment! This patient needs "+p.treat.label+".";
+    document.getElementById("status").className="status lose";
+  }
+}
+
+function setActiveTreatBtn(id){
+  document.querySelectorAll(".treat-btn").forEach(b=>{
+    b.classList.toggle("active",b.dataset.treat===id);
+  });
+}
+
+/* ── Score / Timer / End ── */
+function updateScores(){
+  document.getElementById("sc").textContent=saved;
+  document.getElementById("lost").textContent=lost;
+  document.getElementById("scorePill").textContent=saved+" saved";
+  document.getElementById("prog").style.width=((saved+lost)/PATIENT_COUNT*100)+"%";
+}
+
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+function endGame(){
+  gameOver=true;gameRunning=false;stopTimer();
+  cancelAnimationFrame(animId);
+  checkHS();
+  if(saved>=PATIENT_COUNT){
+    snd("win");
+    document.getElementById("status").textContent="All "+PATIENT_COUNT+" patients saved! Alhamdulillah!";
+    document.getElementById("status").className="status win";
+    log("ALL patients saved! Perfect score!","success");
+  }else{
+    snd("win");
+    document.getElementById("status").textContent="Mission complete: "+saved+"/"+PATIENT_COUNT+" saved.";
+    document.getElementById("status").className=saved>=10?"status win":"status";
+    log("Mission complete: "+saved+"/"+PATIENT_COUNT+" saved.","success");
+  }
+  drawBattlefield();
+}
+
+function setDiff(){difficulty=document.getElementById("diffSel").value;}
+
+function newGame(){
+  gameOver=false;gameRunning=true;saved=0;lost=0;selectedIdx=-1;activeTreat=null;
+  setActiveTreatBtn("");
+  resizeCanvas();
+  makePatients();
+  updateScores();
+  document.getElementById("tot").textContent=PATIENT_COUNT;
+  document.getElementById("status").textContent="Select a wounded soldier, treat, then transport!";
+  document.getElementById("status").className="status";
+  document.getElementById("logBox").innerHTML="";
+  log("New mission started — difficulty: "+difficulty);
+  log("Prioritize critical (red) patients first!");
+  startTimer();
+  cancelAnimationFrame(animId);
+  animId=requestAnimationFrame(gameLoop);
+}
+
+/* ── High Score ── */
+const HS_KEY="wdiy-hs-medic";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
+function checkHS(){
+  if(saved>0){
+    const pct=Math.round(saved/PATIENT_COUNT*100);
+    if(saveHS(pct)){log("NEW HIGH SCORE: "+pct+"%!","success");}
+  }
+}
+
+/* ── Init ── */
+document.addEventListener("DOMContentLoaded",()=>{
+  canvas=document.getElementById("canvas");
+  ctx=canvas.getContext("2d");
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
+  showHS();
+
+  // Canvas click
+  canvas.addEventListener("click",onCanvasClick);
+  canvas.addEventListener("touchend",e=>{e.preventDefault();const t=e.changedTouches[0];onCanvasClick({clientX:t.clientX,clientY:t.clientY});});
+
+  // Treatment buttons
+  document.querySelectorAll(".treat-btn").forEach(b=>{
+    b.addEventListener("click",()=>{
+      const tid=b.dataset.treat;
+      setActiveTreatBtn(tid);
+      onTreat(tid);
+    });
+  });
+
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";resizeCanvas();newGame();});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+  // Keyboard shortcuts
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Escape")closeHelp();
+    if(e.key==="1")onTreat("bandage");
+    if(e.key==="2")onTreat("splint");
+    if(e.key==="3")onTreat("herbal");
+    if(e.key==="4"||e.key==="t"||e.key==="T")onTreat("transport");
+    if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+  });
+
+  // Help tabs
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+
+  // Window resize
+  window.addEventListener("resize",()=>{if(gameRunning||gameOver){resizeCanvas();drawBattlefield();}});
+
+  // Draw initial state
+  resizeCanvas();
+  drawBattlefield();
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

@@ -1,0 +1,574 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Sandstorm — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.app.on~.back-link,.back-link{}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:600px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:4px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;position:relative;overflow:hidden}
+.game-area canvas{width:100%;border-radius:10px;display:block;cursor:pointer}
+.big-text{font-family:'Outfit',sans-serif;font-size:32px;font-weight:800;color:var(--heading);text-align:center}
+.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;cursor:pointer;transition:all .15s;min-width:50px}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.input-row{display:flex;gap:8px;align-items:center;justify-content:center}
+.input-row input{width:80px;padding:8px 12px;border-radius:8px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;text-align:center}
+.input-row input:focus{border-color:var(--accent);outline:none}
+.input-row button{padding:8px 16px;border-radius:8px;border:none;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden;margin:0 auto}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.grid-pick{display:grid;gap:8px;justify-content:center;margin:10px auto}
+.grid-pick.g2{grid-template-columns:repeat(2,1fr);max-width:200px}
+.grid-pick.g3{grid-template-columns:repeat(3,1fr);max-width:300px}
+.grid-pick.g4{grid-template-columns:repeat(4,1fr);max-width:360px}
+.pick-card{padding:14px 10px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;cursor:pointer;text-align:center;transition:all .15s}
+.pick-card:hover{border-color:var(--accent);background:var(--abg)}
+.pick-card.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.pick-card.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Sandstorm</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Desert Survival</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">A sandstorm hits your army on the march! Secure camels, protect soldiers, find shelter, and regroup your forces before time runs out.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>Sandstorm</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="60">Easy (60s)</option><option value="90" selected>Medium (90s)</option><option value="120">Hard (120s)</option></select>
+    <button id="startBtn">&#9654; New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">&#10067;</button>
+    <button id="soundBtn">&#128266;</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+    <div class="sw"><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div></div>
+<div class="status" id="status">Prepare for the sandstorm!</div>
+<div class="game-area" id="gameArea"><canvas id="cvs"></canvas></div>
+<div style="margin-bottom:8px"><div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">Saved</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total Units</div><div class="score-num" id="tot">0</div></div><div class="score-item"><div class="score-label">Phase</div><div class="score-num" id="phaseDisp" style="font-size:14px">--</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy &mdash; Sandstorm v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Sandstorm?</summary><p>A canvas-based survival simulation where your army faces a desert sandstorm. Secure camels, protect soldiers, find shelter, and regroup!</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser. Tap on camels, soldiers, and units to interact.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / &#1593;. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+        <details class="help-item"><summary>What are the game phases?</summary><p>Phase 1: Secure camels by clicking them. Phase 2: Distribute cloth to soldiers. Phase 3: Move scattered units to shelter behind dunes. Phase 4: After the storm, regroup your forces.</p></details>
+        <details class="help-item"><summary>What is the historical context?</summary><p>Desert sandstorms played significant roles in battles like Khandaq and Qadisiyyah, where Allah sent storms that helped the Muslim forces. This game teaches how armies managed these natural events.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Choose difficulty (storm duration: 60s, 90s, or 120s)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Press New Game to begin. The storm approaches!</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Phase 1 - CAMELS: Click loose camels to tie them down before the wind takes them</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>Phase 2 - CLOTH: Click soldiers without eye protection to distribute cloth</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Phase 3 - SHELTER: Drag scattered soldiers to the shelter zones behind dunes</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Phase 4 - REGROUP: Storm clears! Click scattered units to reform the army</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Score is based on how many units you saved. Try to beat your high score!</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>&#127919; Purpose</h3><p>Learn how Muslim armies survived desert sandstorms. Practice quick thinking and resource management under pressure.</p></div>
+        <div class="wiki-entry"><h3>&#127752; Historical Context</h3><p>At the Battle of the Trench (Khandaq), Allah sent a fierce wind against the confederate armies besieging Madinah. At Qadisiyyah, sandstorms played a role in the Muslim victory over the Sassanid Empire. These events show how natural phenomena were part of Allah's plan.</p></div>
+        <div class="wiki-entry"><h3>&#127912; Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>&#127760; Languages</h3><p>Trilingual: English, Fran&ccedil;ais, &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>&#128266; Sound</h3><p>Web Audio API &mdash; no files needed. Wind howling, success chimes, warning buzzes. Toggle with the sound button.</p></div>
+        <div class="wiki-entry"><h3>&#128274; Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div>
+</aside>
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const n=actx.currentTime;if(t==="ok"){const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.04;o.frequency.value=f;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);o.start(n+i*.12);o.stop(n+.2+i*.12);});}else if(t==="wind"){const buf=actx.createBuffer(1,actx.sampleRate*2,actx.sampleRate);const d=buf.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*.3;const src=actx.createBufferSource();src.buffer=buf;const flt=actx.createBiquadFilter();flt.type="lowpass";flt.frequency.value=400;const g=actx.createGain();g.gain.value=.04;src.connect(flt);flt.connect(g);g.connect(actx.destination);g.gain.exponentialRampToValueAtTime(.001,n+2);src.start(n);src.stop(n+2);}else{const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// ===== GAME ENGINE =====
+const cvs=document.getElementById("cvs");
+const ctx=cvs.getContext("2d");
+let W=560,H=400,dpr=1;
+function resize(){const ga=document.getElementById("gameArea");W=ga.clientWidth-8;H=Math.max(300,Math.min(400,W*0.7));dpr=window.devicePixelRatio||1;cvs.width=W*dpr;cvs.height=H*dpr;cvs.style.width=W+"px";cvs.style.height=H+"px";ctx.setTransform(dpr,0,0,dpr,0,0);}
+
+// Game state
+let stormDuration=90,stormTime=0,phase=0,gameRunning=false,gameOver=false;
+let camels=[],soldiers=[],units=[],shelterZones=[],sandParticles=[];
+let saved=0,totalUnits=0,dragging=null,dragOff={x:0,y:0};
+let windAngle=0,visibility=1,stormIntensity=0;
+let animId=null,lastTime=0,windSndTimer=0;
+
+// Dune landscape
+let dunes=[];
+function genDunes(){dunes=[];for(let i=0;i<6;i++){dunes.push({x:W*i/5-20,w:W/3+Math.random()*60,h:40+Math.random()*30,y:H*0.65+Math.random()*20});}}
+
+function genShelterZones(){shelterZones=[];for(let i=0;i<3;i++){const d=dunes[i*2]||dunes[i];if(d)shelterZones.push({x:d.x+d.w*0.3,y:d.y-5,w:d.w*0.4,h:40});}}
+
+function genCamels(n){camels=[];for(let i=0;i<n;i++){camels.push({x:40+Math.random()*(W-80),y:H*0.35+Math.random()*(H*0.25),secured:false,blown:0,emoji:"🐪"});}}
+
+function genSoldiers(n){soldiers=[];for(let i=0;i<n;i++){soldiers.push({x:30+Math.random()*(W-60),y:H*0.3+Math.random()*(H*0.35),protected:false,emoji:"🧑"});}}
+
+function genUnits(n){units=[];for(let i=0;i<n;i++){units.push({x:20+Math.random()*(W-40),y:H*0.25+Math.random()*(H*0.45),sheltered:false,regrouped:false,scattered:false,origX:W/2-60+Math.random()*120,origY:H*0.55+Math.random()*30,emoji:"⚔️"});}}
+
+function genSand(){sandParticles=[];for(let i=0;i<200;i++){sandParticles.push({x:Math.random()*W,y:Math.random()*H,speed:2+Math.random()*6,size:1+Math.random()*3,alpha:0.2+Math.random()*0.5});}}
+
+function setDiff(){stormDuration=parseInt(document.getElementById("diffSel").value);}
+
+function newGame(){
+  resize();
+  stormDuration=parseInt(document.getElementById("diffSel").value);
+  stormTime=0;phase=1;gameRunning=true;gameOver=false;
+  saved=0;dragging=null;visibility=1;stormIntensity=0;windAngle=0;
+  genDunes();genShelterZones();genSand();
+  const diff=stormDuration<=60?1:stormDuration<=90?2:3;
+  genCamels(3+diff*2);
+  genSoldiers(4+diff*2);
+  genUnits(5+diff*2);
+  totalUnits=camels.length+soldiers.length+units.length;
+  document.getElementById("sc").textContent="0";
+  document.getElementById("tot").textContent=totalUnits;
+  document.getElementById("scorePill").textContent="0 / "+totalUnits;
+  document.getElementById("phaseDisp").textContent="1-Camels";
+  document.getElementById("status").textContent="Phase 1: Click camels to tie them down!";
+  document.getElementById("status").className="status";
+  document.getElementById("prog").style.width="0%";
+  document.getElementById("logBox").innerHTML="";
+  log("Storm approaching! Secure the camels!","");
+  snd("wind");
+  startTimer();
+  lastTime=performance.now();
+  if(animId)cancelAnimationFrame(animId);
+  loop();
+}
+
+// Timer
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+// Phases
+function advancePhase(){
+  if(phase===1){
+    // Count secured camels
+    const sec=camels.filter(c=>c.secured).length;
+    saved+=sec;
+    log("Camels secured: "+sec+"/"+camels.length,sec===camels.length?"success":"error");
+    phase=2;
+    document.getElementById("phaseDisp").textContent="2-Cloth";
+    document.getElementById("status").textContent="Phase 2: Click soldiers to give them eye cloth!";
+    snd("ok");
+  }else if(phase===2){
+    const prot=soldiers.filter(s=>s.protected).length;
+    saved+=prot;
+    log("Soldiers protected: "+prot+"/"+soldiers.length,prot===soldiers.length?"success":"error");
+    phase=3;
+    // Scatter units
+    units.forEach(u=>{u.scattered=true;u.x=20+Math.random()*(W-40);u.y=H*0.2+Math.random()*(H*0.5);});
+    document.getElementById("phaseDisp").textContent="3-Shelter";
+    document.getElementById("status").textContent="Phase 3: Drag soldiers to shelter zones (yellow areas)!";
+    snd("ok");
+  }else if(phase===3){
+    const sh=units.filter(u=>u.sheltered).length;
+    saved+=sh;
+    log("Units sheltered: "+sh+"/"+units.length,sh===units.length?"success":"error");
+    phase=4;
+    // Storm clearing - scatter remaining
+    stormIntensity=0.2;
+    units.forEach(u=>{if(!u.sheltered){u.x=20+Math.random()*(W-40);u.y=H*0.2+Math.random()*(H*0.5);}});
+    document.getElementById("phaseDisp").textContent="4-Regroup";
+    document.getElementById("status").textContent="Phase 4: Storm clearing! Click units to regroup!";
+    snd("wind");
+  }
+  updateScore();
+}
+
+function endGame(){
+  gameRunning=false;gameOver=true;
+  stopTimer();
+  // Phase 4 count
+  if(phase===4){
+    const reg=units.filter(u=>u.regrouped||u.sheltered).length;
+    saved=camels.filter(c=>c.secured).length+soldiers.filter(s=>s.protected).length+reg;
+  }
+  updateScore();
+  const pct=Math.round(saved/totalUnits*100);
+  if(pct>=80){
+    document.getElementById("status").textContent="Victory! "+saved+"/"+totalUnits+" units saved ("+pct+"%)";
+    document.getElementById("status").className="status win";
+    snd("win");
+    log("Victory! Army survived the sandstorm!","success");
+  }else if(pct>=50){
+    document.getElementById("status").textContent="Partial success: "+saved+"/"+totalUnits+" ("+pct+"%)";
+    document.getElementById("status").className="status";
+    snd("ok");
+    log("Partial success. Many units lost.","error");
+  }else{
+    document.getElementById("status").textContent="Defeat: Only "+saved+"/"+totalUnits+" survived ("+pct+"%)";
+    document.getElementById("status").className="status lose";
+    snd("err");
+    log("The storm overwhelmed the army.","error");
+  }
+  checkHS();
+}
+
+function updateScore(){
+  document.getElementById("sc").textContent=saved;
+  document.getElementById("scorePill").textContent=saved+" / "+totalUnits;
+}
+
+// Main loop
+function loop(){
+  if(!gameRunning&&!gameOver){return;}
+  const now=performance.now();
+  const dt=Math.min((now-lastTime)/1000,0.05);
+  lastTime=now;
+  if(gameRunning){
+    stormTime+=dt;
+    const phaseDur=stormDuration/4;
+    const currentPhaseTime=stormTime-((phase-1)*phaseDur);
+    // Auto-advance phases by time
+    if(phase<4&&currentPhaseTime>=phaseDur){advancePhase();}
+    // End game
+    if(stormTime>=stormDuration){endGame();}
+    // Storm intensity
+    if(phase<=3){stormIntensity=Math.min(1,stormTime/(stormDuration*0.15));}
+    else{stormIntensity=Math.max(0,stormIntensity-dt*0.3);}
+    visibility=1-stormIntensity*0.6;
+    windAngle+=dt*2;
+    // Progress
+    const progPct=Math.min(100,(stormTime/stormDuration)*100);
+    document.getElementById("prog").style.width=progPct+"%";
+    // Wind sound
+    windSndTimer-=dt;
+    if(windSndTimer<=0&&stormIntensity>0.3){snd("wind");windSndTimer=3;}
+    // Blow unsecured camels
+    camels.forEach(c=>{if(!c.secured){c.blown+=dt*stormIntensity*30;c.x+=Math.sin(windAngle)*stormIntensity*dt*40;}});
+    // Move sand
+    sandParticles.forEach(p=>{p.x+=p.speed*stormIntensity*3;p.y+=Math.sin(p.x*0.01+windAngle)*0.5;if(p.x>W)p.x=-5;if(p.y<0)p.y=H;if(p.y>H)p.y=0;});
+  }
+  draw();
+  animId=requestAnimationFrame(loop);
+}
+
+function draw(){
+  // Sky gradient
+  const skyG=ctx.createLinearGradient(0,0,0,H);
+  skyG.addColorStop(0,"#c2956b");
+  skyG.addColorStop(0.5,"#d4a76a");
+  skyG.addColorStop(1,"#e8c47a");
+  ctx.fillStyle=skyG;
+  ctx.fillRect(0,0,W,H);
+
+  // Ground
+  ctx.fillStyle="#d4a050";
+  ctx.fillRect(0,H*0.65,W,H*0.35);
+
+  // Dunes
+  ctx.fillStyle="#c49040";
+  dunes.forEach(d=>{
+    ctx.beginPath();
+    ctx.moveTo(d.x,d.y+d.h);
+    ctx.quadraticCurveTo(d.x+d.w/2,d.y-d.h,d.x+d.w,d.y+d.h);
+    ctx.fill();
+  });
+
+  // Shelter zones (phase 3)
+  if(phase===3&&gameRunning){
+    ctx.globalAlpha=0.3+Math.sin(Date.now()*0.003)*0.1;
+    ctx.fillStyle="#ffcc00";
+    shelterZones.forEach(z=>{
+      ctx.fillRect(z.x,z.y,z.w,z.h);
+      ctx.strokeStyle="#ffcc00";
+      ctx.lineWidth=2;
+      ctx.setLineDash([4,4]);
+      ctx.strokeRect(z.x,z.y,z.w,z.h);
+      ctx.setLineDash([]);
+    });
+    ctx.globalAlpha=1;
+  }
+
+  // Camels (phase 1+)
+  ctx.font="24px serif";
+  camels.forEach(c=>{
+    if(c.blown>W)return;
+    ctx.globalAlpha=c.secured?1:0.6+Math.sin(Date.now()*0.005)*0.2;
+    ctx.fillText(c.secured?"🐪":"🐫",c.x+c.blown,c.y);
+    if(c.secured){
+      ctx.fillStyle="#00ff88";
+      ctx.font="10px Outfit,sans-serif";
+      ctx.fillText("TIED",c.x+2,c.y-4);
+      ctx.font="24px serif";
+    }
+    ctx.globalAlpha=1;
+  });
+
+  // Soldiers (phase 2+)
+  if(phase>=2||!gameRunning){
+    ctx.font="20px serif";
+    soldiers.forEach(s=>{
+      ctx.globalAlpha=s.protected?1:0.5+Math.sin(Date.now()*0.004)*0.2;
+      ctx.fillText(s.protected?"🧕":"🧑",s.x,s.y);
+      if(s.protected){
+        ctx.fillStyle="#00ff88";
+        ctx.font="9px Outfit,sans-serif";
+        ctx.fillText("CLOTH",s.x-2,s.y-3);
+        ctx.font="20px serif";
+      }
+      ctx.globalAlpha=1;
+    });
+  }
+
+  // Units (phase 3+)
+  if(phase>=3||!gameRunning){
+    ctx.font="18px serif";
+    units.forEach(u=>{
+      if(u.sheltered){ctx.globalAlpha=0.9;ctx.fillText("🛡️",u.x,u.y);}
+      else if(u.regrouped){ctx.globalAlpha=1;ctx.fillText("⚔️",u.x,u.y);}
+      else{ctx.globalAlpha=0.4+Math.sin(Date.now()*0.006+u.x)*0.2;ctx.fillText("👤",u.x,u.y);}
+      ctx.globalAlpha=1;
+    });
+  }
+
+  // Sand particles (storm)
+  if(stormIntensity>0){
+    sandParticles.forEach(p=>{
+      ctx.globalAlpha=p.alpha*stormIntensity;
+      ctx.fillStyle="#d4a050";
+      ctx.fillRect(p.x,p.y,p.size,p.size*0.5);
+    });
+    ctx.globalAlpha=1;
+  }
+
+  // Visibility overlay
+  if(stormIntensity>0.1){
+    ctx.fillStyle="rgba(180,140,80,"+stormIntensity*0.45+")";
+    ctx.fillRect(0,0,W,H);
+  }
+
+  // Phase indicator on canvas
+  ctx.fillStyle="rgba(0,0,0,0.5)";
+  ctx.fillRect(0,0,W,24);
+  ctx.fillStyle="#fff";
+  ctx.font="bold 12px Outfit,sans-serif";
+  const phaseTexts=["","Phase 1: Secure Camels!","Phase 2: Distribute Cloth!","Phase 3: Move to Shelter!","Phase 4: Regroup Forces!"];
+  ctx.fillText(phase>0&&phase<=4?phaseTexts[phase]:"",8,16);
+  // Timer on canvas
+  const remain=Math.max(0,Math.ceil(stormDuration-stormTime));
+  ctx.fillText("Storm: "+remain+"s",W-100,16);
+
+  // Game over overlay
+  if(gameOver){
+    ctx.fillStyle="rgba(0,0,0,0.55)";
+    ctx.fillRect(0,0,W,H);
+    ctx.fillStyle="#fff";
+    ctx.font="bold 28px Outfit,sans-serif";
+    ctx.textAlign="center";
+    const pct=Math.round(saved/totalUnits*100);
+    ctx.fillText("Storm Over!",W/2,H/2-30);
+    ctx.font="18px Outfit,sans-serif";
+    ctx.fillText(saved+"/"+totalUnits+" units saved ("+pct+"%)",W/2,H/2+10);
+    ctx.font="13px Outfit,sans-serif";
+    ctx.fillStyle="#ffcc00";
+    ctx.fillText("Storms at Khandaq & Qadisiyyah aided the Muslims",W/2,H/2+45);
+    ctx.fillStyle="#aaa";
+    ctx.fillText("Press New Game to try again",W/2,H/2+70);
+    ctx.textAlign="start";
+  }
+}
+
+// Input handling
+function getPos(e){
+  const r=cvs.getBoundingClientRect();
+  const t=e.touches?e.touches[0]||e.changedTouches[0]:e;
+  return{x:(t.clientX-r.left)*(W/r.width),y:(t.clientY-r.top)*(H/r.height)};
+}
+
+function hitTest(px,py,ox,oy,s){return px>=ox-4&&px<=ox+s+4&&py>=oy-s&&py<=oy+4;}
+
+cvs.addEventListener("mousedown",onDown);
+cvs.addEventListener("touchstart",function(e){e.preventDefault();onDown(e);},{passive:false});
+cvs.addEventListener("mousemove",onMove);
+cvs.addEventListener("touchmove",function(e){e.preventDefault();onMove(e);},{passive:false});
+cvs.addEventListener("mouseup",onUp);
+cvs.addEventListener("touchend",function(e){e.preventDefault();onUp(e);},{passive:false});
+
+function onDown(e){
+  if(!gameRunning)return;
+  const p=getPos(e);
+  // Phase 1: click camels
+  if(phase===1){
+    for(let c of camels){
+      if(!c.secured&&hitTest(p.x,p.y,c.x+c.blown,c.y,24)){
+        c.secured=true;snd("ok");
+        log("Camel secured!","success");
+        updateScore();
+        return;
+      }
+    }
+  }
+  // Phase 2: click soldiers
+  if(phase===2){
+    for(let s of soldiers){
+      if(!s.protected&&hitTest(p.x,p.y,s.x,s.y,20)){
+        s.protected=true;snd("ok");
+        log("Soldier protected with cloth!","success");
+        updateScore();
+        return;
+      }
+    }
+  }
+  // Phase 3: drag units to shelter
+  if(phase===3){
+    for(let u of units){
+      if(!u.sheltered&&hitTest(p.x,p.y,u.x,u.y,18)){
+        dragging=u;
+        dragOff.x=p.x-u.x;
+        dragOff.y=p.y-u.y;
+        return;
+      }
+    }
+  }
+  // Phase 4: click to regroup
+  if(phase===4){
+    for(let u of units){
+      if(!u.regrouped&&!u.sheltered&&hitTest(p.x,p.y,u.x,u.y,18)){
+        u.regrouped=true;
+        u.x=u.origX;u.y=u.origY;
+        snd("ok");
+        log("Unit regrouped!","success");
+        saved++;updateScore();
+        return;
+      }
+    }
+  }
+}
+
+function onMove(e){
+  if(!dragging)return;
+  const p=getPos(e);
+  dragging.x=p.x-dragOff.x;
+  dragging.y=p.y-dragOff.y;
+}
+
+function onUp(e){
+  if(!dragging)return;
+  // Check if in shelter zone
+  for(let z of shelterZones){
+    if(dragging.x>=z.x&&dragging.x<=z.x+z.w&&dragging.y>=z.y&&dragging.y<=z.y+z.h){
+      dragging.sheltered=true;
+      snd("ok");
+      log("Unit reached shelter!","success");
+      break;
+    }
+  }
+  dragging=null;
+}
+
+// High Score
+const HS_KEY="wdiy-hs-sandstorm";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">&#127942; '+best+'%</span>';}}
+function checkHS(){
+  if(totalUnits>0){
+    const pct=Math.round(saved/totalUnits*100);
+    if(saveHS(pct)){log("NEW HIGH SCORE: "+pct+"%!","success");}
+  }
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");resize();
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";resize();newGame();});
+  document.getElementById("startBtn").addEventListener("click",()=>{resize();newGame();});
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+  window.addEventListener("resize",()=>{if(document.getElementById("app").classList.contains("on"))resize();});
+  // Draw initial state
+  draw();
+
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+document.addEventListener("keydown",function(e){
+if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

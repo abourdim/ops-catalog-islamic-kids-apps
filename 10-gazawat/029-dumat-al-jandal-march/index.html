@@ -1,0 +1,562 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>March to Dumat al-Jandal — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.app.on~.back-link,.back-link{}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:600px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.big-text{font-family:'Outfit',sans-serif;font-size:32px;font-weight:800;color:var(--heading);text-align:center}
+.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .15s;min-width:50px}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.answer-btn.active{border-color:var(--accent);background:var(--abg);color:var(--accent)}
+.progress{width:100%;max-width:400px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:10px}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.resource-bars{width:100%;max-width:400px;display:flex;flex-direction:column;gap:6px}
+.res-bar{display:flex;align-items:center;gap:8px;font-size:11px}
+.res-bar label{width:70px;text-align:right;color:var(--text2);font-weight:600}
+.res-track{flex:1;height:12px;background:var(--bg3);border-radius:6px;overflow:hidden;border:1px solid var(--border)}
+.res-fill{height:100%;border-radius:6px;transition:width .4s}
+.res-fill.water{background:#4488ff}
+.res-fill.morale{background:var(--accent)}
+.res-fill.stamina{background:#ffaa22}
+.res-val{width:36px;font-size:10px;color:var(--text2);text-align:left}
+canvas{border-radius:10px;border:1px solid var(--border);cursor:pointer;max-width:100%;image-rendering:auto}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:100px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+.event-popup{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--bg2);border:2px solid var(--accent);border-radius:14px;padding:24px;max-width:360px;width:90%;z-index:150;box-shadow:var(--glow),0 8px 32px rgba(0,0,0,.4);animation:fadeUp .3s}
+.event-popup h3{font-family:'Outfit',sans-serif;color:var(--heading);font-size:16px;margin-bottom:8px}
+.event-popup p{font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:14px}
+.event-popup .answer-row{justify-content:center}
+.popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:149}
+.lesson-box{background:var(--abg);border:1px solid var(--abr);border-radius:10px;padding:14px;margin-bottom:12px;text-align:center}
+.lesson-box h3{font-family:'Outfit',sans-serif;color:var(--accent);font-size:14px;margin-bottom:6px}
+.lesson-box p{font-size:11px;color:var(--text2);line-height:1.6}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">March to Dumat al-Jandal</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">800km through the desert</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Lead 1000 Muslim soldiers on a 15-day expedition from Medina to Dumat al-Jandal. Manage water, pace, and morale to reach the Byzantine border before the tribal coalition assembles!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>March to Dumat al-Jandal</h1><span class="pill" id="scorePill">Day 0 / 15</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<div class="ctrl">
+  <select id="diffSel" onchange="setDiff()"><option value="easy">Easy</option><option value="normal" selected>Normal</option><option value="hard">Hard</option></select>
+  <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+  <button id="soundBtn">🔊</button>
+  <div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+  <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div>
+</div>
+<div class="status" id="status">Prepare your expedition!</div>
+
+<div class="game-area">
+  <canvas id="mapCanvas" width="560" height="260"></canvas>
+  <div class="resource-bars" id="resBars">
+    <div class="res-bar"><label>Water</label><div class="res-track"><div class="res-fill water" id="barWater" style="width:100%"></div></div><span class="res-val" id="valWater">100%</span></div>
+    <div class="res-bar"><label>Morale</label><div class="res-track"><div class="res-fill morale" id="barMorale" style="width:100%"></div></div><span class="res-val" id="valMorale">100%</span></div>
+    <div class="res-bar"><label>Stamina</label><div class="res-track"><div class="res-fill stamina" id="barStamina" style="width:100%"></div></div><span class="res-val" id="valStamina">100%</span></div>
+  </div>
+  <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+</div>
+
+<div class="answer-row" id="actionRow" style="margin-bottom:12px">
+  <button class="answer-btn" onclick="choosePace('fast')">🏃 Fast March</button>
+  <button class="answer-btn" onclick="choosePace('normal')">🚶 Normal Pace</button>
+  <button class="answer-btn" onclick="choosePace('cautious')">🛡 Cautious</button>
+  <button class="answer-btn" onclick="sendScouts()">🔭 Send Scouts</button>
+</div>
+
+<div class="score-row">
+  <div class="score-item"><div class="score-label">Day</div><div class="score-num" id="sc">0</div></div>
+  <div class="score-item"><div class="score-label">Distance</div><div class="score-num" id="tot">0km</div></div>
+  <div class="score-item"><div class="score-label">Soldiers</div><div class="score-num" id="soldiers">1000</div></div>
+</div>
+<div class="log-box" id="logBox"></div>
+<div id="lessonArea"></div>
+<div class="foot">Workshop-Diy — March to Dumat al-Jandal v1.0</div></div>
+
+<div id="popupOverlay" class="popup-overlay" style="display:none" onclick="closePopup()"></div>
+<div id="eventPopup" class="event-popup" style="display:none"></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+      <details class="help-item"><summary>What is this game?</summary><p>Lead the Muslim expedition from Medina to Dumat al-Jandal (modern Sakaka), 800km north through the desert. Manage resources and make decisions to reach the destination before the tribal coalition assembles.</p></details>
+      <details class="help-item"><summary>How do I win?</summary><p>Reach Dumat al-Jandal within 15 days with enough soldiers, water, morale, and stamina. The tribes scatter when they see the Muslim army — victory through deterrence!</p></details>
+      <details class="help-item"><summary>What do the pace options do?</summary><p>Fast March: covers more distance but drains stamina and water faster. Normal Pace: balanced speed and resource usage. Cautious: slower but conserves resources and avoids ambushes.</p></details>
+      <details class="help-item"><summary>What do scouts do?</summary><p>Scouts reveal what lies ahead — they may find oases, spot hostile tribes, or warn of sandstorms. Scouting costs one day but can save you from disaster.</p></details>
+      <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+      <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+      <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+      <div class="help-step"><span class="help-step-num">2</span><p>Choose difficulty: Easy gives more resources, Hard makes the desert harsher</p></div>
+      <div class="help-step"><span class="help-step-num">3</span><p>Each turn is one day. Choose your march pace or send scouts</p></div>
+      <div class="help-step"><span class="help-step-num">4</span><p>Watch your Water, Morale, and Stamina bars — if any hits zero, you lose soldiers</p></div>
+      <div class="help-step"><span class="help-step-num">5</span><p>Random events appear: oases, sandstorms, messengers, hostile tribes</p></div>
+      <div class="help-step"><span class="help-step-num">6</span><p>Reach 800km before day 15 to win. The tribes scatter at your arrival!</p></div>
+      <div class="help-step"><span class="help-step-num">7</span><p>Check the log for your expedition history</p></div>
+      <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+      <div class="wiki-entry"><h3>🎯 Historical Background</h3><p>The expedition to Dumat al-Jandal (5 AH / 626 CE) was one of the earliest long-range Muslim expeditions. Prophet Muhammad (peace be upon him) led 1000 soldiers 800km north from Medina toward the Syrian border to deter a hostile tribal coalition supported by the Byzantines.</p></div>
+      <div class="wiki-entry"><h3>🗺 Dumat al-Jandal</h3><p>Modern-day Sakaka in northern Saudi Arabia, near the border with Syria and Iraq. It was a strategic oasis town on trade routes linking Arabia to the Levant. The name means "Dumat of the Rocks."</p></div>
+      <div class="wiki-entry"><h3>⚔ Outcome</h3><p>When the Muslim army arrived, the hostile tribes scattered without fighting. Victory was achieved through deterrence — showing that Muslim reach extended all the way to the Byzantine border.</p></div>
+      <div class="wiki-entry"><h3>📖 Lesson</h3><p>Projection of power and long-range expeditions can achieve strategic goals without bloodshed. Preparation, logistics, and determination made this possible.</p></div>
+      <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+      <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Toggle with the sound button.</p></div>
+      <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+
+<script>
+// ── Helpers: sidebar, lang, theme, sound ──
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else if(t==="march"){o.frequency.value=330;o.type="triangle";g.gain.exponentialRampToValueAtTime(.001,n+.2);o.start(n);o.stop(n+.2);}else if(t==="event"){o.frequency.value=600;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.08);o.start(n);o.stop(n+.08);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.04;o2.frequency.value=800;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.16);o2.start(n+.08);o2.stop(n+.16);}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// ── Game state ──
+const TOTAL_DIST=800, MAX_DAYS=15;
+let day,dist,water,morale,stamina,soldierCount,gameOver,difficulty,scoutActive,timerInterval,timerSeconds;
+let coalitionDays; // days until coalition assembles (hidden timer)
+const WAYPOINTS=[
+  {name:"Medina",km:0},{name:"Al-Ula Oasis",km:120},{name:"Tabuk Plains",km:280},
+  {name:"Wadi Sirhan",km:450},{name:"Sakaka Outskirts",km:680},{name:"Dumat al-Jandal",km:800}
+];
+
+const EVENTS=[
+  {id:"oasis",title:"Oasis Found!",text:"Your scouts discovered a hidden oasis with fresh water and date palms.",effect:s=>{s.water=Math.min(100,s.water+25);s.morale=Math.min(100,s.morale+10);},log:"Oasis found! Water +25, Morale +10",type:"success"},
+  {id:"sandstorm",title:"Sandstorm!",text:"A violent sandstorm forces the army to halt and take shelter. Visibility is zero.",effect:s=>{s.stamina=Math.max(0,s.stamina-20);s.water=Math.max(0,s.water-10);},log:"Sandstorm! Stamina -20, Water -10",type:"error"},
+  {id:"hostile",title:"Hostile Tribe Spotted!",text:"Scouts report a hostile raiding party ahead. The army forms defensive ranks and the raiders retreat.",effect:s=>{s.morale=Math.max(0,s.morale-10);s.stamina=Math.max(0,s.stamina-10);},log:"Hostile tribe spotted! Morale -10, Stamina -10",type:"error"},
+  {id:"messenger",title:"Messenger from Medina",text:"A rider arrives with encouraging news from Medina. The soldiers are uplifted by the support of their brothers.",effect:s=>{s.morale=Math.min(100,s.morale+20);},log:"Messenger from Medina! Morale +20",type:"success"},
+  {id:"well",title:"Desert Well",text:"The army finds an old well with some water. Not much, but every drop counts in the desert.",effect:s=>{s.water=Math.min(100,s.water+12);},log:"Desert well found! Water +12",type:"success"},
+  {id:"heat",title:"Scorching Heat",text:"The midday sun is unbearable. Soldiers must rest during the hottest hours.",effect:s=>{s.water=Math.max(0,s.water-15);s.stamina=Math.max(0,s.stamina-10);},log:"Scorching heat! Water -15, Stamina -10",type:"error"},
+  {id:"caravan",title:"Friendly Caravan",text:"A trading caravan heading south shares food and water with the army. Alhamdulillah!",effect:s=>{s.water=Math.min(100,s.water+15);s.morale=Math.min(100,s.morale+10);s.stamina=Math.min(100,s.stamina+10);},log:"Friendly caravan! Water +15, Morale +10, Stamina +10",type:"success"},
+  {id:"night_march",title:"Cool Night Breeze",text:"A cool breeze makes marching at night pleasant. The army makes extra progress.",effect:s=>{s.stamina=Math.min(100,s.stamina+15);},log:"Cool night breeze! Stamina +15",type:"success"},
+  {id:"illness",title:"Illness Spreads",text:"Some soldiers fall ill from bad water. The army must slow down to care for the sick.",effect:s=>{s.soldierCount=Math.max(800,s.soldierCount-30);s.stamina=Math.max(0,s.stamina-10);},log:"Illness! Lost 30 soldiers, Stamina -10",type:"error"},
+  {id:"star_nav",title:"Clear Stars",text:"The night sky is crystal clear. The navigator uses the stars to find a shorter path.",effect:s=>{s.dist=Math.min(TOTAL_DIST,s.dist+20);},log:"Star navigation! Extra 20km gained",type:"success"}
+];
+
+function setDiff(){difficulty=document.getElementById("diffSel").value;}
+
+function initState(){
+  day=0;dist=0;gameOver=false;scoutActive=false;
+  difficulty=document.getElementById("diffSel").value;
+  const mod=difficulty==="easy"?1.2:difficulty==="hard"?0.8:1;
+  water=Math.round(100*mod);morale=Math.round(100*mod);stamina=Math.round(100*mod);
+  water=Math.min(100,water);morale=Math.min(100,morale);stamina=Math.min(100,stamina);
+  soldierCount=1000;
+  coalitionDays=difficulty==="easy"?17:difficulty==="hard"?13:15;
+}
+
+// ── Timer ──
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+// ── Canvas drawing ──
+function drawMap(){
+  const cv=document.getElementById("mapCanvas");if(!cv)return;
+  const W=cv.width,H=cv.height;
+  const ctx=cv.getContext("2d");
+  const cs=getComputedStyle(document.documentElement);
+  const bg=cs.getPropertyValue("--bg2").trim()||"#0d1117";
+  const border=cs.getPropertyValue("--border").trim()||"#21262d";
+  const text2=cs.getPropertyValue("--text2").trim()||"#8b949e";
+  const heading=cs.getPropertyValue("--heading").trim()||"#e6edf3";
+  const accent=cs.getPropertyValue("--accent").trim()||"#00ff88";
+  const bg3=cs.getPropertyValue("--bg3").trim()||"#161b22";
+
+  ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+
+  // Desert gradient
+  const grd=ctx.createLinearGradient(0,H*0.4,0,H);
+  grd.addColorStop(0,bg3);grd.addColorStop(1,bg);
+  ctx.fillStyle=grd;ctx.fillRect(0,H*0.35,W,H*0.65);
+
+  // Dunes
+  ctx.strokeStyle=border;ctx.lineWidth=1;
+  for(let i=0;i<6;i++){
+    ctx.beginPath();
+    const y=H*0.5+i*18;
+    ctx.moveTo(0,y);
+    for(let x=0;x<W;x+=40){ctx.quadraticCurveTo(x+10,y-8-Math.random()*6,x+20,y);ctx.quadraticCurveTo(x+30,y+8+Math.random()*6,x+40,y);}
+    ctx.stroke();
+  }
+
+  // Route line
+  const routeY=H*0.42;
+  const startX=40,endX=W-40;
+  ctx.setLineDash([6,4]);ctx.strokeStyle=text2;ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.moveTo(startX,routeY);ctx.lineTo(endX,routeY);ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Waypoints
+  WAYPOINTS.forEach(wp=>{
+    const x=startX+(endX-startX)*(wp.km/TOTAL_DIST);
+    ctx.fillStyle=wp.km<=dist?accent:border;
+    ctx.beginPath();ctx.arc(x,routeY,5,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle=wp.km<=dist?heading:text2;
+    ctx.font="9px 'Outfit',sans-serif";ctx.textAlign="center";
+    ctx.fillText(wp.name,x,routeY-14);
+    ctx.fillStyle=text2;ctx.font="8px 'IBM Plex Mono',monospace";
+    ctx.fillText(wp.km+"km",x,routeY+20);
+  });
+
+  // Army marker
+  const armyX=startX+(endX-startX)*(Math.min(dist,TOTAL_DIST)/TOTAL_DIST);
+  // Glow
+  ctx.shadowColor=accent;ctx.shadowBlur=12;
+  ctx.fillStyle=accent;ctx.beginPath();ctx.arc(armyX,routeY,8,0,Math.PI*2);ctx.fill();
+  ctx.shadowBlur=0;
+  // Flag on marker
+  ctx.fillStyle=heading;ctx.fillRect(armyX-1,routeY-20,2,16);
+  ctx.fillStyle=accent;ctx.beginPath();ctx.moveTo(armyX+1,routeY-20);ctx.lineTo(armyX+12,routeY-15);ctx.lineTo(armyX+1,routeY-10);ctx.fill();
+
+  // Info bar
+  ctx.fillStyle=heading;ctx.font="bold 11px 'Outfit',sans-serif";ctx.textAlign="left";
+  ctx.fillText("Day "+day+" / "+MAX_DAYS,10,18);
+  ctx.textAlign="right";
+  ctx.fillText(Math.min(dist,TOTAL_DIST)+" / "+TOTAL_DIST+" km",W-10,18);
+  ctx.textAlign="center";
+  ctx.fillStyle=accent;ctx.font="bold 12px 'Outfit',sans-serif";
+  ctx.fillText("Medina → Dumat al-Jandal",W/2,18);
+
+  // Soldiers icon
+  ctx.fillStyle=text2;ctx.font="10px 'IBM Plex Mono',monospace";ctx.textAlign="left";
+  ctx.fillText("⚔ "+soldierCount+" soldiers",10,H-10);
+  ctx.textAlign="right";
+  ctx.fillText("Coalition: "+(coalitionDays-day)+" days left",W-10,H-10);
+}
+
+function updateUI(){
+  document.getElementById("barWater").style.width=water+"%";
+  document.getElementById("valWater").textContent=water+"%";
+  document.getElementById("barMorale").style.width=morale+"%";
+  document.getElementById("valMorale").textContent=morale+"%";
+  document.getElementById("barStamina").style.width=stamina+"%";
+  document.getElementById("valStamina").textContent=stamina+"%";
+  document.getElementById("sc").textContent=day;
+  document.getElementById("tot").textContent=Math.min(dist,TOTAL_DIST)+"km";
+  document.getElementById("soldiers").textContent=soldierCount;
+  document.getElementById("scorePill").textContent="Day "+day+" / "+MAX_DAYS;
+  document.getElementById("prog").style.width=(dist/TOTAL_DIST*100)+"%";
+  // Color bars red if low
+  document.getElementById("barWater").style.background=water<=20?"#ff4444":"#4488ff";
+  document.getElementById("barMorale").style.background=morale<=20?"#ff4444":"";
+  document.getElementById("barStamina").style.background=stamina<=20?"#ff4444":"#ffaa22";
+  drawMap();
+}
+
+// ── Popup system ──
+function showPopup(title,text,choices){
+  snd("event");
+  const ol=document.getElementById("popupOverlay");
+  const pp=document.getElementById("eventPopup");
+  ol.style.display="block";
+  let html='<h3>'+title+'</h3><p>'+text+'</p><div class="answer-row">';
+  choices.forEach(c=>{
+    html+='<button class="answer-btn" onclick="popupChoice(\''+c.id+'\')">'+c.label+'</button>';
+  });
+  html+='</div>';
+  pp.innerHTML=html;pp.style.display="block";
+}
+function closePopup(){
+  document.getElementById("popupOverlay").style.display="none";
+  document.getElementById("eventPopup").style.display="none";
+}
+
+let pendingEventCallback=null;
+function popupChoice(id){
+  closePopup();
+  if(pendingEventCallback){pendingEventCallback(id);pendingEventCallback=null;}
+}
+
+// ── Core game logic ──
+function advanceDay(kmGained,waterCost,staminaCost,moraleDelta){
+  if(gameOver)return;
+  day++;
+  dist+=kmGained;
+  water=Math.max(0,Math.min(100,water-waterCost));
+  stamina=Math.max(0,Math.min(100,stamina-staminaCost));
+  morale=Math.max(0,Math.min(100,morale+moraleDelta));
+  snd("march");
+
+  // Attrition from low resources
+  if(water<=0){soldierCount=Math.max(500,soldierCount-50);log("No water! Lost 50 soldiers","error");morale=Math.max(0,morale-15);}
+  if(stamina<=0){soldierCount=Math.max(500,soldierCount-30);log("Exhausted! Lost 30 soldiers","error");morale=Math.max(0,morale-10);}
+  if(morale<=0){soldierCount=Math.max(500,soldierCount-20);log("Morale collapsed! Lost 20 soldiers","error");}
+
+  updateUI();
+
+  // Check win
+  if(dist>=TOTAL_DIST){
+    winGame();return;
+  }
+  // Check loss conditions
+  if(day>=coalitionDays){
+    loseGame("The tribal coalition has assembled. They are too strong now.");return;
+  }
+  if(day>=MAX_DAYS && dist<TOTAL_DIST){
+    loseGame("15 days have passed. The army could not reach Dumat al-Jandal in time.");return;
+  }
+  if(soldierCount<=500){
+    loseGame("Too many soldiers lost. The army must retreat to Medina.");return;
+  }
+
+  // Random event (40% chance)
+  if(Math.random()<0.4){
+    triggerRandomEvent();
+  }else{
+    enableActions();
+  }
+}
+
+function triggerRandomEvent(){
+  const ev=EVENTS[Math.floor(Math.random()*EVENTS.length)];
+  const state={water,morale,stamina,dist,soldierCount};
+  showPopup(ev.title,ev.text,[{id:"ok",label:"Continue"}]);
+  pendingEventCallback=function(){
+    ev.effect(state);
+    water=state.water;morale=state.morale;stamina=state.stamina;dist=state.dist;soldierCount=state.soldierCount;
+    log(ev.log,ev.type);
+    updateUI();
+    if(!gameOver)enableActions();
+  };
+}
+
+function enableActions(){
+  document.getElementById("actionRow").style.pointerEvents="auto";
+  document.getElementById("actionRow").style.opacity="1";
+  document.getElementById("status").textContent="Day "+day+" — Choose your action";
+  document.getElementById("status").className="status";
+}
+function disableActions(){
+  document.getElementById("actionRow").style.pointerEvents="none";
+  document.getElementById("actionRow").style.opacity="0.4";
+}
+
+function choosePace(pace){
+  if(gameOver)return;
+  disableActions();
+  const diffMod=difficulty==="easy"?0.8:difficulty==="hard"?1.3:1;
+  let km,wCost,sCost,mDelta;
+  if(pace==="fast"){
+    km=Math.round((65+Math.random()*20)*diffMod);
+    wCost=Math.round(12*diffMod);sCost=Math.round(15*diffMod);mDelta=-5;
+    log("Fast march! Covered "+km+"km","");
+    document.getElementById("status").textContent="Marching fast through the desert...";
+  }else if(pace==="cautious"){
+    km=Math.round((30+Math.random()*15)*diffMod);
+    wCost=Math.round(5*diffMod);sCost=Math.round(5*diffMod);mDelta=5;
+    log("Cautious advance. Covered "+km+"km","");
+    document.getElementById("status").textContent="Moving cautiously...";
+  }else{
+    km=Math.round((45+Math.random()*20)*diffMod);
+    wCost=Math.round(8*diffMod);sCost=Math.round(9*diffMod);mDelta=0;
+    log("Normal march. Covered "+km+"km","");
+    document.getElementById("status").textContent="Steady march northward...";
+  }
+  setTimeout(()=>advanceDay(km,wCost,sCost,mDelta),400);
+}
+
+function sendScouts(){
+  if(gameOver)return;
+  disableActions();
+  log("Scouts sent ahead...","");
+  document.getElementById("status").textContent="Scouts exploring the path ahead...";
+  scoutActive=true;
+
+  // Scouts always trigger a beneficial event or intel
+  const roll=Math.random();
+  setTimeout(()=>{
+    if(roll<0.4){
+      // Find oasis
+      showPopup("Scouts Report: Oasis Ahead!","Your scouts found an oasis just 10km ahead. The army can rest and refill water.",[{id:"go",label:"March to Oasis"}]);
+      pendingEventCallback=function(){
+        water=Math.min(100,water+30);morale=Math.min(100,morale+10);stamina=Math.min(100,stamina+10);
+        log("Oasis reached! Water +30, Morale +10, Stamina +10","success");
+        advanceDay(15,3,3,5);
+      };
+    }else if(roll<0.7){
+      // Spot danger
+      showPopup("Scouts Report: Hostile Riders!","Scouts spotted hostile riders on the main path. They recommend a detour through a safer route.",[{id:"detour",label:"Take Detour"},{id:"push",label:"Push Through"}]);
+      pendingEventCallback=function(choice){
+        if(choice==="detour"){
+          log("Detour taken — avoided ambush","success");
+          advanceDay(30,7,7,5);
+        }else{
+          log("Pushed through — minor skirmish","error");
+          morale=Math.max(0,morale-10);soldierCount=Math.max(500,soldierCount-15);
+          advanceDay(50,10,12,-5);
+        }
+      };
+    }else{
+      // Clear path
+      showPopup("Scouts Report: Clear Path","The path ahead is clear. Scouts found a shortcut through a dried wadi that saves half a day.",[{id:"ok",label:"Take the Shortcut"}]);
+      pendingEventCallback=function(){
+        log("Shortcut found! Extra distance gained","success");
+        advanceDay(60,7,8,5);
+      };
+    }
+  },600);
+}
+
+function winGame(){
+  gameOver=true;stopTimer();disableActions();snd("win");
+  const pct=Math.round((soldierCount/1000)*100);
+  const score=Math.round(pct*(1+(MAX_DAYS-day)*5/100)*(water+morale+stamina)/300);
+  document.getElementById("status").textContent="Victory! The tribes scatter!";
+  document.getElementById("status").className="status win";
+  log("VICTORY! Reached Dumat al-Jandal on day "+day+" with "+soldierCount+" soldiers!","success");
+
+  // Show lesson
+  document.getElementById("lessonArea").innerHTML='<div class="lesson-box"><h3>Victory Through Deterrence!</h3><p>When the Muslim army arrived at Dumat al-Jandal, the hostile tribes scattered without fighting. This expedition showed that the Muslim state could project power all the way to the Byzantine border — 800km from Medina. The strategic lesson: sometimes the best victory is the one achieved without bloodshed, through preparation and determination.</p></div>';
+
+  checkHS(score);
+}
+
+function loseGame(reason){
+  gameOver=true;stopTimer();disableActions();snd("err");
+  document.getElementById("status").textContent="Expedition Failed!";
+  document.getElementById("status").className="status lose";
+  log("FAILED: "+reason,"error");
+  document.getElementById("lessonArea").innerHTML='<div class="lesson-box"><h3>Expedition Failed</h3><p>'+reason+' The expedition required careful resource management across 800km of desert. Try again with a different strategy! Remember: the real expedition succeeded through careful planning and trust in Allah.</p></div>';
+}
+
+function newGame(){
+  startTimer();initState();
+  document.getElementById("logBox").innerHTML="";
+  document.getElementById("lessonArea").innerHTML="";
+  log("Expedition begins! 1000 soldiers march from Medina toward Dumat al-Jandal","success");
+  log("Difficulty: "+difficulty.charAt(0).toUpperCase()+difficulty.slice(1),"");
+  updateUI();enableActions();
+  document.getElementById("status").textContent="Day 0 — Choose your first action";
+  document.getElementById("status").className="status";
+  showHS();
+}
+
+// ── High Score ──
+const HS_KEY="wdiy-hs-dumat";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
+function checkHS(score){
+  if(score===undefined)return;
+  if(saveHS(score)){log("NEW HIGH SCORE: "+score+"!","success");}
+}
+
+// ── Init ──
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");setTimeout(drawMap,50);}));
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+
+  // Keyboard shortcuts
+  document.addEventListener("keydown",function(e){
+    if(e.key==="1")choosePace("fast");
+    if(e.key==="2")choosePace("normal");
+    if(e.key==="3")choosePace("cautious");
+    if(e.key==="4")sendScouts();
+    if(e.key==="Enter"){
+      const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();
+      const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();
+      // Close popup if open
+      const pp=document.getElementById("eventPopup");
+      if(pp&&pp.style.display==="block"){const btn=pp.querySelector(".answer-btn");if(btn)btn.click();}
+    }
+  });
+
+  disableActions();
+  drawMap();
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Islamic Rights — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:560px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.right-text{font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;color:var(--heading);text-align:center;line-height:1.5;padding:8px 16px;max-width:460px}
+.ref-box{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:11px;color:var(--text2);line-height:1.6;text-align:center;max-width:440px;display:none;animation:fadeUp .3s}
+.ref-box .ref-src{color:var(--accent);font-weight:600;display:block;margin-top:4px;font-size:10px}
+.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;cursor:pointer;transition:all .15s;min-width:50px}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.grid-pick{display:grid;gap:8px;justify-content:center;margin:10px auto;width:100%}
+.grid-pick.g2{grid-template-columns:repeat(2,1fr);max-width:320px}
+.grid-pick.g4{grid-template-columns:repeat(2,1fr);max-width:360px}
+.pick-card{padding:14px 10px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;cursor:pointer;text-align:center;transition:all .15s}
+.pick-card:hover{border-color:var(--accent);background:var(--abg)}
+.pick-card.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.pick-card.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Islamic Rights</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Who has this right in Islam?</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Learn about rights and responsibilities in Islam! Match each right to the correct category.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#x1f5a5;</button><button class="sw-btn" data-thm="midnight">&#x1f30c;</button><button class="sw-btn" data-thm="ember">&#x1f525;</button><button class="sw-btn" data-thm="phosphor">&#x1f49a;</button><button class="sw-btn" data-thm="signal">&#x1f4e1;</button><button class="sw-btn" data-thm="redshift">&#x1f534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xfe0f;</button><button class="sw-btn" data-thm="sand">&#x1f3dc;</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>Islamic Rights</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="10">Easy (10)</option><option value="15" selected>Medium (15)</option><option value="25">Hard (25)</option></select>
+    <button id="startBtn">&#9654; New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">&#10067;</button>
+    <button id="soundBtn">&#x1f50a;</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+    <div class="sw"><button class="sw-btn on" data-thm="terminal">&#x1f5a5;</button><button class="sw-btn" data-thm="midnight">&#x1f30c;</button><button class="sw-btn" data-thm="ember">&#x1f525;</button><button class="sw-btn" data-thm="phosphor">&#x1f49a;</button><button class="sw-btn" data-thm="signal">&#x1f4e1;</button><button class="sw-btn" data-thm="redshift">&#x1f534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xfe0f;</button><button class="sw-btn" data-thm="sand">&#x1f3dc;</button></div></div>
+<div class="status" id="status">Pick who has this right!</div>
+<div class="game-area">
+  <div class="right-text" id="question">?</div>
+  <div class="ref-box" id="refBox"><span id="refText"></span><span class="ref-src" id="refSrc"></span></div>
+  <div class="grid-pick g2" id="choices"></div>
+  <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+</div>
+<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy &mdash; Islamic Rights v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Islamic Rights?</summary><p>A game to learn about rights and responsibilities in Islam. Match each right or duty to the correct category: Parents, Neighbors, Children, Animals, Environment, Teachers, Friends, or The Poor.</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser &mdash; phone, tablet, laptop, desktop.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / &#1593;. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>What are the difficulty levels?</summary><p>Easy = 10 questions with obvious answers. Medium = 15 questions. Hard = 25 questions with subtle distinctions between categories.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Choose your difficulty (Easy, Medium, Hard)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Press &#9654; New Game to begin</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Read the right or responsibility shown</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>Pick the correct category from the 4 options</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>After a correct answer, read the reference from Quran or Hadith</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Watch your score and progress bar</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Press &#9654; New Game to play again or &larr; Catalog to go back</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>Purpose</h3><p>Teach Muslim kids about rights in Islam covering Parents, Neighbors, Children, Animals, Environment, Teachers, Friends, and The Poor.</p></div>
+        <div class="wiki-entry"><h3>Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>Languages</h3><p>Trilingual: English, Fran&ccedil;ais, &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>Sound</h3><p>Web Audio API &mdash; no files needed. Correct = rising tone, wrong = buzz, win = melody. Toggle with the sound button.</p></div>
+        <div class="wiki-entry"><h3>Sources</h3><p>Rights are derived from Quran verses and authentic Hadith collections (Bukhari, Muslim, Abu Dawud, Tirmidhi). References shown after each correct answer.</p></div>
+        <div class="wiki-entry"><h3>Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div>
+</aside>
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+const CATS=["Parents","Neighbors","Children","Animals","Environment","Teachers","Friends","The Poor"];
+const RIGHTS=[
+// Parents
+{r:"Obey and respect them",c:"Parents",ref:"And your Lord has decreed that you worship none but Him, and that you be dutiful to your parents.",src:"Quran 17:23",d:1},
+{r:"Don't raise your voice above theirs",c:"Parents",ref:"Say not to them a word of disrespect, nor shout at them.",src:"Quran 17:23",d:1},
+{r:"Pray for them after they pass away",c:"Parents",ref:"My Lord, have mercy upon them as they brought me up when I was small.",src:"Quran 17:24",d:2},
+{r:"Spend on them when they are in need",c:"Parents",ref:"The best of what you spend is what you spend on your family.",src:"Sahih Muslim",d:2},
+{r:"Seek their permission before traveling",c:"Parents",ref:"A man came to the Prophet asking permission for Jihad; he said: Are your parents alive? He said yes. He said: Then strive in their service.",src:"Bukhari & Muslim",d:3},
+{r:"Be patient with them in old age",c:"Parents",ref:"Whether one or both of them reach old age with you, say not to them a word of annoyance.",src:"Quran 17:23",d:1},
+{r:"Mother deserves your companionship three times more",c:"Parents",ref:"A man asked: Who is most deserving of my good companionship? He said: Your mother (three times), then your father.",src:"Bukhari & Muslim",d:3},
+
+// Neighbors
+{r:"Don't harm them even with bad smells from cooking",c:"Neighbors",ref:"He who believes in Allah and the Last Day, let him not harm his neighbor.",src:"Bukhari & Muslim",d:1},
+{r:"Check on them when they are sick",c:"Neighbors",ref:"The rights of the neighbor include: visiting them when sick, attending their funeral, and lending them if they need.",src:"Al-Tabarani",d:1},
+{r:"Share food with them",c:"Neighbors",ref:"O Abu Dharr, when you cook broth, increase the water and share with your neighbors.",src:"Sahih Muslim",d:2},
+{r:"Don't build higher to block their wind without permission",c:"Neighbors",ref:"He does not believe whose neighbor is not safe from his harm.",src:"Sahih Muslim",d:3},
+{r:"Congratulate them in happy times and console them in sadness",c:"Neighbors",ref:"Jibreel kept advising me to be good to the neighbor until I thought he would inherit from them.",src:"Bukhari & Muslim",d:2},
+
+// Children
+{r:"Give them a good name and education",c:"Children",ref:"It is enough sin for a person to neglect those who are under his care.",src:"Abu Dawud",d:1},
+{r:"Play with them and show affection",c:"Children",ref:"The Prophet kissed Al-Hasan. Al-Aqra said: I have ten children and never kissed one. The Prophet said: He who does not show mercy will not be shown mercy.",src:"Bukhari & Muslim",d:1},
+{r:"Treat them equally with gifts",c:"Children",ref:"Fear Allah and treat your children equally.",src:"Bukhari & Muslim",d:2},
+{r:"Teach them to pray at age seven",c:"Children",ref:"Teach your children to pray at age seven and discipline them for it at ten.",src:"Abu Dawud",d:2},
+{r:"Provide for their food, clothing, and shelter",c:"Children",ref:"It is enough sin for a person to withhold sustenance from those he is responsible for.",src:"Sahih Muslim",d:1},
+
+// Animals
+{r:"Provide them food and water",c:"Animals",ref:"A woman entered Hell because of a cat she tied up; she did not feed it nor let it eat from the earth.",src:"Bukhari & Muslim",d:1},
+{r:"Don't overload or overwork them",c:"Animals",ref:"The Prophet passed by a camel whose belly had shrunk. He said: Fear Allah regarding these animals.",src:"Abu Dawud",d:1},
+{r:"Don't use them as targets for practice",c:"Animals",ref:"The Prophet forbade using living creatures as targets.",src:"Bukhari & Muslim",d:2},
+{r:"Show mercy when slaughtering them",c:"Animals",ref:"Allah has prescribed excellence in everything; so when you slaughter, slaughter well, sharpen your blade.",src:"Sahih Muslim",d:2},
+{r:"A woman entered Paradise for giving a thirsty dog water",c:"Animals",ref:"A prostitute saw a dog panting near a well, so she filled her shoe and gave it water. She was forgiven for that.",src:"Bukhari & Muslim",d:3},
+
+// Environment
+{r:"Don't waste water even at a river",c:"Environment",ref:"The Prophet saw Sa'd performing wudu and said: What is this extravagance? Sa'd said: Is there extravagance in wudu? He said: Yes, even if you are at a flowing river.",src:"Ibn Majah",d:1},
+{r:"Plant trees and cultivate the earth",c:"Environment",ref:"If the Day of Judgment comes and one of you has a seedling in hand, let him plant it.",src:"Musnad Ahmad",d:2},
+{r:"Remove harmful things from the road",c:"Environment",ref:"Removing harm from the road is an act of charity.",src:"Bukhari & Muslim",d:1},
+{r:"Don't cut trees unnecessarily",c:"Environment",ref:"The Prophet forbade cutting trees in Madinah without reason.",src:"Abu Dawud",d:3},
+{r:"Keep public spaces clean",c:"Environment",ref:"Cleanliness is half of faith.",src:"Sahih Muslim",d:2},
+
+// Teachers
+{r:"Listen attentively and ask questions",c:"Teachers",ref:"The best of you are those who learn the Quran and teach it.",src:"Sahih Bukhari",d:1},
+{r:"Show them respect and honor",c:"Teachers",ref:"He is not one of us who does not show mercy to the young and respect to the elders.",src:"Tirmidhi",d:2},
+{r:"Be patient and not interrupt them",c:"Teachers",ref:"The angels lower their wings for the seeker of knowledge out of pleasure.",src:"Abu Dawud",d:2},
+{r:"Practice what they teach you",c:"Teachers",ref:"Convey from me, even if it is one verse.",src:"Sahih Bukhari",d:3},
+{r:"Make dua (supplication) for them",c:"Teachers",ref:"Whoever teaches someone knowledge, he will have the reward of the one who acts upon it.",src:"Ibn Majah",d:3},
+
+// Friends
+{r:"Keep their secrets",c:"Friends",ref:"The gatherings are a trust.",src:"Abu Dawud",d:1},
+{r:"Advise them sincerely when they are wrong",c:"Friends",ref:"Religion is sincere advice.",src:"Sahih Muslim",d:2},
+{r:"Greet them with salam when you meet",c:"Friends",ref:"You will not enter Paradise until you believe, and you will not believe until you love one another. Shall I tell you something that will make you love one another? Spread salam.",src:"Sahih Muslim",d:1},
+{r:"Visit them when they are ill",c:"Friends",ref:"Five rights of a Muslim over another: returning the greeting, visiting the sick, attending funerals, accepting invitations, and saying yarhamuk-Allah when they sneeze.",src:"Bukhari & Muslim",d:2},
+{r:"Make excuses for them when possible",c:"Friends",ref:"Make seventy excuses for your brother.",src:"Attributed to various scholars",d:3},
+{r:"Choose righteous companions",c:"Friends",ref:"A person is upon the religion of his close friend, so let each of you look at whom he befriends.",src:"Abu Dawud & Tirmidhi",d:3},
+
+// The Poor
+{r:"Give them from your wealth (Zakat)",c:"The Poor",ref:"And in their wealth there is a known right for the beggar and the deprived.",src:"Quran 70:24-25",d:1},
+{r:"Don't remind them of your charity",c:"The Poor",ref:"O you who believe, do not invalidate your charities with reminders of your generosity or injury.",src:"Quran 2:264",d:2},
+{r:"Feed them from the food you love",c:"The Poor",ref:"You will never attain righteousness until you spend from that which you love.",src:"Quran 3:92",d:2},
+{r:"Treat them with kindness, not contempt",c:"The Poor",ref:"He frowned and turned away because the blind man came to him.",src:"Quran 80:1-2",d:1},
+{r:"Help them find work or learn a trade",c:"The Poor",ref:"The upper hand (the giving) is better than the lower hand (the receiving).",src:"Bukhari & Muslim",d:3},
+{r:"Give charity secretly to protect their dignity",c:"The Poor",ref:"A charity given in secret extinguishes the wrath of the Lord.",src:"Tirmidhi",d:3}
+];
+
+let total=15,current=0,correct=0,ans,ansRef,ansSrc,locked=false;
+
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+let gamePool=[];
+function buildPool(){
+  const diff=total<=10?1:total<=15?2:3;
+  let pool=RIGHTS.filter(r=>r.d<=diff);
+  shuffle(pool);
+  if(pool.length<total){let extra=RIGHTS.slice();shuffle(extra);pool=pool.concat(extra);}
+  const seen=new Set();gamePool=[];
+  for(const r of pool){const k=r.r;if(!seen.has(k)){seen.add(k);gamePool.push(r);if(gamePool.length>=total)break;}}
+}
+
+function genQ(){
+  const item=gamePool[current];
+  const correctCat=item.c;
+  let opts=[correctCat];
+  let available=CATS.filter(c=>c!==correctCat);
+  shuffle(available);
+  while(opts.length<4&&available.length>0)opts.push(available.pop());
+  shuffle(opts);
+  return{text:item.r,ans:correctCat,opts:opts,ref:item.ref,src:item.src};
+}
+
+function setDiff(){total=parseInt(document.getElementById("diffSel").value);}
+
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+function newGame(){startTimer();total=document.getElementById("diffSel")?parseInt(document.getElementById("diffSel").value):15;current=0;correct=0;document.getElementById("sc").textContent="0";document.getElementById("tot").textContent="0";document.getElementById("scorePill").textContent="0 / 0";document.getElementById("refBox").style.display="none";buildPool();nextQ();}
+
+function nextQ(){if(current>=total){stopTimer();checkHS();snd("win");document.getElementById("status").textContent="Done! "+correct+"/"+total;document.getElementById("status").className="status win";log("Score: "+correct+"/"+total,"success");return;}locked=false;const q=genQ();document.getElementById("question").textContent=q.text;document.getElementById("refBox").style.display="none";ans=q.ans;ansRef=q.ref;ansSrc=q.src;const el=document.getElementById("choices");el.innerHTML="";q.opts.forEach((o,i)=>{const b=document.createElement("button");b.className="pick-card";b.textContent=o;b.setAttribute("data-idx",i+1);b.onclick=()=>pick(b,o);el.appendChild(b);});document.getElementById("status").textContent=(current+1)+"/"+total+" — Who has this right?";document.getElementById("status").className="status";document.getElementById("prog").style.width=(current/total*100)+"%";}
+
+function pick(btn,val){if(locked)return;locked=true;current++;if(String(val)===String(ans)){correct++;btn.classList.add("correct");snd("ok");log("Correct: "+ans,"success");document.getElementById("refBox").style.display="block";document.getElementById("refText").textContent=ansRef;document.getElementById("refSrc").textContent="— "+ansSrc;}else{btn.classList.add("wrong");snd("err");log("Wrong! Answer: "+ans,"error");document.querySelectorAll(".pick-card").forEach(b=>{if(b.textContent===ans)b.classList.add("correct");});document.getElementById("refBox").style.display="block";document.getElementById("refText").textContent=ansRef;document.getElementById("refSrc").textContent="— "+ansSrc;}document.getElementById("sc").textContent=correct;document.getElementById("tot").textContent=current;document.getElementById("scorePill").textContent=correct+" / "+current;document.getElementById("prog").style.width=(current/total*100)+"%";setTimeout(nextQ,2200);}
+
+// High Score
+const HS_KEY="wdiy-hs-rights-game";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">&#x1f3c6; '+best+'</span>';}}
+function checkHS(){
+  if(typeof correct!=="undefined"&&typeof total!=="undefined"&&current>=total){
+    const pct=Math.round(correct/total*100);
+    if(saveHS(pct)){log("NEW HIGH SCORE: "+pct+"%!","success");}
+  }
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\u{1f50a}":"\u{1f507}";});
+
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+// Keyboard shortcuts: 1-4 for answers, Enter for next
+document.addEventListener("keydown",function(e){
+if(e.key>="1"&&e.key<="4"){const btns=document.querySelectorAll(".pick-card");const i=parseInt(e.key)-1;if(btns[i])btns[i].click();}
+if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="\u{1f507}";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

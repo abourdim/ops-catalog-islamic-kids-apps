@@ -1,0 +1,532 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Arrow Rain — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.app.on~.back-link,.back-link{}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:700px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:12px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.canvas-wrap{width:100%;position:relative}
+.canvas-wrap canvas{width:100%;height:auto;display:block;border-radius:8px}
+.controls-row{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;width:100%}
+.ctrl-group{display:flex;flex-direction:column;align-items:center;gap:2px}
+.ctrl-group label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px}
+.ctrl-group input[type="range"]{width:120px;accent-color:var(--accent)}
+.ctrl-group .val{font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;color:var(--heading)}
+.btn-fire{padding:10px 28px;border-radius:8px;border:none;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:1px;text-transform:uppercase}
+.btn-fire:hover{opacity:.9}
+.btn-fire:disabled{opacity:.4;cursor:not-allowed}
+.wind-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Arrow Rain</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Gazawat</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Aim your bow, adjust angle &amp; power, and rain arrows on the shields!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Arrow Rain</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="easy">Easy</option><option value="medium" selected>Medium</option><option value="hard">Hard</option></select>
+    <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+    <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="status" id="status">Adjust angle &amp; power, then fire!</div>
+<div class="game-area">
+  <div class="canvas-wrap"><canvas id="gameCanvas" width="660" height="340"></canvas></div>
+  <div class="controls-row">
+    <div class="ctrl-group"><label>Angle</label><input type="range" id="angleSlider" min="5" max="85" value="45" step="1"><div class="val" id="angleVal">45&deg;</div></div>
+    <div class="ctrl-group"><label>Power</label><input type="range" id="powerSlider" min="1" max="10" value="5" step="1"><div class="val" id="powerVal">5</div></div>
+    <span class="wind-pill" id="windPill">Wind: 0</span>
+    <button class="btn-fire" id="fireBtn">🏹 Fire</button>
+  </div>
+  <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+</div>
+<div class="score-row"><div class="score-item"><div class="score-label">Hits</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Shots</div><div class="score-num" id="tot">0</div></div><div class="score-item"><div class="score-label">Round</div><div class="score-num" id="roundNum">0/5</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Arrow Rain v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Arrow Rain?</summary><p>A canvas archery physics game. Adjust your bow angle and power to arc arrows at shield targets placed at various distances. Learn about trajectory and the role of Muslim archers in early Islamic battles.</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+        <details class="help-item"><summary>What about wind?</summary><p>On Medium difficulty, a light wind blows. On Hard, the wind is stronger. Wind shifts the arrow left or right during flight. Easy mode has no wind.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Choose difficulty (Easy / Medium / Hard)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Press ▶ New Game to begin</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Drag the Angle slider (5-85 degrees) to set your arrow trajectory</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>Drag the Power slider (1-10) to control how hard you shoot</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Press 🏹 Fire (or Space) to launch the arrow</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Watch the trajectory arc — hitting near the target center scores more</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Complete all rounds. Your best percentage is saved as high score!</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>🏹 Muslim Archers at Badr &amp; Uhud</h3><p>At the Battle of Badr (2 AH / 624 CE), the Prophet Muhammad ﷺ positioned skilled archers strategically, helping the Muslim army achieve victory despite being outnumbered. At Uhud (3 AH / 625 CE), the Prophet ﷺ placed 50 archers on Mount Ainain to guard the rear. Their discipline was crucial — archery was a valued skill among the early Muslims. The Prophet ﷺ encouraged practicing archery, saying it is a source of strength.</p></div>
+        <div class="wiki-entry"><h3>🎯 Game Mechanics</h3><p>The arrow follows a parabolic arc based on projectile physics. Angle controls the launch direction, power controls initial speed. Gravity pulls the arrow down over time. On harder difficulties, wind adds a horizontal force, making shots more challenging.</p></div>
+        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Francais, العربية. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Whoosh for fire, thud for hit, buzz for miss, melody for win. Toggle with 🔊 button.</p></div>
+        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const n=actx.currentTime;if(t==="fire"){const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);o.type="sawtooth";o.frequency.setValueAtTime(300,n);o.frequency.exponentialRampToValueAtTime(80,n+.2);g.gain.setValueAtTime(.06,n);g.gain.exponentialRampToValueAtTime(.001,n+.25);o.start(n);o.stop(n+.25);}
+else if(t==="hit"){[523,784].forEach((f,i)=>{const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);o.type="sine";o.frequency.value=f;g.gain.setValueAtTime(.05,n+i*.06);g.gain.exponentialRampToValueAtTime(.001,n+.15+i*.06);o.start(n+i*.06);o.stop(n+.15+i*.06);});}
+else if(t==="miss"){const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);o.type="square";o.frequency.value=150;g.gain.setValueAtTime(.04,n);g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}
+else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);o.type="sine";o.frequency.value=f;g.gain.setValueAtTime(.04,n+i*.12);g.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);o.start(n+i*.12);o.stop(n+.2+i*.12);});}
+else{const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);o.type="sine";o.frequency.value=800;g.gain.setValueAtTime(.04,n);g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// === GAME STATE ===
+const canvas=document.getElementById("gameCanvas");
+const ctx=canvas.getContext("2d");
+let W=660,H=340;
+let difficulty="medium",totalRounds=5,currentRound=0,hits=0,shots=0;
+let targets=[],arrow=null,animId=null,firing=false;
+let wind=0,gravity=9.8;
+let bowX=50,bowY=0;
+
+function setDiff(){difficulty=document.getElementById("diffSel").value;}
+
+function getThemeColors(){
+  const s=getComputedStyle(document.documentElement);
+  return{bg:s.getPropertyValue("--bg").trim(),bg2:s.getPropertyValue("--bg2").trim(),bg3:s.getPropertyValue("--bg3").trim(),border:s.getPropertyValue("--border").trim(),text:s.getPropertyValue("--text").trim(),text2:s.getPropertyValue("--text2").trim(),text3:s.getPropertyValue("--text3").trim(),heading:s.getPropertyValue("--heading").trim(),accent:s.getPropertyValue("--accent").trim()};
+}
+
+function generateTargets(){
+  targets=[];
+  const count=difficulty==="easy"?3:difficulty==="medium"?4:5;
+  totalRounds=count+2;
+  const minX=180,maxX=W-60;
+  for(let i=0;i<count;i++){
+    const x=minX+((maxX-minX)/(count-1||1))*i+(Math.random()*30-15);
+    const w=difficulty==="easy"?40:difficulty==="medium"?32:24;
+    targets.push({x:Math.round(x),y:H-30,w:w,h:50,hit:false});
+  }
+}
+
+function generateWind(){
+  if(difficulty==="easy"){wind=0;}
+  else if(difficulty==="medium"){wind=(Math.random()*2-1)*1.5;}
+  else{wind=(Math.random()*2-1)*3.5;}
+  wind=Math.round(wind*10)/10;
+  const dir=wind>0?"→":"←";
+  document.getElementById("windPill").textContent="Wind: "+(wind===0?"0":Math.abs(wind).toFixed(1)+" "+dir);
+}
+
+function drawScene(){
+  const c=getThemeColors();
+  ctx.clearRect(0,0,W,H);
+  // Sky gradient
+  const skyGrad=ctx.createLinearGradient(0,0,0,H);
+  skyGrad.addColorStop(0,c.bg);
+  skyGrad.addColorStop(1,c.bg2);
+  ctx.fillStyle=skyGrad;
+  ctx.fillRect(0,0,W,H);
+  // Ground
+  ctx.fillStyle=c.bg3;
+  ctx.fillRect(0,H-20,W,20);
+  ctx.strokeStyle=c.border;
+  ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(0,H-20);ctx.lineTo(W,H-20);ctx.stroke();
+  // Distance markers
+  ctx.fillStyle=c.text3;
+  ctx.font="9px 'IBM Plex Mono',monospace";
+  ctx.textAlign="center";
+  for(let d=100;d<W;d+=100){
+    ctx.fillText(d+"m",d,H-8);
+    ctx.strokeStyle=c.border;
+    ctx.beginPath();ctx.moveTo(d,H-20);ctx.lineTo(d,H-16);ctx.stroke();
+  }
+  // Targets (shields)
+  targets.forEach(t=>{
+    if(t.hit){
+      ctx.globalAlpha=0.3;
+      ctx.fillStyle=c.text3;
+      ctx.fillRect(t.x-t.w/2,t.y-t.h,t.w,t.h);
+      ctx.globalAlpha=1;
+      ctx.fillStyle=c.accent;
+      ctx.font="16px serif";
+      ctx.textAlign="center";
+      ctx.fillText("✓",t.x,t.y-t.h/2+5);
+    } else {
+      // Shield body
+      ctx.fillStyle=c.bg3;
+      ctx.strokeStyle=c.accent;
+      ctx.lineWidth=2;
+      const sx=t.x-t.w/2,sy=t.y-t.h;
+      ctx.beginPath();
+      ctx.moveTo(sx+4,sy);
+      ctx.lineTo(sx+t.w-4,sy);
+      ctx.quadraticCurveTo(sx+t.w,sy,sx+t.w,sy+4);
+      ctx.lineTo(sx+t.w,sy+t.h-8);
+      ctx.quadraticCurveTo(sx+t.w,sy+t.h,t.x,sy+t.h+6);
+      ctx.quadraticCurveTo(sx,sy+t.h,sx,sy+t.h-8);
+      ctx.lineTo(sx,sy+4);
+      ctx.quadraticCurveTo(sx,sy,sx+4,sy);
+      ctx.closePath();
+      ctx.fill();ctx.stroke();
+      // Shield center
+      ctx.beginPath();
+      ctx.arc(t.x,t.y-t.h/2+3,t.w/4,0,Math.PI*2);
+      ctx.strokeStyle=c.accent;ctx.lineWidth=1;ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(t.x,t.y-t.h/2+3,3,0,Math.PI*2);
+      ctx.fillStyle=c.accent;ctx.fill();
+    }
+  });
+  // Bow
+  bowY=H-25;
+  const angle=parseInt(document.getElementById("angleSlider").value);
+  const rad=angle*Math.PI/180;
+  ctx.save();
+  ctx.translate(bowX,bowY);
+  // Bow arc
+  ctx.strokeStyle=c.accent;
+  ctx.lineWidth=3;
+  ctx.beginPath();
+  ctx.arc(0,0,22,-rad-0.4,-rad+0.4);
+  ctx.stroke();
+  // Bow string
+  ctx.strokeStyle=c.text2;
+  ctx.lineWidth=1;
+  ctx.beginPath();
+  const bEnd1X=22*Math.cos(-rad-0.4),bEnd1Y=22*Math.sin(-rad-0.4);
+  const bEnd2X=22*Math.cos(-rad+0.4),bEnd2Y=22*Math.sin(-rad+0.4);
+  ctx.moveTo(bEnd1X,bEnd1Y);ctx.lineTo(0,0);ctx.lineTo(bEnd2X,bEnd2Y);
+  ctx.stroke();
+  // Arrow preview on bow
+  if(!firing){
+    ctx.strokeStyle=c.heading;
+    ctx.lineWidth=2;
+    ctx.beginPath();
+    ctx.moveTo(0,0);
+    ctx.lineTo(Math.cos(-rad)*30,Math.sin(-rad)*30);
+    ctx.stroke();
+    // Arrowhead
+    const ax=Math.cos(-rad)*30,ay=Math.sin(-rad)*30;
+    ctx.fillStyle=c.heading;
+    ctx.beginPath();
+    ctx.moveTo(ax,ay);
+    ctx.lineTo(ax-Math.cos(-rad+0.3)*8,ay-Math.sin(-rad+0.3)*8);
+    ctx.lineTo(ax-Math.cos(-rad-0.3)*8,ay-Math.sin(-rad-0.3)*8);
+    ctx.closePath();ctx.fill();
+  }
+  ctx.restore();
+  // Trajectory preview (dotted)
+  if(!firing){
+    const power=parseInt(document.getElementById("powerSlider").value);
+    const vx=Math.cos(rad)*power*12;
+    const vy=-Math.sin(rad)*power*12;
+    ctx.setLineDash([3,5]);
+    ctx.strokeStyle=c.text3;
+    ctx.lineWidth=1;
+    ctx.beginPath();
+    let px=bowX,py=bowY,pvx=vx,pvy=vy;
+    ctx.moveTo(px,py);
+    for(let t=0;t<80;t++){
+      const dt=0.05;
+      px+=pvx*dt;
+      py+=pvy*dt;
+      pvy+=gravity*dt*6;
+      px+=wind*dt*2;
+      if(py>H-15||px>W+10||px<-10)break;
+      ctx.lineTo(px,py);
+    }
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+  // Wind arrow indicator
+  if(wind!==0){
+    const wy=20;
+    const wx=W/2;
+    ctx.strokeStyle=c.text2;
+    ctx.lineWidth=1.5;
+    ctx.beginPath();
+    ctx.moveTo(wx-wind*10,wy);
+    ctx.lineTo(wx+wind*10,wy);
+    ctx.stroke();
+    const tipX=wx+wind*10;
+    ctx.beginPath();
+    ctx.moveTo(tipX,wy);
+    ctx.lineTo(tipX-(wind>0?6:-6),wy-4);
+    ctx.lineTo(tipX-(wind>0?6:-6),wy+4);
+    ctx.closePath();
+    ctx.fillStyle=c.text2;
+    ctx.fill();
+    ctx.fillStyle=c.text3;
+    ctx.font="9px 'IBM Plex Mono',monospace";
+    ctx.textAlign="center";
+    ctx.fillText("WIND",wx,wy+14);
+  }
+}
+
+function fireArrow(){
+  if(firing||currentRound>=totalRounds)return;
+  firing=true;
+  shots++;
+  currentRound++;
+  document.getElementById("fireBtn").disabled=true;
+  const angle=parseInt(document.getElementById("angleSlider").value);
+  const power=parseInt(document.getElementById("powerSlider").value);
+  const rad=angle*Math.PI/180;
+  const speed=power*12;
+  arrow={x:bowX,y:bowY,vx:Math.cos(rad)*speed,vy:-Math.sin(rad)*speed,trail:[]};
+  snd("fire");
+  log("Arrow #"+shots+" fired: "+angle+"° power "+power+(wind!==0?" wind "+wind.toFixed(1):""));
+  animateArrow();
+}
+
+function animateArrow(){
+  if(!arrow)return;
+  const dt=0.05;
+  for(let i=0;i<3;i++){
+    arrow.trail.push({x:arrow.x,y:arrow.y});
+    if(arrow.trail.length>40)arrow.trail.shift();
+    arrow.x+=arrow.vx*dt;
+    arrow.y+=arrow.vy*dt;
+    arrow.vy+=gravity*dt*6;
+    arrow.x+=wind*dt*2;
+  }
+  drawScene();
+  // Draw trail
+  const c=getThemeColors();
+  if(arrow.trail.length>1){
+    ctx.strokeStyle=c.accent;
+    ctx.globalAlpha=0.3;
+    ctx.lineWidth=1.5;
+    ctx.beginPath();
+    ctx.moveTo(arrow.trail[0].x,arrow.trail[0].y);
+    arrow.trail.forEach(p=>ctx.lineTo(p.x,p.y));
+    ctx.stroke();
+    ctx.globalAlpha=1;
+  }
+  // Draw flying arrow
+  const aRad=Math.atan2(arrow.vy,arrow.vx);
+  ctx.save();
+  ctx.translate(arrow.x,arrow.y);
+  ctx.rotate(aRad);
+  ctx.strokeStyle=c.heading;
+  ctx.lineWidth=2;
+  ctx.beginPath();ctx.moveTo(-18,0);ctx.lineTo(0,0);ctx.stroke();
+  ctx.fillStyle=c.heading;
+  ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(-6,-3);ctx.lineTo(-6,3);ctx.closePath();ctx.fill();
+  // Fletching
+  ctx.strokeStyle=c.accent;
+  ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(-16,-3);ctx.lineTo(-18,0);ctx.lineTo(-16,3);ctx.stroke();
+  ctx.restore();
+  // Check collision with targets
+  let hitTarget=false;
+  targets.forEach(t=>{
+    if(!t.hit&&arrow.x>=t.x-t.w/2-5&&arrow.x<=t.x+t.w/2+5&&arrow.y>=t.y-t.h-5&&arrow.y<=t.y+5){
+      t.hit=true;hitTarget=true;
+      const dist=Math.abs(arrow.x-t.x)+Math.abs(arrow.y-(t.y-t.h/2));
+      const acc=Math.max(0,100-Math.round(dist*2));
+      hits++;
+      snd("hit");
+      log("HIT! Shield at "+Math.round(t.x)+"m (accuracy "+acc+"%)","success");
+      document.getElementById("status").textContent="🎯 Hit! Accuracy: "+acc+"%";
+      document.getElementById("status").className="status win";
+    }
+  });
+  // Check ground or out of bounds
+  if(arrow.y>H-15||arrow.x>W+20||arrow.x<-20||hitTarget){
+    if(!hitTarget){
+      snd("miss");
+      log("Miss — arrow landed at "+Math.round(arrow.x)+"m","error");
+      document.getElementById("status").textContent="💨 Missed!";
+      document.getElementById("status").className="status lose";
+    }
+    arrow=null;firing=false;
+    document.getElementById("fireBtn").disabled=false;
+    updateUI();
+    if(currentRound>=totalRounds)endGame();
+    else{
+      generateWind();
+      setTimeout(()=>{drawScene();},300);
+    }
+    return;
+  }
+  animId=requestAnimationFrame(animateArrow);
+}
+
+function updateUI(){
+  document.getElementById("sc").textContent=hits;
+  document.getElementById("tot").textContent=shots;
+  document.getElementById("roundNum").textContent=currentRound+"/"+totalRounds;
+  document.getElementById("scorePill").textContent=hits+" / "+shots;
+  document.getElementById("prog").style.width=(currentRound/totalRounds*100)+"%";
+}
+
+function endGame(){
+  stopTimer();
+  const pct=totalRounds>0?Math.round(hits/totalRounds*100):0;
+  const allHit=targets.every(t=>t.hit);
+  if(allHit){
+    document.getElementById("status").textContent="🏆 All shields destroyed! "+pct+"% accuracy!";
+    document.getElementById("status").className="status win";
+    snd("win");
+    log("🏆 All shields destroyed! Score: "+pct+"%","success");
+  } else {
+    document.getElementById("status").textContent="Done! Hits: "+hits+"/"+totalRounds+" ("+pct+"%)";
+    document.getElementById("status").className="status";
+    log("Finished: "+hits+"/"+totalRounds+" hits ("+pct+"%)");
+  }
+  checkHS();
+}
+
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+function newGame(){
+  if(animId)cancelAnimationFrame(animId);
+  arrow=null;firing=false;
+  startTimer();
+  difficulty=document.getElementById("diffSel").value;
+  currentRound=0;hits=0;shots=0;
+  generateTargets();
+  generateWind();
+  document.getElementById("fireBtn").disabled=false;
+  document.getElementById("status").textContent="Adjust angle & power, then fire!";
+  document.getElementById("status").className="status";
+  updateUI();
+  drawScene();
+  log("New game started — "+difficulty+" difficulty, "+totalRounds+" rounds");
+}
+
+// High Score
+const HS_KEY="wdiy-hs-arrow-rain";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'%</span>';}}
+function checkHS(){
+  if(currentRound>=totalRounds&&totalRounds>0){
+    const pct=Math.round(hits/totalRounds*100);
+    if(saveHS(pct)){log("🏆 NEW HIGH SCORE: "+pct+"%!","success");}
+    showHS();
+  }
+}
+
+// Slider live updates
+document.getElementById("angleSlider").addEventListener("input",function(){
+  document.getElementById("angleVal").textContent=this.value+"°";
+  if(!firing)drawScene();
+});
+document.getElementById("powerSlider").addEventListener("input",function(){
+  document.getElementById("powerVal").textContent=this.value;
+  if(!firing)drawScene();
+});
+
+document.addEventListener("DOMContentLoaded",function(){
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
+  document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");drawScene();});});
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("fireBtn").addEventListener("click",fireArrow);
+  document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+// Keyboard shortcuts
+document.addEventListener("keydown",function(e){
+  if(e.key===" "||e.key==="Spacebar"){e.preventDefault();fireArrow();}
+  if(e.key==="ArrowUp"){const s=document.getElementById("angleSlider");s.value=Math.min(85,parseInt(s.value)+2);s.dispatchEvent(new Event("input"));}
+  if(e.key==="ArrowDown"){const s=document.getElementById("angleSlider");s.value=Math.max(5,parseInt(s.value)-2);s.dispatchEvent(new Event("input"));}
+  if(e.key==="ArrowRight"){const s=document.getElementById("powerSlider");s.value=Math.min(10,parseInt(s.value)+1);s.dispatchEvent(new Event("input"));}
+  if(e.key==="ArrowLeft"){const s=document.getElementById("powerSlider");s.value=Math.max(1,parseInt(s.value)-1);s.dispatchEvent(new Event("input"));}
+  if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

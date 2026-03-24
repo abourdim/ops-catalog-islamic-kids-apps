@@ -1,0 +1,579 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Saladin's Spies — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:900px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative}
+.big-text{font-family:'Outfit',sans-serif;font-size:32px;font-weight:800;color:var(--heading);text-align:center}
+.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .15s;min-width:50px}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+canvas{border-radius:8px;cursor:crosshair;max-width:100%;touch-action:none}
+.spy-tray{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:8px 0}
+.spy-slot{width:36px;height:36px;border-radius:50%;border:2px solid var(--border);background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:16px;cursor:grab;user-select:none;transition:all .15s}
+.spy-slot.used{opacity:.35;cursor:default}
+.spy-slot.active{border-color:var(--accent);box-shadow:0 0 8px var(--accent)}
+.intel-bar{width:100%;max-width:400px;height:12px;background:var(--bg3);border-radius:6px;overflow:hidden;position:relative}
+.intel-fill{height:100%;background:linear-gradient(90deg,var(--accent),#ffd700);border-radius:6px;transition:width .4s}
+.intel-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:var(--bg);mix-blend-mode:difference}
+.phase-label{font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:2px}
+.detection-warn{color:#ff4444;font-size:11px;font-weight:600;animation:pulse 1s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.report-card{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:11px;color:var(--text);line-height:1.7;max-width:400px;width:100%;text-align:left}
+.report-card h3{font-family:'Outfit',sans-serif;font-size:13px;color:var(--heading);margin-bottom:4px}
+.report-card .intel-type{color:var(--accent);font-weight:600}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Saladin's Spies</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Intelligence Network</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Place spies across the Crusader states. Gather intel. Plan the victory at Hattin. Knowledge is power!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Saladin's Spies</h1><span class="pill" id="scorePill">0</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="easy">Easy</option><option value="medium" selected>Medium</option><option value="hard">Hard</option></select>
+<button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+<button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="status" id="status">Place your spies wisely across the map!</div>
+<div class="game-area" id="gameArea">
+<div class="phase-label" id="phaseLabel">DEPLOYMENT PHASE</div>
+<canvas id="mapCanvas" width="760" height="500"></canvas>
+<div class="spy-tray" id="spyTray"></div>
+<div class="intel-bar" id="intelBarWrap" style="display:none"><div class="intel-fill" id="intelFill" style="width:0%"></div><div class="intel-label" id="intelLabel">Intel: 0%</div></div>
+<div id="detectionWarn" class="detection-warn" style="display:none">⚠ HIGH DETECTION RISK!</div>
+<div id="reportArea" style="display:none;width:100%"></div>
+<div id="quizArea" style="display:none;width:100%;text-align:center"></div>
+<div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+</div>
+<div class="score-row"><div class="score-item"><div class="score-label">Intel</div><div class="score-num" id="sc">0%</div></div><div class="score-item"><div class="score-label">Battle Score</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Saladin's Spies v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Saladin's Spies?</summary><p>A strategy intelligence game where you deploy spy agents across the Crusader states to gather intelligence for Saladin's campaign leading to the Battle of Hattin (1187 CE).</p></details>
+        <details class="help-item"><summary>How do I place spies?</summary><p>Click on a spy in the tray below the map, then click on a city on the map to deploy them there. Each spy gathers different types of intel from the city they are placed in.</p></details>
+        <details class="help-item"><summary>What is detection risk?</summary><p>Placing too many spies in one region increases the chance of detection. If detected, you lose intel from that area. Spread your spies wisely across all three Crusader states.</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Choose your difficulty level (Easy/Medium/Hard)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>DEPLOYMENT: Click a spy in the tray, then click a city on the map to place them</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Spread spies across all three Crusader states — avoid clustering in one area</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>GATHERING: Watch your spies collect intel reports over time</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>QUIZ: Answer questions about the enemy based on gathered intelligence</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Score well to earn a high Battle of Hattin score!</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Learn about the importance of intelligence and preparation in Saladin's campaign. Knowledge is power — preparation wins wars.</p></div>
+        <div class="wiki-entry"><h3>🗺 The Crusader States</h3><p>Kingdom of Jerusalem, County of Tripoli, and Principality of Antioch — the three main Crusader territories in the Levant during the 12th century.</p></div>
+        <div class="wiki-entry"><h3>⚔ Battle of Hattin</h3><p>In 1187 CE, Saladin's well-prepared army decisively defeated the Crusader forces at the Horns of Hattin, leading to the liberation of Jerusalem.</p></div>
+        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Francais, العربية. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Toggle with the sound button.</p></div>
+        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else if(t==="place"){o.frequency.value=440;o.type="triangle";g.gain.exponentialRampToValueAtTime(.001,n+.08);o.start(n);o.stop(n+.08);}else if(t==="alert"){o.frequency.value=350;o.type="sawtooth";g.gain.value=.03;g.gain.exponentialRampToValueAtTime(.001,n+.3);o.start(n);o.stop(n+.3);}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// ============ GAME STATE ============
+const HS_KEY="wdiy-hs-saladin-spies";
+let difficulty="medium",phase="deploy",selectedSpy=-1,totalIntel=0,battleScore=0;
+let spies=[],placedSpies=[],intelReports=[],quizAnswers=[];
+let timerInterval,timerSeconds=0;
+let gatherTick=0,gatherInterval;
+
+// Map regions & cities
+const REGIONS=[
+  {name:"Principality of Antioch",abbr:"Antioch",color:"#cc4444",cx:380,cy:80,rx:170,ry:70},
+  {name:"County of Tripoli",abbr:"Tripoli",color:"#ccaa22",cx:300,cy:200,rx:130,ry:55},
+  {name:"Kingdom of Jerusalem",abbr:"Jerusalem",color:"#4488cc",cx:340,cy:370,rx:180,ry:110}
+];
+const CITIES=[
+  {name:"Antioch",x:380,y:55,region:0,troops:0,supply:0,politics:0,weakness:0},
+  {name:"Aleppo Approach",x:490,y:75,region:0,troops:0,supply:0,politics:0,weakness:0},
+  {name:"Latakia",x:280,y:95,region:0,troops:0,supply:0,politics:0,weakness:0},
+  {name:"Tripoli",x:270,y:185,region:1,troops:0,supply:0,politics:0,weakness:0},
+  {name:"Tartus",x:240,y:220,region:1,troops:0,supply:0,politics:0,weakness:0},
+  {name:"Krak des Chevaliers",x:350,y:210,region:1,troops:0,supply:0,politics:0,weakness:0},
+  {name:"Jerusalem",x:370,y:410,region:2,troops:0,supply:0,politics:0,weakness:0},
+  {name:"Acre",x:280,y:300,region:2,troops:0,supply:0,politics:0,weakness:0},
+  {name:"Jaffa",x:270,y:370,region:2,troops:0,supply:0,politics:0,weakness:0},
+  {name:"Tiberias",x:370,y:310,region:2,troops:0,supply:0,politics:0,weakness:0},
+  {name:"Ascalon",x:300,y:440,region:2,troops:0,supply:0,politics:0,weakness:0},
+  {name:"Kerak",x:450,y:430,region:2,troops:0,supply:0,politics:0,weakness:0}
+];
+
+// Ground truth for each game (randomized)
+let groundTruth={mainArmy:"",weakestFort:"",united:false,supplyRoute:"",bigThreat:""};
+
+const DIFF_CFG={easy:{spyCount:6,detectThreshold:3,gatherSpeed:3,quizCount:4},medium:{spyCount:5,detectThreshold:2,gatherSpeed:5,quizCount:5},hard:{spyCount:4,detectThreshold:2,gatherSpeed:7,quizCount:6}};
+
+function setDiff(){difficulty=document.getElementById("diffSel").value;}
+function cfg(){return DIFF_CFG[difficulty];}
+
+// ============ CANVAS DRAWING ============
+const canvas=document.getElementById("mapCanvas");
+const ctx=canvas.getContext("2d");
+let cW=760,cH=500,scale=1;
+
+function resizeCanvas(){
+  const parent=canvas.parentElement;
+  const maxW=parent.clientWidth-24;
+  if(maxW<cW){scale=maxW/cW;canvas.style.width=maxW+"px";canvas.style.height=(cH*scale)+"px";}
+  else{scale=1;canvas.style.width=cW+"px";canvas.style.height=cH+"px";}
+}
+
+function getAccentColor(){return getComputedStyle(document.documentElement).getPropertyValue("--accent").trim()||"#00ff88";}
+function getBg(){return getComputedStyle(document.documentElement).getPropertyValue("--bg2").trim()||"#0d1117";}
+function getBorder(){return getComputedStyle(document.documentElement).getPropertyValue("--border").trim()||"#21262d";}
+function getTextCol(){return getComputedStyle(document.documentElement).getPropertyValue("--text").trim()||"#c9d1d9";}
+function getHeadCol(){return getComputedStyle(document.documentElement).getPropertyValue("--heading").trim()||"#e6edf3";}
+
+function drawMap(){
+  ctx.clearRect(0,0,cW,cH);
+  // Sea
+  ctx.fillStyle=getBg();ctx.fillRect(0,0,cW,cH);
+  // Draw coastline
+  ctx.beginPath();ctx.moveTo(200,0);ctx.quadraticCurveTo(180,150,200,250);ctx.quadraticCurveTo(210,320,220,400);ctx.quadraticCurveTo(230,470,250,500);ctx.lineTo(0,500);ctx.lineTo(0,0);ctx.closePath();
+  ctx.fillStyle="rgba(50,120,200,.08)";ctx.fill();
+  ctx.strokeStyle="rgba(50,120,200,.2)";ctx.lineWidth=2;
+  ctx.beginPath();ctx.moveTo(200,0);ctx.quadraticCurveTo(180,150,200,250);ctx.quadraticCurveTo(210,320,220,400);ctx.quadraticCurveTo(230,470,250,500);ctx.stroke();
+  // Label: Mediterranean
+  ctx.save();ctx.translate(90,250);ctx.rotate(-Math.PI/2);ctx.font="11px Outfit,sans-serif";ctx.fillStyle="rgba(50,120,200,.3)";ctx.textAlign="center";ctx.fillText("Mediterranean Sea",0,0);ctx.restore();
+  // Draw regions
+  REGIONS.forEach(r=>{
+    ctx.beginPath();ctx.ellipse(r.cx,r.cy,r.rx,r.ry,0,0,Math.PI*2);
+    ctx.fillStyle=r.color+"15";ctx.fill();
+    ctx.strokeStyle=r.color+"40";ctx.lineWidth=1.5;ctx.setLineDash([4,4]);ctx.stroke();ctx.setLineDash([]);
+    ctx.font="bold 11px Outfit,sans-serif";ctx.fillStyle=r.color+"90";ctx.textAlign="center";
+    ctx.fillText(r.name,r.cx,r.cy-r.ry+14);
+  });
+  // Draw cities
+  CITIES.forEach((c,i)=>{
+    const hasspy=placedSpies.some(p=>p.cityIdx===i);
+    const r=hasspy?7:5;
+    ctx.beginPath();ctx.arc(c.x,c.y,r,0,Math.PI*2);
+    ctx.fillStyle=hasspy?getAccentColor():getHeadCol();ctx.fill();
+    ctx.strokeStyle=getBorder();ctx.lineWidth=1;ctx.stroke();
+    ctx.font=(hasspy?"bold ":"")+"10px 'IBM Plex Mono',monospace";
+    ctx.fillStyle=hasspy?getAccentColor():getTextCol();ctx.textAlign="center";
+    ctx.fillText(c.name,c.x,c.y+18);
+    // Spy icon
+    if(hasspy){
+      const count=placedSpies.filter(p=>p.cityIdx===i).length;
+      ctx.font="14px sans-serif";ctx.fillText("🕵",c.x+12,c.y-4);
+      if(count>1){ctx.font="bold 9px Outfit,sans-serif";ctx.fillStyle="#ff4444";ctx.fillText("x"+count,c.x+24,c.y-4);}
+    }
+  });
+  // Saladin's camp marker
+  ctx.font="bold 11px Outfit,sans-serif";ctx.fillStyle=getAccentColor();ctx.textAlign="center";
+  ctx.fillText("⚔ Saladin's Camp",620,260);
+  ctx.beginPath();ctx.arc(620,240,8,0,Math.PI*2);ctx.fillStyle=getAccentColor()+"40";ctx.fill();ctx.strokeStyle=getAccentColor();ctx.lineWidth=2;ctx.stroke();
+  // Hattin marker
+  ctx.font="9px 'IBM Plex Mono',monospace";ctx.fillStyle=getAccentColor()+"80";
+  ctx.fillText("Horns of Hattin ▲",500,290);
+  // Legend
+  ctx.font="9px 'IBM Plex Mono',monospace";ctx.textAlign="left";ctx.fillStyle=getTextCol()+"80";
+  ctx.fillText("● City   🕵 Spy placed",10,490);
+}
+
+// ============ SPY TRAY ============
+function buildTray(){
+  const tray=document.getElementById("spyTray");tray.innerHTML="";
+  const n=cfg().spyCount;
+  spies=[];
+  for(let i=0;i<n;i++){spies.push({placed:false,cityIdx:-1});}
+  spies.forEach((s,i)=>{
+    const d=document.createElement("div");d.className="spy-slot"+(s.placed?" used":"");
+    d.textContent="🕵";d.title="Spy "+(i+1);
+    d.addEventListener("click",()=>{if(phase!=="deploy"||s.placed)return;
+      selectedSpy=i;document.querySelectorAll(".spy-slot").forEach((el,j)=>el.classList.toggle("active",j===i));
+      snd("click");
+    });
+    tray.appendChild(d);
+  });
+}
+
+// ============ PLACEMENT ============
+function canvasClick(e){
+  if(phase!=="deploy"||selectedSpy<0)return;
+  const rect=canvas.getBoundingClientRect();
+  const mx=(e.clientX-rect.left)/scale;
+  const my=(e.clientY-rect.top)/scale;
+  // Find nearest city
+  let best=-1,bestD=40;
+  CITIES.forEach((c,i)=>{const d=Math.hypot(c.x-mx,c.y-my);if(d<bestD){bestD=d;best=i;}});
+  if(best<0)return;
+  // Place spy
+  spies[selectedSpy].placed=true;spies[selectedSpy].cityIdx=best;
+  placedSpies.push({spyIdx:selectedSpy,cityIdx:best});
+  snd("place");log("Spy "+(selectedSpy+1)+" deployed to "+CITIES[best].name,"success");
+  // Check detection risk per region
+  checkDetection();
+  // Update tray
+  const slots=document.querySelectorAll(".spy-slot");
+  slots[selectedSpy].classList.add("used");slots[selectedSpy].classList.remove("active");
+  selectedSpy=-1;
+  drawMap();
+  // All placed?
+  if(spies.every(s=>s.placed)){
+    setTimeout(startGathering,600);
+  }
+}
+
+function checkDetection(){
+  const regionCounts=[0,0,0];
+  placedSpies.forEach(p=>{regionCounts[CITIES[p.cityIdx].region]++;});
+  const thresh=cfg().detectThreshold;
+  let warn=false;
+  regionCounts.forEach((c,i)=>{if(c>=thresh){warn=true;log("WARNING: Too many spies in "+REGIONS[i].abbr+"! Detection risk!","error");snd("alert");}});
+  document.getElementById("detectionWarn").style.display=warn?"block":"none";
+}
+
+// ============ GROUND TRUTH (random each game) ============
+function generateGroundTruth(){
+  const armies=["Acre","Jerusalem","Tiberias","Tripoli","Antioch"];
+  groundTruth.mainArmy=armies[Math.floor(Math.random()*armies.length)];
+  const forts=["Krak des Chevaliers","Kerak","Ascalon","Jaffa","Tiberias"];
+  groundTruth.weakestFort=forts[Math.floor(Math.random()*forts.length)];
+  groundTruth.united=Math.random()<0.3;
+  const routes=["Acre port","Jaffa port","Tripoli port"];
+  groundTruth.supplyRoute=routes[Math.floor(Math.random()*routes.length)];
+  const threats=["Reynald of Chatillon at Kerak","Guy of Lusignan at Jerusalem","Raymond III at Tiberias"];
+  groundTruth.bigThreat=threats[Math.floor(Math.random()*threats.length)];
+  // Assign city intel values
+  CITIES.forEach(c=>{c.troops=Math.floor(Math.random()*80)+20;c.supply=Math.floor(Math.random()*80)+20;c.politics=Math.floor(Math.random()*80)+20;c.weakness=Math.floor(Math.random()*80)+20;});
+  // Boost main army city
+  const mainIdx=CITIES.findIndex(c=>c.name===groundTruth.mainArmy);
+  if(mainIdx>=0)CITIES[mainIdx].troops=90+Math.floor(Math.random()*10);
+  // Mark weakest
+  const weakIdx=CITIES.findIndex(c=>c.name===groundTruth.weakestFort);
+  if(weakIdx>=0)CITIES[weakIdx].weakness=90+Math.floor(Math.random()*10);
+}
+
+// ============ GATHERING PHASE ============
+function startGathering(){
+  phase="gather";
+  document.getElementById("phaseLabel").textContent="INTELLIGENCE GATHERING";
+  document.getElementById("status").textContent="Your spies are gathering intel...";
+  document.getElementById("status").className="status";
+  document.getElementById("intelBarWrap").style.display="block";
+  document.getElementById("spyTray").style.display="none";
+  totalIntel=0;gatherTick=0;intelReports=[];
+  log("Gathering phase started...","");
+  // Check region coverage for quality
+  const regCov=new Set(placedSpies.map(p=>CITIES[p.cityIdx].region));
+  const coverageBonus=regCov.size/3;
+  // Detect penalty
+  const regionCounts=[0,0,0];
+  placedSpies.forEach(p=>{regionCounts[CITIES[p.cityIdx].region]++;});
+  let detectPenalty=0;
+  regionCounts.forEach(c=>{if(c>=cfg().detectThreshold)detectPenalty+=15;});
+  const maxTicks=cfg().gatherSpeed;
+  gatherInterval=setInterval(()=>{
+    gatherTick++;
+    // Each spy reports
+    placedSpies.forEach(p=>{
+      const c=CITIES[p.cityIdx];
+      const types=["troops","supply","politics","weakness"];
+      const t=types[Math.floor(Math.random()*types.length)];
+      const val=c[t];
+      const report={city:c.name,type:t,value:val,region:c.region};
+      intelReports.push(report);
+    });
+    totalIntel=Math.min(100,Math.round((gatherTick/maxTicks)*100*coverageBonus)-detectPenalty);
+    totalIntel=Math.max(0,totalIntel);
+    document.getElementById("intelFill").style.width=totalIntel+"%";
+    document.getElementById("intelLabel").textContent="Intel: "+totalIntel+"%";
+    document.getElementById("sc").textContent=totalIntel+"%";
+    document.getElementById("prog").style.width=(gatherTick/maxTicks*100)+"%";
+    if(gatherTick>=maxTicks){
+      clearInterval(gatherInterval);
+      showReports();
+    }
+  },1200);
+}
+
+function showReports(){
+  phase="report";
+  document.getElementById("phaseLabel").textContent="INTELLIGENCE REPORTS";
+  document.getElementById("status").textContent="Review your intel, then answer questions!";
+  const area=document.getElementById("reportArea");area.style.display="block";area.innerHTML="";
+  // Aggregate per city
+  const cityMap={};
+  intelReports.forEach(r=>{
+    if(!cityMap[r.city])cityMap[r.city]={troops:[],supply:[],politics:[],weakness:[]};
+    cityMap[r.city][r.type].push(r.value);
+  });
+  Object.keys(cityMap).forEach(city=>{
+    const d=cityMap[city];
+    const card=document.createElement("div");card.className="report-card";card.style.marginBottom="8px";
+    let html="<h3>🕵 "+city+"</h3>";
+    if(d.troops.length)html+="<span class='intel-type'>Troops:</span> "+(avg(d.troops)>70?"Heavy presence":"Light garrison")+"<br>";
+    if(d.supply.length)html+="<span class='intel-type'>Supply:</span> "+(avg(d.supply)>60?"Well supplied":"Running low")+"<br>";
+    if(d.politics.length)html+="<span class='intel-type'>Politics:</span> "+(avg(d.politics)>60?"Loyal to king":"Internal tensions")+"<br>";
+    if(d.weakness.length)html+="<span class='intel-type'>Weakness:</span> "+(avg(d.weakness)>70?"Vulnerable defenses":"Solid fortifications")+"<br>";
+    card.innerHTML=html;area.appendChild(card);
+  });
+  log("Intel reports received for "+Object.keys(cityMap).length+" cities","success");
+  // After delay, start quiz
+  setTimeout(startQuiz,3000);
+}
+
+function avg(arr){return arr.reduce((a,b)=>a+b,0)/arr.length;}
+
+// ============ QUIZ PHASE ============
+function startQuiz(){
+  phase="quiz";
+  document.getElementById("phaseLabel").textContent="BATTLE PLANNING";
+  document.getElementById("status").textContent="Answer questions to plan the attack on Hattin!";
+  document.getElementById("reportArea").style.display="none";
+  document.getElementById("quizArea").style.display="block";
+  quizAnswers=[];
+  buildQuiz();
+}
+
+function buildQuiz(){
+  const questions=[];
+  // Q1: Main army
+  const armyOpts=shuffle(["Acre","Jerusalem","Tiberias","Tripoli","Antioch"]);
+  questions.push({q:"Where is the main Crusader army concentrated?",correct:groundTruth.mainArmy,opts:ensureIn(armyOpts,groundTruth.mainArmy).slice(0,4)});
+  // Q2: Weakest fortress
+  const fortOpts=shuffle(["Krak des Chevaliers","Kerak","Ascalon","Jaffa","Tiberias"]);
+  questions.push({q:"Which fortress is the weakest?",correct:groundTruth.weakestFort,opts:ensureIn(fortOpts,groundTruth.weakestFort).slice(0,4)});
+  // Q3: United or divided
+  questions.push({q:"Are the Crusader states united or divided?",correct:groundTruth.united?"United":"Divided",opts:["United","Divided"]});
+  // Q4: Supply route
+  const supOpts=shuffle(["Acre port","Jaffa port","Tripoli port","Overland from Antioch"]);
+  questions.push({q:"Where is the main enemy supply route?",correct:groundTruth.supplyRoute,opts:ensureIn(supOpts,groundTruth.supplyRoute).slice(0,4)});
+  // Q5: Biggest threat
+  const thrOpts=shuffle(["Reynald of Chatillon at Kerak","Guy of Lusignan at Jerusalem","Raymond III at Tiberias","Balian of Ibelin at Nablus"]);
+  questions.push({q:"Who is the biggest military threat?",correct:groundTruth.bigThreat,opts:ensureIn(thrOpts,groundTruth.bigThreat).slice(0,4)});
+  // Q6: Strategy
+  questions.push({q:"What is the best strategy to draw the Crusaders out?",correct:"Cut off water and provoke a march",opts:shuffle(["Cut off water and provoke a march","Direct siege of Jerusalem","Naval blockade of Acre","Wait for winter"])});
+
+  const subset=questions.slice(0,cfg().quizCount);
+  showQuestion(subset,0);
+}
+
+function showQuestion(qs,idx){
+  if(idx>=qs.length){finishGame();return;}
+  const qa=document.getElementById("quizArea");
+  const q=qs[idx];
+  let html="<div style='margin-bottom:12px;font-family:Outfit,sans-serif;font-size:15px;font-weight:700;color:var(--heading)'>Q"+(idx+1)+"/"+qs.length+": "+q.q+"</div>";
+  html+="<div class='answer-row'>";
+  q.opts.forEach(o=>{html+="<button class='answer-btn' data-val='"+esc(o)+"'>"+esc(o)+"</button>";});
+  html+="</div>";
+  qa.innerHTML=html;
+  document.getElementById("prog").style.width=((idx/qs.length)*100)+"%";
+  qa.querySelectorAll(".answer-btn").forEach(btn=>{
+    btn.addEventListener("click",function(){
+      if(this.dataset.done)return;
+      qa.querySelectorAll(".answer-btn").forEach(b=>b.dataset.done="1");
+      const val=this.dataset.val;
+      const isCorrect=val===q.correct;
+      quizAnswers.push(isCorrect);
+      if(isCorrect){this.classList.add("correct");snd("ok");log("Correct: "+q.correct,"success");}
+      else{this.classList.add("wrong");snd("err");log("Wrong! Answer: "+q.correct,"error");
+        qa.querySelectorAll(".answer-btn").forEach(b=>{if(b.dataset.val===q.correct)b.classList.add("correct");});
+      }
+      setTimeout(()=>showQuestion(qs,idx+1),1100);
+    });
+  });
+}
+
+// ============ FINISH ============
+function finishGame(){
+  phase="done";stopTimer();
+  const correctCount=quizAnswers.filter(x=>x).length;
+  const quizPct=Math.round(correctCount/quizAnswers.length*100);
+  // Battle score: intel quality + quiz accuracy
+  battleScore=Math.round(totalIntel*0.4+quizPct*0.6);
+  document.getElementById("phaseLabel").textContent="BATTLE OF HATTIN";
+  document.getElementById("quizArea").style.display="none";
+  document.getElementById("prog").style.width="100%";
+  const qa=document.getElementById("quizArea");
+  let resultMsg="";
+  if(battleScore>=80)resultMsg="DECISIVE VICTORY! Your intelligence was superb. Saladin triumphs at Hattin!";
+  else if(battleScore>=50)resultMsg="VICTORY! Good intel led to a successful campaign, though with some losses.";
+  else resultMsg="NARROW RESULT. Insufficient intelligence made the battle harder. Prepare better next time!";
+  document.getElementById("status").textContent="⚔ Battle Score: "+battleScore+"% — "+(battleScore>=50?"Victory!":"Try Again");
+  document.getElementById("status").className="status "+(battleScore>=50?"win":"lose");
+  document.getElementById("tot").textContent=battleScore+"%";
+  document.getElementById("scorePill").textContent=battleScore+"%";
+  // Show summary on canvas
+  ctx.fillStyle=getBg()+"e0";ctx.fillRect(0,0,cW,cH);
+  ctx.font="bold 28px Outfit,sans-serif";ctx.fillStyle=getAccentColor();ctx.textAlign="center";
+  ctx.fillText("Battle of Hattin — 1187 CE",cW/2,100);
+  ctx.font="18px Outfit,sans-serif";ctx.fillStyle=getHeadCol();
+  ctx.fillText("Battle Score: "+battleScore+"%",cW/2,160);
+  ctx.font="14px 'IBM Plex Mono',monospace";ctx.fillStyle=getTextCol();
+  wrapText(ctx,resultMsg,cW/2,210,600,22);
+  ctx.font="12px 'IBM Plex Mono',monospace";ctx.fillStyle=getTextCol()+"80";
+  ctx.fillText("Intel Gathered: "+totalIntel+"% | Quiz: "+correctCount+"/"+quizAnswers.length+" correct",cW/2,280);
+  ctx.fillText("Lesson: Knowledge is power. Preparation wins wars.",cW/2,320);
+  snd(battleScore>=50?"win":"err");
+  log("⚔ Battle Score: "+battleScore+"% — "+(battleScore>=50?"Victory!":"Needs improvement"),"success");
+  checkHS();showHS();
+}
+
+function wrapText(c,text,x,y,maxW,lh){
+  const words=text.split(" ");let line="";
+  words.forEach(w=>{const test=line+w+" ";if(c.measureText(test).width>maxW&&line){c.fillText(line.trim(),x,y);y+=lh;line=w+" ";}else line=test;});
+  if(line)c.fillText(line.trim(),x,y);
+}
+
+// ============ TIMER ============
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);clearInterval(gatherInterval);}
+
+// ============ NEW GAME ============
+function newGame(){
+  stopTimer();startTimer();
+  phase="deploy";selectedSpy=-1;totalIntel=0;battleScore=0;
+  placedSpies=[];intelReports=[];quizAnswers=[];
+  difficulty=document.getElementById("diffSel").value;
+  generateGroundTruth();buildTray();
+  document.getElementById("phaseLabel").textContent="DEPLOYMENT PHASE";
+  document.getElementById("status").textContent="Select a spy, then click a city to deploy!";
+  document.getElementById("status").className="status";
+  document.getElementById("intelBarWrap").style.display="none";
+  document.getElementById("intelFill").style.width="0%";
+  document.getElementById("intelLabel").textContent="Intel: 0%";
+  document.getElementById("detectionWarn").style.display="none";
+  document.getElementById("reportArea").style.display="none";document.getElementById("reportArea").innerHTML="";
+  document.getElementById("quizArea").style.display="none";document.getElementById("quizArea").innerHTML="";
+  document.getElementById("spyTray").style.display="flex";
+  document.getElementById("sc").textContent="0%";document.getElementById("tot").textContent="0";
+  document.getElementById("scorePill").textContent="0";
+  document.getElementById("prog").style.width="0%";
+  document.getElementById("logBox").innerHTML="";
+  resizeCanvas();drawMap();
+  log("New mission started — "+difficulty+" difficulty","success");
+}
+
+// ============ HIGH SCORE ============
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'%</span>';}}
+function checkHS(){if(phase==="done"&&battleScore>0){if(saveHS(battleScore)){log("🏆 NEW HIGH SCORE: "+battleScore+"%!","success");}}}
+
+// ============ UTILS ============
+function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
+function ensureIn(arr,val){if(!arr.includes(val)){arr[0]=val;}return shuffle(arr);}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+
+// ============ INIT ============
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");if(phase!=="done"){resizeCanvas();drawMap();}}));
+  showHS();
+  canvas.addEventListener("click",canvasClick);
+  canvas.addEventListener("touchend",e=>{e.preventDefault();const t=e.changedTouches[0];canvasClick({clientX:t.clientX,clientY:t.clientY});});
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+  window.addEventListener("resize",()=>{if(phase!=="done"){resizeCanvas();drawMap();}});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+  // Keyboard: 1-4 for quiz answers, Enter
+  document.addEventListener("keydown",function(e){
+    if(e.key>="1"&&e.key<="4"){const btns=document.querySelectorAll("#quizArea .answer-btn");const i=parseInt(e.key)-1;if(btns[i])btns[i].click();}
+    if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+  });
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>40 Nawawi — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:560px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.big-text{font-family:'Outfit',sans-serif;font-size:32px;font-weight:800;color:var(--heading);text-align:center}
+.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .15s;min-width:50px;text-align:center;max-width:240px}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.grid-pick{display:grid;gap:8px;justify-content:center;margin:10px auto}
+.grid-pick.g2{grid-template-columns:repeat(2,1fr);max-width:400px}
+.grid-pick.g4{grid-template-columns:repeat(2,1fr);max-width:500px}
+.pick-card{padding:14px 10px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;cursor:pointer;text-align:center;transition:all .15s}
+.pick-card:hover{border-color:var(--accent);background:var(--abg)}
+.pick-card.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.pick-card.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+/* Card styles */
+.card{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;width:100%;max-width:500px}
+.card-num{font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;color:var(--accent);margin-bottom:6px}
+.card-ar{font-family:'Noto Sans Arabic',sans-serif;font-size:18px;line-height:1.8;color:var(--heading);direction:rtl;margin-bottom:10px}
+.card-en{font-size:12px;color:var(--text);line-height:1.6;margin-bottom:8px}
+.card-topic{font-size:11px;color:var(--accent);font-weight:600;margin-bottom:6px}
+.card-lesson{font-size:11px;color:var(--text2);line-height:1.5;font-style:italic;padding:8px;background:var(--abg);border-radius:8px;border:1px solid var(--abr)}
+.card-nav{display:flex;gap:8px;justify-content:center;margin-top:10px}
+.card-nav button{padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg2);color:var(--heading);font-family:'Outfit',sans-serif;font-size:12px;cursor:pointer}
+.card-nav button:hover{border-color:var(--accent);color:var(--accent)}
+.feedback-box{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;width:100%;max-width:500px;animation:fadeUp .3s}
+.feedback-box .card-ar{font-size:15px;margin-bottom:6px}
+.feedback-box .card-en{font-size:11px;margin-bottom:6px}
+.feedback-box .card-lesson{font-size:10px}
+.mode-btn{padding:8px 16px;border-radius:8px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;cursor:pointer}
+.mode-btn:hover,.mode-btn.on{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">40 Nawawi</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Master the foundational hadiths</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Learn and quiz yourself on Imam Nawawi's 42 hadiths</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>40 Nawawi</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl">
+<div class="sw" style="margin-top:0"><button class="mode-btn on" id="modeLearn" onclick="setMode('learn')">📖 Learn</button><button class="mode-btn" id="modeQuiz" onclick="setMode('quiz')">✏️ Quiz</button></div>
+<select id="diffSel" onchange="setDiff()"><option value="easy">Easy (10)</option><option value="medium" selected>Medium (20)</option><option value="hard">Hard (42)</option></select>
+<button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+<button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="status" id="status">Choose a mode and start!</div>
+<div class="game-area" id="gameArea"><div class="big-text" id="question">📖</div><div class="answer-row" id="choices"></div><div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — 40 Nawawi v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is 40 Nawawi?</summary><p>An interactive game to learn Imam Nawawi's famous collection of 42 foundational hadiths. Browse them as flashcards or test your knowledge in quiz mode!</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>What are the difficulty levels?</summary><p>Easy: 10 most famous hadiths. Medium: 20 hadiths. Hard: all 42 hadiths of the collection.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Choose Learn mode to browse hadiths as flashcards, or Quiz mode to test yourself</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Select difficulty: Easy (10), Medium (20), or Hard (42)</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>In Learn mode, use ← → arrows or buttons to navigate cards</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>In Quiz mode, pick the correct answer from 4 options</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>After a correct answer, see the full hadith and a practical lesson</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Watch your score and progress bar</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Learn the 42 hadiths of Imam Nawawi's collection — foundational texts every Muslim should know. Each hadith includes Arabic text, English meaning, topic, and a practical lesson for kids.</p></div>
+        <div class="wiki-entry"><h3>📖 Learn Mode</h3><p>Browse hadiths as flashcards. Each card shows the hadith number, Arabic excerpt, English meaning, topic, and a practical lesson for kids.</p></div>
+        <div class="wiki-entry"><h3>✏️ Quiz Mode</h3><p>Test your knowledge! Given a topic or partial text, pick the correct hadith from 4 options. Correct answers reveal the full hadith and lesson.</p></div>
+        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Français, العربية. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Correct = rising tone, wrong = buzz, win = melody. Toggle with 🔊 button.</p></div>
+        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — 40 Nawawi v1.0</div>
+</aside>
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// === HADITH DATA ===
+const HADITHS=[
+{n:1,topic:"Intentions",ar:"إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى",en:"Actions are judged by intentions, and every person shall have what they intended.",lesson:"Before you do anything — homework, helping mom, praying — check your heart. Do it for Allah, and even small things become great deeds!",tier:1},
+{n:2,topic:"Islam, Iman & Ihsan",ar:"أَخْبِرْنِي عَنْ الإِسْلامِ... الإِيمَانِ... الإِحْسَانِ",en:"The Angel Jibril asked the Prophet about Islam, Iman (faith), and Ihsan (excellence) — the three levels of our religion.",lesson:"Islam is what we do (pray, fast), Iman is what we believe in our hearts, and Ihsan is doing everything beautifully as if Allah sees us.",tier:1},
+{n:3,topic:"Five Pillars of Islam",ar:"بُنِيَ الإِسْلامُ عَلَى خَمْسٍ: شَهَادَةِ أَنْ لا إِلَهَ إِلا اللَّهُ",en:"Islam is built on five pillars: the testimony of faith, prayer, zakat, fasting Ramadan, and pilgrimage.",lesson:"Think of Islam like a house — the five pillars hold it up. Practice each one and your faith-house stays strong!",tier:1},
+{n:4,topic:"Stages of Creation",ar:"إِنَّ أَحَدَكُمْ يُجْمَعُ خَلْقُهُ فِي بَطْنِ أُمِّهِ أَرْبَعِينَ يَوْمًا",en:"Each of you is formed in your mother's womb for forty days as a drop, then a clot, then a lump of flesh, then the angel is sent to breathe the soul.",lesson:"Allah created you with such care, step by step. You are special and planned by the Creator of everything!",tier:2},
+{n:5,topic:"Rejecting Innovations",ar:"مَنْ أَحْدَثَ فِي أَمْرِنَا هَذَا مَا لَيْسَ مِنْهُ فَهُوَ رَدٌّ",en:"Whoever introduces something into this matter of ours that is not from it, it is rejected.",lesson:"Follow the Prophet's way. When you're unsure about something in religion, ask a knowledgeable person rather than making things up.",tier:2},
+{n:6,topic:"Halal & Haram are Clear",ar:"إِنَّ الْحَلالَ بَيِّنٌ وَإِنَّ الْحَرَامَ بَيِّنٌ وَبَيْنَهُمَا أُمُورٌ مُشْتَبِهَاتٌ",en:"The halal is clear and the haram is clear, and between them are doubtful matters.",lesson:"When something feels wrong or doubtful, stay away from it — just like you avoid food that smells bad even if it looks okay.",tier:1},
+{n:7,topic:"Religion is Sincerity",ar:"الدِّينُ النَّصِيحَةُ، قُلْنَا لِمَنْ؟ قَالَ لِلَّهِ وَلِكِتَابِهِ وَلِرَسُولِهِ",en:"Religion is sincerity — to Allah, His Book, His Messenger, the leaders of the Muslims, and their common people.",lesson:"Be sincere and honest. Give good advice to your friends kindly, and wish for them what you wish for yourself.",tier:2},
+{n:8,topic:"Sanctity of a Muslim",ar:"أُمِرْتُ أَنْ أُقَاتِلَ النَّاسَ حَتَّى يَشْهَدُوا أَنْ لا إِلَهَ إِلا اللَّهُ",en:"I have been commanded to fight people until they testify that there is no god but Allah — then their lives and property are protected.",lesson:"Every Muslim's life, property, and honor are sacred. Never bully or hurt others — Allah protects everyone's rights.",tier:3},
+{n:9,topic:"Avoid What I Forbid",ar:"مَا نَهَيْتُكُمْ عَنْهُ فَاجْتَنِبُوهُ وَمَا أَمَرْتُكُمْ بِهِ فَأْتُوا مِنْهُ مَا اسْتَطَعْتُمْ",en:"What I have forbidden, avoid it. What I have commanded you, do as much of it as you can.",lesson:"Do your best! Allah doesn't ask the impossible. If you can't do everything perfectly, do what you can with a good heart.",tier:1},
+{n:10,topic:"Allah Accepts Only Pure",ar:"إِنَّ اللَّهَ طَيِّبٌ لا يَقْبَلُ إِلا طَيِّبًا",en:"Allah is Pure and accepts only what is pure. Allah commanded the believers with what He commanded the messengers.",lesson:"Eat good halal food, earn honest money, and be clean in body and heart. Allah loves purity in everything!",tier:1},
+{n:11,topic:"Leave Doubt",ar:"دَعْ مَا يَرِيبُكَ إِلَى مَا لا يَرِيبُكَ",en:"Leave what makes you doubt for what does not make you doubt.",lesson:"If you're not sure something is allowed, choose the safe option. It's like choosing the clear path instead of the foggy one.",tier:3},
+{n:12,topic:"Leave What Doesn't Concern You",ar:"مِنْ حُسْنِ إِسْلامِ الْمَرْءِ تَرْكُهُ مَا لا يَعْنِيهِ",en:"Part of a person's good practice of Islam is to leave alone what does not concern them.",lesson:"Don't be nosy! Mind your own business and focus on improving yourself instead of gossiping about others.",tier:3},
+{n:13,topic:"Love for Your Brother",ar:"لا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ",en:"None of you truly believes until he loves for his brother what he loves for himself.",lesson:"Share your toys, wish good things for your friends, and be happy when they succeed — that's real faith!",tier:1},
+{n:14,topic:"Sanctity of Blood",ar:"لا يَحِلُّ دَمُ امْرِئٍ مُسْلِمٍ إِلا بِإِحْدَى ثَلاثٍ",en:"It is not permissible to shed the blood of a Muslim except in three cases.",lesson:"Human life is sacred in Islam. Always solve problems with words, patience, and kindness — never with violence.",tier:3},
+{n:15,topic:"Good Speech & Hospitality",ar:"مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الآخِرِ فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ",en:"Whoever believes in Allah and the Last Day, let him speak good or remain silent; be generous to neighbors and guests.",lesson:"Before you speak, ask: Is it true? Is it kind? Is it necessary? If not, stay quiet. And always be nice to your neighbors!",tier:1},
+{n:16,topic:"Don't Be Angry",ar:"لا تَغْضَبْ، فَرَدَّدَ مِرَارًا، قَالَ: لا تَغْضَبْ",en:"A man asked the Prophet for advice. He said: 'Do not become angry.' He repeated it several times: 'Do not become angry.'",lesson:"When you feel angry, say 'A'udhu billah,' take a deep breath, drink water, or sit down. The strong person controls their anger!",tier:1},
+{n:17,topic:"Excellence in Everything",ar:"إِنَّ اللَّهَ كَتَبَ الإِحْسَانَ عَلَى كُلِّ شَيْءٍ",en:"Allah has prescribed excellence (ihsan) in everything. When you act, act well.",lesson:"Whatever you do — writing, cleaning, playing — do it the best you can. Allah loves excellence in ALL things, big and small!",tier:1},
+{n:18,topic:"Taqwa Wherever You Are",ar:"اتَّقِ اللَّهَ حَيْثُمَا كُنْتَ وَأَتْبِعِ السَّيِّئَةَ الْحَسَنَةَ تَمْحُهَا",en:"Fear Allah wherever you are, follow a bad deed with a good one to erase it, and treat people with good character.",lesson:"Made a mistake? Don't worry — quickly do something good to make up for it. And always be kind to people!",tier:1},
+{n:19,topic:"Be Mindful of Allah",ar:"يَا غُلامُ إِنِّي أُعَلِّمُكَ كَلِمَاتٍ: احْفَظِ اللَّهَ يَحْفَظْكَ",en:"O young man, I shall teach you some words: Be mindful of Allah and Allah will protect you. Be mindful of Allah and you will find Him before you.",lesson:"Remember Allah in good times, and He'll be there for you in hard times. Talk to Allah anytime — He always listens!",tier:1},
+{n:20,topic:"Modesty (Haya)",ar:"إِنَّ مِمَّا أَدْرَكَ النَّاسُ مِنْ كَلامِ النُّبُوَّةِ الأُولَى: إِذَا لَمْ تَسْتَحِ فَاصْنَعْ مَا شِئْتَ",en:"Among what people learned from the early prophets: If you have no modesty, then do as you wish.",lesson:"Haya (shyness/modesty) is your inner alarm — it stops you from doing bad things. Keep that feeling strong!",tier:2},
+{n:21,topic:"Say 'I Believe' Then Be Steadfast",ar:"قُلْ آمَنْتُ بِاللَّهِ ثُمَّ اسْتَقِمْ",en:"Say 'I believe in Allah' and then be steadfast (stay on the straight path).",lesson:"It's not enough to just say you believe — you have to live it every day. Be consistent in your good deeds!",tier:3},
+{n:22,topic:"Enter Paradise",ar:"أَرَأَيْتَ إِذَا صَلَّيْتُ الْمَكْتُوبَاتِ وَصُمْتُ رَمَضَانَ وَأَحْلَلْتُ الْحَلالَ",en:"If I pray the obligatory prayers, fast Ramadan, treat halal as halal and haram as haram — will I enter Paradise? He said: Yes.",lesson:"The path to Jannah is simple: pray, fast, follow the rules, and stay away from what's forbidden. You can do it!",tier:2},
+{n:23,topic:"Purity is Half of Faith",ar:"الطُّهُورُ شَطْرُ الإِيمَانِ وَالْحَمْدُ لِلَّهِ تَمْلأُ الْمِيزَانَ",en:"Purity is half of faith, and 'Alhamdulillah' fills the scales.",lesson:"Keep yourself clean — make wudu carefully, tidy your room, and say 'Alhamdulillah' often. Cleanliness is part of faith!",tier:3},
+{n:24,topic:"Injustice is Forbidden",ar:"يَا عِبَادِي إِنِّي حَرَّمْتُ الظُّلْمَ عَلَى نَفْسِي وَجَعَلْتُهُ بَيْنَكُمْ مُحَرَّمًا",en:"O My servants, I have forbidden injustice for Myself and made it forbidden among you, so do not oppress one another.",lesson:"Never be unfair to anyone — not your siblings, friends, or even animals. Allah hates injustice in all forms.",tier:2},
+{n:25,topic:"Charity for Every Joint",ar:"كُلُّ سُلامَى مِنَ النَّاسِ عَلَيْهِ صَدَقَةٌ",en:"Every joint of a person must perform a charity every day the sun rises: judging fairly, helping someone onto their mount, a good word, every step to prayer is charity, removing harm from the road is charity.",lesson:"You can give charity without money! Smile, help carry groceries, pick up trash, say kind words — all count as sadaqah!",tier:2},
+{n:26,topic:"Every Good Deed is Charity",ar:"كُلُّ مَعْرُوفٍ صَدَقَةٌ",en:"Every good deed is charity.",lesson:"Even the smallest kind act counts. Holding the door, sharing your snack, or making someone laugh — it's all charity!",tier:3},
+{n:27,topic:"Righteousness & Good Character",ar:"الْبِرُّ حُسْنُ الْخُلُقِ وَالإِثْمُ مَا حَاكَ فِي صَدْرِكَ",en:"Righteousness is good character, and sin is what troubles your soul and you would hate for people to find out about.",lesson:"If something makes you feel uneasy inside and you'd hide it from others — that's a sign it's wrong. Trust that feeling!",tier:2},
+{n:28,topic:"Stick to the Sunnah",ar:"أُوصِيكُمْ بِتَقْوَى اللَّهِ وَالسَّمْعِ وَالطَّاعَةِ",en:"I advise you to fear Allah, and to listen and obey, even if a slave is appointed over you. Stick to my Sunnah.",lesson:"Follow the Prophet's example in how you eat, speak, treat others, and worship. His way is the best way!",tier:3},
+{n:29,topic:"Doors of Good",ar:"يَا رَسُولَ اللَّهِ أَخْبِرْنِي بِعَمَلٍ يُدْخِلُنِي الْجَنَّةَ",en:"Tell me of a deed that will bring me closer to Paradise: prayer, charity, fasting, and jihad (striving in Allah's path).",lesson:"There are so many doors to Paradise! Praying, fasting, being generous, and working hard for good — pick a door and go!",tier:3},
+{n:30,topic:"Rights of Allah",ar:"إِنَّ اللَّهَ فَرَضَ فَرَائِضَ فَلا تُضَيِّعُوهَا",en:"Allah has set obligations, so do not neglect them; set limits, so do not exceed them; forbidden things, so do not violate them.",lesson:"Allah gave us clear rules to follow — like a game with fair rules. Stick to them and everyone wins!",tier:3},
+{n:31,topic:"True Asceticism",ar:"ازْهَدْ فِي الدُّنْيَا يُحِبَّكَ اللَّهُ وَازْهَدْ فِيمَا عِنْدَ النَّاسِ يُحِبَّكَ النَّاسُ",en:"Be detached from worldly things and Allah will love you; be detached from what people have and people will love you.",lesson:"Don't be jealous of others' toys or stuff. Be grateful for what you have, and people will love being around you!",tier:3},
+{n:32,topic:"No Harm",ar:"لا ضَرَرَ وَلا ضِرَارَ",en:"There should be no harm and no reciprocal harm.",lesson:"Don't hurt others and don't hurt yourself either. If someone is mean to you, don't be mean back — be better!",tier:3},
+{n:33,topic:"Burden of Proof",ar:"لَوْ يُعْطَى النَّاسُ بِدَعْوَاهُمْ لادَّعَى نَاسٌ دِمَاءَ رِجَالٍ وَأَمْوَالَهُمْ",en:"If people were given what they claimed, they would claim the wealth and lives of others. The burden of proof is on the claimant.",lesson:"Don't accuse someone without proof. If you say your brother broke your toy, you need evidence — be fair and honest!",tier:2},
+{n:34,topic:"Changing Evil",ar:"مَنْ رَأَى مِنْكُمْ مُنْكَرًا فَلْيُغَيِّرْهُ بِيَدِهِ",en:"Whoever sees an evil, let him change it with his hand; if not, with his tongue; if not, with his heart — and that is the weakest of faith.",lesson:"See something wrong? Speak up kindly! Even if you can only feel it's wrong in your heart, that still counts.",tier:1},
+{n:35,topic:"Brotherhood",ar:"لا تَحَاسَدُوا وَلا تَنَاجَشُوا وَلا تَبَاغَضُوا",en:"Do not envy, hate, or turn your backs on each other. Be servants of Allah as brothers.",lesson:"Muslims are one big family. Don't be jealous or hold grudges — make up quickly when you argue with friends.",tier:3},
+{n:36,topic:"Helping Your Brother",ar:"مَنْ نَفَّسَ عَنْ مُؤْمِنٍ كُرْبَةً مِنْ كُرَبِ الدُّنْيَا نَفَّسَ اللَّهُ عَنْهُ كُرْبَةً مِنْ كُرَبِ يَوْمِ الْقِيَامَةِ",en:"Whoever relieves a believer's hardship in this world, Allah will relieve their hardship on the Day of Judgment.",lesson:"Help your friends when they're struggling — with homework, when they're sad, or need a friend. Allah will help you in return!",tier:2},
+{n:37,topic:"Multiplied Rewards",ar:"إِنَّ اللَّهَ كَتَبَ الْحَسَنَاتِ وَالسَّيِّئَاتِ",en:"Allah records good and bad deeds. A good intention earns reward even if not done; a good deed is multiplied ten to seven hundred times.",lesson:"Even thinking about doing something good earns you a reward! And when you actually do it, Allah multiplies it many times!",tier:3},
+{n:38,topic:"Awliya of Allah",ar:"مَنْ عَادَى لِي وَلِيًّا فَقَدْ آذَنْتُهُ بِالْحَرْبِ",en:"Whoever shows hostility to a friend of Mine (wali), I declare war on him. My servant draws near with extra deeds until I love him.",lesson:"Want to be close to Allah? Do your obligations first, then add extra good deeds — extra prayers, extra kindness, extra charity!",tier:3},
+{n:39,topic:"No Blame for Mistakes",ar:"إِنَّ اللَّهَ تَجَاوَزَ عَنْ أُمَّتِي الْخَطَأَ وَالنِّسْيَانَ وَمَا اسْتُكْرِهُوا عَلَيْهِ",en:"Allah has pardoned my Ummah for genuine mistakes, forgetfulness, and what they are forced to do.",lesson:"Forgot something? Made an honest mistake? Allah forgives! Just try your best and don't worry about honest errors.",tier:3},
+{n:40,topic:"Be a Stranger",ar:"كُنْ فِي الدُّنْيَا كَأَنَّكَ غَرِيبٌ أَوْ عَابِرُ سَبِيلٍ",en:"Be in this world as if you were a stranger or a traveler.",lesson:"This world is temporary — like a road trip. Don't get too attached to things. Focus on collecting good deeds for your real home: Jannah!",tier:2},
+{n:41,topic:"Follow the Prophet",ar:"لا يُؤْمِنُ أَحَدُكُمْ حَتَّى يَكُونَ هَوَاهُ تَبَعًا لِمَا جِئْتُ بِهِ",en:"None of you truly believes until his desires follow what I have brought.",lesson:"True faith means wanting what the Prophet taught. When you love the Sunnah, your heart and actions line up beautifully!",tier:2},
+{n:42,topic:"Forgiveness of Allah",ar:"يَا ابْنَ آدَمَ إِنَّكَ مَا دَعَوْتَنِي وَرَجَوْتَنِي غَفَرْتُ لَكَ عَلَى مَا كَانَ مِنْكَ",en:"O son of Adam, as long as you call upon Me and hope in Me, I will forgive you. Even if your sins reached the clouds, I would forgive you.",lesson:"Allah's mercy is HUGE — bigger than the sky! No matter what you've done, turn back to Allah and ask forgiveness. He always accepts!",tier:1}
+];
+
+const EASY_IDS=[1,2,3,6,9,10,13,15,16,17];
+const MED_IDS=[1,2,3,4,5,6,7,9,10,13,15,16,17,18,19,24,25,27,33,34];
+
+let mode="learn",total=20,current=0,correct=0,ans,locked=false,cardIdx=0,pool=[];
+
+function getDiffPool(){
+  const d=document.getElementById("diffSel").value;
+  if(d==="easy") return HADITHS.filter(h=>EASY_IDS.includes(h.n));
+  if(d==="medium") return HADITHS.filter(h=>MED_IDS.includes(h.n));
+  return [...HADITHS];
+}
+
+function setMode(m){
+  mode=m;
+  document.getElementById("modeLearn").classList.toggle("on",m==="learn");
+  document.getElementById("modeQuiz").classList.toggle("on",m==="quiz");
+  snd("click");
+}
+
+function setDiff(){snd("click");}
+
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+function renderCard(h){
+  const ga=document.getElementById("gameArea");
+  ga.innerHTML='<div class="card"><div class="card-num">Hadith #'+h.n+'</div><div class="card-topic">'+h.topic+'</div><div class="card-ar">'+h.ar+'</div><div class="card-en">'+h.en+'</div><div class="card-lesson">'+h.lesson+'</div></div><div class="card-nav"><button onclick="prevCard()">← Prev</button><span style="color:var(--text2);font-size:12px;align-self:center">'+(cardIdx+1)+' / '+pool.length+'</span><button onclick="nextCard()">Next →</button></div><div class="progress"><div class="progress-bar" id="prog" style="width:'+((cardIdx+1)/pool.length*100)+'%"></div></div>';
+  document.getElementById("status").textContent="📖 Learn Mode — Browse hadiths";
+  document.getElementById("status").className="status";
+}
+
+function prevCard(){if(cardIdx>0){cardIdx--;renderCard(pool[cardIdx]);snd("click");}}
+function nextCard(){if(cardIdx<pool.length-1){cardIdx++;renderCard(pool[cardIdx]);snd("click");}else{snd("win");document.getElementById("status").textContent="🏆 You've reviewed all "+pool.length+" hadiths!";document.getElementById("status").className="status win";log("📖 Reviewed all "+pool.length+" hadiths","success");}}
+
+function genQuiz(){
+  if(current>=pool.length){return null;}
+  const h=pool[current];
+  // Random question type
+  const qType=Math.random()<0.5?"topic":"text";
+  let qText,correctAns;
+  if(qType==="topic"){
+    qText="Which hadith is about: <strong>"+h.topic+"</strong>?";
+    correctAns="Hadith #"+h.n;
+  } else {
+    // Show partial Arabic text
+    const shortAr=h.ar.substring(0,Math.min(50,h.ar.length))+"...";
+    qText='<div style="font-family:Noto Sans Arabic;direction:rtl;font-size:16px;margin-bottom:8px">'+shortAr+'</div>Which hadith is this?';
+    correctAns="Hadith #"+h.n;
+  }
+  // Generate wrong options
+  const others=HADITHS.filter(x=>x.n!==h.n);
+  shuffle(others);
+  const opts=[correctAns];
+  for(let i=0;i<3&&i<others.length;i++){
+    opts.push("Hadith #"+others[i].n+" — "+others[i].topic);
+  }
+  // Fix correct answer to also show topic
+  opts[0]="Hadith #"+h.n+" — "+h.topic;
+  correctAns=opts[0];
+  shuffle(opts);
+  return {html:qText,ans:correctAns,opts:opts,hadith:h};
+}
+
+function showFeedback(h,isCorrect){
+  const fb=document.createElement("div");
+  fb.className="feedback-box";
+  fb.innerHTML='<div class="card-num" style="color:'+(isCorrect?"var(--accent)":"#ff4444")+'">'+(isCorrect?"✓ Correct!":"✗ The answer was: Hadith #"+h.n)+'</div><div class="card-topic">'+h.topic+'</div><div class="card-ar">'+h.ar+'</div><div class="card-en">'+h.en+'</div><div class="card-lesson">'+h.lesson+'</div>';
+  const ga=document.getElementById("gameArea");
+  // Remove old feedback
+  const old=ga.querySelector(".feedback-box");
+  if(old)old.remove();
+  ga.appendChild(fb);
+}
+
+let currentQuiz=null;
+
+function renderQuiz(){
+  const q=genQuiz();
+  if(!q){
+    checkHS();stopTimer();snd("win");
+    document.getElementById("status").textContent="🏆 Done! "+correct+"/"+pool.length;
+    document.getElementById("status").className="status win";
+    log("🏆 Quiz Score: "+correct+"/"+pool.length,"success");
+    const ga=document.getElementById("gameArea");
+    ga.innerHTML='<div class="big-text">🏆</div><div style="font-size:16px;color:var(--heading);font-family:Outfit,sans-serif;font-weight:700">'+correct+' / '+pool.length+'</div><div class="progress"><div class="progress-bar" id="prog" style="width:100%"></div></div>';
+    return;
+  }
+  currentQuiz=q;
+  locked=false;
+  const ga=document.getElementById("gameArea");
+  let html='<div class="big-text" style="font-size:18px">'+q.html+'</div><div class="grid-pick g2">';
+  q.opts.forEach((o,i)=>{
+    html+='<div class="pick-card" data-val="'+i+'" onclick="pickQuiz(this,'+i+')">'+o+'</div>';
+  });
+  html+='</div><div class="progress"><div class="progress-bar" id="prog" style="width:'+(current/pool.length*100)+'%"></div></div>';
+  ga.innerHTML=html;
+  document.getElementById("status").textContent="Question "+(current+1)+" / "+pool.length;
+  document.getElementById("status").className="status";
+}
+
+function pickQuiz(el,idx){
+  if(locked)return;
+  locked=true;
+  current++;
+  const chosen=currentQuiz.opts[idx];
+  const isCorrect=chosen===currentQuiz.ans;
+  if(isCorrect){
+    correct++;el.classList.add("correct");snd("ok");log("✓ Hadith #"+currentQuiz.hadith.n+" — "+currentQuiz.hadith.topic,"success");
+  } else {
+    el.classList.add("wrong");snd("err");log("✗ Was: Hadith #"+currentQuiz.hadith.n,"error");
+    document.querySelectorAll(".pick-card").forEach(c=>{
+      if(currentQuiz.opts[parseInt(c.dataset.val)]===currentQuiz.ans)c.classList.add("correct");
+    });
+  }
+  document.getElementById("sc").textContent=correct;
+  document.getElementById("tot").textContent=current;
+  document.getElementById("scorePill").textContent=correct+" / "+current;
+  var pb=document.getElementById("prog");if(pb)pb.style.width=(current/pool.length*100)+"%";
+  showFeedback(currentQuiz.hadith,isCorrect);
+  setTimeout(renderQuiz,2200);
+}
+
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+function newGame(){
+  startTimer();
+  pool=getDiffPool();
+  if(mode==="quiz")shuffle(pool);
+  current=0;correct=0;cardIdx=0;
+  document.getElementById("sc").textContent="0";
+  document.getElementById("tot").textContent="0";
+  document.getElementById("scorePill").textContent="0 / 0";
+  document.getElementById("logBox").innerHTML="";
+  log("Started "+mode+" mode — "+pool.length+" hadiths ("+document.getElementById("diffSel").value+")");
+  if(mode==="learn"){
+    renderCard(pool[0]);
+  } else {
+    renderQuiz();
+  }
+}
+
+// High Score
+const HS_KEY="wdiy-hs-forty-nawawi";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
+function checkHS(){
+  if(mode==="quiz"&&current>=pool.length&&pool.length>0){
+    const pct=Math.round(correct/pool.length*100);
+    if(saveHS(pct)){log("🏆 NEW HIGH SCORE: "+pct+"%!","success");}
+  }
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+// Keyboard shortcuts
+document.addEventListener("keydown",function(e){
+  if(e.key>="1"&&e.key<="4"){
+    const cards=document.querySelectorAll(".pick-card");
+    const i=parseInt(e.key)-1;
+    if(cards[i])cards[i].click();
+  }
+  if(e.key==="ArrowLeft"){prevCard();}
+  if(e.key==="ArrowRight"){nextCard();}
+  if(e.key==="Enter"){
+    const go=document.getElementById("enterBtn");
+    if(go&&go.offsetParent!==null)go.click();
+    const start=document.getElementById("startBtn");
+    if(start&&start.offsetParent!==null)start.click();
+  }
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

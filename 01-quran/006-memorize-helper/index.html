@@ -1,0 +1,575 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Memorize Helper — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:600px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.big-text{font-family:'Noto Sans Arabic','Outfit',sans-serif;font-size:28px;font-weight:700;color:var(--heading);text-align:center;line-height:2.2;direction:rtl}
+.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Noto Sans Arabic','Outfit',sans-serif;font-size:18px;font-weight:700;cursor:pointer;transition:all .15s;min-width:50px;direction:rtl}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.answer-btn.disabled{opacity:.5;cursor:default;pointer-events:none}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:10px}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.surah-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:12px}
+.surah-card{padding:10px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);cursor:pointer;text-align:center;transition:all .15s;direction:rtl}
+.surah-card:hover{border-color:var(--accent);background:var(--abg)}
+.surah-card.active{border-color:var(--accent);background:var(--abg)}
+.surah-card .surah-name{font-family:'Noto Sans Arabic',sans-serif;font-size:16px;font-weight:700;color:var(--heading);margin-bottom:4px}
+.surah-card .surah-stars{font-size:11px;color:var(--text3);letter-spacing:1px}
+.surah-card .surah-stars .filled{color:gold}
+.surah-card.memorized{border-color:gold;background:rgba(255,215,0,.06)}
+.surah-card.memorized .surah-name::after{content:" \2713";color:gold}
+.verse-display{width:100%;direction:rtl;text-align:center;font-family:'Noto Sans Arabic',sans-serif;font-size:26px;line-height:2.4;color:var(--heading);font-weight:600}
+.verse-display .blank{display:inline-block;min-width:60px;border-bottom:3px solid var(--accent);margin:0 4px;cursor:pointer;padding:2px 6px;border-radius:4px;background:var(--abg);vertical-align:baseline;transition:all .15s}
+.verse-display .blank:hover{background:var(--abr)}
+.verse-display .blank.active-blank{border-color:gold;background:rgba(255,215,0,.12)}
+.verse-display .blank.filled{color:var(--accent);border-color:var(--accent);font-weight:700}
+.verse-display .blank.wrong-fill{color:#ff4444;border-color:#ff4444}
+.verse-display .word-sep{display:inline-block;width:8px}
+.word-bank{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:12px;direction:rtl}
+.word-bank .word-opt{padding:8px 14px;border-radius:8px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Noto Sans Arabic',sans-serif;font-size:18px;font-weight:600;cursor:pointer;transition:all .15s}
+.word-bank .word-opt:hover{border-color:var(--accent);background:var(--abg)}
+.word-bank .word-opt.used{opacity:.3;pointer-events:none;text-decoration:line-through}
+.word-bank .word-opt.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.word-bank .word-opt.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.step-indicator{display:flex;gap:6px;justify-content:center;margin-bottom:10px}
+.step-dot{width:28px;height:28px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;color:var(--text3)}
+.step-dot.active{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.step-dot.done{border-color:var(--accent);background:var(--accent);color:var(--bg)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Memorize Helper</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Memorize the Quran step by step</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Progressive hiding technique to help you memorize short surahs of the Quran.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Memorize Helper</h1><span class="pill" id="scorePill">Step 0/5</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<div class="ctrl">
+<select id="diffSel"><option value="easy">Easy</option><option value="medium" selected>Medium</option><option value="hard">Hard</option></select>
+<button id="startBtn">▶ New Surah</button>
+<button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+<button id="soundBtn">🔊</button>
+<div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div>
+</div>
+<div class="status" id="status">Select a surah to begin memorizing</div>
+<div id="surahSelector" class="surah-grid"></div>
+<div class="step-indicator" id="stepIndicator"></div>
+<div class="game-area" id="gameArea">
+<div class="verse-display" id="verseDisplay"></div>
+<div class="word-bank" id="wordBank"></div>
+<div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+</div>
+<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Errors</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div>
+<div class="foot">Workshop-Diy — Memorize Helper v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Memorize Helper?</summary><p>A progressive memorization tool for short surahs of the Quran. Words are gradually hidden and you fill them in from memory.</p></details>
+        <details class="help-item"><summary>How does progressive hiding work?</summary><p>Step 1: Full text shown. Step 2: 25% hidden. Step 3: 50% hidden. Step 4: 75% hidden. Step 5: All words hidden. You pick correct words from a word bank at each step.</p></details>
+        <details class="help-item"><summary>What do the difficulty levels do?</summary><p>Easy: Steps 1-2 only, short surahs highlighted. Medium: Steps 1-4. Hard: All 5 steps with all surahs available.</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Choose a difficulty level (Easy, Medium, Hard)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Select a surah from the grid. Stars show your progress.</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Step 1 shows the full surah. Read and memorize it, then click Next Step.</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>In later steps, fill in hidden words by clicking blanks, then picking from the word bank.</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Complete all steps to earn 5 stars and a checkmark on that surah!</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Press ▶ New Surah or pick another from the grid to continue.</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Click &larr; Catalog to go back to the main menu.</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Help Muslim kids memorize short surahs of the Quran using a progressive hiding technique. Words are gradually removed and the child reconstructs the surah from memory.</p></div>
+        <div class="wiki-entry"><h3>📖 Surahs</h3><p>12 short surahs: Al-Fatiha, Al-Ikhlas, Al-Falaq, An-Nas, Al-Kawthar, Al-Asr, Al-Fil, Quraysh, Al-Maun, An-Nasr, Al-Masad, Al-Kafirun.</p></div>
+        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Fran&ccedil;ais, العربية. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API sounds. Correct = rising tone, wrong = buzz, complete = melody. Toggle with the speaker button.</p></div>
+        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// ── Surah Data ──
+const SURAHS=[
+{id:"fatiha",name:"الفاتحة",en:"Al-Fatiha",ayat:[
+"الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
+"الرَّحْمَٰنِ الرَّحِيمِ",
+"مَالِكِ يَوْمِ الدِّينِ",
+"إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",
+"اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",
+"صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ",
+"غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ"
+]},
+{id:"ikhlas",name:"الإخلاص",en:"Al-Ikhlas",ayat:[
+"قُلْ هُوَ اللَّهُ أَحَدٌ",
+"اللَّهُ الصَّمَدُ",
+"لَمْ يَلِدْ وَلَمْ يُولَدْ",
+"وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ"
+]},
+{id:"falaq",name:"الفلق",en:"Al-Falaq",ayat:[
+"قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ",
+"مِن شَرِّ مَا خَلَقَ",
+"وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ",
+"وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ",
+"وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ"
+]},
+{id:"nas",name:"الناس",en:"An-Nas",ayat:[
+"قُلْ أَعُوذُ بِرَبِّ النَّاسِ",
+"مَلِكِ النَّاسِ",
+"إِلَٰهِ النَّاسِ",
+"مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ",
+"الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ",
+"مِنَ الْجِنَّةِ وَالنَّاسِ"
+]},
+{id:"kawthar",name:"الكوثر",en:"Al-Kawthar",ayat:[
+"إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ",
+"فَصَلِّ لِرَبِّكَ وَانْحَرْ",
+"إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ"
+]},
+{id:"asr",name:"العصر",en:"Al-Asr",ayat:[
+"وَالْعَصْرِ",
+"إِنَّ الْإِنسَانَ لَفِي خُسْرٍ",
+"إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ وَتَوَاصَوْا بِالْحَقِّ وَتَوَاصَوْا بِالصَّبْرِ"
+]},
+{id:"fil",name:"الفيل",en:"Al-Fil",ayat:[
+"أَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِأَصْحَابِ الْفِيلِ",
+"أَلَمْ يَجْعَلْ كَيْدَهُمْ فِي تَضْلِيلٍ",
+"وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَابِيلَ",
+"تَرْمِيهِم بِحِجَارَةٍ مِّن سِجِّيلٍ",
+"فَجَعَلَهُمْ كَعَصْفٍ مَّأْكُولٍ"
+]},
+{id:"quraysh",name:"قريش",en:"Quraysh",ayat:[
+"لِإِيلَافِ قُرَيْشٍ",
+"إِيلَافِهِمْ رِحْلَةَ الشِّتَاءِ وَالصَّيْفِ",
+"فَلْيَعْبُدُوا رَبَّ هَٰذَا الْبَيْتِ",
+"الَّذِي أَطْعَمَهُم مِّن جُوعٍ وَآمَنَهُم مِّنْ خَوْفٍ"
+]},
+{id:"maun",name:"الماعون",en:"Al-Maun",ayat:[
+"أَرَأَيْتَ الَّذِي يُكَذِّبُ بِالدِّينِ",
+"فَذَٰلِكَ الَّذِي يَدُعُّ الْيَتِيمَ",
+"وَلَا يَحُضُّ عَلَىٰ طَعَامِ الْمِسْكِينِ",
+"فَوَيْلٌ لِّلْمُصَلِّينَ",
+"الَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ",
+"الَّذِينَ هُمْ يُرَاءُونَ",
+"وَيَمْنَعُونَ الْمَاعُونَ"
+]},
+{id:"nasr",name:"النصر",en:"An-Nasr",ayat:[
+"إِذَا جَاءَ نَصْرُ اللَّهِ وَالْفَتْحُ",
+"وَرَأَيْتَ النَّاسَ يَدْخُلُونَ فِي دِينِ اللَّهِ أَفْوَاجًا",
+"فَسَبِّحْ بِحَمْدِ رَبِّكَ وَاسْتَغْفِرْهُ إِنَّهُ كَانَ تَوَّابًا"
+]},
+{id:"masad",name:"المسد",en:"Al-Masad",ayat:[
+"تَبَّتْ يَدَا أَبِي لَهَبٍ وَتَبَّ",
+"مَا أَغْنَىٰ عَنْهُ مَالُهُ وَمَا كَسَبَ",
+"سَيَصْلَىٰ نَارًا ذَاتَ لَهَبٍ",
+"وَامْرَأَتُهُ حَمَّالَةَ الْحَطَبِ",
+"فِي جِيدِهَا حَبْلٌ مِّن مَّسَدٍ"
+]},
+{id:"kafirun",name:"الكافرون",en:"Al-Kafirun",ayat:[
+"قُلْ يَا أَيُّهَا الْكَافِرُونَ",
+"لَا أَعْبُدُ مَا تَعْبُدُونَ",
+"وَلَا أَنتُمْ عَابِدُونَ مَا أَعْبُدُ",
+"وَلَا أَنَا عَابِدٌ مَّا عَبَدتُّمْ",
+"وَلَا أَنتُمْ عَابِدُونَ مَا أَعْبُدُ",
+"لَكُمْ دِينُكُمْ وَلِيَ دِينِ"
+]}
+];
+
+const HS_KEY="wdiy-hs-memorize";
+const PROGRESS_KEY="wdiy-memorize-progress";
+
+// State
+let currentSurah=null, currentStep=0, correctCount=0, errorCount=0;
+let blanks=[], activeBlankIdx=-1, locked=false;
+let timerInterval,timerSeconds=0;
+
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+// Progress persistence
+function loadProgress(){try{return JSON.parse(localStorage.getItem(PROGRESS_KEY))||{};}catch(e){return {};}}
+function saveProgress(surahId,step){try{const p=loadProgress();if(!p[surahId]||step>p[surahId])p[surahId]=step;localStorage.setItem(PROGRESS_KEY,JSON.stringify(p));}catch(e){}}
+function getStars(surahId){const p=loadProgress();return p[surahId]||0;}
+
+function getMaxSteps(){const d=document.getElementById("diffSel").value;if(d==="easy")return 2;if(d==="medium")return 4;return 5;}
+
+// Build surah selector
+function buildSurahGrid(){
+  const grid=document.getElementById("surahSelector");
+  grid.innerHTML="";
+  SURAHS.forEach(s=>{
+    const card=document.createElement("div");
+    card.className="surah-card"+(currentSurah&&currentSurah.id===s.id?" active":"")+(getStars(s.id)>=5?" memorized":"");
+    const stars=getStars(s.id);
+    let starStr="";
+    for(let i=1;i<=5;i++)starStr+='<span class="'+(i<=stars?"filled":"")+'">★</span>';
+    card.innerHTML='<div class="surah-name">'+s.name+'</div><div class="surah-stars">'+starStr+'</div><div style="font-size:10px;color:var(--text3);margin-top:2px;direction:ltr">'+s.en+'</div>';
+    card.onclick=()=>selectSurah(s);
+    grid.appendChild(card);
+  });
+}
+
+function buildStepIndicator(){
+  const el=document.getElementById("stepIndicator");
+  const maxS=getMaxSteps();
+  el.innerHTML="";
+  for(let i=1;i<=maxS;i++){
+    const dot=document.createElement("div");
+    dot.className="step-dot"+(i===currentStep?" active":"")+(i<currentStep?" done":"");
+    dot.textContent=i;
+    el.appendChild(dot);
+  }
+}
+
+function selectSurah(s){
+  currentSurah=s;
+  currentStep=0;
+  correctCount=0;errorCount=0;
+  document.getElementById("sc").textContent="0";
+  document.getElementById("tot").textContent="0";
+  buildSurahGrid();
+  log("Selected: "+s.en,"success");
+  startTimer();
+  nextStep();
+}
+
+function getAllWords(){
+  if(!currentSurah)return[];
+  const words=[];
+  currentSurah.ayat.forEach(a=>{a.split(/\s+/).forEach(w=>{if(w)words.push(w);});});
+  return words;
+}
+
+function nextStep(){
+  if(!currentSurah){document.getElementById("status").textContent="Select a surah first";return;}
+  currentStep++;
+  const maxS=getMaxSteps();
+  if(currentStep>maxS){
+    // Completed all steps
+    saveProgress(currentSurah.id,5);
+    stopTimer();snd("win");
+    document.getElementById("status").textContent="🏆 Surah "+currentSurah.en+" memorized!";
+    document.getElementById("status").className="status win";
+    log("🏆 Memorized "+currentSurah.en+"!","success");
+    checkHS();
+    buildSurahGrid();buildStepIndicator();
+    document.getElementById("verseDisplay").innerHTML='<div style="font-size:48px;margin-bottom:10px">🏆</div><div style="font-size:18px;color:var(--accent)">Surah '+currentSurah.en+' memorized!</div><button class="btn-go" style="margin-top:14px;font-size:12px" onclick="pickNewSurah()">Next Surah</button>';
+    document.getElementById("wordBank").innerHTML="";
+    return;
+  }
+  // Save partial progress
+  if(currentStep>1)saveProgress(currentSurah.id,currentStep-1);
+  buildSurahGrid();buildStepIndicator();
+  document.getElementById("scorePill").textContent="Step "+currentStep+"/"+maxS;
+  document.getElementById("status").textContent=getStepLabel(currentStep);
+  document.getElementById("status").className="status";
+
+  if(currentStep===1){
+    renderFullSurah();
+  }else{
+    const pct=currentStep===2?0.25:currentStep===3?0.5:currentStep===4?0.75:1.0;
+    renderHiddenSurah(pct);
+  }
+  document.getElementById("prog").style.width=((currentStep-1)/maxS*100)+"%";
+}
+
+function getStepLabel(s){
+  if(s===1)return "Step 1: Read the full surah carefully";
+  if(s===2)return "Step 2: Fill in the missing words (25% hidden)";
+  if(s===3)return "Step 3: Fill in the missing words (50% hidden)";
+  if(s===4)return "Step 4: Fill in the missing words (75% hidden)";
+  return "Step 5: Reconstruct the entire surah from memory!";
+}
+
+function renderFullSurah(){
+  const el=document.getElementById("verseDisplay");
+  let html="";
+  currentSurah.ayat.forEach((a,i)=>{
+    html+='<div style="margin-bottom:6px">'+a+' <span style="color:var(--accent);font-size:14px">﴿'+(i+1)+'﴾</span></div>';
+  });
+  html+='<button class="btn-go" style="margin-top:16px;font-size:12px" id="nextStepBtn">Next Step →</button>';
+  el.innerHTML=html;
+  document.getElementById("wordBank").innerHTML="";
+  document.getElementById("nextStepBtn").onclick=nextStep;
+}
+
+function renderHiddenSurah(hidePercent){
+  const allWords=getAllWords();
+  const totalWords=allWords.length;
+  const hideCount=Math.max(1,Math.round(totalWords*hidePercent));
+
+  // Deterministic-ish but shuffled indices to hide
+  const indices=[];
+  for(let i=0;i<totalWords;i++)indices.push(i);
+  // Seeded shuffle based on surah + step
+  const seed=currentSurah.id.length*100+currentStep*17;
+  for(let i=indices.length-1;i>0;i--){const j=Math.abs((seed*(i+1)*31+7)%indices.length);[indices[i],indices[j]]=[indices[j],indices[i]];}
+  const hiddenSet=new Set(indices.slice(0,hideCount));
+
+  blanks=[];
+  activeBlankIdx=-1;
+  locked=false;
+
+  const el=document.getElementById("verseDisplay");
+  let html="";
+  let wordIdx=0;
+  currentSurah.ayat.forEach((a,ai)=>{
+    html+='<div style="margin-bottom:6px">';
+    const words=a.split(/\s+/);
+    words.forEach((w,wi)=>{
+      if(hiddenSet.has(wordIdx)){
+        html+='<span class="blank" data-idx="'+blanks.length+'" data-word="'+w+'" onclick="clickBlank('+blanks.length+')">___</span>';
+        blanks.push({word:w,filled:false,elIdx:blanks.length});
+      }else{
+        html+=w;
+      }
+      if(wi<words.length-1)html+=' ';
+      wordIdx++;
+    });
+    html+=' <span style="color:var(--accent);font-size:14px">﴿'+(ai+1)+'﴾</span></div>';
+  });
+  el.innerHTML=html;
+
+  // Build word bank with hidden words shuffled + some distractors
+  const bankWords=blanks.map(b=>b.word);
+  // Shuffle
+  for(let i=bankWords.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[bankWords[i],bankWords[j]]=[bankWords[j],bankWords[i]];}
+  const wb=document.getElementById("wordBank");
+  wb.innerHTML="";
+  bankWords.forEach((w,i)=>{
+    const btn=document.createElement("button");
+    btn.className="word-opt";
+    btn.textContent=w;
+    btn.dataset.word=w;
+    btn.dataset.idx=i;
+    btn.onclick=()=>pickWord(btn,w);
+    wb.appendChild(btn);
+  });
+
+  // Auto-select first blank
+  if(blanks.length>0){activeBlankIdx=0;highlightBlank(0);}
+}
+
+function clickBlank(idx){
+  if(locked)return;
+  if(blanks[idx].filled)return;
+  activeBlankIdx=idx;
+  highlightBlank(idx);
+  snd("click");
+}
+
+function highlightBlank(idx){
+  document.querySelectorAll(".blank").forEach(b=>b.classList.remove("active-blank"));
+  const el=document.querySelector('.blank[data-idx="'+idx+'"]');
+  if(el)el.classList.add("active-blank");
+}
+
+function pickWord(btn,word){
+  if(locked||activeBlankIdx<0)return;
+  if(btn.classList.contains("used"))return;
+  const blank=blanks[activeBlankIdx];
+  const blankEl=document.querySelector('.blank[data-idx="'+activeBlankIdx+'"]');
+
+  if(word===blank.word){
+    // Correct
+    blank.filled=true;
+    blankEl.textContent=word;
+    blankEl.classList.add("filled");
+    blankEl.classList.remove("active-blank");
+    btn.classList.add("used","correct");
+    setTimeout(()=>btn.classList.remove("correct"),400);
+    correctCount++;
+    document.getElementById("sc").textContent=correctCount;
+    snd("ok");
+    log("✓ Correct: "+word,"success");
+
+    // Move to next unfilled blank
+    let next=-1;
+    for(let i=activeBlankIdx+1;i<blanks.length;i++){if(!blanks[i].filled){next=i;break;}}
+    if(next===-1){for(let i=0;i<activeBlankIdx;i++){if(!blanks[i].filled){next=i;break;}}}
+    if(next===-1){
+      // All blanks filled! Step complete
+      locked=true;
+      const maxS=getMaxSteps();
+      document.getElementById("prog").style.width=(currentStep/maxS*100)+"%";
+      document.getElementById("status").textContent="✓ Step "+currentStep+" complete!";
+      document.getElementById("status").className="status win";
+      log("Step "+currentStep+" complete!","success");
+      snd("win");
+      setTimeout(nextStep,1500);
+    }else{
+      activeBlankIdx=next;
+      highlightBlank(next);
+    }
+  }else{
+    // Wrong
+    btn.classList.add("wrong");
+    setTimeout(()=>btn.classList.remove("wrong"),500);
+    blankEl.classList.add("wrong-fill");
+    setTimeout(()=>blankEl.classList.remove("wrong-fill"),500);
+    errorCount++;
+    document.getElementById("tot").textContent=errorCount;
+    snd("err");
+    log("✗ Wrong word for this blank","error");
+  }
+}
+
+function pickNewSurah(){
+  currentSurah=null;currentStep=0;
+  document.getElementById("verseDisplay").innerHTML='<div style="color:var(--text2);font-size:14px">Select a surah from the grid above</div>';
+  document.getElementById("wordBank").innerHTML="";
+  document.getElementById("status").textContent="Select a surah to begin memorizing";
+  document.getElementById("status").className="status";
+  document.getElementById("stepIndicator").innerHTML="";
+  buildSurahGrid();
+}
+
+// High Score
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
+function checkHS(){
+  const p=loadProgress();
+  const total=Object.values(p).filter(v=>v>=5).length;
+  if(saveHS(total)){log("🏆 NEW RECORD: "+total+" surahs memorized!","success");}
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
+  showHS();
+  buildSurahGrid();
+
+  document.getElementById("enterBtn").addEventListener("click",()=>{
+    document.querySelector(".splash").style.display="none";
+    document.getElementById("app").classList.add("on");
+    document.getElementById("backLink").style.display="block";
+  });
+  document.getElementById("startBtn").addEventListener("click",pickNewSurah);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+// Keyboard shortcuts
+document.addEventListener("keydown",function(e){
+  // 1-9 for word bank options
+  if(e.key>="1"&&e.key<="9"){
+    const btns=document.querySelectorAll(".word-bank .word-opt:not(.used)");
+    const i=parseInt(e.key)-1;
+    if(btns[i])btns[i].click();
+  }
+  // Enter for next step or start
+  if(e.key==="Enter"){
+    const go=document.getElementById("enterBtn");
+    if(go&&go.offsetParent!==null){go.click();return;}
+    const ns=document.getElementById("nextStepBtn");
+    if(ns&&ns.offsetParent!==null){ns.click();return;}
+  }
+  // Tab to cycle blanks
+  if(e.key==="Tab"&&blanks.length>0){
+    e.preventDefault();
+    let next=-1;
+    for(let i=activeBlankIdx+1;i<blanks.length;i++){if(!blanks[i].filled){next=i;break;}}
+    if(next===-1){for(let i=0;i<blanks.length;i++){if(!blanks[i].filled){next=i;break;}}}
+    if(next>=0){activeBlankIdx=next;highlightBlank(next);snd("click");}
+  }
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

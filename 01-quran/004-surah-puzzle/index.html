@@ -1,0 +1,336 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Surah Puzzle — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:600px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.progress{width:100%;max-width:400px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes flashRed{0%{background:#ff4444;color:#fff;border-color:#ff4444}100%{background:var(--bg3);color:var(--heading);border-color:var(--border)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+/* Puzzle-specific */
+.surah-title{font-family:'Noto Sans Arabic',sans-serif;font-size:20px;font-weight:700;color:var(--accent);text-align:center;margin-bottom:4px}
+.surah-subtitle{font-size:11px;color:var(--text2);text-align:center;margin-bottom:10px}
+.placed-area{width:100%;min-height:50px;border:2px dashed var(--border2);border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:6px;margin-bottom:10px;transition:border-color .3s}
+.placed-area.highlight{border-color:var(--accent)}
+.placed-card{padding:10px 14px;border-radius:8px;background:var(--accent);color:var(--bg);font-family:'Noto Sans Arabic',sans-serif;font-size:18px;font-weight:600;text-align:center;animation:fadeUp .3s;direction:rtl;line-height:1.6}
+.shuffle-area{width:100%;display:flex;flex-direction:column;gap:6px}
+.ayah-card{padding:12px 14px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Noto Sans Arabic',sans-serif;font-size:18px;font-weight:600;cursor:pointer;text-align:center;transition:all .15s;direction:rtl;line-height:1.6;user-select:none}
+.ayah-card:hover{border-color:var(--accent);background:var(--abg)}
+.ayah-card.wrong-flash{animation:flashRed .4s ease}
+.ayah-card.disabled{opacity:.3;pointer-events:none}
+.completion-box{text-align:center;animation:fadeUp .5s}
+.completion-box h2{font-family:'Noto Sans Arabic',sans-serif;font-size:24px;color:var(--accent);margin-bottom:6px}
+.completion-box .trans{font-size:13px;color:var(--text);margin-bottom:8px;line-height:1.6}
+.completion-box .tafsir{font-size:11px;color:var(--text2);line-height:1.6;padding:10px;background:var(--bg3);border-radius:8px;border:1px solid var(--border);margin-bottom:10px;text-align:left}
+[dir="rtl"] .completion-box .tafsir{text-align:right}
+.completion-box .btn-next{padding:10px 24px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.diff-label{font-size:10px;color:var(--text3);padding:2px 8px;border-radius:10px;background:var(--bg3);border:1px solid var(--border)}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Surah Puzzle</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Reconstruct the surahs of the Quran</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Arrange the ayahs in the correct order!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Surah Puzzle</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel"><option value="easy">Easy (3-4 ayahs)</option><option value="medium" selected>Medium (5-6 ayahs)</option><option value="hard">Hard (7+ ayahs)</option></select>
+    <button id="startBtn">▶ New Round</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+    <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="status" id="status">Tap the ayahs in the correct order!</div>
+<div class="game-area" id="gameArea">
+  <div class="surah-title" id="surahTitle"></div>
+  <div class="surah-subtitle" id="surahSubtitle"></div>
+  <div class="placed-area" id="placedArea"></div>
+  <div class="shuffle-area" id="shuffleArea"></div>
+  <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+</div>
+<div class="score-row"><div class="score-item"><div class="score-label">Surahs</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Mistakes</div><div class="score-num" id="mistakes">0</div></div><div class="score-item"><div class="score-label">Round</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Surah Puzzle v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Surah Puzzle?</summary><p>A jigsaw-style game where you arrange scrambled ayahs of a surah back into the correct order. Great for memorizing the Quran!</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+        <details class="help-item"><summary>What surahs are included?</summary><p>15 short surahs from Juz Amma: Al-Fatiha, Al-Ikhlas, Al-Falaq, An-Nas, Al-Kawthar, Al-Asr, Al-Fil, Quraysh, Al-Maun, An-Nasr, Al-Masad, Al-Kafirun, At-Takathur, Al-Qariah, and Al-Zalzalah.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Choose difficulty: Easy (3-4 ayahs), Medium (5-6), Hard (7+)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Press ▶ New Round to begin</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Read the scrambled ayah cards and tap them in the correct order</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>Correct ayahs move to the answer area; wrong ones flash red</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Complete the surah to see its name, translation, and tafsir note</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Click Next Surah to continue the round</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Strengthen surah memorization by reconstructing ayahs in the correct order. Covers 15 short surahs from Juz Amma.</p></div>
+        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Fran&ccedil;ais, العربية. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Correct = rising tone, wrong = buzz, win = melody. Toggle with 🔊 button.</p></div>
+        <div class="wiki-entry"><h3>📖 Content</h3><p>Each surah includes the full Arabic text, an English translation, and a brief tafsir note to help kids understand the meaning.</p></div>
+        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// === SURAH DATA ===
+const SURAHS=[
+{id:"fatiha",name:"الفاتحة",nameEn:"Al-Fatiha",ayahs:["بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ","ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَـٰلَمِينَ","ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ","مَـٰلِكِ يَوْمِ ٱلدِّينِ","إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ","ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ","صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ"],trans:"In the name of Allah, the Most Gracious, the Most Merciful. All praise is due to Allah, Lord of the worlds. The Most Gracious, the Most Merciful. Master of the Day of Judgment. You alone we worship, and You alone we ask for help. Guide us to the straight path. The path of those You have blessed, not of those who earned anger, nor of those who went astray.",tafsir:"The Opening chapter of the Quran, recited in every prayer. It summarizes the relationship between Allah and His servants: praise, worship, and seeking guidance."},
+{id:"ikhlas",name:"الإخلاص",nameEn:"Al-Ikhlas",ayahs:["قُلْ هُوَ ٱللَّهُ أَحَدٌ","ٱللَّهُ ٱلصَّمَدُ","لَمْ يَلِدْ وَلَمْ يُولَدْ","وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ"],trans:"Say: He is Allah, the One. Allah, the Eternal Refuge. He neither begets nor is born. And there is none comparable to Him.",tafsir:"This surah declares the absolute oneness of Allah (Tawhid). The Prophet (peace be upon him) said it is equal to one-third of the Quran in meaning."},
+{id:"falaq",name:"الفلق",nameEn:"Al-Falaq",ayahs:["قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ","مِن شَرِّ مَا خَلَقَ","وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ","وَمِن شَرِّ ٱلنَّفَّـٰثَـٰتِ فِى ٱلْعُقَدِ","وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ"],trans:"Say: I seek refuge in the Lord of daybreak. From the evil of that which He created. And from the evil of darkness when it settles. And from the evil of the blowers in knots. And from the evil of an envier when he envies.",tafsir:"One of the two protection surahs (Al-Mu'awwidhatayn). It teaches us to seek refuge in Allah from all forms of evil and harm."},
+{id:"nas",name:"الناس",nameEn:"An-Nas",ayahs:["قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ","مَلِكِ ٱلنَّاسِ","إِلَـٰهِ ٱلنَّاسِ","مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ","ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ","مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ"],trans:"Say: I seek refuge in the Lord of mankind. The Sovereign of mankind. The God of mankind. From the evil of the retreating whisperer. Who whispers in the breasts of mankind. From among the jinn and mankind.",tafsir:"The last surah of the Quran. It teaches us to seek protection in Allah from the whisperings of Shaytan that try to lead us astray."},
+{id:"kawthar",name:"الكوثر",nameEn:"Al-Kawthar",ayahs:["إِنَّآ أَعْطَيْنَـٰكَ ٱلْكَوْثَرَ","فَصَلِّ لِرَبِّكَ وَٱنْحَرْ","إِنَّ شَانِئَكَ هُوَ ٱلْأَبْتَرُ"],trans:"Indeed, We have granted you Al-Kawthar. So pray to your Lord and sacrifice. Indeed, your enemy is the one cut off.",tafsir:"Al-Kawthar is a river in Paradise granted to Prophet Muhammad (peace be upon him). This surah was revealed to comfort him when his enemies mocked him."},
+{id:"asr",name:"العصر",nameEn:"Al-Asr",ayahs:["وَٱلْعَصْرِ","إِنَّ ٱلْإِنسَـٰنَ لَفِى خُسْرٍ","إِلَّا ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّـٰلِحَـٰتِ وَتَوَاصَوْا۟ بِٱلْحَقِّ وَتَوَاصَوْا۟ بِٱلصَّبْرِ"],trans:"By time. Indeed, mankind is in loss. Except for those who have believed and done righteous deeds and advised each other to truth and advised each other to patience.",tafsir:"Imam Shafi'i said if only this surah was revealed, it would be sufficient for guidance. It summarizes the recipe for success: faith, good deeds, truth, and patience."},
+{id:"fil",name:"الفيل",nameEn:"Al-Fil",ayahs:["أَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِأَصْحَـٰبِ ٱلْفِيلِ","أَلَمْ يَجْعَلْ كَيْدَهُمْ فِى تَضْلِيلٍ","وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَابِيلَ","تَرْمِيهِم بِحِجَارَةٍ مِّن سِجِّيلٍ","فَجَعَلَهُمْ كَعَصْفٍ مَّأْكُولٍۭ"],trans:"Have you not considered how your Lord dealt with the companions of the elephant? Did He not make their plan into misguidance? And He sent against them birds in flocks. Striking them with stones of hard clay. And He made them like eaten straw.",tafsir:"This surah recounts the story of Abraha's army that tried to destroy the Kaaba with elephants. Allah sent birds carrying stones to destroy them, protecting His sacred house."},
+{id:"quraysh",name:"قريش",nameEn:"Quraysh",ayahs:["لِإِيلَـٰفِ قُرَيْشٍ","إِۦلَـٰفِهِمْ رِحْلَةَ ٱلشِّتَآءِ وَٱلصَّيْفِ","فَلْيَعْبُدُوا۟ رَبَّ هَـٰذَا ٱلْبَيْتِ","ٱلَّذِىٓ أَطْعَمَهُم مِّن جُوعٍ وَءَامَنَهُم مِّنْ خَوْفٍۭ"],trans:"For the accustomed security of the Quraysh. Their accustomed security in the caravan of winter and summer. Let them worship the Lord of this House. Who has fed them against hunger and made them safe from fear.",tafsir:"This surah reminds the Quraysh tribe of Allah's blessings: safe trade journeys in winter and summer, food, and security. They should worship Him alone in gratitude."},
+{id:"maun",name:"الماعون",nameEn:"Al-Maun",ayahs:["أَرَءَيْتَ ٱلَّذِى يُكَذِّبُ بِٱلدِّينِ","فَذَٰلِكَ ٱلَّذِى يَدُعُّ ٱلْيَتِيمَ","وَلَا يَحُضُّ عَلَىٰ طَعَامِ ٱلْمِسْكِينِ","فَوَيْلٌ لِّلْمُصَلِّينَ","ٱلَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ","ٱلَّذِينَ هُمْ يُرَآءُونَ","وَيَمْنَعُونَ ٱلْمَاعُونَ"],trans:"Have you seen the one who denies the Recompense? For that is the one who drives away the orphan. And does not encourage the feeding of the poor. So woe to those who pray. But are heedless of their prayer. Those who make show of their deeds. And withhold simple assistance.",tafsir:"This surah warns against hypocrisy in worship. True faith is shown through caring for orphans, feeding the poor, and being sincere in prayer — not just going through the motions."},
+{id:"nasr",name:"النصر",nameEn:"An-Nasr",ayahs:["إِذَا جَآءَ نَصْرُ ٱللَّهِ وَٱلْفَتْحُ","وَرَأَيْتَ ٱلنَّاسَ يَدْخُلُونَ فِى دِينِ ٱللَّهِ أَفْوَاجًا","فَسَبِّحْ بِحَمْدِ رَبِّكَ وَٱسْتَغْفِرْهُ ۚ إِنَّهُۥ كَانَ تَوَّابًۢا"],trans:"When the victory of Allah has come and the conquest. And you see the people entering into the religion of Allah in multitudes. Then exalt Him with praise of your Lord and ask forgiveness of Him. Indeed, He is ever Accepting of repentance.",tafsir:"One of the last surahs revealed. It foretold the conquest of Makkah and reminded the Prophet (peace be upon him) to glorify Allah and seek forgiveness even in times of triumph."},
+{id:"masad",name:"المسد",nameEn:"Al-Masad",ayahs:["تَبَّتْ يَدَآ أَبِى لَهَبٍ وَتَبَّ","مَآ أَغْنَىٰ عَنْهُ مَالُهُۥ وَمَا كَسَبَ","سَيَصْلَىٰ نَارًا ذَاتَ لَهَبٍ","وَٱمْرَأَتُهُۥ حَمَّالَةَ ٱلْحَطَبِ","فِى جِيدِهَا حَبْلٌ مِّن مَّسَدٍۭ"],trans:"May the hands of Abu Lahab be ruined, and ruined is he. His wealth will not avail him or that which he gained. He will burn in a Fire of blazing flame. And his wife, the carrier of firewood. Around her neck is a rope of palm fiber.",tafsir:"Abu Lahab was the Prophet's uncle who fiercely opposed Islam. This surah shows that neither wealth nor family ties can protect someone who rejects the truth."},
+{id:"kafirun",name:"الكافرون",nameEn:"Al-Kafirun",ayahs:["قُلْ يَـٰٓأَيُّهَا ٱلْكَـٰفِرُونَ","لَآ أَعْبُدُ مَا تَعْبُدُونَ","وَلَآ أَنتُمْ عَـٰبِدُونَ مَآ أَعْبُدُ","وَلَآ أَنَا۠ عَابِدٌ مَّا عَبَدتُّمْ","وَلَآ أَنتُمْ عَـٰبِدُونَ مَآ أَعْبُدُ","لَكُمْ دِينُكُمْ وَلِىَ دِينِ"],trans:"Say: O disbelievers. I do not worship what you worship. Nor are you worshippers of what I worship. Nor will I be a worshipper of what you worship. Nor will you be worshippers of what I worship. For you is your religion, and for me is my religion.",tafsir:"This surah establishes the principle of religious freedom and firm monotheism. It was revealed when the Quraysh proposed that Muslims worship their idols in exchange."},
+{id:"takathur",name:"التكاثر",nameEn:"At-Takathur",ayahs:["أَلْهَىٰكُمُ ٱلتَّكَاثُرُ","حَتَّىٰ زُرْتُمُ ٱلْمَقَابِرَ","كَلَّا سَوْفَ تَعْلَمُونَ","ثُمَّ كَلَّا سَوْفَ تَعْلَمُونَ","كَلَّا لَوْ تَعْلَمُونَ عِلْمَ ٱلْيَقِينِ","لَتَرَوُنَّ ٱلْجَحِيمَ","ثُمَّ لَتَرَوُنَّهَا عَيْنَ ٱلْيَقِينِ","ثُمَّ لَتُسْـَٔلُنَّ يَوْمَئِذٍ عَنِ ٱلنَّعِيمِ"],trans:"Competition in worldly increase diverts you. Until you visit the graveyards. No! You are going to know. Then no! You are going to know. No! If you only knew with knowledge of certainty. You will surely see the Hellfire. Then you will surely see it with the eye of certainty. Then you will surely be asked that Day about pleasure.",tafsir:"This surah warns against being distracted by worldly competition and accumulation of wealth. True success is remembering the afterlife and being grateful for Allah's blessings."},
+{id:"qariah",name:"القارعة",nameEn:"Al-Qariah",ayahs:["ٱلْقَارِعَةُ","مَا ٱلْقَارِعَةُ","وَمَآ أَدْرَىٰكَ مَا ٱلْقَارِعَةُ","يَوْمَ يَكُونُ ٱلنَّاسُ كَٱلْفَرَاشِ ٱلْمَبْثُوثِ","وَتَكُونُ ٱلْجِبَالُ كَٱلْعِهْنِ ٱلْمَنفُوشِ","فَأَمَّا مَن ثَقُلَتْ مَوَٰزِينُهُۥ","فَهُوَ فِى عِيشَةٍ رَّاضِيَةٍ","وَأَمَّا مَنْ خَفَّتْ مَوَٰزِينُهُۥ","فَأُمُّهُۥ هَاوِيَةٌ","وَمَآ أَدْرَىٰكَ مَا هِيَهْ","نَارٌ حَامِيَةٌۢ"],trans:"The Striking Calamity. What is the Striking Calamity? And what can make you know what is the Striking Calamity? It is the Day when people will be like moths, dispersed. And the mountains will be like carded wool. Then as for one whose scales are heavy with good deeds. He will be in a pleasant life. But as for one whose scales are light. His refuge will be an abyss. And what can make you know what that is? It is a Fire, intensely hot.",tafsir:"This surah describes the Day of Judgment when deeds will be weighed on scales. Those with heavy good deeds will enjoy Paradise, while those with light deeds face the Fire."},
+{id:"zalzalah",name:"الزلزلة",nameEn:"Al-Zalzalah",ayahs:["إِذَا زُلْزِلَتِ ٱلْأَرْضُ زِلْزَالَهَا","وَأَخْرَجَتِ ٱلْأَرْضُ أَثْقَالَهَا","وَقَالَ ٱلْإِنسَـٰنُ مَا لَهَا","يَوْمَئِذٍ تُحَدِّثُ أَخْبَارَهَا","بِأَنَّ رَبَّكَ أَوْحَىٰ لَهَا","يَوْمَئِذٍ يَصْدُرُ ٱلنَّاسُ أَشْتَاتًا لِّيُرَوْا۟ أَعْمَـٰلَهُمْ","فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُۥ","وَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ شَرًّا يَرَهُۥ"],trans:"When the earth is shaken with its final earthquake. And the earth discharges its burdens. And man says: What is wrong with it? That Day, it will report its news. Because your Lord has commanded it. That Day, the people will depart separated to be shown the result of their deeds. So whoever does an atom's weight of good will see it. And whoever does an atom's weight of evil will see it.",tafsir:"This surah teaches that even the smallest deed — good or bad — will be accounted for on the Day of Judgment. The earth itself will testify about what happened on it."}
+];
+
+const EASY_IDS=["kawthar","asr","nasr","ikhlas","quraysh"];
+const MEDIUM_IDS=["falaq","fil","masad","nas","kafirun"];
+const HARD_IDS=["fatiha","maun","takathur","qariah","zalzalah"];
+
+let currentDiff="medium",roundSurahs=[],surahIdx=0,currentSurah=null,nextAyahIdx=0,totalMistakes=0,surahsCompleted=0,locked=false;
+let timerInterval,timerSeconds=0;
+
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+function getSurahPool(){
+  if(currentDiff==="easy") return EASY_IDS;
+  if(currentDiff==="medium") return MEDIUM_IDS;
+  return HARD_IDS;
+}
+
+function newRound(){
+  startTimer();
+  currentDiff=document.getElementById("diffSel").value;
+  const pool=getSurahPool();
+  roundSurahs=shuffle(pool).slice(0,3);
+  surahIdx=0;surahsCompleted=0;totalMistakes=0;
+  document.getElementById("sc").textContent="0";
+  document.getElementById("mistakes").textContent="0";
+  document.getElementById("tot").textContent=roundSurahs.length;
+  document.getElementById("scorePill").textContent="0 / "+roundSurahs.length;
+  document.getElementById("prog").style.width="0%";
+  log("New round: "+currentDiff+" ("+roundSurahs.length+" surahs)","success");
+  loadSurah();
+}
+
+function loadSurah(){
+  if(surahIdx>=roundSurahs.length){endRound();return;}
+  const sid=roundSurahs[surahIdx];
+  currentSurah=SURAHS.find(s=>s.id===sid);
+  nextAyahIdx=0;locked=false;
+  const ga=document.getElementById("gameArea");
+  ga.innerHTML='<div class="surah-title" id="surahTitle"></div><div class="surah-subtitle" id="surahSubtitle"></div><div class="placed-area" id="placedArea"></div><div class="shuffle-area" id="shuffleArea"></div><div class="progress"><div class="progress-bar" id="prog" style="width:'+(surahIdx/roundSurahs.length*100)+'%"></div></div>';
+  document.getElementById("surahTitle").textContent=currentSurah.name;
+  document.getElementById("surahSubtitle").textContent="Surah "+(surahIdx+1)+" of "+roundSurahs.length+" — "+currentSurah.nameEn+" ("+currentSurah.ayahs.length+" ayahs)";
+  document.getElementById("status").textContent="Tap ayah "+(nextAyahIdx+1)+" of "+currentSurah.ayahs.length;
+  document.getElementById("status").className="status";
+
+  const shuffled=shuffle(currentSurah.ayahs.map((a,i)=>({text:a,idx:i})));
+  const sa=document.getElementById("shuffleArea");
+  sa.innerHTML="";
+  shuffled.forEach(item=>{
+    const card=document.createElement("div");
+    card.className="ayah-card";
+    card.textContent=item.text;
+    card.dataset.idx=item.idx;
+    card.addEventListener("click",()=>pickAyah(card,item.idx));
+    sa.appendChild(card);
+  });
+}
+
+function pickAyah(card,idx){
+  if(locked)return;
+  if(idx===nextAyahIdx){
+    // Correct
+    snd("ok");
+    card.classList.add("disabled");
+    card.style.pointerEvents="none";
+    const placed=document.getElementById("placedArea");
+    const pc=document.createElement("div");
+    pc.className="placed-card";
+    pc.textContent=currentSurah.ayahs[idx];
+    placed.appendChild(pc);
+    nextAyahIdx++;
+    log("Ayah "+nextAyahIdx+" correct: "+currentSurah.nameEn,"success");
+    if(nextAyahIdx>=currentSurah.ayahs.length){
+      // Surah complete
+      locked=true;
+      surahsCompleted++;
+      document.getElementById("sc").textContent=surahsCompleted;
+      document.getElementById("scorePill").textContent=surahsCompleted+" / "+roundSurahs.length;
+      document.getElementById("prog").style.width=((surahIdx+1)/roundSurahs.length*100)+"%";
+      snd("win");
+      document.getElementById("status").textContent="Surah complete!";
+      document.getElementById("status").className="status win";
+      log("Surah "+currentSurah.nameEn+" completed!","success");
+      setTimeout(()=>showCompletion(),600);
+    } else {
+      document.getElementById("status").textContent="Tap ayah "+(nextAyahIdx+1)+" of "+currentSurah.ayahs.length;
+    }
+  } else {
+    // Wrong
+    snd("err");
+    totalMistakes++;
+    document.getElementById("mistakes").textContent=totalMistakes;
+    card.classList.add("wrong-flash");
+    log("Wrong! Expected ayah "+(nextAyahIdx+1),"error");
+    setTimeout(()=>card.classList.remove("wrong-flash"),400);
+  }
+}
+
+function showCompletion(){
+  const ga=document.getElementById("gameArea");
+  ga.innerHTML='<div class="completion-box" id="completionBox"></div>';
+  const box=document.getElementById("completionBox");
+  box.innerHTML='<h2>'+currentSurah.name+'</h2><p style="color:var(--text2);font-size:12px;margin-bottom:10px">'+currentSurah.nameEn+'</p><div class="trans">'+currentSurah.trans+'</div><div class="tafsir"><strong>Tafsir:</strong> '+currentSurah.tafsir+'</div><button class="btn-next" id="nextSurahBtn">'+(surahIdx+1<roundSurahs.length?"Next Surah ▶":"Finish Round 🏆")+'</button>';
+  document.getElementById("nextSurahBtn").addEventListener("click",()=>{
+    surahIdx++;
+    if(surahIdx>=roundSurahs.length){endRound();}
+    else{loadSurah();}
+  });
+}
+
+function endRound(){
+  stopTimer();
+  checkHS();
+  const ga=document.getElementById("gameArea");
+  ga.innerHTML='<div class="completion-box"><h2 style="font-family:Outfit,sans-serif">🏆 Round Complete!</h2><p style="color:var(--text);font-size:14px;margin:10px 0">'+surahsCompleted+' / '+roundSurahs.length+' surahs completed</p><p style="color:var(--text2);font-size:12px;margin-bottom:6px">Mistakes: '+totalMistakes+'</p><p style="color:var(--text2);font-size:12px;margin-bottom:14px">Time: '+document.getElementById("timerPill").textContent+'</p><button class="btn-next" id="playAgainBtn">▶ Play Again</button></div>';
+  document.getElementById("status").textContent="Round complete! "+surahsCompleted+"/"+roundSurahs.length;
+  document.getElementById("status").className="status win";
+  log("Round finished: "+surahsCompleted+"/"+roundSurahs.length+", mistakes: "+totalMistakes,"success");
+  document.getElementById("playAgainBtn").addEventListener("click",newRound);
+}
+
+// High Score
+const HS_KEY="wdiy-hs-surah-puzzle";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
+function checkHS(){
+  if(surahsCompleted>0&&roundSurahs.length>0){
+    const pct=Math.round(surahsCompleted/roundSurahs.length*100);
+    if(saveHS(pct)){log("NEW HIGH SCORE: "+pct+"%!","success");}
+  }
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newRound();});
+  document.getElementById("startBtn").addEventListener("click",newRound);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+// Keyboard shortcuts
+document.addEventListener("keydown",function(e){
+if(e.key>="1"&&e.key<="9"){const cards=document.querySelectorAll(".ayah-card:not(.disabled)");const i=parseInt(e.key)-1;if(cards[i])cards[i].click();}
+if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();const next=document.getElementById("nextSurahBtn");if(next)next.click();const again=document.getElementById("playAgainBtn");if(again)again.click();}
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

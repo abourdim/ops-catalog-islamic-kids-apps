@@ -1,0 +1,466 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Morning &amp; Evening — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:560px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.big-text{font-family:'Outfit',sans-serif;font-size:32px;font-weight:800;color:var(--heading);text-align:center}
+.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;cursor:pointer;transition:all .15s;min-width:50px}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.grid-pick{display:grid;gap:8px;justify-content:center;margin:10px auto}
+.grid-pick.g2{grid-template-columns:repeat(2,1fr);max-width:500px}
+.grid-pick.g4{grid-template-columns:repeat(2,1fr);max-width:500px}
+.pick-card{padding:14px 10px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Noto Sans Arabic','Outfit',sans-serif;font-size:16px;font-weight:600;cursor:pointer;text-align:center;transition:all .15s;line-height:1.6}
+.pick-card:hover{border-color:var(--accent);background:var(--abg)}
+.pick-card.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.pick-card.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+
+/* Adhkar-specific styles */
+.dhikr-card{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:20px;width:100%;text-align:center;animation:fadeUp .3s}
+.dhikr-arabic{font-family:'Noto Sans Arabic',sans-serif;font-size:26px;font-weight:700;color:var(--heading);line-height:1.8;margin-bottom:12px;direction:rtl}
+.dhikr-translit{font-family:'Outfit',sans-serif;font-size:13px;color:var(--accent);margin-bottom:6px;font-style:italic}
+.dhikr-meaning{font-size:11px;color:var(--text2);line-height:1.6;margin-bottom:14px}
+.dhikr-benefit{font-size:10px;color:var(--text3);margin-bottom:12px;font-style:italic}
+.rep-counter{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:8px}
+.rep-btn{width:64px;height:64px;border-radius:50%;border:3px solid var(--accent);background:var(--abg);color:var(--accent);font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center}
+.rep-btn:hover{background:var(--accent);color:var(--bg)}
+.rep-btn.done{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.rep-label{font-size:10px;color:var(--text3)}
+.dhikr-nav{display:flex;gap:8px;justify-content:center;margin-top:12px}
+.dhikr-nav button{padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg2);color:var(--heading);font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;cursor:pointer}
+.dhikr-nav button:hover{border-color:var(--accent);color:var(--accent)}
+.dhikr-nav button:disabled{opacity:.3;cursor:default}
+.checklist{display:grid;grid-template-columns:repeat(auto-fill,minmax(28px,1fr));gap:4px;max-width:360px;margin:8px auto}
+.check-dot{width:28px;height:28px;border-radius:6px;border:1px solid var(--border);background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text3);cursor:pointer;transition:all .15s}
+.check-dot.completed{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.check-dot.current{border-color:var(--accent);color:var(--accent)}
+.mode-tabs{display:flex;gap:4px;margin-bottom:8px;justify-content:center}
+.mode-tab{padding:6px 14px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer}
+.mode-tab.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.period-tabs{display:flex;gap:4px;justify-content:center;margin-bottom:8px}
+.period-tab{padding:6px 14px;border-radius:20px;border:1px solid var(--border);background:none;color:var(--text2);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer}
+.period-tab.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.daily-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(0,200,100,.1);border:1px solid rgba(0,200,100,.3);color:#00c864;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Morning &amp; Evening</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Daily adhkar practice</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Read and memorize your morning &amp; evening adhkar!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Morning &amp; Evening</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<div class="ctrl">
+<div class="period-tabs"><button class="period-tab on" data-period="morning" onclick="setPeriod('morning')">🌅 Morning</button><button class="period-tab" data-period="evening" onclick="setPeriod('evening')">🌙 Evening</button></div>
+<div class="mode-tabs"><button class="mode-tab on" data-mode="read" onclick="setMode('read')">📖 Read</button><button class="mode-tab" data-mode="quiz" onclick="setMode('quiz')">❓ Quiz</button></div>
+<select id="diffSel" onchange="setDiff()"><option value="6">Easy (6)</option><option value="10" selected>Medium (10)</option><option value="12">Hard (12)</option></select>
+<button id="startBtn">▶ New Session</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+<button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="status" id="status">Choose morning or evening adhkar</div>
+<div id="dailyStatus"></div>
+<div class="checklist" id="checklist"></div>
+<div class="game-area" id="gameArea">
+<div id="readArea" style="width:100%"></div>
+<div id="quizArea" style="width:100%;display:none"></div>
+</div>
+<div class="score-row"><div class="score-item"><div class="score-label">Completed</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Morning &amp; Evening v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Morning &amp; Evening?</summary><p>A daily adhkar practice app for Muslim kids. Read and memorize your morning and evening remembrances of Allah.</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+        <details class="help-item"><summary>What are the two modes?</summary><p>READ mode: scroll through adhkar cards and tap to count repetitions. QUIZ mode: match the dhikr to its description from 4 options.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Choose Morning or Evening adhkar</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Select Read or Quiz mode and difficulty</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Press ▶ New Session to begin</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>READ: Tap the counter circle to count repetitions. It auto-advances when done.</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>QUIZ: Read the description and pick the correct Arabic text from 4 choices.</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Completed adhkar show checkmarks. Daily progress is saved.</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another app</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Practice daily morning and evening adhkar. Build the habit of remembering Allah every day.</p></div>
+        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Français, العربية. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Toggle with 🔊 button.</p></div>
+        <div class="wiki-entry"><h3>📖 Read Mode</h3><p>Scroll through each dhikr with Arabic text, transliteration, meaning, and repetition counter.</p></div>
+        <div class="wiki-entry"><h3>❓ Quiz Mode</h3><p>Match the benefit/description to the correct Arabic text from 4 options.</p></div>
+        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// === ADHKAR DATA ===
+const MORNING=[
+{id:"ayat-kursi",ar:"اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ",translit:"Allahu la ilaha illa Huwal-Hayyul-Qayyum...",en:"Allah - there is no deity except Him, the Ever-Living, the Sustainer of existence...(Ayat al-Kursi, Al-Baqarah 255)",benefit:"Protection from all harm until the evening",reps:1},
+{id:"baqarah-end",ar:"آمَنَ الرَّسُولُ بِمَا أُنْزِلَ إِلَيْهِ مِنْ رَبِّهِ وَالْمُؤْمِنُونَ ۚ كُلٌّ آمَنَ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِنْ رُسُلِهِ ۚ وَقَالُوا سَمِعْنَا وَأَطَعْنَا ۖ غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ",translit:"Amanar-Rasulu bima unzila ilayhi mir-Rabbihi wal-mu'minun...",en:"The Messenger has believed in what was revealed to him from his Lord, and so have the believers...(Last 2 ayahs of Al-Baqarah)",benefit:"Sufficient protection for whoever recites them at night",reps:1},
+{id:"ikhlas",ar:"بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\nقُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ",translit:"Qul Huwal-lahu Ahad. Allahus-Samad. Lam yalid wa lam yulad. Wa lam yakul-lahu kufuwan ahad.",en:"Say: He is Allah, the One. Allah, the Eternal Refuge. He neither begets nor is born. And there is none comparable to Him. (Al-Ikhlas)",benefit:"Equal to one-third of the Quran",reps:3},
+{id:"falaq",ar:"بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\nقُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ۝ مِنْ شَرِّ مَا خَلَقَ ۝ وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ ۝ وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ۝ وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ",translit:"Qul a'udhu bi Rabbil-falaq. Min sharri ma khalaq...",en:"Say: I seek refuge in the Lord of daybreak. From the evil of that which He created... (Al-Falaq)",benefit:"Protection from evil, envy and black magic",reps:3},
+{id:"nas",ar:"بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\nقُلْ أَعُوذُ بِرَبِّ النَّاسِ ۝ مَلِكِ النَّاسِ ۝ إِلَٰهِ النَّاسِ ۝ مِنْ شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ۝ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ۝ مِنَ الْجِنَّةِ وَالنَّاسِ",translit:"Qul a'udhu bi Rabbin-nas. Malikin-nas. Ilahin-nas...",en:"Say: I seek refuge in the Lord of mankind. The Sovereign of mankind. The God of mankind... (An-Nas)",benefit:"Protection from the evil of the whisperer",reps:3},
+{id:"morning-dua",ar:"أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",translit:"Asbahna wa asbahal-mulku lillah, wal-hamdu lillah, la ilaha illallahu wahdahu la sharika lah, lahul-mulku wa lahul-hamdu wa huwa 'ala kulli shay'in qadir.",en:"We have reached the morning and at this very time the whole kingdom belongs to Allah. All praise is for Allah. None has the right to be worshipped except Allah alone.",benefit:"Morning remembrance of Allah's sovereignty",reps:1},
+{id:"allahumma-bika",ar:"اللَّهُمَّ بِكَ أَصْبَحْنَا وَبِكَ أَمْسَيْنَا وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ النُّشُورُ",translit:"Allahumma bika asbahna, wa bika amsayna, wa bika nahya, wa bika namutu, wa ilaykan-nushur.",en:"O Allah, by Your leave we have reached the morning, by Your leave we reach the evening, by Your leave we live and die, and unto You is the resurrection.",benefit:"Entrusting your day and life to Allah",reps:1},
+{id:"sayyid-istighfar",ar:"اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ",translit:"Allahumma Anta Rabbi, la ilaha illa Anta, khalaqtani wa ana 'abduka, wa ana 'ala 'ahdika wa wa'dika mastata'tu...",en:"O Allah, You are my Lord, none has the right to be worshipped except You. You created me and I am Your servant, and I abide to Your covenant and promise as best I can...",benefit:"Whoever says this in the morning with firm belief and dies that day enters Paradise",reps:1},
+{id:"subhanallah-100",ar:"سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",translit:"SubhanAllahi wa bihamdihi",en:"Glory is to Allah and praise is to Him.",benefit:"100 times: sins forgiven even if like the foam of the sea",reps:100},
+{id:"la-ilaha-10",ar:"لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",translit:"La ilaha illallahu wahdahu la sharika lah, lahul-mulku wa lahul-hamdu, wa huwa 'ala kulli shay'in qadir.",en:"None has the right to be worshipped except Allah alone, with no partner. His is the dominion and His is the praise, and He is over all things competent.",benefit:"10 times: like freeing 4 slaves from the children of Isma'il",reps:10},
+{id:"subhanallah-azeem",ar:"سُبْحَانَ اللَّهِ وَبِحَمْدِهِ سُبْحَانَ اللَّهِ الْعَظِيمِ",translit:"SubhanAllahi wa bihamdihi, SubhanAllahil-'Azeem.",en:"Glory is to Allah and praise is to Him. Glory is to Allah, the Most Great.",benefit:"Two words beloved to Ar-Rahman, heavy on the scales",reps:1},
+{id:"salawat-10",ar:"اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبِيِّنَا مُحَمَّدٍ",translit:"Allahumma salli wa sallim 'ala nabiyyina Muhammad.",en:"O Allah, send prayers and peace upon our Prophet Muhammad.",benefit:"10 salawat: Allah sends 10 blessings upon you",reps:10}
+];
+
+const EVENING=[
+{id:"ayat-kursi-e",ar:"اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ",translit:"Allahu la ilaha illa Huwal-Hayyul-Qayyum...",en:"Allah - there is no deity except Him, the Ever-Living, the Sustainer of existence...(Ayat al-Kursi, Al-Baqarah 255)",benefit:"Protection from all harm until the morning",reps:1},
+{id:"baqarah-end-e",ar:"آمَنَ الرَّسُولُ بِمَا أُنْزِلَ إِلَيْهِ مِنْ رَبِّهِ وَالْمُؤْمِنُونَ ۚ كُلٌّ آمَنَ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِنْ رُسُلِهِ ۚ وَقَالُوا سَمِعْنَا وَأَطَعْنَا ۖ غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ",translit:"Amanar-Rasulu bima unzila ilayhi mir-Rabbihi wal-mu'minun...",en:"The Messenger has believed in what was revealed to him from his Lord, and so have the believers...(Last 2 ayahs of Al-Baqarah)",benefit:"Sufficient protection for whoever recites them at night",reps:1},
+{id:"ikhlas-e",ar:"بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\nقُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ",translit:"Qul Huwal-lahu Ahad. Allahus-Samad. Lam yalid wa lam yulad. Wa lam yakul-lahu kufuwan ahad.",en:"Say: He is Allah, the One. Allah, the Eternal Refuge. He neither begets nor is born. And there is none comparable to Him. (Al-Ikhlas)",benefit:"Equal to one-third of the Quran",reps:3},
+{id:"falaq-e",ar:"بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\nقُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ۝ مِنْ شَرِّ مَا خَلَقَ ۝ وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ ۝ وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ۝ وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ",translit:"Qul a'udhu bi Rabbil-falaq. Min sharri ma khalaq...",en:"Say: I seek refuge in the Lord of daybreak. From the evil of that which He created... (Al-Falaq)",benefit:"Protection from evil, envy and black magic",reps:3},
+{id:"nas-e",ar:"بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\nقُلْ أَعُوذُ بِرَبِّ النَّاسِ ۝ مَلِكِ النَّاسِ ۝ إِلَٰهِ النَّاسِ ۝ مِنْ شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ۝ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ۝ مِنَ الْجِنَّةِ وَالنَّاسِ",translit:"Qul a'udhu bi Rabbin-nas. Malikin-nas. Ilahin-nas...",en:"Say: I seek refuge in the Lord of mankind. The Sovereign of mankind. The God of mankind... (An-Nas)",benefit:"Protection from the evil of the whisperer",reps:3},
+{id:"evening-dua",ar:"أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",translit:"Amsayna wa amsal-mulku lillah, wal-hamdu lillah, la ilaha illallahu wahdahu la sharika lah, lahul-mulku wa lahul-hamdu wa huwa 'ala kulli shay'in qadir.",en:"We have reached the evening and at this very time the whole kingdom belongs to Allah. All praise is for Allah. None has the right to be worshipped except Allah alone.",benefit:"Evening remembrance of Allah's sovereignty",reps:1},
+{id:"allahumma-bika-e",ar:"اللَّهُمَّ بِكَ أَمْسَيْنَا وَبِكَ أَصْبَحْنَا وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ الْمَصِيرُ",translit:"Allahumma bika amsayna, wa bika asbahna, wa bika nahya, wa bika namutu, wa ilaykal-masir.",en:"O Allah, by Your leave we have reached the evening, by Your leave we reach the morning, by Your leave we live and die, and unto You is the return.",benefit:"Entrusting your evening and life to Allah",reps:1},
+{id:"sayyid-istighfar-e",ar:"اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ",translit:"Allahumma Anta Rabbi, la ilaha illa Anta, khalaqtani wa ana 'abduka, wa ana 'ala 'ahdika wa wa'dika mastata'tu...",en:"O Allah, You are my Lord, none has the right to be worshipped except You. You created me and I am Your servant, and I abide to Your covenant and promise as best I can...",benefit:"Whoever says this in the evening with firm belief and dies that night enters Paradise",reps:1},
+{id:"subhanallah-100-e",ar:"سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",translit:"SubhanAllahi wa bihamdihi",en:"Glory is to Allah and praise is to Him.",benefit:"100 times: sins forgiven even if like the foam of the sea",reps:100},
+{id:"la-ilaha-10-e",ar:"لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",translit:"La ilaha illallahu wahdahu la sharika lah, lahul-mulku wa lahul-hamdu, wa huwa 'ala kulli shay'in qadir.",en:"None has the right to be worshipped except Allah alone, with no partner. His is the dominion and His is the praise, and He is over all things competent.",benefit:"10 times: like freeing 4 slaves from the children of Isma'il",reps:10},
+{id:"subhanallah-azeem-e",ar:"سُبْحَانَ اللَّهِ وَبِحَمْدِهِ سُبْحَانَ اللَّهِ الْعَظِيمِ",translit:"SubhanAllahi wa bihamdihi, SubhanAllahil-'Azeem.",en:"Glory is to Allah and praise is to Him. Glory is to Allah, the Most Great.",benefit:"Two words beloved to Ar-Rahman, heavy on the scales",reps:1},
+{id:"salawat-10-e",ar:"اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبِيِّنَا مُحَمَّدٍ",translit:"Allahumma salli wa sallim 'ala nabiyyina Muhammad.",en:"O Allah, send prayers and peace upon our Prophet Muhammad.",benefit:"10 salawat: Allah sends 10 blessings upon you",reps:10}
+];
+
+// === STATE ===
+let period="morning", mode="read", diffCount=10, currentIdx=0, correct=0, total=0, locked=false;
+let repsDone=0; // current dhikr rep counter
+let completedIds={}; // track completed adhkar for daily
+let quizTotal=0, quizCorrect=0, quizCurrent=0, quizAns="";
+
+function getAdhkar(){return period==="morning"?MORNING:EVENING;}
+function getActive(){return getAdhkar().slice(0,diffCount);}
+function todayKey(){return "wdiy-daily-"+period+"-"+new Date().toISOString().slice(0,10);}
+
+function loadDaily(){try{const d=localStorage.getItem(todayKey());return d?JSON.parse(d):{};}catch(e){return {};}}
+function saveDaily(){try{localStorage.setItem(todayKey(),JSON.stringify(completedIds));}catch(e){}}
+
+function setPeriod(p){period=p;document.querySelectorAll(".period-tab").forEach(b=>b.classList.toggle("on",b.dataset.period===p));completedIds=loadDaily();renderChecklist();log("Switched to "+p+" adhkar");}
+function setMode(m){mode=m;document.querySelectorAll(".mode-tab").forEach(b=>b.classList.toggle("on",b.dataset.mode===m));log("Mode: "+m);}
+function setDiff(){diffCount=parseInt(document.getElementById("diffSel").value);}
+
+// === TIMER ===
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+// === CHECKLIST ===
+function renderChecklist(){
+const el=document.getElementById("checklist");
+const list=getActive();
+el.innerHTML="";
+list.forEach((d,i)=>{
+const dot=document.createElement("div");
+dot.className="check-dot"+(completedIds[d.id]?" completed":"")+(i===currentIdx?" current":"");
+dot.textContent=completedIds[d.id]?"✓":(i+1);
+dot.title=d.translit;
+dot.onclick=()=>{if(mode==="read"){currentIdx=i;repsDone=0;showReadCard();}};
+el.appendChild(dot);
+});
+// daily status
+const ds=document.getElementById("dailyStatus");
+const done=list.filter(d=>completedIds[d.id]).length;
+if(done===list.length&&list.length>0){
+ds.innerHTML='<div style="text-align:center;margin:6px 0"><span class="daily-badge">✓ All '+period+' adhkar completed today!</span></div>';
+}else{
+ds.innerHTML='<div style="text-align:center;margin:6px 0;font-size:10px;color:var(--text3)">'+done+'/'+list.length+' completed today</div>';
+}}
+
+// === READ MODE ===
+function showReadCard(){
+const list=getActive();
+if(currentIdx>=list.length){
+document.getElementById("readArea").innerHTML='<div style="text-align:center;padding:20px"><div style="font-size:32px;margin-bottom:12px">🎉</div><div class="big-text" style="font-size:20px">Session Complete!</div><div style="color:var(--text2);font-size:12px;margin-top:8px">'+correct+' / '+list.length+' adhkar completed</div></div>';
+snd("win");stopTimer();checkHS();
+log("Session complete! "+correct+"/"+list.length,"success");
+document.getElementById("status").textContent="Session complete!";
+document.getElementById("status").className="status win";
+return;
+}
+const d=list[currentIdx];
+repsDone=0;
+const arLines=d.ar.replace(/\n/g,"<br>");
+document.getElementById("readArea").innerHTML=
+'<div class="dhikr-card">'+
+'<div style="font-size:10px;color:var(--text3);margin-bottom:8px">'+(currentIdx+1)+' / '+list.length+'</div>'+
+'<div class="dhikr-arabic">'+arLines+'</div>'+
+'<div class="dhikr-translit">'+d.translit+'</div>'+
+'<div class="dhikr-meaning">'+d.en+'</div>'+
+'<div class="dhikr-benefit">'+d.benefit+'</div>'+
+'<div class="rep-counter">'+
+'<div class="rep-label">Tap to count</div>'+
+'<button class="rep-btn" id="repBtn" onclick="tapRep()">0</button>'+
+'<div class="rep-label">/ '+d.reps+'</div>'+
+'</div>'+
+'<div class="dhikr-nav">'+
+'<button onclick="prevDhikr()" '+(currentIdx===0?'disabled':'')+'>← Prev</button>'+
+'<button onclick="skipDhikr()">Skip →</button>'+
+'</div>'+
+'</div>';
+document.getElementById("status").textContent="Dhikr "+(currentIdx+1)+" of "+list.length;
+document.getElementById("status").className="status";
+renderChecklist();
+}
+
+function tapRep(){
+const list=getActive();
+const d=list[currentIdx];
+repsDone++;
+const btn=document.getElementById("repBtn");
+if(btn){btn.textContent=repsDone;if(repsDone>=d.reps)btn.classList.add("done");}
+snd("click");
+if(repsDone>=d.reps){
+completedIds[d.id]=true;
+saveDaily();
+correct++;
+document.getElementById("sc").textContent=correct;
+document.getElementById("tot").textContent=getActive().length;
+document.getElementById("scorePill").textContent=correct+" / "+getActive().length;
+log("Completed: "+d.translit.substring(0,30)+"...","success");
+snd("ok");
+setTimeout(()=>{currentIdx++;showReadCard();},600);
+}}
+
+function prevDhikr(){if(currentIdx>0){currentIdx--;repsDone=0;showReadCard();}}
+function skipDhikr(){currentIdx++;repsDone=0;showReadCard();}
+
+// === QUIZ MODE ===
+function startQuiz(){
+const list=getActive();
+quizTotal=list.length;quizCorrect=0;quizCurrent=0;
+document.getElementById("sc").textContent="0";
+document.getElementById("tot").textContent=quizTotal;
+document.getElementById("scorePill").textContent="0 / "+quizTotal;
+nextQuiz();
+}
+
+function nextQuiz(){
+const list=getActive();
+if(quizCurrent>=quizTotal){
+document.getElementById("quizArea").innerHTML='<div style="text-align:center;padding:20px"><div style="font-size:32px;margin-bottom:12px">🎉</div><div class="big-text" style="font-size:20px">Quiz Complete!</div><div style="color:var(--text2);font-size:12px;margin-top:8px">'+quizCorrect+' / '+quizTotal+' correct</div></div>';
+snd("win");stopTimer();correct=quizCorrect;total=quizTotal;checkHS();
+log("Quiz done! "+quizCorrect+"/"+quizTotal,"success");
+document.getElementById("status").textContent="Quiz complete!";
+document.getElementById("status").className="status win";
+return;
+}
+locked=false;
+const d=list[quizCurrent];
+quizAns=d.id;
+// pick 3 wrong options
+const others=list.filter(x=>x.id!==d.id);
+const shuffled=others.sort(()=>Math.random()-.5).slice(0,3);
+const opts=[d,...shuffled].sort(()=>Math.random()-.5);
+
+document.getElementById("quizArea").innerHTML=
+'<div style="text-align:center;margin-bottom:12px"><div style="font-size:10px;color:var(--text3);margin-bottom:8px">'+(quizCurrent+1)+' / '+quizTotal+'</div>'+
+'<div style="font-size:14px;color:var(--heading);font-weight:600;margin-bottom:4px">'+d.benefit+'</div>'+
+'<div style="font-size:11px;color:var(--text2)">'+d.en.substring(0,60)+'...</div></div>'+
+'<div class="grid-pick g2" id="quizOpts"></div>'+
+'<div class="progress" style="margin-top:12px"><div class="progress-bar" style="width:'+(quizCurrent/quizTotal*100)+'%"></div></div>';
+
+const grid=document.getElementById("quizOpts");
+opts.forEach(o=>{
+const card=document.createElement("button");
+card.className="pick-card";
+card.style.fontSize="14px";
+card.style.lineHeight="1.6";
+card.innerHTML='<div style="font-family:Noto Sans Arabic,sans-serif;direction:rtl">'+o.ar.replace(/\n/g," ").substring(0,60)+'...</div>';
+card.onclick=()=>pickQuiz(card,o.id);
+grid.appendChild(card);
+});
+document.getElementById("status").textContent="Question "+(quizCurrent+1)+" of "+quizTotal;
+document.getElementById("status").className="status";
+}
+
+function pickQuiz(card,id){
+if(locked)return;locked=true;quizCurrent++;
+if(id===quizAns){
+quizCorrect++;card.classList.add("correct");snd("ok");
+log("Correct!","success");
+// also mark as completed for daily tracking
+const list=getActive();
+const d=list.find(x=>x.id===quizAns);
+if(d){completedIds[d.id]=true;saveDaily();}
+}else{
+card.classList.add("wrong");snd("err");
+log("Wrong. Answer was different.","error");
+document.querySelectorAll(".pick-card").forEach(c=>{
+// highlight correct
+const cAr=c.querySelector("div");
+const correctD=getActive().find(x=>x.id===quizAns);
+if(correctD&&cAr&&cAr.textContent.substring(0,30)===correctD.ar.replace(/\n/g," ").substring(0,30))c.classList.add("correct");
+});
+}
+document.getElementById("sc").textContent=quizCorrect;
+document.getElementById("scorePill").textContent=quizCorrect+" / "+quizCurrent;
+renderChecklist();
+setTimeout(nextQuiz,1000);
+}
+
+// === SESSION ===
+function newGame(){
+startTimer();
+diffCount=parseInt(document.getElementById("diffSel").value);
+currentIdx=0;correct=0;total=0;repsDone=0;
+completedIds=loadDaily();
+document.getElementById("sc").textContent="0";
+document.getElementById("tot").textContent=getActive().length;
+document.getElementById("scorePill").textContent="0 / "+getActive().length;
+renderChecklist();
+if(mode==="read"){
+document.getElementById("readArea").style.display="block";
+document.getElementById("quizArea").style.display="none";
+showReadCard();
+log("Read session started: "+period+" ("+diffCount+" adhkar)");
+}else{
+document.getElementById("readArea").style.display="none";
+document.getElementById("quizArea").style.display="block";
+startQuiz();
+log("Quiz session started: "+period+" ("+diffCount+" adhkar)");
+}
+}
+
+// === HIGH SCORE ===
+const HS_KEY="wdiy-hs-morning-evening";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
+function checkHS(){
+const list=getActive();
+const pct=Math.round(correct/list.length*100);
+if(pct>0&&saveHS(pct)){log("NEW HIGH SCORE: "+pct+"%!","success");}
+}
+
+// === INIT ===
+document.addEventListener("DOMContentLoaded",()=>{
+setLang("en");setTheme("terminal");
+document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
+showHS();
+document.getElementById("enterBtn").addEventListener("click",()=>{
+document.querySelector(".splash").style.display="none";
+document.getElementById("app").classList.add("on");
+document.getElementById("backLink").style.display="block";
+completedIds=loadDaily();
+renderChecklist();
+newGame();
+});
+document.getElementById("startBtn").addEventListener("click",newGame);
+document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+// Keyboard shortcuts
+document.addEventListener("keydown",function(e){
+// 1-4 for quiz answers
+if(e.key>="1"&&e.key<="4"){const cards=document.querySelectorAll(".pick-card");const i=parseInt(e.key)-1;if(cards[i])cards[i].click();}
+// Space for tap rep counter in read mode
+if(e.key===" "&&mode==="read"){e.preventDefault();const btn=document.getElementById("repBtn");if(btn)btn.click();}
+// Enter to start
+if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+// Arrow keys for prev/next in read mode
+if(e.key==="ArrowRight"||e.key==="ArrowDown"){if(mode==="read")skipDhikr();}
+if(e.key==="ArrowLeft"||e.key==="ArrowUp"){if(mode==="read")prevDhikr();}
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

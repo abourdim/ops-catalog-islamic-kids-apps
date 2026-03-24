@@ -1,0 +1,600 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Purify the Kaaba — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:620px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.progress{width:100%;max-width:400px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:8px}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+canvas{border-radius:8px;cursor:crosshair;display:block;max-width:100%;touch-action:none}
+.verse-box{text-align:center;font-size:12px;color:var(--accent);line-height:1.6;padding:6px 12px;border:1px solid var(--abr);border-radius:8px;background:var(--abg);margin-top:4px;max-width:400px}
+.verse-box .arabic{font-family:'Noto Sans Arabic',sans-serif;font-size:16px;direction:rtl}
+.idol-info{text-align:center;font-size:11px;color:var(--text2);min-height:18px;margin-top:4px}
+.mode-toggle{display:flex;gap:4px;align-items:center}
+.mode-toggle button{padding:4px 10px;border-radius:6px;border:1px solid var(--border);background:var(--bg3);color:var(--text2);font-size:10px;cursor:pointer;font-family:inherit}
+.mode-toggle button.active{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.celebration{display:none;text-align:center;padding:20px;animation:fadeUp .5s}
+.celebration.show{display:block}
+.celebration h2{font-family:'Outfit',sans-serif;font-size:20px;color:var(--accent);margin-bottom:8px}
+.celebration p{font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:6px}
+.lesson-box{background:var(--abg);border:1px solid var(--abr);border-radius:8px;padding:12px;margin-top:10px;text-align:center}
+.lesson-box h3{font-family:'Outfit',sans-serif;font-size:14px;color:var(--accent);margin-bottom:4px}
+.lesson-box p{font-size:11px;color:var(--text2);line-height:1.7}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Purify the Kaaba</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px">Remove the idols, restore Tawheed</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Tap each idol to remove it from around the Kaaba. Restore the House of Allah to its original purity as Prophet Muhammad ﷺ did during Fath Makkah.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Purify the Kaaba</h1><span class="pill" id="scorePill">360 remaining</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<div class="ctrl">
+    <div class="mode-toggle"><span class="sw-label">Mode</span><button id="modeTap" class="active" onclick="setMode('tap')">Tap</button><button id="modeSweep" onclick="setMode('sweep')">Sweep</button></div>
+    <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+    <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div>
+</div>
+<div class="status" id="status">Tap the idols to purify the Kaaba!</div>
+<div class="game-area" id="gameArea">
+    <canvas id="canvas" width="560" height="560"></canvas>
+    <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+</div>
+<div class="verse-box"><div class="arabic">جَاءَ الْحَقُّ وَزَهَقَ الْبَاطِلُ ۚ إِنَّ الْبَاطِلَ كَانَ زَهُوقًا</div><div>"Truth has come and falsehood has vanished. Indeed, falsehood is bound to vanish." — Quran 17:81</div></div>
+<div class="idol-info" id="idolInfo"></div>
+<div class="score-row"><div class="score-item"><div class="score-label">Removed</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Remaining</div><div class="score-num" id="tot">360</div></div></div>
+<div class="celebration" id="celebration">
+    <h2>Allahu Akbar! The Kaaba is Purified!</h2>
+    <p>Bilal ibn Rabah (may Allah be pleased with him) climbs atop the Kaaba and calls the Adhan for the first time in Makkah!</p>
+    <p style="font-family:'Noto Sans Arabic',sans-serif;font-size:18px;color:var(--accent);direction:rtl;margin:10px 0">اللَّهُ أَكْبَر ... أَشْهَدُ أَن لَا إِلَهَ إِلَّا اللَّه</p>
+    <p>The first congregational prayer is held at the purified Kaaba.</p>
+    <div class="lesson-box">
+        <h3>Lesson: Tawheed Restored</h3>
+        <p>Prophet Ibrahim (peace be upon him) built the Kaaba as a house of pure monotheism — worship of Allah alone. Over centuries, people filled it with 360 idols. When Prophet Muhammad ﷺ entered Makkah peacefully, he pointed at each idol, reciting the verse from Surah Al-Isra (17:81), and every idol fell. This restored Ibrahim's legacy of Tawheed — the Oneness of Allah — which is the foundation of Islam.</p>
+    </div>
+</div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Purify the Kaaba v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Purify the Kaaba?</summary><p>A game about the historic event of Fath Makkah (Conquest of Makkah) when Prophet Muhammad ﷺ removed 360 idols from around the Kaaba, restoring it to the house of Tawheed that Prophet Ibrahim (peace be upon him) originally built.</p></details>
+        <details class="help-item"><summary>How do I play?</summary><p>Tap or click on the idol markers around the Kaaba to remove them. In Sweep mode, drag across multiple idols. Special idols like Hubal, al-Lat, al-Uzza, and Manat require extra taps or are larger.</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Choose Tap mode (one by one) or Sweep mode (drag across many)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Press ▶ New Game to begin</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Tap idols around the Kaaba to remove them — they crumble away</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>Special idols (Hubal, al-Lat, al-Uzza, Manat) take extra taps and show info</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Watch the counter and progress bar as you purify the Kaaba</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>When all 360 idols are removed, celebrate the restoration of Tawheed!</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>🕋 The Kaaba</h3><p>The Kaaba was originally built by Prophet Ibrahim and his son Ismail (peace be upon them) as a house of worship for Allah alone. Over time, the people of Makkah filled and surrounded it with 360 idols.</p></div>
+        <div class="wiki-entry"><h3>⚔️ Fath Makkah</h3><p>In 8 AH (630 CE), Prophet Muhammad ﷺ entered Makkah peacefully with 10,000 companions. He went to the Kaaba and personally pointed at each idol, which fell as he recited Quran 17:81.</p></div>
+        <div class="wiki-entry"><h3>🗿 Hubal</h3><p>The chief idol of the Quraysh, placed atop the Kaaba. It was the largest and most prominent idol, made of red agate in human form. It was the last to be destroyed.</p></div>
+        <div class="wiki-entry"><h3>🗿 al-Lat, al-Uzza, Manat</h3><p>Three prominent idols mentioned in the Quran (53:19-20). al-Lat was worshipped in Taif, al-Uzza near Makkah, and Manat between Makkah and Madinah. They were considered "daughters of God" by the polytheists.</p></div>
+        <div class="wiki-entry"><h3>📢 Bilal's Adhan</h3><p>After the purification, Bilal ibn Rabah climbed atop the Kaaba and called the Adhan — the first ever called from that sacred place. A powerful moment symbolizing the triumph of Tawheed.</p></div>
+        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Crumble sounds for idol removal, victory melody for completion. Toggle with the sound button.</p></div>
+        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const n=actx.currentTime;if(t==="crumble"){for(let i=0;i<3;i++){const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);o.type="triangle";o.frequency.value=80+Math.random()*60;g.gain.value=.04;g.gain.exponentialRampToValueAtTime(.001,n+.08+i*.04);o.start(n+i*.03);o.stop(n+.12+i*.04);}}else if(t==="special"){const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);o.type="sine";o.frequency.value=440;g.gain.value=.05;g.gain.exponentialRampToValueAtTime(.001,n+.2);o.start(n);o.stop(n+.2);}else if(t==="bigbreak"){[200,260,320,400].forEach((f,i)=>{const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);o.type="triangle";o.frequency.value=f;g.gain.value=.04;g.gain.exponentialRampToValueAtTime(.001,n+.15+i*.05);o.start(n+i*.05);o.stop(n+.2+i*.05);});}else if(t==="win"){[523,659,784,880,1047].forEach((f,i)=>{const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.04;o.frequency.value=f;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.3+i*.15);o.start(n+i*.15);o.stop(n+.3+i*.15);});}else if(t==="adhan"){[440,494,523,587,659].forEach((f,i)=>{const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;o.frequency.value=f;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.5+i*.2);o.start(n+i*.2);o.stop(n+.5+i*.2);});}else{const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// === GAME STATE ===
+const TOTAL_IDOLS=360;
+let idols=[],removed=0,gameMode="tap",sweeping=false,gameRunning=false,animFrame;
+const canvas=document.getElementById("canvas");
+const ctx=canvas.getContext("2d");
+let CW=560,CH=560,CX,CY;
+
+const SPECIAL_IDOLS=[
+  {name:"Hubal",nameAr:"هُبَل",taps:3,size:1.8,color:"#cc3333",ring:0,angle:0,info:"Hubal — The chief idol of Quraysh. Made of red agate, it stood atop the Kaaba. The largest and most revered false deity."},
+  {name:"al-Lat",nameAr:"اللَّات",taps:2,size:1.4,color:"#cc9933",ring:0,angle:Math.PI/2,info:"al-Lat — A stone idol worshipped in Taif. Mentioned in the Quran (53:19). Represented a false goddess."},
+  {name:"al-Uzza",nameAr:"العُزَّى",taps:2,size:1.4,color:"#9933cc",ring:0,angle:Math.PI,info:"al-Uzza — Worshipped near Makkah among three trees. Mentioned in the Quran (53:19). Among the chief idols."},
+  {name:"Manat",nameAr:"مَنَاة",taps:2,size:1.4,color:"#3399cc",ring:0,angle:3*Math.PI/2,info:"Manat — The idol of fate, situated between Makkah and Madinah. Mentioned in the Quran (53:20). Worshipped by several tribes."}
+];
+
+const IDOL_COLORS=["#aa4444","#aa6633","#887744","#668844","#446666","#664488","#884466","#885533","#667755","#556688","#886644","#777755"];
+const SHAPES=["circle","triangle","diamond","pentagon"];
+
+function resizeCanvas(){
+  const cont=document.getElementById("gameArea");
+  const w=Math.min(cont.clientWidth-24,560);
+  CW=w;CH=w;
+  canvas.width=CW;canvas.height=CH;
+  CX=CW/2;CY=CH/2;
+}
+
+function generateIdols(){
+  idols=[];removed=0;
+  const kaabaR=CW*0.08;
+  // Place special idols in inner ring
+  const specialRing=kaabaR+CW*0.08;
+  SPECIAL_IDOLS.forEach((sp,i)=>{
+    idols.push({
+      x:CX+Math.cos(sp.angle)*specialRing,
+      y:CY+Math.sin(sp.angle)*specialRing,
+      r:Math.max(6,CW*0.014*sp.size),
+      color:sp.color,
+      alive:true,
+      hp:sp.taps,maxHp:sp.taps,
+      special:true,name:sp.name,nameAr:sp.nameAr,info:sp.info,
+      shape:"circle",
+      crumbleTimer:0,crumbleParticles:[]
+    });
+  });
+  // Generate remaining normal idols in concentric rings
+  const normalCount=TOTAL_IDOLS-SPECIAL_IDOLS.length;
+  const rings=[
+    {r:kaabaR+CW*0.14,count:24},
+    {r:kaabaR+CW*0.20,count:36},
+    {r:kaabaR+CW*0.26,count:48},
+    {r:kaabaR+CW*0.32,count:56},
+    {r:kaabaR+CW*0.38,count:64},
+    {r:kaabaR+CW*0.44,count:72},
+    {r:kaabaR+CW*0.50,count:56}
+  ];
+  let placed=0;
+  for(let ri=0;ri<rings.length&&placed<normalCount;ri++){
+    const ring=rings[ri];
+    const count=Math.min(ring.count,normalCount-placed);
+    for(let j=0;j<count;j++){
+      const angle=(2*Math.PI/count)*j+ri*0.3;
+      const jitterR=(Math.random()-0.5)*CW*0.015;
+      const jitterA=(Math.random()-0.5)*0.05;
+      const px=CX+Math.cos(angle+jitterA)*(ring.r+jitterR);
+      const py=CY+Math.sin(angle+jitterA)*(ring.r+jitterR);
+      idols.push({
+        x:px,y:py,
+        r:Math.max(3,CW*0.008+Math.random()*CW*0.005),
+        color:IDOL_COLORS[Math.floor(Math.random()*IDOL_COLORS.length)],
+        alive:true,hp:1,maxHp:1,
+        special:false,name:"",info:"",
+        shape:SHAPES[Math.floor(Math.random()*SHAPES.length)],
+        crumbleTimer:0,crumbleParticles:[]
+      });
+      placed++;
+    }
+  }
+  updateUI();
+}
+
+function getKaabaGlow(){
+  const pct=removed/TOTAL_IDOLS;
+  return pct;
+}
+
+function drawKaaba(){
+  const kS=CW*0.13;
+  const glow=getKaabaGlow();
+  // Glow effect
+  if(glow>0){
+    const grad=ctx.createRadialGradient(CX,CY,kS*0.5,CX,CY,kS*(1.5+glow*2));
+    const a=glow*0.4;
+    grad.addColorStop(0,`rgba(255,215,0,${a})`);
+    grad.addColorStop(1,"rgba(255,215,0,0)");
+    ctx.fillStyle=grad;
+    ctx.fillRect(0,0,CW,CH);
+  }
+  // Kaaba body
+  const brightness=Math.floor(20+glow*30);
+  ctx.fillStyle=`rgb(${brightness},${brightness},${brightness+5})`;
+  ctx.strokeStyle=glow>0.5?"#ffd700":"#444";
+  ctx.lineWidth=2+glow*2;
+  ctx.beginPath();
+  ctx.rect(CX-kS/2,CY-kS/2,kS,kS);
+  ctx.fill();ctx.stroke();
+  // Gold band (Kiswa border)
+  const bandY=CY-kS*0.1;
+  ctx.strokeStyle=`rgba(255,215,0,${0.4+glow*0.6})`;
+  ctx.lineWidth=CW*0.006;
+  ctx.beginPath();
+  ctx.moveTo(CX-kS/2,bandY);
+  ctx.lineTo(CX+kS/2,bandY);
+  ctx.stroke();
+  // Door
+  ctx.fillStyle=`rgba(255,215,0,${0.3+glow*0.5})`;
+  const dW=kS*0.2,dH=kS*0.35;
+  ctx.beginPath();
+  ctx.rect(CX-dW/2,CY,dW,dH);
+  ctx.fill();
+  // Hajar al-Aswad corner marker
+  ctx.fillStyle="#333";
+  ctx.beginPath();
+  ctx.arc(CX-kS/2,CY+kS/2,CW*0.012,0,Math.PI*2);
+  ctx.fill();
+}
+
+function drawIdol(idol){
+  if(!idol.alive){
+    // Crumble animation
+    if(idol.crumbleTimer>0){
+      idol.crumbleTimer--;
+      idol.crumbleParticles.forEach(p=>{
+        p.x+=p.vx;p.y+=p.vy;p.vy+=0.15;p.a-=0.04;
+        if(p.a>0){
+          ctx.globalAlpha=p.a;
+          ctx.fillStyle=idol.color;
+          ctx.fillRect(p.x-p.s/2,p.y-p.s/2,p.s,p.s);
+        }
+      });
+      ctx.globalAlpha=1;
+    }
+    return;
+  }
+  const {x,y,r,color,shape,hp,maxHp,special}=idol;
+  ctx.fillStyle=color;
+  ctx.strokeStyle=special?"#fff":"rgba(255,255,255,0.15)";
+  ctx.lineWidth=special?1.5:0.5;
+  if(shape==="circle"||special){
+    ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();ctx.stroke();
+  }else if(shape==="triangle"){
+    ctx.beginPath();ctx.moveTo(x,y-r);ctx.lineTo(x-r*0.87,y+r*0.5);ctx.lineTo(x+r*0.87,y+r*0.5);ctx.closePath();ctx.fill();ctx.stroke();
+  }else if(shape==="diamond"){
+    ctx.beginPath();ctx.moveTo(x,y-r);ctx.lineTo(x+r*0.7,y);ctx.lineTo(x,y+r);ctx.lineTo(x-r*0.7,y);ctx.closePath();ctx.fill();ctx.stroke();
+  }else{
+    ctx.beginPath();
+    for(let i=0;i<5;i++){const a=-Math.PI/2+i*2*Math.PI/5;ctx.lineTo(x+Math.cos(a)*r,y+Math.sin(a)*r);}
+    ctx.closePath();ctx.fill();ctx.stroke();
+  }
+  // HP indicator for special idols
+  if(special&&hp<maxHp){
+    ctx.fillStyle="rgba(255,255,255,0.8)";
+    ctx.font=`bold ${Math.max(8,r*0.8)}px Outfit,sans-serif`;
+    ctx.textAlign="center";ctx.textBaseline="middle";
+    ctx.fillText(hp+"",x,y);
+  }
+  // Name label for special idols
+  if(special){
+    ctx.fillStyle="rgba(255,255,255,0.85)";
+    ctx.font=`bold ${Math.max(8,CW*0.016)}px Outfit,sans-serif`;
+    ctx.textAlign="center";ctx.textBaseline="bottom";
+    ctx.fillText(idol.name,x,y-r-3);
+  }
+}
+
+function drawScene(){
+  // Background — desert/ground color based on theme
+  const cs=getComputedStyle(document.documentElement);
+  const bgColor=cs.getPropertyValue("--bg").trim()||"#0a0c10";
+  ctx.fillStyle=bgColor;
+  ctx.fillRect(0,0,CW,CH);
+  // Ground circle
+  const bg3=cs.getPropertyValue("--bg3").trim()||"#161b22";
+  ctx.fillStyle=bg3;
+  ctx.beginPath();ctx.arc(CX,CY,CW*0.48,0,Math.PI*2);ctx.fill();
+  drawKaaba();
+  idols.forEach(drawIdol);
+}
+
+function gameLoop(){
+  if(!gameRunning)return;
+  drawScene();
+  // Check if crumble animations still running
+  const animating=idols.some(id=>!id.alive&&id.crumbleTimer>0);
+  if(animating||idols.some(id=>id.alive)){
+    animFrame=requestAnimationFrame(gameLoop);
+  }else{
+    drawScene(); // final frame
+  }
+}
+
+function hitTest(mx,my){
+  // Check idols in reverse (top-most first)
+  for(let i=idols.length-1;i>=0;i--){
+    const idol=idols[i];
+    if(!idol.alive)continue;
+    const dx=mx-idol.x,dy=my-idol.y;
+    const hitR=idol.r+4; // slightly forgiving
+    if(dx*dx+dy*dy<=hitR*hitR)return idol;
+  }
+  return null;
+}
+
+function removeIdol(idol){
+  idol.hp--;
+  if(idol.hp<=0){
+    idol.alive=false;
+    idol.crumbleTimer=20;
+    // Create crumble particles
+    idol.crumbleParticles=[];
+    const numP=idol.special?16:8;
+    for(let i=0;i<numP;i++){
+      idol.crumbleParticles.push({
+        x:idol.x+(Math.random()-0.5)*idol.r,
+        y:idol.y+(Math.random()-0.5)*idol.r,
+        vx:(Math.random()-0.5)*3,
+        vy:(Math.random()-1)*2.5,
+        s:Math.random()*idol.r*0.5+1,
+        a:1
+      });
+    }
+    removed++;
+    if(idol.special){
+      snd("bigbreak");
+      log("Destroyed "+idol.name+" ("+idol.nameAr+")!","success");
+      document.getElementById("idolInfo").textContent=idol.info;
+    }else{
+      snd("crumble");
+    }
+    updateUI();
+    if(removed>=TOTAL_IDOLS){
+      victory();
+    }
+  }else{
+    snd("special");
+    if(idol.special){
+      log(idol.name+": "+idol.hp+" hits remaining","");
+      document.getElementById("idolInfo").textContent=idol.info+" ("+idol.hp+" hits left)";
+    }
+  }
+  // Keep animation going
+  if(gameRunning){cancelAnimationFrame(animFrame);animFrame=requestAnimationFrame(gameLoop);}
+}
+
+function updateUI(){
+  const rem=TOTAL_IDOLS-removed;
+  document.getElementById("sc").textContent=removed;
+  document.getElementById("tot").textContent=rem;
+  document.getElementById("scorePill").textContent=rem+" remaining";
+  document.getElementById("prog").style.width=(removed/TOTAL_IDOLS*100)+"%";
+  document.getElementById("status").textContent=rem>0?(rem+" / "+TOTAL_IDOLS+" remaining — tap to remove!"):"All idols removed!";
+  document.getElementById("status").className=rem>0?"status":"status win";
+}
+
+function victory(){
+  gameRunning=false;stopTimer();
+  cancelAnimationFrame(animFrame);
+  // Final bright kaaba render
+  drawScene();
+  // Draw Bilal on top
+  const kS=CW*0.13;
+  ctx.fillStyle="#5a4a2a";
+  ctx.beginPath();ctx.arc(CX,CY-kS/2-CW*0.04,CW*0.02,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle="#3a3020";
+  ctx.fillRect(CX-CW*0.008,CY-kS/2-CW*0.02,CW*0.016,CW*0.04);
+  // Bilal label
+  ctx.fillStyle="#ffd700";
+  ctx.font=`bold ${CW*0.02}px Outfit,sans-serif`;
+  ctx.textAlign="center";
+  ctx.fillText("Bilal (RA)",CX,CY-kS/2-CW*0.065);
+  // Rays of light
+  ctx.strokeStyle="rgba(255,215,0,0.3)";
+  ctx.lineWidth=1.5;
+  for(let i=0;i<12;i++){
+    const a=i*Math.PI/6;
+    ctx.beginPath();
+    ctx.moveTo(CX+Math.cos(a)*kS*0.8,CY+Math.sin(a)*kS*0.8);
+    ctx.lineTo(CX+Math.cos(a)*CW*0.4,CY+Math.sin(a)*CW*0.4);
+    ctx.stroke();
+  }
+  // Prayer rows (small dots in front of kaaba)
+  ctx.fillStyle="rgba(255,255,255,0.3)";
+  for(let row=0;row<3;row++){
+    for(let col=0;col<8+row*4;col++){
+      const sx=CX-((8+row*4)*8)/2+col*8;
+      const sy=CY+kS/2+CW*0.08+row*CW*0.03;
+      ctx.beginPath();ctx.arc(sx,sy,2,0,Math.PI*2);ctx.fill();
+    }
+  }
+
+  document.getElementById("celebration").classList.add("show");
+  snd("win");
+  setTimeout(()=>snd("adhan"),800);
+  log("All 360 idols removed! Tawheed restored!","success");
+  checkHS();
+}
+
+function getCanvasCoords(e){
+  const rect=canvas.getBoundingClientRect();
+  const scaleX=CW/rect.width,scaleY=CH/rect.height;
+  let cx,cy;
+  if(e.touches){
+    cx=(e.touches[0].clientX-rect.left)*scaleX;
+    cy=(e.touches[0].clientY-rect.top)*scaleY;
+  }else{
+    cx=(e.clientX-rect.left)*scaleX;
+    cy=(e.clientY-rect.top)*scaleY;
+  }
+  return{x:cx,y:cy};
+}
+
+// Mouse/touch events
+canvas.addEventListener("mousedown",function(e){
+  if(!gameRunning)return;
+  const{x,y}=getCanvasCoords(e);
+  const idol=hitTest(x,y);
+  if(idol)removeIdol(idol);
+  if(gameMode==="sweep")sweeping=true;
+});
+canvas.addEventListener("mousemove",function(e){
+  if(!gameRunning||!sweeping||gameMode!=="sweep")return;
+  const{x,y}=getCanvasCoords(e);
+  const idol=hitTest(x,y);
+  if(idol)removeIdol(idol);
+});
+canvas.addEventListener("mouseup",function(){sweeping=false;});
+canvas.addEventListener("mouseleave",function(){sweeping=false;});
+
+canvas.addEventListener("touchstart",function(e){
+  if(!gameRunning)return;
+  e.preventDefault();
+  const{x,y}=getCanvasCoords(e);
+  const idol=hitTest(x,y);
+  if(idol)removeIdol(idol);
+  if(gameMode==="sweep")sweeping=true;
+},{passive:false});
+canvas.addEventListener("touchmove",function(e){
+  if(!gameRunning||!sweeping||gameMode!=="sweep")return;
+  e.preventDefault();
+  const{x,y}=getCanvasCoords(e);
+  const idol=hitTest(x,y);
+  if(idol)removeIdol(idol);
+},{passive:false});
+canvas.addEventListener("touchend",function(){sweeping=false;});
+
+function setMode(m){
+  gameMode=m;
+  document.getElementById("modeTap").classList.toggle("active",m==="tap");
+  document.getElementById("modeSweep").classList.toggle("active",m==="sweep");
+  log("Mode: "+m,"");
+}
+
+// Timer
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+function newGame(){
+  document.getElementById("celebration").classList.remove("show");
+  document.getElementById("idolInfo").textContent="";
+  resizeCanvas();
+  generateIdols();
+  gameRunning=true;
+  startTimer();
+  cancelAnimationFrame(animFrame);
+  animFrame=requestAnimationFrame(gameLoop);
+  log("New game started — 360 idols to remove!","");
+}
+
+// High Score
+const HS_KEY="wdiy-hs-idol-remover";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best||best===0){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'s</span>';}}
+function checkHS(){
+  if(removed>=TOTAL_IDOLS){
+    if(saveHS(timerSeconds)){log("🏆 NEW BEST TIME: "+timerSeconds+"s!","success");}
+  }
+}
+
+// Resize handler
+window.addEventListener("resize",function(){
+  if(gameRunning){
+    const oldCW=CW;
+    resizeCanvas();
+    const scale=CW/oldCW;
+    idols.forEach(id=>{
+      id.x=CX+(id.x-oldCW/2)*scale;
+      id.y=CY+(id.y-oldCW/2)*scale;
+      id.r*=scale;
+    });
+    drawScene();
+  }
+});
+
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");if(gameRunning)drawScene();}));
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+// Keyboard shortcuts
+document.addEventListener("keydown",function(e){
+  if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+  if(e.key==="s"||e.key==="S"){setMode(gameMode==="tap"?"sweep":"tap");}
+  if(e.key==="h"||e.key==="H"){const hp=document.getElementById("helpPanel");if(hp.classList.contains("open"))closeHelp();else openHelp();}
+  if(e.key==="m"||e.key==="M"){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";}
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

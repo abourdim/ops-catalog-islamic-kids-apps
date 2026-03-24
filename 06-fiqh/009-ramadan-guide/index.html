@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Ramadan Guide — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.app.on~.back-link,.back-link{}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:540px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.big-text{font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;color:var(--heading);text-align:center;line-height:1.5;max-width:460px}
+.answer-row{display:flex;gap:8px;align-items:stretch;justify-content:center;flex-wrap:wrap;width:100%}
+.answer-btn{padding:10px 14px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;flex:1;min-width:100px;max-width:220px;text-align:center;line-height:1.4}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.explain-box{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px 16px;width:100%;font-size:12px;color:var(--text2);line-height:1.7;animation:fadeUp .3s}
+.explain-box strong{color:var(--accent);font-weight:700}
+.explain-box .ref{color:var(--text3);font-size:10px;font-style:italic;margin-top:6px;display:block}
+.diff-badge{display:inline-block;padding:1px 6px;border-radius:4px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-left:4px}
+.diff-easy{background:rgba(0,200,100,.15);color:#00c864}
+.diff-medium{background:rgba(255,180,0,.15);color:#ffb400}
+.diff-hard{background:rgba(255,50,80,.15);color:#ff3250}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.grid-pick{display:grid;gap:8px;justify-content:center;margin:10px auto}
+.grid-pick.g2{grid-template-columns:repeat(2,1fr);max-width:200px}
+.grid-pick.g3{grid-template-columns:repeat(3,1fr);max-width:300px}
+.grid-pick.g4{grid-template-columns:repeat(4,1fr);max-width:360px}
+.pick-card{padding:14px 10px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;cursor:pointer;text-align:center;transition:all .15s}
+.pick-card:hover{border-color:var(--accent);background:var(--abg)}
+.pick-card.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.pick-card.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+.cat-badge{display:inline-block;padding:1px 6px;border-radius:4px;font-size:9px;font-weight:600;background:var(--abg);border:1px solid var(--abr);color:var(--accent);margin-bottom:8px}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Ramadan Guide</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Everything about the blessed month</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Learn all about Ramadan through fun questions!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>Ramadan Guide</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="easy">Easy (10)</option><option value="medium" selected>Medium (20)</option><option value="hard">Hard (30+)</option></select>
+    <button id="startBtn">&#9654; New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">&#10067;</button>
+    <button id="soundBtn">&#x1F50A;</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+    <div class="sw"><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div>
+<div class="status" id="status">Pick the right answer!</div>
+<div class="game-area" id="gameArea"><div class="big-text" id="question">?</div><div id="explainArea"></div><div class="answer-row" id="choices"></div><div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy &#8212; Ramadan Guide v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Ramadan Guide?</summary><p>A comprehensive quiz about Ramadan covering fasting rules, Taraweeh, Laylat al-Qadr, Zakat al-Fitr, Eid, Itikaf, Quran, charity, and more. Learn through fun questions with detailed explanations and references.</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / &#1593;. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+        <details class="help-item"><summary>What are the difficulty levels?</summary><p>Easy: 10 basic questions. Medium: 20 mixed questions. Hard: 30+ questions including detailed fiqh topics.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Choose your difficulty (Easy, Medium, or Hard)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Press &#9654; New Game to begin</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Read the question and pick from 4 answers</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>After each correct answer, read the explanation with Quran/Hadith references</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Watch your score and progress bar</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Press &#9654; New Game to play again</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Click &#8592; Catalog to go back and try another game</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>&#127775; Purpose</h3><p>Learn everything about Ramadan: fasting, prayers, charity, Quran, Laylat al-Qadr, Zakat al-Fitr, Eid, and more.</p></div>
+        <div class="wiki-entry"><h3>&#127752; Topics</h3><p>Fasting rules, Taraweeh, Laylat al-Qadr, Zakat al-Fitr, Eid al-Fitr, Itikaf, Quran in Ramadan, charity, good deeds, history.</p></div>
+        <div class="wiki-entry"><h3>&#127912; Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>&#127760; Languages</h3><p>Trilingual: English, Fran&#231;ais, &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>&#128266; Sound</h3><p>Web Audio API — no files needed. Correct = rising tone, wrong = buzz, win = melody. Toggle with sound button.</p></div>
+        <div class="wiki-entry"><h3>&#128274; Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+<script>function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// ===== QUESTION BANK =====
+const QUESTIONS=[
+// ── EASY (diff:"easy") ──
+{q:"Which month is Ramadan in the Islamic calendar?",a:"9th month",o:["9th month","1st month","7th month","12th month"],d:"easy",cat:"History",exp:"Ramadan is the 9th month of the Islamic (Hijri) calendar.",ref:"Quran 2:185 — The month of Ramadan in which the Quran was revealed."},
+{q:"What meal do Muslims eat before dawn during Ramadan?",a:"Suhoor",o:["Suhoor","Iftar","Walimah","Aqeeqah"],d:"easy",cat:"Fasting",exp:"Suhoor is the pre-dawn meal eaten before Fajr prayer. The Prophet (peace be upon him) encouraged it.",ref:"Hadith: 'Eat suhoor, for in suhoor there is blessing.' (Bukhari & Muslim)"},
+{q:"What is the meal called that breaks the fast at sunset?",a:"Iftar",o:["Iftar","Suhoor","Lunch","Dinner"],d:"easy",cat:"Fasting",exp:"Iftar is the meal eaten at sunset (Maghrib) to break the fast.",ref:"Hadith: 'When one of you breaks his fast, let him break it with dates.' (Abu Dawud)"},
+{q:"What special prayer is performed at night during Ramadan?",a:"Taraweeh",o:["Taraweeh","Duha","Ishraq","Tahajjud"],d:"easy",cat:"Taraweeh",exp:"Taraweeh is the special night prayer performed in congregation during Ramadan after Isha.",ref:"Hadith: 'Whoever prays during Ramadan with faith and hope of reward, his past sins will be forgiven.' (Bukhari & Muslim)"},
+{q:"What is the Night of Power called in Arabic?",a:"Laylat al-Qadr",o:["Laylat al-Qadr","Laylat al-Miraj","Laylat al-Bara'ah","Laylat al-Jumu'ah"],d:"easy",cat:"Laylat al-Qadr",exp:"Laylat al-Qadr (the Night of Decree/Power) is better than a thousand months.",ref:"Quran 97:3 — The Night of Decree is better than a thousand months."},
+{q:"Which holy book was revealed during Ramadan?",a:"The Quran",o:["The Quran","The Torah","The Injeel","The Zabur"],d:"easy",cat:"History",exp:"The Quran was first revealed to Prophet Muhammad (peace be upon him) during Ramadan.",ref:"Quran 2:185 — The month of Ramadan in which the Quran was revealed as guidance for the people."},
+{q:"What charity must be given before Eid prayer?",a:"Zakat al-Fitr",o:["Zakat al-Fitr","Zakat al-Maal","Sadaqah","Fidyah"],d:"easy",cat:"Zakat al-Fitr",exp:"Zakat al-Fitr is obligatory charity given before Eid al-Fitr prayer to purify the fast.",ref:"Hadith: Ibn Umar said the Prophet (pbuh) made Zakat al-Fitr obligatory. (Bukhari & Muslim)"},
+{q:"What celebration comes at the end of Ramadan?",a:"Eid al-Fitr",o:["Eid al-Fitr","Eid al-Adha","Mawlid","Isra"],d:"easy",cat:"Eid",exp:"Eid al-Fitr marks the end of Ramadan. It is a day of celebration, prayer, and gratitude.",ref:"Hadith: The Prophet (pbuh) said Muslims have two Eids. (Abu Dawud)"},
+{q:"Is it allowed to drink water while fasting?",a:"No",o:["No","Yes","Only a little","Only if thirsty"],d:"easy",cat:"Fasting",exp:"Fasting means abstaining from all food and drink from Fajr to Maghrib.",ref:"Quran 2:187 — Eat and drink until the white thread of dawn becomes distinct."},
+{q:"From what age is fasting generally obligatory?",a:"Puberty",o:["Puberty","Age 5","Age 7","Age 20"],d:"easy",cat:"Fasting",exp:"Fasting becomes obligatory upon reaching puberty, though children are encouraged to practice.",ref:"Hadith: The pen is lifted from three: the child until puberty... (Abu Dawud)"},
+
+// ── MEDIUM (diff:"medium") ──
+{q:"What is the Sunnah food to break the fast with?",a:"Dates",o:["Dates","Bread","Rice","Meat"],d:"medium",cat:"Fasting",exp:"The Prophet (peace be upon him) used to break his fast with fresh dates; if not available, then dried dates; if not, then water.",ref:"Hadith: 'When one of you breaks his fast, let him break it with dates, for they are blessed.' (Abu Dawud)"},
+{q:"How many rakahs of Taraweeh did Umar (RA) lead?",a:"20 rakahs",o:["20 rakahs","8 rakahs","12 rakahs","36 rakahs"],d:"medium",cat:"Taraweeh",exp:"Umar ibn al-Khattab (RA) united the people behind Ubay ibn Ka'b to pray 20 rakahs. Both 8 and 20 are valid opinions among scholars.",ref:"Recorded by Imam Malik in Al-Muwatta and others."},
+{q:"During which odd nights should we seek Laylat al-Qadr?",a:"Last 10 odd nights",o:["Last 10 odd nights","First 10 nights","15th of Ramadan","Every night"],d:"medium",cat:"Laylat al-Qadr",exp:"The Prophet (pbuh) said to seek it in the odd nights of the last ten days: 21st, 23rd, 25th, 27th, 29th.",ref:"Hadith: 'Seek Laylat al-Qadr in the odd nights of the last ten days of Ramadan.' (Bukhari)"},
+{q:"What is the amount of Zakat al-Fitr per person?",a:"One Sa' of food",o:["One Sa' of food","10% of income","2.5% of savings","One gold coin"],d:"medium",cat:"Zakat al-Fitr",exp:"Zakat al-Fitr is one Sa' (approximately 2.5-3 kg) of the staple food of the land, per person.",ref:"Hadith: Ibn Umar said the Prophet (pbuh) prescribed one Sa' of dates or barley. (Bukhari & Muslim)"},
+{q:"What dua did the Prophet teach Aisha for Laylat al-Qadr?",a:"Allahumma innaka 'afuwwun...",o:["Allahumma innaka 'afuwwun...","SubhanAllah wa bihamdihi","La ilaha illAllah","Alhamdulillah"],d:"medium",cat:"Laylat al-Qadr",exp:"The Prophet (pbuh) taught: 'Allahumma innaka 'Afuwwun tuhibbul-'afwa fa'fu 'anni' (O Allah, You are Pardoning and love to pardon, so pardon me).",ref:"Hadith reported by Aisha (RA) in Tirmidhi."},
+{q:"What is Itikaf?",a:"Seclusion in the mosque",o:["Seclusion in the mosque","Fasting extra days","Reading Quran at home","Giving charity"],d:"medium",cat:"Itikaf",exp:"Itikaf is spiritual retreat — staying in the mosque for worship, especially during the last 10 days of Ramadan.",ref:"Hadith: The Prophet (pbuh) used to observe Itikaf in the last ten days of Ramadan. (Bukhari & Muslim)"},
+{q:"Does accidentally eating or drinking break the fast?",a:"No, the fast continues",o:["No, the fast continues","Yes, fast is broken","Must make up the day","Must pay Kaffarah"],d:"medium",cat:"Fasting",exp:"If someone eats or drinks forgetfully, their fast is still valid. They should stop as soon as they remember.",ref:"Hadith: 'Whoever forgets and eats or drinks, let him complete his fast, for Allah has fed him.' (Bukhari & Muslim)"},
+{q:"Who is exempt from fasting in Ramadan?",a:"The sick and travelers",o:["The sick and travelers","Only the elderly","Only children","Nobody is exempt"],d:"medium",cat:"Fasting",exp:"The sick, travelers, pregnant/nursing women, the elderly, and those unable to fast are exempt. Most must make up missed days later.",ref:"Quran 2:184-185 — Whoever is ill or on a journey, then an equal number of other days."},
+{q:"When should Zakat al-Fitr be paid?",a:"Before Eid prayer",o:["Before Eid prayer","After Eid prayer","Any time in Ramadan","On the 15th of Ramadan"],d:"medium",cat:"Zakat al-Fitr",exp:"It should be given before the Eid prayer. Giving it after the prayer makes it a regular sadaqah, not Zakat al-Fitr.",ref:"Hadith: Ibn Abbas said it is accepted as Zakat if paid before the prayer. (Abu Dawud)"},
+{q:"What is the Sunnah act before Eid al-Fitr prayer?",a:"Eat dates before going",o:["Eat dates before going","Fast the day","Sleep late","Wear old clothes"],d:"medium",cat:"Eid",exp:"It is Sunnah to eat an odd number of dates before going to the Eid al-Fitr prayer.",ref:"Hadith: The Prophet (pbuh) would not go out on Eid al-Fitr until he had eaten dates. (Bukhari)"},
+{q:"What is the reward of charity given during Ramadan?",a:"Multiplied greatly",o:["Multiplied greatly","Same as other months","Doubled only","No extra reward"],d:"medium",cat:"Charity",exp:"Good deeds are multiplied in Ramadan. The Prophet (pbuh) was the most generous in Ramadan.",ref:"Hadith: The Prophet (pbuh) was the most generous in Ramadan when Jibreel met him. (Bukhari)"},
+{q:"What should you say when breaking your fast (dua al-iftar)?",a:"Dhahaba al-dhama'u...",o:["Dhahaba al-dhama'u...","Bismillah only","SubhanAllah","Allahu Akbar"],d:"medium",cat:"Fasting",exp:"The dua: 'Dhahaba al-dhama'u, wabtallatil-'urooq, wa thabatal-ajr in sha Allah' (The thirst is gone, the veins are moistened, and the reward is confirmed if Allah wills).",ref:"Hadith reported by Abu Dawud."},
+{q:"What is the takbirat said on Eid day?",a:"Allahu Akbar, Allahu Akbar...",o:["Allahu Akbar, Allahu Akbar...","SubhanAllah only","La hawla wala quwwata...","Astaghfirullah"],d:"medium",cat:"Eid",exp:"Muslims recite takbirat from the night before Eid until the Eid prayer: Allahu Akbar, Allahu Akbar, La ilaha illAllah, Allahu Akbar, Allahu Akbar, wa lillahil-hamd.",ref:"Well-known Sunnah practice, reported by various scholars."},
+{q:"Does using a Siwak (toothstick) break the fast?",a:"No",o:["No","Yes","Only after noon","Only before noon"],d:"medium",cat:"Fasting",exp:"Using a Siwak does not break the fast. The Prophet (pbuh) used it while fasting.",ref:"Hadith: The Prophet (pbuh) used the Siwak while fasting. (Bukhari)"},
+{q:"What is Fidyah in the context of Ramadan?",a:"Feeding a poor person per missed day",o:["Feeding a poor person per missed day","Fasting extra days","Praying extra prayers","Paying money to the mosque"],d:"medium",cat:"Fasting",exp:"Fidyah is for those permanently unable to fast (elderly, chronically ill). They feed one poor person for each day missed.",ref:"Quran 2:184 — And upon those who are able [to fast but with hardship] — a ransom of feeding a poor person."},
+{q:"How many times did Jibreel review the Quran with the Prophet in Ramadan?",a:"Once each year, twice in the last year",o:["Once each year, twice in the last year","Only once total","Every night","Three times a year"],d:"medium",cat:"Quran",exp:"Jibreel would review the entire Quran with the Prophet (pbuh) once every Ramadan, and twice in the last Ramadan before his passing.",ref:"Hadith in Bukhari, narrated by Ibn Abbas (RA)."},
+{q:"What should a fasting person avoid besides food and drink?",a:"Bad speech and bad deeds",o:["Bad speech and bad deeds","Sleeping","Walking outside","Talking to others"],d:"medium",cat:"Good Deeds",exp:"A fasting person should avoid lying, backbiting, arguing, and all sinful behavior.",ref:"Hadith: 'If someone fights or insults him, let him say: I am fasting.' (Bukhari & Muslim)"},
+{q:"When was fasting in Ramadan made obligatory?",a:"2nd year of Hijrah",o:["2nd year of Hijrah","1st year of Hijrah","Before Hijrah","10th year of Hijrah"],d:"medium",cat:"History",exp:"Fasting in Ramadan was prescribed in the 2nd year after the Prophet's migration (Hijrah) to Madinah.",ref:"Historical consensus among scholars of Seerah."},
+{q:"Is it Sunnah to hasten breaking the fast or delay it?",a:"Hasten (break early at Maghrib)",o:["Hasten (break early at Maghrib)","Delay until Isha","Wait one hour after sunset","Break at midnight"],d:"medium",cat:"Fasting",exp:"It is Sunnah to hasten in breaking the fast as soon as the sun sets.",ref:"Hadith: 'The people will continue to be fine as long as they hasten to break the fast.' (Bukhari & Muslim)"},
+{q:"Where should Itikaf be performed?",a:"In a mosque",o:["In a mosque","At home","In a park","Anywhere quiet"],d:"medium",cat:"Itikaf",exp:"Itikaf must be performed in a mosque. The Prophet (pbuh) always did Itikaf in his mosque.",ref:"Hadith: The Prophet (pbuh) would observe Itikaf in the mosque. (Bukhari & Muslim)"},
+
+// ── HARD (diff:"hard") ──
+{q:"What invalidates the fast according to the majority of scholars?",a:"Intentional eating, drinking, or marital relations",o:["Intentional eating, drinking, or marital relations","Sleeping too long","Smelling food","Taking a shower"],d:"hard",cat:"Fasting",exp:"The fast is broken by intentionally eating, drinking, or having marital relations during fasting hours. Unintentional acts do not break it.",ref:"Quran 2:187 and consensus of scholars (Ijma')."},
+{q:"What is the Kaffarah for deliberately breaking the fast without excuse?",a:"Free a slave, or fast 60 days, or feed 60 poor",o:["Free a slave, or fast 60 days, or feed 60 poor","Fast 3 extra days","Pay money to the mosque","Pray extra Taraweeh"],d:"hard",cat:"Fasting",exp:"Kaffarah for deliberately breaking the fast (by marital relations during the day) is, in order: freeing a slave, fasting 60 consecutive days, or feeding 60 poor people.",ref:"Hadith of the man who broke his fast in Ramadan. (Bukhari & Muslim)"},
+{q:"Does vomiting intentionally break the fast?",a:"Yes, intentional vomiting breaks it",o:["Yes, intentional vomiting breaks it","No, vomiting never breaks it","Only if it's a large amount","Only after Dhuhr"],d:"hard",cat:"Fasting",exp:"If someone vomits deliberately, the fast is broken. If it happens involuntarily, the fast remains valid.",ref:"Hadith: 'Whoever is overcome by vomiting does not make up the fast, but whoever vomits deliberately must make it up.' (Abu Dawud, Tirmidhi)"},
+{q:"What is the minimum number of days of Itikaf?",a:"No minimum — even one day is valid",o:["No minimum — even one day is valid","10 days required","3 days required","7 days required"],d:"hard",cat:"Itikaf",exp:"There is no minimum duration for Itikaf according to the majority of scholars. Even a short period in the mosque with the intention of Itikaf is valid.",ref:"Based on the practice of the Companions and scholarly opinions."},
+{q:"Does an injection or IV drip break the fast?",a:"Non-nutritive injections do not break it",o:["Non-nutritive injections do not break it","All injections break it","Only IV drips break it","No injection breaks it"],d:"hard",cat:"Fasting",exp:"Medical injections that are not nutritive (such as vaccinations or insulin) do not break the fast. IV drips with nutrients are considered to break it.",ref:"Fatwa of the Islamic Fiqh Academy and many contemporary scholars."},
+{q:"What are the signs of Laylat al-Qadr mentioned in hadith?",a:"Calm night, moderate temperature, sun rises without strong rays",o:["Calm night, moderate temperature, sun rises without strong rays","Loud thunder","Heavy rain","Total darkness all night"],d:"hard",cat:"Laylat al-Qadr",exp:"The Prophet (pbuh) described that night as calm and peaceful, and the next morning the sun rises without strong rays, appearing like a disc.",ref:"Hadith: 'A calm night, neither hot nor cold, and the sun rises on its morning weak and red.' (Muslim, Ibn Khuzaymah)"},
+{q:"Who must pay Zakat al-Fitr?",a:"Every Muslim, including on behalf of dependents",o:["Every Muslim, including on behalf of dependents","Only the head of household","Only the wealthy","Only men"],d:"hard",cat:"Zakat al-Fitr",exp:"Zakat al-Fitr is obligatory on every Muslim — the head of household pays on behalf of all dependents, including children and servants.",ref:"Hadith: Ibn Umar said the Prophet (pbuh) made it obligatory on every Muslim, free or slave, male or female. (Bukhari & Muslim)"},
+{q:"Can a person in Itikaf leave the mosque?",a:"Only for essential needs",o:["Only for essential needs","Never, for any reason","Freely during the day","Only for meals"],d:"hard",cat:"Itikaf",exp:"A person in Itikaf may leave only for essential needs such as using the restroom, wudu, or urgent necessity. Leaving without a valid reason breaks the Itikaf.",ref:"Hadith: Aisha (RA) said the Prophet (pbuh) would not leave except for a human need. (Bukhari & Muslim)"},
+{q:"What is the ruling on eye drops while fasting?",a:"Most scholars say it does not break the fast",o:["Most scholars say it does not break the fast","It always breaks the fast","Only antibiotic drops break it","Permissible only before noon"],d:"hard",cat:"Fasting",exp:"The majority of contemporary scholars, including Ibn Taymiyyah, say eye drops do not break the fast as the eyes are not a passage for food.",ref:"Opinion of Sheikh Ibn Taymiyyah and the Islamic Fiqh Academy."},
+{q:"What is the wisdom behind prescribing fasting?",a:"To achieve Taqwa (God-consciousness)",o:["To achieve Taqwa (God-consciousness)","To lose weight","To save money on food","To sleep more"],d:"hard",cat:"Fasting",exp:"Allah prescribed fasting so that believers may attain Taqwa — a heightened awareness and consciousness of Allah in all actions.",ref:"Quran 2:183 — O you who believe, fasting is prescribed for you... that you may attain Taqwa."},
+{q:"How many rakahs is the Eid prayer?",a:"2 rakahs",o:["2 rakahs","4 rakahs","8 rakahs","3 rakahs"],d:"hard",cat:"Eid",exp:"The Eid prayer consists of 2 rakahs with extra takbirat (7 in the first and 5 in the second, according to the majority).",ref:"Hadith and practice of the Prophet (pbuh). (Bukhari & Muslim)"},
+{q:"Is it Sunnah to take a different route returning from Eid prayer?",a:"Yes",o:["Yes","No","Only on Eid al-Adha","Only for the Imam"],d:"hard",cat:"Eid",exp:"The Prophet (pbuh) used to go to the Eid prayer by one route and return by a different one.",ref:"Hadith narrated by Jabir (RA) in Bukhari."},
+{q:"What is the ruling on a fasting person who uses perfume?",a:"It is permissible",o:["It is permissible","It breaks the fast","Only natural scents allowed","Makrooh (disliked)"],d:"hard",cat:"Fasting",exp:"Using perfume while fasting does not break the fast according to the majority of scholars. However, one should avoid deliberately inhaling incense/bukhoor deeply.",ref:"Scholarly consensus; the Prophet (pbuh) did not prohibit it."},
+{q:"What is the reward of feeding a fasting person at Iftar?",a:"Same reward as the fasting person",o:["Same reward as the fasting person","Double the reward","Half the reward","No extra reward"],d:"hard",cat:"Charity",exp:"Whoever feeds a fasting person will have a reward like his, without diminishing the fasting person's reward at all.",ref:"Hadith: 'Whoever gives Iftar to a fasting person will have a reward like his.' (Tirmidhi)"},
+{q:"What was the Battle of Badr's connection to Ramadan?",a:"It took place on 17th Ramadan",o:["It took place on 17th Ramadan","It ended Ramadan early","It started the fast","It cancelled fasting that year"],d:"hard",cat:"History",exp:"The great Battle of Badr, the first major battle in Islam, took place on the 17th of Ramadan in the 2nd year of Hijrah.",ref:"Historical records in Seerah literature."},
+{q:"Does swallowing saliva break the fast?",a:"No",o:["No","Yes","Only in large amounts","Only after noon"],d:"hard",cat:"Fasting",exp:"Swallowing one's own saliva does not break the fast according to scholarly consensus, as it is unavoidable.",ref:"Scholarly consensus (Ijma') of the four schools of thought."},
+{q:"What types of charity are especially recommended in Ramadan?",a:"All types: food, money, Quran teaching, smiling",o:["All types: food, money, Quran teaching, smiling","Only monetary","Only food","Only Zakat"],d:"hard",cat:"Charity",exp:"All forms of charity are multiplied in Ramadan — feeding the poor, giving money, teaching Quran, helping others, and even a smile is charity.",ref:"Hadith: 'Every act of goodness is charity.' (Bukhari) and the Prophet's increased generosity in Ramadan."},
+{q:"What is the ruling on brushing teeth with toothpaste while fasting?",a:"Permissible if nothing is swallowed",o:["Permissible if nothing is swallowed","Completely forbidden","Only with water","Only before Fajr"],d:"hard",cat:"Fasting",exp:"Brushing teeth with toothpaste is permissible as long as nothing is swallowed. Many scholars recommend using Siwak instead to be safe.",ref:"Contemporary scholarly opinions; caution recommended."},
+{q:"Laylat al-Qadr is better than how many months?",a:"1,000 months (83+ years)",o:["1,000 months (83+ years)","100 months","500 months","10,000 months"],d:"hard",cat:"Laylat al-Qadr",exp:"Laylat al-Qadr is better than a thousand months, meaning worship on that night exceeds worship of over 83 years.",ref:"Quran 97:3 — The Night of Decree is better than a thousand months."},
+{q:"What is recommended to recite abundantly during Ramadan?",a:"The Quran",o:["The Quran","Only Tasbeeh","Only Salawat","Only Istighfar"],d:"hard",cat:"Quran",exp:"While all forms of dhikr are encouraged, reciting the Quran holds special virtue in Ramadan as it is the month of Quran.",ref:"Quran 2:185 and the practice of the Salaf who would increase Quran recitation in Ramadan."}
+];
+
+let total=20,current=0,correct=0,ans,locked=false,curQuestions=[];
+function setDiff(){var v=document.getElementById("diffSel").value;if(v==="easy")total=10;else if(v==="medium")total=20;else total=QUESTIONS.length;}
+
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+function buildQuestionSet(){
+  var diff=document.getElementById("diffSel").value;
+  var pool;
+  if(diff==="easy") pool=QUESTIONS.filter(q=>q.d==="easy");
+  else if(diff==="medium") pool=QUESTIONS.filter(q=>q.d==="easy"||q.d==="medium");
+  else pool=QUESTIONS.slice();
+  shuffle(pool);
+  curQuestions=pool.slice(0,total);
+}
+
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+function newGame(){startTimer();setDiff();buildQuestionSet();current=0;correct=0;document.getElementById("sc").textContent="0";document.getElementById("tot").textContent="0";document.getElementById("scorePill").textContent="0 / 0";document.getElementById("explainArea").innerHTML="";nextQ();}
+
+function nextQ(){if(current>=total){checkHS();stopTimer();snd("win");document.getElementById("status").textContent="Done! "+correct+"/"+total;document.getElementById("status").className="status win";log("Score: "+correct+"/"+total,"success");return;}
+locked=false;
+document.getElementById("explainArea").innerHTML="";
+var qq=curQuestions[current];
+var diffCls=qq.d==="easy"?"diff-easy":qq.d==="medium"?"diff-medium":"diff-hard";
+document.getElementById("question").innerHTML='<span class="cat-badge">'+qq.cat+'</span> <span class="diff-badge '+diffCls+'">'+qq.d+'</span><br>'+qq.q;
+ans=qq.a;
+var opts=shuffle(qq.o.slice());
+var el=document.getElementById("choices");el.innerHTML="";
+opts.forEach(function(o){var b=document.createElement("button");b.className="answer-btn";b.textContent=o;b.onclick=function(){pick(b,o);};el.appendChild(b);});
+document.getElementById("status").textContent=(current+1)+"/"+total;document.getElementById("status").className="status";document.getElementById("prog").style.width=(current/total*100)+"%";}
+
+function pick(btn,val){if(locked)return;locked=true;current++;
+var qq=curQuestions[current-1];
+if(String(val)===String(ans)){correct++;btn.classList.add("correct");snd("ok");log("Correct: "+ans,"success");
+  // Show explanation
+  document.getElementById("explainArea").innerHTML='<div class="explain-box"><strong>'+qq.exp+'</strong><span class="ref">'+qq.ref+'</span></div>';
+}else{btn.classList.add("wrong");snd("err");log("Wrong! Answer: "+ans,"error");
+  document.querySelectorAll(".answer-btn").forEach(function(b){if(b.textContent===ans)b.classList.add("correct");});
+  document.getElementById("explainArea").innerHTML='<div class="explain-box"><strong>'+qq.exp+'</strong><span class="ref">'+qq.ref+'</span></div>';
+}
+document.getElementById("sc").textContent=correct;document.getElementById("tot").textContent=current;document.getElementById("scorePill").textContent=correct+" / "+current;document.getElementById("prog").style.width=(current/total*100)+"%";
+setTimeout(nextQ,2400);}
+
+// High Score
+const HS_KEY="wdiy-hs-ramadan-guide";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">&#127942; '+best+'</span>';}}
+function checkHS(){
+  if(typeof correct!=="undefined"&&typeof total!=="undefined"&&current>=total){
+    const pct=Math.round(correct/total*100);
+    if(saveHS(pct)){log("NEW HIGH SCORE: "+pct+"%!","success");}
+  }
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
+  document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\u{1F50A}":"\u{1F507}";});
+
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+// Keyboard shortcuts: 1-4 for answers, Enter for next
+document.addEventListener("keydown",function(e){
+if(e.key>="1"&&e.key<="4"){var btns=document.querySelectorAll(".answer-btn");var i=parseInt(e.key)-1;if(btns[i])btns[i].click();}
+if(e.key==="Enter"){var go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();var start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="\u{1F507}";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

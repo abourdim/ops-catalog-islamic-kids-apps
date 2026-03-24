@@ -1,0 +1,502 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Seerah Map — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:600px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.question-text{font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;color:var(--heading);text-align:center;line-height:1.5}
+.fact-text{font-family:'Outfit',sans-serif;font-size:12px;color:var(--accent);text-align:center;min-height:18px;line-height:1.5;max-width:500px}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:10px}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+canvas{border-radius:8px;cursor:crosshair;max-width:100%;touch-action:none}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Seerah Map</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Journey through the Prophet's life</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Learn key locations from the life of Prophet Muhammad ﷺ</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Seerah Map</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<div class="ctrl">
+<select id="diffSel" onchange="setDiff()"><option value="easy">Easy (6)</option><option value="medium" selected>Medium (9)</option><option value="hard">Hard (12)</option></select>
+<button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+<button id="soundBtn">🔊</button>
+<div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div>
+</div>
+<div class="status" id="status">Click the correct location on the map!</div>
+<div class="game-area">
+<div class="question-text" id="question">?</div>
+<canvas id="mapCanvas" width="560" height="440"></canvas>
+<div class="fact-text" id="factText"></div>
+<div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+</div>
+<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div>
+<div class="foot">Workshop-Diy — Seerah Map v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Seerah Map?</summary><p>An interactive map quiz about key locations from the life of Prophet Muhammad ﷺ. Read the event, then click the correct place on the map!</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop. Tap the map to answer.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>What are the difficulty levels?</summary><p>Easy shows 6 core locations, Medium shows 9, Hard shows all 12 locations on the map.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Choose your difficulty (Easy, Medium, Hard)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Press ▶ New Game to begin</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Read the event question at the top</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>Click the correct location dot on the map</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Learn a fun fact after each answer</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Watch your score and progress bar</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Press ▶ New Game to play again</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Learn the geography of the Seerah — the life of Prophet Muhammad ﷺ. Connect events to real places on the Arabian Peninsula.</p></div>
+        <div class="wiki-entry"><h3>🗺 Locations</h3><p>12 locations: Mecca, Medina, Taif, Badr, Uhud, Khandaq, Hudaybiyyah, Khaybar, Tabuk, Cave Hira, Cave Thawr, Abyssinia.</p></div>
+        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Fran&ccedil;ais, العربية. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Correct = rising tone, wrong = buzz, win = melody. Toggle with 🔊 button.</p></div>
+        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — Seerah Map v1.0</div>
+</aside>
+<script>
+/* ─── Sidebar Help ─── */
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+
+/* ─── Lang / Theme ─── */
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));drawMap();}
+
+/* ─── Sound ─── */
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+
+/* ─── Log ─── */
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+/* ─── All Locations (x,y as % of canvas) ─── */
+const ALL_LOCATIONS=[
+  {id:"mecca",      name:"Mecca",        nameAr:"مكة",         nameFr:"La Mecque",    x:0.37, y:0.62, tier:1},
+  {id:"medina",     name:"Medina",       nameAr:"المدينة",      nameFr:"M\u00e9dine",  x:0.35, y:0.46, tier:1},
+  {id:"taif",       name:"Taif",         nameAr:"الطائف",       nameFr:"Ta\u00eff",    x:0.42, y:0.66, tier:1},
+  {id:"badr",       name:"Badr",         nameAr:"بدر",          nameFr:"Badr",         x:0.32, y:0.54, tier:1},
+  {id:"uhud",       name:"Uhud",         nameAr:"أحد",          nameFr:"Uhud",         x:0.37, y:0.43, tier:1},
+  {id:"caveHira",   name:"Cave Hira",    nameAr:"غار حراء",     nameFr:"Grotte Hira",  x:0.39, y:0.60, tier:1},
+  {id:"khandaq",    name:"Khandaq",      nameAr:"الخندق",       nameFr:"Khandaq",      x:0.34, y:0.44, tier:2},
+  {id:"hudaybiyyah",name:"Hudaybiyyah",  nameAr:"الحديبية",     nameFr:"Hudaybiyyah",  x:0.33, y:0.63, tier:2},
+  {id:"khaybar",    name:"Khaybar",      nameAr:"خيبر",         nameFr:"Khaybar",      x:0.34, y:0.37, tier:2},
+  {id:"caveThawr",  name:"Cave Thawr",   nameAr:"غار ثور",      nameFr:"Grotte Thawr", x:0.36, y:0.65, tier:3},
+  {id:"tabuk",      name:"Tabuk",        nameAr:"تبوك",         nameFr:"Tabuk",        x:0.32, y:0.22, tier:3},
+  {id:"abyssinia",  name:"Abyssinia",    nameAr:"الحبشة",       nameFr:"Abyssinie",    x:0.15, y:0.72, tier:3}
+];
+
+/* ─── Events / Questions (24 total) ─── */
+const EVENTS=[
+  {q:"Where was the Prophet \uFDFA born?",                      qAr:"أين ولد النبي ﷺ؟",                           qFr:"O\u00f9 est n\u00e9 le Proph\u00e8te \uFDFA ?",                 ans:"mecca",       fact:"Prophet Muhammad \uFDFA was born in Mecca around 570 CE, in the Year of the Elephant."},
+  {q:"Where did the Hijrah go to?",                             qAr:"إلى أين كانت الهجرة؟",                        qFr:"O\u00f9 la Hijra s'est-elle dirig\u00e9e ?",                    ans:"medina",      fact:"The Hijrah to Medina in 622 CE marks the start of the Islamic calendar."},
+  {q:"Where was the first battle of Islam?",                    qAr:"أين كانت أول معركة في الإسلام؟",              qFr:"O\u00f9 a eu lieu la premi\u00e8re bataille ?",                 ans:"badr",        fact:"The Battle of Badr (624 CE) was the first major battle, with 313 Muslims against over 1000."},
+  {q:"Where is Cave Hira?",                                     qAr:"أين يقع غار حراء؟",                           qFr:"O\u00f9 se trouve la grotte Hira ?",                            ans:"caveHira",    fact:"Cave Hira is on Jabal al-Nour near Mecca, where the first revelation was received."},
+  {q:"Where was the Treaty of Hudaybiyyah signed?",             qAr:"أين تم توقيع صلح الحديبية؟",                  qFr:"O\u00f9 le trait\u00e9 de Hudaybiyyah a-t-il \u00e9t\u00e9 sign\u00e9 ?", ans:"hudaybiyyah", fact:"The Treaty of Hudaybiyyah (628 CE) was a key peace agreement between Muslims and Quraysh."},
+  {q:"Where was the Battle of Uhud?",                           qAr:"أين وقعت معركة أحد؟",                         qFr:"O\u00f9 a eu lieu la bataille d'Uhud ?",                        ans:"uhud",        fact:"The Battle of Uhud (625 CE) took place near Mount Uhud, north of Medina."},
+  {q:"Where did the Prophet \uFDFA go to preach but was rejected?", qAr:"أين ذهب النبي ﷺ للدعوة فرُفض؟",          qFr:"O\u00f9 le Proph\u00e8te \uFDFA a-t-il pr\u00each\u00e9 mais \u00e9t\u00e9 rejet\u00e9 ?", ans:"taif", fact:"The Prophet \uFDFA traveled to Taif to seek support but was sadly rejected and stoned."},
+  {q:"Where was the Battle of the Trench (Khandaq)?",           qAr:"أين كانت معركة الخندق؟",                      qFr:"O\u00f9 a eu lieu la bataille du Foss\u00e9 ?",                 ans:"khandaq",     fact:"The Battle of the Trench (627 CE) — Muslims dug a trench around Medina to defend it."},
+  {q:"Where did the early Muslims migrate to for safety?",      qAr:"إلى أين هاجر المسلمون الأوائل طلباً للأمان؟", qFr:"O\u00f9 les premiers musulmans ont-ils \u00e9migr\u00e9 ?",      ans:"abyssinia",   fact:"The first Hijrah was to Abyssinia (Ethiopia), where King Najashi gave Muslims protection."},
+  {q:"Where was the Battle of Khaybar?",                        qAr:"أين كانت معركة خيبر؟",                        qFr:"O\u00f9 a eu lieu la bataille de Khaybar ?",                    ans:"khaybar",     fact:"The Battle of Khaybar (628 CE) ended with the Muslim conquest of the fortress of Khaybar."},
+  {q:"Where was the last major expedition of the Prophet \uFDFA?", qAr:"أين كانت آخر غزوة كبرى للنبي ﷺ؟",          qFr:"O\u00f9 a eu lieu la derni\u00e8re exp\u00e9dition du Proph\u00e8te ?", ans:"tabuk",  fact:"The expedition to Tabuk (630 CE) was the last major military campaign led by the Prophet \uFDFA."},
+  {q:"Where did the Prophet \uFDFA hide during the Hijrah?",    qAr:"أين اختبأ النبي ﷺ أثناء الهجرة؟",             qFr:"O\u00f9 le Proph\u00e8te s'est-il cach\u00e9 pendant la Hijra ?", ans:"caveThawr", fact:"The Prophet \uFDFA and Abu Bakr hid in Cave Thawr for three days during the Hijrah."},
+  {q:"Where was the Kaaba located?",                            qAr:"أين تقع الكعبة؟",                              qFr:"O\u00f9 se trouve la Kaaba ?",                                  ans:"mecca",       fact:"The Kaaba, built by Prophet Ibrahim and Ismail, is in the heart of Mecca."},
+  {q:"Where did the Prophet \uFDFA build the first mosque?",    qAr:"أين بنى النبي ﷺ أول مسجد؟",                    qFr:"O\u00f9 le Proph\u00e8te a-t-il construit la premi\u00e8re mosqu\u00e9e ?", ans:"medina", fact:"Masjid Quba in Medina was the first mosque built in Islam."},
+  {q:"Where did the Farewell Sermon take place?",               qAr:"أين كانت خطبة الوداع؟",                        qFr:"O\u00f9 a eu lieu le Sermon d'Adieu ?",                         ans:"mecca",       fact:"The Farewell Sermon was delivered on Mount Arafat, near Mecca, during the final Hajj."},
+  {q:"Where was the Conquest (Fath)?",                          qAr:"أين كان فتح مكة؟",                             qFr:"O\u00f9 a eu lieu la conqu\u00eate ?",                          ans:"mecca",       fact:"The Conquest of Mecca (630 CE) was a peaceful victory where the Prophet \uFDFA forgave the people."},
+  {q:"Where was Masjid an-Nabawi built?",                       qAr:"أين بُني المسجد النبوي؟",                      qFr:"O\u00f9 Masjid an-Nabawi a-t-il \u00e9t\u00e9 construit ?",    ans:"medina",      fact:"Masjid an-Nabawi was built by the Prophet \uFDFA and his companions upon arriving in Medina."},
+  {q:"Where did Angel Jibreel first appear to the Prophet \uFDFA?", qAr:"أين ظهر جبريل للنبي ﷺ أول مرة؟",          qFr:"O\u00f9 l'ange Jibr\u00eel est-il apparu au Proph\u00e8te ?",   ans:"caveHira",    fact:"Angel Jibreel appeared in Cave Hira with the first words: Iqra — Read!"},
+  {q:"Where did the Muslims face a difficult loss in battle?",  qAr:"أين واجه المسلمون هزيمة صعبة؟",               qFr:"O\u00f9 les musulmans ont-ils subi une d\u00e9faite ?",         ans:"uhud",        fact:"At Uhud, the Muslim archers left their posts, leading to a painful lesson about obedience."},
+  {q:"Where did the Prophet \uFDFA pass away?",                 qAr:"أين توفي النبي ﷺ؟",                            qFr:"O\u00f9 le Proph\u00e8te est-il d\u00e9c\u00e9d\u00e9 ?",      ans:"medina",      fact:"The Prophet \uFDFA passed away in Medina in 632 CE, in the room of Aisha (RA)."},
+  {q:"Where was the Isra journey from?",                        qAr:"من أين كانت رحلة الإسراء؟",                    qFr:"D'o\u00f9 est parti le voyage d'Isra ?",                       ans:"mecca",       fact:"The Night Journey (Isra) began from Masjid al-Haram in Mecca to Masjid al-Aqsa."},
+  {q:"Where did 10,000 Quraysh soldiers besiege the Muslims?",  qAr:"أين حاصر 10,000 جندي من قريش المسلمين؟",      qFr:"O\u00f9 10 000 soldats Quraysh ont-ils assi\u00e9g\u00e9 les musulmans ?", ans:"khandaq", fact:"During Khandaq, Salman al-Farisi suggested digging a trench, a strategy new to Arabia."},
+  {q:"Where did the Muslims gain many provisions after a siege?", qAr:"أين غنم المسلمون غنائم كثيرة بعد حصار؟",    qFr:"O\u00f9 les musulmans ont-ils obtenu des provisions apr\u00e8s un si\u00e8ge ?", ans:"khaybar", fact:"After Khaybar, the Muslims gained agricultural land and provisions from the fortresses."},
+  {q:"Where was the army gathered for the expedition to the north?", qAr:"أين تجمع الجيش للتوجه شمالاً؟",          qFr:"O\u00f9 l'arm\u00e9e s'est-elle rassembl\u00e9e pour l'exp\u00e9dition au nord ?", ans:"tabuk", fact:"The Prophet \uFDFA gathered 30,000 soldiers for the Tabuk expedition in intense summer heat."}
+];
+
+/* ─── Game State ─── */
+let difficulty="medium", total=10, current=0, correct=0, locked=false, currentEvent=null;
+let activeLocations=[], usedEvents=[], eventQueue=[];
+const canvas=document.getElementById("mapCanvas");
+const ctx=canvas?canvas.getContext("2d"):null;
+let hitRadius=22;
+
+function getDiffLocations(){
+  if(difficulty==="easy") return ALL_LOCATIONS.filter(l=>l.tier===1);
+  if(difficulty==="medium") return ALL_LOCATIONS.filter(l=>l.tier<=2);
+  return ALL_LOCATIONS.slice();
+}
+function setDiff(){
+  const v=document.getElementById("diffSel").value;
+  difficulty=v;
+  if(v==="easy") total=8;
+  else if(v==="medium") total=10;
+  else total=12;
+}
+
+/* ─── Canvas Drawing ─── */
+function drawMap(highlight,highlightColor){
+  if(!ctx)return;
+  const W=canvas.width, H=canvas.height;
+  const cs=getComputedStyle(document.documentElement);
+  const bg=cs.getPropertyValue("--bg2").trim()||"#0d1117";
+  const border=cs.getPropertyValue("--border").trim()||"#21262d";
+  const text=cs.getPropertyValue("--text2").trim()||"#8b949e";
+  const heading=cs.getPropertyValue("--heading").trim()||"#e6edf3";
+  const accent=cs.getPropertyValue("--accent").trim()||"#00ff88";
+  const bg3=cs.getPropertyValue("--bg3").trim()||"#161b22";
+
+  ctx.fillStyle=bg;
+  ctx.fillRect(0,0,W,H);
+
+  // Draw simplified Arabian Peninsula outline
+  ctx.beginPath();
+  ctx.moveTo(W*0.28,H*0.05);
+  ctx.lineTo(W*0.55,H*0.05);
+  ctx.lineTo(W*0.62,H*0.15);
+  ctx.lineTo(W*0.70,H*0.20);
+  ctx.lineTo(W*0.80,H*0.30);
+  ctx.lineTo(W*0.90,H*0.45);
+  ctx.lineTo(W*0.85,H*0.55);
+  ctx.lineTo(W*0.75,H*0.65);
+  ctx.lineTo(W*0.60,H*0.80);
+  ctx.lineTo(W*0.50,H*0.90);
+  ctx.lineTo(W*0.42,H*0.92);
+  ctx.lineTo(W*0.35,H*0.88);
+  ctx.lineTo(W*0.28,H*0.80);
+  ctx.lineTo(W*0.22,H*0.70);
+  ctx.lineTo(W*0.18,H*0.60);
+  ctx.lineTo(W*0.20,H*0.50);
+  ctx.lineTo(W*0.22,H*0.38);
+  ctx.lineTo(W*0.24,H*0.25);
+  ctx.lineTo(W*0.25,H*0.15);
+  ctx.lineTo(W*0.28,H*0.05);
+  ctx.closePath();
+  ctx.fillStyle=bg3;
+  ctx.fill();
+  ctx.strokeStyle=border;
+  ctx.lineWidth=2;
+  ctx.stroke();
+
+  // Draw Red Sea on the left
+  ctx.fillStyle=bg;
+  ctx.font="10px 'IBM Plex Mono',monospace";
+  ctx.fillStyle=text;
+  ctx.save();
+  ctx.translate(W*0.14,H*0.45);
+  ctx.rotate(-Math.PI/6);
+  ctx.fillText("Red Sea",0,0);
+  ctx.restore();
+
+  // Draw Persian Gulf label
+  ctx.fillStyle=text;
+  ctx.save();
+  ctx.translate(W*0.72,H*0.28);
+  ctx.rotate(Math.PI/5);
+  ctx.fillText("Persian Gulf",0,0);
+  ctx.restore();
+
+  // Africa label for Abyssinia context
+  ctx.fillStyle=text;
+  ctx.font="11px 'IBM Plex Mono',monospace";
+  ctx.fillText("Africa",W*0.04,H*0.65);
+
+  // Draw location dots
+  const lang=document.documentElement.lang;
+  activeLocations.forEach(loc=>{
+    const px=loc.x*W, py=loc.y*H;
+    let dotColor=accent;
+    let r=6;
+    if(highlight===loc.id){
+      dotColor=highlightColor||accent;
+      r=10;
+      ctx.beginPath();
+      ctx.arc(px,py,16,0,Math.PI*2);
+      ctx.fillStyle=highlightColor==="correct"?accent:(highlightColor==="wrong"?"#ff4444":accent);
+      ctx.globalAlpha=0.25;
+      ctx.fill();
+      ctx.globalAlpha=1;
+    }
+    // Dot
+    ctx.beginPath();
+    ctx.arc(px,py,r,0,Math.PI*2);
+    if(highlight===loc.id){
+      ctx.fillStyle=highlightColor==="correct"?accent:"#ff4444";
+    } else {
+      ctx.fillStyle=accent;
+    }
+    ctx.fill();
+    ctx.strokeStyle=heading;
+    ctx.lineWidth=1.5;
+    ctx.stroke();
+    // Label
+    const label=lang==="ar"?loc.nameAr:(lang==="fr"?loc.nameFr:loc.name);
+    ctx.font="bold 11px 'Outfit','Noto Sans Arabic',sans-serif";
+    ctx.fillStyle=heading;
+    ctx.textAlign="center";
+    ctx.fillText(label,px,py-12);
+    ctx.textAlign="start";
+  });
+}
+
+/* ─── Timer ─── */
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+/* ─── High Score ─── */
+const HS_KEY="wdiy-hs-seerah-map";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
+function checkHS(){
+  if(typeof correct!=="undefined"&&typeof total!=="undefined"&&current>=total){
+    const pct=Math.round(correct/total*100);
+    if(saveHS(pct)){log("🏆 NEW HIGH SCORE: "+pct+"%!","success");}
+  }
+}
+
+/* ─── Build event queue ─── */
+function buildEventQueue(){
+  const locIds=new Set(activeLocations.map(l=>l.id));
+  const available=EVENTS.filter(e=>locIds.has(e.ans));
+  // Shuffle
+  for(let i=available.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[available[i],available[j]]=[available[j],available[i]];}
+  // Take 'total' events, cycling if needed
+  eventQueue=[];
+  while(eventQueue.length<total){
+    for(let i=0;i<available.length&&eventQueue.length<total;i++){
+      eventQueue.push(available[i]);
+    }
+  }
+}
+
+/* ─── New Game ─── */
+function newGame(){
+  setDiff();
+  activeLocations=getDiffLocations();
+  current=0;correct=0;locked=false;
+  document.getElementById("sc").textContent="0";
+  document.getElementById("tot").textContent="0";
+  document.getElementById("scorePill").textContent="0 / 0";
+  document.getElementById("factText").textContent="";
+  document.getElementById("logBox").innerHTML="";
+  buildEventQueue();
+  startTimer();
+  drawMap();
+  log("New game started — "+difficulty+" difficulty","success");
+  nextQ();
+}
+
+/* ─── Next Question ─── */
+function nextQ(){
+  if(current>=total){
+    checkHS();stopTimer();snd("win");
+    const pct=Math.round(correct/total*100);
+    document.getElementById("status").textContent="🏆 Done! "+correct+"/"+total+" ("+pct+"%)";
+    document.getElementById("status").className="status win";
+    log("🏆 Score: "+correct+"/"+total+" ("+pct+"%)","success");
+    showHS();
+    return;
+  }
+  locked=false;
+  currentEvent=eventQueue[current];
+  const lang=document.documentElement.lang;
+  let qText=currentEvent.q;
+  if(lang==="ar") qText=currentEvent.qAr;
+  else if(lang==="fr") qText=currentEvent.qFr;
+  document.getElementById("question").textContent=qText;
+  document.getElementById("factText").textContent="";
+  document.getElementById("status").textContent=(current+1)+"/"+total;
+  document.getElementById("status").className="status";
+  document.getElementById("prog").style.width=(current/total*100)+"%";
+  drawMap();
+}
+
+/* ─── Canvas Click Handler ─── */
+function handleMapClick(e){
+  if(locked||!currentEvent)return;
+  const rect=canvas.getBoundingClientRect();
+  const scaleX=canvas.width/rect.width;
+  const scaleY=canvas.height/rect.height;
+  const cx=(e.clientX-rect.left)*scaleX;
+  const cy=(e.clientY-rect.top)*scaleY;
+
+  // Find which location was clicked
+  let clicked=null;
+  let minDist=Infinity;
+  activeLocations.forEach(loc=>{
+    const px=loc.x*canvas.width, py=loc.y*canvas.height;
+    const d=Math.sqrt((cx-px)**2+(cy-py)**2);
+    if(d<hitRadius&&d<minDist){minDist=d;clicked=loc;}
+  });
+  if(!clicked)return; // Clicked empty area
+
+  locked=true;
+  current++;
+  const isCorrect=clicked.id===currentEvent.ans;
+  const correctLoc=activeLocations.find(l=>l.id===currentEvent.ans);
+
+  if(isCorrect){
+    correct++;
+    snd("ok");
+    log("✓ Correct! "+clicked.name,"success");
+    drawMap(clicked.id,"correct");
+  } else {
+    snd("err");
+    log("✗ Wrong ("+clicked.name+") — Answer: "+(correctLoc?correctLoc.name:""),"error");
+    drawMap(currentEvent.ans,"correct");
+    // Also flash wrong
+    const wpx=clicked.x*canvas.width, wpy=clicked.y*canvas.height;
+    ctx.beginPath();ctx.arc(wpx,wpy,10,0,Math.PI*2);ctx.fillStyle="#ff4444";ctx.globalAlpha=0.5;ctx.fill();ctx.globalAlpha=1;
+  }
+
+  document.getElementById("factText").textContent=currentEvent.fact;
+  document.getElementById("sc").textContent=correct;
+  document.getElementById("tot").textContent=current;
+  document.getElementById("scorePill").textContent=correct+" / "+current;
+  document.getElementById("prog").style.width=(current/total*100)+"%";
+  setTimeout(nextQ,2200);
+}
+
+/* ─── Touch support ─── */
+function handleTouch(e){
+  e.preventDefault();
+  const touch=e.changedTouches[0];
+  handleMapClick({clientX:touch.clientX,clientY:touch.clientY});
+}
+
+/* ─── Init ─── */
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
+  showHS();
+
+  document.getElementById("enterBtn").addEventListener("click",()=>{
+    document.querySelector(".splash").style.display="none";
+    document.getElementById("app").classList.add("on");
+    document.getElementById("backLink").style.display="block";
+    newGame();
+  });
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+  canvas.addEventListener("click",handleMapClick);
+  canvas.addEventListener("touchend",handleTouch);
+
+  // Resize canvas for mobile
+  function resizeCanvas(){
+    const parent=canvas.parentElement;
+    const maxW=Math.min(560,parent.clientWidth-32);
+    const ratio=440/560;
+    canvas.style.width=maxW+"px";
+    canvas.style.height=Math.round(maxW*ratio)+"px";
+    drawMap();
+  }
+  window.addEventListener("resize",resizeCanvas);
+  setTimeout(resizeCanvas,50);
+
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+// Keyboard shortcuts: Enter to start
+document.addEventListener("keydown",function(e){
+  if(e.key==="Enter"){
+    const go=document.getElementById("enterBtn");
+    if(go&&go.offsetParent!==null)go.click();
+    const start=document.getElementById("startBtn");
+    if(start&&start.offsetParent!==null)start.click();
+  }
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

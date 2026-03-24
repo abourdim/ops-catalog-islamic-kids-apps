@@ -1,0 +1,473 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Dua Practice — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:540px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.big-text{font-family:'Outfit',sans-serif;font-size:32px;font-weight:800;color:var(--heading);text-align:center}
+.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;cursor:pointer;transition:all .15s;min-width:50px}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.grid-pick{display:grid;gap:8px;justify-content:center;margin:10px auto}
+.grid-pick.g2{grid-template-columns:repeat(2,1fr);max-width:480px}
+.pick-card{padding:14px 10px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Noto Sans Arabic','Outfit',sans-serif;font-size:16px;font-weight:600;cursor:pointer;text-align:center;transition:all .15s;line-height:1.6}
+.pick-card:hover{border-color:var(--accent);background:var(--abg)}
+.pick-card.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.pick-card.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+/* Dua-specific styles */
+.mode-tabs{display:flex;gap:4px;margin-bottom:12px;justify-content:center}
+.mode-tab{padding:8px 18px;border-radius:8px;border:2px solid var(--border);background:var(--bg3);color:var(--text2);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer;transition:all .15s;text-transform:uppercase;letter-spacing:.5px}
+.mode-tab:hover{border-color:var(--accent);color:var(--accent)}
+.mode-tab.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.time-tabs{display:flex;gap:3px;margin-bottom:12px;justify-content:center;flex-wrap:wrap}
+.time-tab{padding:5px 12px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;cursor:pointer;transition:all .15s}
+.time-tab:hover{border-color:var(--accent);color:var(--accent)}
+.time-tab.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.dua-card{width:100%;max-width:460px;min-height:180px;background:var(--bg3);border:2px solid var(--border);border-radius:14px;padding:20px;cursor:pointer;transition:all .3s;position:relative;text-align:center}
+.dua-card:hover{border-color:var(--abr);box-shadow:var(--glow)}
+.dua-occasion{font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.dua-arabic{font-family:'Noto Sans Arabic',sans-serif;font-size:24px;font-weight:600;color:var(--heading);line-height:1.8;direction:rtl;margin-bottom:10px}
+.dua-translit{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text2);font-style:italic;margin-bottom:6px}
+.dua-meaning{font-family:'Outfit',sans-serif;font-size:13px;color:var(--text);line-height:1.6}
+.dua-flip-hint{font-size:9px;color:var(--text3);margin-top:10px;text-transform:uppercase;letter-spacing:1px}
+.dua-nav{display:flex;gap:10px;align-items:center;justify-content:center}
+.dua-nav-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--bg3);color:var(--heading);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;font-family:'Outfit',sans-serif}
+.dua-nav-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.dua-counter{font-size:11px;color:var(--text2);font-family:'IBM Plex Mono',monospace;min-width:50px;text-align:center}
+.quiz-occasion{font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;color:var(--heading);margin-bottom:6px}
+.quiz-hint{font-size:11px;color:var(--text2);margin-bottom:12px}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Dua Practice</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Learn and practice daily supplications</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Learn and memorize beautiful daily duas</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div></div>
+
+<div class="app" id="app">
+  <div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
+  <div class="hdr"><h1>Dua Practice</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div>
+  <div class="mode-tabs">
+    <button class="mode-tab on" id="modeLearn" onclick="setMode('learn')">Learn</button>
+    <button class="mode-tab" id="modeQuiz" onclick="setMode('quiz')">Quiz</button>
+  </div>
+  <div class="ctrl">
+    <select id="diffSel" onchange="setDiff()"><option value="10">Easy (10)</option><option value="15" selected>Medium (15)</option><option value="25">Hard (25+)</option></select>
+    <select id="timeSel" onchange="setTimeFilter()"><option value="all">All Times</option><option value="morning">Morning</option><option value="afternoon">Afternoon</option><option value="evening">Evening</option><option value="night">Night</option><option value="anytime">Anytime</option></select>
+    <button id="startBtn">&#9654; New Quiz</button>
+    <button class="btn-help" id="helpBtn" onclick="openHelp()">&#10067;</button>
+    <button id="soundBtn">&#x1F50A;</button>
+    <div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+    <div class="sw"><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div>
+  </div>
+  <div class="status" id="status">Browse duas or start a quiz!</div>
+
+  <!-- LEARN MODE -->
+  <div id="learnArea" class="game-area" style="display:flex">
+    <div class="time-tabs" id="timeTabs"></div>
+    <div class="dua-card" id="duaCard" onclick="flipCard()">
+      <div class="dua-occasion" id="duaOccasion"></div>
+      <div id="duaFront">
+        <div class="dua-arabic" id="duaArabic"></div>
+      </div>
+      <div id="duaBack" style="display:none">
+        <div class="dua-translit" id="duaTranslit"></div>
+        <div class="dua-meaning" id="duaMeaning"></div>
+      </div>
+      <div class="dua-flip-hint" id="flipHint">Tap to flip</div>
+    </div>
+    <div class="dua-nav">
+      <button class="dua-nav-btn" onclick="prevDua()">&#9664;</button>
+      <span class="dua-counter" id="duaCounter">1 / 25</span>
+      <button class="dua-nav-btn" onclick="nextDua()">&#9654;</button>
+    </div>
+  </div>
+
+  <!-- QUIZ MODE -->
+  <div id="quizArea" class="game-area" style="display:none">
+    <div class="quiz-occasion" id="quizOccasion"></div>
+    <div class="quiz-hint" id="quizHint">Pick the correct dua</div>
+    <div class="grid-pick g2" id="quizChoices"></div>
+    <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+  </div>
+
+  <div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
+  <div class="log-box" id="logBox"></div>
+  <div class="foot">Workshop-Diy &mdash; Dua Practice v1.0</div>
+</div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+      <details class="help-item"><summary>What is Dua Practice?</summary><p>An interactive tool to learn and memorize daily Islamic supplications (duas). Browse duas organized by time of day, or test yourself with quizzes.</p></details>
+      <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+      <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser &mdash; phone, tablet, laptop, desktop.</p></details>
+      <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
+      <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / &#1593;. Arabic enables right-to-left layout automatically.</p></details>
+      <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+      <details class="help-item"><summary>What do the difficulty levels mean?</summary><p>Easy = 10 common duas. Medium = 15 duas. Hard = all 25+ duas including less common ones.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+      <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+      <div class="help-step"><span class="help-step-num">2</span><p>Use Learn mode to browse duas &mdash; tap a card to flip between Arabic and translation</p></div>
+      <div class="help-step"><span class="help-step-num">3</span><p>Use arrows or swipe to navigate between duas</p></div>
+      <div class="help-step"><span class="help-step-num">4</span><p>Filter duas by time of day (Morning, Afternoon, Evening, Night, Anytime)</p></div>
+      <div class="help-step"><span class="help-step-num">5</span><p>Switch to Quiz mode and press New Quiz to test yourself</p></div>
+      <div class="help-step"><span class="help-step-num">6</span><p>In quiz, read the occasion shown and pick the correct Arabic dua</p></div>
+      <div class="help-step"><span class="help-step-num">7</span><p>Watch your score and progress bar</p></div>
+      <div class="help-step"><span class="help-step-num">8</span><p>Click &larr; Catalog to go back and try another game</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+      <div class="wiki-entry"><h3>Purpose</h3><p>Learn and memorize daily Islamic supplications (duas) organized by time of day. Practice with interactive flashcards and test knowledge in quiz mode.</p></div>
+      <div class="wiki-entry"><h3>Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+      <div class="wiki-entry"><h3>Languages</h3><p>Trilingual: English, Fran&ccedil;ais, &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;. Arabic auto-enables RTL layout.</p></div>
+      <div class="wiki-entry"><h3>Sound</h3><p>Web Audio API &mdash; no files needed. Correct = rising tone, wrong = buzz, win = melody. Toggle with sound button.</p></div>
+      <div class="wiki-entry"><h3>Duas</h3><p>25+ authentic daily duas organized into Morning, Afternoon, Evening, Night, and Anytime categories. Each includes Arabic text with tashkeel, transliteration, and English meaning.</p></div>
+      <div class="wiki-entry"><h3>Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div>
+</aside>
+
+<script>
+/* ===== HELPERS ===== */
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+/* ===== DUA DATA ===== */
+const DUAS=[
+// MORNING
+{id:1,time:"morning",occasion:"Upon waking up",ar:"الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ",translit:"Alhamdu lillahil-ladhi ahyana ba'da ma amatana wa ilayhin-nushur",en:"All praise is for Allah who gave us life after having taken it from us and unto Him is the resurrection"},
+{id:2,time:"morning",occasion:"Looking in the mirror",ar:"اللَّهُمَّ أَنْتَ حَسَّنْتَ خَلْقِي فَحَسِّنْ خُلُقِي",translit:"Allahumma anta hassanta khalqi fa-hassin khuluqi",en:"O Allah, just as You have made my external features beautiful, make my character beautiful as well"},
+{id:3,time:"morning",occasion:"Leaving home",ar:"بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",translit:"Bismillahi tawakkaltu 'alallahi wa la hawla wa la quwwata illa billah",en:"In the name of Allah, I place my trust in Allah, and there is no might nor power except with Allah"},
+{id:4,time:"morning",occasion:"Entering a vehicle",ar:"سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ",translit:"Subhanal-ladhi sakh-khara lana hadha wa ma kunna lahu muqrinin wa inna ila Rabbina lamunqalibun",en:"Glory to Him who has subjected this to us, and we could never have it by our efforts, and to our Lord we shall return"},
+{id:5,time:"morning",occasion:"Entering school or work",ar:"رَبِّ زِدْنِي عِلْمًا",translit:"Rabbi zidni 'ilma",en:"My Lord, increase me in knowledge"},
+// AFTERNOON
+{id:6,time:"afternoon",occasion:"Before eating",ar:"بِسْمِ اللَّهِ",translit:"Bismillah",en:"In the name of Allah"},
+{id:7,time:"afternoon",occasion:"After eating",ar:"الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنِي هَذَا وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ",translit:"Alhamdu lillahil-ladhi at'amani hadha wa razaqanihi min ghayri hawlin minni wa la quwwah",en:"All praise is for Allah who fed me this and provided it for me without any might or power from me"},
+{id:8,time:"afternoon",occasion:"Before drinking water",ar:"بِسْمِ اللَّهِ",translit:"Bismillah",en:"In the name of Allah"},
+{id:9,time:"afternoon",occasion:"After drinking water",ar:"الْحَمْدُ لِلَّهِ",translit:"Alhamdulillah",en:"All praise is for Allah"},
+{id:10,time:"afternoon",occasion:"Entering the bathroom",ar:"اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ",translit:"Allahumma inni a'udhu bika minal-khubthi wal-khaba'ith",en:"O Allah, I seek refuge in You from evil and the evil ones"},
+{id:11,time:"afternoon",occasion:"Leaving the bathroom",ar:"غُفْرَانَكَ",translit:"Ghufranaka",en:"I seek Your forgiveness"},
+// EVENING
+{id:12,time:"evening",occasion:"Entering the home",ar:"بِسْمِ اللَّهِ وَلَجْنَا وَبِسْمِ اللَّهِ خَرَجْنَا وَعَلَى رَبِّنَا تَوَكَّلْنَا",translit:"Bismillahi walajna wa bismillahi kharajna wa 'ala Rabbina tawakkalna",en:"In the name of Allah we enter, in the name of Allah we leave, and upon our Lord we rely"},
+{id:13,time:"evening",occasion:"Changing clothes",ar:"بِسْمِ اللَّهِ",translit:"Bismillah",en:"In the name of Allah"},
+{id:14,time:"evening",occasion:"Before studying",ar:"اللَّهُمَّ انْفَعْنِي بِمَا عَلَّمْتَنِي وَعَلِّمْنِي مَا يَنْفَعُنِي وَزِدْنِي عِلْمًا",translit:"Allahum-manfa'ni bima 'allamtani wa 'allimni ma yanfa'uni wa zidni 'ilma",en:"O Allah, benefit me with what You have taught me, teach me what will benefit me, and increase me in knowledge"},
+{id:15,time:"evening",occasion:"After studying",ar:"اللَّهُمَّ إِنِّي أَسْتَوْدِعُكَ مَا قَرَأْتُ وَمَا حَفِظْتُ فَرُدَّهُ إِلَيَّ عِنْدَ حَاجَتِي إِلَيْهِ",translit:"Allahumma inni astawdi'uka ma qara'tu wa ma hafiztu fa-ruddahu ilayya 'inda hajati ilayh",en:"O Allah, I entrust You with what I have read and memorized, so return it to me when I am in need of it"},
+// NIGHT
+{id:16,time:"night",occasion:"Before sleeping",ar:"بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا",translit:"Bismika Allahumma amutu wa ahya",en:"In Your name, O Allah, I die and I live"},
+{id:17,time:"night",occasion:"Night prayer",ar:"اللَّهُمَّ لَكَ الْحَمْدُ أَنْتَ نُورُ السَّمَاوَاتِ وَالْأَرْضِ",translit:"Allahumma lakal-hamdu anta nurus-samawati wal-ard",en:"O Allah, to You belongs all praise, You are the Light of the heavens and the earth"},
+{id:18,time:"night",occasion:"Seeking protection at night",ar:"أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ",translit:"A'udhu bi kalimatillahit-tammati min sharri ma khalaq",en:"I seek refuge in the perfect words of Allah from the evil of what He has created"},
+{id:19,time:"night",occasion:"Last thing before sleep",ar:"اللَّهُمَّ بِاسْمِكَ أَمُوتُ وَأَحْيَا",translit:"Allahumma bismika amutu wa ahya",en:"O Allah, in Your name I die and I live"},
+// ANYTIME
+{id:20,time:"anytime",occasion:"When it rains",ar:"اللَّهُمَّ صَيِّبًا نَافِعًا",translit:"Allahumma sayyiban nafi'a",en:"O Allah, let it be a beneficial rain"},
+{id:21,time:"anytime",occasion:"Hearing thunder",ar:"سُبْحَانَ الَّذِي يُسَبِّحُ الرَّعْدُ بِحَمْدِهِ وَالْمَلَائِكَةُ مِنْ خِيفَتِهِ",translit:"Subhanal-ladhi yusabbihur-ra'du bihamdihi wal-mala'ikatu min khifatih",en:"Glory to Him whom thunder glorifies with His praise, and the angels out of fear of Him"},
+{id:22,time:"anytime",occasion:"Seeing the new moon",ar:"اللَّهُمَّ أَهِلَّهُ عَلَيْنَا بِالْأَمْنِ وَالْإِيمَانِ وَالسَّلَامَةِ وَالْإِسْلَامِ",translit:"Allahumma ahillahu 'alayna bil-amni wal-iman was-salamati wal-Islam",en:"O Allah, let this moon appear on us with security, faith, safety, and Islam"},
+{id:23,time:"anytime",occasion:"After sneezing",ar:"الْحَمْدُ لِلَّهِ",translit:"Alhamdulillah",en:"All praise is for Allah"},
+{id:24,time:"anytime",occasion:"For parents",ar:"رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا",translit:"Rabbir-hamhuma kama rabbayanee sagheera",en:"My Lord, have mercy upon them as they brought me up when I was small"},
+{id:25,time:"anytime",occasion:"Entering the mosque",ar:"اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ",translit:"Allahummaf-tah li abwaba rahmatik",en:"O Allah, open for me the doors of Your mercy"},
+{id:26,time:"anytime",occasion:"Leaving the mosque",ar:"اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ",translit:"Allahumma inni as'aluka min fadlik",en:"O Allah, I ask You from Your bounty"},
+{id:27,time:"morning",occasion:"Morning remembrance",ar:"أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ",translit:"Asbahna wa asbahal-mulku lillahi wal-hamdu lillah",en:"We have entered the morning and all dominion belongs to Allah, and all praise is for Allah"},
+{id:28,time:"night",occasion:"Evening remembrance",ar:"أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ",translit:"Amsayna wa amsal-mulku lillahi wal-hamdu lillah",en:"We have entered the evening and all dominion belongs to Allah, and all praise is for Allah"}
+];
+
+/* ===== STATE ===== */
+let mode="learn",currentTime="all",learnIdx=0,flipped=false;
+let total=15,current=0,correct=0,ans=null,locked=false;
+let timerInterval,timerSeconds=0;
+
+function getFiltered(){
+  let pool=DUAS;
+  if(currentTime!=="all") pool=pool.filter(d=>d.time===currentTime);
+  return pool;
+}
+function getDiffPool(){
+  const n=parseInt(document.getElementById("diffSel").value);
+  if(n>=25) return DUAS.slice();
+  return DUAS.slice(0,n);
+}
+
+/* ===== MODE ===== */
+function setMode(m){
+  mode=m;
+  document.getElementById("modeLearn").classList.toggle("on",m==="learn");
+  document.getElementById("modeQuiz").classList.toggle("on",m==="quiz");
+  document.getElementById("learnArea").style.display=m==="learn"?"flex":"none";
+  document.getElementById("quizArea").style.display=m==="quiz"?"flex":"none";
+  document.getElementById("startBtn").style.display=m==="quiz"?"inline-block":"none";
+  if(m==="learn"){showDua();document.getElementById("status").textContent="Browse duas - tap to flip!";}
+  else{document.getElementById("status").textContent="Press New Quiz to begin!";document.getElementById("quizChoices").innerHTML="";}
+  snd("click");
+}
+
+/* ===== LEARN MODE ===== */
+function buildTimeTabs(){
+  const el=document.getElementById("timeTabs");
+  el.innerHTML="";
+  ["all","morning","afternoon","evening","night","anytime"].forEach(t=>{
+    const b=document.createElement("button");
+    b.className="time-tab"+(t===currentTime?" on":"");
+    b.textContent=t==="all"?"All":t.charAt(0).toUpperCase()+t.slice(1);
+    b.onclick=()=>{currentTime=t;learnIdx=0;flipped=false;buildTimeTabs();showDua();snd("click");};
+    el.appendChild(b);
+  });
+}
+function showDua(){
+  const pool=getFiltered();
+  if(!pool.length){document.getElementById("duaArabic").textContent="No duas in this category";return;}
+  if(learnIdx<0)learnIdx=pool.length-1;
+  if(learnIdx>=pool.length)learnIdx=0;
+  const d=pool[learnIdx];
+  document.getElementById("duaOccasion").textContent=d.occasion;
+  document.getElementById("duaArabic").textContent=d.ar;
+  document.getElementById("duaTranslit").textContent=d.translit;
+  document.getElementById("duaMeaning").textContent=d.en;
+  document.getElementById("duaFront").style.display=flipped?"none":"block";
+  document.getElementById("duaBack").style.display=flipped?"block":"none";
+  document.getElementById("flipHint").textContent=flipped?"Tap to see Arabic":"Tap to flip";
+  document.getElementById("duaCounter").textContent=(learnIdx+1)+" / "+pool.length;
+}
+function flipCard(){flipped=!flipped;showDua();snd("click");}
+function nextDua(){learnIdx++;flipped=false;showDua();snd("click");}
+function prevDua(){learnIdx--;flipped=false;showDua();snd("click");}
+
+/* ===== TIME FILTER for ctrl ===== */
+function setTimeFilter(){
+  currentTime=document.getElementById("timeSel").value;
+  learnIdx=0;flipped=false;
+  buildTimeTabs();showDua();
+}
+
+/* ===== QUIZ MODE ===== */
+function setDiff(){total=parseInt(document.getElementById("diffSel").value);}
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+function newGame(){
+  if(mode!=="quiz") setMode("quiz");
+  startTimer();
+  total=parseInt(document.getElementById("diffSel").value);
+  current=0;correct=0;
+  document.getElementById("sc").textContent="0";
+  document.getElementById("tot").textContent="0";
+  document.getElementById("scorePill").textContent="0 / 0";
+  log("Quiz started: "+total+" questions","");
+  nextQ();
+}
+
+function genQ(){
+  const pool=getDiffPool();
+  const a=pool[Math.floor(Math.random()*pool.length)];
+  const opts=[a];
+  while(opts.length<4){
+    const r=pool[Math.floor(Math.random()*pool.length)];
+    if(!opts.find(o=>o.id===r.id)) opts.push(r);
+  }
+  // Truncate Arabic for options display (first ~40 chars)
+  const truncAr=(txt)=>txt.length>40?txt.substring(0,40)+"...":txt;
+  return{
+    occasion:a.occasion,
+    ansId:a.id,
+    opts:opts.sort(()=>Math.random()-.5).map(o=>({id:o.id,display:truncAr(o.ar)}))
+  };
+}
+
+function nextQ(){
+  if(current>=total){
+    stopTimer();checkHS();snd("win");
+    const pct=Math.round(correct/total*100);
+    document.getElementById("status").textContent="Done! "+correct+"/"+total+" ("+pct+"%)";
+    document.getElementById("status").className="status win";
+    log("Score: "+correct+"/"+total+" ("+pct+"%)","success");
+    return;
+  }
+  locked=false;
+  const q=genQ();
+  document.getElementById("quizOccasion").textContent=q.occasion;
+  document.getElementById("quizHint").textContent="Pick the correct dua:";
+  ans=q.ansId;
+  const el=document.getElementById("quizChoices");
+  el.innerHTML="";
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement("button");
+    b.className="pick-card";
+    b.textContent=o.display;
+    b.style.direction="rtl";
+    b.setAttribute("data-idx",i+1);
+    b.onclick=()=>pickQuiz(b,o.id);
+    el.appendChild(b);
+  });
+  document.getElementById("status").textContent=(current+1)+"/"+total;
+  document.getElementById("status").className="status";
+  document.getElementById("prog").style.width=(current/total*100)+"%";
+}
+
+function pickQuiz(btn,id){
+  if(locked)return;locked=true;current++;
+  if(id===ans){
+    correct++;btn.classList.add("correct");snd("ok");
+    const d=DUAS.find(x=>x.id===id);
+    log("Correct: "+d.occasion,"success");
+  }else{
+    btn.classList.add("wrong");snd("err");
+    const d=DUAS.find(x=>x.id===ans);
+    log("Wrong! Answer: "+d.occasion,"error");
+    document.querySelectorAll(".pick-card").forEach(b=>{
+      const bId=parseInt(b.getAttribute("data-id-real")||"-1");
+    });
+    // Highlight correct
+    document.querySelectorAll(".pick-card").forEach(b=>{
+      const txt=b.textContent;
+      const correctDua=DUAS.find(x=>x.id===ans);
+      const truncAr=(t)=>t.length>40?t.substring(0,40)+"...":t;
+      if(txt===truncAr(correctDua.ar)) b.classList.add("correct");
+    });
+  }
+  document.getElementById("sc").textContent=correct;
+  document.getElementById("tot").textContent=current;
+  document.getElementById("scorePill").textContent=correct+" / "+current;
+  document.getElementById("prog").style.width=(current/total*100)+"%";
+  setTimeout(nextQ,1200);
+}
+
+/* ===== HIGH SCORE ===== */
+const HS_KEY="wdiy-hs-dua-tracker";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">&#127942; '+best+'%</span>';}}
+function checkHS(){
+  if(typeof correct!=="undefined"&&typeof total!=="undefined"&&current>=total){
+    const pct=Math.round(correct/total*100);
+    if(saveHS(pct)){log("NEW HIGH SCORE: "+pct+"%!","success");}
+  }
+}
+
+/* ===== TOUCH SWIPE ===== */
+let touchStartX=0;
+document.addEventListener("touchstart",function(e){touchStartX=e.changedTouches[0].screenX;},{passive:true});
+document.addEventListener("touchend",function(e){
+  if(mode!=="learn")return;
+  const diff=e.changedTouches[0].screenX-touchStartX;
+  if(Math.abs(diff)>50){
+    if(diff<0)nextDua(); else prevDua();
+  }
+},{passive:true});
+
+/* ===== INIT ===== */
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
+  showHS();
+  buildTimeTabs();
+  showDua();
+  document.getElementById("startBtn").style.display="none";
+
+  document.getElementById("enterBtn").addEventListener("click",()=>{
+    document.querySelector(".splash").style.display="none";
+    document.getElementById("app").classList.add("on");
+    document.getElementById("backLink").style.display="block";
+    setMode("learn");
+  });
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07";});
+
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+/* ===== KEYBOARD SHORTCUTS ===== */
+document.addEventListener("keydown",function(e){
+  if(e.key>="1"&&e.key<="4"&&mode==="quiz"){const btns=document.querySelectorAll(".pick-card");const i=parseInt(e.key)-1;if(btns[i])btns[i].click();}
+  if(e.key==="ArrowRight"&&mode==="learn")nextDua();
+  if(e.key==="ArrowLeft"&&mode==="learn")prevDua();
+  if(e.key===" "&&mode==="learn"){e.preventDefault();flipCard();}
+  if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();if(mode==="quiz"){const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}}
+  if(e.key==="l"||e.key==="L")setMode("learn");
+  if(e.key==="q"||e.key==="Q")setMode("quiz");
+});
+
+/* ===== PERSIST PREFS ===== */
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="\uD83D\uDD07";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

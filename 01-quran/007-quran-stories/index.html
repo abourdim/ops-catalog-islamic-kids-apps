@@ -1,0 +1,330 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Quran Stories — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.app.on~.back-link,.back-link{}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:560px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.scene-text{font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;color:var(--heading);text-align:center;line-height:1.5;max-width:480px}
+.scene-emoji{font-size:48px;margin-bottom:4px}
+.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;width:100%}
+.answer-btn{padding:10px 14px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;flex:1;min-width:110px;max-width:220px;text-align:center}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.info-box{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-top:8px;width:100%;max-width:480px;animation:fadeUp .3s}
+.info-box .info-surah{font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:6px}
+.info-box .info-retell{font-size:11px;color:var(--text);line-height:1.6;margin-bottom:6px}
+.info-box .info-lesson{font-size:11px;color:var(--text2);line-height:1.5;font-style:italic}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"\25B8";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">&rlm;&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Quran Stories</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Discover the stories of the Quran</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Identify the surah or prophet from a Quran story scene!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">&rlm;&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>Quran Stories</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="10">Easy (10)</option><option value="15" selected>Medium (15)</option><option value="20">Hard (20+)</option></select>
+    <button id="startBtn">&#x25B6; New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">&#x2753;</button>
+    <button id="soundBtn">&#x1F50A;</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div>
+    <div class="sw"><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div>
+<div class="status" id="status">Pick the correct answer!</div>
+<div class="game-area" id="gameArea">
+  <div class="scene-emoji" id="sceneEmoji"></div>
+  <div class="scene-text" id="sceneText">?</div>
+  <div class="answer-row" id="choices"></div>
+  <div id="infoSlot"></div>
+  <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+</div>
+<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy &mdash; Quran Stories v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">&#x2753; Help</span><button class="btn-close" onclick="closeHelp()">&#x2715;</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Quran Stories?</summary><p>A fun quiz game where you identify which surah or prophet is associated with a scene from the Quran. Learn 20+ stories from the Quran!</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser &mdash; phone, tablet, laptop, desktop.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / &#x639;. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>What do I learn?</summary><p>Each correct answer reveals the surah reference, a brief retelling, and the moral lesson of the story.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Choose difficulty: Easy (10), Medium (15), or Hard (20+)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Press New Game to begin</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Read the story scene and pick the correct surah or prophet</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>After a correct answer, read the surah reference, retelling, and lesson</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Watch your score and progress bar</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Press New Game to play again with different stories</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Click &larr; Catalog to go back</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>Purpose</h3><p>Discover the amazing stories of the Quran! Learn which surahs contain famous stories and the lessons they teach.</p></div>
+        <div class="wiki-entry"><h3>Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>Languages</h3><p>Trilingual: English, Fran&ccedil;ais, &#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629;. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>Sound</h3><p>Web Audio API &mdash; no files needed. Correct = rising tone, wrong = buzz, win = melody. Toggle with the sound button.</p></div>
+        <div class="wiki-entry"><h3>Keyboard</h3><p>Keys 1-4 pick answers. Enter starts a new game. Escape closes help.</p></div>
+        <div class="wiki-entry"><h3>Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div>
+</aside>
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// ── Story Data ──
+const STORIES=[
+{id:"adam-creation",scene:"Allah created the first human from clay and taught him the names of all things. The angels were asked to prostrate before him.",emoji:"\uD83C\uDF3F",ans:"Prophet Adam (AS)",surah:"Surah Al-Baqarah (2:30-37)",retell:"Allah created Adam from clay, taught him the names of everything, and commanded the angels to prostrate. Iblis refused out of arrogance. Adam and Hawa lived in Jannah but were tested with a forbidden tree.",lesson:"Humility before Allah. Arrogance leads to ruin, and sincere repentance is always accepted.",diff:1},
+{id:"adam-tree",scene:"The first man and woman were warned not to approach a certain tree in Paradise, but Shaytan whispered to them and they ate from it.",emoji:"\uD83C\uDF33",ans:"Prophet Adam (AS)",surah:"Surah Al-A'raf (7:19-25)",retell:"Adam and Hawa were living in Jannah. Shaytan deceived them into eating from the forbidden tree. They realized their mistake, repented sincerely, and Allah forgave them but sent them to Earth.",lesson:"Shaytan is our enemy. When we make mistakes, we should turn to Allah in repentance immediately.",diff:1},
+{id:"nuh-ark",scene:"A prophet built a massive ark on dry land while his people mocked him. Then a great flood covered the earth, and only believers on the ark were saved.",emoji:"\uD83D\uDEA2",ans:"Prophet Nuh (AS)",surah:"Surah Hud (11:36-48)",retell:"Prophet Nuh called his people to Allah for 950 years but most refused. Allah commanded him to build an ark. When the flood came, only the believers and pairs of animals were saved.",lesson:"Patience in dawah. Trust Allah's plan even when people mock you. Faith saves.",diff:1},
+{id:"ibrahim-fire",scene:"A young man smashed the idols in the temple. When questioned, he pointed to the largest idol. The people threw him into a blazing fire, but Allah made it cool and safe.",emoji:"\uD83D\uDD25",ans:"Prophet Ibrahim (AS)",surah:"Surah Al-Anbiya (21:51-69)",retell:"Young Ibrahim challenged his people's idol worship. He broke the idols except the largest, asking them why it couldn't protect itself. They threw him into a fire, but Allah commanded the fire to be cool and peaceful.",lesson:"Stand firm for truth even when you stand alone. Allah protects those who trust Him.",diff:1},
+{id:"ibrahim-sacrifice",scene:"A father saw in a dream that he must sacrifice his beloved son. Both father and son submitted to Allah's will. At the last moment, a ram was sent as a replacement.",emoji:"\uD83D\uDC11",ans:"Prophet Ibrahim (AS)",surah:"Surah As-Saffat (37:100-111)",retell:"Ibrahim was tested with a dream to sacrifice his son Ismail. Both submitted willingly to Allah's command. Just as Ibrahim was about to fulfill the sacrifice, Allah replaced Ismail with a ram from heaven.",lesson:"Complete submission to Allah. This event is commemorated every year during Eid al-Adha.",diff:1},
+{id:"yusuf-brothers",scene:"A young boy was thrown into a well by his jealous brothers, who then told their father that a wolf had eaten him.",emoji:"\uD83D\uDD73\uFE0F",ans:"Prophet Yusuf (AS)",surah:"Surah Yusuf (12:7-20)",retell:"Yusuf's brothers were jealous of their father's love for him. They threw him into a well and brought a shirt stained with false blood to their father Yaqub. A caravan found Yusuf and sold him in Egypt.",lesson:"Jealousy destroys families. Allah's plan prevails despite people's plots.",diff:1},
+{id:"yusuf-dreams",scene:"A prisoner correctly interpreted the king's dream about seven fat cows and seven lean cows, saving the kingdom from famine. He rose from prison to become a minister.",emoji:"\uD83D\uDC04",ans:"Prophet Yusuf (AS)",surah:"Surah Yusuf (12:43-57)",retell:"The king of Egypt had a dream of seven fat cows eaten by seven lean ones. Yusuf interpreted it as seven years of plenty followed by seven years of famine. His wisdom earned him the position of minister over Egypt's storehouses.",lesson:"Knowledge and patience lead to honor. Allah elevates whom He wills.",diff:2},
+{id:"musa-pharaoh",scene:"A prophet was sent with nine clear signs to a tyrannical king who claimed to be God. The signs included a staff turning into a snake and a hand glowing white.",emoji:"\uD83D\uDC0D",ans:"Prophet Musa (AS)",surah:"Surah Al-A'raf (7:103-133)",retell:"Musa was sent to Pharaoh with clear miracles. His staff became a snake and his hand glowed white. Despite witnessing multiple signs, Pharaoh rejected the truth out of arrogance and oppressed the Children of Israel.",lesson:"Truth always overcomes falsehood. Arrogant tyrants will be brought to account.",diff:1},
+{id:"musa-sea",scene:"With an army in pursuit, a prophet struck the sea with his staff and it parted into two walls of water, creating a dry path for the believers to cross.",emoji:"\uD83C\uDF0A",ans:"Prophet Musa (AS)",surah:"Surah Ash-Shu'ara (26:60-67)",retell:"Pharaoh's army chased the Children of Israel to the sea. Allah commanded Musa to strike the water with his staff. The sea split into two towering walls, and the believers crossed safely. Pharaoh and his army drowned.",lesson:"Never lose hope in Allah's help. Deliverance comes at the most desperate moments.",diff:1},
+{id:"musa-bush",scene:"While traveling with his family, a prophet saw a fire on a mountain. When he approached, Allah spoke to him from a burning bush and gave him his mission.",emoji:"\u2728",ans:"Prophet Musa (AS)",surah:"Surah Ta-Ha (20:9-24)",retell:"Musa saw a fire on Mount Tur while traveling. When he approached, Allah spoke to him directly, told him to remove his shoes on the sacred ground, showed him miracles with his staff, and sent him to Pharaoh.",lesson:"Allah chooses His messengers and equips them for their mission. Sacred moments can come unexpectedly.",diff:2},
+{id:"sulaiman-ants",scene:"A mighty king who could speak to animals heard an ant warning its colony to enter their homes so they wouldn't be crushed by the approaching army.",emoji:"\uD83D\uDC1C",ans:"Prophet Sulaiman (AS)",surah:"Surah An-Naml (27:17-19)",retell:"Sulaiman was given the ability to understand the speech of all creatures. As his vast army marched, he heard a tiny ant telling others to hide. Sulaiman smiled and thanked Allah for this blessing.",lesson:"Even the smallest creatures matter. Power should come with mercy and gratitude to Allah.",diff:2},
+{id:"sulaiman-sheba",scene:"A king sent a message to a powerful queen who and her people worshipped the sun. Her magnificent throne was brought to his court in the blink of an eye.",emoji:"\uD83D\uDC51",ans:"Prophet Sulaiman (AS)",surah:"Surah An-Naml (27:22-44)",retell:"The Queen of Sheba (Bilqis) ruled a kingdom that worshipped the sun. Sulaiman invited her to Islam. Her throne was miraculously transported to his palace. She was amazed and submitted to Allah.",lesson:"True power belongs to Allah. Worldly kingdoms should lead to recognizing the Creator.",diff:2},
+{id:"yunus-whale",scene:"A prophet left his disobedient people in anger. He boarded a ship, was thrown overboard during a storm, and was swallowed by a huge fish. He prayed in its belly.",emoji:"\uD83D\uDC0B",ans:"Prophet Yunus (AS)",surah:"Surah Al-Anbiya (21:87-88)",retell:"Yunus left his people without Allah's permission. During a storm at sea, he was thrown overboard and swallowed by a whale. In the darkness, he called out to Allah. Allah forgave him and the whale released him.",lesson:"Never despair of Allah's mercy. The dua of Yunus is powerful for anyone in distress.",diff:1},
+{id:"dawud-goliath",scene:"A young shepherd faced a fearsome giant warrior with just a slingshot while a cowardly army watched. With Allah's help, the giant was defeated.",emoji:"\uD83C\uDFF9",ans:"Prophet Dawud (AS)",surah:"Surah Al-Baqarah (2:249-251)",retell:"The tyrant Jalut (Goliath) terrorized the land. Young Dawud, with strong faith, faced the giant in battle. With a single stone from his sling, he defeated Jalut. Allah then gave Dawud kingship and wisdom.",lesson:"Size and strength don't matter when you have faith in Allah. Courage with iman conquers all.",diff:2},
+{id:"isa-miracles",scene:"A prophet, born without a father, spoke from his cradle as a baby. He later healed the blind, cured lepers, and brought the dead back to life by Allah's permission.",emoji:"\u2B50",ans:"Prophet Isa (AS)",surah:"Surah Al-Imran (3:45-49)",retell:"Isa was born miraculously to Maryam without a father. He spoke as a baby to defend his mother. As a prophet, he healed the sick and raised the dead, all by Allah's permission, calling people to worship Allah alone.",lesson:"All miracles come from Allah. Prophets are servants of Allah, not divine.",diff:2},
+{id:"kahf-sleepers",scene:"A group of young believers fled persecution and hid in a cave. Allah made them sleep for over 300 years. When they woke, the world had completely changed.",emoji:"\uD83D\uDCA4",ans:"Surah Al-Kahf (18)",surah:"Surah Al-Kahf (18:9-26)",retell:"Young men who believed in Allah fled a tyrant king and took shelter in a cave. Allah put them to sleep for 309 years. When they awoke, their coins were ancient and the land had changed. Their story became a sign.",lesson:"Allah protects those who stand for faith. Youth who hold onto their belief are honored by Allah.",diff:2},
+{id:"dhulqarnayn",scene:"A powerful and just ruler built a massive wall of iron and copper between two mountains to protect people from the destructive tribes of Gog and Magog.",emoji:"\uD83C\uDFD7\uFE0F",ans:"Dhul-Qarnayn",surah:"Surah Al-Kahf (18:83-98)",retell:"Dhul-Qarnayn was a righteous king who traveled the earth. He found a people suffering from Ya'juj and Ma'juj. He built an impenetrable barrier of iron and molten copper between two mountains to protect them.",lesson:"Power and resources should be used to help others and establish justice on earth.",diff:3},
+{id:"luqman-advice",scene:"A wise father advised his son: do not associate anything with Allah, be kind to your parents, establish prayer, enjoin good, and walk humbly on the earth.",emoji:"\uD83D\uDCDA",ans:"Luqman the Wise",surah:"Surah Luqman (31:12-19)",retell:"Luqman was blessed with wisdom by Allah. He advised his son with timeless guidance: worship Allah alone, honor parents, pray regularly, be patient, don't be arrogant, and walk with humility.",lesson:"The best gift parents give their children is wise counsel rooted in faith and good character.",diff:3},
+{id:"qarun-wealth",scene:"A man from the people of Musa was given so much wealth that the keys to his treasures were heavy for a group of strong men to carry. He became arrogant.",emoji:"\uD83D\uDCB0",ans:"Qarun",surah:"Surah Al-Qasas (28:76-82)",retell:"Qarun was given immense wealth but became arrogant, claiming he earned it by his own knowledge. Despite warnings, he showed off his riches. Allah caused the earth to swallow him and his mansion.",lesson:"Wealth is a test from Allah. Gratitude and humility, not arrogance, are the proper response to blessings.",diff:3},
+{id:"fil-elephant",scene:"An army with a mighty elephant marched to destroy the Kaaba. Allah sent flocks of birds carrying stones of baked clay that destroyed the army completely.",emoji:"\uD83D\uDC18",ans:"Surah Al-Fil (105)",surah:"Surah Al-Fil (105:1-5)",retell:"Abraha led an army with elephants to destroy the Kaaba. The elephant refused to advance toward Makkah. Allah sent birds (Ababil) carrying stones that struck and destroyed the entire army.",lesson:"Allah protects His sacred house. No power can overcome Allah's decree.",diff:1},
+{id:"spider-cave",scene:"During a dangerous migration, two men hid in a cave. Allah sent a spider to weave a web and a bird to nest at the cave entrance, fooling the enemy pursuers.",emoji:"\uD83D\uDD78\uFE0F",ans:"Prophet Muhammad (SAW)",surah:"Surah At-Tawbah (9:40)",retell:"During the Hijrah from Makkah to Madinah, the Prophet Muhammad and Abu Bakr hid in the Cave of Thawr. Allah sent a spider to spin a web and a dove to nest at the entrance, convincing the Quraysh no one was inside.",lesson:"Put your trust in Allah (tawakkul). Even the smallest creature can be part of Allah's plan.",diff:2},
+{id:"maryam-birth",scene:"A righteous woman went into labor alone under a date palm tree. She was told to shake the trunk and eat the fresh dates. Her newborn then spoke to defend her honor.",emoji:"\uD83C\uDF34",ans:"Maryam (AS)",surah:"Surah Maryam (19:22-33)",retell:"Maryam gave birth to Isa alone near a date palm. Allah provided her with fresh dates and water. When she returned to her people, baby Isa spoke from the cradle, declaring he was a servant of Allah.",lesson:"Allah provides for those in need. Trust in Allah during the hardest moments.",diff:3}
+];
+
+// Distractors pool for wrong answers
+const ALL_ANSWERS=["Prophet Adam (AS)","Prophet Nuh (AS)","Prophet Ibrahim (AS)","Prophet Yusuf (AS)","Prophet Musa (AS)","Prophet Sulaiman (AS)","Prophet Yunus (AS)","Prophet Dawud (AS)","Prophet Isa (AS)","Prophet Muhammad (SAW)","Maryam (AS)","Surah Al-Kahf (18)","Dhul-Qarnayn","Luqman the Wise","Qarun","Surah Al-Fil (105)"];
+
+let total=15,current=0,correct=0,ans,locked=false,curStory=null,gameStories=[];
+
+function getDiffStories(){
+  const diff=parseInt(document.getElementById("diffSel").value);
+  let pool;
+  if(diff<=10) pool=STORIES.filter(s=>s.diff===1);
+  else if(diff<=15) pool=STORIES.filter(s=>s.diff<=2);
+  else pool=STORIES.slice();
+  // Shuffle
+  for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}
+  return pool.slice(0,diff);
+}
+
+function genQ(){
+  const s=gameStories[current];
+  curStory=s;
+  const opts=[s.ans];
+  const others=ALL_ANSWERS.filter(a=>a!==s.ans);
+  while(opts.length<4){
+    const r=others[Math.floor(Math.random()*others.length)];
+    if(!opts.includes(r))opts.push(r);
+  }
+  // shuffle
+  for(let i=opts.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[opts[i],opts[j]]=[opts[j],opts[i]];}
+  return{scene:s.scene,emoji:s.emoji,ans:s.ans,opts:opts};
+}
+
+function setDiff(){total=parseInt(document.getElementById("diffSel").value);}
+
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+function newGame(){
+  startTimer();
+  total=parseInt(document.getElementById("diffSel").value);
+  current=0;correct=0;
+  document.getElementById("sc").textContent="0";
+  document.getElementById("tot").textContent="0";
+  document.getElementById("scorePill").textContent="0 / 0";
+  document.getElementById("logBox").innerHTML="";
+  gameStories=getDiffStories();
+  // If we have fewer stories than total, recycle
+  while(gameStories.length<total){
+    const extra=STORIES.slice();
+    for(let i=extra.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[extra[i],extra[j]]=[extra[j],extra[i]];}
+    gameStories=gameStories.concat(extra);
+  }
+  gameStories=gameStories.slice(0,total);
+  log("New game started ("+total+" questions)");
+  nextQ();
+}
+
+function nextQ(){
+  document.getElementById("infoSlot").innerHTML="";
+  if(current>=total){
+    checkHS();stopTimer();
+    snd("win");
+    document.getElementById("status").textContent="\uD83C\uDFC6 Done! "+correct+"/"+total;
+    document.getElementById("status").className="status win";
+    log("\uD83C\uDFC6 Score: "+correct+"/"+total,"success");
+    return;
+  }
+  locked=false;
+  const q=genQ();
+  document.getElementById("sceneEmoji").textContent=q.emoji;
+  document.getElementById("sceneText").textContent=q.scene;
+  ans=q.ans;
+  const el=document.getElementById("choices");
+  el.innerHTML="";
+  q.opts.forEach(o=>{
+    const b=document.createElement("button");
+    b.className="answer-btn";
+    b.textContent=o;
+    b.onclick=()=>pick(b,o);
+    el.appendChild(b);
+  });
+  document.getElementById("status").textContent="Question "+(current+1)+" of "+total;
+  document.getElementById("status").className="status";
+  document.getElementById("prog").style.width=(current/total*100)+"%";
+}
+
+function showInfo(){
+  if(!curStory)return;
+  const box=document.createElement("div");
+  box.className="info-box";
+  box.innerHTML='<div class="info-surah">'+curStory.surah+'</div><div class="info-retell">'+curStory.retell+'</div><div class="info-lesson">Lesson: '+curStory.lesson+'</div>';
+  document.getElementById("infoSlot").innerHTML="";
+  document.getElementById("infoSlot").appendChild(box);
+}
+
+function pick(btn,val){
+  if(locked)return;locked=true;current++;
+  if(String(val)===String(ans)){
+    correct++;btn.classList.add("correct");snd("ok");
+    log("\u2713 Correct: "+ans,"success");
+    showInfo();
+  }else{
+    btn.classList.add("wrong");snd("err");
+    log("\u2717 Wrong! Answer: "+ans,"error");
+    document.querySelectorAll(".answer-btn").forEach(b=>{if(b.textContent===ans)b.classList.add("correct");});
+    showInfo();
+  }
+  document.getElementById("sc").textContent=correct;
+  document.getElementById("tot").textContent=current;
+  document.getElementById("scorePill").textContent=correct+" / "+current;
+  document.getElementById("prog").style.width=(current/total*100)+"%";
+  setTimeout(nextQ,curStory?2800:900);
+}
+
+// High Score
+const HS_KEY="wdiy-hs-quran-stories";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">\uD83C\uDFC6 '+best+'</span>';}}
+function checkHS(){
+  if(typeof correct!=="undefined"&&typeof total!=="undefined"&&current>=total){
+    const pct=Math.round(correct/total*100);
+    if(saveHS(pct)){log("\uD83C\uDFC6 NEW HIGH SCORE: "+pct+"%!","success");}
+  }
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07";});
+
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+// Keyboard shortcuts: 1-4 for answers, Enter for next
+document.addEventListener("keydown",function(e){
+if(e.key>="1"&&e.key<="4"){const btns=document.querySelectorAll(".answer-btn");const i=parseInt(e.key)-1;if(btns[i])btns[i].click();}
+if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="\uD83D\uDD07";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

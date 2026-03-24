@@ -1,0 +1,366 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Books &amp; Prophets — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.app.on~.back-link,.back-link{}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:500px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.big-text{font-family:'Outfit',sans-serif;font-size:32px;font-weight:800;color:var(--heading);text-align:center}
+.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;cursor:pointer;transition:all .15s;min-width:50px}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.input-row{display:flex;gap:8px;align-items:center;justify-content:center}
+.input-row input{width:80px;padding:8px 12px;border-radius:8px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;text-align:center}
+.input-row input:focus{border-color:var(--accent);outline:none}
+.input-row button{padding:8px 16px;border-radius:8px;border:none;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.grid-pick{display:grid;gap:8px;justify-content:center;margin:10px auto}
+.grid-pick.g2{grid-template-columns:repeat(2,1fr);max-width:200px}
+.grid-pick.g3{grid-template-columns:repeat(3,1fr);max-width:300px}
+.grid-pick.g4{grid-template-columns:repeat(4,1fr);max-width:360px}
+.pick-card{padding:14px 10px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;cursor:pointer;text-align:center;transition:all .15s}
+.pick-card:hover{border-color:var(--accent);background:var(--abg)}
+.pick-card.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.pick-card.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+.info-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;animation:fadeUp .3s;width:100%;max-width:360px}
+.info-card .arabic-name{font-size:20px;font-weight:700;color:var(--accent);font-family:'Noto Sans Arabic','Outfit',sans-serif;margin-bottom:4px}
+.info-card .detail{font-size:11px;color:var(--text2);line-height:1.7}
+.info-card .lesson{font-size:11px;color:var(--accent);margin-top:6px;font-style:italic}
+.q-label{font-size:12px;color:var(--text2);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Books &amp; Prophets</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Match divine books and prophet miracles</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Learn about the prophets of Allah, their divine books, miracles, and key lessons.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Books &amp; Prophets</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="easy">Easy (10)</option><option value="medium" selected>Medium (15)</option><option value="hard">Hard (20)</option></select>
+    <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+    <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="status" id="status">Pick the right answer!</div>
+<div class="game-area"><div class="q-label" id="qLabel"></div><div class="big-text" id="question">?</div><div class="grid-pick g2" id="choices"></div><div id="infoArea"></div><div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Books &amp; Prophets v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Books &amp; Prophets?</summary><p>An interactive quiz to learn about the divine books sent by Allah, the prophets who received them, and the miracles and key attributes of 25 prophets.</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>What are the difficulty levels?</summary><p>Easy: 5 major prophets + books, 10 questions. Medium: 15 prophets, 15 questions. Hard: all 25 prophets, 20 questions.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Choose your difficulty (Easy, Medium, Hard)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Press ▶ New Game to begin</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Match divine books to prophets, or identify prophet miracles and attributes</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>After each correct answer, learn the prophet's Arabic name and a key lesson</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Watch your score and progress bar</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Press ▶ New Game to play again</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Learn about the prophets mentioned in the Quran, the divine books they received, their miracles, and the lessons from their stories.</p></div>
+        <div class="wiki-entry"><h3>📖 Divine Books</h3><p>Quran (Muhammad ﷺ), Injil/Gospel (Isa), Tawrat/Torah (Musa), Zabur/Psalms (Dawud), Suhuf/Scrolls (Ibrahim).</p></div>
+        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Français, العربية. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Correct = rising tone, wrong = buzz, win = melody. Toggle with 🔊 button.</p></div>
+        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+<script>function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+/* ── Prophet & Book Data ── */
+const PROPHETS=[
+{name:"Adam",ar:"آدم",book:null,attr:"First human, taught the names of all things",miracle:"Taught names of all things by Allah",lesson:"Knowledge is a gift from Allah",tier:1},
+{name:"Idris",ar:"إدريس",book:null,attr:"Raised to a high station by Allah",miracle:"Raised to a high station",lesson:"Seeking knowledge pleases Allah",tier:3},
+{name:"Nuh",ar:"نوح",book:null,attr:"Built the Ark, survived the great flood",miracle:"Built the Ark by Allah's command",lesson:"Patience in calling people to truth",tier:1},
+{name:"Hud",ar:"هود",book:null,attr:"Sent to the people of 'Ad",miracle:"Survived the great wind that destroyed 'Ad",lesson:"Arrogance leads to destruction",tier:3},
+{name:"Salih",ar:"صالح",book:null,attr:"Given the miraculous she-camel",miracle:"She-camel emerged from a rock",lesson:"Respect Allah's signs in nature",tier:3},
+{name:"Ibrahim",ar:"إبراهيم",book:"Suhuf (Scrolls)",attr:"Father of prophets, built the Kaaba",miracle:"Survived being thrown into fire",lesson:"Trust in Allah above all else",tier:1},
+{name:"Lut",ar:"لوط",book:null,attr:"Warned his people against wickedness",miracle:"Angels came to protect him",lesson:"Stand firm against wrongdoing",tier:3},
+{name:"Ismail",ar:"إسماعيل",book:null,attr:"Willingly submitted to sacrifice, helped build Kaaba",miracle:"Zamzam water sprang for him",lesson:"Obedience to Allah and parents",tier:2},
+{name:"Ishaq",ar:"إسحاق",book:null,attr:"Son of Ibrahim, father of Yaqub",miracle:"Born to elderly parents by Allah's will",lesson:"Allah's promises always come true",tier:3},
+{name:"Yaqub",ar:"يعقوب",book:null,attr:"Father of the twelve tribes, patient father",miracle:"Sight restored after years of grief",lesson:"Beautiful patience brings reward",tier:2},
+{name:"Yusuf",ar:"يوسف",book:null,attr:"Given beauty and the gift of interpreting dreams",miracle:"Interpreted dreams with Allah's guidance",lesson:"Patience through hardship leads to honor",tier:2},
+{name:"Shuayb",ar:"شعيب",book:null,attr:"Called people to honest trade and fair dealing",miracle:"Earthquake destroyed the cheaters",lesson:"Honesty in business is worship",tier:3},
+{name:"Ayyub",ar:"أيوب",book:null,attr:"Exemplar of patience through illness and loss",miracle:"Healed by Allah after years of patience",lesson:"Patience in suffering earns Allah's mercy",tier:2},
+{name:"Dhul-Kifl",ar:"ذو الكفل",book:null,attr:"Known for keeping his promises",miracle:"Fulfilled his covenant with Allah",lesson:"Always keep your promises",tier:3},
+{name:"Musa",ar:"موسى",book:"Tawrat (Torah)",attr:"Spoke directly to Allah, led Israelites from Egypt",miracle:"Staff turned into a serpent, parted the Red Sea",lesson:"Courage to stand against oppression",tier:1},
+{name:"Harun",ar:"هارون",book:null,attr:"Brother and helper of Musa, eloquent speaker",miracle:"Supported Musa before Pharaoh",lesson:"Supporting others in doing good",tier:3},
+{name:"Dawud",ar:"داود",book:"Zabur (Psalms)",attr:"King and prophet, given a beautiful voice",miracle:"Defeated Jalut (Goliath), iron made soft for him",lesson:"Combine worship with action",tier:2},
+{name:"Sulaiman",ar:"سليمان",book:null,attr:"King who commanded jinn, wind, and animals",miracle:"Talked to birds and animals, commanded jinn",lesson:"Power is a trust from Allah",tier:2},
+{name:"Ilyas",ar:"إلياس",book:null,attr:"Called people away from idol worship of Baal",miracle:"Confronted the idol worshippers",lesson:"Never compromise on monotheism",tier:3},
+{name:"Al-Yasa",ar:"اليسع",book:null,attr:"Successor of Ilyas, guided his people",miracle:"Continued the mission of Ilyas",lesson:"Continue the good work of others",tier:3},
+{name:"Yunus",ar:"يونس",book:null,attr:"Swallowed by a whale, repented inside it",miracle:"Survived inside the whale by Allah's mercy",lesson:"Never lose hope in Allah's mercy",tier:2},
+{name:"Zakariyya",ar:"زكريا",book:null,attr:"Guardian of Maryam, prayed for a son in old age",miracle:"Blessed with Yahya in old age",lesson:"Never stop making dua to Allah",tier:3},
+{name:"Yahya",ar:"يحيى",book:null,attr:"Given wisdom as a child, compassionate",miracle:"Given wisdom and compassion as a young boy",lesson:"Kindness and compassion are strengths",tier:3},
+{name:"Isa",ar:"عيسى",book:"Injil (Gospel)",attr:"Born without a father, spoke in the cradle",miracle:"Healed the sick and blind by Allah's permission",lesson:"Miracles come only from Allah",tier:1},
+{name:"Muhammad ﷺ",ar:"محمد ﷺ",book:"Quran",attr:"Final prophet, mercy to all worlds",miracle:"The Quran — the lasting miracle",lesson:"The Quran is guidance for all of humanity",tier:1}
+];
+
+const BOOKS=[
+{book:"Quran",prophet:"Muhammad ﷺ",ar:"القرآن"},
+{book:"Injil (Gospel)",prophet:"Isa",ar:"الإنجيل"},
+{book:"Tawrat (Torah)",prophet:"Musa",ar:"التوراة"},
+{book:"Zabur (Psalms)",prophet:"Dawud",ar:"الزبور"},
+{book:"Suhuf (Scrolls)",prophet:"Ibrahim",ar:"الصحف"}
+];
+
+/* ── Difficulty config ── */
+const DIFF={easy:{count:10,maxTier:1},medium:{count:15,maxTier:2},hard:{count:20,maxTier:3}};
+let total=15,current=0,correct=0,ans,locked=false,curDiff="medium",pool=[];
+
+function setDiff(){curDiff=document.getElementById("diffSel").value;}
+
+function getPool(){
+  var maxT=DIFF[curDiff].maxTier;
+  return PROPHETS.filter(function(p){return p.tier<=maxT;});
+}
+
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+
+function randFrom(arr,exclude,n){
+  var out=[];var filtered=arr.filter(function(x){return x!==exclude;});
+  shuffle(filtered);
+  for(var i=0;i<Math.min(n,filtered.length);i++)out.push(filtered[i]);
+  return out;
+}
+
+/* ── Question generators ── */
+function genBookQ(){
+  var b=BOOKS[Math.floor(Math.random()*BOOKS.length)];
+  var opts=[b.prophet];
+  var names=PROPHETS.map(function(p){return p.name;});
+  while(opts.length<4){var r=names[Math.floor(Math.random()*names.length)];if(opts.indexOf(r)===-1)opts.push(r);}
+  shuffle(opts);
+  var info={arabic:b.ar,detail:"The "+b.book+" was revealed to Prophet "+b.prophet,lesson:"Divine books are guidance from Allah"};
+  return{label:"Which prophet received this book?",text:b.book,ans:b.prophet,opts:opts,info:info};
+}
+
+function genAttrQ(pool){
+  var p=pool[Math.floor(Math.random()*pool.length)];
+  var others=randFrom(pool.map(function(x){return x.attr;}),p.attr,3);
+  var opts=[p.attr].concat(others);
+  shuffle(opts);
+  var info={arabic:p.ar,detail:p.miracle,lesson:p.lesson};
+  return{label:"What is "+p.name+" known for?",text:p.name+(p.ar?" ("+p.ar+")":""),ans:p.attr,opts:opts,info:info};
+}
+
+function genMiracleQ(pool){
+  var withBook=pool.filter(function(p){return p.book;});
+  if(withBook.length<2)return genAttrQ(pool);
+  var p=withBook[Math.floor(Math.random()*withBook.length)];
+  var opts=[p.book];
+  var allBooks=BOOKS.map(function(b){return b.book;});
+  while(opts.length<4){var r=allBooks[Math.floor(Math.random()*allBooks.length)];if(opts.indexOf(r)===-1)opts.push(r);}
+  shuffle(opts);
+  var info={arabic:p.ar,detail:p.miracle,lesson:p.lesson};
+  return{label:"Which book was given to "+p.name+"?",text:p.name+" ("+p.ar+")",ans:p.book,opts:opts,info:info};
+}
+
+function genQ(){
+  var pl=getPool();
+  var r=Math.random();
+  if(r<0.35)return genBookQ();
+  if(r<0.65)return genAttrQ(pl);
+  return genMiracleQ(pl);
+}
+
+/* ── Timer ── */
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(function(){timerSeconds++;var m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+/* ── Game flow ── */
+function newGame(){
+  startTimer();
+  total=DIFF[curDiff].count;
+  current=0;correct=0;
+  document.getElementById("sc").textContent="0";
+  document.getElementById("tot").textContent="0";
+  document.getElementById("scorePill").textContent="0 / 0";
+  document.getElementById("logBox").innerHTML="";
+  log("New game started — "+curDiff+" ("+total+" questions)");
+  nextQ();
+}
+
+function nextQ(){
+  if(current>=total){
+    stopTimer();checkHS();snd("win");
+    document.getElementById("status").textContent="🏆 Done! "+correct+"/"+total;
+    document.getElementById("status").className="status win";
+    log("🏆 Score: "+correct+"/"+total,"success");
+    return;
+  }
+  locked=false;
+  var q=genQ();
+  document.getElementById("qLabel").textContent=q.label;
+  document.getElementById("question").innerHTML="<div style='font-size:28px'>"+q.text+"</div>";
+  document.getElementById("infoArea").innerHTML="";
+  ans=q.ans;
+  var el=document.getElementById("choices");
+  el.innerHTML="";
+  el.className="grid-pick g2";
+  q.opts.forEach(function(o){
+    var b=document.createElement("button");
+    b.className="pick-card";
+    b.textContent=o;
+    b.style.fontSize=o.length>30?"12px":"14px";
+    b.onclick=function(){pick(b,o,q);};
+    el.appendChild(b);
+  });
+  document.getElementById("status").textContent=(current+1)+"/"+total;
+  document.getElementById("status").className="status";
+  document.getElementById("prog").style.width=(current/total*100)+"%";
+}
+
+function pick(btn,val,q){
+  if(locked)return;locked=true;current++;
+  var infoArea=document.getElementById("infoArea");
+  if(String(val)===String(ans)){
+    correct++;btn.classList.add("correct");snd("ok");
+    log("✓ "+q.text+" → "+ans,"success");
+    if(q.info){
+      infoArea.innerHTML='<div class="info-card"><div class="arabic-name">'+q.info.arabic+'</div><div class="detail">'+q.info.detail+'</div><div class="lesson">'+q.info.lesson+'</div></div>';
+    }
+  }else{
+    btn.classList.add("wrong");snd("err");
+    log("✗ "+q.text+" → Your answer: "+val+", Correct: "+ans,"error");
+    document.querySelectorAll(".pick-card").forEach(function(b){if(b.textContent===ans)b.classList.add("correct");});
+    if(q.info){
+      infoArea.innerHTML='<div class="info-card"><div class="arabic-name">'+q.info.arabic+'</div><div class="detail">'+q.info.detail+'</div><div class="lesson">'+q.info.lesson+'</div></div>';
+    }
+  }
+  document.getElementById("sc").textContent=correct;
+  document.getElementById("tot").textContent=current;
+  document.getElementById("scorePill").textContent=correct+" / "+current;
+  document.getElementById("prog").style.width=(current/total*100)+"%";
+  setTimeout(nextQ,1800);
+}
+
+/* ── High Score ── */
+const HS_KEY="wdiy-hs-books-prophets";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{var best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){var best=loadHS();if(best>0){var pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
+function checkHS(){
+  if(typeof correct!=="undefined"&&typeof total!=="undefined"&&current>=total){
+    var pct=Math.round(correct/total*100);
+    if(saveHS(pct)){log("🏆 NEW HIGH SCORE: "+pct+"%!","success");}
+  }
+}
+
+/* ── Init ── */
+document.addEventListener("DOMContentLoaded",function(){
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
+  document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+// Keyboard shortcuts: 1-4 for answers, Enter for next
+document.addEventListener("keydown",function(e){
+  if(e.key>="1"&&e.key<="4"){var btns=document.querySelectorAll(".pick-card");var i=parseInt(e.key)-1;if(btns[i])btns[i].click();}
+  if(e.key==="Enter"){var go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();var start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

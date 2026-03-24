@@ -1,0 +1,560 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Tactical Retreat — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.app.on~.back-link,.back-link{}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:620px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:4px;margin-bottom:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden;margin:8px auto}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+canvas{border-radius:8px;cursor:crosshair;display:block;max-width:100%;touch-action:none}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Tactical Retreat</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Gazawat</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Command an orderly retreat. Place rally flags, guide soldiers to safety, protect the rear guard. Regroup and counter!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Tactical Retreat</h1><span class="pill" id="scorePill">0 saved</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="scenarioSel"><option value="0">Fighting Retreat (Mu'tah)</option><option value="1">Feigned Retreat (Ain Jalut)</option><option value="2">Strategic Withdrawal</option></select>
+    <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+    <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="status" id="status">Click canvas to place rally flags. Guide your soldiers!</div>
+<div class="game-area"><canvas id="gc" width="580" height="400"></canvas><div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">Saved</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Lost</div><div class="score-num" id="lost">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Tactical Retreat v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Tactical Retreat?</summary><p>A canvas-based tactical game where you command an orderly retreat. Place rally flags, guide soldiers to safety, and protect the rear guard to regroup and counter-attack.</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop. Tap to place flags.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+        <details class="help-item"><summary>What are the 3 scenarios?</summary><p>Fighting Retreat (Mu'tah style) — steady pullback under pressure. Feigned Retreat (Ain Jalut) — lure enemy then counter. Strategic Withdrawal — fall back to high ground for advantage.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Choose a scenario from the dropdown</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Press ▶ New Game to begin</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Click on the canvas to place rally flags (green markers)</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>Your soldiers (blue) will move toward the nearest rally flag</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Keep soldiers away from the advancing enemy (red). Lost soldiers scatter.</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Guide soldiers to the safe zone (left side) to save them</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Save enough soldiers to regroup and win!</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Learn tactical retreat concepts from Islamic history. Not every retreat is a defeat — a well-ordered withdrawal saves the army to fight another day.</p></div>
+        <div class="wiki-entry"><h3>⚔️ Mu'tah</h3><p>The Battle of Mu'tah (629 CE): Khalid ibn al-Walid took command and executed a brilliant fighting retreat, saving the Muslim army from a vastly larger force.</p></div>
+        <div class="wiki-entry"><h3>🏹 Ain Jalut</h3><p>The Battle of Ain Jalut (1260 CE): The Mamluks used a feigned retreat to lure the Mongol army into an ambush, achieving a historic victory.</p></div>
+        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Francais, Arabic. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Toggle with the sound button.</p></div>
+        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else if(t==="march"){o.frequency.value=330;o.type="triangle";g.gain.exponentialRampToValueAtTime(.001,n+.08);o.start(n);o.stop(n+.08);}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// ─── High Score ───
+const HS_KEY="wdiy-hs-retreat";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
+function checkHS(){
+  if(saved>0){
+    if(saveHS(saved)){log("🏆 NEW HIGH SCORE: "+saved+" soldiers saved!","success");}
+  }
+}
+
+// ─── Timer ───
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+// ─── Canvas Game Engine ───
+const cvs=document.getElementById("gc");
+const ctx=cvs.getContext("2d");
+let W=580,H=400;
+let running=false,scenario=0;
+let soldiers=[],enemies=[],flags=[],particles=[];
+let saved=0,lost=0,totalSoldiers=0;
+let enemySpeed=0.5,soldierSpeed=1.2;
+let safeZoneX=60;
+let phase="retreat"; // retreat, counter, done
+let counterTimer=0;
+let highGround=null; // for scenario 2
+
+const SCENARIOS=[
+  {name:"Fighting Retreat (Mu'tah)",desc:"Steady pullback under heavy pressure. Save as many soldiers as possible.",soldiers:20,enemyCount:8,enemySpeed:0.55,rearGuard:true},
+  {name:"Feigned Retreat (Ain Jalut)",desc:"Lure the enemy forward, then counter-attack! Place flags to bait them.",soldiers:18,enemyCount:10,enemySpeed:0.7,feigned:true},
+  {name:"Strategic Withdrawal",desc:"Fall back to high ground for a defensive advantage.",soldiers:22,enemyCount:9,enemySpeed:0.5,highGround:true}
+];
+
+function resizeCanvas(){
+  const par=cvs.parentElement;
+  const maxW=par.clientWidth-8;
+  if(maxW<580){cvs.width=maxW;W=maxW;}else{cvs.width=580;W=580;}
+  cvs.height=400;H=400;
+}
+
+function getThemeColors(){
+  const cs=getComputedStyle(document.documentElement);
+  return{
+    bg:cs.getPropertyValue("--bg2").trim()||"#0d1117",
+    border:cs.getPropertyValue("--border").trim()||"#21262d",
+    accent:cs.getPropertyValue("--accent").trim()||"#00ff88",
+    text:cs.getPropertyValue("--heading").trim()||"#e6edf3",
+    text2:cs.getPropertyValue("--text2").trim()||"#8b949e",
+    bg3:cs.getPropertyValue("--bg3").trim()||"#161b22"
+  };
+}
+
+function createSoldier(x,y){
+  return{x,y,vx:0,vy:0,alive:true,saved:false,scattered:false,scatterVx:0,scatterVy:0,rearGuard:false,morale:100};
+}
+function createEnemy(x,y){
+  return{x,y,vx:-0.3,vy:0,alive:true,lured:false,stunned:0};
+}
+
+function newGame(){
+  resizeCanvas();
+  scenario=parseInt(document.getElementById("scenarioSel").value);
+  const sc=SCENARIOS[scenario];
+  running=true;phase="retreat";
+  saved=0;lost=0;counterTimer=0;
+  soldiers=[];enemies=[];flags=[];particles=[];highGround=null;
+  enemySpeed=sc.enemySpeed;
+  totalSoldiers=sc.soldiers;
+  // place soldiers in right half
+  for(let i=0;i<sc.soldiers;i++){
+    const s=createSoldier(W*0.5+Math.random()*W*0.35, 40+Math.random()*(H-80));
+    if(sc.rearGuard&&i<3)s.rearGuard=true;
+    soldiers.push(s);
+  }
+  // place enemies on right edge
+  for(let i=0;i<sc.enemyCount;i++){
+    const e=createEnemy(W-10-Math.random()*40, 30+Math.random()*(H-60));
+    enemies.push(e);
+  }
+  // high ground zone for scenario 2
+  if(sc.highGround){
+    highGround={x:40,y:80,w:120,h:240};
+  }
+  updateUI();
+  startTimer();
+  log("▶ "+sc.name+" — "+sc.desc,"success");
+  document.getElementById("status").textContent=sc.desc;
+  document.getElementById("status").className="status";
+}
+
+function placeFlag(cx,cy){
+  if(!running)return;
+  // limit flags to 5
+  if(flags.length>=5)flags.shift();
+  flags.push({x:cx,y:cy,age:0});
+  snd("click");
+  log("🚩 Rally flag placed at ("+Math.round(cx)+","+Math.round(cy)+")");
+}
+
+// ─── Canvas input ───
+function getCanvasPos(e){
+  const r=cvs.getBoundingClientRect();
+  const scaleX=W/r.width,scaleY=H/r.height;
+  let cx,cy;
+  if(e.touches){cx=(e.touches[0].clientX-r.left)*scaleX;cy=(e.touches[0].clientY-r.top)*scaleY;}
+  else{cx=(e.clientX-r.left)*scaleX;cy=(e.clientY-r.top)*scaleY;}
+  return{x:cx,y:cy};
+}
+cvs.addEventListener("click",function(e){const p=getCanvasPos(e);placeFlag(p.x,p.y);});
+cvs.addEventListener("touchstart",function(e){e.preventDefault();const p=getCanvasPos(e);placeFlag(p.x,p.y);},{passive:false});
+
+// ─── Update ───
+function dist(a,b){return Math.sqrt((a.x-b.x)**2+(a.y-b.y)**2);}
+
+function update(){
+  if(!running)return;
+  const sc=SCENARIOS[scenario];
+
+  // Update flags age
+  flags.forEach(f=>f.age++);
+
+  // Update soldiers
+  soldiers.forEach(s=>{
+    if(!s.alive||s.saved)return;
+    if(s.scattered){
+      s.x+=s.scatterVx;s.y+=s.scatterVy;
+      s.scatterVx*=0.98;s.scatterVy*=0.98;
+      // if offscreen, lost
+      if(s.x<-20||s.x>W+20||s.y<-20||s.y>H+20){s.alive=false;lost++;snd("err");}
+      return;
+    }
+    // rear guard soldiers stay and slow enemies
+    if(s.rearGuard&&phase==="retreat"){
+      // rear guard holds position near rightmost friendlies
+      let avgX=0,cnt=0;
+      soldiers.forEach(o=>{if(o.alive&&!o.saved&&!o.rearGuard&&!o.scattered){avgX+=o.x;cnt++;}});
+      if(cnt>0){avgX/=cnt;const targetX=Math.min(avgX+80,W-40);s.x+=(targetX-s.x)*0.02;s.y+=(H/2-s.y)*0.005;}
+      return;
+    }
+    // find nearest flag
+    let target=null,minD=Infinity;
+    flags.forEach(f=>{const d=dist(s,f);if(d<minD){minD=d;target=f;}});
+    // if no flag, drift left slowly
+    if(!target){s.x-=0.3;s.y+=(Math.random()-0.5)*0.5;}
+    else{
+      const dx=target.x-s.x,dy=target.y-s.y;
+      const d=Math.sqrt(dx*dx+dy*dy)||1;
+      const spd=soldierSpeed+(s.morale>50?0.3:0);
+      s.x+=dx/d*spd;s.y+=dy/d*spd;
+    }
+    // check safe zone
+    if(s.x<=safeZoneX){s.saved=true;saved++;snd("ok");addParticles(s.x,s.y,"#00ff88",5);}
+    // high ground bonus: if in high ground, increase morale
+    if(highGround&&s.x>=highGround.x&&s.x<=highGround.x+highGround.w&&s.y>=highGround.y&&s.y<=highGround.y+highGround.h){
+      s.morale=Math.min(100,s.morale+0.5);
+    }
+    // clamp
+    s.x=Math.max(0,Math.min(W,s.x));s.y=Math.max(5,Math.min(H-5,s.y));
+  });
+
+  // Update enemies
+  enemies.forEach(en=>{
+    if(!en.alive)return;
+    if(en.stunned>0){en.stunned--;return;}
+    // feigned retreat: enemies chase flags aggressively
+    if(sc.feigned&&flags.length>0){
+      let target=flags[flags.length-1];
+      const dx=target.x-en.x,dy=target.y-en.y;
+      const d=Math.sqrt(dx*dx+dy*dy)||1;
+      en.x+=dx/d*enemySpeed*1.1;en.y+=dy/d*enemySpeed*0.8;
+      en.lured=true;
+    }else{
+      // advance left + seek nearest soldier
+      let target=null,minD=Infinity;
+      soldiers.forEach(s=>{if(s.alive&&!s.saved&&!s.scattered){const d=dist(en,s);if(d<minD){minD=d;target=s;}}});
+      if(target&&minD<200){
+        const dx=target.x-en.x,dy=target.y-en.y;
+        const d=Math.sqrt(dx*dx+dy*dy)||1;
+        en.x+=dx/d*enemySpeed;en.y+=dy/d*enemySpeed;
+      }else{
+        en.x-=enemySpeed*0.4;en.y+=(Math.random()-0.5)*1;
+      }
+    }
+    // rear guard slows enemies
+    soldiers.forEach(s=>{
+      if(s.rearGuard&&s.alive&&!s.saved&&!s.scattered&&dist(en,s)<30){
+        en.stunned=30;addParticles(en.x,en.y,"#ffaa00",3);
+      }
+    });
+    // check collision with soldiers — scatter them
+    soldiers.forEach(s=>{
+      if(!s.alive||s.saved||s.scattered||s.rearGuard)return;
+      if(dist(en,s)<18){
+        s.scattered=true;
+        s.scatterVx=(Math.random()-0.5)*3;
+        s.scatterVy=(Math.random()-0.5)*3;
+        s.morale=0;
+        addParticles(s.x,s.y,"#ff4444",4);
+      }
+    });
+    en.x=Math.max(0,Math.min(W,en.x));en.y=Math.max(5,Math.min(H-5,en.y));
+  });
+
+  // Feigned retreat counter-attack: if enemies lured past midpoint
+  if(sc.feigned&&phase==="retreat"){
+    let luredPast=enemies.filter(e=>e.alive&&e.x<W*0.35).length;
+    if(luredPast>=Math.floor(enemies.length*0.6)){
+      phase="counter";counterTimer=180;
+      log("⚔️ COUNTER-ATTACK! Enemies lured into the trap!","success");
+      document.getElementById("status").textContent="⚔️ Counter-attack! Enemies trapped!";
+      document.getElementById("status").className="status win";
+      snd("win");
+      // stun all enemies
+      enemies.forEach(e=>{e.stunned=120;});
+      // boost all soldiers
+      soldiers.forEach(s=>{if(s.alive&&!s.saved)s.morale=100;});
+    }
+  }
+  if(phase==="counter"){
+    counterTimer--;
+    if(counterTimer<=0){
+      // counter over, enemies defeated
+      enemies.forEach(e=>e.alive=false);
+      phase="done";
+    }
+  }
+
+  // High ground advantage: soldiers in high ground stun nearby enemies
+  if(highGround){
+    soldiers.forEach(s=>{
+      if(!s.alive||s.saved||s.scattered)return;
+      if(s.x>=highGround.x&&s.x<=highGround.x+highGround.w&&s.y>=highGround.y&&s.y<=highGround.y+highGround.h){
+        enemies.forEach(en=>{if(en.alive&&dist(s,en)<50&&en.stunned<=0){en.stunned=40;}});
+      }
+    });
+  }
+
+  // Update particles
+  particles.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.life--;p.vy+=0.05;});
+  particles=particles.filter(p=>p.life>0);
+
+  // Check end conditions
+  const alive=soldiers.filter(s=>s.alive&&!s.saved&&!s.scattered);
+  const scattered=soldiers.filter(s=>s.scattered&&s.alive);
+  const allDone=alive.length===0&&scattered.length===0;
+  const allEnemiesDead=enemies.filter(e=>e.alive).length===0;
+
+  if(allDone||allEnemiesDead){
+    running=false;stopTimer();checkHS();
+    const pct=Math.round(saved/totalSoldiers*100);
+    if(saved>=Math.ceil(totalSoldiers*0.5)){
+      snd("win");
+      document.getElementById("status").textContent="🏆 Victory! "+saved+"/"+totalSoldiers+" soldiers saved ("+pct+"%)";
+      document.getElementById("status").className="status win";
+      log("🏆 Victory! "+saved+" soldiers regrouped!","success");
+    }else{
+      snd("err");
+      document.getElementById("status").textContent="💀 Rout! Only "+saved+"/"+totalSoldiers+" saved ("+pct+"%)";
+      document.getElementById("status").className="status lose";
+      log("💀 Rout — army scattered. Only "+saved+" saved.","error");
+    }
+  }
+  // Check rout: if too many scattered at once
+  const scatteredNow=soldiers.filter(s=>s.scattered&&s.alive).length;
+  if(running&&scatteredNow>=Math.ceil(totalSoldiers*0.6)){
+    // mass rout
+    soldiers.forEach(s=>{
+      if(s.alive&&!s.saved&&!s.scattered){
+        s.scattered=true;s.scatterVx=(Math.random()-0.5)*4;s.scatterVy=(Math.random()-0.5)*4;
+      }
+    });
+    log("💀 ROUT! Army discipline collapsed!","error");
+  }
+
+  updateUI();
+}
+
+function addParticles(x,y,color,count){
+  for(let i=0;i<count;i++){
+    particles.push({x,y,vx:(Math.random()-0.5)*3,vy:(Math.random()-0.5)*3,life:20+Math.random()*15,color});
+  }
+}
+
+function updateUI(){
+  document.getElementById("sc").textContent=saved;
+  document.getElementById("lost").textContent=lost;
+  document.getElementById("tot").textContent=totalSoldiers;
+  document.getElementById("scorePill").textContent=saved+" / "+totalSoldiers+" saved";
+  const pct=totalSoldiers>0?Math.round((saved+lost)/totalSoldiers*100):0;
+  document.getElementById("prog").style.width=pct+"%";
+}
+
+// ─── Draw ───
+function draw(){
+  const c=getThemeColors();
+  ctx.fillStyle=c.bg;ctx.fillRect(0,0,W,H);
+
+  // Safe zone
+  ctx.fillStyle="rgba(0,255,100,0.08)";
+  ctx.fillRect(0,0,safeZoneX,H);
+  ctx.strokeStyle="rgba(0,255,100,0.3)";ctx.lineWidth=2;
+  ctx.setLineDash([6,4]);ctx.beginPath();ctx.moveTo(safeZoneX,0);ctx.lineTo(safeZoneX,H);ctx.stroke();ctx.setLineDash([]);
+  ctx.fillStyle=c.text2;ctx.font="10px 'Outfit',sans-serif";ctx.textAlign="center";
+  ctx.fillText("SAFE",safeZoneX/2,H/2-6);ctx.fillText("ZONE",safeZoneX/2,H/2+8);
+
+  // High ground
+  if(highGround){
+    ctx.fillStyle="rgba(180,140,60,0.15)";
+    ctx.fillRect(highGround.x,highGround.y,highGround.w,highGround.h);
+    ctx.strokeStyle="rgba(180,140,60,0.4)";ctx.lineWidth=1;
+    ctx.strokeRect(highGround.x,highGround.y,highGround.w,highGround.h);
+    ctx.fillStyle="rgba(180,140,60,0.6)";ctx.font="9px 'Outfit',sans-serif";
+    ctx.fillText("HIGH GROUND",highGround.x+highGround.w/2,highGround.y-4);
+  }
+
+  // Danger zone (right)
+  ctx.fillStyle="rgba(255,50,50,0.05)";
+  ctx.fillRect(W-80,0,80,H);
+
+  // Flags
+  flags.forEach(f=>{
+    ctx.fillStyle=c.accent;
+    ctx.beginPath();ctx.moveTo(f.x,f.y);ctx.lineTo(f.x,f.y-20);ctx.stroke();
+    ctx.fillRect(f.x,f.y-20,12,8);
+    // pulse
+    const pulse=Math.sin(f.age*0.1)*3+5;
+    ctx.strokeStyle=c.accent;ctx.lineWidth=1;ctx.globalAlpha=0.3;
+    ctx.beginPath();ctx.arc(f.x,f.y,pulse+10,0,Math.PI*2);ctx.stroke();
+    ctx.globalAlpha=1;
+  });
+
+  // Soldiers
+  soldiers.forEach(s=>{
+    if(!s.alive||s.saved)return;
+    if(s.scattered){
+      ctx.fillStyle="rgba(255,150,50,0.6)";
+      ctx.beginPath();ctx.arc(s.x,s.y,4,0,Math.PI*2);ctx.fill();
+      return;
+    }
+    // color by role
+    ctx.fillStyle=s.rearGuard?"#ffcc00":"#4488ff";
+    ctx.beginPath();ctx.arc(s.x,s.y,5,0,Math.PI*2);ctx.fill();
+    // morale indicator
+    if(s.morale<50){
+      ctx.strokeStyle="rgba(255,100,100,0.5)";ctx.lineWidth=1;
+      ctx.beginPath();ctx.arc(s.x,s.y,7,0,Math.PI*2);ctx.stroke();
+    }
+  });
+
+  // Enemies
+  enemies.forEach(en=>{
+    if(!en.alive)return;
+    ctx.fillStyle=en.stunned>0?"rgba(255,50,50,0.3)":"#ff3333";
+    // triangle shape
+    ctx.beginPath();
+    ctx.moveTo(en.x-6,en.y+5);ctx.lineTo(en.x+6,en.y+5);ctx.lineTo(en.x,en.y-7);
+    ctx.closePath();ctx.fill();
+  });
+
+  // Particles
+  particles.forEach(p=>{
+    ctx.globalAlpha=p.life/30;
+    ctx.fillStyle=p.color;
+    ctx.beginPath();ctx.arc(p.x,p.y,2,0,Math.PI*2);ctx.fill();
+  });
+  ctx.globalAlpha=1;
+
+  // Phase indicator
+  if(phase==="counter"){
+    ctx.fillStyle="rgba(0,255,100,0.15)";ctx.fillRect(0,0,W,H);
+    ctx.fillStyle=c.accent;ctx.font="bold 18px 'Outfit',sans-serif";ctx.textAlign="center";
+    ctx.fillText("⚔️ COUNTER-ATTACK! ⚔️",W/2,30);
+  }
+
+  // HUD text
+  ctx.fillStyle=c.text2;ctx.font="10px 'IBM Plex Mono',monospace";ctx.textAlign="left";
+  ctx.fillText("Flags: "+flags.length+"/5  |  Alive: "+soldiers.filter(s=>s.alive&&!s.saved&&!s.scattered).length+"  |  Enemies: "+enemies.filter(e=>e.alive).length,8,H-8);
+
+  if(!running&&saved>0){
+    ctx.textAlign="center";ctx.font="bold 16px 'Outfit',sans-serif";ctx.fillStyle=c.accent;
+    ctx.fillText("Press ▶ New Game to play again",W/2,H/2);
+  }
+}
+
+// ─── Game Loop ───
+function gameLoop(){
+  update();draw();
+  requestAnimationFrame(gameLoop);
+}
+
+// ─── Init ───
+document.addEventListener("DOMContentLoaded",function(){
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");}));
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",function(){
+    document.querySelector(".splash").style.display="none";
+    document.getElementById("app").classList.add("on");
+    document.getElementById("backLink").style.display="block";
+    resizeCanvas();newGame();
+  });
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+  });
+  window.addEventListener("resize",resizeCanvas);
+  resizeCanvas();
+  gameLoop();
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

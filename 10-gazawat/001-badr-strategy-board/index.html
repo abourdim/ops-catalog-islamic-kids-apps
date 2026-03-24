@@ -1,0 +1,696 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Battle of Badr — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:420px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:900px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:12px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:10px}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:100px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:340px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+canvas{border-radius:8px;cursor:grab;max-width:100%;touch-action:none}
+canvas:active{cursor:grabbing}
+.info-panel{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:10px;font-size:11px;color:var(--text2);line-height:1.7}
+.info-panel h3{font-size:13px;color:var(--heading);margin-bottom:6px;font-family:'Outfit',sans-serif}
+.info-panel .highlight{color:var(--accent);font-weight:600}
+.btn-execute{padding:10px 24px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.btn-execute:disabled{opacity:.4;cursor:not-allowed}
+.btn-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
+.btn-secondary{padding:8px 16px;background:var(--bg3);border:1px solid var(--border);color:var(--heading);border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;font-size:10px;color:var(--text2);margin-bottom:6px}
+.legend span{display:flex;align-items:center;gap:4px}
+.legend .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.victory-box{background:var(--abg);border:2px solid var(--accent);border-radius:12px;padding:18px;text-align:center;margin-bottom:10px;animation:fadeUp .4s}
+.victory-box h2{font-family:'Outfit',sans-serif;color:var(--accent);font-size:20px;margin-bottom:8px}
+.victory-box p{font-size:12px;color:var(--text);line-height:1.7}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Battle of Badr</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Plan the strategy that changed history</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Position 313 Muslim soldiers on the battlefield of Badr. Control the wells, take the high ground, and trust in Allah.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Battle of Badr</h1><span class="pill" id="scorePill">Strategy</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<div class="ctrl">
+  <button id="startBtn">▶ New Battle</button>
+  <button id="showHistBtn">📍 Show Historical</button>
+  <button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+  <button id="soundBtn">🔊</button>
+  <div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+  <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div>
+</div>
+<div class="status" id="status">Drag your green units to strategic positions, then Execute!</div>
+<div class="game-area">
+  <div class="legend">
+    <span><span class="dot" style="background:#22bb66"></span> Muslim camp (313)</span>
+    <span><span class="dot" style="background:#cc3333"></span> Quraysh camp (1000)</span>
+    <span><span class="dot" style="background:#4488ff"></span> Wells</span>
+    <span><span class="dot" style="background:#66aa44"></span> Palm trees</span>
+    <span><span class="dot" style="background:#aa8844"></span> Hills</span>
+  </div>
+  <canvas id="battlefield" width="820" height="520"></canvas>
+  <div class="btn-row">
+    <button class="btn-execute" id="executeBtn">Execute Battle</button>
+    <button class="btn-secondary" id="resetBtn">Reset Positions</button>
+  </div>
+</div>
+<div class="score-row">
+  <div class="score-item"><div class="score-label">Wells Ctrl</div><div class="score-num" id="scWells">0/3</div></div>
+  <div class="score-item"><div class="score-label">High Ground</div><div class="score-num" id="scHigh">-</div></div>
+  <div class="score-item"><div class="score-label">Formation</div><div class="score-num" id="scForm">-</div></div>
+  <div class="score-item"><div class="score-label">Victories</div><div class="score-num" id="scWins">0</div></div>
+</div>
+<div id="infoArea"></div>
+<div class="log-box" id="logBox"></div>
+<div class="foot">Workshop-Diy — Battle of Badr v1.0</div>
+</div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+      <details class="help-item"><summary>What is Battle of Badr?</summary><p>A strategy board game where you position the Muslim army at the Battle of Badr (2 AH / 624 CE). Learn about the Prophet's strategy and trust in Allah through interactive gameplay.</p></details>
+      <details class="help-item"><summary>How do I win?</summary><p>You must: 1) Control all 3 wells (deny water to Quraysh), 2) Position units on high ground, 3) Maintain proper defensive formation. All three conditions unlock victory!</p></details>
+      <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+      <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Touch drag works on mobile. Works on any device with a modern browser.</p></details>
+      <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
+      <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+      <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+      <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+      <div class="help-step"><span class="help-step-num">2</span><p>Look at the battlefield map: wells (blue), hills (brown), palm trees (green)</p></div>
+      <div class="help-step"><span class="help-step-num">3</span><p>Drag the green Muslim unit groups to strategic positions near wells and on high ground</p></div>
+      <div class="help-step"><span class="help-step-num">4</span><p>Click "Execute Battle" to run the simulation</p></div>
+      <div class="help-step"><span class="help-step-num">5</span><p>Watch the battle unfold and see if your strategy wins</p></div>
+      <div class="help-step"><span class="help-step-num">6</span><p>Click "Show Historical" to see the actual positions chosen by the Prophet</p></div>
+      <div class="help-step"><span class="help-step-num">7</span><p>Click "Reset Positions" or "New Battle" to try again</p></div>
+      <div class="help-step"><span class="help-step-num">8</span><p>Read the info panels to learn about the historical battle</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+      <div class="wiki-entry"><h3>The Battle</h3><p>The Battle of Badr (17 Ramadan, 2 AH / March 624 CE) was the first major military victory for the Muslim community. 313 Muslims faced approximately 1000 Quraysh soldiers near the wells of Badr.</p></div>
+      <div class="wiki-entry"><h3>The Strategy</h3><p>Hubab ibn al-Mundhir advised the Prophet to camp near the wells closest to the Quraysh, controlling the water supply. The Muslims filled their own water containers and blocked the remaining wells, denying water to the enemy.</p></div>
+      <div class="wiki-entry"><h3>Divine Support</h3><p>The Prophet made dua to Allah, and Allah sent angels to support the Muslim army. Rain fell to firm the ground under the Muslims while making the Quraysh side muddy and slippery.</p></div>
+      <div class="wiki-entry"><h3>Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+      <div class="wiki-entry"><h3>Languages</h3><p>Trilingual: English, Francais, al-Arabiyyah. Arabic auto-enables RTL layout.</p></div>
+      <div class="wiki-entry"><h3>Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+
+<script>
+/* --- Shared helpers (exact template pattern) --- */
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+/* --- High Score --- */
+const HS_KEY="wdiy-hs-badr-strategy";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
+function checkHS(pct){if(saveHS(pct)){log("NEW HIGH SCORE: "+pct+"%!","success");showHS();}}
+
+/* --- Timer --- */
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+/* ====== BATTLEFIELD GAME ENGINE ====== */
+const CW=820,CH=520;
+let canvas,ctx;
+let battleState="planning"; // planning | simulating | done
+let wins=0;
+let showingHistorical=false;
+let animFrame=null;
+
+/* Map features */
+const WELLS=[
+  {x:340,y:230,r:18,label:"Well 1"},
+  {x:410,y:280,r:18,label:"Well 2"},
+  {x:370,y:340,r:18,label:"Well 3"}
+];
+const HILLS=[
+  {x:200,y:160,w:120,h:60,label:"Northern Ridge"},
+  {x:260,y:380,w:100,h:50,label:"Southern Hill"},
+  {x:500,y:150,w:90,h:45,label:"Eastern Bluff"}
+];
+const PALMS=[
+  {x:300,y:180},{x:320,y:200},{x:280,y:250},{x:450,y:300},{x:430,y:350},
+  {x:310,y:310},{x:470,y:260},{x:250,y:320},{x:390,y:190},{x:350,y:370},
+  {x:220,y:220},{x:480,y:340},{x:270,y:380},{x:400,y:160},{x:360,y:400}
+];
+
+/* Muslim units (draggable groups) */
+let muslimUnits=[];
+const UNIT_R=20;
+
+/* Quraysh units (fixed) */
+const qurayshUnits=[
+  {x:680,y:160,count:250,label:"Quraysh Vanguard"},
+  {x:700,y:280,count:400,label:"Quraysh Main Force"},
+  {x:660,y:400,count:200,label:"Quraysh Cavalry"},
+  {x:740,y:340,count:150,label:"Quraysh Archers"}
+];
+
+/* Historical positions */
+const HISTORICAL_POS=[
+  {x:340,y:210,label:"Main Force near Wells"},
+  {x:380,y:300,label:"Flank Guard"},
+  {x:310,y:290,label:"Well Control"},
+  {x:220,y:170,label:"High Ground Scout"},
+  {x:400,y:350,label:"Southern Flank"}
+];
+
+function initUnits(){
+  muslimUnits=[
+    {x:100,y:180,count:100,label:"Main Force",color:"#22bb66",dragging:false},
+    {x:120,y:280,count:80,label:"Left Flank",color:"#33cc77",dragging:false},
+    {x:80,y:370,count:60,label:"Right Flank",color:"#44dd88",dragging:false},
+    {x:140,y:140,count:40,label:"Scouts",color:"#55ee99",dragging:false},
+    {x:100,y:440,count:33,label:"Reserve",color:"#66ffaa",dragging:false}
+  ];
+}
+
+function drawMap(){
+  ctx.clearRect(0,0,CW,CH);
+  /* Desert bg */
+  const cs=getComputedStyle(document.documentElement);
+  const bgC=cs.getPropertyValue("--bg2").trim()||"#0d1117";
+  const borderC=cs.getPropertyValue("--border").trim()||"#21262d";
+  ctx.fillStyle=bgC;
+  ctx.fillRect(0,0,CW,CH);
+
+  /* Valley terrain gradient */
+  const grad=ctx.createLinearGradient(0,0,CW,0);
+  grad.addColorStop(0,"rgba(60,80,40,0.15)");
+  grad.addColorStop(0.4,"rgba(80,70,40,0.1)");
+  grad.addColorStop(1,"rgba(60,40,30,0.15)");
+  ctx.fillStyle=grad;
+  ctx.fillRect(0,0,CW,CH);
+
+  /* Grid lines */
+  ctx.strokeStyle="rgba(128,128,128,0.07)";
+  ctx.lineWidth=1;
+  for(let x=0;x<CW;x+=40){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,CH);ctx.stroke();}
+  for(let y=0;y<CH;y+=40){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(CW,y);ctx.stroke();}
+
+  /* Hills */
+  HILLS.forEach(h=>{
+    ctx.fillStyle="rgba(140,110,60,0.35)";
+    ctx.beginPath();
+    ctx.ellipse(h.x+h.w/2,h.y+h.h/2,h.w/2,h.h/2,0,0,Math.PI*2);
+    ctx.fill();
+    ctx.strokeStyle="rgba(180,140,70,0.4)";
+    ctx.lineWidth=2;
+    ctx.stroke();
+    ctx.fillStyle="rgba(200,180,120,0.6)";
+    ctx.font="9px 'Outfit',sans-serif";
+    ctx.textAlign="center";
+    ctx.fillText(h.label,h.x+h.w/2,h.y+h.h/2+3);
+  });
+
+  /* Palm trees */
+  PALMS.forEach(p=>{
+    ctx.fillStyle="rgba(100,160,60,0.5)";
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,6,0,Math.PI*2);
+    ctx.fill();
+    ctx.fillStyle="rgba(80,60,30,0.6)";
+    ctx.fillRect(p.x-1,p.y+3,2,8);
+  });
+
+  /* Wells */
+  WELLS.forEach(w=>{
+    ctx.fillStyle="rgba(50,120,220,0.25)";
+    ctx.beginPath();
+    ctx.arc(w.x,w.y,w.r+6,0,Math.PI*2);
+    ctx.fill();
+    ctx.fillStyle="rgba(60,140,255,0.6)";
+    ctx.beginPath();
+    ctx.arc(w.x,w.y,w.r,0,Math.PI*2);
+    ctx.fill();
+    ctx.strokeStyle="rgba(100,180,255,0.8)";
+    ctx.lineWidth=2;
+    ctx.stroke();
+    ctx.fillStyle="#aaddff";
+    ctx.font="bold 10px 'Outfit',sans-serif";
+    ctx.textAlign="center";
+    ctx.fillText(w.label,w.x,w.y+4);
+  });
+
+  /* Camp zones */
+  ctx.strokeStyle="rgba(40,180,80,0.3)";
+  ctx.lineWidth=2;
+  ctx.setLineDash([6,4]);
+  ctx.strokeRect(30,100,180,400);
+  ctx.fillStyle="rgba(40,180,80,0.08)";
+  ctx.fillRect(30,100,180,400);
+  ctx.setLineDash([]);
+  ctx.fillStyle="rgba(40,180,80,0.6)";
+  ctx.font="bold 11px 'Outfit',sans-serif";
+  ctx.textAlign="center";
+  ctx.fillText("Muslim Camp",120,115);
+  ctx.font="10px 'IBM Plex Mono',monospace";
+  ctx.fillText("313 soldiers",120,130);
+
+  ctx.strokeStyle="rgba(200,50,50,0.3)";
+  ctx.lineWidth=2;
+  ctx.setLineDash([6,4]);
+  ctx.strokeRect(620,100,180,400);
+  ctx.fillStyle="rgba(200,50,50,0.08)";
+  ctx.fillRect(620,100,180,400);
+  ctx.setLineDash([]);
+  ctx.fillStyle="rgba(200,50,50,0.6)";
+  ctx.font="bold 11px 'Outfit',sans-serif";
+  ctx.textAlign="center";
+  ctx.fillText("Quraysh Camp",710,115);
+  ctx.font="10px 'IBM Plex Mono',monospace";
+  ctx.fillText("1000 soldiers",710,130);
+
+  /* Compass */
+  ctx.fillStyle="rgba(200,200,200,0.3)";
+  ctx.font="bold 12px 'Outfit',sans-serif";
+  ctx.textAlign="center";
+  ctx.fillText("N",CW-30,25);
+  ctx.fillText("S",CW-30,CH-10);
+  ctx.fillText("W",10,CH/2);
+  ctx.fillText("E",CW-10,CH/2);
+
+  /* Quraysh units */
+  qurayshUnits.forEach(u=>{
+    ctx.fillStyle="rgba(200,50,50,0.3)";
+    ctx.beginPath();
+    ctx.arc(u.x,u.y,UNIT_R+4,0,Math.PI*2);
+    ctx.fill();
+    ctx.fillStyle="#cc3333";
+    ctx.beginPath();
+    ctx.arc(u.x,u.y,UNIT_R,0,Math.PI*2);
+    ctx.fill();
+    ctx.strokeStyle="#ff4444";
+    ctx.lineWidth=2;
+    ctx.stroke();
+    ctx.fillStyle="#fff";
+    ctx.font="bold 11px 'Outfit',sans-serif";
+    ctx.textAlign="center";
+    ctx.fillText(u.count,u.x,u.y+4);
+    ctx.fillStyle="rgba(255,200,200,0.7)";
+    ctx.font="8px 'Outfit',sans-serif";
+    ctx.fillText(u.label,u.x,u.y-UNIT_R-4);
+  });
+
+  /* Muslim units */
+  muslimUnits.forEach(u=>{
+    ctx.fillStyle="rgba(34,187,102,0.2)";
+    ctx.beginPath();
+    ctx.arc(u.x,u.y,UNIT_R+4,0,Math.PI*2);
+    ctx.fill();
+    ctx.fillStyle=u.color;
+    ctx.beginPath();
+    ctx.arc(u.x,u.y,UNIT_R,0,Math.PI*2);
+    ctx.fill();
+    ctx.strokeStyle=u.dragging?"#ffffff":"#44ff88";
+    ctx.lineWidth=u.dragging?3:2;
+    ctx.stroke();
+    ctx.fillStyle="#fff";
+    ctx.font="bold 11px 'Outfit',sans-serif";
+    ctx.textAlign="center";
+    ctx.fillText(u.count,u.x,u.y+4);
+    ctx.fillStyle="rgba(200,255,200,0.8)";
+    ctx.font="8px 'Outfit',sans-serif";
+    ctx.fillText(u.label,u.x,u.y-UNIT_R-4);
+  });
+
+  /* Historical position markers */
+  if(showingHistorical){
+    HISTORICAL_POS.forEach((p,i)=>{
+      ctx.strokeStyle="rgba(255,215,0,0.8)";
+      ctx.lineWidth=2;
+      ctx.setLineDash([4,3]);
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,UNIT_R+8,0,Math.PI*2);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle="rgba(255,215,0,0.6)";
+      ctx.font="bold 8px 'Outfit',sans-serif";
+      ctx.textAlign="center";
+      ctx.fillText("Historical",p.x,p.y+UNIT_R+16);
+      ctx.fillText(p.label,p.x,p.y+UNIT_R+26);
+    });
+  }
+}
+
+/* --- Drag logic --- */
+let dragUnit=null,dragOff={x:0,y:0};
+
+function getPos(e){
+  const rect=canvas.getBoundingClientRect();
+  const sx=CW/rect.width, sy=CH/rect.height;
+  if(e.touches){
+    return{x:(e.touches[0].clientX-rect.left)*sx, y:(e.touches[0].clientY-rect.top)*sy};
+  }
+  return{x:(e.clientX-rect.left)*sx, y:(e.clientY-rect.top)*sy};
+}
+
+function onDown(e){
+  if(battleState!=="planning")return;
+  e.preventDefault();
+  const p=getPos(e);
+  for(let i=muslimUnits.length-1;i>=0;i--){
+    const u=muslimUnits[i];
+    const dx=p.x-u.x, dy=p.y-u.y;
+    if(dx*dx+dy*dy<(UNIT_R+4)*(UNIT_R+4)){
+      dragUnit=u;
+      dragOff={x:dx,y:dy};
+      u.dragging=true;
+      snd("click");
+      drawMap();
+      return;
+    }
+  }
+}
+function onMove(e){
+  if(!dragUnit)return;
+  e.preventDefault();
+  const p=getPos(e);
+  dragUnit.x=Math.max(UNIT_R,Math.min(CW-UNIT_R,p.x-dragOff.x));
+  dragUnit.y=Math.max(UNIT_R,Math.min(CH-UNIT_R,p.y-dragOff.y));
+  drawMap();
+  updateScoreBoard();
+}
+function onUp(){
+  if(dragUnit){
+    dragUnit.dragging=false;
+    dragUnit=null;
+    drawMap();
+    updateScoreBoard();
+  }
+}
+
+/* --- Scoring / evaluation --- */
+function dist(a,b){return Math.sqrt((a.x-b.x)**2+(a.y-b.y)**2);}
+
+function countWellsControlled(){
+  let count=0;
+  WELLS.forEach(w=>{
+    let muslimNear=false;
+    muslimUnits.forEach(u=>{if(dist(u,w)<60)muslimNear=true;});
+    if(muslimNear)count++;
+  });
+  return count;
+}
+
+function hasHighGround(){
+  let onHill=0;
+  HILLS.forEach(h=>{
+    const cx=h.x+h.w/2, cy=h.y+h.h/2;
+    muslimUnits.forEach(u=>{
+      if(Math.abs(u.x-cx)<h.w/2+10 && Math.abs(u.y-cy)<h.h/2+10) onHill++;
+    });
+  });
+  return onHill>=1;
+}
+
+function hasFormation(){
+  /* Check: units are spread out (not bunched), and have a front line between wells and Quraysh */
+  let inMiddleZone=0; // x between 250 and 500
+  let spreadY=new Set();
+  muslimUnits.forEach(u=>{
+    if(u.x>250 && u.x<520) inMiddleZone++;
+    spreadY.add(Math.floor(u.y/80));
+  });
+  return inMiddleZone>=3 && spreadY.size>=3;
+}
+
+function updateScoreBoard(){
+  const wc=countWellsControlled();
+  const hg=hasHighGround();
+  const fm=hasFormation();
+  document.getElementById("scWells").textContent=wc+"/3";
+  document.getElementById("scHigh").textContent=hg?"Yes":"No";
+  document.getElementById("scForm").textContent=fm?"Good":"Weak";
+  document.getElementById("scWins").textContent=wins;
+}
+
+/* --- Battle Simulation --- */
+function executeBattle(){
+  if(battleState!=="planning")return;
+  battleState="simulating";
+  document.getElementById("executeBtn").disabled=true;
+  stopTimer();
+  snd("click");
+  log("Executing battle simulation...","");
+
+  const wellsCtrl=countWellsControlled();
+  const highGround=hasHighGround();
+  const formation=hasFormation();
+  let score=0;
+  let messages=[];
+
+  /* Wells evaluation */
+  if(wellsCtrl===3){
+    score+=40;
+    messages.push({text:"Excellent! You control all 3 wells. Quraysh have no water supply!",cls:"success"});
+  }else if(wellsCtrl===2){
+    score+=25;
+    messages.push({text:"You control 2 wells. Quraysh still have limited water access.",cls:""});
+  }else if(wellsCtrl===1){
+    score+=10;
+    messages.push({text:"Only 1 well controlled. Quraysh can access water freely.",cls:"error"});
+  }else{
+    messages.push({text:"No wells controlled! Quraysh dominate the water supply.",cls:"error"});
+  }
+
+  /* High ground */
+  if(highGround){
+    score+=30;
+    messages.push({text:"High ground secured! Your scouts can see enemy movements.",cls:"success"});
+  }else{
+    messages.push({text:"No high ground position. You have no terrain advantage.",cls:"error"});
+  }
+
+  /* Formation */
+  if(formation){
+    score+=30;
+    messages.push({text:"Good formation! Units are well-spread in the strategic zone.",cls:"success"});
+  }else{
+    messages.push({text:"Weak formation. Units are too bunched or not in strategic positions.",cls:"error"});
+  }
+
+  /* Animate messages */
+  let delay=0;
+  messages.forEach((m,i)=>{
+    setTimeout(()=>{log(m.text,m.cls);},delay);
+    delay+=600;
+  });
+
+  /* Show result after animation */
+  setTimeout(()=>{
+    battleState="done";
+    const infoArea=document.getElementById("infoArea");
+
+    if(score>=80){
+      wins++;
+      snd("win");
+      checkHS(score);
+      document.getElementById("status").textContent="VICTORY! Score: "+score+"%";
+      document.getElementById("status").className="status win";
+      log("VICTORY! Score: "+score+"% — The Muslims are victorious by Allah's will!","success");
+      infoArea.innerHTML=
+        '<div class="victory-box"><h2>Victory at Badr!</h2>'+
+        '<p>Your strategy score: <strong>'+score+'%</strong></p></div>'+
+        '<div class="info-panel"><h3>The Advice of Hubab ibn al-Mundhir</h3>'+
+        '<p>When the Prophet (peace be upon him) initially camped at Badr, <span class="highlight">Hubab ibn al-Mundhir</span> asked if the position was revealed by Allah or was a matter of strategy. When told it was strategy, Hubab advised moving to the wells closest to the Quraysh, building a cistern, and blocking the other wells. The Prophet accepted this wise counsel.</p></div>'+
+        '<div class="info-panel"><h3>Dua at Badr</h3>'+
+        '<p>The Prophet (peace be upon him) raised his hands and made <span class="highlight">earnest dua</span> to Allah throughout the night before the battle: "O Allah, if this small group is destroyed, You will not be worshipped on earth." Allah answered with rain that firmed the Muslim ground and made the enemy side muddy.</p></div>'+
+        '<div class="info-panel"><h3>Angel Reinforcement</h3>'+
+        '<p>Allah sent <span class="highlight">angels</span> to support the Muslim army. The Quran mentions: Allah reinforced the believers. This was a sign that victory comes from proper planning combined with trust in Allah (tawakkul).</p></div>'+
+        '<div class="info-panel"><h3>The Lesson</h3>'+
+        '<p><span class="highlight">Trust in Allah + Proper Planning = Success.</span> The Prophet (peace be upon him) both planned carefully AND placed his trust in Allah. We must do our best effort (take the means) and then rely on Allah for the outcome. This is the true meaning of tawakkul.</p></div>';
+    }else if(score>=50){
+      snd("ok");
+      document.getElementById("status").textContent="Partial success. Score: "+score+"% — Try again!";
+      document.getElementById("status").className="status";
+      log("Partial success: "+score+"%. Improve your positions!","");
+      infoArea.innerHTML=
+        '<div class="info-panel"><h3>Almost There!</h3>'+
+        '<p>Your score: <strong>'+score+'%</strong>. You need to control all wells, take the high ground, and spread your formation. Try clicking "Show Historical" to see where the Prophet (peace be upon him) actually positioned the army.</p></div>';
+    }else{
+      snd("err");
+      document.getElementById("status").textContent="Defeat. Score: "+score+"% — The strategy needs work!";
+      document.getElementById("status").className="status lose";
+      log("Defeat: "+score+"%. Study the terrain and try again.","error");
+      infoArea.innerHTML=
+        '<div class="info-panel"><h3>The Battle is Lost</h3>'+
+        '<p>Your score: <strong>'+score+'%</strong>. Without controlling the water supply and holding the high ground, the smaller Muslim army cannot overcome the larger Quraysh force. Click "Show Historical" to learn from the Prophet\'s actual strategy.</p></div>';
+    }
+    updateScoreBoard();
+    drawMap();
+  }, delay+400);
+}
+
+/* --- Reset / New Game --- */
+function resetPositions(){
+  battleState="planning";
+  showingHistorical=false;
+  document.getElementById("executeBtn").disabled=false;
+  document.getElementById("infoArea").innerHTML="";
+  document.getElementById("status").textContent="Drag your green units to strategic positions, then Execute!";
+  document.getElementById("status").className="status";
+  initUnits();
+  drawMap();
+  updateScoreBoard();
+  log("Positions reset. Plan your strategy!","");
+}
+
+function newGame(){
+  startTimer();
+  resetPositions();
+  document.getElementById("logBox").innerHTML="";
+  log("New battle started. Position your 313 soldiers wisely!","success");
+}
+
+function toggleHistorical(){
+  showingHistorical=!showingHistorical;
+  document.getElementById("showHistBtn").textContent=showingHistorical?"📍 Hide Historical":"📍 Show Historical";
+  drawMap();
+  if(showingHistorical){
+    log("Showing historical positions (gold circles).","success");
+  }else{
+    log("Historical positions hidden.","");
+  }
+}
+
+/* ====== INIT ====== */
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");setTimeout(drawMap,50);}));
+  showHS();
+
+  canvas=document.getElementById("battlefield");
+  ctx=canvas.getContext("2d");
+
+  /* Mouse events */
+  canvas.addEventListener("mousedown",onDown);
+  canvas.addEventListener("mousemove",onMove);
+  canvas.addEventListener("mouseup",onUp);
+  canvas.addEventListener("mouseleave",onUp);
+  /* Touch events */
+  canvas.addEventListener("touchstart",onDown,{passive:false});
+  canvas.addEventListener("touchmove",onMove,{passive:false});
+  canvas.addEventListener("touchend",onUp);
+  canvas.addEventListener("touchcancel",onUp);
+
+  document.getElementById("enterBtn").addEventListener("click",()=>{
+    document.querySelector(".splash").style.display="none";
+    document.getElementById("app").classList.add("on");
+    document.getElementById("backLink").style.display="block";
+    initUnits();
+    drawMap();
+    updateScoreBoard();
+    startTimer();
+    log("Welcome, Commander! Position your 313 soldiers to defeat the 1000 Quraysh.","success");
+    log("Tip: Control the wells, take the high ground, spread your formation.","");
+  });
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("executeBtn").addEventListener("click",executeBattle);
+  document.getElementById("resetBtn").addEventListener("click",resetPositions);
+  document.getElementById("showHistBtn").addEventListener("click",toggleHistorical);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+  /* Keyboard shortcuts */
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Escape")closeHelp();
+    if(e.key==="Enter"){
+      const go=document.getElementById("enterBtn");
+      if(go&&go.offsetParent!==null)go.click();
+      else if(battleState==="planning")executeBattle();
+    }
+    if(e.key==="r"||e.key==="R")resetPositions();
+    if(e.key==="h"||e.key==="H")toggleHistorical();
+    if(e.key==="n"||e.key==="N")newGame();
+  });
+
+  /* Help tabs */
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+/* Persist sound preference */
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+/* Persist theme and language */
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

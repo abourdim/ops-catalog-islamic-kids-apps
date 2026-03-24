@@ -1,0 +1,465 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Conquest of Egypt — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.app.on~.back-link,.back-link{}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:700px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.game-area canvas{border-radius:8px;width:100%;max-width:660px;cursor:pointer}
+.big-text{font-family:'Outfit',sans-serif;font-size:32px;font-weight:800;color:var(--heading);text-align:center}
+.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .15s;min-width:50px}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.answer-btn:disabled{opacity:.5;cursor:default}
+.progress{width:100%;max-width:400px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.narrative-box{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px 16px;max-width:600px;width:100%;font-size:12px;color:var(--text);line-height:1.7;text-align:center}
+.narrative-box strong{color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Conquest of Egypt</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">فتح مصر</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Lead Amr ibn al-As and 4,000 troops across Egypt. Plan your route, negotiate or siege, and found Fustat!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Conquest of Egypt</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl">
+    <button id="startBtn">▶ New Campaign</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+    <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="status" id="status">Plan your route across Egypt!</div>
+<div class="game-area" id="gameArea">
+  <canvas id="mapCanvas" width="660" height="440"></canvas>
+  <div class="narrative-box" id="narrative">Click "New Campaign" to begin the conquest of Egypt with Amr ibn al-As.</div>
+  <div class="answer-row" id="choices"></div>
+  <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+</div>
+<div class="score-row"><div class="score-item"><div class="score-label">Decisions</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Cities Won</div><div class="score-num" id="tot">0</div></div><div class="score-item"><div class="score-label">Troops</div><div class="score-num" id="troopNum">4000</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Conquest of Egypt v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Conquest of Egypt?</summary><p>A canvas map strategy game where you lead Amr ibn al-As and 4,000 Muslim troops through Egypt, making strategic decisions at each city.</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Press ▶ New Campaign to begin</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>View the map of Egypt with marked cities</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>At each city, choose: Negotiate or Siege</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>Good decisions preserve troops and speed the conquest</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Conquer Babylon Fortress (the key battle) to unlock Alexandria</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>After victory, found Fustat — the new capital of Muslim Egypt</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Learn about the Muslim conquest of Egypt led by Amr ibn al-As (RA) in 640 CE. A small force of 4,000 achieved remarkable results through faith and strategy.</p></div>
+        <div class="wiki-entry"><h3>⚔️ Historical Context</h3><p>Caliph Umar ibn al-Khattab (RA) authorized Amr ibn al-As to enter Egypt. The campaign moved from Sinai through Pelusium, Bilbeis, Heliopolis, then besieged Babylon Fortress. Reinforcements under Zubayr ibn al-Awwam arrived from Medina. After Babylon fell, Alexandria surrendered.</p></div>
+        <div class="wiki-entry"><h3>🏛 Fustat</h3><p>After the conquest, Amr founded Fustat near Babylon Fortress as the new capital. It later grew into modern Cairo. He also built the first mosque in Africa — the Mosque of Amr ibn al-As.</p></div>
+        <div class="wiki-entry"><h3>📖 Lesson</h3><p>A small force with strong faith can achieve great things. The founding of Fustat became the seed of one of the greatest cities in Islamic civilization.</p></div>
+        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// ── Game State ──
+let timerInterval,timerSeconds=0;
+let troops=4000,citiesWon=0,decisions=0,phase=0,locked=false,gameActive=false;
+const canvas=document.getElementById("mapCanvas");
+const ctx=canvas.getContext("2d");
+
+// Cities on the map (x,y as fraction of canvas)
+const CITIES=[
+  {id:"sinai",name:"Sinai",nameAr:"سيناء",x:.85,y:.35,r:18,status:"pending",desc:"The gateway from Palestine into Egypt."},
+  {id:"pelusium",name:"Pelusium",nameAr:"الفرما",x:.72,y:.28,r:18,status:"pending",desc:"First fortified city on the eastern frontier."},
+  {id:"bilbeis",name:"Bilbeis",nameAr:"بلبيس",x:.60,y:.38,r:18,status:"pending",desc:"A garrison town on the road to the Nile Delta."},
+  {id:"heliopolis",name:"Heliopolis",nameAr:"عين شمس",x:.45,y:.42,r:18,status:"pending",desc:"Ancient city near the Nile — a decisive open battle."},
+  {id:"babylon",name:"Babylon Fortress",nameAr:"حصن بابليون",x:.38,y:.58,r:22,status:"pending",desc:"The great Roman fortress — key to all Egypt. Zubayr scales the walls!"},
+  {id:"alexandria",name:"Alexandria",nameAr:"الإسكندرية",x:.22,y:.22,r:20,status:"pending",desc:"Capital of Roman Egypt. Falls after Babylon."}
+];
+
+const ROUTE_ORDER=["sinai","pelusium","bilbeis","heliopolis","babylon","alexandria"];
+
+// Scenarios for each city
+const SCENARIOS={
+  sinai:{
+    narrative:"Amr ibn al-As leads 4,000 faithful warriors from Palestine into Sinai. The desert stretches before you. How do you cross?",
+    choices:[
+      {text:"March swiftly through the desert",good:true,result:"Your swift march catches the Romans off-guard. Troops are energized by faith.",troopChange:0,bonus:1},
+      {text:"Set up camp and wait for more supplies",good:false,result:"Delays allow Roman scouts to report your position. You lose the element of surprise.",troopChange:-200,bonus:0}
+    ]
+  },
+  pelusium:{
+    narrative:"Pelusium (Al-Farma) stands before you — the first fortified Roman city. Its garrison watches from the walls.",
+    choices:[
+      {text:"Negotiate — offer peace and protection",good:true,result:"The local Coptic population, tired of Roman oppression, opens the gates! Minimal losses.",troopChange:0,bonus:1},
+      {text:"Direct siege assault on the walls",good:false,result:"The assault succeeds but costs precious troops against the fortifications.",troopChange:-300,bonus:0}
+    ]
+  },
+  bilbeis:{
+    narrative:"Bilbeis is a Roman garrison town blocking the road to the Nile Delta. The garrison commander refuses to surrender.",
+    choices:[
+      {text:"Surround and starve the garrison",good:true,result:"After a month, the garrison surrenders with minimal bloodshed. Your patience pays off.",troopChange:-100,bonus:1},
+      {text:"Storm the town immediately",good:false,result:"Fierce fighting through the streets. You take the town but at heavy cost.",troopChange:-400,bonus:0}
+    ]
+  },
+  heliopolis:{
+    narrative:"At Heliopolis (Ain Shams), a large Roman army gathers for open battle. This is the decisive field engagement!",
+    choices:[
+      {text:"Use terrain — position on high ground at dawn",good:true,result:"Brilliant tactics! The Muslim cavalry flanks the Romans at sunrise. A decisive victory!",troopChange:200,bonus:1},
+      {text:"Charge directly into the Roman lines",good:false,result:"Your bravery is admirable but the frontal charge is costly before breaking through.",troopChange:-500,bonus:0}
+    ]
+  },
+  babylon:{
+    narrative:"Babylon Fortress — the mightiest Roman stronghold in Egypt. Its walls seem impenetrable. You write to Caliph Umar for reinforcements.",
+    choices:[
+      {text:"Wait for Zubayr's reinforcements, then storm",good:true,result:"Zubayr ibn al-Awwam arrives with 4,000 reinforcements from Medina! He personally scales the wall with a ladder. The fortress falls!",troopChange:4000,bonus:1},
+      {text:"Attempt to breach the walls alone",good:false,result:"Months of siege drain your forces. Eventually Zubayr arrives and turns the tide, but the delay costs you.",troopChange:2000,bonus:0}
+    ]
+  },
+  alexandria:{
+    narrative:"With Babylon fallen, Alexandria — the jewel of Egypt — lies open. The Roman governor Cyrus negotiates.",
+    choices:[
+      {text:"Accept peaceful surrender with treaty terms",good:true,result:"Cyrus signs the Treaty of Alexandria. The city surrenders peacefully. Egypt is won with wisdom!",troopChange:0,bonus:1},
+      {text:"March in with a show of force",good:false,result:"The show of force is unnecessary — the city was ready to surrender. Some property damage occurs.",troopChange:-200,bonus:0}
+    ]
+  }
+};
+
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+function getCS(){const s=getComputedStyle(document.documentElement);return{bg:s.getPropertyValue("--bg").trim(),bg2:s.getPropertyValue("--bg2").trim(),bg3:s.getPropertyValue("--bg3").trim(),border:s.getPropertyValue("--border").trim(),border2:s.getPropertyValue("--border2").trim(),text:s.getPropertyValue("--text").trim(),text2:s.getPropertyValue("--text2").trim(),heading:s.getPropertyValue("--heading").trim(),accent:s.getPropertyValue("--accent").trim()};}
+
+function drawMap(){
+  const W=canvas.width,H=canvas.height;
+  const cs=getCS();
+  ctx.clearRect(0,0,W,H);
+  // Background
+  ctx.fillStyle=cs.bg2;ctx.fillRect(0,0,W,H);
+
+  // Draw Nile River
+  ctx.beginPath();
+  ctx.moveTo(W*.42,0);
+  ctx.bezierCurveTo(W*.40,H*.2,W*.38,H*.4,W*.35,H*.55);
+  ctx.bezierCurveTo(W*.33,H*.65,W*.30,H*.75,W*.28,H*1);
+  ctx.strokeStyle=cs.accent+"44";ctx.lineWidth=8;ctx.stroke();
+  // Delta
+  ctx.beginPath();
+  ctx.moveTo(W*.35,H*.35);
+  ctx.lineTo(W*.18,H*.15);ctx.moveTo(W*.35,H*.35);
+  ctx.lineTo(W*.50,H*.20);
+  ctx.strokeStyle=cs.accent+"33";ctx.lineWidth=5;ctx.stroke();
+
+  // Nile label
+  ctx.save();ctx.translate(W*.30,H*.45);ctx.rotate(-Math.PI/6);
+  ctx.font="10px 'IBM Plex Mono'";ctx.fillStyle=cs.accent+"66";ctx.fillText("~ Nile ~",0,0);
+  ctx.restore();
+
+  // Mediterranean label
+  ctx.font="11px 'IBM Plex Mono'";ctx.fillStyle=cs.text2+"88";ctx.textAlign="center";
+  ctx.fillText("Mediterranean Sea",W*.40,16);
+
+  // Red Sea label
+  ctx.save();ctx.translate(W*.92,H*.55);ctx.rotate(Math.PI/2);
+  ctx.font="10px 'IBM Plex Mono'";ctx.fillStyle=cs.text2+"66";ctx.fillText("Red Sea",0,0);
+  ctx.restore();
+
+  // Draw route lines between conquered cities
+  const conqueredIdx=[];
+  ROUTE_ORDER.forEach((rid,i)=>{const c=CITIES.find(cc=>cc.id===rid);if(c.status==="conquered")conqueredIdx.push(i);});
+  ctx.textAlign="center";
+  for(let i=0;i<ROUTE_ORDER.length-1;i++){
+    const c1=CITIES.find(c=>c.id===ROUTE_ORDER[i]);
+    const c2=CITIES.find(c=>c.id===ROUTE_ORDER[i+1]);
+    const conquered=c1.status==="conquered"&&c2.status==="conquered";
+    const active=c1.status==="conquered"&&c2.status!=="conquered";
+    ctx.beginPath();
+    ctx.moveTo(c1.x*W,c1.y*H);ctx.lineTo(c2.x*W,c2.y*H);
+    if(conquered){ctx.strokeStyle=cs.accent;ctx.lineWidth=3;ctx.setLineDash([]);}
+    else if(active){ctx.strokeStyle=cs.accent+"88";ctx.lineWidth=2;ctx.setLineDash([6,4]);}
+    else{ctx.strokeStyle=cs.border2;ctx.lineWidth=1;ctx.setLineDash([4,4]);}
+    ctx.stroke();ctx.setLineDash([]);
+  }
+
+  // Draw cities
+  CITIES.forEach(c=>{
+    const cx=c.x*W,cy=c.y*H;
+    // Glow for active
+    const currentCity=ROUTE_ORDER[phase];
+    const isActive=gameActive&&c.id===currentCity&&c.status==="pending";
+    if(isActive){
+      ctx.beginPath();ctx.arc(cx,cy,c.r+8,0,Math.PI*2);
+      ctx.fillStyle=cs.accent+"22";ctx.fill();
+      ctx.beginPath();ctx.arc(cx,cy,c.r+4,0,Math.PI*2);
+      ctx.fillStyle=cs.accent+"33";ctx.fill();
+    }
+    // City circle
+    ctx.beginPath();ctx.arc(cx,cy,c.r,0,Math.PI*2);
+    if(c.status==="conquered"){ctx.fillStyle=cs.accent+"44";ctx.strokeStyle=cs.accent;ctx.lineWidth=2;}
+    else if(isActive){ctx.fillStyle=cs.bg3;ctx.strokeStyle=cs.accent;ctx.lineWidth=2;}
+    else{ctx.fillStyle=cs.bg3;ctx.strokeStyle=cs.border2;ctx.lineWidth=1;}
+    ctx.fill();ctx.stroke();
+
+    // Icon
+    ctx.font="14px sans-serif";ctx.textAlign="center";ctx.textBaseline="middle";
+    if(c.status==="conquered")ctx.fillText("🏴",cx,cy);
+    else if(c.id==="babylon")ctx.fillText("🏰",cx,cy);
+    else if(c.id==="alexandria")ctx.fillText("🏛",cx,cy);
+    else ctx.fillText("⚔️",cx,cy-1);
+
+    // Label
+    ctx.font="bold 11px 'Outfit',sans-serif";ctx.textBaseline="top";
+    ctx.fillStyle=c.status==="conquered"?cs.accent:isActive?cs.heading:cs.text2;
+    ctx.fillText(c.name,cx,cy+c.r+4);
+  });
+
+  // Draw army position
+  if(gameActive&&phase<ROUTE_ORDER.length){
+    const cc=CITIES.find(c=>c.id===ROUTE_ORDER[phase]);
+    const ax=cc.x*W-30,ay=cc.y*H-30;
+    ctx.font="20px sans-serif";ctx.textAlign="center";ctx.textBaseline="middle";
+    ctx.fillText("🐎",ax,ay);
+  }
+
+  // Fustat marker after all conquered
+  if(phase>=ROUTE_ORDER.length){
+    const bab=CITIES.find(c=>c.id==="babylon");
+    const fx=bab.x*W+35,fy=bab.y*H+5;
+    ctx.font="16px sans-serif";ctx.textAlign="center";ctx.textBaseline="middle";
+    ctx.fillText("🕌",fx,fy);
+    ctx.font="bold 11px 'Outfit',sans-serif";ctx.textBaseline="top";
+    ctx.fillStyle=cs.accent;
+    ctx.fillText("Fustat",fx,fy+14);
+  }
+}
+
+function updateUI(){
+  document.getElementById("sc").textContent=decisions;
+  document.getElementById("tot").textContent=citiesWon;
+  document.getElementById("troopNum").textContent=troops;
+  document.getElementById("scorePill").textContent=citiesWon+" / "+CITIES.length;
+  document.getElementById("prog").style.width=(phase/ROUTE_ORDER.length*100)+"%";
+}
+
+function showPhase(){
+  if(phase>=ROUTE_ORDER.length){
+    endGame();return;
+  }
+  locked=false;
+  const cityId=ROUTE_ORDER[phase];
+  const scenario=SCENARIOS[cityId];
+  const city=CITIES.find(c=>c.id===cityId);
+  document.getElementById("status").textContent="⚔️ "+city.name+" — Decision "+(phase+1)+"/"+ROUTE_ORDER.length;
+  document.getElementById("status").className="status";
+  document.getElementById("narrative").innerHTML="<strong>"+city.name+" ("+city.nameAr+")</strong><br>"+scenario.narrative;
+
+  const el=document.getElementById("choices");el.innerHTML="";
+  scenario.choices.forEach((ch,i)=>{
+    const b=document.createElement("button");b.className="answer-btn";b.textContent=ch.text;
+    b.onclick=()=>makeChoice(i);el.appendChild(b);
+  });
+  drawMap();
+  updateUI();
+}
+
+function makeChoice(idx){
+  if(locked)return;locked=true;
+  const cityId=ROUTE_ORDER[phase];
+  const scenario=SCENARIOS[cityId];
+  const choice=scenario.choices[idx];
+  const city=CITIES.find(c=>c.id===cityId);
+  decisions++;
+
+  const btns=document.querySelectorAll(".answer-btn");
+  btns.forEach(b=>b.disabled=true);
+  if(choice.good){btns[idx].classList.add("correct");snd("ok");}
+  else{btns[idx].classList.add("wrong");snd("err");
+    scenario.choices.forEach((ch,i)=>{if(ch.good)btns[i].classList.add("correct");});}
+
+  troops+=choice.troopChange;if(troops<500)troops=500;
+  if(choice.bonus)citiesWon++;
+  city.status="conquered";
+
+  document.getElementById("narrative").innerHTML="<strong>"+city.name+"</strong><br>"+choice.result+
+    (choice.troopChange>0?" <strong>(+"+choice.troopChange+" troops!)</strong>":
+     choice.troopChange<0?" <strong>("+choice.troopChange+" troops)</strong>":"");
+  log((choice.good?"✓ ":"✗ ")+city.name+": "+choice.text,choice.good?"success":"error");
+
+  updateUI();drawMap();
+
+  phase++;
+  setTimeout(()=>{
+    if(phase>=ROUTE_ORDER.length){endGame();}
+    else{showPhase();}
+  },2200);
+}
+
+function endGame(){
+  stopTimer();
+  gameActive=false;
+  const perfect=citiesWon===CITIES.length;
+  const pct=Math.round(citiesWon/CITIES.length*100);
+
+  // Show Fustat founding
+  document.getElementById("narrative").innerHTML=
+    "<strong>🕌 Fustat Founded!</strong><br>"+
+    "Amr ibn al-As founds Fustat near Babylon Fortress as the new capital of Muslim Egypt. "+
+    "He builds the first mosque in Africa. A small force of 4,000 conquered all of Egypt!<br><br>"+
+    "<strong>Final Score: "+citiesWon+"/"+CITIES.length+" cities won optimally | Troops: "+troops+"</strong><br>"+
+    (perfect?"<span style='color:var(--accent)'>Perfect campaign! Every decision was wise.</span>":
+    "Good effort! Study the history to improve your strategy.");
+  document.getElementById("choices").innerHTML="";
+  document.getElementById("status").textContent="🏆 Egypt Conquered! Score: "+pct+"%";
+  document.getElementById("status").className="status win";
+  document.getElementById("prog").style.width="100%";
+  log("🏆 Campaign complete: "+citiesWon+"/"+CITIES.length+" optimal | Troops: "+troops,"success");
+  snd("win");
+  drawMap();
+  checkHS();
+}
+
+function newGame(){
+  startTimer();
+  troops=4000;citiesWon=0;decisions=0;phase=0;locked=false;gameActive=true;
+  CITIES.forEach(c=>c.status="pending");
+  document.getElementById("logBox").innerHTML="";
+  log("Campaign started — Amr ibn al-As enters Egypt with 4,000 troops","success");
+  showPhase();
+}
+
+// High Score
+const HS_KEY="wdiy-hs-egypt";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'%</span>';}}
+function checkHS(){
+  if(citiesWon!==undefined&&phase>=ROUTE_ORDER.length){
+    const pct=Math.round(citiesWon/CITIES.length*100);
+    if(saveHS(pct)){log("🏆 NEW HIGH SCORE: "+pct+"%!","success");}
+    showHS();
+  }
+}
+
+// Handle canvas resize
+function resizeCanvas(){
+  const container=document.getElementById("gameArea");
+  const maxW=Math.min(660,container.clientWidth-24);
+  const ratio=440/660;
+  canvas.width=maxW;canvas.height=Math.round(maxW*ratio);
+  drawMap();
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");setTimeout(drawMap,50);}));
+  showHS();
+  drawMap();
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";resizeCanvas();newGame();});
+  document.getElementById("startBtn").addEventListener("click",()=>{resizeCanvas();newGame();});
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+  window.addEventListener("resize",resizeCanvas);
+
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+// Keyboard shortcuts: 1-2 for choices, Enter for start
+document.addEventListener("keydown",function(e){
+  if(e.key==="1"||e.key==="2"){const btns=document.querySelectorAll(".answer-btn");const i=parseInt(e.key)-1;if(btns[i]&&!btns[i].disabled)btns[i].click();}
+  if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

@@ -1,0 +1,635 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Siege of Khaybar — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:700px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.game-area canvas{border-radius:8px;cursor:pointer;max-width:100%;touch-action:none}
+.big-text{font-family:'Outfit',sans-serif;font-size:32px;font-weight:800;color:var(--heading);text-align:center}
+.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .15s;min-width:50px}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.answer-btn.disabled{opacity:.5;cursor:default}
+.progress{width:100%;max-width:400px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:10px}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.res-bar{width:100%;max-width:400px;display:flex;gap:12px;justify-content:center;margin-bottom:6px;font-family:'Outfit',sans-serif;font-size:11px}
+.res-item{text-align:center}.res-val{font-weight:700;color:var(--heading);font-size:14px}.res-lbl{color:var(--text3);font-size:9px}
+.info-panel{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;max-width:400px;width:100%;font-size:11px;color:var(--text2);line-height:1.6;text-align:center}
+.info-panel h3{color:var(--heading);font-family:'Outfit',sans-serif;margin-bottom:4px;font-size:13px}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Siege of Khaybar</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Conquer the Seven Fortresses</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Lead the Muslim army to conquer the seven fortresses of Khaybar. Plan your strategy, manage resources, and witness Ali's legendary bravery!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+
+<div class="app" id="app">
+<div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
+<div class="hdr"><h1>Siege of Khaybar</h1><span class="pill" id="scorePill">0 / 7</span><span class="timer-pill" id="timerPill">Day 1</span></div>
+<div class="ctrl">
+<select id="diffSel" onchange="setDiff()"><option value="easy">Easy</option><option value="normal" selected>Normal</option><option value="hard">Hard</option></select>
+<button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+<button id="soundBtn">🔊</button>
+<div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div>
+</div>
+<div class="status" id="status">Click a fortress on the map to begin your siege!</div>
+<div class="res-bar" id="resBar">
+<div class="res-item"><div class="res-val" id="rTroops">1400</div><div class="res-lbl">Troops</div></div>
+<div class="res-item"><div class="res-val" id="rSupplies">100</div><div class="res-lbl">Supplies</div></div>
+<div class="res-item"><div class="res-val" id="rDay">1</div><div class="res-lbl">Day</div></div>
+<div class="res-item"><div class="res-val" id="rConquered">0/7</div><div class="res-lbl">Conquered</div></div>
+</div>
+<div class="game-area" id="gameArea">
+<canvas id="mapCanvas" width="660" height="500"></canvas>
+<div class="answer-row" id="actionRow" style="display:none"></div>
+<div class="info-panel" id="infoPanel" style="display:none"></div>
+</div>
+<div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+<div class="score-row">
+<div class="score-item"><div class="score-label">Conquered</div><div class="score-num" id="sc">0</div></div>
+<div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">7</div></div>
+</div>
+<div class="log-box" id="logBox"></div>
+<div class="foot">Workshop-Diy — Siege of Khaybar v1.0</div>
+</div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Siege of Khaybar?</summary><p>A canvas-based strategy game where you lead the Muslim army to conquer the seven fortresses of Khaybar. Plan your approach, manage resources, and learn about this important event in Islamic history.</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop. Tap fortresses to interact.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+        <details class="help-item"><summary>What is the best strategy?</summary><p>Conquer the outer fortresses first to cut supply lines to the inner ones. Use siege for strong fortresses to save troops, and negotiate when possible.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Choose your difficulty (Easy, Normal, Hard)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Press ▶ New Game to begin</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Click on an accessible fortress on the map (highlighted)</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>Choose your approach: Assault, Siege, or Negotiate</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Watch results — manage your troops and supplies wisely</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Conquer all 7 fortresses to win! Take outer ones first.</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>🏰 The Battle</h3><p>The Siege of Khaybar (7 AH / 628 CE) was a series of battles against fortified settlements. The Prophet Muhammad (peace be upon him) led 1,400 Muslims to conquer seven fortresses.</p></div>
+        <div class="wiki-entry"><h3>🦁 Ali's Bravery</h3><p>Ali ibn Abi Talib (may Allah be pleased with him) famously carried the heavy fortress gate as a shield during the battle, demonstrating extraordinary courage and strength.</p></div>
+        <div class="wiki-entry"><h3>🕊 Justice in Victory</h3><p>After victory, the people of Khaybar were allowed to stay on their land and continue farming, paying a portion as tax. This showed the justice of Islamic governance.</p></div>
+        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Francais, العربية. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Toggle with the speaker button.</p></div>
+        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+
+<script>
+/* ── Helpers: sidebar, lang, theme, sound ── */
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));if(typeof drawMap==="function")drawMap();}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else if(t==="siege"){o.frequency.value=150;o.type="sawtooth";g.gain.value=.03;g.gain.exponentialRampToValueAtTime(.001,n+.4);o.start(n);o.stop(n+.4);}else if(t==="march"){o.frequency.value=330;o.type="triangle";g.gain.value=.04;g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.04;o2.frequency.value=440;o2.type="triangle";g2.gain.exponentialRampToValueAtTime(.001,n+.3);o2.start(n+.12);o2.stop(n+.3);}else if(t==="ali"){[440,554,659,880,1047,880].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.05;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.25+i*.15);oo.start(n+i*.15);oo.stop(n+.25+i*.15);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+/* ── High Score ── */
+const HS_KEY="wdiy-hs-khaybar-siege";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
+function checkHS(){
+  if(conquered>=7){
+    const pct=Math.round((troops/1400)*100+supplies);
+    if(saveHS(pct)){log("🏆 NEW HIGH SCORE: "+pct+"!","success");}
+  }
+}
+
+/* ── Game Data ── */
+const FORTRESSES=[
+  {id:0,name:"Na'im",nameAr:"نعيم",x:120,y:80,size:40,strength:30,tier:"outer",
+   best:"assault",inside:"Weapons and grain stores",
+   fact:"Na'im was one of the first outer fortresses, lightly defended and used as a lookout post.",
+   conquered:false,accessible:true},
+  {id:1,name:"As-Sa'b",nameAr:"الصعب",x:520,y:80,size:44,strength:50,tier:"outer",
+   best:"siege",inside:"Large food supplies and livestock",
+   fact:"As-Sa'b ibn Mu'adh was the fortress's leader. It was the wealthiest of the outer forts.",
+   conquered:false,accessible:true},
+  {id:2,name:"Az-Zubair",nameAr:"الزبير",x:100,y:230,size:42,strength:45,tier:"outer",
+   best:"siege",inside:"Water wells and date palm gardens",
+   fact:"Az-Zubair fortress controlled an important water source. Cutting its supply lines was key.",
+   conquered:false,accessible:true},
+  {id:3,name:"Ubayy",nameAr:"أبي",x:530,y:230,size:38,strength:35,tier:"outer",
+   best:"assault",inside:"Military equipment and shields",
+   fact:"A smaller fortress that served as a military outpost guarding the eastern approach.",
+   conquered:false,accessible:true},
+  {id:4,name:"An-Nizar",nameAr:"النزار",x:200,y:370,size:46,strength:60,tier:"middle",
+   best:"siege",inside:"Treasury with gold and silver",
+   fact:"An-Nizar was a strong middle fortress. Its conquest opened the path to the inner forts.",
+   conquered:false,accessible:false},
+  {id:5,name:"Al-Qamus",nameAr:"القموص",x:440,y:370,size:50,strength:75,tier:"inner",
+   best:"assault",inside:"The famous fortress where Ali showed his bravery",
+   fact:"Al-Qamus was the strongest inner fortress. Ali ibn Abi Talib carried its massive gate as a shield!",
+   conquered:false,accessible:false,ali:true},
+  {id:6,name:"Al-Watih & As-Sulalim",nameAr:"الوطيح والسلالم",x:320,y:440,size:54,strength:80,tier:"final",
+   best:"negotiate",inside:"The last stronghold — families and remaining defenders",
+   fact:"The final fortresses surrendered through negotiation. The people kept their land and paid tax — a model of justice.",
+   conquered:false,accessible:false}
+];
+const PATHS=[[0,2],[0,1],[1,3],[2,4],[3,4],[4,5],[4,6],[5,6]];
+
+let troops,supplies,day,conquered,phase,selectedFort,diff,animFrame,aliAnimating=false;
+
+function setDiff(){diff=document.getElementById("diffSel").value;}
+
+function getStyle(){const s=getComputedStyle(document.documentElement);return{bg:s.getPropertyValue("--bg").trim(),bg2:s.getPropertyValue("--bg2").trim(),bg3:s.getPropertyValue("--bg3").trim(),border:s.getPropertyValue("--border").trim(),border2:s.getPropertyValue("--border2").trim(),text:s.getPropertyValue("--text").trim(),text2:s.getPropertyValue("--text2").trim(),text3:s.getPropertyValue("--text3").trim(),heading:s.getPropertyValue("--heading").trim(),accent:s.getPropertyValue("--accent").trim()};}
+
+/* ── Canvas Drawing ── */
+function drawMap(){
+  const cv=document.getElementById("mapCanvas");if(!cv)return;
+  const ctx=cv.getContext("2d");
+  const st=getStyle();
+  const W=cv.width,H=cv.height;
+  ctx.clearRect(0,0,W,H);
+
+  /* Background */
+  ctx.fillStyle=st.bg2;ctx.fillRect(0,0,W,H);
+
+  /* Desert texture */
+  ctx.fillStyle=st.bg3;
+  for(let i=0;i<60;i++){const rx=Math.random()*W,ry=Math.random()*H;ctx.beginPath();ctx.arc(rx,ry,Math.random()*3+1,0,Math.PI*2);ctx.fill();}
+
+  /* Paths between fortresses */
+  ctx.strokeStyle=st.border2;ctx.lineWidth=2;ctx.setLineDash([6,4]);
+  PATHS.forEach(([a,b])=>{
+    const fa=FORTRESSES[a],fb=FORTRESSES[b];
+    ctx.beginPath();ctx.moveTo(fa.x,fa.y);ctx.lineTo(fb.x,fb.y);ctx.stroke();
+  });
+  ctx.setLineDash([]);
+
+  /* Title */
+  ctx.font="bold 14px Outfit,sans-serif";ctx.fillStyle=st.text3;ctx.textAlign="center";
+  ctx.fillText("Khaybar — 7 AH",W/2,20);
+
+  /* Draw each fortress */
+  FORTRESSES.forEach(f=>{
+    const s=f.size;
+    /* Shadow */
+    ctx.fillStyle="rgba(0,0,0,.2)";ctx.fillRect(f.x-s/2+3,f.y-s/2+3,s,s);
+    /* Fort body */
+    if(f.conquered){
+      ctx.fillStyle=st.accent;ctx.globalAlpha=.3;ctx.fillRect(f.x-s/2,f.y-s/2,s,s);ctx.globalAlpha=1;
+      ctx.strokeStyle=st.accent;ctx.lineWidth=2;ctx.strokeRect(f.x-s/2,f.y-s/2,s,s);
+    }else if(f.accessible){
+      ctx.fillStyle=st.bg3;ctx.fillRect(f.x-s/2,f.y-s/2,s,s);
+      ctx.strokeStyle=st.accent;ctx.lineWidth=2;ctx.strokeRect(f.x-s/2,f.y-s/2,s,s);
+      /* Glow pulse */
+      ctx.shadowColor=st.accent;ctx.shadowBlur=10;ctx.strokeRect(f.x-s/2,f.y-s/2,s,s);ctx.shadowBlur=0;
+    }else{
+      ctx.fillStyle=st.bg3;ctx.fillRect(f.x-s/2,f.y-s/2,s,s);
+      ctx.strokeStyle=st.border;ctx.lineWidth=2;ctx.strokeRect(f.x-s/2,f.y-s/2,s,s);
+    }
+
+    /* Battlements (small rectangles on top) */
+    const bw=6,bh=4,gap=3;
+    const count=Math.floor(s/(bw+gap));
+    const startX=f.x-s/2+(s-count*(bw+gap)+gap)/2;
+    ctx.fillStyle=f.conquered?st.accent:f.accessible?st.heading:st.border2;
+    if(f.conquered)ctx.globalAlpha=.5;
+    for(let i=0;i<count;i++){ctx.fillRect(startX+i*(bw+gap),f.y-s/2-bh,bw,bh);}
+    ctx.globalAlpha=1;
+
+    /* Flag on conquered */
+    if(f.conquered){
+      ctx.strokeStyle=st.accent;ctx.lineWidth=1.5;
+      ctx.beginPath();ctx.moveTo(f.x,f.y-s/2-bh);ctx.lineTo(f.x,f.y-s/2-bh-16);ctx.stroke();
+      ctx.fillStyle=st.accent;ctx.beginPath();ctx.moveTo(f.x,f.y-s/2-bh-16);ctx.lineTo(f.x+10,f.y-s/2-bh-12);ctx.lineTo(f.x,f.y-s/2-bh-8);ctx.fill();
+    }
+
+    /* Fort name */
+    ctx.font="bold 11px Outfit,sans-serif";ctx.textAlign="center";
+    ctx.fillStyle=f.conquered?st.accent:f.accessible?st.heading:st.text3;
+    ctx.fillText(f.name,f.x,f.y+s/2+14);
+
+    /* Strength indicator */
+    if(!f.conquered){
+      ctx.font="9px 'IBM Plex Mono',monospace";ctx.fillStyle=st.text2;
+      ctx.fillText("STR:"+f.strength,f.x,f.y+4);
+    }else{
+      ctx.font="16px sans-serif";ctx.fillText("✓",f.x,f.y+4);
+    }
+
+    /* Tier label */
+    ctx.font="8px 'IBM Plex Mono',monospace";ctx.fillStyle=st.text3;
+    ctx.fillText(f.tier.toUpperCase(),f.x,f.y-s/2-bh-2);
+  });
+
+  /* Muslim camp */
+  ctx.font="bold 11px Outfit,sans-serif";ctx.fillStyle=st.accent;ctx.textAlign="center";
+  ctx.fillText("⛺ Muslim Camp",330,498);
+}
+
+/* ── Ali Animation ── */
+function playAliAnimation(callback){
+  aliAnimating=true;
+  const cv=document.getElementById("mapCanvas");
+  const ctx=cv.getContext("2d");
+  const st=getStyle();
+  const fort=FORTRESSES[5];
+  let frame=0;const totalFrames=90;
+  snd("ali");
+  function animate(){
+    if(frame>=totalFrames){aliAnimating=false;callback();return;}
+    drawMap();
+    const progress=frame/totalFrames;
+    /* Ali figure walking toward fortress */
+    const ax=fort.x-80+progress*60;
+    const ay=fort.y+10;
+    /* Body */
+    ctx.fillStyle=st.accent;
+    ctx.beginPath();ctx.arc(ax,ay-20,8,0,Math.PI*2);ctx.fill();
+    ctx.fillRect(ax-5,ay-12,10,18);
+    /* Gate carried above */
+    const gateW=30+progress*10;const gateH=6;
+    ctx.fillStyle=st.heading;ctx.fillRect(ax-gateW/2,ay-32,gateW,gateH);
+    ctx.strokeStyle=st.border2;ctx.lineWidth=1;ctx.strokeRect(ax-gateW/2,ay-32,gateW,gateH);
+    /* Text */
+    ctx.font="bold 13px Outfit,sans-serif";ctx.fillStyle=st.accent;ctx.textAlign="center";
+    if(progress<0.5){
+      ctx.globalAlpha=1-progress*2;
+      ctx.fillText("Ali carries the fortress gate!",cv.width/2,cv.height/2-60);
+      ctx.globalAlpha=1;
+    }else{
+      ctx.globalAlpha=(progress-0.5)*2;
+      ctx.fillText("SubhanAllah! What strength!",cv.width/2,cv.height/2-60);
+      ctx.globalAlpha=1;
+    }
+    /* Glow effect around Ali */
+    ctx.beginPath();ctx.arc(ax,ay-10,20+Math.sin(frame*0.2)*5,0,Math.PI*2);
+    ctx.strokeStyle=st.accent;ctx.globalAlpha=0.3;ctx.lineWidth=2;ctx.stroke();ctx.globalAlpha=1;
+
+    frame++;
+    animFrame=requestAnimationFrame(animate);
+  }
+  animate();
+}
+
+/* ── Game Logic ── */
+function updateResUI(){
+  document.getElementById("rTroops").textContent=troops;
+  document.getElementById("rSupplies").textContent=supplies;
+  document.getElementById("rDay").textContent=day;
+  document.getElementById("rConquered").textContent=conquered+"/7";
+  document.getElementById("sc").textContent=conquered;
+  document.getElementById("scorePill").textContent=conquered+" / 7";
+  document.getElementById("timerPill").textContent="Day "+day;
+  document.getElementById("prog").style.width=(conquered/7*100)+"%";
+  if(troops<=0){
+    document.getElementById("rTroops").style.color="#ff4444";
+  }
+}
+
+function updateAccessibility(){
+  /* If all outer conquered, unlock middle */
+  const outerDone=FORTRESSES.filter(f=>f.tier==="outer").every(f=>f.conquered);
+  if(outerDone){
+    FORTRESSES[4].accessible=true;
+  }
+  /* If middle conquered, unlock inner and final */
+  if(FORTRESSES[4].conquered){
+    FORTRESSES[5].accessible=true;
+    FORTRESSES[6].accessible=true;
+  }
+}
+
+function checkVictory(){
+  if(conquered>=7){
+    snd("win");checkHS();
+    document.getElementById("status").textContent="🏆 Victory! Khaybar is conquered! Justice prevails!";
+    document.getElementById("status").className="status win";
+    log("🏆 All 7 fortresses conquered!","success");
+    const ip=document.getElementById("infoPanel");
+    ip.style.display="block";
+    ip.innerHTML='<h3>🕊 Peace Treaty of Khaybar</h3><p>The people of Khaybar were allowed to stay on their land and continue farming. They would give half their harvest as tax. This showed the justice and mercy of Islam — even in victory, fairness was paramount.</p><p style="margin-top:8px;color:var(--accent);font-weight:700">Lesson: True victory comes with justice and mercy, not cruelty.</p>';
+    document.getElementById("actionRow").style.display="none";
+    drawMap();
+    return true;
+  }
+  return false;
+}
+
+function checkDefeat(){
+  if(troops<=0){
+    snd("err");
+    document.getElementById("status").textContent="Defeat... Your army has no troops left.";
+    document.getElementById("status").className="status lose";
+    log("Army depleted. Try again with better strategy!","error");
+    document.getElementById("actionRow").style.display="none";
+    phase="gameover";
+    drawMap();
+    return true;
+  }
+  if(supplies<=0){
+    snd("err");
+    document.getElementById("status").textContent="Defeat... Supplies ran out.";
+    document.getElementById("status").className="status lose";
+    log("No supplies remaining. Plan your resources better!","error");
+    document.getElementById("actionRow").style.display="none";
+    phase="gameover";
+    drawMap();
+    return true;
+  }
+  return false;
+}
+
+function getDiffMod(){
+  if(diff==="easy") return {troopMod:0.6,supplyMod:0.7,startSupply:120};
+  if(diff==="hard") return {troopMod:1.4,supplyMod:1.5,startSupply:80};
+  return {troopMod:1,supplyMod:1,startSupply:100};
+}
+
+function selectFortress(f){
+  if(phase!=="select"||f.conquered||!f.accessible||aliAnimating) return;
+  selectedFort=f;
+  snd("click");
+  phase="action";
+  document.getElementById("status").textContent="Fortress: "+f.name+" ("+f.nameAr+") — Strength: "+f.strength;
+  const ar=document.getElementById("actionRow");
+  ar.style.display="flex";ar.innerHTML="";
+  const actions=[
+    {label:"⚔ Assault",val:"assault",desc:"Fast but costly"},
+    {label:"🏰 Siege",val:"siege",desc:"Slow but fewer losses"},
+    {label:"🤝 Negotiate",val:"negotiate",desc:"No losses if they accept"}
+  ];
+  actions.forEach(a=>{
+    const btn=document.createElement("button");
+    btn.className="answer-btn";
+    btn.innerHTML=a.label+'<br><span style="font-size:9px;font-weight:400;color:var(--text2)">'+a.desc+'</span>';
+    btn.onclick=()=>executeAction(a.val);
+    ar.appendChild(btn);
+  });
+  const ip=document.getElementById("infoPanel");
+  ip.style.display="block";
+  ip.innerHTML='<h3>🏰 '+f.name+' ('+f.nameAr+')</h3><p>Tier: '+f.tier.toUpperCase()+' | Strength: '+f.strength+'</p><p style="margin-top:4px">'+f.fact+'</p>';
+  drawMap();
+}
+
+function executeAction(action){
+  if(phase!=="action"||!selectedFort) return;
+  const f=selectedFort;
+  const dm=getDiffMod();
+  phase="resolving";
+  document.getElementById("actionRow").style.display="none";
+  let troopLoss=0,supplyLoss=0,days=0,success=false;
+  const ip=document.getElementById("infoPanel");
+
+  if(action==="assault"){
+    snd("siege");
+    troopLoss=Math.round((f.strength*1.5+Math.random()*30)*dm.troopMod);
+    supplyLoss=Math.round((5+Math.random()*5)*dm.supplyMod);
+    days=1;
+    success=troops-troopLoss>0;
+    if(f.best==="assault"){troopLoss=Math.round(troopLoss*0.6);log("Direct assault was the right call!","success");}
+  }else if(action==="siege"){
+    snd("siege");
+    troopLoss=Math.round((f.strength*0.5+Math.random()*15)*dm.troopMod);
+    supplyLoss=Math.round((12+Math.random()*8)*dm.supplyMod);
+    days=Math.ceil(f.strength/15);
+    success=supplies-supplyLoss>0&&troops-troopLoss>0;
+    if(f.best==="siege"){troopLoss=Math.round(troopLoss*0.5);supplyLoss=Math.round(supplyLoss*0.7);log("Siege was the wisest strategy here!","success");}
+  }else if(action==="negotiate"){
+    snd("march");
+    days=2;
+    supplyLoss=Math.round((3+Math.random()*3)*dm.supplyMod);
+    /* Negotiation success depends on how many forts conquered */
+    const chance=conquered>=4?0.85:conquered>=2?0.5:0.2;
+    if(f.id===6) success=true; /* Final fortress historically surrendered */
+    else success=Math.random()<chance;
+    if(!success){
+      troopLoss=0;supplyLoss=Math.round(supplyLoss*0.5);
+      log("Negotiation failed at "+f.name+". They refused to surrender.","error");
+      snd("err");
+      ip.innerHTML='<h3>❌ Negotiation Failed</h3><p>'+f.name+' refused to surrender. Choose another approach!</p>';
+      phase="select";
+      selectedFort=null;
+      day+=days;supplies=Math.max(0,supplies-supplyLoss);
+      updateResUI();
+      if(checkDefeat()) return;
+      drawMap();
+      return;
+    }
+    troopLoss=0;
+    if(f.best==="negotiate"){log("Peaceful negotiation — the best approach here!","success");}
+  }
+
+  troops=Math.max(0,troops-troopLoss);
+  supplies=Math.max(0,supplies-supplyLoss);
+  day+=days;
+
+  if(!success||checkDefeat()){
+    if(!success){
+      snd("err");
+      log("Attack on "+f.name+" failed! Lost "+troopLoss+" troops.","error");
+      ip.innerHTML='<h3>❌ Attack Failed</h3><p>Lost '+troopLoss+' troops and '+supplyLoss+' supplies over '+days+' day(s). Regroup and try again!</p>';
+      phase="select";selectedFort=null;
+      updateResUI();drawMap();
+    }
+    return;
+  }
+
+  /* Conquest success */
+  const doConquest=()=>{
+    f.conquered=true;
+    conquered++;
+    snd("ok");
+    log("✓ "+f.name+" conquered! (-"+troopLoss+" troops, -"+supplyLoss+" supplies, "+days+" day"+(days>1?"s":"")+")" ,"success");
+    ip.innerHTML='<h3>✓ '+f.name+' Conquered!</h3><p><strong>Inside:</strong> '+f.inside+'</p><p style="margin-top:4px"><strong>History:</strong> '+f.fact+'</p><p style="margin-top:4px;font-size:10px;color:var(--text3)">Lost '+troopLoss+' troops, '+supplyLoss+' supplies over '+days+' day(s)</p>';
+    updateAccessibility();
+    updateResUI();
+    if(!checkVictory()){
+      phase="select";
+      selectedFort=null;
+      document.getElementById("status").textContent="Fortress conquered! Click the next target.";
+      document.getElementById("status").className="status";
+    }
+    drawMap();
+  };
+
+  /* Special: Ali animation for Al-Qamus */
+  if(f.ali&&!f.aliPlayed){
+    f.aliPlayed=true;
+    log("Ali ibn Abi Talib steps forward to carry the fortress gate!","success");
+    document.getElementById("status").textContent="Ali carries the fortress gate! SubhanAllah!";
+    playAliAnimation(()=>{
+      doConquest();
+    });
+  }else{
+    doConquest();
+  }
+}
+
+function newGame(){
+  if(animFrame) cancelAnimationFrame(animFrame);
+  aliAnimating=false;
+  diff=document.getElementById("diffSel").value;
+  const dm=getDiffMod();
+  troops=1400;supplies=dm.startSupply;day=1;conquered=0;phase="select";selectedFort=null;
+  FORTRESSES.forEach(f=>{
+    f.conquered=false;
+    f.accessible=f.tier==="outer";
+    if(f.ali)f.aliPlayed=false;
+  });
+  document.getElementById("logBox").innerHTML="";
+  document.getElementById("actionRow").style.display="none";
+  document.getElementById("infoPanel").style.display="none";
+  document.getElementById("status").textContent="Click a fortress on the map to begin your siege!";
+  document.getElementById("status").className="status";
+  updateResUI();
+  drawMap();
+  log("Bismillah! The siege of Khaybar begins. 1400 Muslims march forward.","success");
+  log("Strategy: conquer the outer fortresses first to weaken the inner ones.");
+  showHS();
+}
+
+/* ── Canvas Click Handling ── */
+function handleCanvasClick(e){
+  const cv=document.getElementById("mapCanvas");
+  const rect=cv.getBoundingClientRect();
+  const scaleX=cv.width/rect.width,scaleY=cv.height/rect.height;
+  const mx=(e.clientX-rect.left)*scaleX;
+  const my=(e.clientY-rect.top)*scaleY;
+  /* Handle touch */
+  if(e.touches){
+    const t=e.touches[0];
+    const tmx=(t.clientX-rect.left)*scaleX;
+    const tmy=(t.clientY-rect.top)*scaleY;
+    for(const f of FORTRESSES){
+      const hs=f.size/2+8;
+      if(tmx>=f.x-hs&&tmx<=f.x+hs&&tmy>=f.y-hs&&tmy<=f.y+hs){
+        e.preventDefault();selectFortress(f);return;
+      }
+    }
+    return;
+  }
+  for(const f of FORTRESSES){
+    const hs=f.size/2+8;
+    if(mx>=f.x-hs&&mx<=f.x+hs&&my>=f.y-hs&&my<=f.y+hs){
+      selectFortress(f);return;
+    }
+  }
+}
+
+/* ── Init ── */
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
+  showHS();
+
+  document.getElementById("enterBtn").addEventListener("click",()=>{
+    document.querySelector(".splash").style.display="none";
+    document.getElementById("app").classList.add("on");
+    document.getElementById("backLink").style.display="block";
+    newGame();
+  });
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+  const cv=document.getElementById("mapCanvas");
+  cv.addEventListener("click",handleCanvasClick);
+  cv.addEventListener("touchstart",handleCanvasClick,{passive:false});
+
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+/* Keyboard shortcuts: 1-3 for actions, Enter for new game */
+document.addEventListener("keydown",function(e){
+  if(e.key>="1"&&e.key<="3"){const btns=document.querySelectorAll(".answer-btn");const i=parseInt(e.key)-1;if(btns[i])btns[i].click();}
+  if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+});
+
+/* Persist sound preference */
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+/* Persist theme and language */
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

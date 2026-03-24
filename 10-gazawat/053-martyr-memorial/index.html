@@ -1,0 +1,528 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Shuhada Garden — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:900px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;min-height:400px;position:relative;overflow:hidden}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden;margin:8px auto}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+canvas{display:block;width:100%;border-radius:8px;cursor:pointer}
+.story-panel{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:16px;margin-top:12px;display:none;animation:fadeUp .3s}
+.story-panel.show{display:block}
+.story-panel h2{font-family:'Outfit',sans-serif;font-size:18px;color:var(--accent);margin-bottom:4px}
+.story-panel .battle{font-size:12px;color:var(--text2);margin-bottom:8px}
+.story-panel .story-text{font-size:12px;color:var(--text);line-height:1.7;margin-bottom:8px}
+.story-panel .hadith{font-size:11px;color:var(--accent);font-style:italic;border-left:2px solid var(--accent);padding-left:10px;margin-top:8px}
+[dir="rtl"] .story-panel .hadith{border-left:none;border-right:2px solid var(--accent);padding-left:0;padding-right:10px}
+.story-close{background:var(--bg2);border:1px solid var(--border);color:var(--text2);padding:4px 12px;border-radius:6px;font-size:11px;cursor:pointer;margin-top:8px}
+.story-close:hover{border-color:var(--accent);color:var(--accent)}
+.mode-tabs{display:flex;gap:4px;margin-bottom:10px;justify-content:center}
+.mode-tab{padding:6px 14px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:11px;font-family:'Outfit',sans-serif;cursor:pointer;font-weight:600}
+.mode-tab.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.quiz-area{display:none;text-align:center}
+.quiz-area.show{display:block}
+.quiz-question{font-family:'Outfit',sans-serif;font-size:14px;color:var(--heading);margin-bottom:14px;line-height:1.6;padding:12px;background:var(--bg3);border-radius:8px}
+.quiz-opts{display:flex;flex-direction:column;gap:8px;max-width:400px;margin:0 auto 12px}
+.quiz-opt{padding:10px 16px;border-radius:8px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;transition:all .15s}
+.quiz-opt:hover{border-color:var(--accent);background:var(--abg)}
+.quiz-opt.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.quiz-opt.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.garden-hint{text-align:center;font-size:11px;color:var(--text3);margin-top:8px}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Shuhada Garden</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Memorial</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Walk through the garden of the blessed shuhada. Click a tree to learn their story.</p><button class="btn-go" id="enterBtn">Enter the Garden</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Shuhada Garden</h1><span class="pill" id="scorePill">0 / 20</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<div class="ctrl">
+  <div class="mode-tabs"><button class="mode-tab on" id="modeGarden" onclick="setMode('garden')">🌳 Garden</button><button class="mode-tab" id="modeQuiz" onclick="setMode('quiz')">📝 Quiz</button></div>
+  <button class="btn-help" onclick="openHelp()">❓</button>
+  <button id="soundBtn">🔊</button>
+  <div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+  <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div>
+</div>
+<div class="status" id="status">Click a tree to read its story</div>
+
+<div id="gardenView">
+  <div class="game-area" id="gardenArea"><canvas id="gardenCanvas" width="860" height="420"></canvas></div>
+  <div class="garden-hint" id="gardenHint">🌳 Each tree represents a shaheed — click to learn their story</div>
+  <div class="story-panel" id="storyPanel">
+    <h2 id="storyName"></h2>
+    <div class="battle" id="storyBattle"></div>
+    <div class="story-text" id="storyText"></div>
+    <div class="hadith" id="storyHadith"></div>
+    <button class="story-close" onclick="closeStory()">Close</button>
+  </div>
+</div>
+
+<div class="quiz-area" id="quizView">
+  <div class="quiz-question" id="quizQ"></div>
+  <div class="quiz-opts" id="quizOpts"></div>
+  <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+  <div class="score-row" style="margin-top:10px"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
+  <button style="margin-top:12px;padding:8px 20px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-family:'Outfit',sans-serif;font-weight:700;cursor:pointer;font-size:12px" onclick="startQuiz()">New Quiz</button>
+</div>
+
+<div class="log-box" id="logBox"></div>
+<div class="foot">Workshop-Diy — Shuhada Garden v1.0</div>
+</div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+      <details class="help-item"><summary>What is Shuhada Garden?</summary><p>An interactive memorial to learn about the famous shuhada (martyrs) of early Islam. Walk through a garden where each tree represents a shaheed.</p></details>
+      <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+      <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
+      <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
+      <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+      <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+      <details class="help-item"><summary>What is Quiz mode?</summary><p>Test your knowledge! Match each shaheed to their story, battle, or unique fact. Your best score is saved locally.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+      <div class="help-step"><span class="help-step-num">1</span><p>Click "Enter the Garden" on the splash screen</p></div>
+      <div class="help-step"><span class="help-step-num">2</span><p>In Garden mode, click any tree to read the story of that shaheed</p></div>
+      <div class="help-step"><span class="help-step-num">3</span><p>Read about their battle, how they were martyred, and what the Prophet said about them</p></div>
+      <div class="help-step"><span class="help-step-num">4</span><p>Switch to Quiz mode to test your knowledge</p></div>
+      <div class="help-step"><span class="help-step-num">5</span><p>Match each shaheed to the correct description</p></div>
+      <div class="help-step"><span class="help-step-num">6</span><p>Try to beat your high score!</p></div>
+      <div class="help-step"><span class="help-step-num">7</span><p>Change themes and language as you like</p></div>
+      <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+      <div class="wiki-entry"><h3>🌳 Purpose</h3><p>Learn about the companions who gave their lives for Islam. Each tree in the garden represents a shaheed with a unique story.</p></div>
+      <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+      <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Francais, العربية. Arabic auto-enables RTL layout.</p></div>
+      <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Toggle with the sound button.</p></div>
+      <div class="wiki-entry"><h3>📝 Quiz Mode</h3><p>10 questions matching shuhada to their stories. Your best percentage is saved as a high score.</p></div>
+      <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+
+<script>
+// === SHUHADA DATA ===
+const SHUHADA=[
+{name:"Hamza ibn Abdul Muttalib",nameAr:"حمزة بن عبد المطلب",battle:"Uhud",how:"Fought bravely at Uhud. Was martyred by Wahshi ibn Harb with a spear while fighting fiercely. He was the Prophet's uncle and known as the Lion of Allah.",hadith:"The Prophet (peace be upon him) called him 'the Lion of Allah and the Lion of His Messenger' and wept over him greatly."},
+{name:"Mus'ab ibn Umayr",nameAr:"مصعب بن عمير",battle:"Uhud",how:"Carried the banner of Islam at Uhud. When his right hand was cut, he held it with his left. When that was cut too, he held it with his arms until he fell.",hadith:"The Prophet (peace be upon him) said: 'I saw him in Paradise with wings of jewels, flying wherever he wished.'"},
+{name:"Ja'far ibn Abi Talib",nameAr:"جعفر بن أبي طالب",battle:"Mu'tah",how:"Led the Muslim army at Mu'tah against the Romans. When his right hand was cut he held the banner with his left. When that was cut too, he held it with his arms until he was martyred.",hadith:"The Prophet (peace be upon him) said: 'Allah has given him two wings in Paradise to fly wherever he wishes.' He was known as Ja'far al-Tayyar (the Flyer)."},
+{name:"Zayd ibn Harithah",nameAr:"زيد بن حارثة",battle:"Mu'tah",how:"Was the first commander at the Battle of Mu'tah. He fought with immense bravery against the Roman army until he was martyred holding the banner.",hadith:"The Prophet (peace be upon him) loved him dearly and had adopted him before adoption was prohibited. He said Zayd was the most beloved of people to him."},
+{name:"Abdullah ibn Rawahah",nameAr:"عبد الله بن رواحة",battle:"Mu'tah",how:"Third commander at Mu'tah after Zayd and Ja'far fell. He hesitated briefly, then encouraged himself saying 'O soul, you will enter Paradise!' and fought until martyrdom.",hadith:"The Prophet (peace be upon him) described seeing the three commanders of Mu'tah in Paradise, each on a throne of gold."},
+{name:"Sumayyah bint Khayyat",nameAr:"سمية بنت خياط",battle:"Makkah (persecution)",how:"The first martyr in Islam. She was tortured by Abu Jahl for accepting Islam and refused to renounce her faith. Abu Jahl killed her with a spear.",hadith:"The Prophet (peace be upon him) would pass by the family of Yasir being tortured and say: 'Patience, O family of Yasir! Your appointment is in Paradise.'"},
+{name:"Yasir ibn Amir",nameAr:"ياسر بن عامر",battle:"Makkah (persecution)",how:"Father of Ammar. He was among the earliest Muslims in Makkah. He was tortured severely by the Quraysh for his faith and died under their persecution.",hadith:"The Prophet (peace be upon him) said: 'Patience, O family of Yasir! Your appointment is in Paradise.'"},
+{name:"Anas ibn Nadr",nameAr:"أنس بن النضر",battle:"Uhud",how:"Missed Badr and swore to Allah he would fight if given another chance. At Uhud, he charged into the enemy ranks saying 'I can smell the fragrance of Paradise!' He received over 80 wounds.",hadith:"The Prophet (peace be upon him) said: 'Among the believers are men who have been true to their covenant with Allah.' This verse was revealed about Anas ibn Nadr."},
+{name:"Sa'd ibn Muadh",nameAr:"سعد بن معاذ",battle:"After Khandaq",how:"Chief of the Aws tribe. He was struck by an arrow during the Battle of the Trench. After judging Banu Qurayza, his wound opened and he passed away.",hadith:"The Prophet (peace be upon him) said: 'The Throne of the Most Merciful shook at the death of Sa'd ibn Muadh.'"},
+{name:"Ubayy ibn Ka'b",nameAr:"أبي بن كعب",battle:"Companion & Scholar",how:"A master of the Quran. He was one of those whom the Prophet recommended to learn Quran from. He participated in all major battles alongside the Prophet.",hadith:"The Prophet (peace be upon him) said: 'The best reciter among my Ummah is Ubayy ibn Ka'b.'"},
+{name:"Hanzala ibn Abi Amir",nameAr:"حنظلة بن أبي عامر",battle:"Uhud",how:"On his wedding night, he heard the call to battle and rushed to Uhud without performing ghusl. He was martyred fighting bravely. The angels washed his body.",hadith:"The Prophet (peace be upon him) said: 'I saw the angels washing Hanzala between the heavens and the earth with water from the clouds in vessels of silver.' He became known as 'Ghaseel al-Mala'ikah' (the one washed by angels)."},
+{name:"Abdullah ibn Jahsh",nameAr:"عبد الله بن جحش",battle:"Uhud",how:"Before Uhud, he prayed to Allah for martyrdom. He fought fiercely and was martyred. His body was mutilated by the enemy after he fell.",hadith:"The Prophet (peace be upon him) made du'a for him. Before the battle, Abdullah had asked Allah to let him meet an enemy who would fight him and then be martyred."},
+{name:"Khubayb ibn Adiy",nameAr:"خبيب بن عدي",battle:"Captured by Quraysh",how:"Captured by the Quraysh through treachery. Before his execution, he asked to pray two rak'ah, becoming the first to establish this sunnah before execution. He was crucified.",hadith:"The Prophet (peace be upon him) told his companions about Khubayb's death. Khubayb said while being crucified: 'I do not care how I am killed as long as I am killed as a Muslim.'"},
+{name:"Asim ibn Thabit",nameAr:"عاصم بن ثابت",battle:"Ar-Raji incident",how:"Martyred at the incident of Ar-Raji. He had vowed never to let a mushrik touch him. After he fell, Allah sent a swarm of wasps to protect his body so the enemy could not reach it.",hadith:"The Prophet (peace be upon him) was informed about Asim. He was known as 'the one protected by wasps.' Umar said: 'Allah protects His believing servant after death as He protected him in life.'"},
+{name:"Harithah ibn Suraqah",nameAr:"حارثة بن سراقة",battle:"Badr",how:"A young Ansari who was struck by a stray arrow at the Battle of Badr while drinking from the well. He was among the first martyrs of Badr.",hadith:"His mother asked the Prophet about him. The Prophet said: 'O Umm Harithah, there are many gardens in Paradise, and your son has attained al-Firdaws al-A'la (the highest level).'"},
+{name:"Umayr ibn al-Humam",nameAr:"عمير بن الحمام",battle:"Badr",how:"At Badr, when the Prophet said Paradise awaits, Umayr was eating dates. He exclaimed 'Is there nothing between me and Paradise except these people?' He threw down his dates and fought until martyred.",hadith:"The Prophet (peace be upon him) mentioned that Paradise was as wide as the heavens and earth, and Umayr said: 'Bakhin! Bakhin!' (Wonderful! Wonderful!)"},
+{name:"Sad ibn ar-Rabi",nameAr:"سعد بن الربيع",battle:"Uhud",how:"At Uhud, he was found with over 70 wounds. With his last breath, he sent a message to the Ansar: 'You will have no excuse before Allah if the Prophet is harmed while you still have eyes that blink.'",hadith:"The Prophet (peace be upon him) asked who would go find Sa'd. A companion found him near death delivering his final message to the believers."},
+{name:"Sumayra bint Qays",nameAr:"نسيبة بنت كعب",battle:"Uhud (wounded, survived many battles)",how:"Umm Umarah — she fought at Uhud defending the Prophet with her sword and bow. She received 12 wounds. She later fought at Yamamah where she lost her hand.",hadith:"The Prophet (peace be upon him) said: 'Wherever I turned on the day of Uhud, I saw her fighting to defend me.' He prayed she and her family would be his companions in Paradise."},
+{name:"Talhah ibn Ubaydullah",nameAr:"طلحة بن عبيد الله",battle:"Uhud (protected the Prophet)",how:"At Uhud, he used his own body as a shield for the Prophet, receiving over 70 wounds. His hand was paralyzed from shielding the Prophet's face from arrows. He was later martyred at the Battle of the Camel.",hadith:"The Prophet (peace be upon him) said: 'Whoever wishes to see a walking martyr on earth, let him look at Talhah ibn Ubaydullah.'"},
+{name:"Ammar ibn Yasir",nameAr:"عمار بن ياسر",battle:"Siffin",how:"Son of Yasir and Sumayyah, the first martyrs. He endured torture in Makkah. He lived to old age and was martyred at the Battle of Siffin fighting for truth at the age of around 90.",hadith:"The Prophet (peace be upon him) said: 'Ammar will be killed by the transgressing group.' This hadith is well-known and authentic."}
+];
+
+// === CORE FUNCTIONS ===
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));drawGarden();}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// === GARDEN CANVAS ===
+let trees=[], selectedTree=-1, visited=new Set();
+const canvas=document.getElementById("gardenCanvas");
+const ctx=canvas?canvas.getContext("2d"):null;
+
+function getCS(prop){return getComputedStyle(document.documentElement).getPropertyValue(prop).trim();}
+
+function layoutTrees(){
+  trees=[];
+  const cw=canvas.width, ch=canvas.height;
+  const cols=5, rows=4;
+  const xPad=70, yPad=60;
+  const xSpace=(cw-2*xPad)/(cols-1);
+  const ySpace=(ch-2*yPad)/(rows-1);
+  for(let i=0;i<SHUHADA.length&&i<20;i++){
+    const col=i%cols, row=Math.floor(i/cols);
+    const jitterX=(Math.sin(i*7.3)*15);
+    const jitterY=(Math.cos(i*5.1)*10);
+    trees.push({x:xPad+col*xSpace+jitterX, y:yPad+row*ySpace+jitterY, idx:i});
+  }
+}
+
+function drawTree(x,y,highlight,vis){
+  const accent=getCS("--accent")||"#00ff88";
+  const text2=getCS("--text2")||"#8b949e";
+  const heading=getCS("--heading")||"#e6edf3";
+  const bg3=getCS("--bg3")||"#161b22";
+
+  // Trunk
+  ctx.fillStyle=vis?"#8B6914":"#5a4a30";
+  ctx.fillRect(x-4,y-10,8,28);
+
+  // Canopy
+  ctx.beginPath();
+  ctx.arc(x,y-18,18,0,Math.PI*2);
+  ctx.fillStyle=highlight?accent:(vis?"#2d8a4e":"#1a5c30");
+  ctx.fill();
+  if(highlight){ctx.strokeStyle=accent;ctx.lineWidth=2;ctx.stroke();}
+
+  // Glow for visited
+  if(vis&&!highlight){
+    ctx.beginPath();ctx.arc(x,y-18,22,0,Math.PI*2);
+    ctx.strokeStyle=accent;ctx.lineWidth=1;ctx.globalAlpha=.3;ctx.stroke();ctx.globalAlpha=1;
+  }
+
+  // Name label
+  ctx.fillStyle=highlight?accent:heading;
+  ctx.font="bold 9px Outfit, sans-serif";
+  ctx.textAlign="center";
+  const shortName=SHUHADA[trees.findIndex(t=>t.x===x&&t.y===y>=0?trees.findIndex(t2=>t2.x===x&&t2.y===y):0)]
+  // We'll draw name below
+}
+
+function drawGarden(){
+  if(!ctx)return;
+  const cw=canvas.width, ch=canvas.height;
+  const bg=getCS("--bg2")||"#0d1117";
+  const accent=getCS("--accent")||"#00ff88";
+  const heading=getCS("--heading")||"#e6edf3";
+  const text3=getCS("--text3")||"#484f58";
+
+  ctx.fillStyle=bg;
+  ctx.fillRect(0,0,cw,ch);
+
+  // Ground
+  const grd=ctx.createLinearGradient(0,ch-60,0,ch);
+  grd.addColorStop(0,"transparent");
+  grd.addColorStop(1,"rgba(34,80,34,.15)");
+  ctx.fillStyle=grd;
+  ctx.fillRect(0,ch-60,cw,60);
+
+  // Draw grass dots
+  ctx.fillStyle="rgba(34,120,34,.2)";
+  for(let i=0;i<40;i++){
+    ctx.beginPath();
+    ctx.arc(((i*53+17)%cw), ch-10-(i%3)*15-Math.sin(i)*8, 2, 0, Math.PI*2);
+    ctx.fill();
+  }
+
+  // Draw trees
+  trees.forEach((t,i)=>{
+    const isHover=(i===selectedTree);
+    const isVis=visited.has(i);
+
+    // Trunk
+    ctx.fillStyle=isVis?"#8B6914":"#5a4a30";
+    ctx.fillRect(t.x-4,t.y+2,8,22);
+
+    // Canopy shadow
+    ctx.beginPath();ctx.ellipse(t.x,t.y+26,12,4,0,0,Math.PI*2);
+    ctx.fillStyle="rgba(0,0,0,.15)";ctx.fill();
+
+    // Canopy
+    ctx.beginPath();ctx.arc(t.x,t.y-8,18,0,Math.PI*2);
+    if(isHover){ctx.fillStyle=accent;}
+    else if(isVis){ctx.fillStyle="#2d8a4e";}
+    else{ctx.fillStyle="#1a5c30";}
+    ctx.fill();
+
+    // Canopy top highlight
+    ctx.beginPath();ctx.arc(t.x-4,t.y-14,8,0,Math.PI*2);
+    ctx.fillStyle=isHover?"rgba(255,255,255,.15)":"rgba(255,255,255,.06)";
+    ctx.fill();
+
+    if(isHover){
+      ctx.beginPath();ctx.arc(t.x,t.y-8,22,0,Math.PI*2);
+      ctx.strokeStyle=accent;ctx.lineWidth=2;ctx.stroke();
+    }
+    if(isVis&&!isHover){
+      ctx.beginPath();ctx.arc(t.x,t.y-8,21,0,Math.PI*2);
+      ctx.strokeStyle=accent;ctx.lineWidth=1;ctx.globalAlpha=.3;ctx.stroke();ctx.globalAlpha=1;
+    }
+
+    // Name label
+    ctx.fillStyle=isHover?accent:(isVis?accent:heading);
+    ctx.font=(isHover?"bold ":"")+"8px 'Outfit', sans-serif";
+    ctx.textAlign="center";
+    ctx.globalAlpha=isHover?1:(isVis?.9:.6);
+    const sn=SHUHADA[i].name.split(" ")[0];
+    ctx.fillText(sn,t.x,t.y+38);
+    ctx.globalAlpha=1;
+
+    // Number badge
+    ctx.beginPath();ctx.arc(t.x,t.y-8,7,0,Math.PI*2);
+    ctx.fillStyle="rgba(0,0,0,.5)";ctx.fill();
+    ctx.fillStyle="#fff";ctx.font="bold 7px 'Outfit',sans-serif";
+    ctx.fillText(i+1,t.x,t.y-5.5);
+  });
+
+  // Title
+  ctx.fillStyle=text3;ctx.font="10px 'IBM Plex Mono',monospace";ctx.textAlign="left";
+  ctx.fillText("Shuhada Garden — "+visited.size+"/"+SHUHADA.length+" visited",10,16);
+}
+
+function getTreeAt(mx,my){
+  for(let i=trees.length-1;i>=0;i--){
+    const t=trees[i];
+    const dx=mx-t.x,dy=my-(t.y-8);
+    if(dx*dx+dy*dy<22*22)return i;
+  }
+  return -1;
+}
+
+if(canvas){
+  canvas.addEventListener("mousemove",function(e){
+    const r=canvas.getBoundingClientRect();
+    const sx=canvas.width/r.width, sy=canvas.height/r.height;
+    const mx=(e.clientX-r.left)*sx, my=(e.clientY-r.top)*sy;
+    const idx=getTreeAt(mx,my);
+    if(idx!==selectedTree){selectedTree=idx;drawGarden();canvas.style.cursor=idx>=0?"pointer":"default";}
+  });
+  canvas.addEventListener("click",function(e){
+    const r=canvas.getBoundingClientRect();
+    const sx=canvas.width/r.width, sy=canvas.height/r.height;
+    const mx=(e.clientX-r.left)*sx, my=(e.clientY-r.top)*sy;
+    const idx=getTreeAt(mx,my);
+    if(idx>=0){openStory(idx);snd("ok");}
+  });
+  canvas.addEventListener("mouseleave",function(){selectedTree=-1;drawGarden();});
+}
+
+function openStory(idx){
+  const s=SHUHADA[idx];
+  visited.add(idx);
+  document.getElementById("storyName").textContent=s.name+" ("+s.nameAr+")";
+  document.getElementById("storyBattle").textContent="Battle: "+s.battle;
+  document.getElementById("storyText").textContent=s.how;
+  document.getElementById("storyHadith").textContent=s.hadith;
+  document.getElementById("storyPanel").classList.add("show");
+  document.getElementById("scorePill").textContent=visited.size+" / "+SHUHADA.length;
+  document.getElementById("status").textContent="Reading about "+s.name;
+  log("Visited: "+s.name,"success");
+  drawGarden();
+}
+function closeStory(){document.getElementById("storyPanel").classList.remove("show");document.getElementById("status").textContent="Click a tree to read its story";}
+
+// === MODE SWITCH ===
+let currentMode="garden";
+function setMode(m){
+  currentMode=m;
+  document.getElementById("modeGarden").classList.toggle("on",m==="garden");
+  document.getElementById("modeQuiz").classList.toggle("on",m==="quiz");
+  document.getElementById("gardenView").style.display=m==="garden"?"block":"none";
+  document.getElementById("quizView").classList.toggle("show",m==="quiz");
+  if(m==="garden"){document.getElementById("status").textContent="Click a tree to read its story";drawGarden();}
+  if(m==="quiz"){startQuiz();}
+  snd("click");
+}
+
+// === QUIZ MODE ===
+let quizQs=[],quizIdx=0,quizCorrect=0,quizTotal=10,quizLocked=false;
+
+function genQuizQuestions(){
+  const qs=[];
+  const shuffled=[...SHUHADA].sort(()=>Math.random()-.5);
+  const types=["story","battle","fact"];
+  for(let i=0;i<quizTotal&&i<shuffled.length;i++){
+    const s=shuffled[i];
+    const type=types[i%3];
+    let question,answer,opts;
+    if(type==="story"){
+      question="Who is described: \""+s.how.substring(0,80)+"...\"?";
+      answer=s.name;
+      opts=[s.name];
+      while(opts.length<4){const r=SHUHADA[Math.floor(Math.random()*SHUHADA.length)];if(!opts.includes(r.name))opts.push(r.name);}
+    }else if(type==="battle"){
+      question="Which shaheed is associated with: "+s.battle+"?";
+      answer=s.name;
+      opts=[s.name];
+      const others=SHUHADA.filter(x=>x.battle!==s.battle);
+      while(opts.length<4&&others.length){const r=others.splice(Math.floor(Math.random()*others.length),1)[0];if(r&&!opts.includes(r.name))opts.push(r.name);}
+      while(opts.length<4){const r=SHUHADA[Math.floor(Math.random()*SHUHADA.length)];if(!opts.includes(r.name))opts.push(r.name);}
+    }else{
+      question="The Prophet (peace be upon him) said about this shaheed: \""+s.hadith.substring(0,80)+"...\". Who is it?";
+      answer=s.name;
+      opts=[s.name];
+      while(opts.length<4){const r=SHUHADA[Math.floor(Math.random()*SHUHADA.length)];if(!opts.includes(r.name))opts.push(r.name);}
+    }
+    qs.push({question,answer,opts:opts.sort(()=>Math.random()-.5)});
+  }
+  return qs;
+}
+
+function startQuiz(){
+  quizQs=genQuizQuestions();quizIdx=0;quizCorrect=0;quizLocked=false;
+  document.getElementById("sc").textContent="0";
+  document.getElementById("tot").textContent="0";
+  document.getElementById("prog").style.width="0%";
+  document.getElementById("status").textContent="Quiz: Match the shaheed!";
+  startTimer();
+  showQuizQ();
+}
+
+function showQuizQ(){
+  if(quizIdx>=quizQs.length){
+    stopTimer();
+    const pct=Math.round(quizCorrect/quizTotal*100);
+    document.getElementById("quizQ").textContent="Done! "+quizCorrect+"/"+quizTotal+" correct ("+pct+"%)";
+    document.getElementById("quizOpts").innerHTML="";
+    document.getElementById("status").textContent="Quiz Complete!";
+    document.getElementById("status").className="status win";
+    snd("win");log("Quiz: "+quizCorrect+"/"+quizTotal+" ("+pct+"%)","success");
+    checkHS();
+    return;
+  }
+  quizLocked=false;
+  const q=quizQs[quizIdx];
+  document.getElementById("quizQ").textContent=q.question;
+  const el=document.getElementById("quizOpts");el.innerHTML="";
+  q.opts.forEach(o=>{
+    const b=document.createElement("button");b.className="quiz-opt";b.textContent=o;
+    b.onclick=()=>pickQuiz(b,o,q.answer);
+    el.appendChild(b);
+  });
+  document.getElementById("status").textContent="Question "+(quizIdx+1)+" of "+quizTotal;
+  document.getElementById("status").className="status";
+}
+
+function pickQuiz(btn,val,ans){
+  if(quizLocked)return;quizLocked=true;quizIdx++;
+  if(val===ans){quizCorrect++;btn.classList.add("correct");snd("ok");log("Correct: "+ans,"success");}
+  else{btn.classList.add("wrong");snd("err");log("Wrong. Answer: "+ans,"error");
+    document.querySelectorAll(".quiz-opt").forEach(b=>{if(b.textContent===ans)b.classList.add("correct");});
+  }
+  document.getElementById("sc").textContent=quizCorrect;
+  document.getElementById("tot").textContent=quizIdx;
+  document.getElementById("prog").style.width=(quizIdx/quizTotal*100)+"%";
+  document.getElementById("scorePill").textContent=quizCorrect+" / "+quizIdx;
+  setTimeout(showQuizQ,1200);
+}
+
+// === TIMER ===
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+// === HIGH SCORE ===
+const HS_KEY="wdiy-hs-shuhada";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'%</span>';}}
+function checkHS(){
+  if(currentMode==="quiz"&&quizIdx>=quizTotal){
+    const pct=Math.round(quizCorrect/quizTotal*100);
+    if(saveHS(pct)){log("NEW HIGH SCORE: "+pct+"%!","success");}
+  }
+}
+
+// === INIT ===
+document.addEventListener("DOMContentLoaded",function(){
+  setLang("en");setTheme("terminal");
+  layoutTrees();drawGarden();
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",function(){
+    document.querySelector(".splash").style.display="none";
+    document.getElementById("app").classList.add("on");
+    document.getElementById("backLink").style.display="block";
+    drawGarden();
+  });
+  document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+// Keyboard: 1-4 for quiz answers, Enter
+document.addEventListener("keydown",function(e){
+  if(e.key>="1"&&e.key<="4"){const btns=document.querySelectorAll(".quiz-opt");const i=parseInt(e.key)-1;if(btns[i])btns[i].click();}
+  if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();}
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

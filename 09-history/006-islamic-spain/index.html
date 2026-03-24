@@ -1,0 +1,271 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Al-Andalus — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.app.on~.back-link,.back-link{}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:500px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.big-text{font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;color:var(--heading);text-align:center;line-height:1.5;padding:0 8px}
+.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;min-width:50px;text-align:center;max-width:220px}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.info-box{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:11px;color:var(--text2);line-height:1.7;text-align:left;width:100%;animation:fadeUp .3s}
+.info-box strong{color:var(--heading)}.info-box .info-date{color:var(--accent);font-weight:700}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.grid-pick{display:grid;gap:8px;justify-content:center;margin:10px auto}
+.grid-pick.g2{grid-template-columns:repeat(2,1fr);max-width:200px}
+.grid-pick.g3{grid-template-columns:repeat(3,1fr);max-width:300px}
+.grid-pick.g4{grid-template-columns:repeat(4,1fr);max-width:360px}
+.pick-card{padding:14px 10px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;cursor:pointer;text-align:center;transition:all .15s}
+.pick-card:hover{border-color:var(--accent);background:var(--abg)}
+.pick-card.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.pick-card.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Al-Andalus</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">The golden age of Islamic Spain</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Test your knowledge of the history of Muslim Spain!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Al-Andalus</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="10">Easy (10)</option><option value="15" selected>Medium (15)</option><option value="25">Hard (25+)</option></select>
+    <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+    <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="status" id="status">Pick the right answer!</div>
+<div class="game-area"><div class="big-text" id="question">?</div><div class="answer-row" id="choices"></div><div id="infoArea"></div><div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Al-Andalus v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Al-Andalus?</summary><p>An interactive quiz about Islamic Spain (Al-Andalus) covering its 800-year history from 711 to 1492 CE. Learn about key figures, events, architecture, science, and cultural achievements.</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>What do the difficulty levels mean?</summary><p>Easy = 10 major events. Medium = 15 questions covering more detail. Hard = 25+ questions spanning the full history of Al-Andalus.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Choose your difficulty level (Easy, Medium, Hard)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Press ▶ New Game to begin</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Read each question and pick from 4 options (or press keys 1-4)</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>After a correct answer, read the historical info box to learn more</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Watch your score and progress bar</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Press ▶ New Game to play again</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Learn the history of Al-Andalus (Islamic Spain) through an interactive quiz. Covers 800 years of Muslim civilization in the Iberian Peninsula.</p></div>
+        <div class="wiki-entry"><h3>📜 Topics</h3><p>Tariq ibn Ziyad, Gibraltar, Cordoba, the Great Mosque, Abd al-Rahman I & III, Alhambra Palace, libraries, translation movement, Averroes, Ziryab, irrigation, convivencia, and the fall of Granada.</p></div>
+        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Francais, العربية. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Correct = rising tone, wrong = buzz, win = melody. Toggle with 🔊 button.</p></div>
+        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+<script>function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+let total=15,current=0,correct=0,ans,locked=false,curInfo=null;
+
+const QS=[
+{q:"Who led the Muslim army across the Strait of Gibraltar into Spain in 711 CE?",a:"Tariq ibn Ziyad",o:["Musa ibn Nusayr","Khalid ibn al-Walid","Saladin"],d:"711 CE",f:"Tariq ibn Ziyad",info:"Tariq ibn Ziyad, a Berber commander, crossed the strait with around 7,000 soldiers. This crossing marked the beginning of nearly 800 years of Muslim presence in the Iberian Peninsula.",diff:1},
+{q:"What does the name 'Gibraltar' come from?",a:"Jabal Tariq (Mountain of Tariq)",o:["Jabal al-Nur (Mountain of Light)","Jabal al-Rahma (Mountain of Mercy)","Jabal Musa (Mountain of Musa)"],d:"711 CE",f:"Tariq ibn Ziyad",info:"Gibraltar is an anglicized form of 'Jabal Tariq,' meaning 'Mountain of Tariq,' named after the commander who landed there. The rock became a lasting tribute to this historic crossing.",diff:1},
+{q:"Which city became the capital of the Umayyad Emirate and later the Caliphate of Cordoba?",a:"Cordoba",o:["Granada","Seville","Toledo"],d:"756 CE onward",f:"Umayyad dynasty",info:"Cordoba became one of the largest and most advanced cities in all of Europe, with paved streets, street lighting, running water, and hundreds of public baths.",diff:1},
+{q:"Who was Abd al-Rahman I, known as 'al-Dakhil' (the Emigrant)?",a:"The Umayyad prince who founded the Emirate of Cordoba",o:["The first Muslim to reach Spain","The architect of the Great Mosque","The last ruler of Granada"],d:"756 CE",f:"Abd al-Rahman I",info:"Abd al-Rahman I escaped the Abbasid massacre of the Umayyad family in Damascus and traveled across North Africa to establish an independent emirate in Al-Andalus, preserving the Umayyad legacy.",diff:1},
+{q:"Who declared himself Caliph in Cordoba, making Al-Andalus a rival to Baghdad?",a:"Abd al-Rahman III",o:["Abd al-Rahman I","Al-Hakam II","Hisham II"],d:"929 CE",f:"Abd al-Rahman III",info:"Abd al-Rahman III proclaimed the Caliphate of Cordoba in 929 CE. Under his rule, Cordoba became the most prosperous city in Europe with a population of nearly 500,000 people.",diff:1},
+{q:"What famous mosque in Cordoba is known for its forest of red-and-white double arches?",a:"The Great Mosque of Cordoba (Mezquita)",o:["Al-Aqsa Mosque","The Blue Mosque","The Great Mosque of Kairouan"],d:"785 CE (begun)",f:"Abd al-Rahman I",info:"The Great Mosque of Cordoba was begun by Abd al-Rahman I in 785 CE. It featured over 850 columns of jasper, marble, and granite with iconic double arches creating a mesmerizing interior.",diff:1},
+{q:"How many books were said to be in the libraries of Cordoba at their peak?",a:"Over 400,000",o:["About 10,000","Around 50,000","Roughly 100,000"],d:"10th century",f:"Al-Hakam II",info:"Caliph Al-Hakam II was a great patron of learning. The royal library alone held 400,000 volumes — more than all the libraries of Europe combined at that time. Cordoba had 70 public libraries.",diff:1},
+{q:"What famous palace complex in Granada was built by the Nasrid dynasty?",a:"The Alhambra",o:["The Alcazar","Madinat al-Zahra","The Giralda"],d:"13th-14th century",f:"Nasrid dynasty",info:"The Alhambra ('The Red One') is a masterpiece of Islamic architecture featuring intricate geometric patterns, arabesques, muqarnas ceilings, and the famous Court of the Lions with its fountain.",diff:1},
+{q:"What movement translated Arabic scientific and philosophical texts into Latin, spreading knowledge to Europe?",a:"The Translation Movement",o:["The Renaissance","The Enlightenment","The Reformation"],d:"12th-13th century",f:"Toledo scholars",info:"After Toledo was taken in 1085, scholars translated thousands of Arabic works into Latin. This transfer of knowledge in mathematics, medicine, astronomy, and philosophy helped spark the European Renaissance.",diff:2},
+{q:"Who was Ibn Rushd (Averroes)?",a:"A great Muslim philosopher and scholar from Cordoba",o:["A military commander from Granada","A Berber king of Morocco","A poet from Seville"],d:"1126-1198 CE",f:"Ibn Rushd (Averroes)",info:"Ibn Rushd was a polymath who wrote commentaries on Aristotle that profoundly influenced European thought. He also served as a judge and physician. His work shaped both Islamic and Western philosophy.",diff:2},
+{q:"Who was the famous musician, fashion icon, and cultural figure who came to Cordoba from Baghdad?",a:"Ziryab (Abu al-Hasan Ali ibn Nafi)",o:["Al-Kindi","Ibn Firnas","Al-Farabi"],d:"822 CE",f:"Ziryab",info:"Ziryab revolutionized Andalusian culture. He introduced seasonal fashion, a 5-course meal structure, new hairstyles, hygiene practices like toothpaste, and the oud with a 5th string. He founded a music conservatory.",diff:2},
+{q:"What agricultural innovation did Muslims bring to Spain that transformed farming?",a:"Advanced irrigation systems (acequias and norias)",o:["The heavy plow","Crop rotation only","Greenhouses"],d:"8th-10th century",f:"Muslim engineers",info:"Muslims introduced sophisticated irrigation canals (acequias), water wheels (norias), and underground channels. They brought new crops including oranges, lemons, rice, cotton, sugar cane, and saffron to Spain.",diff:2},
+{q:"What term describes the period of relative coexistence between Muslims, Christians, and Jews in Al-Andalus?",a:"Convivencia",o:["Reconquista","Inquisicion","Cruzada"],d:"8th-11th century",f:"Al-Andalus society",info:"During convivencia, Muslims, Christians, and Jews lived together in relative harmony. They shared knowledge, traded, and collaborated in scholarship. This was a remarkable period of interfaith cooperation.",diff:1},
+{q:"What were the first paper mills in Europe established in Al-Andalus used for?",a:"Producing paper for books, learning, and administration",o:["Making decorative wallpaper","Wrapping food for trade","Creating clothing material"],d:"10th century",f:"Cordoba craftsmen",info:"Muslims brought papermaking technology from the East. The paper mill at Xativa (Jativa) was among the first in Europe. This made books far cheaper than parchment, fueling the spread of knowledge across Europe.",diff:2},
+{q:"Which Berber dynasty from North Africa came to defend Al-Andalus and ruled in the 11th century?",a:"The Almoravids",o:["The Fatimids","The Abbasids","The Ayyubids"],d:"1086 CE",f:"Yusuf ibn Tashfin",info:"The Almoravids, led by Yusuf ibn Tashfin, crossed from Morocco to help Andalusian Muslims defend against the Christian reconquest. They won the Battle of Sagrajas in 1086 and reunified Muslim Spain.",diff:2},
+{q:"Which dynasty succeeded the Almoravids and ruled Al-Andalus in the 12th century?",a:"The Almohads",o:["The Marinids","The Hafsids","The Zirids"],d:"1147 CE onward",f:"Abd al-Mumin",info:"The Almohads, a Berber reform movement, replaced the Almoravids. They built the Giralda tower in Seville and the great Koutoubia Mosque in Marrakech, both landmarks still standing today.",diff:2},
+{q:"When did the Christian kingdom capture Toledo, a key turning point in the Reconquista?",a:"1085 CE",o:["1000 CE","1150 CE","1250 CE"],d:"1085 CE",f:"Alfonso VI of Castile",info:"The fall of Toledo in 1085 was a major turning point. However, the city's vast libraries of Arabic manuscripts were preserved, leading to the famous Toledo School of Translators that transmitted knowledge to Europe.",diff:2},
+{q:"When did Cordoba fall to the Christian reconquest?",a:"1236 CE",o:["1085 CE","1150 CE","1492 CE"],d:"1236 CE",f:"Ferdinand III of Castile",info:"The fall of Cordoba in 1236 ended centuries of Muslim rule in what had been the greatest city in Western Europe. The Great Mosque was converted into a cathedral, though its Islamic architecture was largely preserved.",diff:2},
+{q:"What year did Granada, the last Muslim kingdom in Spain, fall?",a:"1492 CE",o:["1385 CE","1453 CE","1510 CE"],d:"January 2, 1492",f:"Boabdil (Muhammad XII)",info:"Granada fell on January 2, 1492, ending 781 years of Muslim presence in Spain. The same year, Columbus sailed to the Americas and the Spanish Inquisition expelled Jews from Spain.",diff:1},
+{q:"Who was the last Muslim ruler of Granada who surrendered to Ferdinand and Isabella?",a:"Boabdil (Muhammad XII)",o:["Yusuf III","Abu al-Hasan Ali","Muhammad I"],d:"1492 CE",f:"Boabdil",info:"As Boabdil left Granada, he paused on a mountain pass to look back at the Alhambra one last time and wept. His mother reportedly said: 'You weep like a woman for what you could not defend as a man.' The pass is still called 'El Ultimo Suspiro del Moro' (The Last Sigh of the Moor).",diff:1},
+{q:"What famous Jewish scholar studied under Muslim teachers in Cordoba and became a renowned philosopher and physician?",a:"Maimonides (Musa ibn Maymun)",o:["Rashi","Judah Halevi","Saadia Gaon"],d:"1138-1204 CE",f:"Maimonides",info:"Maimonides, born in Cordoba, studied under Muslim scholars. He wrote in Arabic and was deeply influenced by Islamic philosophy, especially Ibn Rushd. His work 'Guide for the Perplexed' shaped Jewish and Western thought.",diff:2},
+{q:"What palace city did Abd al-Rahman III build outside Cordoba as his royal residence?",a:"Madinat al-Zahra",o:["The Alhambra","The Alcazar","Madinat al-Salaam"],d:"936 CE",f:"Abd al-Rahman III",info:"Madinat al-Zahra was a stunning palace city with 4,000 columns, gardens, fountains, and halls of gold and ivory. It took 40 years to build but was destroyed during a civil war in 1010 CE. Ruins are being restored today.",diff:3},
+{q:"Which Spanish words come from Arabic, showing the lasting linguistic legacy of Al-Andalus?",a:"Algebra (al-jabr), algorithm, azulejo, alcazar",o:["Piano, guitar, flamenco, tango","Cathedral, church, chapel, abbey","Parliament, senate, republic, democracy"],d:"8th-15th century",f:"Arabic language influence",info:"Over 4,000 Spanish words have Arabic origins. Common examples include almohada (pillow), aceite (oil), azucar (sugar), aldea (village), alfombra (carpet), alcalde (mayor), and many place names.",diff:2},
+{q:"Who was Abbas ibn Firnas, the Andalusian polymath famous for an early attempt at flight?",a:"A scientist from Cordoba who built a flying machine in the 9th century",o:["A general who conquered Northern Spain","A poet who wrote about birds","A sailor who discovered new islands"],d:"875 CE",f:"Abbas ibn Firnas",info:"Abbas ibn Firnas constructed a glider-like device and launched himself from a cliff near Cordoba. He managed to stay airborne for some time before a rough landing. He is considered a pioneer of aviation, over 600 years before the Wright Brothers.",diff:3},
+{q:"What architectural feature common in Al-Andalus uses interlocking geometric patterns to symbolize the infinite nature of Allah's creation?",a:"Islamic geometric art (arabesque)",o:["Stained glass windows","Flying buttresses","Roman columns"],d:"8th-15th century",f:"Andalusian artisans",info:"Andalusian craftsmen perfected the use of complex geometric patterns based on mathematical principles. These designs, covering walls, ceilings, and floors, reflected the Islamic belief in the infinite nature of creation without depicting living beings.",diff:3},
+{q:"What was the role of Cordoba's street lighting, one of the first in Europe?",a:"Oil lamps lit the main streets at night for safety",o:["Decorative torches for festivals only","Signal fires for the army","Lighthouse beacons for river trade"],d:"10th century",f:"Cordoba municipality",info:"Cordoba was one of the first cities in the world to have public street lighting. The city also had paved roads, public hospitals, and a sewage system — centuries ahead of other European cities.",diff:3},
+{q:"What important battle in 732 CE stopped the Muslim advance into France?",a:"The Battle of Tours (Poitiers)",o:["The Battle of Hastings","The Battle of Guadalete","The Battle of Las Navas de Tolosa"],d:"732 CE",f:"Charles Martel / Abd al-Rahman al-Ghafiqi",info:"The Battle of Tours in 732 CE, led by Charles Martel against the Muslim forces, marked the furthest extent of Muslim military advance into Western Europe. Muslims then focused on building their civilization in Iberia.",diff:2},
+{q:"What decisive battle in 1212 united Christian kingdoms against the Almohads and shifted the balance of power?",a:"The Battle of Las Navas de Tolosa",o:["The Battle of Sagrajas","The Battle of Tours","The Battle of the Trench"],d:"1212 CE",f:"Alfonso VIII / Muhammad al-Nasir",info:"The Battle of Las Navas de Tolosa in 1212 was a turning point in the Reconquista. A coalition of Christian kingdoms defeated the Almohad Caliphate, opening the way for the rapid conquest of Cordoba, Seville, and other Muslim cities.",diff:3}
+];
+
+function genQ(){
+var pool;
+var diff=parseInt(document.getElementById("diffSel").value);
+if(diff<=10) pool=QS.filter(function(q){return q.diff===1;});
+else if(diff<=15) pool=QS.filter(function(q){return q.diff<=2;});
+else pool=QS.slice();
+var q=pool[Math.floor(Math.random()*pool.length)];
+var opts=[q.a];
+var others=QS.filter(function(x){return x.a!==q.a;});
+while(opts.length<4&&others.length>0){var idx=Math.floor(Math.random()*others.length);var cand=others[idx].a;if(opts.indexOf(cand)===-1)opts.push(cand);others.splice(idx,1);}
+return{text:q.q,ans:q.a,opts:opts.sort(function(){return Math.random()-.5;}),date:q.d,figure:q.f,info:q.info};
+}
+
+function setDiff(){total=parseInt(document.getElementById("diffSel").value);}
+
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+var usedQuestions=[];
+function newGame(){startTimer();total=document.getElementById("diffSel")?parseInt(document.getElementById("diffSel").value):15;current=0;correct=0;usedQuestions=[];document.getElementById("sc").textContent="0";document.getElementById("tot").textContent="0";document.getElementById("scorePill").textContent="0 / 0";document.getElementById("infoArea").innerHTML="";nextQ();}
+
+function nextQ(){if(current>=total){checkHS();stopTimer();snd("win");document.getElementById("status").textContent="🏆 Done! "+correct+"/"+total;document.getElementById("status").className="status win";log("🏆 Score: "+correct+"/"+total,"success");return;}locked=false;curInfo=null;document.getElementById("infoArea").innerHTML="";
+var diff=parseInt(document.getElementById("diffSel").value);
+var pool;
+if(diff<=10) pool=QS.filter(function(q){return q.diff===1;});
+else if(diff<=15) pool=QS.filter(function(q){return q.diff<=2;});
+else pool=QS.slice();
+var available=pool.filter(function(q){return usedQuestions.indexOf(q.q)===-1;});
+if(available.length===0){usedQuestions=[];available=pool;}
+var q=available[Math.floor(Math.random()*available.length)];
+usedQuestions.push(q.q);
+var opts=[q.a];
+var others=QS.filter(function(x){return x.a!==q.a;});
+while(opts.length<4&&others.length>0){var idx=Math.floor(Math.random()*others.length);var cand=others[idx].a;if(opts.indexOf(cand)===-1)opts.push(cand);others.splice(idx,1);}
+opts.sort(function(){return Math.random()-.5;});
+var qData={text:q.q,ans:q.a,opts:opts,date:q.d,figure:q.f,info:q.info};
+document.getElementById("question").textContent=qData.text;
+ans=qData.ans;curInfo=qData;
+var el=document.getElementById("choices");el.innerHTML="";
+qData.opts.forEach(function(o){var b=document.createElement("button");b.className="answer-btn";b.textContent=o;b.onclick=function(){pick(b,o);};el.appendChild(b);});
+document.getElementById("status").textContent=(current+1)+"/"+total;document.getElementById("status").className="status";document.getElementById("prog").style.width=(current/total*100)+"%";}
+
+function pick(btn,val){if(locked)return;locked=true;current++;
+if(String(val)===String(ans)){correct++;btn.classList.add("correct");snd("ok");log("✓ Correct: "+ans,"success");
+if(curInfo){document.getElementById("infoArea").innerHTML='<div class="info-box"><span class="info-date">📅 '+curInfo.date+'</span> &mdash; <strong>'+curInfo.figure+'</strong><br>'+curInfo.info+'</div>';}}
+else{btn.classList.add("wrong");snd("err");log("✗ Wrong. Answer: "+ans,"error");document.querySelectorAll(".answer-btn").forEach(function(b){if(b.textContent===ans)b.classList.add("correct");});}
+document.getElementById("sc").textContent=correct;document.getElementById("tot").textContent=current;document.getElementById("scorePill").textContent=correct+" / "+current;document.getElementById("prog").style.width=(current/total*100)+"%";
+var delay=curInfo&&String(val)===String(ans)?2200:1100;
+setTimeout(nextQ,delay);}
+
+// High Score
+const HS_KEY="wdiy-hs-andalus";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
+function checkHS(){
+  if(typeof correct!=="undefined"&&typeof total!=="undefined"&&current>=total){
+    const pct=Math.round(correct/total*100);
+    if(saveHS(pct)){log("🏆 NEW HIGH SCORE: "+pct+"%!","success");}
+  }
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+// Keyboard shortcuts: 1-4 for answers, Enter for next
+document.addEventListener("keydown",function(e){
+if(e.key>="1"&&e.key<="4"){const btns=document.querySelectorAll(".answer-btn");const i=parseInt(e.key)-1;if(btns[i])btns[i].click();}
+if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

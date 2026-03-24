@@ -1,0 +1,539 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Banu Mustaliq — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:620px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.game-area canvas{border-radius:8px;width:100%;max-width:580px;cursor:pointer}
+.big-text{font-family:'Outfit',sans-serif;font-size:28px;font-weight:800;color:var(--heading);text-align:center}
+.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .15s;min-width:50px;text-align:center}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.progress{width:100%;max-width:400px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+.narrative{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:10px;font-size:11px;line-height:1.7;color:var(--text)}
+.narrative strong{color:var(--heading)}.narrative em{color:var(--accent)}
+.phase-tag{font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;color:var(--accent);text-align:center;margin-bottom:4px}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Banu Mustaliq</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">The Raid at Al-Muraysi</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Lead the Muslim forces in a swift, decisive raid at Al-Muraysi well. Plan your approach, deploy troops, and witness how mercy in victory changed history.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Banu Mustaliq</h1><span class="pill" id="scorePill">Phase 1/4</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl">
+<select id="diffSel" onchange="setDiff()"><option value="easy">Easy</option><option value="medium" selected>Medium</option><option value="hard">Hard</option></select>
+<button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+<button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="status" id="status">Plan your approach to Al-Muraysi well!</div>
+<div class="narrative" id="narrative"></div>
+<div class="game-area" id="gameArea">
+<canvas id="canvas" width="560" height="360"></canvas>
+<div class="answer-row" id="choices"></div>
+<div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+</div>
+<div class="score-row"><div class="score-item"><div class="score-label">Score</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Phase</div><div class="score-num" id="tot">1</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Banu Mustaliq v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is this game about?</summary><p>The raid on Banu Mustaliq at Al-Muraysi well (6 AH). Lead Muslim forces through 4 phases: planning, deployment, the surprise attack, and the merciful aftermath.</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Phase 1: Choose your approach route to the well (direct, flanking, or night)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Phase 2: Position archers, cavalry, and infantry on the canvas map</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Phase 3: Launch the surprise attack — click enemy fighters on the map</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>Phase 4: Learn about the aftermath — Juwayriyah's story and the tribe's freedom</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Answer the final quiz to earn bonus points</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Press ▶ New Game to play again with different choices</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Learn about the Ghazwah of Banu Mustaliq (6 AH) — a swift raid that showcases strategic planning, decisive action, and mercy in victory.</p></div>
+        <div class="wiki-entry"><h3>📜 Historical Context</h3><p>The Prophet ﷺ received intelligence that Banu Mustaliq, led by al-Harith ibn Abi Dirar, were gathering forces near Al-Muraysi well to attack Medina. The Prophet ﷺ moved swiftly and surprised them.</p></div>
+        <div class="wiki-entry"><h3>💒 Juwayriyah bint al-Harith</h3><p>The chief's daughter embraced Islam and married the Prophet ﷺ. The Companions then freed all captives, saying they were now relatives of the Messenger of Allah ﷺ. Over 100 families were freed.</p></div>
+        <div class="wiki-entry"><h3>📖 Lessons</h3><p>Swift decisive action prevents greater conflict. Mercy in victory wins hearts. One righteous marriage freed an entire tribe. Diplomacy and compassion are powerful tools.</p></div>
+        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Toggle with the 🔊 button.</p></div>
+        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+
+<script>
+/* ── Sidebar / Lang / Theme ── */
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));if(phase>=1)redrawCanvas();}
+
+/* ── Sound ── */
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else if(t==="march"){[392,440,523,440].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.03;oo.frequency.value=f;oo.type="triangle";gg.gain.exponentialRampToValueAtTime(.001,n+.12+i*.08);oo.start(n+i*.08);oo.stop(n+.12+i*.08);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+/* ── Game State ── */
+let phase=0,score=0,locked=false,difficulty="medium";
+let route="",placedUnits=[],enemyUnits=[],attackProgress=0,afterStep=0;
+let canvas,ctx,W,H;
+let timerInterval,timerSeconds=0;
+const DIFF={easy:{enemyCount:5,bonus:1.5},medium:{enemyCount:8,bonus:1.0},hard:{enemyCount:12,bonus:0.7}};
+
+function setDiff(){difficulty=document.getElementById("diffSel").value;}
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+function ui(id,txt){var e=document.getElementById(id);if(e)e.textContent=txt;}
+
+/* ── Canvas ── */
+function cs(){const s=getComputedStyle(document.documentElement);const g=k=>s.getPropertyValue(k).trim();return{bg:g("--bg")||"#0a0c10",bg2:g("--bg2")||"#0d1117",bg3:g("--bg3")||"#161b22",border:g("--border")||"#21262d",text:g("--text")||"#c9d1d9",text2:g("--text2")||"#8b949e",heading:g("--heading")||"#e6edf3",accent:g("--accent")||"#00ff88"};}
+
+function initCanvas(){canvas=document.getElementById("canvas");ctx=canvas.getContext("2d");W=canvas.width;H=canvas.height;}
+
+function redrawCanvas(){if(phase===1)drawMapP1();else if(phase===2)drawMapP2();else if(phase===3)drawMapP3();else if(phase===4)drawMapP4(afterStep);}
+
+/* ── Terrain base ── */
+function drawTerrain(){
+  var c=cs();
+  // Sky gradient
+  var grd=ctx.createLinearGradient(0,0,0,H*0.55);
+  grd.addColorStop(0,c.bg);grd.addColorStop(1,c.bg2);
+  ctx.fillStyle=grd;ctx.fillRect(0,0,W,H);
+  // Desert ground
+  ctx.fillStyle=c.bg3;ctx.fillRect(0,H*0.55,W,H*0.45);
+  // Sand dunes
+  for(var i=0;i<6;i++){ctx.beginPath();ctx.ellipse(50+i*100,H*0.55,55,12,0,0,Math.PI,true);ctx.fillStyle=c.border;ctx.fill();}
+  // Well
+  ctx.beginPath();ctx.arc(W*0.5,H*0.4,24,0,Math.PI*2);
+  ctx.fillStyle="#1a3a6a";ctx.fill();
+  ctx.strokeStyle="#3a6aaa";ctx.lineWidth=2;ctx.stroke();
+  ctx.fillStyle="#6ab4ff";ctx.beginPath();ctx.arc(W*0.5,H*0.4,16,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle=c.text2;ctx.font="bold 9px Outfit,sans-serif";ctx.textAlign="center";
+  ctx.fillText("Al-Muraysi",W*0.5,H*0.4+3);
+  ctx.fillText("Well",W*0.5,H*0.4+13);
+  // Palm trees
+  var palms=[[W*0.42,H*0.28],[W*0.58,H*0.28],[W*0.45,H*0.52],[W*0.55,H*0.52],[W*0.38,H*0.42],[W*0.62,H*0.42]];
+  palms.forEach(function(p){
+    ctx.fillStyle="#2a1a0a";ctx.fillRect(p[0]-1.5,p[1],3,14);
+    ctx.fillStyle="#1a5a1a";ctx.beginPath();ctx.arc(p[0],p[1]-2,7,0,Math.PI*2);ctx.fill();
+  });
+  // Enemy camp tents (right)
+  for(i=0;i<4;i++){
+    var tx=W*0.75+i%2*35,ty=H*0.2+Math.floor(i/2)*30;
+    ctx.fillStyle="#5a2020";ctx.beginPath();ctx.moveTo(tx-12,ty+10);ctx.lineTo(tx+12,ty+10);ctx.lineTo(tx,ty-6);ctx.fill();
+    ctx.strokeStyle="#8a3030";ctx.lineWidth=1;ctx.stroke();
+  }
+  ctx.fillStyle=c.text2;ctx.font="9px Outfit,sans-serif";ctx.textAlign="center";
+  ctx.fillText("Banu Mustaliq",W*0.8,H*0.12);ctx.fillText("Camp",W*0.8,H*0.17);
+  // Muslim start (left)
+  ctx.fillStyle=c.accent+"20";
+  ctx.fillRect(8,H*0.6,55,H*0.35);
+  ctx.fillStyle=c.accent;ctx.font="bold 8px Outfit,sans-serif";ctx.textAlign="center";
+  ctx.fillText("Muslim",35,H*0.82);ctx.fillText("Forces",35,H*0.88);
+  // Muslim soldiers (small dots)
+  for(i=0;i<6;i++){ctx.fillStyle=c.accent;ctx.beginPath();ctx.arc(18+i%3*15,H*0.65+Math.floor(i/3)*15,3,0,Math.PI*2);ctx.fill();}
+}
+
+/* ── Phase 1: Route selection ── */
+function drawMapP1(){
+  drawTerrain();var c=cs();
+  ctx.setLineDash([6,4]);ctx.lineWidth=2.5;
+  // Direct route
+  ctx.strokeStyle="#ff6b35";ctx.beginPath();ctx.moveTo(60,H*0.72);ctx.lineTo(W*0.5,H*0.4);ctx.lineTo(W*0.78,H*0.25);ctx.stroke();
+  ctx.fillStyle="#ff6b35";ctx.font="bold 10px Outfit,sans-serif";ctx.textAlign="center";ctx.fillText("[1] Direct",W*0.28,H*0.62);
+  // Flanking route
+  ctx.strokeStyle="#6c5ce7";ctx.beginPath();ctx.moveTo(60,H*0.72);ctx.quadraticCurveTo(W*0.35,H*0.05,W*0.78,H*0.25);ctx.stroke();
+  ctx.fillStyle="#6c5ce7";ctx.fillText("[2] Flanking",W*0.38,H*0.12);
+  // Night approach
+  ctx.strokeStyle="#00e5ff";ctx.beginPath();ctx.moveTo(60,H*0.72);ctx.quadraticCurveTo(W*0.12,H*0.25,W*0.48,H*0.15);ctx.lineTo(W*0.78,H*0.25);ctx.stroke();
+  ctx.fillStyle="#00e5ff";ctx.fillText("[3] Night",W*0.18,H*0.22);
+  ctx.setLineDash([]);
+}
+
+/* ── Phase 2: Deployment ── */
+function drawMapP2(){
+  drawTerrain();var c=cs();
+  // Show chosen route faintly
+  ctx.setLineDash([4,6]);ctx.lineWidth=1.5;ctx.strokeStyle=c.accent+"60";
+  if(route==="direct"){ctx.beginPath();ctx.moveTo(60,H*0.72);ctx.lineTo(W*0.5,H*0.4);ctx.lineTo(W*0.78,H*0.25);ctx.stroke();}
+  else if(route==="flank"){ctx.beginPath();ctx.moveTo(60,H*0.72);ctx.quadraticCurveTo(W*0.35,H*0.05,W*0.78,H*0.25);ctx.stroke();}
+  else{ctx.beginPath();ctx.moveTo(60,H*0.72);ctx.quadraticCurveTo(W*0.12,H*0.25,W*0.48,H*0.15);ctx.lineTo(W*0.78,H*0.25);ctx.stroke();}
+  ctx.setLineDash([]);
+  // Deployment zones
+  var zones=[
+    {x:W*0.28,y:H*0.2,label:"Archers Hill",type:"archer",icon:"🏹"},
+    {x:W*0.5,y:H*0.65,label:"Cavalry Plain",type:"cavalry",icon:"🐎"},
+    {x:W*0.18,y:H*0.42,label:"Infantry Flank",type:"infantry",icon:"⚔️"}
+  ];
+  zones.forEach(function(z){
+    var placed=placedUnits.indexOf(z.type)>=0;
+    ctx.fillStyle=placed?c.accent+"40":c.bg+"90";
+    ctx.strokeStyle=placed?c.accent:c.border;ctx.lineWidth=2;
+    var bw=80,bh=28;
+    ctx.beginPath();ctx.roundRect(z.x-bw/2,z.y-bh/2,bw,bh,6);ctx.fill();ctx.stroke();
+    ctx.fillStyle=placed?c.accent:c.text;ctx.font="bold 10px Outfit,sans-serif";ctx.textAlign="center";
+    ctx.fillText(z.label,z.x,z.y+4);
+    if(placed){ctx.font="18px sans-serif";ctx.fillText(z.icon,z.x,z.y-10);}
+  });
+}
+
+/* ── Phase 3: Battle ── */
+function drawMapP3(){
+  drawTerrain();var c=cs();
+  // Enemy fighters
+  enemyUnits.forEach(function(e){
+    if(e.defeated){
+      ctx.fillStyle="#ff444420";ctx.beginPath();ctx.arc(e.x,e.y,5,0,Math.PI*2);ctx.fill();
+    } else {
+      ctx.fillStyle="#ff444460";ctx.beginPath();ctx.arc(e.x,e.y,12,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle="#ff4444";ctx.beginPath();ctx.arc(e.x,e.y,5,0,Math.PI*2);ctx.fill();
+    }
+  });
+  // Muslim advance overlay
+  var advX=60+attackProgress*(W*0.72);
+  ctx.fillStyle=c.accent+"15";ctx.fillRect(60,0,advX-60,H);
+  // Advancing soldiers
+  for(var i=0;i<6;i++){
+    ctx.fillStyle=c.accent;ctx.beginPath();
+    ctx.arc(Math.min(advX,W*0.72),H*0.2+i*55,4,0,Math.PI*2);ctx.fill();
+  }
+  // Score overlay
+  var def=enemyUnits.filter(function(e){return e.defeated;}).length;
+  ctx.fillStyle=c.heading;ctx.font="bold 12px Outfit,sans-serif";ctx.textAlign="center";
+  ctx.fillText("Defeated: "+def+" / "+enemyUnits.length,W/2,H-10);
+  if(attackProgress>=1){
+    ctx.fillStyle=c.accent+"30";ctx.fillRect(0,0,W,H);
+    ctx.fillStyle=c.accent;ctx.font="bold 22px Outfit,sans-serif";
+    ctx.fillText("Victory at Al-Muraysi!",W/2,H/2);
+  }
+}
+
+/* ── Phase 4: Aftermath ── */
+function drawMapP4(step){
+  var c=cs();
+  // Peaceful sky
+  var grd=ctx.createLinearGradient(0,0,0,H*0.5);
+  grd.addColorStop(0,"#1a1a4a");grd.addColorStop(1,"#4a3a2a");
+  ctx.fillStyle=grd;ctx.fillRect(0,0,W,H);
+  ctx.fillStyle="#2a1f0a";ctx.fillRect(0,H*0.5,W,H*0.5);
+  // Stars
+  for(var i=0;i<20;i++){ctx.fillStyle="#ffffff"+["30","50","80"][i%3];ctx.beginPath();ctx.arc(Math.sin(i*7.3)*W*0.45+W*0.5,Math.cos(i*5.1)*H*0.2+H*0.15,1.2,0,Math.PI*2);ctx.fill();}
+  // Well
+  ctx.beginPath();ctx.arc(W*0.5,H*0.4,20,0,Math.PI*2);ctx.fillStyle="#1a3a6a";ctx.fill();
+  ctx.fillStyle="#5a9aee";ctx.beginPath();ctx.arc(W*0.5,H*0.4,12,0,Math.PI*2);ctx.fill();
+  // People gathered peacefully
+  var cols=[c.accent,"#6c5ce7","#ff6b35","#00e5ff","#ffd700","#44ff44","#ff69b4","#87ceeb"];
+  for(i=0;i<14;i++){
+    var angle=i*Math.PI*2/14;var px=W*0.5+Math.cos(angle)*85;var py=H*0.5+Math.sin(angle)*50;
+    ctx.fillStyle=cols[i%cols.length];ctx.beginPath();ctx.arc(px,py,4,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle=c.heading;ctx.beginPath();ctx.arc(px,py-7,3,0,Math.PI*2);ctx.fill();
+  }
+  ctx.textAlign="center";
+  if(step===0){
+    ctx.fillStyle=c.heading;ctx.font="bold 15px Outfit,sans-serif";
+    ctx.fillText("Juwayriyah bint al-Harith",W/2,25);
+    ctx.fillStyle=c.text;ctx.font="11px Outfit,sans-serif";
+    ctx.fillText("embraces Islam and marries the Prophet \uFDFA",W/2,42);
+    // Highlight figure
+    ctx.fillStyle="#ffd700";ctx.beginPath();ctx.arc(W*0.5,H*0.7,7,0,Math.PI*2);ctx.fill();
+    ctx.strokeStyle="#ffd700";ctx.lineWidth=1;ctx.beginPath();ctx.arc(W*0.5,H*0.7,14,0,Math.PI*2);ctx.stroke();
+  } else if(step===1){
+    ctx.fillStyle=c.heading;ctx.font="bold 15px Outfit,sans-serif";
+    ctx.fillText("100+ Families Freed",W/2,25);
+    ctx.fillStyle=c.text;ctx.font="11px Outfit,sans-serif";
+    ctx.fillText("\"They are now relatives of the Messenger of Allah \uFDFA\"",W/2,42);
+    // Breaking chains
+    for(i=0;i<8;i++){
+      var bx=70+i*60,by=H*0.78;
+      ctx.strokeStyle="#88888860";ctx.lineWidth=2;ctx.setLineDash([3,3]);
+      ctx.beginPath();ctx.moveTo(bx-8,by);ctx.lineTo(bx+8,by);ctx.stroke();ctx.setLineDash([]);
+      ctx.fillStyle=c.accent;ctx.beginPath();ctx.arc(bx,by-12,4,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle=c.heading;ctx.beginPath();ctx.arc(bx,by-19,3,0,Math.PI*2);ctx.fill();
+    }
+  } else {
+    ctx.fillStyle=c.accent;ctx.font="bold 16px Outfit,sans-serif";
+    ctx.fillText("Mercy Changes History",W/2,25);
+    ctx.fillStyle=c.text;ctx.font="11px Outfit,sans-serif";
+    ctx.fillText("One marriage led to the freedom of an entire tribe",W/2,H-15);
+    // Heart symbol
+    ctx.fillStyle=c.accent+"40";ctx.font="60px sans-serif";ctx.fillText("☪",W/2,H*0.45);
+  }
+}
+
+/* ── Phase 1 ── */
+function startPhase1(){
+  phase=1;locked=false;score=0;placedUnits=[];attackProgress=0;enemyUnits=[];afterStep=0;
+  canvas.onclick=null;
+  ui("scorePill","Phase 1/4");ui("tot","1");ui("sc","0");
+  document.getElementById("prog").style.width="0%";
+  document.getElementById("status").textContent="Phase 1: Choose Your Approach Route";
+  document.getElementById("status").className="status";
+  document.getElementById("narrative").innerHTML="<div class='phase-tag'>Phase 1 — Intel & Planning</div><strong>Scout report:</strong> Banu Mustaliq, led by al-Harith ibn Abi Dirar, are massing at Al-Muraysi well to march on Medina. The Prophet \uFDFA orders a swift pre-emptive raid. <strong>Choose your approach route:</strong>";
+  drawMapP1();
+  var el=document.getElementById("choices");el.innerHTML="";
+  [{t:"[1] Direct Charge",v:"direct",d:"Fast, but they may spot you early"},
+   {t:"[2] Flanking",v:"flank",d:"Circle north — surprise from the side"},
+   {t:"[3] Night Approach",v:"night",d:"Move under darkness — maximum surprise"}].forEach(function(opt){
+    var b=document.createElement("button");b.className="answer-btn";
+    b.innerHTML=opt.t+"<br><span style='font-size:9px;font-weight:400;color:var(--text2)'>"+opt.d+"</span>";
+    b.onclick=function(){chooseRoute(opt.v,b);};el.appendChild(b);
+  });
+  log("Phase 1: Choose approach route","");
+}
+
+function chooseRoute(r,btn){
+  if(locked)return;locked=true;route=r;
+  document.querySelectorAll(".answer-btn").forEach(function(b){b.style.pointerEvents="none";});
+  btn.classList.add("correct");snd("ok");
+  var pts={direct:10,flank:20,night:25}[r];
+  score+=Math.round(pts*DIFF[difficulty].bonus);
+  ui("sc",score);
+  log("Route: "+r+" (+"+pts+" pts)","success");
+  document.getElementById("prog").style.width="25%";
+  setTimeout(startPhase2,1000);
+}
+
+/* ── Phase 2 ── */
+function startPhase2(){
+  phase=2;locked=false;placedUnits=[];
+  ui("scorePill","Phase 2/4");ui("tot","2");
+  document.getElementById("status").textContent="Phase 2: Rapid Deployment";
+  document.getElementById("narrative").innerHTML="<div class='phase-tag'>Phase 2 — Deploy Before They Organize</div>Position your forces quickly! Place <strong>archers</strong> on the hill for cover, <strong>cavalry</strong> on the plain for charge, and <strong>infantry</strong> on the flank.";
+  drawMapP2();
+  var el=document.getElementById("choices");el.innerHTML="";
+  [{t:"🏹 Archers",v:"archer"},{t:"🐎 Cavalry",v:"cavalry"},{t:"⚔️ Infantry",v:"infantry"}].forEach(function(opt){
+    var b=document.createElement("button");b.className="answer-btn";b.textContent=opt.t;
+    b.onclick=function(){placeUnit(opt.v,b);};el.appendChild(b);
+  });
+  log("Phase 2: Deploy forces","");
+}
+
+function placeUnit(type,btn){
+  if(locked)return;
+  if(placedUnits.indexOf(type)>=0){snd("err");return;}
+  placedUnits.push(type);
+  btn.classList.add("correct");btn.style.pointerEvents="none";
+  snd("march");
+  score+=15;ui("sc",score);
+  log("Deployed "+type+" (+15 pts)","success");
+  drawMapP2();
+  if(placedUnits.length>=3){
+    locked=true;
+    document.getElementById("prog").style.width="50%";
+    log("All units in position!","success");
+    setTimeout(startPhase3,900);
+  }
+}
+
+/* ── Phase 3 ── */
+function startPhase3(){
+  phase=3;locked=false;
+  ui("scorePill","Phase 3/4");ui("tot","3");
+  document.getElementById("status").textContent="Phase 3: Surprise Attack!";
+  document.getElementById("narrative").innerHTML="<div class='phase-tag'>Phase 3 — The Raid at Al-Muraysi</div><strong>Click the red enemy dots</strong> on the map to defeat them! The Muslims caught Banu Mustaliq completely off guard. Be swift!";
+  var el=document.getElementById("choices");el.innerHTML="<span style='font-size:11px;color:var(--text2)'>Tap/click red dots to advance your forces!</span>";
+  var d=DIFF[difficulty];enemyUnits=[];
+  for(var i=0;i<d.enemyCount;i++){
+    enemyUnits.push({x:W*0.4+Math.random()*W*0.5,y:H*0.1+Math.random()*H*0.7,defeated:false});
+  }
+  attackProgress=0;drawMapP3();
+  canvas.onclick=handleBattleClick;
+  log("Phase 3: "+d.enemyCount+" enemies at the well","");
+}
+
+function handleBattleClick(e){
+  if(phase!==3||locked)return;
+  var rect=canvas.getBoundingClientRect();
+  var sx=W/rect.width,sy=H/rect.height;
+  var mx=(e.clientX-rect.left)*sx,my=(e.clientY-rect.top)*sy;
+  var hit=false;
+  enemyUnits.forEach(function(en){
+    if(!en.defeated){
+      var dist=Math.sqrt((mx-en.x)*(mx-en.x)+(my-en.y)*(my-en.y));
+      if(dist<18){en.defeated=true;hit=true;score+=10;snd("ok");}
+    }
+  });
+  if(!hit)snd("err");
+  var def=enemyUnits.filter(function(en){return en.defeated;}).length;
+  attackProgress=def/enemyUnits.length;
+  ui("sc",score);drawMapP3();
+  if(def>=enemyUnits.length){
+    locked=true;canvas.onclick=null;
+    document.getElementById("prog").style.width="75%";
+    log("Victory! Minimal casualties on both sides.","success");
+    snd("win");
+    setTimeout(startPhase4,1200);
+  }
+}
+
+/* ── Phase 4 ── */
+function startPhase4(){
+  phase=4;locked=false;afterStep=0;
+  canvas.onclick=null;
+  ui("scorePill","Phase 4/4");ui("tot","4");
+  document.getElementById("status").textContent="Phase 4: Mercy in Victory";
+  document.getElementById("status").className="status win";
+  var stories=[
+    "<div class='phase-tag'>Phase 4 — The Aftermath</div>The battle ended swiftly with <strong>minimal casualties</strong> on both sides. Among those present was <strong>Juwayriyah bint al-Harith</strong>, the noble daughter of the chief of Banu Mustaliq.",
+    "<div class='phase-tag'>Phase 4 — Marriage as Diplomacy</div>Juwayriyah embraced Islam and the Prophet \uFDFA married her. The Companions then said: <em>\"The relatives of the Messenger of Allah \uFDFA should not be held captive.\"</em> They freed <strong>every single captive</strong>.",
+    "<div class='phase-tag'>Phase 4 — One Marriage, 100+ Families Free</div><strong>Lessons:</strong><br>• Swift action prevents greater conflict<br>• Mercy in victory wins hearts forever<br>• One righteous marriage freed an entire tribe<br>• Compassion is mightier than the sword<br><br><em>Aisha (RA) said about Juwayriyah: \"I know of no woman who was a greater blessing to her people than her.\"</em>"
+  ];
+  drawMapP4(0);
+  document.getElementById("narrative").innerHTML=stories[0];
+  showAftermathButtons(stories);
+}
+
+function showAftermathButtons(stories){
+  var el=document.getElementById("choices");el.innerHTML="";
+  if(afterStep<2){
+    var b=document.createElement("button");b.className="answer-btn";b.textContent="Continue →";
+    b.onclick=function(){afterStep++;drawMapP4(afterStep);document.getElementById("narrative").innerHTML=stories[afterStep];snd("ok");showAftermathButtons(stories);};
+    el.appendChild(b);
+  } else {
+    score+=30;ui("sc",score);
+    document.getElementById("prog").style.width="100%";
+    stopTimer();checkHS();
+    log("Game complete! Final score: "+score,"success");
+    snd("win");
+    // Play again
+    var pb=document.createElement("button");pb.className="answer-btn";pb.style.cssText="background:var(--accent);color:var(--bg);border-color:var(--accent)";
+    pb.textContent="Alhamdulillah — Play Again";pb.onclick=newGame;el.appendChild(pb);
+    // Quiz
+    var q=document.createElement("div");q.style.cssText="margin-top:12px;font-size:12px;color:var(--heading);text-align:center;font-weight:700";
+    q.textContent="Quick Quiz: How many families were freed through the Prophet's \uFDFA marriage to Juwayriyah?";
+    el.appendChild(q);
+    var qr=document.createElement("div");qr.className="answer-row";qr.style.marginTop="8px";
+    [{t:"10",c:false},{t:"50",c:false},{t:"100+",c:true},{t:"200+",c:false}].forEach(function(o){
+      var qb=document.createElement("button");qb.className="answer-btn";qb.style.fontSize="13px";qb.textContent=o.t;
+      qb.onclick=function(){
+        if(o.c){qb.classList.add("correct");snd("ok");score+=20;ui("sc",score);checkHS();log("Quiz correct! +20","success");}
+        else{qb.classList.add("wrong");snd("err");log("Answer: 100+ families","error");qr.querySelectorAll(".answer-btn").forEach(function(bb){if(bb.textContent==="100+")bb.classList.add("correct");});}
+        qr.querySelectorAll(".answer-btn").forEach(function(bb){bb.style.pointerEvents="none";});
+      };qr.appendChild(qb);
+    });
+    el.appendChild(qr);
+  }
+}
+
+/* ── New Game ── */
+function newGame(){
+  startTimer();
+  difficulty=document.getElementById("diffSel")?document.getElementById("diffSel").value:"medium";
+  document.getElementById("logBox").innerHTML="";
+  startPhase1();
+}
+
+/* ── High Score ── */
+var HS_KEY="wdiy-hs-mustaliq";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0;}catch(e){return 0;}}
+function saveHS(s){try{var best=loadHS();if(s>best){localStorage.setItem(HS_KEY,s);return true;}}catch(e){}return false;}
+function showHS(){var best=loadHS();if(best>0){var pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
+function checkHS(){if(score>0&&saveHS(score)){log("🏆 NEW HIGH SCORE: "+score+"!","success");}}
+
+/* ── Init ── */
+document.addEventListener("DOMContentLoaded",function(){
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
+  document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
+  initCanvas();showHS();
+  document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+/* ── Keyboard shortcuts ── */
+document.addEventListener("keydown",function(e){
+  if(e.key>="1"&&e.key<="4"){var btns=document.querySelectorAll(".answer-btn");var i=parseInt(e.key)-1;if(btns[i])btns[i].click();}
+  if(e.key==="Enter"){var go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();var start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+});
+
+/* ── Persist sound preference ── */
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+/* ── Persist theme and language ── */
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

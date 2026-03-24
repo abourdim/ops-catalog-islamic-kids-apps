@@ -1,0 +1,1 @@
+Interactive quiz game teaching kids the positions and sequence of salah (Islamic prayer), with emoji visuals, Arabic recitations, three difficulty levels, and full offline support.

@@ -1,0 +1,594 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Prophet's Letters — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:420px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:700px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.progress{width:100%;max-width:400px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:8px}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:">";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+
+/* Letter Writer specific */
+.letter-nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:12px}
+.letter-nav-btn{padding:6px 12px;border-radius:8px;border:2px solid var(--border);background:var(--bg3);color:var(--text);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;transition:all .15s}
+.letter-nav-btn:hover{border-color:var(--accent);color:var(--accent)}
+.letter-nav-btn.active{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.letter-nav-btn.done{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.letter-card{width:100%;text-align:left}
+.letter-card h2{font-family:'Outfit',sans-serif;font-size:16px;color:var(--heading);margin-bottom:4px}
+.letter-card .ruler-info{font-size:11px;color:var(--text2);margin-bottom:12px;line-height:1.5}
+.letter-structure{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:12px;width:100%}
+.letter-structure h3{font-family:'Outfit',sans-serif;font-size:13px;color:var(--accent);margin-bottom:8px}
+.letter-line{padding:6px 0;font-size:12px;color:var(--text);line-height:1.7;border-bottom:1px solid var(--border)}
+.letter-line:last-child{border-bottom:none}
+.letter-line .blank{display:inline-block;min-width:100px;border-bottom:2px dashed var(--accent);color:var(--accent);font-weight:700;cursor:pointer;padding:2px 8px;border-radius:4px;background:var(--abg);transition:all .15s}
+.letter-line .blank:hover{background:var(--accent);color:var(--bg)}
+.letter-line .blank.filled{border-bottom-style:solid;background:var(--accent);color:var(--bg)}
+.letter-line .blank.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.word-bank{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:12px 0}
+.word-chip{padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg2);color:var(--heading);font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;user-select:none}
+.word-chip:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.word-chip.used{opacity:.3;pointer-events:none;text-decoration:line-through}
+.word-chip.selected{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.btn-row{display:flex;gap:8px;justify-content:center;margin:10px 0;flex-wrap:wrap}
+.btn-action{padding:8px 18px;border-radius:8px;border:none;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer;transition:all .15s}
+.btn-primary{background:var(--accent);color:var(--bg)}
+.btn-secondary{background:var(--bg3);color:var(--heading);border:1px solid var(--border)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.response-box{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px;margin-top:10px;width:100%;animation:fadeUp .3s}
+.response-box h3{font-family:'Outfit',sans-serif;font-size:13px;color:var(--heading);margin-bottom:6px}
+.response-box p{font-size:11px;color:var(--text2);line-height:1.7}
+.response-icon{font-size:24px;margin-bottom:4px}
+.lesson-box{background:var(--abg);border:1px solid var(--abr);border-radius:10px;padding:14px;margin-top:10px;width:100%}
+.lesson-box h3{font-family:'Outfit',sans-serif;font-size:13px;color:var(--accent);margin-bottom:6px}
+.lesson-box p{font-size:11px;color:var(--text);line-height:1.7}
+.compare-box{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px;margin-top:10px;width:100%}
+.compare-box h3{font-family:'Outfit',sans-serif;font-size:13px;color:var(--heading);margin-bottom:8px}
+.compare-line{font-size:11px;color:var(--text);padding:4px 0;line-height:1.6}
+.compare-line strong{color:var(--accent)}
+.mode-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;text-align:center}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Prophet's Letters</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px">Rasail an-Nabi</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Compose diplomatic letters as the Prophet ﷺ did — learn the art of respectful invitation to truth.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Prophet's Letters</h1><span class="pill" id="scorePill">0 / 6</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<div class="ctrl">
+    <select id="modeSel"><option value="fill">Fill Blanks</option><option value="order">Arrange Order</option></select>
+    <button id="startBtn">▶ New Round</button><button class="btn-help" id="helpBtn" onclick="openHelp()">?</button>
+    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+    <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div>
+</div>
+<div class="status" id="status">Select a letter to begin</div>
+<div class="letter-nav" id="letterNav"></div>
+<div class="game-area" id="gameArea" style="align-items:stretch">
+    <div id="letterContent"></div>
+</div>
+<div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">Completed</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">6</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Prophet's Letters v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Prophet's Letters?</summary><p>An interactive tool to learn about the diplomatic letters the Prophet Muhammad ﷺ sent to world leaders inviting them to Islam. Fill in blanks or arrange letter parts in the correct order.</p></details>
+        <details class="help-item"><summary>How many letters are included?</summary><p>6 historical letters: to Heraclius (Rome), Khosrow II (Persia), Najashi (Abyssinia), Muqawqis (Egypt), Mundhir ibn Sawa (Bahrain), and Jaifer & Abd (Oman).</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Choose a mode: Fill Blanks or Arrange Order</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Select a letter from the navigation bar (each ruler)</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>In Fill Blanks mode: click a blank, then pick the correct word from the word bank</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>In Arrange Order mode: drag or click letter parts to put them in the correct sequence</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Click "Check" to verify your answer and see the ruler's response</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Complete all 6 letters to finish the round</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>Purpose</h3><p>Learn the art of prophetic diplomacy. The Prophet ﷺ sent letters to rulers in the 6th/7th year after Hijrah, each following a respectful structure: Bismillah, greeting, invitation to Islam, and a reminder of consequence.</p></div>
+        <div class="wiki-entry"><h3>Historical Context</h3><p>After the Treaty of Hudaybiyyah, the Prophet ﷺ sent ambassadors with sealed letters to major world leaders. Each letter was stamped with his seal reading "Muhammad Rasul Allah".</p></div>
+        <div class="wiki-entry"><h3>Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>Languages</h3><p>Trilingual: English, Francais, al-Arabiyyah. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>Sound</h3><p>Web Audio API sounds. Toggle with the sound button.</p></div>
+        <div class="wiki-entry"><h3>Privacy</h3><p>Local-first. No tracking, no analytics, no external calls.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// === LETTER DATA ===
+const LETTERS=[
+{id:"heraclius",ruler:"Heraclius",empire:"Byzantine Empire (Rome)",city:"Constantinople",
+ intro:"From Muhammad, the Messenger of Allah, to Heraclius, the leader of the Romans.",
+ parts:[
+  {type:"bismillah",text:"In the name of Allah, the Most Gracious, the Most Merciful."},
+  {type:"greeting",text:"Peace be upon those who follow the guidance."},
+  {type:"intro",text:"I invite you with the invitation of Islam."},
+  {type:"invitation",text:"Accept Islam and you will be safe. Allah will give you a double reward."},
+  {type:"consequence",text:"If you turn away, upon you will be the sin of your subjects."},
+  {type:"verse",text:"O People of the Scripture, come to a word common between us and you — that we worship none but Allah."}
+ ],
+ blanks:["Islam","safe","double reward","sin","People of the Scripture"],
+ response:{icon:"🤔",type:"interested",title:"Heraclius was Interested",text:"Heraclius questioned Abu Sufyan about the Prophet ﷺ and was deeply impressed. He recognized the signs of prophethood but feared losing his kingdom. He said: 'If what you say is true, he will soon rule the land beneath my feet.'"},
+ lesson:"Even powerful rulers can recognize truth. Heraclius used reason and inquiry, showing that honest investigation leads to understanding."},
+
+{id:"khosrow",ruler:"Khosrow II (Kisra)",empire:"Sassanid Empire (Persia)",city:"Ctesiphon",
+ intro:"From Muhammad, the Messenger of Allah, to Khosrow, the leader of Persia.",
+ parts:[
+  {type:"bismillah",text:"In the name of Allah, the Most Gracious, the Most Merciful."},
+  {type:"greeting",text:"Peace be upon those who follow the guidance, believe in Allah and His Messenger."},
+  {type:"intro",text:"I invite you with the invitation of Allah."},
+  {type:"invitation",text:"I am the Messenger of Allah to all people, to warn those who are alive."},
+  {type:"consequence",text:"Accept Islam and you will be safe. If you refuse, upon you will be the sin of the Magians."}
+ ],
+ blanks:["guidance","Messenger of Allah","all people","safe","Magians"],
+ response:{icon:"😤",type:"rejected",title:"Khosrow Tore the Letter",text:"Khosrow was furious that the Prophet ﷺ wrote his name before the king's name. He tore the letter to pieces. When the Prophet ﷺ heard this, he said: 'Allah will tear his kingdom to pieces.' Shortly after, Khosrow was killed by his own son."},
+ lesson:"Arrogance blinds a person from truth. Despite being a powerful king, Khosrow's pride led to his downfall. The Prophet ﷺ remained respectful even when delivering firm messages."},
+
+{id:"najashi",ruler:"Najashi (Negus Ashama)",empire:"Kingdom of Abyssinia (Aksum)",city:"Aksum",
+ intro:"From Muhammad, the Messenger of Allah, to the Najashi, king of Abyssinia.",
+ parts:[
+  {type:"bismillah",text:"In the name of Allah, the Most Gracious, the Most Merciful."},
+  {type:"greeting",text:"Peace be upon you. I praise Allah, besides whom there is no god, the Sovereign, the Holy."},
+  {type:"intro",text:"I bear witness that Isa (Jesus) son of Maryam is a spirit from Allah and His word."},
+  {type:"invitation",text:"I invite you to Allah alone, with no partner. Follow me and believe in what came to me."},
+  {type:"consequence",text:"I am the Messenger of Allah. I invite you and your soldiers to Allah, the Mighty and Majestic."}
+ ],
+ blanks:["Sovereign","Isa (Jesus)","spirit","Allah alone","Messenger of Allah"],
+ response:{icon:"✅",type:"accepted",title:"Najashi Accepted Islam",text:"The Najashi accepted Islam. He picked up the letter, placed it on his eyes out of respect, and stepped down from his throne to sit on the ground in humility. He sent a reply confirming his faith and even performed the funeral prayer for the Prophet ﷺ in absentia."},
+ lesson:"Humility opens the heart to truth. The Najashi was already a just king who had sheltered the Muslim refugees earlier. His humility and sincerity led him to recognize the truth."},
+
+{id:"muqawqis",ruler:"Muqawqis (Cyrus of Alexandria)",empire:"Byzantine Egypt",city:"Alexandria",
+ intro:"From Muhammad, the Messenger of Allah, to Muqawqis, the leader of the Copts.",
+ parts:[
+  {type:"bismillah",text:"In the name of Allah, the Most Gracious, the Most Merciful."},
+  {type:"greeting",text:"Peace be upon those who follow the guidance."},
+  {type:"intro",text:"I invite you with the invitation of Islam. Accept Islam and you will be safe."},
+  {type:"invitation",text:"Allah will give you a double reward. If you turn away, upon you will be the sin of the Copts."},
+  {type:"verse",text:"O People of the Scripture, come to a word common between us — that we worship none but Allah and associate nothing with Him."}
+ ],
+ blanks:["guidance","Islam","double reward","Copts","associate nothing"],
+ response:{icon:"🎁",type:"polite",title:"Muqawqis Responded Politely",text:"Muqawqis did not accept Islam but treated the letter and the messenger with great respect. He sent gifts to the Prophet ﷺ including Mariyah and Sirin, as well as a mule and other presents. He said: 'I know a prophet is yet to come, but I thought he would appear in Syria.'"},
+ lesson:"Respect goes both ways. Though he did not accept, Muqawqis showed courtesy and dignity. The Prophet ﷺ accepted the gifts graciously, demonstrating that diplomacy maintains bridges even in disagreement."},
+
+{id:"bahrain",ruler:"Mundhir ibn Sawa",empire:"Kingdom of Bahrain",city:"Bahrain",
+ intro:"From Muhammad, the Messenger of Allah, to Mundhir ibn Sawa.",
+ parts:[
+  {type:"bismillah",text:"In the name of Allah, the Most Gracious, the Most Merciful."},
+  {type:"greeting",text:"Peace be upon you. I praise Allah besides whom there is no god."},
+  {type:"intro",text:"I remind you of Allah, the Mighty and Majestic."},
+  {type:"invitation",text:"Whoever accepts good counsel does so for his own benefit. Whoever follows my messengers and acts according to their guidance follows my own command."},
+  {type:"consequence",text:"My messengers have praised you. I shall intercede for you with Allah. Accept Islam. I forgive the people of Bahrain their past."}
+ ],
+ blanks:["Allah","good counsel","messengers","intercede","people of Bahrain"],
+ response:{icon:"✅",type:"accepted",title:"Mundhir ibn Sawa Accepted",text:"Mundhir ibn Sawa accepted Islam and many of his people followed. He wrote back to the Prophet ﷺ reporting that some accepted while others remained on their old religions. The Prophet ﷺ replied instructing him to treat the non-Muslims justly, and those who chose Islam sincerely would be accepted."},
+ lesson:"Good leadership means caring for everyone. The exchange shows how Islam promoted justice and freedom of religion. Mundhir was told to be fair to all, Muslim and non-Muslim alike."},
+
+{id:"oman",ruler:"Jaifer & Abd (sons of al-Julanda)",empire:"Kingdom of Oman",city:"Oman",
+ intro:"From Muhammad, the Messenger of Allah, to Jaifer and Abd, sons of al-Julanda.",
+ parts:[
+  {type:"bismillah",text:"In the name of Allah, the Most Gracious, the Most Merciful."},
+  {type:"greeting",text:"Peace be upon those who follow the guidance."},
+  {type:"intro",text:"I call you both with the call of Islam. Accept Islam and you will be safe."},
+  {type:"invitation",text:"I am the Messenger of Allah to all of mankind, to warn those who are alive and to make the word justified against the disbelievers."},
+  {type:"consequence",text:"If you both accept Islam, I will let you rule your land. If you refuse, your kingdom will pass away from you."}
+ ],
+ blanks:["Islam","safe","Messenger of Allah","all of mankind","rule your land"],
+ response:{icon:"✅",type:"accepted",title:"They Accepted Islam",text:"Abd accepted Islam first and invited his brother. Jaifer was initially hesitant but after reflection, both brothers accepted Islam. They welcomed the Prophet's messenger Amr ibn al-As and the people of Oman largely accepted Islam peacefully."},
+ lesson:"Patience and brotherhood matter. Abd's gentle persuasion of his brother shows how sincerity and patience can bring about acceptance. The peaceful spread of Islam in Oman is a model of dawah through wisdom."}
+];
+
+let currentLetter=0,completed=new Set(),correct=0,selectedBlank=null,selectedChip=null,mode="fill";
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+function buildNav(){
+  const nav=document.getElementById("letterNav");
+  nav.innerHTML="";
+  LETTERS.forEach((lt,i)=>{
+    const btn=document.createElement("button");
+    btn.className="letter-nav-btn"+(i===currentLetter?" active":"")+(completed.has(i)?" done":"");
+    btn.textContent=lt.ruler.split("(")[0].split(",")[0].trim();
+    btn.onclick=()=>{currentLetter=i;buildNav();renderLetter();};
+    nav.appendChild(btn);
+  });
+}
+
+function renderLetter(){
+  const lt=LETTERS[currentLetter];
+  const area=document.getElementById("letterContent");
+  mode=document.getElementById("modeSel").value;
+  document.getElementById("status").textContent="Letter to "+lt.ruler;
+  document.getElementById("status").className="status";
+
+  if(completed.has(currentLetter)){
+    renderCompleted(lt,area);return;
+  }
+
+  if(mode==="fill") renderFillMode(lt,area);
+  else renderOrderMode(lt,area);
+}
+
+function renderFillMode(lt,area){
+  const blanksMap={};
+  const allBlanks=lt.blanks.slice();
+  const distractors=getDistractors(allBlanks);
+  const wordBank=[...allBlanks,...distractors].sort(()=>Math.random()-.5);
+
+  let html='<div class="letter-card">';
+  html+='<h2>Letter to '+lt.ruler+'</h2>';
+  html+='<div class="ruler-info">'+lt.empire+' — '+lt.city+'</div>';
+  html+='<div class="mode-label">Fill in the Blanks</div>';
+  html+='<div class="letter-structure"><h3>Letter Structure</h3>';
+
+  lt.parts.forEach((p,pi)=>{
+    let line=p.text;
+    let blankIdx=0;
+    allBlanks.forEach((b,bi)=>{
+      if(line.includes(b)){
+        const id="blank-"+pi+"-"+bi;
+        blanksMap[id]=b;
+        line=line.replace(b,'<span class="blank" data-id="'+id+'" onclick="selectBlank(this)">???</span>');
+      }
+    });
+    html+='<div class="letter-line"><strong style="color:var(--accent);font-size:10px;text-transform:uppercase">'+p.type+':</strong> '+line+'</div>';
+  });
+  html+='</div>';
+
+  html+='<div class="word-bank" id="wordBank">';
+  wordBank.forEach(w=>{
+    html+='<span class="word-chip" onclick="selectChip(this,\''+w.replace(/'/g,"\\'")+'\')">'+w+'</span>';
+  });
+  html+='</div>';
+  html+='<div class="btn-row"><button class="btn-action btn-primary" onclick="checkFill()">Check Answer</button><button class="btn-action btn-secondary" onclick="showActual()">Show Actual Letter</button></div>';
+  html+='</div>';
+  area.innerHTML=html;
+  area.dataset.blanks=JSON.stringify(blanksMap);
+  selectedBlank=null;selectedChip=null;
+}
+
+function getDistractors(blanks){
+  const pool=["mercy","punishment","worship","idols","peace","war","guidance","misguidance","faith","disbelief","prophet","king","truth","falsehood","heaven","earth"];
+  const d=[];
+  const existing=new Set(blanks.map(b=>b.toLowerCase()));
+  const shuffled=pool.sort(()=>Math.random()-.5);
+  for(let w of shuffled){if(!existing.has(w.toLowerCase())){d.push(w);if(d.length>=3)break;}}
+  return d;
+}
+
+function selectBlank(el){
+  document.querySelectorAll(".blank").forEach(b=>b.style.outline="");
+  el.style.outline="2px solid var(--accent)";
+  selectedBlank=el;
+  if(selectedChip) tryFill();
+}
+
+function selectChip(el,word){
+  if(el.classList.contains("used"))return;
+  document.querySelectorAll(".word-chip").forEach(c=>c.classList.remove("selected"));
+  el.classList.add("selected");
+  selectedChip={el,word};
+  if(selectedBlank) tryFill();
+}
+
+function tryFill(){
+  if(!selectedBlank||!selectedChip)return;
+  selectedBlank.textContent=selectedChip.word;
+  selectedBlank.classList.add("filled");
+  selectedBlank.dataset.answer=selectedChip.word;
+  selectedChip.el.classList.add("used");
+  selectedBlank.style.outline="";
+  selectedBlank=null;selectedChip=null;
+  snd("click");
+}
+
+function checkFill(){
+  const blanksMap=JSON.parse(document.getElementById("letterContent").dataset.blanks||"{}");
+  let allCorrect=true,totalBlanks=0,correctBlanks=0;
+  document.querySelectorAll(".blank").forEach(b=>{
+    const id=b.dataset.id;
+    const expected=blanksMap[id];
+    const given=b.dataset.answer;
+    totalBlanks++;
+    if(given===expected){correctBlanks++;b.classList.remove("wrong");b.classList.add("filled");}
+    else{allCorrect=false;b.classList.add("wrong");b.classList.remove("filled");}
+  });
+
+  if(totalBlanks===0)return;
+
+  if(allCorrect){
+    snd("ok");
+    log("Letter to "+LETTERS[currentLetter].ruler+": All correct!","success");
+    completeLetter();
+  }else{
+    snd("err");
+    log("Letter to "+LETTERS[currentLetter].ruler+": "+correctBlanks+"/"+totalBlanks+" correct","error");
+    document.getElementById("status").textContent=correctBlanks+"/"+totalBlanks+" correct — try again!";
+    document.getElementById("status").className="status lose";
+  }
+}
+
+function renderOrderMode(lt,area){
+  const shuffled=lt.parts.slice().sort(()=>Math.random()-.5);
+  let html='<div class="letter-card">';
+  html+='<h2>Letter to '+lt.ruler+'</h2>';
+  html+='<div class="ruler-info">'+lt.empire+' — '+lt.city+'</div>';
+  html+='<div class="mode-label">Arrange in Correct Order</div>';
+  html+='<div id="orderZone" style="width:100%">';
+  shuffled.forEach((p,i)=>{
+    html+='<div class="letter-line" draggable="true" data-type="'+p.type+'" data-idx="'+i+'" style="cursor:grab;border:1px solid var(--border);border-radius:8px;padding:10px;margin:6px 0;background:var(--bg3)">';
+    html+='<strong style="color:var(--text3);font-size:10px;text-transform:uppercase">???:</strong> '+p.text+'</div>';
+  });
+  html+='</div>';
+  html+='<div class="btn-row"><button class="btn-action btn-primary" onclick="checkOrder()">Check Order</button><button class="btn-action btn-secondary" onclick="showActual()">Show Actual Letter</button></div>';
+  html+='</div>';
+  area.innerHTML=html;
+  setupDragDrop();
+}
+
+function setupDragDrop(){
+  const zone=document.getElementById("orderZone");
+  if(!zone)return;
+  let dragEl=null;
+  zone.querySelectorAll("[draggable]").forEach(el=>{
+    el.addEventListener("dragstart",e=>{dragEl=el;el.style.opacity=".4";});
+    el.addEventListener("dragend",e=>{el.style.opacity="1";dragEl=null;});
+    el.addEventListener("dragover",e=>{e.preventDefault();e.dataTransfer.dropEffect="move";});
+    el.addEventListener("drop",e=>{
+      e.preventDefault();
+      if(dragEl&&dragEl!==el){
+        const parent=el.parentNode;
+        const allItems=[...parent.children];
+        const dragIdx=allItems.indexOf(dragEl);
+        const dropIdx=allItems.indexOf(el);
+        if(dragIdx<dropIdx)parent.insertBefore(dragEl,el.nextSibling);
+        else parent.insertBefore(dragEl,el);
+        snd("click");
+      }
+    });
+    // Tap to swap on mobile
+    el.addEventListener("click",()=>{
+      if(!el.classList.contains("swap-selected")){
+        zone.querySelectorAll("[draggable]").forEach(x=>x.classList.remove("swap-selected"));
+        el.classList.add("swap-selected");
+        el.style.borderColor="var(--accent)";
+      }else{
+        el.classList.remove("swap-selected");
+        el.style.borderColor="var(--border)";
+      }
+      const sel=zone.querySelectorAll(".swap-selected");
+      if(sel.length===2){
+        // Nope, just handle click-to-swap differently
+      }
+    });
+  });
+  // Click-to-move: first click selects, second click swaps
+  let firstSel=null;
+  zone.addEventListener("click",e=>{
+    const item=e.target.closest("[draggable]");
+    if(!item)return;
+    if(!firstSel){
+      firstSel=item;
+      item.style.borderColor="var(--accent)";
+    }else if(firstSel===item){
+      firstSel.style.borderColor="var(--border)";
+      firstSel=null;
+    }else{
+      const parent=item.parentNode;
+      const placeholder=document.createElement("div");
+      parent.insertBefore(placeholder,firstSel);
+      parent.insertBefore(firstSel,item.nextSibling);
+      parent.insertBefore(item,placeholder);
+      parent.removeChild(placeholder);
+      firstSel.style.borderColor="var(--border)";
+      item.style.borderColor="var(--border)";
+      firstSel=null;
+      snd("click");
+    }
+  });
+}
+
+function checkOrder(){
+  const zone=document.getElementById("orderZone");
+  if(!zone)return;
+  const items=[...zone.querySelectorAll("[draggable]")];
+  const correctOrder=LETTERS[currentLetter].parts.map(p=>p.type);
+  const userOrder=items.map(el=>el.dataset.type);
+  let allCorrect=true;
+  items.forEach((el,i)=>{
+    if(userOrder[i]===correctOrder[i]){
+      el.querySelector("strong").textContent=correctOrder[i]+":";
+      el.querySelector("strong").style.color="var(--accent)";
+      el.style.borderColor="var(--accent)";
+    }else{
+      allCorrect=false;
+      el.style.borderColor="#ff4444";
+      el.querySelector("strong").style.color="#ff4444";
+    }
+  });
+  if(allCorrect){
+    snd("ok");log("Letter to "+LETTERS[currentLetter].ruler+": Correct order!","success");
+    completeLetter();
+  }else{
+    snd("err");log("Letter to "+LETTERS[currentLetter].ruler+": Wrong order, try again","error");
+    document.getElementById("status").textContent="Not quite right — try again!";
+    document.getElementById("status").className="status lose";
+  }
+}
+
+function completeLetter(){
+  completed.add(currentLetter);
+  correct=completed.size;
+  document.getElementById("sc").textContent=correct;
+  document.getElementById("scorePill").textContent=correct+" / 6";
+  document.getElementById("prog").style.width=(correct/6*100)+"%";
+  renderCompleted(LETTERS[currentLetter],document.getElementById("letterContent"));
+  buildNav();
+  if(correct>=6){
+    stopTimer();checkHS();snd("win");
+    document.getElementById("status").textContent="All letters completed! Excellent diplomat!";
+    document.getElementById("status").className="status win";
+    log("All 6 letters completed!","success");
+  }
+}
+
+function renderCompleted(lt,area){
+  let html='<div class="letter-card">';
+  html+='<h2>Letter to '+lt.ruler+' ✓</h2>';
+  html+='<div class="ruler-info">'+lt.empire+' — '+lt.city+'</div>';
+  html+='<div class="letter-structure"><h3>The Complete Letter</h3>';
+  lt.parts.forEach(p=>{
+    html+='<div class="letter-line"><strong style="color:var(--accent);font-size:10px;text-transform:uppercase">'+p.type+':</strong> '+p.text+'</div>';
+  });
+  html+='</div>';
+  html+='<div class="response-box"><div class="response-icon">'+lt.response.icon+'</div><h3>'+lt.response.title+'</h3><p>'+lt.response.text+'</p></div>';
+  html+='<div class="lesson-box"><h3>Lesson</h3><p>'+lt.lesson+'</p></div>';
+  html+='</div>';
+  area.innerHTML=html;
+  document.getElementById("status").textContent="Letter to "+lt.ruler+" — Completed!";
+  document.getElementById("status").className="status win";
+}
+
+function showActual(){
+  const lt=LETTERS[currentLetter];
+  const area=document.getElementById("letterContent");
+  let existing=area.querySelector(".compare-box");
+  if(existing){existing.remove();return;}
+  let html='<div class="compare-box"><h3>Actual Letter Structure</h3>';
+  lt.parts.forEach(p=>{
+    html+='<div class="compare-line"><strong>'+p.type+':</strong> '+p.text+'</div>';
+  });
+  html+='</div>';
+  area.insertAdjacentHTML("beforeend",html);
+}
+
+function newGame(){
+  startTimer();completed.clear();correct=0;currentLetter=0;
+  document.getElementById("sc").textContent="0";
+  document.getElementById("scorePill").textContent="0 / 6";
+  document.getElementById("prog").style.width="0%";
+  buildNav();renderLetter();
+  log("New round started","");
+}
+
+// High Score
+const HS_KEY="wdiy-hs-letters";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
+function checkHS(){
+  if(completed.size>=6){
+    const pct=Math.round((timerSeconds<999?Math.max(100-timerSeconds,10):10));
+    if(saveHS(pct)){log("NEW HIGH SCORE: "+pct+" pts!","success");}
+  }
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("modeSel").addEventListener("change",()=>{if(!completed.has(currentLetter))renderLetter();});
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+document.addEventListener("keydown",function(e){
+  if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();}
+  if(e.key==="ArrowLeft"){if(currentLetter>0){currentLetter--;buildNav();renderLetter();}}
+  if(e.key==="ArrowRight"){if(currentLetter<LETTERS.length-1){currentLetter++;buildNav();renderLetter();}}
+});
+
+// Persist preferences
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

@@ -1,0 +1,762 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Conquest of Mecca — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:800px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+canvas{border-radius:8px;cursor:pointer;max-width:100%;touch-action:none}
+.slider-row{display:flex;align-items:center;gap:8px;width:100%;max-width:600px;padding:4px 8px;background:var(--bg3);border-radius:8px;border:1px solid var(--border)}
+.slider-row label{font-size:11px;color:var(--heading);font-family:'Outfit',sans-serif;font-weight:600;min-width:110px;white-space:nowrap}
+.slider-row input[type=range]{flex:1;accent-color:var(--accent)}
+.slider-row .troop-count{font-size:13px;font-weight:700;color:var(--accent);min-width:50px;text-align:right;font-family:'IBM Plex Mono',monospace}
+.phase-btns{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.phase-btn{padding:8px 18px;border-radius:8px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer;transition:all .15s}
+.phase-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.phase-btn.active{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.phase-btn:disabled{opacity:.4;cursor:not-allowed}
+.cmd-zone{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:6px 0}
+.cmd-card{width:100px;padding:8px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);text-align:center;cursor:grab;transition:all .15s;user-select:none}
+.cmd-card:hover{border-color:var(--accent)}
+.cmd-card.assigned{border-color:var(--accent);background:var(--abg);cursor:default;opacity:.6}
+.cmd-icon{font-size:28px;margin-bottom:2px}
+.cmd-name{font-size:9px;color:var(--heading);font-family:'Outfit',sans-serif;font-weight:600;line-height:1.2}
+.assign-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;max-width:500px}
+.assign-slot{padding:10px;border-radius:10px;border:2px dashed var(--border);background:var(--bg3);text-align:center;min-height:70px;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:all .2s}
+.assign-slot.over{border-color:var(--accent);background:var(--abg)}
+.assign-slot.filled{border-style:solid;border-color:var(--accent)}
+.assign-slot .slot-dir{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.assign-slot .slot-cmd{font-size:13px;font-weight:700;color:var(--heading);font-family:'Outfit',sans-serif}
+.idol-counter{font-size:16px;font-weight:700;color:var(--accent);font-family:'Outfit',sans-serif}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Conquest of Mecca</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">The peaceful victory</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Plan the liberation of Mecca — assign commanders, divide troops, and enter peacefully.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Conquest of Mecca</h1><span class="pill" id="scorePill">Phase 1/6</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<div class="ctrl">
+  <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+  <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+  <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div>
+</div>
+<div class="status" id="status">Assign commanders to entry points</div>
+<div class="game-area" id="gameArea">
+  <canvas id="mapCanvas" width="700" height="500"></canvas>
+  <div id="uiBelow"></div>
+</div>
+<div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">Phase</div><div class="score-num" id="sc">1</div></div><div class="score-item"><div class="score-label">Score</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Conquest of Mecca v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+      <details class="help-item"><summary>What is this game?</summary><p>A strategic planner game about the peaceful conquest of Mecca (Fath Makkah) in 8 AH / 630 CE. Assign commanders, divide troops, and witness the mercy of the Prophet ﷺ.</p></details>
+      <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+      <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
+      <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
+      <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+      <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+      <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission to begin the campaign</p></div>
+      <div class="help-step"><span class="help-step-num">2</span><p>Drag commander portraits to the 4 entry points on the map</p></div>
+      <div class="help-step"><span class="help-step-num">3</span><p>Use sliders to divide 10,000 soldiers among 4 divisions</p></div>
+      <div class="help-step"><span class="help-step-num">4</span><p>Give the order: "Do not fight unless attacked"</p></div>
+      <div class="help-step"><span class="help-step-num">5</span><p>Watch the animated march from all 4 directions to the Kaaba</p></div>
+      <div class="help-step"><span class="help-step-num">6</span><p>Tap idols around the Kaaba to remove them (360 total)</p></div>
+      <div class="help-step"><span class="help-step-num">7</span><p>Witness the general amnesty — former enemies forgiven</p></div>
+      <div class="help-step"><span class="help-step-num">8</span><p>Learn the lesson: mercy in victory, forgiveness over revenge</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+      <div class="wiki-entry"><h3>🕋 The Event</h3><p>The Conquest of Mecca (Fath Makkah) took place in Ramadan 8 AH (January 630 CE). The Prophet ﷺ marched with 10,000 companions and entered Mecca almost entirely without bloodshed.</p></div>
+      <div class="wiki-entry"><h3>⚔️ The Commanders</h3><p>Khalid ibn al-Walid (south), Zubayr ibn al-Awwam (north), Abu Ubaidah ibn al-Jarrah (west), Sa'd ibn Ubadah (east) — each led a division through a different pass.</p></div>
+      <div class="wiki-entry"><h3>🕊️ The Order</h3><p>"Do not fight unless you are attacked." This was the standing order — a conquest of peace, not war.</p></div>
+      <div class="wiki-entry"><h3>🏛️ Idol Removal</h3><p>360 idols around the Kaaba were removed, restoring it to pure monotheism as built by Ibrahim (AS). The Prophet ﷺ recited: "Truth has come, and falsehood has departed."</p></div>
+      <div class="wiki-entry"><h3>🤝 General Amnesty</h3><p>The Prophet ﷺ declared: "Go, you are free." Even those who had persecuted Muslims for years were forgiven — a supreme act of mercy.</p></div>
+      <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+      <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// ===== GAME STATE =====
+const TOTAL_TROOPS=10000,TOTAL_IDOLS=360;
+const COMMANDERS=[
+  {id:"khalid",name:"Khalid ibn al-Walid",icon:"⚔️",color:"#ff6b35"},
+  {id:"zubayr",name:"Zubayr ibn al-Awwam",icon:"🛡️",color:"#6c5ce7"},
+  {id:"ubaidah",name:"Abu Ubaidah",icon:"🏹",color:"#00b894"},
+  {id:"saad",name:"Sa'd ibn Ubadah",icon:"🗡️",color:"#0984e3"}
+];
+const DIRS=[
+  {id:"north",label:"North Pass",angle:-Math.PI/2,x:350,y:30},
+  {id:"south",label:"South Pass",angle:Math.PI/2,x:350,y:470},
+  {id:"east",label:"East Pass",angle:0,x:670,y:250},
+  {id:"west",label:"West Pass",angle:Math.PI,x:30,y:250}
+];
+let phase=0,score=0,assignments={},troops={north:2500,south:2500,east:2500,west:2500};
+let idolsRemoved=0,marchProgress=0,marchAnim=null,idolPositions=[],gameActive=false;
+let timerInterval,timerSeconds=0;
+let draggingCmd=null,canvas,ctx,canvasRect;
+let prophEntryProg=0,amnestyStep=0;
+
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+function getCS(prop){return getComputedStyle(document.documentElement).getPropertyValue(prop).trim();}
+
+// ===== CANVAS DRAWING =====
+function drawMap(){
+  if(!ctx)return;
+  const W=canvas.width,H=canvas.height;
+  const bg=getCS("--bg2"),bg3=getCS("--bg3"),border=getCS("--border"),accent=getCS("--accent"),
+        heading=getCS("--heading"),text2=getCS("--text2"),text3=getCS("--text3");
+  ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+
+  // Mountains/terrain
+  ctx.fillStyle=bg3;
+  ctx.beginPath();ctx.ellipse(120,100,100,60,0,0,Math.PI*2);ctx.fill();
+  ctx.beginPath();ctx.ellipse(580,120,90,50,0.3,0,Math.PI*2);ctx.fill();
+  ctx.beginPath();ctx.ellipse(100,400,80,50,-0.2,0,Math.PI*2);ctx.fill();
+  ctx.beginPath();ctx.ellipse(600,400,90,55,0.1,0,Math.PI*2);ctx.fill();
+  ctx.beginPath();ctx.ellipse(350,100,60,35,0,0,Math.PI*2);ctx.fill();
+  ctx.beginPath();ctx.ellipse(200,350,70,40,0.5,0,Math.PI*2);ctx.fill();
+
+  // Roads to center
+  ctx.strokeStyle=border;ctx.lineWidth=3;ctx.setLineDash([8,6]);
+  DIRS.forEach(d=>{ctx.beginPath();ctx.moveTo(d.x,d.y);ctx.lineTo(350,250);ctx.stroke();});
+  ctx.setLineDash([]);
+
+  // City walls (circle)
+  ctx.strokeStyle=text3;ctx.lineWidth=2;
+  ctx.beginPath();ctx.arc(350,250,120,0,Math.PI*2);ctx.stroke();
+
+  // Kaaba at center
+  drawKaaba(350,250);
+
+  // Entry points
+  DIRS.forEach(d=>{
+    ctx.fillStyle=bg3;ctx.strokeStyle=border;ctx.lineWidth=2;
+    ctx.beginPath();ctx.arc(d.x,d.y,22,0,Math.PI*2);ctx.fill();ctx.stroke();
+    ctx.fillStyle=text2;ctx.font="bold 9px Outfit,sans-serif";ctx.textAlign="center";ctx.textBaseline="middle";
+    ctx.fillText(d.label,d.x,d.y-32);
+    // Show assigned commander
+    const cmdId=assignments[d.id];
+    if(cmdId){
+      const cmd=COMMANDERS.find(c=>c.id===cmdId);
+      ctx.font="22px serif";ctx.fillText(cmd.icon,d.x,d.y-2);
+      ctx.font="bold 8px Outfit,sans-serif";ctx.fillStyle=accent;
+      ctx.fillText(cmd.name.split(" ")[0],d.x,d.y+16);
+      // Troop count
+      ctx.font="bold 10px 'IBM Plex Mono',monospace";ctx.fillStyle=heading;
+      ctx.fillText(troops[d.id].toLocaleString(),d.x,d.y+28);
+    } else if(phase<=1){
+      ctx.font="18px serif";ctx.fillStyle=text3;ctx.fillText("👤",d.x,d.y);
+      ctx.font="9px 'IBM Plex Mono',monospace";ctx.fillStyle=text3;ctx.fillText("Drop here",d.x,d.y+16);
+    }
+  });
+
+  // March animation
+  if(phase===3 && marchProgress>0){
+    drawMarch();
+  }
+
+  // Idol phase
+  if(phase===4){
+    drawIdols();
+  }
+
+  // Prophet entry
+  if(phase===5){
+    drawProphetEntry();
+  }
+
+  // Amnesty
+  if(phase===6){
+    drawAmnesty();
+  }
+
+  // Labels
+  ctx.fillStyle=heading;ctx.font="bold 11px Outfit,sans-serif";ctx.textAlign="center";
+  ctx.fillText("Mecca",350,165);
+  ctx.fillStyle=text3;ctx.font="9px 'IBM Plex Mono',monospace";
+  ctx.fillText("8 AH / 630 CE",350,178);
+}
+
+function drawKaaba(cx,cy){
+  const accent=getCS("--accent"),heading=getCS("--heading");
+  ctx.save();
+  ctx.fillStyle="#1a1a2e";ctx.strokeStyle="#333";ctx.lineWidth=2;
+  // 3D kaaba
+  const s=18;
+  ctx.fillStyle="#111";ctx.fillRect(cx-s,cy-s,s*2,s*2);
+  ctx.strokeStyle="#c9a227";ctx.lineWidth=2;ctx.strokeRect(cx-s,cy-s,s*2,s*2);
+  // Gold band
+  ctx.fillStyle="#c9a227";ctx.fillRect(cx-s,cy-4,s*2,8);
+  // Door
+  ctx.fillStyle="#8B6914";ctx.fillRect(cx-4,cy+2,8,s-2);
+  ctx.restore();
+  ctx.fillStyle=heading;ctx.font="bold 9px Outfit,sans-serif";ctx.textAlign="center";
+  ctx.fillText("Kaaba",cx,cy+s+14);
+}
+
+function drawMarch(){
+  const accent=getCS("--accent"),heading=getCS("--heading");
+  DIRS.forEach((d,i)=>{
+    const cmdId=assignments[d.id];if(!cmdId)return;
+    const cmd=COMMANDERS.find(c=>c.id===cmdId);
+    const prog=Math.min(marchProgress,1);
+    const cx=d.x+(350-d.x)*prog;
+    const cy=d.y+(250-d.y)*prog;
+    // Troops line
+    ctx.strokeStyle=cmd.color+"88";ctx.lineWidth=Math.max(2,troops[d.id]/1500);
+    ctx.beginPath();ctx.moveTo(d.x,d.y);ctx.lineTo(cx,cy);ctx.stroke();
+    // Commander dot
+    ctx.fillStyle=cmd.color;ctx.beginPath();ctx.arc(cx,cy,8,0,Math.PI*2);ctx.fill();
+    ctx.font="12px serif";ctx.textAlign="center";ctx.textBaseline="middle";
+    ctx.fillText(cmd.icon,cx,cy);
+    // Khalid's route — skirmish
+    if(cmd.id==="khalid" && prog>0.4 && prog<0.7){
+      ctx.fillStyle="#ff444488";
+      for(let j=0;j<5;j++){
+        const sx=cx+Math.cos(j*1.2)*20,sy=cy+Math.sin(j*1.2)*18;
+        ctx.beginPath();ctx.arc(sx,sy,3,0,Math.PI*2);ctx.fill();
+      }
+      ctx.fillStyle="#ff4444";ctx.font="bold 9px Outfit,sans-serif";
+      ctx.fillText("Brief skirmish!",cx,cy-16);
+    }
+  });
+}
+
+function generateIdols(){
+  idolPositions=[];
+  for(let i=0;i<TOTAL_IDOLS;i++){
+    const angle=(i/TOTAL_IDOLS)*Math.PI*2;
+    const r=50+Math.random()*55;
+    idolPositions.push({
+      x:350+Math.cos(angle)*r,
+      y:250+Math.sin(angle)*r,
+      removed:false,
+      angle:angle
+    });
+  }
+}
+
+function drawIdols(){
+  const accent=getCS("--accent"),text3=getCS("--text3");
+  idolPositions.forEach((idol,i)=>{
+    if(idol.removed)return;
+    ctx.fillStyle=text3;ctx.font="10px serif";ctx.textAlign="center";ctx.textBaseline="middle";
+    ctx.fillText("🗿",idol.x,idol.y);
+  });
+  // Counter
+  ctx.fillStyle=accent;ctx.font="bold 14px Outfit,sans-serif";ctx.textAlign="center";
+  ctx.fillText(idolsRemoved+" / "+TOTAL_IDOLS+" removed",350,340);
+  ctx.fillStyle=getCS("--heading");ctx.font="italic 10px Outfit,sans-serif";
+  ctx.fillText('"Truth has come, falsehood has departed"',350,358);
+}
+
+function drawProphetEntry(){
+  const heading=getCS("--heading"),accent=getCS("--accent"),text2=getCS("--text2");
+  const prog=Math.min(prophEntryProg,1);
+  const sx=350,sy=470;
+  const ex=350,ey=260;
+  const cx=sx+(ex-sx)*prog;
+  const cy=sy+(ey-sy)*prog;
+  // Camel
+  ctx.font="28px serif";ctx.textAlign="center";ctx.textBaseline="middle";
+  ctx.fillText("🐪",cx,cy);
+  // Head bowed indication
+  ctx.fillStyle=heading;ctx.font="bold 10px Outfit,sans-serif";
+  ctx.fillText("Prophet ﷺ enters humbly",cx,cy-24);
+  ctx.fillStyle=text2;ctx.font="italic 9px Outfit,sans-serif";
+  ctx.fillText("Head bowed on his camel",cx,cy-12);
+  if(prog>=1){
+    ctx.fillStyle=accent;ctx.font="bold 12px Outfit,sans-serif";
+    ctx.fillText("لا إله إلا الله",350,220);
+  }
+}
+
+function drawAmnesty(){
+  const heading=getCS("--heading"),accent=getCS("--accent"),text2=getCS("--text2");
+  // People gathered
+  const people=["👤","👤","👤","👤","👤","👤","👤","👤"];
+  people.forEach((p,i)=>{
+    const angle=(i/people.length)*Math.PI*2;
+    const r=70;
+    ctx.font="20px serif";ctx.textAlign="center";ctx.textBaseline="middle";
+    ctx.fillText(p,350+Math.cos(angle)*r,250+Math.sin(angle)*r);
+  });
+  ctx.fillStyle=accent;ctx.font="bold 14px Outfit,sans-serif";ctx.textAlign="center";
+  ctx.fillText('"Go, you are free!"',350,170);
+  ctx.fillStyle=heading;ctx.font="bold 11px Outfit,sans-serif";
+  ctx.fillText("General Amnesty Declared",350,340);
+  ctx.fillStyle=text2;ctx.font="10px Outfit,sans-serif";
+  ctx.fillText("Former enemies forgiven — mercy in victory",350,358);
+  if(amnestyStep>=1){
+    ctx.fillStyle=accent;ctx.font="bold 10px Outfit,sans-serif";
+    ctx.fillText("No revenge. No looting. Only forgiveness.",350,375);
+  }
+}
+
+// ===== PHASES =====
+function setPhase(p){
+  phase=p;
+  document.getElementById("sc").textContent=Math.min(p,6);
+  document.getElementById("scorePill").textContent="Phase "+Math.min(p,6)+"/6";
+  document.getElementById("prog").style.width=(p/7*100)+"%";
+  updateUI();
+  drawMap();
+}
+
+function updateUI(){
+  const below=document.getElementById("uiBelow");
+  below.innerHTML="";
+  const st=document.getElementById("status");
+
+  if(phase===0){
+    // Assign commanders
+    st.textContent="Drag commanders to entry points on the map";
+    // Commander cards
+    const zone=document.createElement("div");zone.className="cmd-zone";
+    COMMANDERS.forEach(cmd=>{
+      const card=document.createElement("div");card.className="cmd-card";
+      card.draggable=true;card.dataset.cmd=cmd.id;
+      if(Object.values(assignments).includes(cmd.id))card.classList.add("assigned");
+      card.innerHTML='<div class="cmd-icon">'+cmd.icon+'</div><div class="cmd-name">'+cmd.name+'</div>';
+      card.addEventListener("dragstart",e=>{draggingCmd=cmd.id;e.dataTransfer.effectAllowed="move";});
+      card.addEventListener("touchstart",e=>{draggingCmd=cmd.id;},{passive:true});
+      zone.appendChild(card);
+    });
+    below.appendChild(zone);
+    // Assign slots
+    const grid=document.createElement("div");grid.className="assign-grid";
+    DIRS.forEach(d=>{
+      const slot=document.createElement("div");slot.className="assign-slot";
+      if(assignments[d.id])slot.classList.add("filled");
+      slot.innerHTML='<div class="slot-dir">'+d.label+'</div>';
+      if(assignments[d.id]){
+        const cmd=COMMANDERS.find(c=>c.id===assignments[d.id]);
+        slot.innerHTML+='<div class="slot-cmd">'+cmd.icon+" "+cmd.name+'</div>';
+      }
+      slot.addEventListener("dragover",e=>{e.preventDefault();slot.classList.add("over");});
+      slot.addEventListener("dragleave",()=>slot.classList.remove("over"));
+      slot.addEventListener("drop",e=>{
+        e.preventDefault();slot.classList.remove("over");
+        if(draggingCmd){assignCmd(d.id,draggingCmd);draggingCmd=null;}
+      });
+      // Touch support
+      slot.addEventListener("touchend",e=>{
+        if(draggingCmd){assignCmd(d.id,draggingCmd);draggingCmd=null;}
+      });
+      grid.appendChild(slot);
+    });
+    below.appendChild(grid);
+    // Next button
+    if(Object.keys(assignments).length===4){
+      const btn=document.createElement("button");btn.className="phase-btn active";btn.textContent="Next: Assign Troops ▶";
+      btn.onclick=()=>setPhase(1);below.appendChild(btn);
+    }
+  }
+
+  else if(phase===1){
+    // Troop assignment
+    st.textContent="Divide 10,000 soldiers among the 4 divisions";
+    DIRS.forEach(d=>{
+      const row=document.createElement("div");row.className="slider-row";
+      const cmdId=assignments[d.id];
+      const cmd=cmdId?COMMANDERS.find(c=>c.id===cmdId):null;
+      const lbl=document.createElement("label");
+      lbl.textContent=d.label+(cmd?" ("+cmd.name.split(" ")[0]+")":"");
+      const slider=document.createElement("input");slider.type="range";slider.min="500";slider.max="5000";slider.step="100";
+      slider.value=troops[d.id];
+      const count=document.createElement("span");count.className="troop-count";count.textContent=troops[d.id].toLocaleString();
+      slider.addEventListener("input",()=>{
+        troops[d.id]=parseInt(slider.value);
+        balanceTroops(d.id);
+        updateTroopDisplay();
+        drawMap();
+      });
+      row.appendChild(lbl);row.appendChild(slider);row.appendChild(count);
+      below.appendChild(row);
+    });
+    // Total display
+    const totalDiv=document.createElement("div");
+    totalDiv.style.cssText="text-align:center;margin:8px 0;font-family:Outfit,sans-serif;font-weight:700;color:var(--heading);font-size:13px";
+    totalDiv.id="troopTotal";
+    const sum=Object.values(troops).reduce((a,b)=>a+b,0);
+    totalDiv.textContent="Total: "+sum.toLocaleString()+" / 10,000";
+    totalDiv.style.color=sum===TOTAL_TROOPS?"var(--accent)":"#ff4444";
+    below.appendChild(totalDiv);
+    // Next
+    const btn=document.createElement("button");btn.className="phase-btn active";btn.textContent="Next: Give the Order ▶";
+    btn.onclick=()=>{
+      const sum=Object.values(troops).reduce((a,b)=>a+b,0);
+      if(sum!==TOTAL_TROOPS){snd("err");st.textContent="Troops must total exactly 10,000!";st.className="status lose";return;}
+      setPhase(2);
+    };
+    below.appendChild(btn);
+  }
+
+  else if(phase===2){
+    // The Order
+    st.textContent='Give the standing order to all commanders';
+    st.className="status";
+    const orderBox=document.createElement("div");
+    orderBox.style.cssText="text-align:center;padding:16px;";
+    orderBox.innerHTML='<div style="font-size:16px;font-weight:700;color:var(--heading);font-family:Outfit,sans-serif;margin-bottom:12px">What is the Prophet\'s ﷺ order?</div>';
+    const btns=document.createElement("div");btns.className="phase-btns";
+    const options=[
+      {text:"Attack on sight!",correct:false},
+      {text:"Do not fight unless attacked",correct:true},
+      {text:"Capture all enemies",correct:false},
+      {text:"Burn the city",correct:false}
+    ];
+    options.sort(()=>Math.random()-0.5).forEach(opt=>{
+      const b=document.createElement("button");b.className="phase-btn";b.textContent=opt.text;
+      b.onclick=()=>{
+        if(opt.correct){
+          b.classList.add("active");snd("ok");score+=25;
+          document.getElementById("tot").textContent=score;
+          log("Correct order given: Do not fight unless attacked","success");
+          st.textContent="Correct! March begins...";st.className="status win";
+          setTimeout(()=>setPhase(3),1200);
+        } else {
+          b.style.borderColor="#ff4444";b.style.color="#ff4444";snd("err");
+          log("Wrong order: "+opt.text,"error");
+          st.textContent="That is not the merciful way! Try again.";st.className="status lose";
+        }
+      };
+      btns.appendChild(b);
+    });
+    orderBox.appendChild(btns);below.appendChild(orderBox);
+  }
+
+  else if(phase===3){
+    // March animation
+    st.textContent="The army marches toward Mecca from all directions...";st.className="status";
+    marchProgress=0;
+    below.innerHTML='<div style="text-align:center;color:var(--text2);font-size:11px">Watch the approach...</div>';
+    let frame=0;
+    cancelAnimationFrame(marchAnim);
+    function animMarch(){
+      marchProgress=Math.min(frame/180,1);
+      drawMap();
+      frame++;
+      if(marchProgress<1){
+        marchAnim=requestAnimationFrame(animMarch);
+      } else {
+        score+=25;document.getElementById("tot").textContent=score;
+        log("All divisions converged at the Kaaba","success");
+        log("Khalid's route: brief resistance encountered","error");
+        log("All other routes: peaceful entry","success");
+        snd("ok");
+        st.textContent="All routes converge at the Kaaba! Only Khalid faced brief resistance.";st.className="status win";
+        setTimeout(()=>setPhase(4),2000);
+      }
+    }
+    marchAnim=requestAnimationFrame(animMarch);
+  }
+
+  else if(phase===4){
+    // Idol removal
+    st.textContent="Tap the idols around the Kaaba to remove them! ("+idolsRemoved+"/"+TOTAL_IDOLS+")";
+    st.className="status";
+    generateIdols();
+    // Mark some as already removed
+    for(let i=0;i<idolsRemoved;i++){if(idolPositions[i])idolPositions[i].removed=true;}
+    below.innerHTML='<div class="idol-counter">'+idolsRemoved+' / '+TOTAL_IDOLS+' idols removed</div><div style="text-align:center;color:var(--text2);font-size:10px;margin-top:4px">Click/tap idols on the map to remove them</div>';
+    // Auto-remove button for speed
+    const autoBtn=document.createElement("button");autoBtn.className="phase-btn";autoBtn.textContent="Quick Remove All Remaining";
+    autoBtn.style.marginTop="8px";
+    autoBtn.onclick=()=>{
+      let interval=setInterval(()=>{
+        let batch=Math.min(20,TOTAL_IDOLS-idolsRemoved);
+        for(let i=0;i<batch;i++){
+          const unremovedIdx=idolPositions.findIndex(p=>!p.removed);
+          if(unremovedIdx>=0)idolPositions[unremovedIdx].removed=true;
+          idolsRemoved++;
+        }
+        drawMap();
+        below.querySelector(".idol-counter").textContent=idolsRemoved+" / "+TOTAL_IDOLS+" idols removed";
+        st.textContent="Removing idols... ("+idolsRemoved+"/"+TOTAL_IDOLS+")";
+        if(idolsRemoved>=TOTAL_IDOLS){
+          clearInterval(interval);
+          finishIdols();
+        }
+      },80);
+    };
+    below.appendChild(autoBtn);
+    drawMap();
+  }
+
+  else if(phase===5){
+    // Prophet entry
+    st.textContent="The Prophet ﷺ enters Mecca humbly on his camel...";st.className="status";
+    prophEntryProg=0;
+    let frame=0;
+    function animProphet(){
+      prophEntryProg=Math.min(frame/150,1);
+      drawMap();
+      frame++;
+      if(prophEntryProg<1){
+        requestAnimationFrame(animProphet);
+      } else {
+        score+=25;document.getElementById("tot").textContent=score;
+        snd("ok");
+        log("Prophet ﷺ arrives at the Kaaba — head bowed in humility","success");
+        st.textContent="The Prophet ﷺ arrives at the Kaaba — head bowed in gratitude.";st.className="status win";
+        setTimeout(()=>setPhase(6),2500);
+      }
+    }
+    requestAnimationFrame(animProphet);
+  }
+
+  else if(phase===6){
+    // General amnesty
+    st.textContent='"Go, you are free!" — General Amnesty declared';st.className="status win";
+    amnestyStep=0;
+    drawMap();
+    setTimeout(()=>{amnestyStep=1;drawMap();},1500);
+    below.innerHTML='';
+    const lessonBox=document.createElement("div");
+    lessonBox.style.cssText="text-align:center;padding:16px;";
+    lessonBox.innerHTML='<div style="font-size:18px;font-weight:800;color:var(--accent);font-family:Outfit,sans-serif;margin-bottom:8px">Victory Complete!</div>'+
+      '<div style="font-size:12px;color:var(--heading);font-family:Outfit,sans-serif;margin-bottom:12px;line-height:1.6">'+
+      'Mecca was conquered with barely any bloodshed.<br>'+
+      'Former enemies were forgiven — not punished.<br>'+
+      'The Prophet ﷺ showed us:<br>'+
+      '<strong style="color:var(--accent)">Mercy in victory. Forgiveness over revenge.</strong></div>'+
+      '<div style="font-size:11px;color:var(--text2);margin-bottom:12px">"When you have power over your enemy, pardon him — as a way of thanking Allah for the victory."</div>';
+    below.appendChild(lessonBox);
+    score+=25;document.getElementById("tot").textContent=score;
+    log("General amnesty declared — all forgiven!","success");
+    log("Lesson: Mercy in victory, forgiveness over revenge","success");
+    checkHS();stopTimer();snd("win");
+    // Restart button
+    const btn=document.createElement("button");btn.className="phase-btn active";btn.textContent="▶ Play Again";
+    btn.onclick=newGame;below.appendChild(btn);
+  }
+}
+
+function assignCmd(dirId,cmdId){
+  // Remove cmd from other assignments
+  Object.keys(assignments).forEach(k=>{if(assignments[k]===cmdId)delete assignments[k];});
+  assignments[dirId]=cmdId;
+  snd("ok");log("Assigned "+COMMANDERS.find(c=>c.id===cmdId).name+" to "+DIRS.find(d=>d.id===dirId).label,"success");
+  updateUI();drawMap();
+}
+
+function balanceTroops(changedId){
+  // Auto-balance: keep total at 10000
+  const others=Object.keys(troops).filter(k=>k!==changedId);
+  const used=troops[changedId];
+  const remaining=TOTAL_TROOPS-used;
+  const currentOtherSum=others.reduce((s,k)=>s+troops[k],0);
+  if(currentOtherSum===0){others.forEach(k=>troops[k]=Math.round(remaining/3));return;}
+  others.forEach(k=>{
+    troops[k]=Math.round(troops[k]/currentOtherSum*remaining);
+    troops[k]=Math.max(500,troops[k]);
+  });
+  // Fix rounding
+  const newSum=Object.values(troops).reduce((a,b)=>a+b,0);
+  if(newSum!==TOTAL_TROOPS){troops[others[0]]+=TOTAL_TROOPS-newSum;}
+}
+
+function updateTroopDisplay(){
+  const sliders=document.querySelectorAll(".slider-row");
+  const dirKeys=["north","south","east","west"];
+  sliders.forEach((row,i)=>{
+    const slider=row.querySelector("input[type=range]");
+    const count=row.querySelector(".troop-count");
+    slider.value=troops[dirKeys[i]];
+    count.textContent=troops[dirKeys[i]].toLocaleString();
+  });
+  const totalDiv=document.getElementById("troopTotal");
+  if(totalDiv){
+    const sum=Object.values(troops).reduce((a,b)=>a+b,0);
+    totalDiv.textContent="Total: "+sum.toLocaleString()+" / 10,000";
+    totalDiv.style.color=sum===TOTAL_TROOPS?"var(--accent)":"#ff4444";
+  }
+}
+
+function finishIdols(){
+  score+=25;document.getElementById("tot").textContent=score;
+  log("All 360 idols removed from around the Kaaba","success");
+  log('"Truth has come, and falsehood has departed" — Quran 17:81',"success");
+  snd("ok");
+  document.getElementById("status").textContent="All idols removed! Truth has come!";
+  document.getElementById("status").className="status win";
+  setTimeout(()=>setPhase(5),2000);
+}
+
+// Canvas click handler for idol removal
+function handleCanvasClick(e){
+  if(phase!==4)return;
+  const rect=canvas.getBoundingClientRect();
+  const scaleX=canvas.width/rect.width,scaleY=canvas.height/rect.height;
+  const mx=(e.clientX-rect.left)*scaleX;
+  const my=(e.clientY-rect.top)*scaleY;
+  let removed=0;
+  idolPositions.forEach(idol=>{
+    if(idol.removed)return;
+    const dx=idol.x-mx,dy=idol.y-my;
+    if(dx*dx+dy*dy<200){idol.removed=true;idolsRemoved++;removed++;}
+  });
+  if(removed>0){
+    snd("click");drawMap();
+    document.getElementById("status").textContent="Removing idols... ("+idolsRemoved+"/"+TOTAL_IDOLS+")";
+    const counter=document.querySelector(".idol-counter");
+    if(counter)counter.textContent=idolsRemoved+" / "+TOTAL_IDOLS+" idols removed";
+    if(idolsRemoved>=TOTAL_IDOLS)finishIdols();
+  }
+}
+
+function handleCanvasTouch(e){
+  if(phase!==4)return;
+  e.preventDefault();
+  const touch=e.touches[0]||e.changedTouches[0];
+  handleCanvasClick({clientX:touch.clientX,clientY:touch.clientY});
+}
+
+// ===== NEW GAME =====
+function newGame(){
+  startTimer();phase=0;score=0;assignments={};troops={north:2500,south:2500,east:2500,west:2500};
+  idolsRemoved=0;marchProgress=0;prophEntryProg=0;amnestyStep=0;
+  cancelAnimationFrame(marchAnim);
+  document.getElementById("tot").textContent="0";
+  document.getElementById("logBox").innerHTML="";
+  gameActive=true;
+  log("New campaign started — Conquest of Mecca","success");
+  setPhase(0);
+}
+
+// ===== HIGH SCORE =====
+const HS_KEY="wdiy-hs-mecca-conquest";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(s){try{const best=loadHS();if(s>best){localStorage.setItem(HS_KEY,s);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
+function checkHS(){if(score>0&&saveHS(score)){log("NEW HIGH SCORE: "+score+"!","success");}}
+
+// ===== INIT =====
+document.addEventListener("DOMContentLoaded",()=>{
+  canvas=document.getElementById("mapCanvas");ctx=canvas.getContext("2d");
+  // Responsive canvas
+  function resizeCanvas(){
+    const container=document.getElementById("gameArea");
+    const w=Math.min(700,container.clientWidth-24);
+    const h=Math.round(w*500/700);
+    canvas.style.width=w+"px";canvas.style.height=h+"px";
+    drawMap();
+  }
+  resizeCanvas();window.addEventListener("resize",resizeCanvas);
+
+  canvas.addEventListener("click",handleCanvasClick);
+  canvas.addEventListener("touchstart",handleCanvasTouch,{passive:false});
+
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+// Keyboard shortcuts
+document.addEventListener("keydown",function(e){
+  if(e.key>="1"&&e.key<="4"){const btns=document.querySelectorAll(".phase-btn:not(.active)");const i=parseInt(e.key)-1;if(btns[i])btns[i].click();}
+  if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

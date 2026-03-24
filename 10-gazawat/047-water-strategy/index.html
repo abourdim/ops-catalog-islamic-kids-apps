@@ -1,0 +1,570 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Water Wars — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.app.on~.back-link,.back-link{}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:700px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:8px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.big-text{font-family:'Outfit',sans-serif;font-size:32px;font-weight:800;color:var(--heading);text-align:center}
+.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;cursor:pointer;transition:all .15s;min-width:50px}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.input-row{display:flex;gap:8px;align-items:center;justify-content:center}
+.input-row input{width:80px;padding:8px 12px;border-radius:8px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;text-align:center}
+.input-row input:focus{border-color:var(--accent);outline:none}
+.input-row button{padding:8px 16px;border-radius:8px;border:none;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden;margin:0 auto}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.grid-pick{display:grid;gap:8px;justify-content:center;margin:10px auto}
+.grid-pick.g2{grid-template-columns:repeat(2,1fr);max-width:200px}
+.grid-pick.g3{grid-template-columns:repeat(3,1fr);max-width:300px}
+.grid-pick.g4{grid-template-columns:repeat(4,1fr);max-width:360px}
+.pick-card{padding:14px 10px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;cursor:pointer;text-align:center;transition:all .15s}
+.pick-card:hover{border-color:var(--accent);background:var(--abg)}
+.pick-card.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.pick-card.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+canvas{border-radius:8px;cursor:crosshair;display:block;max-width:100%;image-rendering:pixelated}
+.info-bar{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;font-family:'Outfit',sans-serif;font-size:11px;margin-bottom:8px}
+.info-bar .ib{padding:4px 10px;border-radius:6px;background:var(--bg3);border:1px solid var(--border);color:var(--text)}
+.info-bar .ib b{color:var(--heading)}
+.action-btns{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.action-btns button{padding:6px 12px;border-radius:6px;border:1px solid var(--border);background:var(--bg3);color:var(--heading);font-size:11px;font-family:'Outfit',sans-serif;cursor:pointer;font-weight:600}
+.action-btns button:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.action-btns button.active{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.action-btns button:disabled{opacity:.4;cursor:not-allowed}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Water Wars</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Desert Water Strategy</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Control water sources, weaken the enemy! Based on the wells strategy at Badr.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Water Wars</h1><span class="pill" id="scorePill">Turn 0</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="mapSel"><option value="0">Map 1: Badr Wells</option><option value="1">Map 2: Oasis Valley</option><option value="2">Map 3: River Canyon</option></select>
+    <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+    <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="status" id="status">Select a map and start!</div>
+<div class="game-area">
+<div class="info-bar" id="infoBar">
+  <span class="ib">💧 Muslim Water: <b id="mWater">0</b></span>
+  <span class="ib">⚔️ Muslim Units: <b id="mUnits">0</b></span>
+  <span class="ib">💧 Enemy Water: <b id="eWater">0</b></span>
+  <span class="ib">⚔️ Enemy Units: <b id="eUnits">0</b></span>
+</div>
+<canvas id="cvs" width="640" height="440"></canvas>
+<div class="action-btns" id="actionBtns">
+  <button id="btnMove" onclick="setAction('move')">🚶 Move</button>
+  <button id="btnSecure" onclick="setAction('secure')">🛡 Secure Well</button>
+  <button id="btnGuard" onclick="setAction('guard')">⚔️ Guard</button>
+  <button id="btnEndTurn" onclick="endTurn()">⏩ End Turn</button>
+</div>
+<div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+</div>
+<div class="score-row"><div class="score-item"><div class="score-label">Turn</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Wells Held</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Water Wars v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is Water Wars?</summary><p>A canvas-based strategy game where you control a Muslim army competing for desert water sources. Secure wells, guard them, and deny water to the enemy. Inspired by the strategy at Badr.</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop. Tap to select and act.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission, then select a map and press New Game</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Click one of your green units on the map to select it</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Choose an action: Move, Secure Well, or Guard</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Click a destination on the map to move, or a water source to secure/guard it</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>Press End Turn when done — the enemy AI will then move</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Armies without water weaken each turn — secure wells to stay strong!</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Win by controlling all water sources or eliminating enemy units</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Learn desert warfare strategy through water resource control. Based on the historical wells strategy at Badr, where the Muslim army secured water sources before battle.</p></div>
+        <div class="wiki-entry"><h3>💧 Water Sources</h3><p>Wells (single point), Oases (larger area, more water), Rivers (long source, hardest to defend). Each provides water per turn to whoever controls it.</p></div>
+        <div class="wiki-entry"><h3>⚔️ Units</h3><p>Each unit has health and attack. Without water, units lose health each turn. Guarding a well makes it harder for enemies to capture.</p></div>
+        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Francais, al-Arabiya. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Toggle with the sound button.</p></div>
+        <div class="wiki-entry"><h3>📜 Historical Reference</h3><p>At Badr, the Prophet's companion al-Hubab ibn al-Mundhir advised positioning the army near the wells and filling/blocking the rest to deny water to the Quraysh. This strategic water control was key to victory.</p></div>
+        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// ===== GAME STATE =====
+const CVS=document.getElementById("cvs"),CTX=CVS.getContext("2d");
+const CW=640,CH=440,TILE=40,COLS=CW/TILE,ROWS=CH/TILE;
+let turn=0,gameOver=false,selectedUnit=null,currentAction="move",muslimWater=10,enemyWater=10;
+let units=[],waterSources=[],terrain=[];
+const MOVE_RANGE=3,MAX_TURNS=20;
+
+// ===== MAP DEFINITIONS =====
+const MAPS=[
+  {name:"Badr Wells",wells:[{x:8,y:3,type:"well",water:3},{x:4,y:5,type:"well",water:3},{x:12,y:5,type:"well",water:3},{x:8,y:7,type:"oasis",water:5},{x:6,y:9,type:"well",water:2}],
+   mStart:[{x:2,y:8},{x:3,y:9},{x:2,y:10},{x:4,y:9}],eStart:[{x:13,y:1},{x:14,y:2},{x:13,y:3},{x:12,y:2}],
+   dunes:[[0,0,6,4],[10,0,16,4]]},
+  {name:"Oasis Valley",wells:[{x:8,y:5,type:"oasis",water:6},{x:3,y:2,type:"well",water:3},{x:13,y:2,type:"well",water:3},{x:3,y:8,type:"river",water:4},{x:13,y:8,type:"river",water:4}],
+   mStart:[{x:1,y:5},{x:1,y:6},{x:2,y:5},{x:2,y:6}],eStart:[{x:14,y:5},{x:14,y:6},{x:13,y:5},{x:13,y:6}],
+   dunes:[[5,0,11,2],[5,9,11,11]]},
+  {name:"River Canyon",wells:[{x:8,y:0,type:"river",water:4},{x:8,y:2,type:"river",water:4},{x:8,y:4,type:"river",water:4},{x:8,y:6,type:"river",water:4},{x:8,y:8,type:"river",water:4},{x:8,y:10,type:"river",water:4},{x:4,y:5,type:"well",water:3},{x:12,y:5,type:"well",water:3}],
+   mStart:[{x:1,y:4},{x:1,y:5},{x:1,y:6},{x:2,y:5}],eStart:[{x:14,y:4},{x:14,y:5},{x:14,y:6},{x:13,y:5}],
+   dunes:[[3,0,5,3],[11,8,13,11]]}
+];
+
+function getStyle(p){return getComputedStyle(document.documentElement).getPropertyValue(p).trim();}
+
+function initMap(mi){
+  const m=MAPS[mi];turn=0;gameOver=false;selectedUnit=null;currentAction="move";muslimWater=10;enemyWater=10;
+  units=[];waterSources=[];terrain=[];
+  m.wells.forEach(w=>waterSources.push({x:w.x,y:w.y,type:w.type,water:w.water,owner:null,guard:null}));
+  m.mStart.forEach((p,i)=>units.push({x:p.x,y:p.y,side:"muslim",hp:100,atk:20+i*5,moved:false,id:"m"+i}));
+  m.eStart.forEach((p,i)=>units.push({x:p.x,y:p.y,side:"enemy",hp:100,atk:18+i*5,moved:false,id:"e"+i}));
+  if(m.dunes)m.dunes.forEach(d=>terrain.push({x1:d[0],y1:d[1],x2:d[2],y2:d[3],type:"dune"}));
+}
+
+// ===== DRAWING =====
+function draw(){
+  const bg=getStyle("--bg2")||"#0d1117",border=getStyle("--border")||"#21262d",accent=getStyle("--accent")||"#00ff88",
+        text=getStyle("--text")||"#c9d1d9",heading=getStyle("--heading")||"#e6edf3",bg3=getStyle("--bg3")||"#161b22";
+  CTX.fillStyle=bg;CTX.fillRect(0,0,CW,CH);
+  // grid
+  CTX.strokeStyle=border;CTX.lineWidth=0.5;
+  for(let x=0;x<=CW;x+=TILE){CTX.beginPath();CTX.moveTo(x,0);CTX.lineTo(x,CH);CTX.stroke();}
+  for(let y=0;y<=CH;y+=TILE){CTX.beginPath();CTX.moveTo(0,y);CTX.lineTo(CW,y);CTX.stroke();}
+  // dunes
+  terrain.forEach(t=>{
+    CTX.fillStyle="rgba(194,154,80,0.15)";
+    CTX.fillRect(t.x1*TILE,t.y1*TILE,(t.x2-t.x1)*TILE,(t.y2-t.y1)*TILE);
+    CTX.strokeStyle="rgba(194,154,80,0.3)";CTX.lineWidth=1;
+    CTX.strokeRect(t.x1*TILE,t.y1*TILE,(t.x2-t.x1)*TILE,(t.y2-t.y1)*TILE);
+  });
+  // water sources
+  waterSources.forEach(w=>{
+    const cx=w.x*TILE+TILE/2,cy=w.y*TILE+TILE/2;
+    if(w.type==="well"){
+      CTX.fillStyle=w.owner==="muslim"?"rgba(0,180,255,0.5)":w.owner==="enemy"?"rgba(255,60,60,0.4)":"rgba(0,120,255,0.3)";
+      CTX.beginPath();CTX.arc(cx,cy,14,0,Math.PI*2);CTX.fill();
+      CTX.fillStyle="#4af";CTX.font="18px Outfit";CTX.textAlign="center";CTX.textBaseline="middle";
+      CTX.fillText("💧",cx,cy);
+    }else if(w.type==="oasis"){
+      CTX.fillStyle=w.owner==="muslim"?"rgba(0,200,100,0.4)":w.owner==="enemy"?"rgba(255,60,60,0.3)":"rgba(0,200,100,0.2)";
+      CTX.beginPath();CTX.arc(cx,cy,18,0,Math.PI*2);CTX.fill();
+      CTX.fillStyle="#0c6";CTX.font="20px Outfit";CTX.textAlign="center";CTX.textBaseline="middle";
+      CTX.fillText("🌴",cx,cy);
+    }else if(w.type==="river"){
+      CTX.fillStyle=w.owner==="muslim"?"rgba(0,140,255,0.45)":w.owner==="enemy"?"rgba(255,60,60,0.35)":"rgba(0,140,255,0.25)";
+      CTX.fillRect(w.x*TILE+4,w.y*TILE+4,TILE-8,TILE-8);
+      CTX.fillStyle="#38f";CTX.font="16px Outfit";CTX.textAlign="center";CTX.textBaseline="middle";
+      CTX.fillText("🌊",cx,cy);
+    }
+    // guard indicator
+    if(w.guard){
+      CTX.strokeStyle=w.guard==="muslim"?accent:"#f44";CTX.lineWidth=2;CTX.setLineDash([4,3]);
+      CTX.beginPath();CTX.arc(cx,cy,19,0,Math.PI*2);CTX.stroke();CTX.setLineDash([]);
+    }
+    // owner label
+    if(w.owner){
+      CTX.fillStyle=w.owner==="muslim"?accent:"#f66";CTX.font="bold 8px IBM Plex Mono";CTX.textAlign="center";
+      CTX.fillText(w.owner==="muslim"?"OURS":"ENEMY",cx,cy+24);
+    }
+  });
+  // move range highlight
+  if(selectedUnit&&!gameOver){
+    const u=selectedUnit;
+    CTX.fillStyle="rgba(0,255,136,0.08)";
+    for(let dx=-MOVE_RANGE;dx<=MOVE_RANGE;dx++){
+      for(let dy=-MOVE_RANGE;dy<=MOVE_RANGE;dy++){
+        if(Math.abs(dx)+Math.abs(dy)<=MOVE_RANGE){
+          const nx=u.x+dx,ny=u.y+dy;
+          if(nx>=0&&nx<COLS&&ny>=0&&ny<ROWS)CTX.fillRect(nx*TILE,ny*TILE,TILE,TILE);
+        }
+      }
+    }
+  }
+  // units
+  units.forEach(u=>{
+    if(u.hp<=0)return;
+    const cx=u.x*TILE+TILE/2,cy=u.y*TILE+TILE/2;
+    // selection ring
+    if(selectedUnit===u){CTX.strokeStyle=accent;CTX.lineWidth=3;CTX.beginPath();CTX.arc(cx,cy,17,0,Math.PI*2);CTX.stroke();}
+    // body
+    CTX.fillStyle=u.side==="muslim"?accent:"#ff4466";
+    CTX.beginPath();CTX.arc(cx,cy,12,0,Math.PI*2);CTX.fill();
+    // icon
+    CTX.fillStyle=u.side==="muslim"?"#000":"#fff";CTX.font="bold 14px Outfit";CTX.textAlign="center";CTX.textBaseline="middle";
+    CTX.fillText(u.side==="muslim"?"☪":"⚔",cx,cy);
+    // HP bar
+    const bw=30,bh=4,bx=cx-bw/2,by=cy-18;
+    CTX.fillStyle="rgba(0,0,0,0.5)";CTX.fillRect(bx,by,bw,bh);
+    CTX.fillStyle=u.hp>60?"#0f0":u.hp>30?"#ff0":"#f00";
+    CTX.fillRect(bx,by,bw*(u.hp/100),bh);
+    // moved indicator
+    if(u.moved&&u.side==="muslim"){CTX.fillStyle="rgba(255,255,255,0.5)";CTX.font="8px IBM Plex Mono";CTX.fillText("done",cx,cy+20);}
+  });
+  // turn info
+  CTX.fillStyle=heading;CTX.font="bold 12px Outfit";CTX.textAlign="left";CTX.textBaseline="top";
+  CTX.fillText("Turn "+turn+" / "+MAX_TURNS,8,8);
+  if(gameOver){
+    CTX.fillStyle="rgba(0,0,0,0.6)";CTX.fillRect(0,CH/2-40,CW,80);
+    CTX.fillStyle=heading;CTX.font="bold 28px Outfit";CTX.textAlign="center";CTX.textBaseline="middle";
+    const mAlive=units.filter(u=>u.side==="muslim"&&u.hp>0).length;
+    const eAlive=units.filter(u=>u.side==="enemy"&&u.hp>0).length;
+    const mWells=waterSources.filter(w=>w.owner==="muslim").length;
+    const eWells=waterSources.filter(w=>w.owner==="enemy").length;
+    let result=mAlive===0?"DEFEAT":eAlive===0?"VICTORY":mWells>eWells?"VICTORY":"DEFEAT";
+    if(mWells===eWells)result=muslimWater>enemyWater?"VICTORY":"DEFEAT";
+    CTX.fillText(result==="VICTORY"?"VICTORY! ☪":"DEFEAT",CW/2,CH/2);
+  }
+}
+
+// ===== INTERACTION =====
+function dist(a,b){return Math.abs(a.x-b.x)+Math.abs(a.y-b.y);}
+
+function setAction(a){
+  currentAction=a;
+  document.querySelectorAll(".action-btns button").forEach(b=>b.classList.remove("active"));
+  const id={move:"btnMove",secure:"btnSecure",guard:"btnGuard"}[a];
+  if(id)document.getElementById(id).classList.add("active");
+}
+
+function getUnitAt(gx,gy){return units.find(u=>u.x===gx&&u.y===gy&&u.hp>0);}
+function getWaterAt(gx,gy){return waterSources.find(w=>w.x===gx&&w.y===gy);}
+
+CVS.addEventListener("click",function(e){
+  if(gameOver)return;
+  const rect=CVS.getBoundingClientRect();
+  const sx=CW/rect.width,sy=CH/rect.height;
+  const gx=Math.floor((e.clientX-rect.left)*sx/TILE);
+  const gy=Math.floor((e.clientY-rect.top)*sy/TILE);
+  if(gx<0||gx>=COLS||gy<0||gy>=ROWS)return;
+
+  const clickedUnit=getUnitAt(gx,gy);
+  // select own unit
+  if(clickedUnit&&clickedUnit.side==="muslim"&&!clickedUnit.moved){
+    selectedUnit=clickedUnit;snd("click");draw();return;
+  }
+  if(!selectedUnit||selectedUnit.moved)return;
+  const d=dist(selectedUnit,{x:gx,y:gy});
+
+  if(currentAction==="move"){
+    if(d>MOVE_RANGE||d===0){snd("err");return;}
+    const occupied=getUnitAt(gx,gy);
+    if(occupied&&occupied.side==="muslim"){snd("err");return;}
+    // attack enemy if present
+    if(occupied&&occupied.side==="enemy"){
+      combat(selectedUnit,occupied);
+      selectedUnit.moved=true;
+      selectedUnit=null;snd("ok");draw();updateUI();return;
+    }
+    selectedUnit.x=gx;selectedUnit.y=gy;selectedUnit.moved=true;
+    log("Unit moved to ("+gx+","+gy+")");snd("ok");selectedUnit=null;draw();updateUI();
+  }else if(currentAction==="secure"){
+    const ws=getWaterAt(gx,gy);
+    if(!ws||d>MOVE_RANGE){snd("err");return;}
+    if(ws.owner==="muslim"){log("Already secured!","");snd("err");return;}
+    if(ws.guard==="enemy"){
+      // must defeat guard first
+      const guarder=units.find(u=>u.side==="enemy"&&u.x===ws.x&&u.y===ws.y&&u.hp>0);
+      if(guarder){combat(selectedUnit,guarder);selectedUnit.moved=true;selectedUnit=null;draw();updateUI();return;}
+    }
+    selectedUnit.x=gx;selectedUnit.y=gy;ws.owner="muslim";ws.guard=null;selectedUnit.moved=true;
+    log("Well SECURED at ("+gx+","+gy+")!","success");snd("ok");selectedUnit=null;draw();updateUI();
+  }else if(currentAction==="guard"){
+    const ws=getWaterAt(gx,gy);
+    if(!ws||d>MOVE_RANGE){snd("err");return;}
+    if(ws.owner!=="muslim"){log("Secure it first!","error");snd("err");return;}
+    selectedUnit.x=gx;selectedUnit.y=gy;ws.guard="muslim";selectedUnit.moved=true;
+    log("Guarding well at ("+gx+","+gy+")","success");snd("ok");selectedUnit=null;draw();updateUI();
+  }
+});
+
+function combat(attacker,defender){
+  const atkBonus=attacker.side==="muslim"&&getWaterAt(attacker.x,attacker.y)?.owner==="muslim"?10:0;
+  const defBonus=defender.side==="muslim"&&getWaterAt(defender.x,defender.y)?.owner==="muslim"?10:0;
+  defender.hp-=(attacker.atk+atkBonus);
+  if(defender.hp>0)attacker.hp-=(defender.atk+defBonus)*0.6;
+  if(defender.hp<=0){
+    log((attacker.side==="muslim"?"Muslim":"Enemy")+" defeated a unit!",attacker.side==="muslim"?"success":"error");
+    // if defender was guarding, remove guard
+    waterSources.forEach(w=>{if(w.guard===defender.side&&w.x===defender.x&&w.y===defender.y)w.guard=null;});
+    if(attacker.hp>0){attacker.x=defender.x;attacker.y=defender.y;}
+  }else{
+    log("Combat! Attacker HP:"+Math.round(attacker.hp)+" Defender HP:"+Math.round(defender.hp));
+  }
+  if(attacker.hp<=0){
+    log((attacker.side==="muslim"?"Muslim":"Enemy")+" unit fell!","error");
+    waterSources.forEach(w=>{if(w.guard===attacker.side&&w.x===attacker.x&&w.y===attacker.y)w.guard=null;});
+  }
+}
+
+// ===== ENEMY AI =====
+function enemyTurn(){
+  const eUnits=units.filter(u=>u.side==="enemy"&&u.hp>0);
+  eUnits.forEach(u=>{
+    // find nearest unowned or muslim-owned water source
+    let bestTarget=null,bestDist=999;
+    waterSources.forEach(w=>{
+      if(w.owner==="enemy")return;
+      const d=dist(u,w);
+      if(d<bestDist){bestDist=d;bestTarget=w;}
+    });
+    // if all owned, attack muslim units
+    if(!bestTarget){
+      const mUnits=units.filter(m=>m.side==="muslim"&&m.hp>0);
+      if(mUnits.length>0){
+        let nearest=null,nd=999;
+        mUnits.forEach(m=>{const d=dist(u,m);if(d<nd){nd=d;nearest=m;}});
+        if(nearest&&nd<=MOVE_RANGE){
+          combat(u,nearest);return;
+        }else if(nearest){
+          moveToward(u,nearest.x,nearest.y);return;
+        }
+      }
+      return;
+    }
+    if(bestDist<=1){
+      // at water source, secure it
+      if(bestTarget.guard==="muslim"){
+        const guarder=units.find(g=>g.side==="muslim"&&g.x===bestTarget.x&&g.y===bestTarget.y&&g.hp>0);
+        if(guarder){combat(u,guarder);return;}
+      }
+      u.x=bestTarget.x;u.y=bestTarget.y;bestTarget.owner="enemy";bestTarget.guard="enemy";
+      log("Enemy secured water at ("+bestTarget.x+","+bestTarget.y+")!","error");
+    }else{
+      moveToward(u,bestTarget.x,bestTarget.y);
+      // check if arrived at a muslim unit
+      const atTarget=getUnitAt(u.x,u.y);
+      if(atTarget&&atTarget.side==="muslim"&&atTarget!==u){
+        u.x-=Math.sign(bestTarget.x-u.x)||0;u.y-=Math.sign(bestTarget.y-u.y)||0;
+      }
+    }
+  });
+}
+
+function moveToward(u,tx,ty){
+  let dx=Math.sign(tx-u.x),dy=Math.sign(ty-u.y);
+  let steps=Math.min(MOVE_RANGE,dist(u,{x:tx,y:ty}));
+  for(let i=0;i<steps;i++){
+    let nx=u.x+dx,ny=u.y+dy;
+    if(nx<0||nx>=COLS)dx=0;
+    if(ny<0||ny>=ROWS)dy=0;
+    nx=u.x+dx;ny=u.y+dy;
+    const blocker=getUnitAt(nx,ny);
+    if(blocker&&blocker!==u)break;
+    u.x=nx;u.y=ny;
+    if(dx===0&&dy===0)break;
+  }
+}
+
+// ===== TURN MANAGEMENT =====
+function endTurn(){
+  if(gameOver)return;
+  // water consumption phase
+  const mWells=waterSources.filter(w=>w.owner==="muslim");
+  const eWells=waterSources.filter(w=>w.owner==="enemy");
+  let mGain=0,eGain=0;
+  mWells.forEach(w=>mGain+=w.water);
+  eWells.forEach(w=>eGain+=w.water);
+  const mAlive=units.filter(u=>u.side==="muslim"&&u.hp>0);
+  const eAlive=units.filter(u=>u.side==="enemy"&&u.hp>0);
+  muslimWater+=mGain-mAlive.length*2;
+  enemyWater+=eGain-eAlive.length*2;
+  if(muslimWater<0){
+    mAlive.forEach(u=>u.hp-=15);
+    log("Army dehydrating! Units lose HP","error");muslimWater=0;
+  }
+  if(enemyWater<0){
+    eAlive.forEach(u=>u.hp-=15);
+    log("Enemy dehydrating!","success");enemyWater=0;
+  }
+  // enemy turn
+  enemyTurn();
+  turn++;
+  // reset moves
+  units.forEach(u=>u.moved=false);selectedUnit=null;
+  // check win/loss
+  const mAlive2=units.filter(u=>u.side==="muslim"&&u.hp>0).length;
+  const eAlive2=units.filter(u=>u.side==="enemy"&&u.hp>0).length;
+  if(mAlive2===0){gameOver=true;document.getElementById("status").textContent="DEFEAT — Your army perished!";document.getElementById("status").className="status lose";log("DEFEAT","error");snd("err");checkHS();}
+  else if(eAlive2===0){gameOver=true;document.getElementById("status").textContent="VICTORY! Enemy eliminated!";document.getElementById("status").className="status win";log("VICTORY!","success");snd("win");checkHS();}
+  else if(turn>=MAX_TURNS){
+    gameOver=true;
+    const mW=waterSources.filter(w=>w.owner==="muslim").length;
+    const eW=waterSources.filter(w=>w.owner==="enemy").length;
+    if(mW>eW||muslimWater>enemyWater){
+      document.getElementById("status").textContent="VICTORY! You control more water!";document.getElementById("status").className="status win";snd("win");
+    }else{
+      document.getElementById("status").textContent="DEFEAT — Enemy controls more water!";document.getElementById("status").className="status lose";snd("err");
+    }
+    checkHS();
+  }else{
+    document.getElementById("status").textContent="Turn "+turn+" — Select a unit!";document.getElementById("status").className="status";
+  }
+  draw();updateUI();
+}
+
+function updateUI(){
+  document.getElementById("mWater").textContent=Math.round(muslimWater);
+  document.getElementById("eWater").textContent=Math.round(enemyWater);
+  document.getElementById("mUnits").textContent=units.filter(u=>u.side==="muslim"&&u.hp>0).length;
+  document.getElementById("eUnits").textContent=units.filter(u=>u.side==="enemy"&&u.hp>0).length;
+  document.getElementById("sc").textContent=turn;
+  const mWells=waterSources.filter(w=>w.owner==="muslim").length;
+  document.getElementById("tot").textContent=mWells;
+  document.getElementById("scorePill").textContent="Turn "+turn+" | Wells: "+mWells;
+  document.getElementById("prog").style.width=(turn/MAX_TURNS*100)+"%";
+  document.getElementById("timerPill").textContent=timerSeconds?Math.floor(timerSeconds/60)+":"+(timerSeconds%60<10?"0":"")+timerSeconds%60:"0:00";
+}
+
+// ===== TIMER =====
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;updateUI();},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+// ===== NEW GAME =====
+function newGame(){
+  stopTimer();startTimer();
+  const mi=parseInt(document.getElementById("mapSel").value);
+  initMap(mi);
+  document.getElementById("status").textContent="Turn 0 — Select a unit and act!";
+  document.getElementById("status").className="status";
+  document.getElementById("logBox").innerHTML="";
+  log("Map: "+MAPS[mi].name+" loaded","success");
+  log("Secure wells, guard them, deny water to the enemy!");
+  setAction("move");draw();updateUI();
+}
+
+// ===== HIGH SCORE =====
+const HS_KEY="wdiy-hs-water-strategy";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
+function checkHS(){
+  if(gameOver){
+    const mWells=waterSources.filter(w=>w.owner==="muslim").length;
+    const mAlive=units.filter(u=>u.side==="muslim"&&u.hp>0).length;
+    const eAlive=units.filter(u=>u.side==="enemy"&&u.hp>0).length;
+    const won=eAlive===0||(mWells>waterSources.filter(w=>w.owner==="enemy").length)||(muslimWater>enemyWater);
+    const pct=won?Math.round((mWells/waterSources.length)*50+(mAlive/(mAlive+1))*30+Math.max(0,20-turn)):0;
+    if(pct>0&&saveHS(pct)){log("NEW HIGH SCORE: "+pct+"%!","success");}
+    stopTimer();showHS();
+  }
+}
+
+// ===== INIT =====
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+document.addEventListener("keydown",function(e){
+  if(e.key==="1")setAction("move");
+  if(e.key==="2")setAction("secure");
+  if(e.key==="3")setAction("guard");
+  if(e.key==="Enter"||e.key===" "){
+    const go=document.getElementById("enterBtn");
+    if(go&&go.offsetParent!==null)go.click();
+  }
+  if(e.key==="e"||e.key==="E")endTurn();
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

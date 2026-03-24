@@ -1,0 +1,420 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Treaty of Hudaybiyyah — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:420px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:560px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;overflow:hidden}
+.big-text{font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;color:var(--heading);text-align:center;line-height:1.4}
+.scene-label{font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:2px;font-weight:600}
+.narrator{font-size:12px;color:var(--text2);text-align:center;line-height:1.7;max-width:440px}
+.term-box{background:var(--bg3);border:1px solid var(--border2);border-radius:10px;padding:14px 16px;max-width:440px;width:100%;text-align:left}
+.term-label{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.term-text{font-size:13px;color:var(--heading);font-weight:600;line-height:1.5;margin-bottom:8px}
+.term-reaction{font-size:11px;color:#ff8844;margin-bottom:6px;font-style:italic}
+.term-wisdom{font-size:11px;color:var(--accent);line-height:1.5;display:none}
+.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .15s;min-width:80px}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.answer-btn.accept{border-color:var(--accent);color:var(--accent)}
+.answer-btn.accept:hover{background:var(--accent);color:var(--bg)}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.fade-in{animation:fadeIn .5s ease}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:">";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+.tree-icon{font-size:40px;margin-bottom:4px}
+.verse-box{background:var(--abg);border:1px solid var(--abr);border-radius:10px;padding:12px 16px;text-align:center;max-width:400px}
+.verse-ar{font-family:'Noto Sans Arabic',sans-serif;font-size:16px;color:var(--accent);line-height:1.8;margin-bottom:6px}
+.verse-en{font-size:11px;color:var(--text2);font-style:italic}
+.result-card{background:var(--bg3);border:1px solid var(--border2);border-radius:10px;padding:12px 16px;text-align:center;max-width:400px;width:100%}
+.result-card h3{font-family:'Outfit',sans-serif;font-size:14px;color:var(--heading);margin-bottom:6px}
+.result-card p{font-size:11px;color:var(--text2);line-height:1.6}
+.stat-row{display:flex;gap:16px;justify-content:center;margin:10px 0}
+.stat-item{text-align:center}
+.stat-num{font-family:'Outfit',sans-serif;font-size:28px;font-weight:800;color:var(--accent)}
+.stat-lbl{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:1px}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Treaty of Hudaybiyyah</h1><div style="color:var(--accent);font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px">The victory that looked like defeat</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Experience the wisdom of the Prophet (peace be upon him) in a historic negotiation. Learn how short-term sacrifice leads to long-term victory.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">T</button><button class="sw-btn" data-thm="midnight">M</button><button class="sw-btn" data-thm="ember">E</button><button class="sw-btn" data-thm="phosphor">P</button><button class="sw-btn" data-thm="signal">S</button><button class="sw-btn" data-thm="redshift">R</button><button class="sw-btn" data-thm="arctic">A</button><button class="sw-btn" data-thm="sand">D</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Treaty of Hudaybiyyah</h1><span class="pill" id="scorePill">Phase 1</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl">
+    <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">?</button>
+    <button id="soundBtn">Sound ON</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+    <div class="sw"><button class="sw-btn on" data-thm="terminal">T</button><button class="sw-btn" data-thm="midnight">M</button><button class="sw-btn" data-thm="ember">E</button><button class="sw-btn" data-thm="phosphor">P</button><button class="sw-btn" data-thm="signal">S</button><button class="sw-btn" data-thm="redshift">R</button><button class="sw-btn" data-thm="arctic">A</button><button class="sw-btn" data-thm="sand">D</button></div></div>
+<div class="status" id="status">The journey to Hudaybiyyah begins...</div>
+<div class="game-area" id="gameArea"></div>
+<div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">Decisions</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Phase</div><div class="score-num" id="tot">1</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Treaty of Hudaybiyyah v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">Help</span><button class="btn-close" onclick="closeHelp()">X</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is this game?</summary><p>An interactive simulation of the Treaty of Hudaybiyyah negotiation. You play as a companion of the Prophet (peace be upon him) and learn why accepting seemingly unfair terms was actually a great victory.</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (T M E P S R A D) in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / (ayn). Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Read the story narration at each phase</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Phase 1: Witness the events at Hudaybiyyah — the envoy, the rumor, and the Pledge of Ridwan</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Phase 2: Negotiate the treaty terms with Suhayl ibn Amr — accept each term trusting the Prophet's wisdom</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>Phase 3: See the results — how this "defeat" became the greatest victory</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Press New Game to experience the story again</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Click the Catalog link to go back and try another game</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>Purpose</h3><p>Learn about the Treaty of Hudaybiyyah — one of the most important events in Islamic history. Understand how short-term sacrifice leads to long-term victory.</p></div>
+        <div class="wiki-entry"><h3>Historical Context</h3><p>In 6 AH (628 CE), the Prophet (peace be upon him) set out with 1,400 Muslims for Umrah. The Quraysh blocked them at Hudaybiyyah. What followed was a negotiation that changed the course of history.</p></div>
+        <div class="wiki-entry"><h3>Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>Languages</h3><p>Trilingual: English, Francais, al-Arabiyyah. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>Sound</h3><p>Web Audio API — no files needed. Toggle with the Sound button.</p></div>
+        <div class="wiki-entry"><h3>Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){var b=document.getElementById("logBox");if(!b)return;var d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// ===== GAME STATE =====
+var phase=0, step=0, decisions=0, locked=false;
+var timerInterval,timerSeconds=0;
+
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(function(){timerSeconds++;var m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+// ===== STORY DATA =====
+var PHASE1=[
+{type:"narrate",label:"6 AH — The Road to Makkah",text:"The Prophet Muhammad (peace be upon him) sets out with 1,400 Muslims. They are not armed for war — they wear ihram and bring sacrificial animals. Their only intention: to perform Umrah.",btn:"Continue"},
+{type:"narrate",label:"Hudaybiyyah — Blocked!",text:"At Hudaybiyyah, near Makkah, the Quraysh send riders to block the Muslims. They refuse to let them enter the sacred city. Tension fills the air.",btn:"Continue"},
+{type:"narrate",label:"The Envoy",text:"The Prophet (peace be upon him) sends Uthman ibn Affan (may Allah be pleased with him) as an envoy to the Quraysh, to explain that the Muslims come only for Umrah, in peace.",btn:"Continue"},
+{type:"narrate",label:"Waiting...",text:"Hours pass. Uthman does not return. The Muslims wait anxiously. Then a terrible rumor spreads through the camp...",btn:"What happened?"},
+{type:"narrate",label:"The Rumor",text:"\"Uthman has been killed!\" The rumor shakes the camp. The companions are filled with grief and anger. The Prophet (peace be upon him) calls them to gather under a tree.",btn:"Answer the call"},
+{type:"choice",label:"Bay'at al-Ridwan — The Pledge of Ridwan",text:"Under the tree, the Prophet (peace be upon him) asks each Muslim to give a pledge. What do you do?",options:["Give the pledge","Wait and see"],correct:0,feedback:"You give your hand to the Prophet (peace be upon him) and pledge. 1,400 Muslims pledge under the tree. This is Bay'at al-Ridwan — the Pledge of the Tree. Allah is pleased with those who pledged (Quran 48:18)."},
+{type:"narrate",label:"Relief!",text:"Uthman is alive! He was only delayed. The Quraysh, hearing of the Muslims' unity and determination, decide to negotiate. They send Suhayl ibn Amr to draft a treaty.",btn:"Begin negotiations"}
+];
+
+var TERMS=[
+{demand:"Suhayl says: \"Write: In the name of Allah, the Most Merciful, the Most Compassionate... No! Remove that. Write only: In your name, O Allah.\"",reaction:"This feels wrong... we always begin with Bismillah al-Rahman al-Rahim!",wisdom:"The Prophet (peace be upon him) agrees calmly. The words don't change the reality — Allah knows what is in our hearts. The Prophet teaches us that ego should never stand in the way of peace.",termShort:"Bismillah removed from heading"},
+{demand:"Suhayl says: \"Write: Muhammad, Messenger of Allah... No! If we accepted you as a Messenger, we wouldn't have blocked you. Write only: Muhammad ibn Abdullah.\"",reaction:"How dare they deny his prophethood! The companions are furious!",wisdom:"The Prophet (peace be upon him) tells Ali to erase it. When Ali hesitates, the Prophet erases it himself. He IS the Messenger of Allah whether they write it or not. True status comes from Allah, not from ink on paper.",termShort:"'Messenger of Allah' removed"},
+{demand:"The Muslims must return to Madinah this year without performing Umrah. They may come next year and stay only three days.",reaction:"We traveled all this way in ihram, with our sacrificial animals... and we must go back empty-handed?!",wisdom:"Patience. The Prophet (peace be upon him) knows that next year they will enter Makkah with dignity. Sometimes stepping back is how you move forward.",termShort:"Return this year, come back next year"},
+{demand:"Any man from Quraysh who goes to Muhammad without permission must be returned to Quraysh.",reaction:"This is completely one-sided! If someone wants to become Muslim, we have to send them back?!",wisdom:"The Prophet (peace be upon him) trusts in Allah's plan. Those returned will become seeds of Islam among the Quraysh. Indeed, Abu Jandal and Abu Basir later formed their own group that pressured Quraysh to cancel this very clause!",termShort:"Quraysh defectors must be returned"},
+{demand:"Any Muslim who goes back to Quraysh will NOT be returned to the Muslims.",reaction:"Even MORE unfair! This treaty is completely one-sided against us!",wisdom:"If a Muslim truly has faith, they won't leave Islam. And if someone leaves, it's better for the Muslim community. The Prophet (peace be upon him) sees the bigger picture — peace itself is the true victory.",termShort:"Muslim defectors won't be returned"},
+{demand:"There shall be a 10-year peace treaty between the Muslims and the Quraysh. No fighting for ten years. All Arab tribes are free to ally with either side.",reaction:"Ten years of peace...",wisdom:"THIS is the real victory! Peace means the Prophet (peace be upon him) can spread the message of Islam freely. Before Hudaybiyyah, Islam grew slowly through conflict. After the treaty, in just two years, more people accepted Islam than in all the previous 19 years combined!",termShort:"10-year peace treaty"}
+];
+
+var PHASE3=[
+{type:"narrate",label:"The Companions' Sorrow",text:"The companions are heartbroken. Umar (may Allah be pleased with him) himself questions the treaty. The Prophet (peace be upon him) tells them to shave their heads and sacrifice their animals — the Umrah rituals, completed here at Hudaybiyyah.",btn:"Continue"},
+{type:"narrate",label:"The Revelation",text:"On the road back to Madinah, Allah reveals Surah Al-Fath (The Victory). The very first verse declares this treaty to be a clear victory!",btn:"See the verse"},
+{type:"verse",ar:"إِنَّا فَتَحْنَا لَكَ فَتْحًا مُّبِينًا",en:"Indeed, We have given you a clear victory. (Quran 48:1)",btn:"See the results"},
+{type:"results",label:"Two Years Later...",stats:[
+{num:"1,400",lbl:"Muslims at Hudaybiyyah"},
+{num:"10,000",lbl:"Muslims at Conquest of Makkah"},
+{num:"2",lbl:"Years to multiply 7x"},
+{num:"0",lbl:"Battles during the peace"}
+],text:"The peace allowed Islam to spread through dialogue, not conflict. Tribe after tribe accepted Islam. Two years later, the Prophet (peace be upon him) entered Makkah with 10,000 Muslims — peacefully.",btn:"See the lesson"},
+{type:"lesson",label:"The Lesson of Hudaybiyyah",points:[
+"Trust in Allah's plan, even when you cannot see the wisdom",
+"Short-term sacrifice can lead to long-term victory",
+"The Prophet (peace be upon him) chose peace over pride",
+"True victory is winning hearts, not winning battles",
+"What looked like defeat was actually the greatest conquest"
+]}
+];
+
+// ===== RENDER FUNCTIONS =====
+var ga;
+function render(){
+  ga=document.getElementById("gameArea");
+  ga.innerHTML="";
+  ga.className="game-area fade-in";
+  if(phase===0) renderPhase1();
+  else if(phase===1) renderPhase2();
+  else if(phase===2) renderPhase3();
+  updateProgress();
+}
+
+function updateProgress(){
+  var total=PHASE1.length+TERMS.length+PHASE3.length;
+  var done=0;
+  if(phase===0) done=step;
+  else if(phase===1) done=PHASE1.length+step;
+  else if(phase===2) done=PHASE1.length+TERMS.length+step;
+  if(phase===2&&step>=PHASE3.length) done=total;
+  document.getElementById("prog").style.width=Math.round(done/total*100)+"%";
+  var phaseNum=phase+1;
+  if(phase===2&&step>=PHASE3.length) phaseNum=3;
+  document.getElementById("tot").textContent=phaseNum;
+  document.getElementById("scorePill").textContent="Phase "+phaseNum;
+}
+
+function renderPhase1(){
+  if(step>=PHASE1.length){phase=1;step=0;render();return;}
+  var s=PHASE1[step];
+  document.getElementById("status").textContent="Phase 1 — The Journey";
+  document.getElementById("status").className="status";
+  if(s.type==="narrate"){
+    ga.innerHTML='<div class="scene-label">'+s.label+'</div><div class="narrator">'+s.text+'</div><div class="answer-row"><button class="answer-btn accept" id="contBtn">'+s.btn+'</button></div>';
+    document.getElementById("contBtn").onclick=function(){snd("click");step++;log(s.label);render();};
+  }else if(s.type==="choice"){
+    var html='<div class="scene-label">'+s.label+'</div><div class="narrator">'+s.text+'</div><div class="answer-row">';
+    s.options.forEach(function(opt,i){
+      html+='<button class="answer-btn" data-idx="'+i+'">'+opt+'</button>';
+    });
+    html+='</div>';
+    ga.innerHTML=html;
+    ga.querySelectorAll(".answer-btn").forEach(function(btn){
+      btn.onclick=function(){
+        if(locked)return;locked=true;
+        var idx=parseInt(btn.dataset.idx);
+        decisions++;
+        document.getElementById("sc").textContent=decisions;
+        if(idx===s.correct){
+          btn.classList.add("correct");snd("ok");log("Correct: "+s.options[idx],"success");
+        }else{
+          btn.classList.add("wrong");snd("err");log("The right answer: "+s.options[s.correct],"error");
+          ga.querySelectorAll(".answer-btn")[s.correct].classList.add("correct");
+        }
+        setTimeout(function(){
+          ga.innerHTML='<div class="scene-label">'+s.label+'</div><div class="narrator">'+s.feedback+'</div><div class="answer-row"><button class="answer-btn accept" id="contBtn">Continue</button></div>';
+          document.getElementById("contBtn").onclick=function(){snd("click");locked=false;step++;render();};
+        },1200);
+      };
+    });
+  }
+}
+
+function renderPhase2(){
+  if(step>=TERMS.length){phase=2;step=0;render();return;}
+  var t=TERMS[step];
+  document.getElementById("status").textContent="Phase 2 — Negotiation (Term "+(step+1)+"/"+TERMS.length+")";
+  document.getElementById("status").className="status";
+  ga.innerHTML='<div class="scene-label">Treaty Term '+(step+1)+'</div>'+
+    '<div class="term-box">'+
+      '<div class="term-label">Suhayl ibn Amr demands:</div>'+
+      '<div class="term-text">'+t.demand+'</div>'+
+      '<div class="term-reaction">Your reaction: '+t.reaction+'</div>'+
+      '<div class="term-wisdom" id="wisdomBox">The Prophet\'s wisdom: '+t.wisdom+'</div>'+
+    '</div>'+
+    '<div class="answer-row" id="termBtns">'+
+      '<button class="answer-btn" id="rejectBtn">Reject!</button>'+
+      '<button class="answer-btn accept" id="acceptBtn">Trust the Prophet (pbuh)</button>'+
+    '</div>';
+
+  document.getElementById("acceptBtn").onclick=function(){
+    if(locked)return;locked=true;
+    decisions++;
+    document.getElementById("sc").textContent=decisions;
+    document.getElementById("acceptBtn").classList.add("correct");
+    snd("ok");
+    log("Accepted: "+t.termShort,"success");
+    document.getElementById("wisdomBox").style.display="block";
+    document.getElementById("termBtns").innerHTML='<button class="answer-btn accept" id="nextTermBtn">'+(step<TERMS.length-1?"Next Term":"Continue")+'</button>';
+    document.getElementById("nextTermBtn").onclick=function(){snd("click");locked=false;step++;render();};
+  };
+
+  document.getElementById("rejectBtn").onclick=function(){
+    if(locked)return;locked=true;
+    decisions++;
+    document.getElementById("sc").textContent=decisions;
+    document.getElementById("rejectBtn").classList.add("wrong");
+    snd("err");
+    log("Rejected at first, but the Prophet accepted: "+t.termShort,"error");
+    setTimeout(function(){
+      document.getElementById("wisdomBox").style.display="block";
+      document.getElementById("termBtns").innerHTML='<div class="narrator" style="font-size:11px;margin-bottom:8px">The Prophet (peace be upon him) accepts this term. Let us trust his wisdom...</div><button class="answer-btn accept" id="nextTermBtn">'+(step<TERMS.length-1?"Next Term":"Continue")+'</button>';
+      document.getElementById("nextTermBtn").onclick=function(){snd("click");locked=false;step++;render();};
+    },1200);
+  };
+}
+
+function renderPhase3(){
+  if(step>=PHASE3.length){
+    // Final screen
+    stopTimer();checkHS();snd("win");
+    document.getElementById("status").textContent="The Clear Victory!";
+    document.getElementById("status").className="status win";
+    log("Game complete! The victory that looked like defeat.","success");
+    ga.innerHTML='<div class="tree-icon">&#127796;</div><div class="big-text">You completed the Treaty of Hudaybiyyah!</div>'+
+      '<div class="narrator">You learned that trusting the Prophet (peace be upon him) and trusting Allah\'s plan — even when it seems unfair — leads to the greatest victories.</div>'+
+      '<div class="answer-row"><button class="answer-btn accept" id="replayBtn">Play Again</button></div>';
+    document.getElementById("replayBtn").onclick=newGame;
+    return;
+  }
+  var s=PHASE3[step];
+  document.getElementById("status").textContent="Phase 3 — The Victory";
+  document.getElementById("status").className="status";
+
+  if(s.type==="narrate"){
+    ga.innerHTML='<div class="scene-label">'+s.label+'</div><div class="narrator">'+s.text+'</div><div class="answer-row"><button class="answer-btn accept" id="contBtn">'+s.btn+'</button></div>';
+    document.getElementById("contBtn").onclick=function(){snd("click");step++;log(s.label);render();};
+  }else if(s.type==="verse"){
+    ga.innerHTML='<div class="verse-box"><div class="verse-ar">'+s.ar+'</div><div class="verse-en">'+s.en+'</div></div><div class="answer-row"><button class="answer-btn accept" id="contBtn">'+s.btn+'</button></div>';
+    document.getElementById("contBtn").onclick=function(){snd("ok");step++;log("Surah Al-Fath revealed");render();};
+  }else if(s.type==="results"){
+    var html='<div class="scene-label">'+s.label+'</div><div class="stat-row">';
+    s.stats.forEach(function(st){html+='<div class="stat-item"><div class="stat-num">'+st.num+'</div><div class="stat-lbl">'+st.lbl+'</div></div>';});
+    html+='</div><div class="narrator">'+s.text+'</div><div class="answer-row"><button class="answer-btn accept" id="contBtn">'+s.btn+'</button></div>';
+    ga.innerHTML=html;
+    document.getElementById("contBtn").onclick=function(){snd("click");step++;log("Results reviewed");render();};
+  }else if(s.type==="lesson"){
+    var html='<div class="scene-label">'+s.label+'</div><div class="result-card"><h3>Key Lessons</h3>';
+    s.points.forEach(function(p,i){html+='<p style="text-align:left;margin-bottom:4px"><span style="color:var(--accent);font-weight:700;">'+(i+1)+'.</span> '+p+'</p>';});
+    html+='</div><div class="answer-row"><button class="answer-btn accept" id="contBtn">Finish</button></div>';
+    ga.innerHTML=html;
+    document.getElementById("contBtn").onclick=function(){snd("click");step++;render();};
+  }
+}
+
+// ===== HIGH SCORE =====
+var HS_KEY="wdiy-hs-hudaybiyyah";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0;}catch(e){return 0;}}
+function saveHS(score){try{var best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){var best=loadHS();if(best>0){var pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">Best '+best+'s</span>';}}
+function checkHS(){
+  if(timerSeconds>0){
+    if(saveHS(timerSeconds)){log("NEW BEST TIME: "+timerSeconds+"s!","success");}
+  }
+}
+
+// ===== GAME CONTROL =====
+function newGame(){
+  phase=0;step=0;decisions=0;locked=false;
+  document.getElementById("sc").textContent="0";
+  document.getElementById("tot").textContent="1";
+  document.getElementById("scorePill").textContent="Phase 1";
+  document.getElementById("logBox").innerHTML="";
+  startTimer();
+  log("Journey to Hudaybiyyah begins...");
+  render();
+}
+
+// ===== INIT =====
+document.addEventListener("DOMContentLoaded",function(){
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
+  document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",function(){
+    document.querySelector(".splash").style.display="none";
+    document.getElementById("app").classList.add("on");
+    document.getElementById("backLink").style.display="block";
+    newGame();
+  });
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",function(){
+    soundOn=!soundOn;
+    document.getElementById("soundBtn").textContent=soundOn?"Sound ON":"Sound OFF";
+    try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}
+  });
+
+  // Help tabs
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){
+    document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});
+    document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});
+    tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");
+  });});
+});
+
+// Keyboard shortcuts
+document.addEventListener("keydown",function(e){
+  if(e.key==="Enter"){
+    var go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null){go.click();return;}
+    var start=document.getElementById("startBtn");if(start&&start.offsetParent!==null){start.click();return;}
+    var cont=document.getElementById("contBtn");if(cont)cont.click();
+    var next=document.getElementById("nextTermBtn");if(next)next.click();
+    var replay=document.getElementById("replayBtn");if(replay)replay.click();
+  }
+  if(e.key==="1"){var acc=document.getElementById("acceptBtn");if(acc)acc.click();}
+  if(e.key==="2"){var rej=document.getElementById("rejectBtn");if(rej)rej.click();}
+  if(e.key>="1"&&e.key<="4"){var btns=document.querySelectorAll(".game-area .answer-btn[data-idx]");var i=parseInt(e.key)-1;if(btns[i])btns[i].click();}
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="Sound OFF";}}catch(e){}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

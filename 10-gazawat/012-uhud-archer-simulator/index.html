@@ -1,0 +1,663 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Archers of Uhud — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:700px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:8px;margin-bottom:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;position:relative}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:8px}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+canvas{border-radius:8px;cursor:crosshair;display:block;max-width:100%;touch-action:none}
+.order-banner{text-align:center;font-size:11px;color:var(--accent);font-style:italic;padding:6px 12px;background:var(--abg);border:1px solid var(--abr);border-radius:8px;margin-bottom:8px;line-height:1.5}
+.tempt-btn{padding:12px 24px;background:linear-gradient(135deg,gold,orange);color:#000;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;animation:glowPulse 1s infinite alternate;display:none;margin:8px auto}
+@keyframes glowPulse{from{box-shadow:0 0 8px rgba(255,215,0,.4)}to{box-shadow:0 0 20px rgba(255,215,0,.8)}}
+.stay-btn{padding:10px 20px;background:var(--accent);color:var(--bg);border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;display:none;margin:8px auto}
+.phase-label{font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;color:var(--heading);text-align:center;min-height:20px}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Archers of Uhud</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px">Will you hold your position?</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:8px">You are one of the 50 archers placed by the Prophet &#65018; on the hill at Uhud.</p><p style="color:var(--text2);font-size:10px;line-height:1.6;margin-bottom:20px;font-style:italic">"Do not leave this hill even if you see birds eating our flesh."</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
+<div class="hdr"><h1>Archers of Uhud</h1><span class="pill" id="scorePill">0</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<div class="ctrl">
+  <select id="diffSel"><option value="easy">Easy</option><option value="medium" selected>Medium</option><option value="hard">Hard</option></select>
+  <button id="startBtn">&#9654; New Game</button><button class="btn-help" onclick="openHelp()">&#10067;</button>
+  <button id="soundBtn">&#128266;</button>
+  <div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+  <div class="sw"><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div>
+</div>
+<div class="order-banner" id="orderBanner">"Do not leave this hill even if you see birds eating our flesh." &#8212; Prophet &#65018;</div>
+<div class="status" id="status">Defend the hill!</div>
+<div class="phase-label" id="phaseLabel">Phase 1: Defend the Flank</div>
+<div class="game-area">
+  <canvas id="gc" width="660" height="440"></canvas>
+  <button class="tempt-btn" id="temptBtn">&#128176; Leave hill to collect spoils!</button>
+  <button class="stay-btn" id="stayBtn">&#128737; Stay on the hill! Obey the Prophet &#65018;</button>
+</div>
+<div class="score-row">
+  <div class="score-item"><div class="score-label">Hits</div><div class="score-num" id="sc">0</div></div>
+  <div class="score-item"><div class="score-label">Repelled</div><div class="score-num" id="repelled">0</div></div>
+  <div class="score-item"><div class="score-label">Arrows</div><div class="score-num" id="arrows">0</div></div>
+</div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy &#8212; Archers of Uhud v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+      <details class="help-item"><summary>What is Archers of Uhud?</summary><p>A canvas-based archer simulator set during the Battle of Uhud. You play as one of the 50 archers stationed on the hill by the Prophet (peace be upon him).</p></details>
+      <details class="help-item"><summary>What is the lesson?</summary><p>Obedience and discipline. The archers who left the hill to collect spoils caused a devastating reversal. Staying on the hill, even when tempted, is the key to victory.</p></details>
+      <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+      <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Tap on the battlefield to shoot arrows. Works on any device with a modern browser.</p></details>
+      <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
+      <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / &#1593;. Arabic enables right-to-left layout automatically.</p></details>
+      <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+      <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+      <div class="help-step"><span class="help-step-num">2</span><p>Choose difficulty (Easy / Medium / Hard)</p></div>
+      <div class="help-step"><span class="help-step-num">3</span><p>Press New Game to begin defending the hill</p></div>
+      <div class="help-step"><span class="help-step-num">4</span><p>Phase 1: Click/tap on enemy cavalry (red) to shoot arrows and repel them</p></div>
+      <div class="help-step"><span class="help-step-num">5</span><p>Phase 2: Muslims are winning. Spoils appear. You face a choice.</p></div>
+      <div class="help-step"><span class="help-step-num">6</span><p>Choose wisely: Stay on the hill or leave for spoils?</p></div>
+      <div class="help-step"><span class="help-step-num">7</span><p>See the consequences of your choice animated on the battlefield</p></div>
+      <div class="help-step"><span class="help-step-num">8</span><p>Press New Game to try again with a different choice</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+      <div class="wiki-entry"><h3>&#127919; Purpose</h3><p>Teach the lesson of obedience from the Battle of Uhud. The Prophet (peace be upon him) stationed 50 archers on a hill with strict orders not to leave.</p></div>
+      <div class="wiki-entry"><h3>&#9876; Battle of Uhud</h3><p>Fought in 3 AH (625 CE) near Mount Uhud outside Madinah. The Muslim army initially had the upper hand, but when archers left their post to collect spoils, Khalid ibn al-Walid's cavalry flanked them.</p></div>
+      <div class="wiki-entry"><h3>&#127752; Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+      <div class="wiki-entry"><h3>&#127760; Languages</h3><p>Trilingual: English, Fran&#231;ais, &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;. Arabic auto-enables RTL layout.</p></div>
+      <div class="wiki-entry"><h3>&#128266; Sound</h3><p>Web Audio API &#8212; no files needed. Arrow shot, hit, victory, and defeat sounds. Toggle with the sound button.</p></div>
+      <div class="wiki-entry"><h3>&#128274; Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY &#8212; v1.0</div>
+</aside>
+
+<script>
+// ===== SIDEBAR HELP =====
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+
+// ===== LANG & THEME =====
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+
+// ===== SOUND =====
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const n=actx.currentTime;
+if(t==="shoot"){const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.08;o.frequency.setValueAtTime(600,n);o.frequency.exponentialRampToValueAtTime(200,n+.1);o.type="sawtooth";g.gain.exponentialRampToValueAtTime(.001,n+.12);o.start(n);o.stop(n+.12);}
+else if(t==="hit"){const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}
+else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.04;o.frequency.value=f;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);o.start(n+i*.12);o.stop(n+.2+i*.12);});}
+else if(t==="lose"){const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;o.frequency.setValueAtTime(400,n);o.frequency.exponentialRampToValueAtTime(100,n+.4);o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.4);o.start(n);o.stop(n+.4);}
+else if(t==="tempt"){const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.04;o.frequency.value=880;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.3);o.start(n);o.stop(n+.3);}
+else{const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.04;o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+
+// ===== LOG =====
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// ===== HIGH SCORE =====
+const HS_KEY="wdiy-hs-uhud-archer";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">&#127942; '+best+'</span>';}}
+function checkHS(score){if(saveHS(score)){log("NEW HIGH SCORE: "+score+"!","success");}}
+
+// ===== TIMER =====
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+// ===== CANVAS GAME =====
+const canvas=document.getElementById("gc");
+const ctx=canvas.getContext("2d");
+let W=660,H=440;
+
+// Difficulty
+const DIFF={easy:{spawnRate:2200,enemySpeed:.4,maxEnemies:4,wavesP1:3,wavesP3:4},medium:{spawnRate:1600,enemySpeed:.55,maxEnemies:6,wavesP1:4,wavesP3:5},hard:{spawnRate:1100,enemySpeed:.7,maxEnemies:8,wavesP1:5,wavesP3:6}};
+
+// Game state
+let game={phase:0,running:false,enemies:[],arrows:[],spoils:[],particles:[],hits:0,repelled:0,arrowsFired:0,waveCount:0,maxWaves:4,spawnTimer:0,choiceMade:false,stayedOnHill:false,endTimer:0,endPhase:""};
+
+// Colors that adapt to theme
+function getCS(){const s=getComputedStyle(document.documentElement);return{bg:s.getPropertyValue("--bg").trim()||"#0a0c10",bg2:s.getPropertyValue("--bg2").trim()||"#0d1117",accent:s.getPropertyValue("--accent").trim()||"#00ff88",heading:s.getPropertyValue("--heading").trim()||"#e6edf3",text:s.getPropertyValue("--text").trim()||"#c9d1d9",text2:s.getPropertyValue("--text2").trim()||"#8b949e",border:s.getPropertyValue("--border").trim()||"#21262d"};}
+
+// Hill shape
+function drawHill(cs){
+  // Sky
+  ctx.fillStyle=cs.bg;ctx.fillRect(0,0,W,H);
+  // Distant battlefield (lower area)
+  const grad=ctx.createLinearGradient(0,0,0,H);
+  grad.addColorStop(0,cs.bg);grad.addColorStop(0.4,"#1a2a1a");grad.addColorStop(0.65,"#2a3a2a");grad.addColorStop(1,"#3a4a2a");
+  ctx.fillStyle=grad;ctx.fillRect(0,0,W,H);
+  // Archer hill (bottom portion)
+  ctx.fillStyle="#4a5a30";
+  ctx.beginPath();ctx.moveTo(0,H-60);ctx.quadraticCurveTo(W/2,H-100,W,H-60);ctx.lineTo(W,H);ctx.lineTo(0,H);ctx.fill();
+  // Hill edge rocks
+  ctx.fillStyle="#5a6a3a";
+  for(let i=0;i<W;i+=40){ctx.beginPath();ctx.arc(i+20,H-60+Math.sin(i*.05)*10,8+Math.random()*4,0,Math.PI*2);ctx.fill();}
+  // Archer position indicator
+  ctx.fillStyle=cs.accent;ctx.globalAlpha=0.3;
+  ctx.beginPath();ctx.arc(W/2,H-30,15,0,Math.PI*2);ctx.fill();
+  ctx.globalAlpha=1;
+  ctx.fillStyle=cs.accent;ctx.font="bold 10px Outfit";ctx.textAlign="center";
+  ctx.fillText("YOU",W/2,H-26);
+  // Fellow archers (small dots on hill)
+  ctx.fillStyle=cs.accent;ctx.globalAlpha=0.4;
+  for(let i=0;i<12;i++){const x=80+i*42,y=H-50+Math.sin(i*1.2)*12;ctx.beginPath();ctx.arc(x,y,3,0,Math.PI*2);ctx.fill();}
+  ctx.globalAlpha=1;
+  // Mount Uhud in background
+  ctx.fillStyle="#2a3525";
+  ctx.beginPath();ctx.moveTo(-20,180);ctx.quadraticCurveTo(100,40,250,120);ctx.quadraticCurveTo(350,60,450,130);ctx.quadraticCurveTo(550,50,W+20,160);ctx.lineTo(W+20,220);ctx.lineTo(-20,220);ctx.fill();
+  ctx.fillStyle=cs.text2;ctx.globalAlpha=0.4;ctx.font="9px 'IBM Plex Mono'";ctx.textAlign="center";
+  ctx.fillText("Mount Uhud",330,100);ctx.globalAlpha=1;
+}
+
+// Muslim army dots (green)
+function drawMuslims(cs){
+  ctx.fillStyle="#33cc55";
+  const baseY=220;
+  for(let i=0;i<20;i++){
+    const x=150+i*18+Math.sin(Date.now()*.001+i)*4;
+    const y=baseY+Math.cos(i*0.7)*15+Math.sin(Date.now()*.002+i)*2;
+    ctx.beginPath();ctx.arc(x,y,3,0,Math.PI*2);ctx.fill();
+  }
+}
+
+// Draw enemies
+function drawEnemies(cs){
+  game.enemies.forEach(e=>{
+    ctx.fillStyle=e.type==="cavalry"?"#cc3333":"#ff5555";
+    ctx.beginPath();ctx.arc(e.x,e.y,e.r||5,0,Math.PI*2);ctx.fill();
+    // Horse shape hint
+    ctx.fillStyle=e.type==="cavalry"?"#992222":"#cc4444";
+    ctx.fillRect(e.x-6,e.y+2,12,3);
+    // Health bar
+    if(e.hp<e.maxHp){
+      ctx.fillStyle="#333";ctx.fillRect(e.x-8,e.y-10,16,3);
+      ctx.fillStyle="#ff4444";ctx.fillRect(e.x-8,e.y-10,16*(e.hp/e.maxHp),3);
+    }
+  });
+}
+
+// Draw arrows in flight
+function drawArrows(cs){
+  ctx.strokeStyle=cs.accent;ctx.lineWidth=2;
+  game.arrows.forEach(a=>{
+    ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(a.x-a.vx*3,a.y-a.vy*3);ctx.stroke();
+    // Arrowhead
+    ctx.fillStyle=cs.accent;ctx.beginPath();ctx.arc(a.x,a.y,2,0,Math.PI*2);ctx.fill();
+  });
+  ctx.lineWidth=1;
+}
+
+// Draw spoils (gold dots)
+function drawSpoils(){
+  game.spoils.forEach((s,i)=>{
+    ctx.fillStyle="gold";ctx.globalAlpha=0.6+Math.sin(Date.now()*.003+i)*0.3;
+    ctx.beginPath();ctx.arc(s.x,s.y,4,0,Math.PI*2);ctx.fill();
+    ctx.globalAlpha=1;
+  });
+}
+
+// Draw particles
+function drawParticles(){
+  game.particles.forEach(p=>{
+    ctx.fillStyle=p.color;ctx.globalAlpha=p.life;
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();
+    ctx.globalAlpha=1;
+  });
+}
+
+// Draw Khalid's cavalry (phase 3 disaster)
+function drawKhalidCavalry(cs){
+  if(game.khalidCav){
+    game.khalidCav.forEach(k=>{
+      ctx.fillStyle="#ff2222";
+      ctx.beginPath();ctx.arc(k.x,k.y,7,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle="#cc0000";ctx.fillRect(k.x-8,k.y+3,16,4);
+    });
+  }
+}
+
+// Draw phase-specific overlays
+function drawOverlays(cs){
+  if(game.phase===4){
+    // Victory overlay
+    ctx.fillStyle=cs.accent;ctx.globalAlpha=0.1+Math.sin(Date.now()*.002)*0.05;
+    ctx.fillRect(0,0,W,H);ctx.globalAlpha=1;
+    ctx.fillStyle=cs.accent;ctx.font="bold 28px Outfit";ctx.textAlign="center";
+    ctx.fillText("VICTORY!",W/2,160);
+    ctx.font="14px 'IBM Plex Mono'";ctx.fillStyle=cs.heading;
+    ctx.fillText("You obeyed the Prophet \uFDFA and held your ground!",W/2,195);
+    ctx.fillText("The Muslim army won completely.",W/2,215);
+    ctx.font="12px 'IBM Plex Mono'";ctx.fillStyle=cs.text2;
+    ctx.fillText("Discipline and obedience brought triumph.",W/2,245);
+  }
+  if(game.phase===5){
+    // Disaster overlay
+    ctx.fillStyle="rgba(80,0,0,0.3)";ctx.fillRect(0,0,W,H);
+    ctx.fillStyle="#ff4444";ctx.font="bold 28px Outfit";ctx.textAlign="center";
+    ctx.fillText("DISASTER!",W/2,140);
+    ctx.font="13px 'IBM Plex Mono'";ctx.fillStyle="#ffaaaa";
+    ctx.fillText("You left the hill. Khalid's cavalry charged through the gap!",W/2,175);
+    ctx.fillText("The winning battle turned into a painful defeat.",W/2,195);
+    ctx.font="12px 'IBM Plex Mono'";ctx.fillStyle="#ff8888";
+    ctx.fillText("Disobedience cost the entire army dearly.",W/2,225);
+    ctx.fillText("The Prophet \uFDFA was injured. Many companions fell.",W/2,245);
+    ctx.font="11px 'IBM Plex Mono'";ctx.fillStyle="#cc6666";
+    ctx.fillText("\"Had you obeyed, this would not have happened.\"",W/2,275);
+  }
+}
+
+// HUD
+function drawHUD(cs){
+  ctx.fillStyle=cs.heading;ctx.font="bold 11px 'IBM Plex Mono'";ctx.textAlign="left";
+  ctx.fillText("Hits: "+game.hits+"  Repelled: "+game.repelled+"  Arrows: "+game.arrowsFired,10,16);
+  if(game.phase===1||game.phase===3){
+    ctx.textAlign="right";
+    ctx.fillText("Wave: "+game.waveCount+"/"+game.maxWaves,W-10,16);
+  }
+}
+
+// ===== GAME LOGIC =====
+function spawnEnemy(){
+  const diff=DIFF[document.getElementById("diffSel").value]||DIFF.medium;
+  if(game.enemies.length>=diff.maxEnemies)return;
+  // Enemies come from the sides (flanking)
+  const side=Math.random()<0.5;
+  const e={
+    x:side?-10:W+10,
+    y:200+Math.random()*100,
+    vx:side?diff.enemySpeed:-diff.enemySpeed,
+    vy:0.2+Math.random()*0.3,
+    hp:2,maxHp:2,
+    r:5,type:"cavalry"
+  };
+  game.enemies.push(e);
+}
+
+function spawnKhalidCavalry(){
+  game.khalidCav=[];
+  for(let i=0;i<15;i++){
+    game.khalidCav.push({x:-20-i*30,y:280+Math.random()*60,vx:2+Math.random(),vy:0.5-Math.random()});
+  }
+}
+
+function shootArrow(tx,ty){
+  if(game.phase===4||game.phase===5)return;
+  if(game.phase===2)return; // choosing phase
+  const sx=W/2,sy=H-40;
+  const dx=tx-sx,dy=ty-sy;
+  const dist=Math.sqrt(dx*dx+dy*dy)||1;
+  const speed=6;
+  game.arrows.push({x:sx,y:sy,vx:dx/dist*speed,vy:dy/dist*speed,life:80});
+  game.arrowsFired++;
+  document.getElementById("arrows").textContent=game.arrowsFired;
+  snd("shoot");
+}
+
+function addParticles(x,y,color,count){
+  for(let i=0;i<count;i++){
+    game.particles.push({x,y,vx:(Math.random()-.5)*3,vy:(Math.random()-.5)*3,r:2+Math.random()*2,life:1,decay:.03+Math.random()*.02,color});
+  }
+}
+
+function updateGame(){
+  if(!game.running)return;
+  const diff=DIFF[document.getElementById("diffSel").value]||DIFF.medium;
+
+  // Update arrows
+  game.arrows.forEach(a=>{a.x+=a.vx;a.y+=a.vy;a.life--;});
+  game.arrows=game.arrows.filter(a=>a.life>0&&a.x>-20&&a.x<W+20&&a.y>-20&&a.y<H+20);
+
+  // Update particles
+  game.particles.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.life-=p.decay;});
+  game.particles=game.particles.filter(p=>p.life>0);
+
+  // Phase 1: Defend against waves
+  if(game.phase===1){
+    game.spawnTimer++;
+    if(game.spawnTimer>diff.spawnRate/16){game.spawnTimer=0;spawnEnemy();}
+
+    // Move enemies toward hill
+    game.enemies.forEach(e=>{e.x+=e.vx;e.y+=e.vy*0.3;});
+
+    // Arrow-enemy collision
+    game.arrows.forEach(a=>{
+      game.enemies.forEach(e=>{
+        const dx=a.x-e.x,dy=a.y-e.y;
+        if(Math.sqrt(dx*dx+dy*dy)<e.r+4){
+          e.hp--;a.life=0;game.hits++;
+          document.getElementById("sc").textContent=game.hits;
+          addParticles(e.x,e.y,"#ff6644",5);
+          snd("hit");
+          if(e.hp<=0){
+            e.dead=true;game.repelled++;
+            document.getElementById("repelled").textContent=game.repelled;
+            addParticles(e.x,e.y,"#ff4444",8);
+            log("Enemy repelled!","success");
+          }
+        }
+      });
+    });
+
+    // Remove dead/escaped enemies
+    const beforeCount=game.enemies.length;
+    game.enemies=game.enemies.filter(e=>!e.dead&&e.y<H-70);
+    const escaped=beforeCount-game.enemies.filter(e=>!e.dead).length-game.enemies.length;
+
+    // Check if enemies reach the hill
+    game.enemies=game.enemies.filter(e=>{
+      if(e.y>=H-75){addParticles(e.x,e.y,"#ffaa00",4);return false;}
+      return true;
+    });
+
+    // Wave progression
+    if(game.repelled>=(game.waveCount+1)*3){
+      game.waveCount++;
+      log("Wave "+game.waveCount+" complete!","success");
+      if(game.waveCount>=game.maxWaves){
+        // Transition to Phase 2
+        game.phase=2;game.enemies=[];
+        log("Muslims are winning! Quraysh retreating...","success");
+        document.getElementById("phaseLabel").textContent="Phase 2: The Temptation";
+        document.getElementById("status").textContent="Muslims winning! Quraysh retreating...";
+        document.getElementById("status").className="status win";
+        // Show spoils
+        for(let i=0;i<15;i++){
+          game.spoils.push({x:100+Math.random()*(W-200),y:180+Math.random()*100});
+        }
+        // Show buttons after a delay
+        setTimeout(()=>{
+          if(game.phase===2){
+            document.getElementById("temptBtn").style.display="block";
+            document.getElementById("stayBtn").style.display="block";
+            snd("tempt");
+            log("Spoils visible on the field! What will you do?");
+            document.getElementById("status").textContent="Spoils everywhere! Leave the hill?";
+          }
+        },2000);
+      }
+    }
+  }
+
+  // Phase 3: Stayed on hill - more waves
+  if(game.phase===3){
+    game.spawnTimer++;
+    if(game.spawnTimer>diff.spawnRate/16){game.spawnTimer=0;spawnEnemy();}
+    game.enemies.forEach(e=>{e.x+=e.vx;e.y+=e.vy*0.3;});
+    game.arrows.forEach(a=>{
+      game.enemies.forEach(e=>{
+        const dx=a.x-e.x,dy=a.y-e.y;
+        if(Math.sqrt(dx*dx+dy*dy)<e.r+4){
+          e.hp--;a.life=0;game.hits++;
+          document.getElementById("sc").textContent=game.hits;
+          addParticles(e.x,e.y,"#ff6644",5);snd("hit");
+          if(e.hp<=0){e.dead=true;game.repelled++;document.getElementById("repelled").textContent=game.repelled;addParticles(e.x,e.y,"#ff4444",8);log("Enemy repelled!","success");}
+        }
+      });
+    });
+    game.enemies=game.enemies.filter(e=>!e.dead);
+    game.enemies=game.enemies.filter(e=>{if(e.y>=H-75){addParticles(e.x,e.y,"#ffaa00",4);return false;}return true;});
+    if(game.repelled>=(game.waveCount+1)*3){
+      game.waveCount++;log("Wave "+game.waveCount+" repelled!","success");
+      if(game.waveCount>=game.maxWaves){
+        game.phase=4;game.enemies=[];
+        snd("win");
+        const finalScore=game.hits*10+game.repelled*20+100; // +100 bonus for staying
+        document.getElementById("scorePill").textContent=finalScore;
+        checkHS(finalScore);
+        document.getElementById("phaseLabel").textContent="Complete Victory!";
+        document.getElementById("status").textContent="VICTORY! You obeyed and the Muslims won!";
+        document.getElementById("status").className="status win";
+        log("COMPLETE VICTORY! Bonus +100 for obedience!","success");
+        log("Final Score: "+finalScore,"success");
+        stopTimer();
+        game.running=false;
+      }
+    }
+  }
+
+  // Phase 5 animation: Khalid's cavalry charges
+  if(game.phase===5&&game.khalidCav){
+    game.khalidCav.forEach(k=>{k.x+=k.vx;k.y+=k.vy;});
+    game.endTimer++;
+    if(game.endTimer>200){game.running=false;}
+  }
+}
+
+function render(){
+  const cs=getCS();
+  drawHill(cs);
+  drawMuslims(cs);
+  if(game.phase===2||game.phase===5)drawSpoils();
+  drawEnemies(cs);
+  drawArrows(cs);
+  drawParticles();
+  if(game.phase===5)drawKhalidCavalry(cs);
+  drawOverlays(cs);
+  drawHUD(cs);
+}
+
+let animFrame;
+function gameLoop(){
+  updateGame();render();
+  if(game.running)animFrame=requestAnimationFrame(gameLoop);
+  else render(); // final frame
+}
+
+function newGame(){
+  cancelAnimationFrame(animFrame);
+  const diff=DIFF[document.getElementById("diffSel").value]||DIFF.medium;
+  game={phase:1,running:true,enemies:[],arrows:[],spoils:[],particles:[],hits:0,repelled:0,arrowsFired:0,waveCount:0,maxWaves:diff.wavesP1,spawnTimer:0,choiceMade:false,stayedOnHill:false,endTimer:0,endPhase:"",khalidCav:null};
+  document.getElementById("sc").textContent="0";
+  document.getElementById("repelled").textContent="0";
+  document.getElementById("arrows").textContent="0";
+  document.getElementById("scorePill").textContent="0";
+  document.getElementById("temptBtn").style.display="none";
+  document.getElementById("stayBtn").style.display="none";
+  document.getElementById("phaseLabel").textContent="Phase 1: Defend the Flank";
+  document.getElementById("status").textContent="Defend the hill! Shoot the cavalry!";
+  document.getElementById("status").className="status";
+  document.getElementById("logBox").innerHTML="";
+  log("Game started! Defend the hill, archer!");
+  log("Prophet's order: Do not leave this hill!");
+  startTimer();showHS();
+  gameLoop();
+}
+
+// ===== CANVAS INPUT =====
+function getCanvasPos(e){
+  const rect=canvas.getBoundingClientRect();
+  const scaleX=W/rect.width,scaleY=H/rect.height;
+  let cx,cy;
+  if(e.touches){cx=e.touches[0].clientX;cy=e.touches[0].clientY;}
+  else{cx=e.clientX;cy=e.clientY;}
+  return{x:(cx-rect.left)*scaleX,y:(cy-rect.top)*scaleY};
+}
+
+canvas.addEventListener("click",function(e){
+  if(!game.running)return;
+  const p=getCanvasPos(e);
+  shootArrow(p.x,p.y);
+});
+canvas.addEventListener("touchstart",function(e){
+  e.preventDefault();
+  if(!game.running)return;
+  const p=getCanvasPos(e);
+  shootArrow(p.x,p.y);
+},{passive:false});
+
+// ===== CHOICE BUTTONS =====
+document.getElementById("temptBtn").addEventListener("click",function(){
+  if(game.phase!==2)return;
+  game.choiceMade=true;game.stayedOnHill=false;
+  document.getElementById("temptBtn").style.display="none";
+  document.getElementById("stayBtn").style.display="none";
+  game.phase=5;game.endTimer=0;
+  spawnKhalidCavalry();
+  snd("lose");
+  const finalScore=Math.max(0,game.hits*10+game.repelled*20-50); // penalty
+  document.getElementById("scorePill").textContent=finalScore;
+  checkHS(finalScore);
+  document.getElementById("phaseLabel").textContent="Disaster at Uhud";
+  document.getElementById("status").textContent="DISASTER! You left the hill!";
+  document.getElementById("status").className="status lose";
+  log("You left the hill! Khalid's cavalry charges through!","error");
+  log("The battle is lost. The Prophet is injured.","error");
+  log("Final Score: "+finalScore+" (-50 penalty for leaving)","error");
+  stopTimer();
+  setTimeout(()=>{game.running=false;},4000);
+});
+
+document.getElementById("stayBtn").addEventListener("click",function(){
+  if(game.phase!==2)return;
+  game.choiceMade=true;game.stayedOnHill=true;
+  document.getElementById("temptBtn").style.display="none";
+  document.getElementById("stayBtn").style.display="none";
+  const diff=DIFF[document.getElementById("diffSel").value]||DIFF.medium;
+  game.phase=3;game.spoils=[];game.spawnTimer=0;game.waveCount=0;game.maxWaves=diff.wavesP3;
+  document.getElementById("phaseLabel").textContent="Phase 3: Hold the Line!";
+  document.getElementById("status").textContent="Khalid attacks! Repel the cavalry!";
+  document.getElementById("status").className="status";
+  snd("hit");
+  log("You stayed! Khalid's cavalry attacks the hill!","success");
+  log("Hold your ground! More waves incoming!");
+});
+
+// ===== DOMContentLoaded =====
+document.addEventListener("DOMContentLoaded",function(){
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
+  showHS();
+  // Resize canvas
+  function resizeCanvas(){
+    const container=canvas.parentElement;
+    const cw=container.clientWidth-16;
+    const aspect=W/H;
+    canvas.style.width=Math.min(cw,660)+"px";
+    canvas.style.height=Math.min(cw,660)/aspect+"px";
+  }
+  resizeCanvas();window.addEventListener("resize",resizeCanvas);
+
+  // Initial render
+  render();
+
+  document.getElementById("enterBtn").addEventListener("click",function(){
+    document.querySelector(".splash").style.display="none";
+    document.getElementById("app").classList.add("on");
+    document.getElementById("backLink").style.display="block";
+    newGame();
+  });
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",function(){
+    soundOn=!soundOn;
+    document.getElementById("soundBtn").textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07";
+  });
+
+  // Keyboard shortcuts
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Escape")closeHelp();
+    if(e.key==="Enter"){
+      const go=document.getElementById("enterBtn");
+      if(go&&go.offsetParent!==null)go.click();
+      else{const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+    }
+    if(e.key==="s"||e.key==="S"){
+      const sb=document.getElementById("stayBtn");
+      if(sb&&sb.style.display==="block")sb.click();
+    }
+    if(e.key==="l"||e.key==="L"){
+      const tb=document.getElementById("temptBtn");
+      if(tb&&tb.style.display==="block")tb.click();
+    }
+  });
+
+  // Help tabs
+  document.querySelectorAll(".help-tab").forEach(function(tab){
+    tab.addEventListener("click",function(){
+      document.querySelectorAll(".help-tab").forEach(t=>t.classList.remove("active"));
+      document.querySelectorAll(".help-content").forEach(c=>c.classList.remove("active"));
+      tab.classList.add("active");
+      document.getElementById("help-"+tab.dataset.tab).classList.add("active");
+    });
+  });
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="\uD83D\uDD07";}}catch(e){}
+var _origSB=document.getElementById("soundBtn");
+if(_origSB){_origSB.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

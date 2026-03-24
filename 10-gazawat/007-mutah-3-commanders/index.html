@@ -1,0 +1,571 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Battle of Mu'tah — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:800px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:12px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.game-area canvas{border-radius:8px;width:100%;max-width:760px;cursor:pointer}
+.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .15s;min-width:50px}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.progress{width:100%;max-width:400px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+.narr-box{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:12px 16px;margin-bottom:10px;font-size:12px;color:var(--text);line-height:1.7;text-align:center;font-family:'Outfit',sans-serif;max-width:700px;width:100%}
+.narr-box .hadith{color:var(--accent);font-style:italic;font-size:11px;margin-top:6px}
+.phase-title{font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;color:var(--accent);text-align:center;margin-bottom:4px}
+.commander-name{font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;color:var(--heading);text-align:center}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Battle of Mu'tah</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px">Three commanders, one impossible battle</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:6px">8 AH — Mu'tah, Southern Jordan</p><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:20px">3,000 Muslims vs 200,000 Romans &amp; Ghassanids.<br>Lead the army through 4 phases. Every decision matters.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Battle of Mu'tah</h1><span class="pill" id="scorePill">Phase 1/5</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<div class="ctrl">
+  <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+  <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+  <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div>
+</div>
+<div class="status" id="status">The Muslim army marches to Mu'tah...</div>
+<div class="phase-title" id="phaseTitle">Phase 1: Zayd ibn Harithah</div>
+<div class="commander-name" id="cmdName">First Commander</div>
+<div class="game-area" id="gameArea">
+  <canvas id="cv" width="760" height="420"></canvas>
+  <div class="narr-box" id="narr">The Prophet ﷺ appointed Zayd ibn Harithah to lead 3,000 Muslims against 200,000 Romans and Ghassanids at Mu'tah.</div>
+  <div class="answer-row" id="choices"></div>
+  <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+</div>
+<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Phase</div><div class="score-num" id="tot">1</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Battle of Mu'tah v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+      <details class="help-item"><summary>What is Battle of Mu'tah?</summary><p>An interactive canvas game about the Battle of Mu'tah (8 AH), where 3,000 Muslims faced 200,000 Romans and Ghassanids. Lead the army through 4 phases with different commanders.</p></details>
+      <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+      <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
+      <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
+      <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+      <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+      <details class="help-item"><summary>Who were the three commanders?</summary><p>The Prophet ﷺ appointed: 1) Zayd ibn Harithah, 2) Ja'far ibn Abi Talib, 3) Abdullah ibn Rawahah. After all three fell as martyrs, the soldiers chose Khalid ibn Walid.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+      <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+      <div class="help-step"><span class="help-step-num">2</span><p>Read the narrative for each phase carefully</p></div>
+      <div class="help-step"><span class="help-step-num">3</span><p>Watch the canvas battlefield — troops move in real time</p></div>
+      <div class="help-step"><span class="help-step-num">4</span><p>Choose actions wisely when prompted with buttons</p></div>
+      <div class="help-step"><span class="help-step-num">5</span><p>In Phase 4 (Khalid), execute the tactical retreat correctly</p></div>
+      <div class="help-step"><span class="help-step-num">6</span><p>Watch the final scene — the Prophet ﷺ tells companions what happened</p></div>
+      <div class="help-step"><span class="help-step-num">7</span><p>Press ▶ New Game to play again</p></div>
+      <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+      <div class="wiki-entry"><h3>⚔️ Battle of Mu'tah</h3><p>Fought in Jumada al-Ula 8 AH (629 CE) in Mu'tah, southern Jordan. The Muslim army of 3,000 faced the combined Roman-Ghassanid force of 200,000. Despite the odds, the Muslims fought with immense bravery.</p></div>
+      <div class="wiki-entry"><h3>🏴 Three Commanders</h3><p>The Prophet ﷺ appointed Zayd ibn Harithah as commander. If he fell, Ja'far ibn Abi Talib would take over. If Ja'far fell, Abdullah ibn Rawahah would lead. All three were martyred in battle.</p></div>
+      <div class="wiki-entry"><h3>🦅 Ja'far at-Tayyar</h3><p>Ja'far held the flag after Zayd fell. He fought until he lost his right arm, then held it with his left. When he lost that too, he held the flag with his stumps. The Prophet ﷺ said Allah replaced his arms with wings in Jannah — hence his title "at-Tayyar" (the Flier).</p></div>
+      <div class="wiki-entry"><h3>⚔️ Khalid's Genius</h3><p>After all three commanders fell, the soldiers chose Khalid ibn Walid. He swapped left and right flanks at night. At dawn, the enemy thought Muslim reinforcements had arrived. Khalid then executed a controlled retreat, saving the entire army.</p></div>
+      <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+      <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Toggle with 🔊 button.</p></div>
+      <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else if(t==="march"){o.frequency.value=330;o.type="triangle";g.gain.exponentialRampToValueAtTime(.001,n+.3);o.start(n);o.stop(n+.3);}else if(t==="flag"){o.frequency.value=440;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.4);o.start(n);o.stop(n+.4);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.04;o2.frequency.value=554;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.5);o2.start(n+.15);o2.stop(n+.5);}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// High Score
+const HS_KEY="wdiy-hs-mutah";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'%</span>';}}
+function checkHS(){if(phase>=5){const pct=Math.round(correct/totalQ*100);if(saveHS(pct)){log("🏆 NEW HIGH SCORE: "+pct+"%!","success");}}}
+
+// Canvas & Game State
+const cv=document.getElementById("cv"),ctx=cv.getContext("2d");
+let phase=0,correct=0,totalQ=0,locked=false,animId=null,animT=0;
+let timerInterval,timerSeconds=0;
+let muslimTroops=[],romanTroops=[],flagX=0,flagY=0;
+let nightMode=false,swapped=false,retreating=false;
+
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+// Colors from CSS vars
+function getC(name){return getComputedStyle(document.documentElement).getPropertyValue(name).trim();}
+
+// Troop generation
+function initTroops(){
+  muslimTroops=[];romanTroops=[];
+  for(let i=0;i<30;i++){
+    muslimTroops.push({x:80+Math.random()*120,y:80+Math.random()*260,ox:0,oy:0,alive:true});
+  }
+  for(let i=0;i<90;i++){
+    romanTroops.push({x:480+Math.random()*240,y:40+Math.random()*340,alive:true});
+  }
+  flagX=140;flagY=180;
+}
+
+function drawTerrain(){
+  const bg=getC("--bg2")||"#0d1117";
+  const border=getC("--border")||"#21262d";
+  ctx.fillStyle=nightMode?"#080810":bg;
+  ctx.fillRect(0,0,760,420);
+  // Ground
+  ctx.fillStyle=nightMode?"#1a1a10":"#2a3020";
+  ctx.fillRect(0,350,760,70);
+  // Hills
+  ctx.fillStyle=nightMode?"#15150c":"#223018";
+  ctx.beginPath();ctx.moveTo(0,350);ctx.quadraticCurveTo(200,280,400,340);ctx.quadraticCurveTo(600,300,760,350);ctx.lineTo(760,420);ctx.lineTo(0,420);ctx.fill();
+  // Mountains far
+  ctx.fillStyle=nightMode?"#101018":"#1a2025";
+  ctx.beginPath();ctx.moveTo(500,350);ctx.lineTo(580,200);ctx.lineTo(660,350);ctx.fill();
+  ctx.beginPath();ctx.moveTo(600,350);ctx.lineTo(700,180);ctx.lineTo(760,300);ctx.lineTo(760,350);ctx.fill();
+  // Title area label
+  ctx.fillStyle=getC("--text3")||"#484f58";
+  ctx.font="10px 'IBM Plex Mono',monospace";
+  ctx.fillText("Mu'tah — Southern Jordan",10,16);
+  // Army size labels
+  ctx.fillStyle=getC("--accent")||"#00ff88";
+  ctx.font="bold 11px 'Outfit',sans-serif";
+  ctx.fillText("Muslims: 3,000",10,400);
+  ctx.fillStyle="#ff6666";
+  ctx.fillText("Romans & Ghassanids: 200,000",560,400);
+  if(nightMode){
+    ctx.fillStyle="#ffffff";ctx.font="bold 12px 'Outfit',sans-serif";
+    ctx.fillText("🌙 NIGHT",350,20);
+    for(let i=0;i<30;i++){ctx.fillStyle="rgba(255,255,255,0.5)";ctx.fillRect(Math.random()*760,Math.random()*200,1,1);}
+  }
+}
+
+function drawTroop(x,y,isMuslim,alive){
+  if(!alive)return;
+  const accent=getC("--accent")||"#00ff88";
+  ctx.fillStyle=isMuslim?accent:"#ff4444";
+  ctx.beginPath();
+  // Body
+  ctx.arc(x,y-8,5,0,Math.PI*2);ctx.fill();
+  ctx.fillRect(x-2,y-3,4,10);
+  // Shield
+  if(isMuslim){ctx.fillStyle="rgba(0,255,136,0.3)";ctx.fillRect(x+4,y-6,3,8);}
+  else{ctx.fillStyle="rgba(255,68,68,0.3)";ctx.fillRect(x-7,y-6,3,8);}
+}
+
+function drawFlag(x,y,color){
+  ctx.strokeStyle="#888";ctx.lineWidth=2;
+  ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x,y-30);ctx.stroke();
+  ctx.fillStyle=color||"#ffffff";
+  ctx.beginPath();ctx.moveTo(x,y-30);ctx.lineTo(x+20,y-25);ctx.lineTo(x,y-20);ctx.fill();
+}
+
+function drawCommander(x,y,name,hasArms){
+  const accent=getC("--accent")||"#00ff88";
+  // Bigger figure
+  ctx.fillStyle=accent;
+  ctx.beginPath();ctx.arc(x,y-18,8,0,Math.PI*2);ctx.fill();
+  ctx.fillRect(x-4,y-10,8,16);
+  if(hasArms!==false){
+    ctx.fillRect(x-12,y-8,8,3);ctx.fillRect(x+4,y-8,8,3);
+  }
+  // Name label
+  ctx.fillStyle="#ffffff";ctx.font="bold 10px 'Outfit',sans-serif";
+  ctx.textAlign="center";ctx.fillText(name,x,y+16);ctx.textAlign="left";
+}
+
+function drawScene(){
+  drawTerrain();
+  romanTroops.forEach(t=>{if(t.alive)drawTroop(t.x,t.y,false,true);});
+  muslimTroops.forEach(t=>{if(t.alive)drawTroop(t.x+t.ox,t.y+t.oy,true,true);});
+  drawFlag(flagX,flagY,"#ffffff");
+}
+
+// Phase rendering
+function renderPhase1(){
+  drawScene();
+  drawCommander(flagX+5,flagY+10,"Zayd",true);
+  // Battle arrows
+  ctx.strokeStyle=getC("--accent")||"#00ff88";ctx.lineWidth=2;ctx.setLineDash([4,4]);
+  ctx.beginPath();ctx.moveTo(200,200);ctx.lineTo(450,200);ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle=getC("--accent");ctx.font="11px 'Outfit',sans-serif";
+  ctx.fillText("⚔ CHARGE!",300,190);
+}
+
+function renderPhase2(t){
+  drawScene();
+  const hasArms=t<0.5;
+  drawCommander(flagX+5,flagY+10,"Ja'far",hasArms);
+  if(!hasArms){
+    // Show stumps holding flag
+    ctx.fillStyle="#ff8800";ctx.font="bold 10px 'Outfit',sans-serif";
+    ctx.textAlign="center";ctx.fillText("Holds flag with stumps!",flagX+5,flagY+32);ctx.textAlign="left";
+  }
+  // Wings vision
+  if(t>0.8){
+    ctx.fillStyle="rgba(255,215,0,0.3)";
+    ctx.beginPath();
+    ctx.moveTo(flagX+5,flagY-10);ctx.lineTo(flagX-30,flagY-30);ctx.lineTo(flagX-10,flagY);ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(flagX+5,flagY-10);ctx.lineTo(flagX+40,flagY-30);ctx.lineTo(flagX+20,flagY);ctx.fill();
+    ctx.fillStyle="gold";ctx.font="bold 11px 'Outfit',sans-serif";
+    ctx.textAlign="center";ctx.fillText("Wings of Jannah",flagX+5,flagY-35);ctx.textAlign="left";
+  }
+}
+
+function renderPhase3(){
+  drawScene();
+  drawCommander(flagX+5,flagY+10,"Abdullah",true);
+  ctx.fillStyle=getC("--heading");ctx.font="bold 11px 'Outfit',sans-serif";
+  ctx.textAlign="center";ctx.fillText("Hesitates... then CHARGES!",flagX+5,flagY+32);ctx.textAlign="left";
+}
+
+function renderPhase4(sub){
+  drawScene();
+  drawCommander(flagX+5,flagY+10,"Khalid",true);
+  if(sub==="night"){
+    // Show swap arrows
+    ctx.strokeStyle="yellow";ctx.lineWidth=2;ctx.setLineDash([6,3]);
+    ctx.beginPath();ctx.moveTo(100,100);ctx.quadraticCurveTo(150,200,100,300);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(100,300);ctx.quadraticCurveTo(150,200,100,100);ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle="yellow";ctx.font="bold 11px 'Outfit',sans-serif";
+    ctx.fillText("↕ Swap left/right flanks",30,210);
+  } else if(sub==="dawn"){
+    ctx.fillStyle="rgba(255,200,50,0.1)";ctx.fillRect(0,0,760,420);
+    ctx.fillStyle="gold";ctx.font="bold 14px 'Outfit',sans-serif";
+    ctx.textAlign="center";ctx.fillText("Dawn — Enemy sees 'new' troops!",380,30);ctx.textAlign="left";
+    ctx.fillStyle="#ff4444";ctx.font="11px 'Outfit',sans-serif";
+    ctx.fillText("Romans confused: Reinforcements?!",460,60);
+  } else if(sub==="retreat"){
+    // Retreating arrows
+    ctx.strokeStyle=getC("--accent");ctx.lineWidth=3;ctx.setLineDash([8,4]);
+    ctx.beginPath();ctx.moveTo(200,200);ctx.lineTo(50,200);ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle=getC("--accent");ctx.font="bold 12px 'Outfit',sans-serif";
+    ctx.fillText("← Controlled retreat — Army saved!",60,180);
+  }
+}
+
+function renderPhase5(){
+  // Final scene - Prophet in Medina
+  const bg=getC("--bg2")||"#0d1117";
+  ctx.fillStyle=bg;ctx.fillRect(0,0,760,420);
+  // Mosque silhouette
+  ctx.fillStyle=getC("--bg3")||"#161b22";
+  ctx.fillRect(200,150,360,200);
+  ctx.beginPath();ctx.arc(380,150,80,Math.PI,0);ctx.fill();
+  // Minaret
+  ctx.fillRect(560,80,20,270);ctx.beginPath();ctx.arc(570,80,14,0,Math.PI*2);ctx.fill();
+  // Stars
+  ctx.fillStyle="rgba(255,255,255,0.5)";
+  for(let i=0;i<40;i++){ctx.fillRect(50+Math.random()*660,10+Math.random()*120,1.5,1.5);}
+  // Moon
+  ctx.fillStyle="rgba(255,215,0,0.6)";
+  ctx.beginPath();ctx.arc(120,60,25,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle=bg;ctx.beginPath();ctx.arc(130,50,22,0,Math.PI*2);ctx.fill();
+  // Text
+  ctx.fillStyle=getC("--heading")||"#e6edf3";ctx.font="bold 16px 'Outfit',sans-serif";ctx.textAlign="center";
+  ctx.fillText("Medina — The Prophet ﷺ tells the companions",380,310);
+  ctx.fillStyle=getC("--accent")||"#00ff88";ctx.font="13px 'Outfit',sans-serif";
+  ctx.fillText("\"The flag was taken by Zayd, and he was martyred.",380,340);
+  ctx.fillText("Then Ja'far took it, and he was martyred.",380,358);
+  ctx.fillText("Then Abdullah took it, and he was martyred.\"",380,376);
+  ctx.fillStyle="gold";ctx.font="italic 11px 'Outfit',sans-serif";
+  ctx.fillText("The Prophet ﷺ wept, knowing by divine revelation.",380,400);
+  ctx.textAlign="left";
+}
+
+// Game phases data
+const PHASES=[
+  {
+    id:1,title:"Phase 1: Zayd ibn Harithah",cmd:"First Commander — Zayd ibn Harithah رضي الله عنه",
+    narr:"The Prophet ﷺ appointed Zayd ibn Harithah to lead 3,000 Muslims against 200,000 Romans and Ghassanids. Zayd bravely charges into the enemy ranks carrying the banner of Islam.",
+    question:"Zayd sees the massive Roman army. What should he do?",
+    options:["Charge bravely forward!","Retreat immediately","Wait and do nothing","Send a messenger"],
+    correct:0,
+    afterNarr:"Zayd ibn Harithah charged fearlessly into the heart of the enemy. He fought with the bravery of a lion, striking down foes left and right. But the enemy numbers were overwhelming... Zayd falls as a shaheed (martyr), radiAllahu anhu.",
+    render:renderPhase1
+  },
+  {
+    id:2,title:"Phase 2: Ja'far ibn Abi Talib",cmd:"Second Commander — Ja'far ibn Abi Talib رضي الله عنه",
+    narr:"The flag passes to Ja'far ibn Abi Talib, the Prophet's cousin. He picks up the banner and fights with unmatched courage.",
+    question:"Ja'far's right arm is cut off! What does he do?",
+    options:["Takes the flag with his left arm","Drops the flag","Calls for retreat","Passes it immediately"],
+    correct:0,
+    afterNarr:"Ja'far held the flag with his left arm. When that was cut off too, he held it with his stumps against his chest! He fell as a shaheed with over 90 wounds — all on his front, none on his back. He never turned away.",
+    hadith:"The Prophet ﷺ said: \"Allah has replaced his two arms with two wings, with which he flies in Jannah wherever he wishes.\" — That is why he is called Ja'far at-Tayyar (the Flier).",
+    render:function(t){renderPhase2(t);}
+  },
+  {
+    id:3,title:"Phase 3: Abdullah ibn Rawahah",cmd:"Third Commander — Abdullah ibn Rawahah رضي الله عنه",
+    narr:"The flag now passes to the third and last appointed commander: Abdullah ibn Rawahah. He hesitates for a moment — not from fear, but from the weight of responsibility.",
+    question:"Abdullah hesitates for a moment. What should he tell himself?",
+    options:["\"O soul, you will enter Jannah!\"","\"Let us flee to safety\"","\"We cannot win this\"","\"I refuse the flag\""],
+    correct:0,
+    afterNarr:"Abdullah ibn Rawahah encouraged himself and charged into battle! He fought until he too fell as a shaheed. All three commanders appointed by the Prophet ﷺ have now been martyred. The army is without a leader...",
+    render:renderPhase3
+  },
+  {
+    id:4,title:"Phase 4: Khalid ibn Walid — The Sword of Allah",cmd:"Chosen by the soldiers — Khalid ibn Walid رضي الله عنه",
+    narr:"The soldiers choose Khalid ibn Walid to lead them. Khalid is a military genius. He must now save the entire army of 3,000 from 200,000 enemies. Night falls...",
+    subPhases:[
+      {question:"It's nighttime. What is Khalid's first move?",options:["Swap left and right flanks","Attack at night","Surrender","Sleep until morning"],correct:0,sub:"night",
+       afterNarr:"Brilliant! Khalid swaps the left and right flanks under cover of darkness. The soldiers who were in the rear move to the front."},
+      {question:"Dawn breaks. The enemy sees the rearranged Muslim army. What do they think?",options:["Reinforcements have arrived!","The Muslims are weaker","Nothing has changed","It's a trap"],correct:0,sub:"dawn",
+       afterNarr:"The Romans see unfamiliar faces at the front and think a fresh army has arrived from Medina! Fear spreads through their ranks."},
+      {question:"The enemy is confused. What should Khalid do now?",options:["Execute controlled retreat","Full attack","Stay and fight to death","Split the army"],correct:0,sub:"retreat",
+       afterNarr:"Khalid executes a masterful controlled retreat! The entire Muslim army of 3,000 is saved. Not a single additional soldier is lost. The enemy, fearing an ambush, does not pursue."}
+    ],
+    render:function(t){renderPhase4(t);}
+  }
+];
+
+let currentPhase=0,subPhaseIdx=0,phaseAnim=0,phaseAnimDir=1;
+
+function setNarr(text,hadith){
+  const el=document.getElementById("narr");
+  el.innerHTML=text;
+  if(hadith)el.innerHTML+='<div class="hadith">'+hadith+'</div>';
+}
+function setPhaseUI(ph){
+  document.getElementById("phaseTitle").textContent=ph.title;
+  document.getElementById("cmdName").textContent=ph.cmd;
+  document.getElementById("scorePill").textContent="Phase "+(currentPhase+1)+"/5";
+  document.getElementById("tot").textContent=(currentPhase+1);
+  document.getElementById("prog").style.width=((currentPhase)/5*100)+"%";
+}
+
+function showChoices(opts,correctIdx,callback){
+  locked=false;
+  const el=document.getElementById("choices");el.innerHTML="";
+  opts.forEach((o,i)=>{
+    const b=document.createElement("button");b.className="answer-btn";b.textContent=o;
+    b.onclick=()=>{
+      if(locked)return;locked=true;totalQ++;
+      if(i===correctIdx){correct++;b.classList.add("correct");snd("ok");log("✓ "+o,"success");document.getElementById("sc").textContent=correct;}
+      else{b.classList.add("wrong");snd("err");log("✗ Wrong — correct: "+opts[correctIdx],"error");el.children[correctIdx].classList.add("correct");}
+      setTimeout(callback,1200);
+    };
+    el.appendChild(b);
+  });
+}
+
+function clearChoices(){document.getElementById("choices").innerHTML="";}
+
+function animateCanvas(renderFn,duration,callback){
+  if(animId)cancelAnimationFrame(animId);
+  const start=performance.now();
+  function loop(now){
+    const t=Math.min((now-start)/duration,1);
+    phaseAnim=t;
+    renderFn(t);
+    if(t<1){animId=requestAnimationFrame(loop);}
+    else{if(callback)callback();}
+  }
+  animId=requestAnimationFrame(loop);
+}
+
+// Main game flow
+function startPhase(idx){
+  currentPhase=idx;subPhaseIdx=0;
+  if(idx>=PHASES.length){
+    // Phase 5: Epilogue
+    phase=5;
+    document.getElementById("phaseTitle").textContent="Epilogue: The Prophet ﷺ in Medina";
+    document.getElementById("cmdName").textContent="Divine Knowledge";
+    document.getElementById("scorePill").textContent="Phase 5/5";
+    document.getElementById("tot").textContent="5";
+    document.getElementById("prog").style.width="100%";
+    setNarr("The Prophet ﷺ, sitting with his companions in Medina, told them what had happened at Mu'tah — even though no messenger had yet arrived. He wept for his beloved companions. Allah had shown him everything through divine revelation.<br><br><b>Lesson:</b> Bravery, sacrifice, and smart leadership. 3,000 against 200,000 — and the army was saved through faith and wisdom.");
+    clearChoices();
+    renderPhase5();
+    document.getElementById("status").textContent="🏆 Mission Complete! Score: "+correct+"/"+totalQ;
+    document.getElementById("status").className="status win";
+    snd("win");
+    stopTimer();
+    checkHS();showHS();
+    log("🏆 Game Complete! Score: "+correct+"/"+totalQ,"success");
+    // Show play again
+    const el=document.getElementById("choices");
+    const b=document.createElement("button");b.className="answer-btn correct";b.textContent="▶ Play Again";
+    b.onclick=newGame;el.appendChild(b);
+    return;
+  }
+  const ph=PHASES[idx];
+  setPhaseUI(ph);
+  initTroops();
+  nightMode=false;
+  setNarr(ph.narr,null);
+  document.getElementById("status").textContent=ph.title;
+  document.getElementById("status").className="status";
+  snd("flag");
+  log("🏴 "+ph.title,"success");
+
+  if(ph.subPhases){
+    // Phase 4 with sub-phases
+    runSubPhase(ph,0);
+  } else {
+    // Normal phase: animate, then question
+    animateCanvas(function(t){ph.render(t);},2000,function(){
+      showChoices(ph.options,ph.correct,function(){
+        clearChoices();
+        setNarr(ph.afterNarr,ph.hadith||null);
+        // Animate after answer
+        animateCanvas(function(t){ph.render(t);},2500,function(){
+          snd("march");
+          setTimeout(()=>startPhase(idx+1),1500);
+        });
+      });
+    });
+  }
+}
+
+function runSubPhase(ph,si){
+  if(si>=ph.subPhases.length){
+    // Phase 4 complete
+    setTimeout(()=>startPhase(currentPhase+1),1500);
+    return;
+  }
+  subPhaseIdx=si;
+  const sp=ph.subPhases[si];
+  nightMode=(sp.sub==="night");
+  setNarr(ph.narr.split(".")[0]+". — Step "+(si+1)+"/"+ph.subPhases.length);
+  animateCanvas(function(t){renderPhase4(sp.sub);},1500,function(){
+    showChoices(sp.options,sp.correct,function(){
+      clearChoices();
+      setNarr(sp.afterNarr);
+      nightMode=(sp.sub==="night");
+      animateCanvas(function(t){renderPhase4(sp.sub);},2000,function(){
+        snd("march");
+        setTimeout(()=>runSubPhase(ph,si+1),1000);
+      });
+    });
+  });
+}
+
+function newGame(){
+  startTimer();
+  currentPhase=0;subPhaseIdx=0;correct=0;totalQ=0;phase=0;
+  locked=false;nightMode=false;
+  document.getElementById("sc").textContent="0";
+  document.getElementById("tot").textContent="1";
+  document.getElementById("scorePill").textContent="Phase 1/5";
+  document.getElementById("prog").style.width="0%";
+  document.getElementById("logBox").innerHTML="";
+  log("⚔ Battle of Mu'tah begins!","success");
+  initTroops();
+  startPhase(0);
+}
+
+// Init
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
+  showHS();
+  // Draw initial canvas
+  initTroops();drawScene();
+
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+// Keyboard shortcuts: 1-4 for answers, Enter for start
+document.addEventListener("keydown",function(e){
+  if(e.key>="1"&&e.key<="4"){const btns=document.querySelectorAll(".answer-btn");const i=parseInt(e.key)-1;if(btns[i])btns[i].click();}
+  if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
+  if(e.key==="h"||e.key==="H")openHelp();
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

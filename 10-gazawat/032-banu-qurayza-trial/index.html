@@ -1,0 +1,659 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Banu Qurayza — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.app.on~.back-link,.back-link{}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:600px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:18px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
+.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.big-text{font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;color:var(--heading);text-align:center;line-height:1.6}
+.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;min-width:50px;text-align:left;line-height:1.4}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.answer-btn.selected{border-color:var(--accent);background:var(--abg)}
+.input-row{display:flex;gap:8px;align-items:center;justify-content:center}
+.input-row input{width:80px;padding:8px 12px;border-radius:8px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;text-align:center}
+.input-row input:focus{border-color:var(--accent);outline:none}
+.input-row button{padding:8px 16px;border-radius:8px;border:none;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+.progress{width:100%;max-width:400px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.grid-pick{display:grid;gap:8px;justify-content:center;margin:10px auto}
+.grid-pick.g2{grid-template-columns:repeat(2,1fr);max-width:200px}
+.grid-pick.g3{grid-template-columns:repeat(3,1fr);max-width:300px}
+.grid-pick.g4{grid-template-columns:repeat(4,1fr);max-width:360px}
+.pick-card{padding:14px 10px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;cursor:pointer;text-align:center;transition:all .15s}
+.pick-card:hover{border-color:var(--accent);background:var(--abg)}
+.pick-card.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.pick-card.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
+.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+/* Story-specific styles */
+.narrative{font-size:13px;color:var(--text);line-height:1.8;margin-bottom:12px;text-align:left}
+.narrative strong{color:var(--heading)}
+.narrative em{color:var(--accent);font-style:normal;font-weight:600}
+.phase-title{font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;color:var(--accent);margin-bottom:8px;text-align:center}
+.phase-subtitle{font-size:11px;color:var(--text3);text-align:center;margin-bottom:16px}
+.story-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.story-card h3{font-family:'Outfit',sans-serif;font-size:13px;color:var(--heading);margin-bottom:6px}
+.story-card p{font-size:11px;color:var(--text2);line-height:1.6}
+.map-canvas{width:100%;max-width:500px;height:260px;border-radius:10px;border:1px solid var(--border);background:var(--bg3);cursor:pointer}
+.choice-feedback{font-size:12px;color:var(--text2);text-align:center;min-height:20px;margin-top:6px;line-height:1.5}
+.choice-feedback.right{color:var(--accent)}
+.choice-feedback.wrong{color:#ff4444}
+.verse-box{background:var(--bg3);border-left:3px solid var(--accent);padding:10px 14px;border-radius:0 8px 8px 0;margin:10px 0;font-size:11px;color:var(--text2);line-height:1.7}
+[dir="rtl"] .verse-box{border-left:none;border-right:3px solid var(--accent);border-radius:8px 0 0 8px}
+.lesson-box{background:var(--abg);border:1px solid var(--abr);border-radius:10px;padding:14px 16px;margin:10px 0}
+.lesson-box h3{font-family:'Outfit',sans-serif;font-size:13px;color:var(--accent);margin-bottom:6px}
+.lesson-box p{font-size:11px;color:var(--text);line-height:1.7}
+.nav-row{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.nav-btn{padding:8px 20px;border-radius:8px;border:1px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s}
+.nav-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.nav-btn.primary{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.nav-btn.primary:hover{opacity:.9}
+.timeline{display:flex;gap:4px;justify-content:center;margin:8px 0;flex-wrap:wrap}
+.tl-dot{width:28px;height:28px;border-radius:50%;border:2px solid var(--border);background:var(--bg3);color:var(--text3);font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s}
+.tl-dot.active{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.tl-dot.done{border-color:var(--accent);background:var(--accent);color:var(--bg)}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Banu Qurayza</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Justice after betrayal</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">An interactive story about treaties, treason, and justice in wartime.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Banu Qurayza</h1><span class="pill" id="scorePill">Phase 1/6</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl">
+    <button id="startBtn">▶ Restart</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+    <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="status" id="status">The Story of Banu Qurayza</div>
+<div class="timeline" id="timeline"></div>
+<div class="game-area" id="gameArea" style="align-items:stretch;text-align:left"></div>
+<div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Questions</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Banu Qurayza v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
+  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+        <details class="help-item"><summary>What is this story about?</summary><p>The story of Banu Qurayza: a Jewish tribe in Medina who had a treaty with the Muslims but broke it during the Battle of the Trench (Khandaq), putting everyone at risk. Learn about treaties, consequences, and justice in wartime.</p></details>
+        <details class="help-item"><summary>Is this suitable for children?</summary><p>Yes. The content is presented in an age-appropriate way, focusing on the concepts of trust, treaties, and justice rather than graphic details.</p></details>
+        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
+        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
+        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>Read through each phase of the story carefully</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>Answer the questions at the end of each phase</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>Click the timeline dots to revisit phases</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>Use keyboard shortcuts: 1-4 for answers, Enter/Right for next, Left for back</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>Explore the map in Phase 2 by clicking on it</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>Reflect on the lessons in the final phase</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another story</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Teach children about the historical event of Banu Qurayza — the importance of keeping treaties, the consequences of treason in wartime, and how justice was applied even in difficult circumstances.</p></div>
+        <div class="wiki-entry"><h3>📖 Historical Context</h3><p>Year 5 AH (627 CE). During the Battle of the Trench, a coalition of 10,000 soldiers besieged Medina. Banu Qurayza, who had a mutual defense treaty with the Muslims, broke their pact and allied with the attackers — opening a second front from inside the city while Muslim families were defenseless.</p></div>
+        <div class="wiki-entry"><h3>⚖️ The Arbitration</h3><p>After the siege, Banu Qurayza surrendered and chose Sa'd ibn Muadh as their arbitrator. Sa'd judged them according to their own Torah law for wartime treason (Deuteronomy 20:12-14), which they accepted before hearing the verdict.</p></div>
+        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Francais, العربية. Arabic auto-enables RTL layout.</p></div>
+        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Toggle with 🔊 button.</p></div>
+        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+</aside>
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+// ── State ──
+let phase=0,correct=0,totalQ=0,locked=false;
+const PHASES=6;
+
+// ── Timer ──
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+// ── High Score ──
+const HS_KEY="wdiy-hs-qurayza";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'%</span>';}}
+function checkHS(){
+  if(totalQ>0){
+    const pct=Math.round(correct/totalQ*100);
+    if(saveHS(pct)){log("🏆 NEW HIGH SCORE: "+pct+"%!","success");}
+  }
+}
+
+// ── Timeline ──
+function buildTimeline(){
+  const el=document.getElementById("timeline");el.innerHTML="";
+  for(let i=0;i<PHASES;i++){
+    const d=document.createElement("button");d.className="tl-dot"+(i<phase?" done":"")+(i===phase?" active":"");
+    d.textContent=i+1;d.onclick=()=>{if(i<=phase)goPhase(i);};
+    el.appendChild(d);
+  }
+}
+
+// ── Update UI ──
+function updateUI(){
+  document.getElementById("scorePill").textContent="Phase "+(phase+1)+"/"+PHASES;
+  showHS();
+  document.getElementById("sc").textContent=correct;
+  document.getElementById("tot").textContent=totalQ;
+  document.getElementById("prog").style.width=((phase+1)/PHASES*100)+"%";
+  buildTimeline();
+}
+
+// ── Phase Content ──
+function goPhase(p){
+  phase=p;locked=false;updateUI();
+  const ga=document.getElementById("gameArea");
+  const st=document.getElementById("status");
+
+  switch(p){
+  case 0: phaseContext(ga,st); break;
+  case 1: phaseSiege(ga,st); break;
+  case 2: phaseSurrender(ga,st); break;
+  case 3: phaseJudgment(ga,st); break;
+  case 4: phaseInteractive(ga,st); break;
+  case 5: phaseLesson(ga,st); break;
+  }
+}
+
+// ── PHASE 1: Context ──
+function phaseContext(ga,st){
+  st.textContent="Phase 1: The Betrayal";
+  ga.innerHTML=`
+    <div class="phase-title">The Treaty of Medina</div>
+    <div class="phase-subtitle">Year 5 AH (627 CE) — Before the Battle of the Trench</div>
+    <div class="narrative">
+      When the Prophet Muhammad ﷺ arrived in Medina, he established a <em>treaty</em> with all the tribes living there — including three Jewish tribes: Banu Qaynuqa, Banu Nadir, and <em>Banu Qurayza</em>.
+    </div>
+    <div class="story-card"><h3>📜 The Treaty Terms</h3><p>All tribes agreed to defend Medina together. No tribe would ally with enemies. Everyone would live in peace, each practicing their own religion freely.</p></div>
+    <div class="narrative">
+      Then came the <em>Battle of the Trench (Khandaq)</em>. A massive coalition of <strong>10,000 soldiers</strong> from Quraysh and allied tribes marched on Medina. The Muslims, numbering only about 3,000, dug a trench to protect the city.
+    </div>
+    <div class="story-card"><h3>🗡️ The Betrayal</h3><p>At the most critical moment — while the army attacked from outside — <strong>Banu Qurayza broke their treaty</strong>. They allied with the enemy coalition, opening a <em>second front from inside Medina</em>. Muslim women, children, and elderly were suddenly exposed to attack from within their own city.</p></div>
+    <div class="narrative">
+      Think about this: the men were at the trench defending against 10,000 soldiers. Their families were behind them, supposedly safe. Now Banu Qurayza — who had promised to help defend — instead joined the attackers.
+    </div>
+    <div class="choice-feedback" id="fb0"></div>
+    <div class="answer-row" id="q0"></div>
+    <div class="nav-row"><button class="nav-btn primary" onclick="askQ0()">Test Your Understanding</button></div>
+  `;
+  log("Phase 1: The Betrayal — Treaty context loaded","");
+}
+
+function askQ0(){
+  const el=document.getElementById("q0");
+  const fb=document.getElementById("fb0");
+  fb.textContent="What did Banu Qurayza do during the Battle of the Trench?";fb.className="choice-feedback";
+  el.innerHTML="";
+  const opts=[
+    {t:"They defended Medina as promised",c:false},
+    {t:"They stayed neutral and did nothing",c:false},
+    {t:"They broke their treaty and allied with the attackers",c:true},
+    {t:"They left Medina before the battle",c:false}
+  ];
+  opts.forEach((o,i)=>{
+    const b=document.createElement("button");b.className="answer-btn";b.textContent=(i+1)+". "+o.t;
+    b.onclick=()=>answerQ(b,o.c,fb,"They broke their treaty at the worst possible moment, endangering every family in Medina.","They actually broke their treaty and allied with the attackers, endangering all of Medina.",0);
+    el.appendChild(b);
+  });
+}
+
+// ── PHASE 2: Siege with Canvas Map ──
+function phaseSiege(ga,st){
+  st.textContent="Phase 2: The Siege of Banu Qurayza";
+  ga.innerHTML=`
+    <div class="phase-title">25-Day Siege</div>
+    <div class="phase-subtitle">After the coalition retreated, the Prophet ﷺ turned to address the betrayal</div>
+    <div class="narrative">
+      Allah sent a fierce wind that scattered the coalition army. They retreated. But the matter of Banu Qurayza's treason still had to be resolved — <em>they had endangered every Muslim family during the siege</em>.
+    </div>
+    <canvas class="map-canvas" id="mapCanvas" width="500" height="260"></canvas>
+    <div style="font-size:10px;color:var(--text3);text-align:center">Click on the map to explore</div>
+    <div class="narrative">
+      The Muslims besieged the fortresses of Banu Qurayza for <em>25 days</em>. During this time, the Prophet ﷺ gave them multiple opportunities to repent and negotiate.
+    </div>
+    <div class="story-card"><h3>🏰 Key Facts</h3><p>Banu Qurayza had strong fortresses in the southeast of Medina. They had weapons and supplies. The siege lasted 25 days — much longer than typical — showing patience was exercised.</p></div>
+    <div class="choice-feedback" id="fb1"></div>
+    <div class="answer-row" id="q1"></div>
+    <div class="nav-row"><button class="nav-btn" onclick="goPhase(0)">← Back</button><button class="nav-btn primary" onclick="askQ1()">Test Your Understanding</button></div>
+  `;
+  drawMap();
+  log("Phase 2: The Siege — 25 days","");
+}
+
+function drawMap(){
+  const c=document.getElementById("mapCanvas");if(!c)return;
+  const ctx=c.getContext("2d");
+  const w=c.width,h=c.height;
+  const cs=getComputedStyle(document.documentElement);
+  const bg=cs.getPropertyValue("--bg3").trim()||"#161b22";
+  const brd=cs.getPropertyValue("--border").trim()||"#21262d";
+  const acc=cs.getPropertyValue("--accent").trim()||"#00ff88";
+  const txt=cs.getPropertyValue("--text2").trim()||"#8b949e";
+  const hd=cs.getPropertyValue("--heading").trim()||"#e6edf3";
+
+  ctx.fillStyle=bg;ctx.fillRect(0,0,w,h);
+
+  // Medina outline
+  ctx.strokeStyle=brd;ctx.lineWidth=2;
+  ctx.beginPath();ctx.ellipse(250,130,200,110,0,0,Math.PI*2);ctx.stroke();
+  ctx.font="bold 14px Outfit,sans-serif";ctx.fillStyle=hd;ctx.textAlign="center";
+  ctx.fillText("MEDINA",250,30);
+
+  // Trench (north)
+  ctx.strokeStyle=acc;ctx.lineWidth=3;ctx.setLineDash([8,4]);
+  ctx.beginPath();ctx.moveTo(60,70);ctx.quadraticCurveTo(250,40,440,70);ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.font="10px IBM Plex Mono,monospace";ctx.fillStyle=acc;
+  ctx.fillText("THE TRENCH (Khandaq)",250,58);
+
+  // Enemy army (north)
+  ctx.fillStyle="#ff4444";
+  for(let i=0;i<8;i++){ctx.beginPath();ctx.arc(100+i*45,18,4,0,Math.PI*2);ctx.fill();}
+  ctx.font="9px IBM Plex Mono,monospace";ctx.fillStyle="#ff4444";
+  ctx.fillText("10,000 COALITION SOLDIERS",250,12);
+
+  // Muslim defenders at trench
+  ctx.fillStyle=acc;
+  for(let i=0;i<5;i++){ctx.beginPath();ctx.arc(130+i*60,82,3,0,Math.PI*2);ctx.fill();}
+  ctx.font="9px IBM Plex Mono,monospace";ctx.fillStyle=acc;
+  ctx.fillText("3,000 Muslim defenders",250,98);
+
+  // Families in center
+  ctx.fillStyle=txt;
+  ctx.font="11px Outfit,sans-serif";
+  ctx.fillText("👨‍👩‍👧‍👦 Muslim Families",200,145);
+  ctx.font="9px IBM Plex Mono,monospace";
+  ctx.fillText("Women, children, elderly",200,160);
+
+  // Banu Qurayza fortresses (southeast)
+  ctx.fillStyle="#ff4444";ctx.strokeStyle="#ff4444";ctx.lineWidth=2;
+  ctx.fillRect(370,170,20,25);ctx.fillRect(400,180,18,22);ctx.fillRect(425,175,16,20);
+  ctx.font="bold 10px Outfit,sans-serif";ctx.fillStyle="#ff4444";
+  ctx.textAlign="center";ctx.fillText("BANU QURAYZA",405,215);
+  ctx.font="9px IBM Plex Mono,monospace";
+  ctx.fillText("FORTRESSES",405,228);
+
+  // Betrayal arrow
+  ctx.strokeStyle="#ff4444";ctx.lineWidth=2;ctx.setLineDash([4,3]);
+  ctx.beginPath();ctx.moveTo(380,175);ctx.lineTo(260,155);ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.beginPath();ctx.moveTo(260,155);ctx.lineTo(268,148);ctx.moveTo(260,155);ctx.lineTo(268,160);ctx.stroke();
+  ctx.font="bold 9px IBM Plex Mono,monospace";ctx.fillStyle="#ff4444";
+  ctx.fillText("⚠ BETRAYAL",320,148);
+
+  // Mount Uhud
+  ctx.fillStyle=txt;ctx.font="9px IBM Plex Mono,monospace";ctx.textAlign="left";
+  ctx.fillText("⛰ Mt. Uhud (north)",10,250);
+
+  // Click interaction
+  c.onclick=function(e){
+    const rect=c.getBoundingClientRect();
+    const x=(e.clientX-rect.left)*(w/rect.width);
+    const y=(e.clientY-rect.top)*(h/rect.height);
+    let msg="";
+    if(y<50)msg="The coalition army: 10,000 soldiers from Quraysh and allies besieging from the north.";
+    else if(y<100&&y>55)msg="The Trench: Salman al-Farisi's brilliant idea. Muslims dug a trench to block cavalry.";
+    else if(x>350&&y>155)msg="Banu Qurayza's fortresses in southeast Medina. They broke the treaty from inside the city.";
+    else if(x<300&&y>120&&y<170)msg="Muslim families — women, children, elderly — left vulnerable by the betrayal.";
+    else msg="Medina: the city where all tribes had agreed to live together in peace under a treaty.";
+    log("Map: "+msg,"");
+  };
+}
+
+function askQ1(){
+  const el=document.getElementById("q1");
+  const fb=document.getElementById("fb1");
+  fb.textContent="How long did the siege of Banu Qurayza's fortresses last?";fb.className="choice-feedback";
+  el.innerHTML="";
+  [{t:"3 days",c:false},{t:"10 days",c:false},{t:"25 days",c:true},{t:"2 months",c:false}].forEach((o,i)=>{
+    const b=document.createElement("button");b.className="answer-btn";b.textContent=(i+1)+". "+o.t;
+    b.onclick=()=>answerQ(b,o.c,fb,"Correct! The siege lasted 25 days, showing patience was exercised.","The siege lasted 25 days — a long period showing restraint and patience.",1);
+    el.appendChild(b);
+  });
+}
+
+// ── PHASE 3: Surrender & Arbitrator ──
+function phaseSurrender(ga,st){
+  st.textContent="Phase 3: The Surrender";
+  ga.innerHTML=`
+    <div class="phase-title">Choosing an Arbitrator</div>
+    <div class="phase-subtitle">Banu Qurayza surrender and request arbitration</div>
+    <div class="narrative">
+      After 25 days, Banu Qurayza decided to surrender. But they made an important request: instead of accepting the Prophet's direct judgment, they asked that <em>Sa'd ibn Muadh</em> — the leader of the Aws tribe — decide their fate.
+    </div>
+    <div class="story-card"><h3>🤝 Why Sa'd ibn Muadh?</h3><p>The Aws tribe and Banu Qurayza had been <strong>long-time allies</strong> before Islam. Banu Qurayza expected Sa'd to be lenient because of their old friendship. Sa'd had been wounded during the Battle of the Trench and was brought on a donkey to deliver his judgment.</p></div>
+    <div class="narrative">
+      This is crucial: <em>Banu Qurayza themselves chose their judge</em>. They were not forced to accept any particular arbitrator. The Prophet ﷺ agreed to abide by whatever Sa'd decided.
+    </div>
+    <div class="story-card"><h3>⚖️ The Agreement</h3><p>Both sides agreed: whatever Sa'd decides, they will accept. The Prophet ﷺ said to Banu Qurayza: <strong>"Your master has come to judge your case."</strong> They agreed. Sa'd first asked both sides: "Do you pledge to accept my judgment?" Both sides said yes.</p></div>
+    <div class="choice-feedback" id="fb2"></div>
+    <div class="answer-row" id="q2"></div>
+    <div class="nav-row"><button class="nav-btn" onclick="goPhase(1)">← Back</button><button class="nav-btn primary" onclick="askQ2()">Test Your Understanding</button></div>
+  `;
+  log("Phase 3: Surrender and arbitration request","");
+}
+
+function askQ2(){
+  const el=document.getElementById("q2");
+  const fb=document.getElementById("fb2");
+  fb.textContent="Who chose Sa'd ibn Muadh as the arbitrator?";fb.className="choice-feedback";
+  el.innerHTML="";
+  [{t:"The Prophet Muhammad ﷺ chose him",c:false},{t:"Banu Qurayza themselves chose him",c:true},{t:"The Muslim army voted",c:false},{t:"He volunteered on his own",c:false}].forEach((o,i)=>{
+    const b=document.createElement("button");b.className="answer-btn";b.textContent=(i+1)+". "+o.t;
+    b.onclick=()=>answerQ(b,o.c,fb,"Correct! Banu Qurayza chose Sa'd because he was their old ally — they expected leniency.","Banu Qurayza themselves chose Sa'd as arbitrator, expecting his old alliance with them would bring leniency.",2);
+    el.appendChild(b);
+  });
+}
+
+// ── PHASE 4: Sa'd's Judgment ──
+function phaseJudgment(ga,st){
+  st.textContent="Phase 4: Sa'd's Judgment";
+  ga.innerHTML=`
+    <div class="phase-title">The Verdict</div>
+    <div class="phase-subtitle">Sa'd ibn Muadh delivers his ruling</div>
+    <div class="narrative">
+      Sa'd ibn Muadh, wounded and leaning on support, looked at both sides. He had the weight of a grave decision. He spoke carefully.
+    </div>
+    <div class="story-card"><h3>⚖️ Sa'd's Ruling</h3><p>Sa'd judged that the fighting men who had committed treason would face the penalty for wartime treason. The women and children would not be harmed. Property would be distributed.</p></div>
+    <div class="narrative">
+      The Prophet ﷺ said: <strong>"You have judged according to the judgment of Allah from above the seven heavens."</strong>
+    </div>
+    <div class="narrative">
+      What many people do not realize is that Sa'd's judgment was based on <em>the Torah's own law for wartime treason</em> — the very law that Banu Qurayza claimed to follow.
+    </div>
+    <div class="verse-box">
+      <strong>Deuteronomy 20:12-14</strong> (Torah — Banu Qurayza's own scripture):<br>
+      The Torah prescribes that when a city under treaty makes war against you and breaks its peace agreement, the men who fought are to be dealt with severely, while women and children are to be spared.
+    </div>
+    <div class="narrative">
+      Sa'd did not invent a new punishment. He applied <em>their own law</em> — the law they themselves lived by and accepted as divine authority.
+    </div>
+    <div class="choice-feedback" id="fb3"></div>
+    <div class="answer-row" id="q3"></div>
+    <div class="nav-row"><button class="nav-btn" onclick="goPhase(2)">← Back</button><button class="nav-btn primary" onclick="askQ3()">Test Your Understanding</button></div>
+  `;
+  log("Phase 4: Sa'd's judgment — based on Torah law","");
+}
+
+function askQ3(){
+  const el=document.getElementById("q3");
+  const fb=document.getElementById("fb3");
+  fb.textContent="What was Sa'd's judgment based on?";fb.className="choice-feedback";
+  el.innerHTML="";
+  [{t:"A new law he invented",c:false},{t:"The Quran's ruling on treason",c:false},{t:"Their own Torah law for wartime treason",c:true},{t:"Roman law of that era",c:false}].forEach((o,i)=>{
+    const b=document.createElement("button");b.className="answer-btn";b.textContent=(i+1)+". "+o.t;
+    b.onclick=()=>answerQ(b,o.c,fb,"Correct! Sa'd judged them by their own Torah law — the scripture they followed.","Sa'd's judgment matched the Torah's law for wartime treason — Banu Qurayza's own scripture.",3);
+    el.appendChild(b);
+  });
+}
+
+// ── PHASE 5: Interactive — Multiple Perspectives ──
+function phaseInteractive(ga,st){
+  st.textContent="Phase 5: Understanding the Judgment";
+  ga.innerHTML=`
+    <div class="phase-title">Was It Just?</div>
+    <div class="phase-subtitle">Exploring multiple perspectives</div>
+    <div class="narrative">
+      Let us think about this carefully from different angles:
+    </div>
+    <div class="story-card"><h3>📋 Perspective 1: The Treaty</h3><p>Banu Qurayza had a binding treaty. They were not forced into it. They freely agreed to mutual defense. Breaking a treaty during wartime — when it means opening the city to attack — is treason in every legal system in history.</p></div>
+    <div class="story-card"><h3>🏠 Perspective 2: The Stakes</h3><p>When Banu Qurayza opened the second front, Muslim women and children in Medina were directly threatened. This was not a minor treaty violation — it was an action that could have led to the massacre of everyone in the city.</p></div>
+    <div class="story-card"><h3>📖 Perspective 3: Their Own Law</h3><p>Sa'd judged them by Deuteronomy 20:12-14 — <em>their own religious law</em>. They were not judged by a foreign standard. They chose their own arbitrator. They agreed to accept his ruling before hearing it.</p></div>
+    <div class="story-card"><h3>🕊️ Perspective 4: Due Process</h3><p>Consider what <em>did</em> happen: they were given 25 days (not attacked immediately). They chose their own judge. Both sides agreed to the process. Women and children were protected. This was structured arbitration, not revenge.</p></div>
+    <div class="narrative">
+      Now answer these reflection questions:
+    </div>
+    <div class="choice-feedback" id="fb4"></div>
+    <div class="answer-row" id="q4"></div>
+    <div class="nav-row"><button class="nav-btn" onclick="goPhase(3)">← Back</button><button class="nav-btn primary" id="askBtn4" onclick="askQ4a()">Reflection Question 1</button></div>
+  `;
+  log("Phase 5: Interactive perspectives","");
+}
+
+let q4step=0;
+function askQ4a(){
+  q4step=0;
+  const el=document.getElementById("q4");
+  const fb=document.getElementById("fb4");
+  fb.textContent="In any legal system, what is the typical consequence of treason during wartime?";fb.className="choice-feedback";
+  el.innerHTML="";
+  [{t:"A warning letter",c:false},{t:"A small fine",c:false},{t:"Severe punishment — often the most serious penalty",c:true},{t:"Community service",c:false}].forEach((o,i)=>{
+    const b=document.createElement("button");b.className="answer-btn";b.textContent=(i+1)+". "+o.t;
+    b.onclick=()=>{
+      answerQ(b,o.c,fb,"Correct. Throughout history, wartime treason has carried the severest consequences in every civilization.","Wartime treason has always carried the most severe consequences in every legal tradition.",4);
+      document.getElementById("askBtn4").textContent="Reflection Question 2";
+      document.getElementById("askBtn4").onclick=askQ4b;
+    };
+    el.appendChild(b);
+  });
+}
+
+function askQ4b(){
+  const el=document.getElementById("q4");
+  const fb=document.getElementById("fb4");
+  fb.textContent="Why is it significant that Banu Qurayza chose their own arbitrator?";fb.className="choice-feedback";
+  el.innerHTML="";
+  [{t:"It made no difference",c:false},{t:"It shows they had a fair process and agreed to the terms",c:true},{t:"It was just a formality",c:false},{t:"It delayed the process",c:false}].forEach((o,i)=>{
+    const b=document.createElement("button");b.className="answer-btn";b.textContent=(i+1)+". "+o.t;
+    b.onclick=()=>{
+      answerQ(b,o.c,fb,"Correct! Choosing their own judge and agreeing to accept the verdict shows due process.","They chose their own judge and agreed in advance — this is the definition of fair arbitration.",4);
+      document.getElementById("askBtn4").textContent="Reflection Question 3";
+      document.getElementById("askBtn4").onclick=askQ4c;
+    };
+    el.appendChild(b);
+  });
+}
+
+function askQ4c(){
+  const el=document.getElementById("q4");
+  const fb=document.getElementById("fb4");
+  fb.textContent="What would have happened to Muslim families if Banu Qurayza's betrayal had succeeded?";fb.className="choice-feedback";
+  el.innerHTML="";
+  [{t:"Nothing — it was just politics",c:false},{t:"The coalition army would have entered Medina and attacked the defenseless families",c:true},{t:"A peace treaty would have been signed",c:false},{t:"The families would have simply relocated",c:false}].forEach((o,i)=>{
+    const b=document.createElement("button");b.className="answer-btn";b.textContent=(i+1)+". "+o.t;
+    b.onclick=()=>{
+      answerQ(b,o.c,fb,"Correct. The 10,000-strong army would have entered Medina through the gap, with catastrophic results for every family.","If the betrayal succeeded, the coalition army would have entered Medina and attacked the defenseless population.",4);
+      document.getElementById("askBtn4").textContent="→ Final Phase";
+      document.getElementById("askBtn4").onclick=()=>goPhase(5);
+    };
+    el.appendChild(b);
+  });
+}
+
+// ── PHASE 6: Historical Context & Lessons ──
+function phaseLesson(ga,st){
+  st.textContent="Phase 6: Lessons Learned";
+  ga.innerHTML=`
+    <div class="phase-title">Treaties, Justice, and Wisdom</div>
+    <div class="phase-subtitle">What we learn from this event</div>
+    <div class="lesson-box"><h3>📜 Lesson 1: Treaties Are Sacred</h3><p>In Islam, keeping your word and honoring agreements is a fundamental principle. The Quran and Sunnah emphasize that treaties must be upheld. When you give your word, you must keep it — especially when lives depend on it.</p></div>
+    <div class="lesson-box"><h3>⚖️ Lesson 2: Justice Even in War</h3><p>Even after being betrayed, the Muslims did not act out of revenge. They besieged for 25 days (giving time for negotiation), allowed arbitration, let the accused choose their own judge, and the judgment followed established law — not emotion.</p></div>
+    <div class="lesson-box"><h3>🤝 Lesson 3: The Arbitration System</h3><p>Both sides agreed to an arbitrator before hearing the verdict. This is a model of conflict resolution: choose a trusted judge, agree to accept the outcome, and let justice take its course. This principle is used in international law to this day.</p></div>
+    <div class="lesson-box"><h3>📖 Lesson 4: Judged by Their Own Standard</h3><p>Sa'd did not impose a foreign law. He applied the Torah's own ruling — the very law Banu Qurayza professed to follow. This is a profound point about fairness: they were held to the standard they themselves accepted.</p></div>
+    <div class="lesson-box"><h3>🏰 Lesson 5: Context Matters</h3><p>This was not aggression — it was a response to wartime treason that directly endangered thousands of innocent people. Understanding the full context — the siege, the betrayal from inside, the vulnerability of families — is essential to understanding the response.</p></div>
+    <div class="narrative" style="text-align:center;margin-top:16px">
+      <strong>Final Score: <span id="finalScore">0</span>/<span id="finalTotal">0</span></strong>
+    </div>
+    <div class="choice-feedback" id="fb5"></div>
+    <div class="answer-row" id="q5"></div>
+    <div class="nav-row"><button class="nav-btn" onclick="goPhase(4)">← Back</button><button class="nav-btn primary" onclick="askQ5()">Final Question</button></div>
+  `;
+  document.getElementById("finalScore").textContent=correct;
+  document.getElementById("finalTotal").textContent=totalQ;
+  log("Phase 6: Lessons — story complete","success");
+}
+
+function askQ5(){
+  const el=document.getElementById("q5");
+  const fb=document.getElementById("fb5");
+  fb.textContent="Which of these best summarizes the key lesson?";fb.className="choice-feedback";
+  el.innerHTML="";
+  [{t:"Treaties can be broken without consequences",c:false},{t:"Justice means revenge",c:false},{t:"Treaties are sacred, and justice requires due process even in wartime",c:true},{t:"War has no rules",c:false}].forEach((o,i)=>{
+    const b=document.createElement("button");b.className="answer-btn";b.textContent=(i+1)+". "+o.t;
+    b.onclick=()=>{
+      answerQ(b,o.c,fb,"Excellent! Treaties are sacred, and true justice follows due process — even in the hardest circumstances.","The key lesson: treaties are sacred, and justice requires due process and fairness even in wartime.",5);
+      setTimeout(()=>{
+        checkHS();stopTimer();snd("win");
+        document.getElementById("status").textContent="🏆 Story Complete! Score: "+correct+"/"+totalQ;
+        document.getElementById("status").className="status win";
+        document.getElementById("finalScore").textContent=correct;
+        document.getElementById("finalTotal").textContent=totalQ;
+        log("🏆 Story complete! Final score: "+correct+"/"+totalQ,"success");
+      },1200);
+    };
+    el.appendChild(b);
+  });
+}
+
+// ── Answer Handler ──
+function answerQ(btn,isCorrect,fbEl,rightMsg,wrongMsg,phaseIdx){
+  if(locked)return;locked=true;totalQ++;
+  if(isCorrect){
+    correct++;btn.classList.add("correct");snd("ok");
+    fbEl.textContent="✓ "+rightMsg;fbEl.className="choice-feedback right";
+    log("✓ Phase "+(phaseIdx+1)+": Correct!","success");
+  }else{
+    btn.classList.add("wrong");snd("err");
+    fbEl.textContent="✗ "+wrongMsg;fbEl.className="choice-feedback wrong";
+    log("✗ Phase "+(phaseIdx+1)+": "+wrongMsg,"error");
+    // highlight correct
+    btn.parentElement.querySelectorAll(".answer-btn").forEach(b=>{
+      if(!b.classList.contains("wrong")){
+        // find correct by trying all
+      }
+    });
+  }
+  document.getElementById("sc").textContent=correct;
+  document.getElementById("tot").textContent=totalQ;
+  document.getElementById("scorePill").textContent="Phase "+(phase+1)+"/"+PHASES;
+  showHS();
+  // Auto-advance after first 4 phases
+  if(phaseIdx<4&&isCorrect){
+    setTimeout(()=>{if(phase===phaseIdx)goPhase(phaseIdx+1);},2000);
+  }
+}
+
+// ── New Game ──
+function newGame(){
+  startTimer();phase=0;correct=0;totalQ=0;locked=false;
+  document.getElementById("sc").textContent="0";
+  document.getElementById("tot").textContent="0";
+  document.getElementById("logBox").innerHTML="";
+  log("Story restarted","");
+  goPhase(0);
+}
+
+// ── Init ──
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("terminal");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");if(phase===1)setTimeout(drawMap,50);}));
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+
+// Keyboard shortcuts
+document.addEventListener("keydown",function(e){
+  if(e.key>="1"&&e.key<="4"){const btns=document.querySelectorAll(".answer-btn");const i=parseInt(e.key)-1;if(btns[i])btns[i].click();}
+  if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();}
+  if(e.key==="ArrowRight"){const nb=document.querySelector(".nav-btn.primary");if(nb)nb.click();}
+  if(e.key==="ArrowLeft"){const bb=document.querySelector(".nav-btn:not(.primary)");if(bb)bb.click();}
+});
+
+// Persist sound preference
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
+var _origSoundClick=document.getElementById("soundBtn");
+if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
+
+// Persist theme and language
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>
