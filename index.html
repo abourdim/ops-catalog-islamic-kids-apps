@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="terminal">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Workshop-DIY — Islamic Kids Apps</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{min-height:100vh;-webkit-font-smoothing:antialiased}
+
+[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--text:#c9d1d9;--text2:#8b949e;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--text:#b8c0d9;--text2:#7580a0;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--text:#d4b8a8;--text2:#9a7e70;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--text:#3a4555;--text2:#6b7a8d;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--text:#4a4035;--text2:#7a6e60;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2)}
+
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;padding:20px}
+.header{text-align:center;padding:40px 0 20px}
+.header h1{font-family:'Outfit',sans-serif;color:var(--heading);font-size:28px;margin-bottom:8px}
+.header p{color:var(--text2);font-size:14px;max-width:600px;margin:0 auto}
+.search{display:block;width:100%;max-width:500px;margin:20px auto;padding:12px 16px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px;outline:none}
+.search:focus{border-color:var(--accent)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:20px 0;max-width:800px;margin-left:auto;margin-right:auto}
+.filter-btn{background:var(--bg2);border:1px solid var(--border);color:var(--text2);padding:6px 14px;border-radius:20px;cursor:pointer;font-family:inherit;font-size:12px}
+.filter-btn.active,.filter-btn:hover{background:var(--abg);border-color:var(--accent);color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;max-width:1200px;margin:20px auto}
+.card{display:flex;align-items:center;gap:12px;padding:14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text);transition:.2s}
+.card:hover{border-color:var(--accent);background:var(--abg)}
+.card-emoji{font-size:24px;flex-shrink:0}
+.card-title{font-size:13px;color:var(--heading);flex:1}
+.card-cat{font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:1px}
+.themes{display:flex;gap:6px;justify-content:center;margin:20px 0}
+.themes button{width:28px;height:28px;border-radius:50%;border:2px solid var(--border);cursor:pointer}
+.count{text-align:center;color:var(--text2);font-size:12px;margin:10px 0}
+.foot{text-align:center;color:var(--text2);font-size:11px;padding:40px 0 20px}
+.foot a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>5 Interactive Islamic Activities</h1>
+<div style="text-align:center;font-size:20px;color:var(--accent);margin:20px 0;font-family:'Noto Sans Arabic',serif">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
+<p>Interactive Islamic educational apps — Arabic, Seerah, Fiqh.</p>
+</div>
+
+<div class="themes">
+<button onclick="setTheme('terminal')" style="background:#00ff88" title="Terminal"></button>
+<button onclick="setTheme('midnight')" style="background:#6c5ce7" title="Midnight"></button>
+<button onclick="setTheme('ember')" style="background:#ff6b35" title="Ember"></button>
+<button onclick="setTheme('arctic')" style="background:#0066cc" title="Arctic"></button>
+<button onclick="setTheme('sand')" style="background:#b8860b" title="Sand"></button>
+</div>
+
+<input class="search" type="text" placeholder="Search 5 activities..." id="search"/>
+
+<div class="filters" id="filters">
+<button class="filter-btn active" data-cat="all">All</button>
+<button class="filter-btn" data-cat="Arabic">🔤 Arabic</button>
+<button class="filter-btn" data-cat="Seerah">🕌 Seerah</button>
+<button class="filter-btn" data-cat="Fiqh">⚖️ Fiqh</button>
+
+</div>
+
+<div class="count" id="count">5 activities</div>
+
+<div class="grid" id="grid">
+<a href="02-arabic/001-arabic-letters/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Arabic Letters</span><span class="card-cat">Arabic</span></a>
+<a href="02-arabic/002-arabic-words/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Arabic Words</span><span class="card-cat">Arabic</span></a>
+<a href="03-seerah/001-prophets/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Prophets of Islam</span><span class="card-cat">Seerah</span></a>
+<a href="06-fiqh/001-chronology/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Chronology</span><span class="card-cat">Fiqh</span></a>
+<a href="06-fiqh/002-islamic-inventions/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Islamic Golden Age</span><span class="card-cat">Fiqh</span></a>
+
+</div>
+
+<div class="foot">
+Workshop-DIY — <a href="https://github.com/abourdim">abourdim</a>
+</div>
+
+<script>
+function setTheme(t){document.documentElement.dataset.theme=t;localStorage.setItem("theme",t)}
+const saved=localStorage.getItem("theme");if(saved)setTheme(saved);
+
+const search=document.getElementById("search");
+const grid=document.getElementById("grid");
+const cards=[...grid.querySelectorAll(".card")];
+const countEl=document.getElementById("count");
+let activeCat="all";
+
+document.getElementById("filters").addEventListener("click",e=>{
+  if(!e.target.classList.contains("filter-btn"))return;
+  document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
+  e.target.classList.add("active");
+  activeCat=e.target.dataset.cat;
+  filter();
+});
+
+search.addEventListener("input",filter);
+
+function filter(){
+  const q=search.value.toLowerCase();
+  let shown=0;
+  cards.forEach(c=>{
+    const title=c.querySelector(".card-title").textContent.toLowerCase();
+    const cat=c.dataset.cat;
+    const matchQ=!q||title.includes(q);
+    const matchCat=activeCat==="all"||cat===activeCat;
+    const show=matchQ&&matchCat;
+    c.style.display=show?"":"none";
+    if(show)shown++;
+  });
+  countEl.textContent=shown+" activit"+(shown===1?"y":"ies");
+}
+</script>
+</body>
+</html>
