@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Al-Khwarizmi's Algebra — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>
+[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}.app{display:none;max-width:700px;margin:0 auto;padding:12px 16px}.app.on{display:block}.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}.hdr h1{font-size:18px}.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}.ctrl button:hover{border-color:var(--abr)}.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:300px}.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:10px}.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:100px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.btn-close:hover{border-color:var(--accent);color:var(--accent)}.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}.help-content{display:none}.help-content.active{display:block}.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}.btn-help:hover{border-color:var(--accent);color:var(--accent)}.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif}
+
+/* App-specific */
+.balance-board{display:flex;align-items:center;justify-content:center;gap:10px;margin:20px 0;flex-wrap:wrap}
+.side{background:var(--bg3);border:2px solid var(--border);border-radius:12px;padding:16px 20px;min-width:140px;min-height:80px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;color:var(--heading);transition:border-color .3s}
+.side.correct-side{border-color:var(--accent);box-shadow:0 0 12px var(--abr)}
+.equals-sign{font-size:28px;font-weight:800;color:var(--accent);font-family:'Outfit',sans-serif}
+.term{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:8px;background:var(--abg);border:1px solid var(--abr);color:var(--accent);font-size:16px;font-weight:600;margin:2px}
+.op-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:16px 0}
+.op-btn{padding:10px 18px;border:2px solid var(--border);border-radius:10px;background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s}
+.op-btn:hover{border-color:var(--accent);color:var(--accent)}
+.op-btn.selected{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.input-row{display:flex;gap:8px;align-items:center;justify-content:center;margin:10px 0}
+.input-row input{padding:8px 12px;border:2px solid var(--border);border-radius:8px;background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;width:80px;text-align:center}
+.input-row input:focus{outline:none;border-color:var(--accent)}
+.submit-btn{padding:10px 24px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+.problem-text{font-size:13px;color:var(--text);line-height:1.7;text-align:center;margin-bottom:12px}
+.step-box{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px;margin:8px 0;font-size:12px;color:var(--text2);line-height:1.6}
+.step-box strong{color:var(--accent)}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden;margin:8px auto}.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><h1 class="heading" style="font-size:22px;margin-bottom:4px" id="splTitle">Al-Khwarizmi's Algebra</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px" id="splSub">Balance the Equation</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px" id="splDesc">Solve original algebra problems from Al-Khwarizmi's 9th-century masterwork "Al-Kitab al-Mukhtasar fi Hisab al-Jabr wal-Muqabala" using visual equation balancing.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div></div></div>
+
+<div class="app" id="app">
+<div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
+<div class="hdr"><h1 id="appTitle">Al-Khwarizmi's Algebra</h1><span class="pill" id="scorePill">0 / 0</span></div>
+<div class="ctrl">
+<button id="startBtn">&#9654; New Problem</button>
+<button class="btn-help" onclick="openHelp()">&#10067;</button>
+<button id="soundBtn">&#128266;</button>
+<div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+<div class="sw"><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div>
+</div>
+<div class="status" id="status">Balance the equation to find x</div>
+<div class="game-area" id="gameArea"></div>
+<div class="score-row"><div class="score-item"><div class="score-label" id="lbSolved">Solved</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbTotal">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+<div class="log-box" id="logBox"></div>
+<div class="foot">Workshop-Diy &#8212; Al-Khwarizmi's Algebra v1.0</div>
+</div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel">
+<div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
+<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
+<div class="sidebar-body">
+<div class="help-content active" id="help-faq">
+<details class="help-item"><summary>What is this app?</summary><p>Solve algebra equations the way Al-Khwarizmi taught in the 9th century. You balance equations visually by performing al-jabr (completion) and al-muqabala (balancing) operations.</p></details>
+<details class="help-item"><summary>Who was Al-Khwarizmi?</summary><p>Muhammad ibn Musa al-Khwarizmi (780-850 CE) was a Muslim mathematician whose book on algebra gave the subject its name. The word "algorithm" also comes from his name.</p></details>
+<details class="help-item"><summary>What is al-jabr?</summary><p>Al-jabr means "completion" — moving a negative term to the other side of the equation, making it positive. This is the origin of the word "algebra".</p></details>
+<details class="help-item"><summary>What is al-muqabala?</summary><p>Al-muqabala means "balancing" — subtracting equal terms from both sides to simplify the equation.</p></details>
+</div>
+<div class="help-content" id="help-howto">
+<div class="help-step"><span class="help-step-num">1</span><p>Read the equation displayed on the balance board</p></div>
+<div class="help-step"><span class="help-step-num">2</span><p>Apply al-jabr or al-muqabala operations to simplify</p></div>
+<div class="help-step"><span class="help-step-num">3</span><p>Follow the step-by-step hints if needed</p></div>
+<div class="help-step"><span class="help-step-num">4</span><p>Enter the value of x when the equation is simplified</p></div>
+</div>
+<div class="help-content" id="help-wiki">
+<div class="wiki-entry"><h3>&#128213; Al-Kitab al-Mukhtasar</h3><p>Al-Khwarizmi's foundational book on algebra, written around 820 CE in Baghdad. It systematically solved linear and quadratic equations.</p></div>
+<div class="wiki-entry"><h3>&#127891; Six Standard Forms</h3><p>Al-Khwarizmi classified all equations into six standard forms and provided geometric proofs for each solution method.</p></div>
+<div class="wiki-entry"><h3>&#127758; Legacy</h3><p>His work was translated into Latin and became the main mathematics textbook in Europe for centuries. The word "algebra" comes from "al-jabr" in his book title.</p></div>
+</div>
+</div>
+<div class="sidebar-footer">Workshop-DIY &#8212; v1.0</div>
+</aside>
+
+<script>
+var defined_i18n={
+splTitle:{en:"Al-Khwarizmi's Algebra",fr:"L'Algebre d'Al-Khwarizmi",ar:"جبر الخوارزمي"},
+splSub:{en:"Balance the Equation",fr:"Equilibrez l'Equation",ar:"وازن المعادلة"},
+splDesc:{en:"Solve original algebra problems from Al-Khwarizmi's 9th-century masterwork using visual equation balancing.",fr:"Resolvez des problemes d'algebre originaux du chef-d'oeuvre d'Al-Khwarizmi du IXe siecle en equilibrant visuellement les equations.",ar:"حل مسائل الجبر الأصلية من كتاب الخوارزمي في القرن التاسع باستخدام موازنة المعادلات البصرية."},
+appTitle:{en:"Al-Khwarizmi's Algebra",fr:"L'Algebre d'Al-Khwarizmi",ar:"جبر الخوارزمي"},
+status_default:{en:"Balance the equation to find x",fr:"Equilibrez l'equation pour trouver x",ar:"وازن المعادلة لإيجاد قيمة س"},
+solved:{en:"Solved",fr:"Resolu",ar:"محلول"},
+total:{en:"Total",fr:"Total",ar:"المجموع"},
+new_prob:{en:"&#9654; New Problem",fr:"&#9654; Nouveau probleme",ar:"&#9654; مسألة جديدة"},
+step_jabr:{en:"Al-Jabr: Move negative terms to the other side",fr:"Al-Jabr: Deplacez les termes negatifs de l'autre cote",ar:"الجبر: انقل الحدود السالبة للطرف الآخر"},
+step_muq:{en:"Al-Muqabala: Cancel equal terms on both sides",fr:"Al-Muqabala: Annulez les termes egaux des deux cotes",ar:"المقابلة: احذف الحدود المتساوية من الطرفين"},
+step_div:{en:"Divide both sides to isolate x",fr:"Divisez les deux cotes pour isoler x",ar:"اقسم الطرفين لإيجاد قيمة س"},
+enter_x:{en:"Enter the value of x:",fr:"Entrez la valeur de x :",ar:"أدخل قيمة س:"},
+correct:{en:"Correct! MashaAllah!",fr:"Correct ! MashaAllah !",ar:"صحيح! ما شاء الله!"},
+wrong:{en:"Not quite. The answer is",fr:"Pas tout a fait. La reponse est",ar:"ليس تماماً. الجواب هو"},
+hint_click:{en:"Click the steps below to solve",fr:"Cliquez sur les etapes ci-dessous pour resoudre",ar:"اضغط على الخطوات أدناه للحل"}
+};
+var curLang="en";
+function t(k){return defined_i18n[k]?defined_i18n[k][curLang]||defined_i18n[k]["en"]:""}
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open")}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
+function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});renderLang();try{localStorage.setItem("wdiy-lang",l)}catch(e){}}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th)});try{localStorage.setItem("wdiy-theme",th)}catch(e){}}
+function renderLang(){
+document.getElementById("splTitle").textContent=t("splTitle");
+document.getElementById("splSub").textContent=t("splSub");
+document.getElementById("splDesc").textContent=t("splDesc");
+document.getElementById("appTitle").textContent=t("appTitle");
+document.getElementById("status").textContent=t("status_default");
+document.getElementById("startBtn").innerHTML=t("new_prob");
+document.getElementById("lbSolved").textContent=t("solved");
+document.getElementById("lbTotal").textContent=t("total");
+}
+var soundOn=true,actx;
+function snd(type){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(type==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);var o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2)}else if(type==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15)}else if(type==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12)})}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05)}}
+function log(msg,cls){var b=document.getElementById("logBox");var d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight}
+
+var HS_KEY="wdiy-hs-al-khwarizmi-algebra",solved=0,totalP=0;
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0}}
+function saveHS(s){try{var b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true}}catch(e){}return false}
+
+/* Algebra problems inspired by Al-Khwarizmi's six forms */
+var PROBLEMS=[
+{eq:"x² + 10x = 39",lhs:[{c:1,v:"x²"},{c:10,v:"x"}],rhs:[{c:39,v:""}],answer:3,steps:["x² + 10x = 39","Half of 10 is 5, square it: 25","x² + 10x + 25 = 64","(x + 5)² = 64","x + 5 = 8","x = 3"],desc:{en:"Squares and roots equal numbers — Al-Khwarizmi's Type 4",fr:"Carres et racines egaux aux nombres — Type 4 d'Al-Khwarizmi",ar:"مربعات وجذور تساوي عدداً — النوع الرابع للخوارزمي"}},
+{eq:"x² + 21 = 10x",lhs:[{c:1,v:"x²"},{c:21,v:""}],rhs:[{c:10,v:"x"}],answer:3,steps:["x² + 21 = 10x","Half of 10 is 5, square it: 25","25 - 21 = 4","√4 = 2","x = 5 - 2 = 3"],desc:{en:"Squares and numbers equal roots — Al-Khwarizmi's Type 5",fr:"Carres et nombres egaux aux racines — Type 5 d'Al-Khwarizmi",ar:"مربعات وأعداد تساوي جذوراً — النوع الخامس للخوارزمي"}},
+{eq:"3x + 4 = 19",lhs:[{c:3,v:"x"},{c:4,v:""}],rhs:[{c:19,v:""}],answer:5,steps:["3x + 4 = 19","Al-Jabr: subtract 4 from both sides","3x = 15","Divide both sides by 3","x = 5"],desc:{en:"Simple linear equation — completing both sides",fr:"Equation lineaire simple — completant les deux cotes",ar:"معادلة خطية بسيطة — إكمال الطرفين"}},
+{eq:"2x + 6 = 20",lhs:[{c:2,v:"x"},{c:6,v:""}],rhs:[{c:20,v:""}],answer:7,steps:["2x + 6 = 20","Al-Muqabala: subtract 6 from both","2x = 14","Divide by 2","x = 7"],desc:{en:"Linear equation using al-muqabala",fr:"Equation lineaire utilisant al-muqabala",ar:"معادلة خطية باستخدام المقابلة"}},
+{eq:"5x = 45",lhs:[{c:5,v:"x"}],rhs:[{c:45,v:""}],answer:9,steps:["5x = 45","Divide both sides by 5","x = 9"],desc:{en:"Roots equal numbers — Al-Khwarizmi's Type 1",fr:"Racines egaux aux nombres — Type 1 d'Al-Khwarizmi",ar:"جذور تساوي أعداداً — النوع الأول للخوارزمي"}},
+{eq:"x² = 49",lhs:[{c:1,v:"x²"}],rhs:[{c:49,v:""}],answer:7,steps:["x² = 49","Take square root of both sides","x = 7"],desc:{en:"Squares equal numbers — Al-Khwarizmi's Type 2",fr:"Carres egaux aux nombres — Type 2 d'Al-Khwarizmi",ar:"مربعات تساوي أعداداً — النوع الثاني للخوارزمي"}},
+{eq:"x² = 5x",lhs:[{c:1,v:"x²"}],rhs:[{c:5,v:"x"}],answer:5,steps:["x² = 5x","Divide both sides by x","x = 5"],desc:{en:"Squares equal roots — Al-Khwarizmi's Type 3",fr:"Carres egaux aux racines — Type 3 d'Al-Khwarizmi",ar:"مربعات تساوي جذوراً — النوع الثالث للخوارزمي"}},
+{eq:"4x + 8 = 2x + 20",lhs:[{c:4,v:"x"},{c:8,v:""}],rhs:[{c:2,v:"x"},{c:20,v:""}],answer:6,steps:["4x + 8 = 2x + 20","Al-Muqabala: subtract 2x from both","2x + 8 = 20","Al-Jabr: subtract 8 from both","2x = 12","x = 6"],desc:{en:"Balance both sides with al-jabr and al-muqabala",fr:"Equilibrez les deux cotes avec al-jabr et al-muqabala",ar:"وازن الطرفين بالجبر والمقابلة"}},
+{eq:"x² + 6x = 16",lhs:[{c:1,v:"x²"},{c:6,v:"x"}],rhs:[{c:16,v:""}],answer:2,steps:["x² + 6x = 16","Half of 6 is 3, square it: 9","x² + 6x + 9 = 25","(x + 3)² = 25","x + 3 = 5","x = 2"],desc:{en:"Completing the square — Al-Khwarizmi's method",fr:"Completer le carre — methode d'Al-Khwarizmi",ar:"إكمال المربع — طريقة الخوارزمي"}},
+{eq:"x² + 4x = 12",lhs:[{c:1,v:"x²"},{c:4,v:"x"}],rhs:[{c:12,v:""}],answer:2,steps:["x² + 4x = 12","Half of 4 is 2, square it: 4","x² + 4x + 4 = 16","(x + 2)² = 16","x + 2 = 4","x = 2"],desc:{en:"Quadratic solved by completing the square",fr:"Quadratique resolue par completion du carre",ar:"معادلة تربيعية محلولة بإكمال المربع"}}
+];
+
+var curProbIdx=0,step=0;
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var tmp=a[i];a[i]=a[j];a[j]=tmp}return a}
+var order=[];
+
+function newProblem(){
+if(order.length===0)order=shuffle(Array.from({length:PROBLEMS.length},function(_,i){return i}));
+curProbIdx=order.pop();
+step=0;
+renderProblem();
+}
+
+function renderProblem(){
+var p=PROBLEMS[curProbIdx];
+var ga=document.getElementById("gameArea");
+var desc=p.desc[curLang]||p.desc["en"];
+var html='<div class="problem-text">'+desc+'</div>';
+html+='<div class="balance-board"><div class="side" id="lhsSide">'+formatSide(p.lhs)+'</div><div class="equals-sign">=</div><div class="side" id="rhsSide">'+formatSide(p.rhs)+'</div></div>';
+html+='<div style="text-align:center;margin:12px 0;font-size:12px;color:var(--text2)">'+t("hint_click")+'</div>';
+html+='<div id="stepsArea">';
+for(var i=0;i<p.steps.length;i++){
+html+='<div class="step-box" id="step'+i+'" style="opacity:'+(i===0?1:0.3)+';cursor:pointer" onclick="revealStep('+i+')"><strong>'+(curLang==="ar"?"الخطوة":"Step")+" "+(i+1)+':</strong> '+p.steps[i]+'</div>';
+}
+html+='</div>';
+html+='<div class="input-row" style="margin-top:16px"><label style="color:var(--text2);font-size:12px">'+t("enter_x")+'</label><input type="number" id="ansInput" placeholder="x = ?"/><button class="submit-btn" onclick="checkAnswer()">&#10003;</button></div>';
+ga.innerHTML=html;
+document.getElementById("status").textContent=p.eq;
+document.getElementById("status").className="status";
+}
+
+function formatSide(terms){
+var h="";
+for(var i=0;i<terms.length;i++){
+var tm=terms[i];
+var label=tm.c+(tm.v?" "+tm.v:"");
+if(tm.c===1&&tm.v)label=tm.v;
+h+='<span class="term">'+label+'</span>';
+if(i<terms.length-1)h+=' <span style="color:var(--text2)">+</span> ';
+}
+return h;
+}
+
+function revealStep(idx){
+step=idx;
+for(var i=0;i<=idx;i++){document.getElementById("step"+i).style.opacity="1"}
+snd("click");
+}
+
+function checkAnswer(){
+var inp=document.getElementById("ansInput");
+var val=parseFloat(inp.value);
+var p=PROBLEMS[curProbIdx];
+totalP++;
+if(val===p.answer){
+solved++;snd("ok");
+document.getElementById("status").textContent=t("correct");
+document.getElementById("status").className="status win";
+log(p.eq+" => x = "+p.answer+" ✓","success");
+document.getElementById("lhsSide").classList.add("correct-side");
+document.getElementById("rhsSide").classList.add("correct-side");
+}else{
+snd("err");
+document.getElementById("status").textContent=t("wrong")+" "+p.answer;
+document.getElementById("status").className="status lose";
+log(p.eq+" => x = "+p.answer+" (answered "+val+")","error");
+}
+document.getElementById("sc").textContent=solved;
+document.getElementById("tot").textContent=totalP;
+document.getElementById("scorePill").textContent=solved+" / "+totalP;
+document.getElementById("prog").style.width=(solved/(totalP||1)*100)+"%";
+for(var i=0;i<p.steps.length;i++){document.getElementById("step"+i).style.opacity="1"}
+var pct=Math.round(solved/totalP*100);
+if(saveHS(pct))log("New high score: "+pct+"%!","success");
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);else setLang("en")}catch(e){setLang("en")}
+try{var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);else setTheme("terminal")}catch(e){setTheme("terminal")}
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="\uD83D\uDD07"}}catch(e){}
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click")})});
+document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newProblem()});
+document.getElementById("startBtn").addEventListener("click",function(){newProblem()});
+document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07";try{localStorage.setItem("wdiy-mute",soundOn?"0":"1")}catch(e){}});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active")});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active")});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active")})});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();if(e.key==="Enter"){var inp=document.getElementById("ansInput");if(inp&&document.activeElement===inp)checkAnswer()}});
+});
+</script></body></html>
