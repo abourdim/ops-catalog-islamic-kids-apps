@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Cave Hira Meditation — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>
+[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh;overflow-x:hidden}[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}.app{display:none;max-width:900px;margin:0 auto;padding:12px 16px}.app.on{display:block}.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}.hdr h1{font-size:18px}.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}.ctrl button:hover{border-color:var(--abr)}.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}.status.win{color:var(--accent)}.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:0;margin-bottom:12px;position:relative;overflow:hidden}canvas{width:100%;border-radius:12px;display:block;cursor:pointer}.reflection-box{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.75);border:1px solid var(--accent);border-radius:12px;padding:16px 24px;max-width:90%;text-align:center;opacity:0;transition:opacity .5s;pointer-events:none}.reflection-box.show{opacity:1;pointer-events:auto}.reflection-text{font-family:'Outfit','Noto Sans Arabic',sans-serif;font-size:14px;color:var(--heading);line-height:1.7;margin-bottom:8px}.reflection-arabic{font-family:'Noto Sans Arabic',sans-serif;font-size:18px;color:var(--accent);direction:rtl}.reflection-source{font-size:10px;color:var(--text3);margin-top:6px}.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:10px}.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.btn-close:hover{border-color:var(--accent);color:var(--accent)}.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;border-bottom:2px solid transparent}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}.help-content{display:none}.help-content.active{display:block}.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px}.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none}.help-item summary::before{content:"▸";color:var(--accent);margin-right:6px}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}.help-step{display:flex;gap:10px;margin-bottom:12px}.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px" id="splTitle">Cave Hira Meditation</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px" id="splSub">A night of reflection</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px" id="splDesc">Experience the peace of Cave Hira at night. Stars twinkle above. Tap to reveal moments of reflection and the first revelation.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app">
+<div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
+<div class="hdr"><h1 id="appTitle">Cave Hira Meditation</h1><span class="pill" id="scorePill">0 / 7</span></div>
+<div class="ctrl"><button id="startBtn">▶ New Night</button><button class="btn-help" onclick="openHelp()">❓</button><button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="status" id="status">Tap on the glowing stars to discover moments of reflection</div>
+<div class="game-area" id="gameWrap">
+<canvas id="gc" width="860" height="520"></canvas>
+<div class="reflection-box" id="refBox"><div class="reflection-text" id="refText"></div><div class="reflection-arabic" id="refAr"></div><div class="reflection-source" id="refSrc"></div></div>
+</div>
+<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">Revealed</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">Total</div><div class="score-num" id="tot">7</div></div></div>
+<div class="log-box" id="logBox"></div>
+<div class="foot">Workshop-Diy — Cave Hira Meditation v1.0</div>
+</div>
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div><div class="sidebar-body"><div class="help-content active" id="help-faq"><details class="help-item"><summary>What is this?</summary><p>A peaceful interactive scene of Cave Hira at night. Tap glowing stars to reveal moments of reflection from the Prophet's ﷺ time in the cave.</p></details><details class="help-item"><summary>What is Cave Hira?</summary><p>A cave on Mount Nur (Jabal al-Nur) near Mecca where the Prophet ﷺ would retreat for contemplation. It is where the first revelation of the Quran was received.</p></details></div><div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>Watch the peaceful night sky with twinkling stars</p></div><div class="help-step"><span class="help-step-num">2</span><p>Tap on the larger glowing stars</p></div><div class="help-step"><span class="help-step-num">3</span><p>Read the reflection that appears</p></div><div class="help-step"><span class="help-step-num">4</span><p>Discover all 7 moments to complete the experience</p></div></div><div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>🏔 Jabal al-Nur</h3><p>The Mountain of Light, located about 3km from the Ka'bah. Cave Hira is near its summit, a small cave about 3.7m long and 1.6m wide.</p></div><div class="wiki-entry"><h3>📖 The First Revelation</h3><p>In Ramadan, 610 CE, Angel Jibreel appeared and said "Iqra" (Read!). The first five verses of Surah Al-Alaq were revealed.</p></div><div class="wiki-entry"><h3>🤱 Khadijah's Support</h3><p>When the Prophet ﷺ returned trembling, Khadijah comforted him saying Allah would never disgrace him, for he was kind to relatives and generous to guests.</p></div></div></div><div class="sidebar-footer">Workshop-DIY — v1.0</div></aside>
+<script>
+var REFLECTIONS=[
+{text:{en:"The Prophet ﷺ would spend days and nights in Cave Hira, reflecting on the creation of Allah and seeking truth.",fr:"Le Prophete ﷺ passait des jours et des nuits dans la grotte de Hira, reflechissant sur la creation d'Allah.",ar:"كان النبي ﷺ يقضي الأيام والليالي في غار حراء يتأمل في خلق الله ويبحث عن الحقيقة."},arabic:"يَتَحَنَّثُ فِيهِ اللَّيَالِيَ ذَوَاتِ الْعَدَدِ",src:{en:"He would worship there for many nights — Sahih al-Bukhari",fr:"Il y adorait pendant plusieurs nuits — Sahih al-Bukhari",ar:"يتحنث فيه الليالي ذوات العدد — صحيح البخاري"}},
+{text:{en:"Looking out from the cave, the Prophet ﷺ could see the Ka'bah below, a reminder of the legacy of Ibrahim.",fr:"Depuis la grotte, le Prophete ﷺ pouvait voir la Ka'bah en contrebas, rappel de l'heritage d'Ibrahim.",ar:"من الغار كان النبي ﷺ يرى الكعبة أدناه، تذكيراً بإرث إبراهيم."},arabic:"وَإِذْ يَرْفَعُ إِبْرَاهِيمُ الْقَوَاعِدَ",src:{en:"When Ibrahim was raising the foundations of the Ka'bah — Quran 2:127",fr:"Quand Ibrahim elevait les fondations de la Ka'bah — Coran 2:127",ar:"وإذ يرفع إبراهيم القواعد من البيت — البقرة ١٢٧"}},
+{text:{en:"The stillness of the night brought clarity. Away from the noise of Mecca, truth became clearer.",fr:"Le calme de la nuit apportait la clarte. Loin du bruit de La Mecque, la verite devenait plus claire.",ar:"سكون الليل يجلب الوضوح. بعيداً عن ضجيج مكة، تتجلى الحقيقة."},arabic:"إِنَّ نَاشِئَةَ اللَّيْلِ هِيَ أَشَدُّ وَطْئًا",src:{en:"Indeed, the night prayer is more effective — Quran 73:6",fr:"Certes, la priere de nuit est plus efficace — Coran 73:6",ar:"إن ناشئة الليل هي أشد وطئاً وأقوم قيلاً — المزمل ٦"}},
+{text:{en:"Khadijah would bring food and water to the cave, supporting the Prophet ﷺ in his spiritual retreat.",fr:"Khadijah apportait nourriture et eau a la grotte, soutenant le Prophete ﷺ dans sa retraite spirituelle.",ar:"كانت خديجة تحمل الطعام والماء إلى الغار، تدعم النبي ﷺ في خلوته الروحية."},arabic:"خَدِيجَةُ خَيْرُ نِسَائِهَا",src:{en:"Khadijah is the best of her women — Hadith",fr:"Khadijah est la meilleure de ses femmes — Hadith",ar:"خديجة خير نسائها — حديث"}},
+{text:{en:"Then came the night of Ramadan when everything changed. The angel Jibreel appeared with the first revelation.",fr:"Puis vint la nuit de Ramadan ou tout changea. L'ange Jibreel apparut avec la premiere revelation.",ar:"ثم جاءت ليلة رمضان التي تغير فيها كل شيء. ظهر جبريل بالوحي الأول."},arabic:"اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ",src:{en:"Read! In the name of your Lord who created — Quran 96:1",fr:"Lis ! Au nom de ton Seigneur qui a cree — Coran 96:1",ar:"اقرأ باسم ربك الذي خلق — العلق ١"}},
+{text:{en:"Jibreel embraced him tightly three times, then the words of Allah flowed — the Quran had begun.",fr:"Jibreel l'a serre trois fois, puis les paroles d'Allah ont coule — le Coran avait commence.",ar:"ضمّه جبريل ثلاث مرات، ثم تدفقت كلمات الله — بدأ نزول القرآن."},arabic:"خَلَقَ الْإِنسَانَ مِنْ عَلَقٍ",src:{en:"Created man from a clinging substance — Quran 96:2",fr:"A cree l'homme d'une adherence — Coran 96:2",ar:"خلق الإنسان من علق — العلق ٢"}},
+{text:{en:"The Prophet ﷺ returned trembling to Khadijah who wrapped him in a cloak and said: 'Allah will never disgrace you.'",fr:"Le Prophete ﷺ revint tremblant vers Khadijah qui l'enveloppa et dit : 'Allah ne vous humiliera jamais.'",ar:"عاد النبي ﷺ مرتجفاً إلى خديجة فلفّته بردائها وقالت: 'والله لا يخزيك الله أبداً.'"},arabic:"زَمِّلُونِي زَمِّلُونِي",src:{en:"'Cover me! Cover me!' — The Prophet ﷺ to Khadijah",fr:"'Couvrez-moi ! Couvrez-moi !' — Le Prophete ﷺ a Khadijah",ar:"زملوني زملوني — النبي ﷺ لخديجة"}}
+];
+var curLang="en",soundOn=true,actx,revealed=new Set(),stars=[],bgStars=[],cv,ctx,W,H,showingRef=false,refTimer;
+var UI={title:{en:"Cave Hira Meditation",fr:"Meditation a la Grotte de Hira",ar:"تأمل غار حراء"},sub:{en:"A night of reflection",fr:"Une nuit de reflexion",ar:"ليلة تأمل"},desc:{en:"Experience the peace of Cave Hira at night. Stars twinkle above. Tap to reveal moments of reflection.",fr:"Vivez la paix de la grotte de Hira la nuit. Les etoiles scintillent. Touchez pour reveler des moments de reflexion.",ar:"عش سكينة غار حراء ليلاً. النجوم تتلألأ. انقر لتكشف لحظات التأمل."},status:{en:"Tap on the glowing stars to discover moments of reflection",fr:"Touchez les etoiles brillantes pour decouvrir des moments de reflexion",ar:"انقر على النجوم المتوهجة لاكتشاف لحظات التأمل"},revealed_lbl:{en:"Revealed",fr:"Revele",ar:"مكشوف"},total:{en:"Total",fr:"Total",ar:"المجموع"},new_game:{en:"▶ New Night",fr:"▶ Nouvelle nuit",ar:"▶ ليلة جديدة"},win:{en:"All moments revealed. The night of revelation is complete.",fr:"Tous les moments reveles. La nuit de la revelation est complete.",ar:"كل اللحظات كُشفت. اكتملت ليلة الوحي."}};
+function t(k){return UI[k]?UI[k][curLang]||UI[k].en:"";}
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});rl();}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th)});}
+function rl(){document.getElementById("splTitle").textContent=t("title");document.getElementById("splSub").textContent=t("sub");document.getElementById("splDesc").textContent=t("desc");document.getElementById("appTitle").textContent=t("title");document.getElementById("startBtn").textContent=t("new_game");document.getElementById("lbl0").textContent=t("revealed_lbl");document.getElementById("lbl1").textContent=t("total");document.getElementById("status").textContent=t("status");}
+function snd(type){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var n=actx.currentTime;if(type==="chime"){var notes=[523,659,784];notes.forEach(function(f,i){var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);o.type="sine";o.frequency.value=f;g.gain.value=.04;g.gain.exponentialRampToValueAtTime(.001,n+.6+i*.15);o.start(n+i*.15);o.stop(n+.6+i*.15);});}else if(type==="win"){[261,329,392,523,659].forEach(function(f,i){var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);o.type="sine";o.frequency.value=f;g.gain.value=.03;g.gain.exponentialRampToValueAtTime(.001,n+.8+i*.2);o.start(n+i*.2);o.stop(n+.8+i*.2);});}else{var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);o.type="sine";o.frequency.value=800;g.gain.value=.04;g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){var b=document.getElementById("logBox"),d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+function initCanvas(){cv=document.getElementById("gc");var r=cv.parentElement.getBoundingClientRect();W=Math.min(860,r.width);H=Math.round(W*.6);cv.width=W;cv.height=H;ctx=cv.getContext("2d");}
+function newGame(){
+revealed.clear();showingRef=false;
+document.getElementById("refBox").classList.remove("show");
+document.getElementById("sc").textContent="0";document.getElementById("tot").textContent=REFLECTIONS.length;
+document.getElementById("scorePill").textContent="0 / "+REFLECTIONS.length;
+document.getElementById("logBox").innerHTML="";
+document.getElementById("status").textContent=t("status");document.getElementById("status").className="status";
+// Create interactive stars
+stars=[];
+var used={};
+for(var i=0;i<REFLECTIONS.length;i++){
+var sx,sy;do{sx=80+Math.random()*(W-160);sy=30+Math.random()*(H*.45);}while(used[Math.round(sx/50)+","+Math.round(sy/50)]);
+used[Math.round(sx/50)+","+Math.round(sy/50)]=true;
+stars.push({x:sx,y:sy,idx:i,r:6+Math.random()*4,phase:Math.random()*Math.PI*2});
+}
+// Background stars
+bgStars=[];for(var i=0;i<120;i++){bgStars.push({x:Math.random()*W,y:Math.random()*H*.6,r:Math.random()*1.5+.5,phase:Math.random()*Math.PI*2,speed:.5+Math.random()*2});}
+log("A peaceful night begins...","success");
+}
+function draw(){
+var time=Date.now()*.001;
+// Sky gradient
+var grad=ctx.createLinearGradient(0,0,0,H);
+grad.addColorStop(0,"#050510");grad.addColorStop(.5,"#0a0a20");grad.addColorStop(.7,"#151530");grad.addColorStop(1,"#1a1510");
+ctx.fillStyle=grad;ctx.fillRect(0,0,W,H);
+// Moon
+ctx.fillStyle="rgba(255,255,220,.12)";ctx.beginPath();ctx.arc(W*.8,H*.12,40,0,Math.PI*2);ctx.fill();
+ctx.fillStyle="#ffeedd";ctx.beginPath();ctx.arc(W*.8,H*.12,18,0,Math.PI*2);ctx.fill();
+ctx.fillStyle="#050510";ctx.beginPath();ctx.arc(W*.8+6,H*.12-3,14,0,Math.PI*2);ctx.fill();
+// Background stars twinkle
+bgStars.forEach(function(s){
+var alpha=.3+Math.sin(time*s.speed+s.phase)*.3;
+ctx.fillStyle="rgba(255,255,255,"+alpha+")";ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fill();
+});
+// Mountain silhouette
+ctx.fillStyle="#0a0a15";ctx.beginPath();ctx.moveTo(0,H*.65);
+ctx.lineTo(W*.15,H*.45);ctx.lineTo(W*.3,H*.55);ctx.lineTo(W*.45,H*.38);ctx.lineTo(W*.55,H*.42);
+ctx.lineTo(W*.65,H*.5);ctx.lineTo(W*.8,H*.4);ctx.lineTo(W*.9,H*.5);ctx.lineTo(W,H*.55);
+ctx.lineTo(W,H);ctx.lineTo(0,H);ctx.fill();
+// Cave entrance
+ctx.fillStyle="#060608";ctx.beginPath();ctx.ellipse(W*.45,H*.6,W*.08,H*.06,0,0,Math.PI*2);ctx.fill();
+ctx.fillStyle="#08080c";ctx.beginPath();ctx.ellipse(W*.45,H*.58,W*.06,H*.04,-.1,0,Math.PI*2);ctx.fill();
+// Cave glow
+var glow=.15+Math.sin(time*.5)*.05;
+ctx.fillStyle="rgba(255,200,100,"+glow+")";ctx.beginPath();ctx.ellipse(W*.45,H*.59,W*.04,H*.03,0,0,Math.PI*2);ctx.fill();
+// Ground
+ctx.fillStyle="#0f0e0a";ctx.fillRect(0,H*.7,W,H*.3);
+// Interactive stars
+stars.forEach(function(s){
+if(revealed.has(s.idx)){
+ctx.fillStyle="rgba(255,215,0,.8)";ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fill();
+ctx.fillStyle="rgba(255,215,0,.15)";ctx.beginPath();ctx.arc(s.x,s.y,s.r*3,0,Math.PI*2);ctx.fill();
+}else{
+var pulse=Math.sin(time*2+s.phase)*.4+.6;
+var gSize=s.r+Math.sin(time*1.5+s.phase)*2;
+ctx.fillStyle="rgba(200,220,255,"+pulse*.15+")";ctx.beginPath();ctx.arc(s.x,s.y,gSize*3,0,Math.PI*2);ctx.fill();
+ctx.fillStyle="rgba(200,220,255,"+pulse+")";ctx.beginPath();ctx.arc(s.x,s.y,gSize,0,Math.PI*2);ctx.fill();
+// Cross sparkle
+ctx.strokeStyle="rgba(255,255,255,"+(pulse*.3)+")";ctx.lineWidth=1;
+ctx.beginPath();ctx.moveTo(s.x-gSize*2,s.y);ctx.lineTo(s.x+gSize*2,s.y);ctx.stroke();
+ctx.beginPath();ctx.moveTo(s.x,s.y-gSize*2);ctx.lineTo(s.x,s.y+gSize*2);ctx.stroke();
+}
+});
+requestAnimationFrame(draw);
+}
+function handleClick(e){
+var rect=cv.getBoundingClientRect();var mx=(e.clientX-rect.left)*(W/rect.width),my=(e.clientY-rect.top)*(H/rect.height);
+for(var i=0;i<stars.length;i++){
+var s=stars[i];var dist=Math.sqrt((mx-s.x)*(mx-s.x)+(my-s.y)*(my-s.y));
+if(dist<25&&!revealed.has(s.idx)){
+revealed.add(s.idx);snd("chime");
+document.getElementById("sc").textContent=revealed.size;
+document.getElementById("scorePill").textContent=revealed.size+" / "+REFLECTIONS.length;
+var ref=REFLECTIONS[s.idx];
+document.getElementById("refText").textContent=ref.text[curLang]||ref.text.en;
+document.getElementById("refAr").textContent=ref.arabic;
+document.getElementById("refSrc").textContent=ref.src[curLang]||ref.src.en;
+document.getElementById("refBox").classList.add("show");
+clearTimeout(refTimer);
+refTimer=setTimeout(function(){document.getElementById("refBox").classList.remove("show");},6000);
+log("Revealed: "+(ref.text.en.substring(0,50))+"...","success");
+if(revealed.size>=REFLECTIONS.length){
+snd("win");document.getElementById("status").textContent=t("win");document.getElementById("status").className="status win";checkHS();
+}
+return;
+}
+}
+}
+var HS_KEY="wdiy-hs-cave-hira-meditation";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0;}catch(e){return 0;}}
+function saveHS(s){try{var b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true;}}catch(e){}return false;}
+function checkHS(){var pct=Math.round(revealed.size/REFLECTIONS.length*100);if(saveHS(pct))log("NEW HIGH SCORE!","success");}
+document.addEventListener("DOMContentLoaded",function(){
+setLang("en");setTheme("terminal");
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
+document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";initCanvas();newGame();draw();cv.addEventListener("click",handleClick);});
+document.getElementById("startBtn").addEventListener("click",function(){initCanvas();newGame();});
+document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"🔊":"🔇";});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="🔇";}}catch(e){}
+var _osl=setLang,_ost=setTheme;setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};
+});
+</script></body></html>

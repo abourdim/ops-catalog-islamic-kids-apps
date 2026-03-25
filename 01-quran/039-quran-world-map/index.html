@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Quran World Map — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>
+[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:750px;margin:0 auto;padding:12px 16px}.app.on{display:block}.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}.hdr h1{font-size:18px}.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
+.map-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:12px}canvas{display:block;width:100%;cursor:pointer}
+.info-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;text-align:center;min-height:90px}
+.info-box h3{font-family:'Outfit',sans-serif;font-size:16px;color:var(--accent);margin-bottom:6px}
+.info-box .ar{font-family:'Noto Sans Arabic',sans-serif;font-size:16px;color:var(--heading);direction:rtl;margin-bottom:4px;line-height:1.6}
+.info-box .tr{font-size:11px;color:var(--text2);line-height:1.6}
+.info-box .event{font-size:11px;color:var(--text);margin-top:6px}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:10px}.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.btn-close:hover{border-color:var(--accent);color:var(--accent)}.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;border-bottom:2px solid transparent}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}.help-content{display:none}.help-content.active{display:block}.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none}.help-item summary::before{content:"\25B8";color:var(--accent);margin-right:6px}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}.help-step{display:flex;gap:10px;margin-bottom:12px}.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div style="color:var(--text3);font-size:12px;margin-bottom:14px">&fdfc;</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Quran World Map</h1><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Explore the places mentioned in the Quran on an interactive map. Click locations to read related ayahs and discover events.</p><button class="btn-go" id="enterBtn">Explore Map</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">T</button><button class="sw-btn" data-thm="midnight">M</button><button class="sw-btn" data-thm="ember">E</button><button class="sw-btn" data-thm="phosphor">P</button><button class="sw-btn" data-thm="signal">S</button><button class="sw-btn" data-thm="redshift">R</button><button class="sw-btn" data-thm="arctic">A</button><button class="sw-btn" data-thm="sand">D</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">&fdfc;</div><div class="hdr"><h1>Quran World Map</h1><span class="pill" id="expPill">Explored: 0</span></div>
+<div class="ctrl"><button class="btn-help" onclick="openHelp()">? Help</button><button id="soundBtn">Sound ON</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw"><button class="sw-btn on" data-thm="terminal">T</button><button class="sw-btn" data-thm="midnight">M</button><button class="sw-btn" data-thm="ember">E</button><button class="sw-btn" data-thm="phosphor">P</button><button class="sw-btn" data-thm="signal">S</button><button class="sw-btn" data-thm="redshift">R</button><button class="sw-btn" data-thm="arctic">A</button><button class="sw-btn" data-thm="sand">D</button></div></div>
+<div class="status" id="status">Click a glowing location on the map</div>
+<div class="map-wrap"><canvas id="mapCanvas" width="720" height="400"></canvas></div>
+<div class="info-box" id="infoBox"><h3 id="locName">Select a location</h3><div class="ar" id="locAr"></div><div class="tr" id="locTr"></div><div class="event" id="locEvent"></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">Explored</div><div class="score-num" id="expNum">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num">12</div></div></div>
+<div class="foot">Workshop-Diy &mdash; Quran World Map v1.0</div></div>
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">&times;</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div><div class="sidebar-body">
+<div class="help-content active" id="help-faq"><details class="help-item"><summary>What places are shown?</summary><p>Locations mentioned in the Quran: Mecca, Medina, Egypt, Mount Sinai, Jerusalem, and more.</p></details><details class="help-item"><summary>Are these exact locations?</summary><p>The map shows approximate locations based on Quran commentaries and historical research.</p></details></div>
+<div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>Look for glowing dots on the map</p></div><div class="help-step"><span class="help-step-num">2</span><p>Click a dot to learn about the location</p></div><div class="help-step"><span class="help-step-num">3</span><p>Read the ayah and event description</p></div></div>
+<div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>Quran Geography</h3><p>The Quran references places from Arabia to Egypt, from Palestine to Yemen, connecting spiritual events to real locations.</p></div></div>
+</div><div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div></aside>
+<script>
+var LOCS=[
+{name:{en:"Mecca",fr:"La Mecque",ar:"مكة"},x:.52,y:.55,ar:"إِنَّ أَوَّلَ بَيْتٍ وُضِعَ لِلنَّاسِ لَلَّذِي بِبَكَّةَ مُبَارَكًا",en:"Indeed, the first House established for mankind was at Bakkah (Mecca), blessed",fr:"La premiere Maison etablie pour les gens est celle de Bakka, benie",event:{en:"Birthplace of Prophet Muhammad and location of the Ka'bah",fr:"Lieu de naissance du Prophete Muhammad et emplacement de la Ka'bah",ar:"مسقط رأس النبي محمد ﷺ وموقع الكعبة"},explored:false},
+{name:{en:"Medina",fr:"Medine",ar:"المدينة"},x:.51,y:.52,ar:"وَإِذْ يَمْكُرُ بِكَ الَّذِينَ كَفَرُوا",en:"When those who disbelieved plotted against you",fr:"Quand les mecreants complotaient contre toi",event:{en:"City of the Prophet, destination of the Hijrah",fr:"Ville du Prophete, destination de la Hijrah",ar:"مدينة النبي، وجهة الهجرة"},explored:false},
+{name:{en:"Mount Sinai",fr:"Mont Sinai",ar:"طور سيناء"},x:.48,y:.48,ar:"وَالتِّينِ وَالزَّيْتُونِ وَطُورِ سِينِينَ",en:"By the fig and the olive, and Mount Sinai",fr:"Par le figuier et l'olivier, et le Mont Sinai",event:{en:"Where Allah spoke to Prophet Musa (Moses)",fr:"Ou Allah a parle au Prophete Moussa",ar:"حيث كلّم الله النبي موسى عليه السلام"},explored:false},
+{name:{en:"Egypt",fr:"Egypte",ar:"مصر"},x:.46,y:.48,ar:"ادْخُلُوا مِصْرَ إِنْ شَاءَ اللَّهُ آمِنِينَ",en:"Enter Egypt, if Allah wills, in safety",fr:"Entrez en Egypte, si Allah veut, en securite",event:{en:"Land of Prophet Yusuf (Joseph) and Musa (Moses)",fr:"Terre du Prophete Youssouf et Moussa",ar:"أرض النبي يوسف وموسى عليهما السلام"},explored:false},
+{name:{en:"Jerusalem",fr:"Jerusalem",ar:"القدس"},x:.49,y:.46,ar:"سُبْحَانَ الَّذِي أَسْرَى بِعَبْدِهِ لَيْلًا مِنَ الْمَسْجِدِ الْحَرَامِ إِلَى الْمَسْجِدِ الْأَقْصَى",en:"Glory to Him who took His servant by night from al-Masjid al-Haram to al-Masjid al-Aqsa",fr:"Gloire a Celui qui a fait voyager Son serviteur la nuit",event:{en:"Destination of Isra (Night Journey), location of Al-Aqsa Mosque",fr:"Destination du voyage nocturne, mosquee Al-Aqsa",ar:"وجهة الإسراء، موقع المسجد الأقصى"},explored:false},
+{name:{en:"Badr",fr:"Badr",ar:"بدر"},x:.52,y:.53,ar:"وَلَقَدْ نَصَرَكُمُ اللَّهُ بِبَدْرٍ وَأَنْتُمْ أَذِلَّةٌ",en:"And Allah had already given you victory at Badr while you were few",fr:"Allah vous a deja donne la victoire a Badr alors que vous etiez humbles",event:{en:"Site of the first major battle of Islam (2 AH)",fr:"Site de la premiere grande bataille de l'Islam",ar:"موقع أول معركة كبرى في الإسلام (٢ هـ)"},explored:false},
+{name:{en:"Saba (Yemen)",fr:"Saba (Yemen)",ar:"سبأ (اليمن)"},x:.54,y:.59,ar:"لَقَدْ كَانَ لِسَبَإٍ فِي مَسْكَنِهِمْ آيَةٌ",en:"There was for Saba in their dwelling place a sign",fr:"Il y avait pour Saba un signe dans leur demeure",event:{en:"Ancient civilization in Yemen, Surah Saba named after them",fr:"Ancienne civilisation au Yemen, Sourate Saba nommee d'apres eux",ar:"حضارة قديمة في اليمن، سورة سبأ سميت بهم"},explored:false},
+{name:{en:"Madyan",fr:"Madyan",ar:"مدين"},x:.50,y:.49,ar:"وَإِلَى مَدْيَنَ أَخَاهُمْ شُعَيْبًا",en:"And to Madyan We sent their brother Shu'ayb",fr:"Et a Madyan, leur frere Chouaib",event:{en:"Home of Prophet Shu'ayb, near modern-day Tabuk",fr:"Foyer du Prophete Chouaib",ar:"موطن النبي شعيب عليه السلام"},explored:false},
+{name:{en:"Thamud (Al-Hijr)",fr:"Thamud (Al-Hijr)",ar:"ثمود (الحجر)"},x:.51,y:.50,ar:"وَكَانُوا يَنْحِتُونَ مِنَ الْجِبَالِ بُيُوتًا آمِنِينَ",en:"And they carved from the mountains houses feeling secure",fr:"Ils taillaient dans la montagne des demeures securitaires",event:{en:"Rock-carved dwellings of people of Thamud, warned by Prophet Salih",fr:"Habitations rocheuses de Thamud, avertis par le Prophete Salih",ar:"مساكن ثمود المنحوتة في الصخر، أنذرهم النبي صالح"},explored:false},
+{name:{en:"'Ad (Iram)",fr:"'Ad (Iram)",ar:"عاد (إرم)"},x:.55,y:.56,ar:"إِرَمَ ذَاتِ الْعِمَادِ الَّتِي لَمْ يُخْلَقْ مِثْلُهَا فِي الْبِلَادِ",en:"Iram, with lofty pillars, the likes of which were not produced in all the lands",fr:"Iram, aux colonnes, dont la pareille n'a pas ete creee dans le pays",event:{en:"Lost civilization of 'Ad in southern Arabia, warned by Prophet Hud",fr:"Civilisation perdue de 'Ad, avertie par le Prophete Hud",ar:"حضارة عاد المفقودة في جنوب الجزيرة، أنذرهم النبي هود"},explored:false},
+{name:{en:"Nineveh (Iraq)",fr:"Ninive (Iraq)",ar:"نينوى (العراق)"},x:.53,y:.45,ar:"وَأَرْسَلْنَاهُ إِلَى مِائَةِ أَلْفٍ أَوْ يَزِيدُونَ",en:"And We sent him to a hundred thousand or more",fr:"Et Nous l'envoyames a cent mille ou plus",event:{en:"City of Prophet Yunus (Jonah), its people repented",fr:"Ville du Prophete Yunus, son peuple s'est repenti",ar:"مدينة النبي يونس عليه السلام، تاب أهلها"},explored:false},
+{name:{en:"Mount Judi",fr:"Mont Judi",ar:"جبل الجودي"},x:.53,y:.44,ar:"وَاسْتَوَتْ عَلَى الْجُودِيِّ",en:"And it rested on Mount Judi",fr:"Et l'Arche s'installa sur le Judi",event:{en:"Where the Ark of Prophet Nuh (Noah) rested after the flood",fr:"Ou l'Arche du Prophete Nouh s'est posee apres le deluge",ar:"حيث استقرت سفينة النبي نوح بعد الطوفان"},explored:false}
+];
+
+var curLang="en",soundOn=true,actx,explored=0,selLoc=-1,animId;
+var HS_KEY="wdiy-hs-quran-world-map";
+
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l);});try{localStorage.setItem("wdiy-lang",l);}catch(e){}}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th);});try{localStorage.setItem("wdiy-theme",th);}catch(e){}}
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.03;var n=actx.currentTime;if(t==="loc"){o.frequency.value=600;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);var o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.02;o2.frequency.value=800;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else{o.frequency.value=700;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+
+function drawMap(){
+var c=document.getElementById("mapCanvas"),cx=c.getContext("2d");
+var w=c.width,h=c.height;var time=performance.now()/1000;
+var cs=getComputedStyle(document.documentElement);
+var bgCol=cs.getPropertyValue('--bg3').trim()||'#161b22';
+var borderCol=cs.getPropertyValue('--border2').trim()||'#30363d';
+var accentCol=cs.getPropertyValue('--accent').trim()||'#00ff88';
+var textCol=cs.getPropertyValue('--text2').trim()||'#8b949e';
+cx.fillStyle=bgCol;cx.fillRect(0,0,w,h);
+// Simple landmass outlines (Middle East region)
+cx.fillStyle=borderCol+"44";
+cx.beginPath();cx.ellipse(w*0.5,h*0.45,w*0.35,h*0.3,0,0,Math.PI*2);cx.fill();
+// Water
+cx.fillStyle=bgCol;
+cx.beginPath();cx.ellipse(w*0.42,h*0.55,w*0.04,h*0.15,0.2,0,Math.PI*2);cx.fill(); // Red Sea
+cx.beginPath();cx.ellipse(w*0.56,h*0.52,w*0.03,h*0.1,-0.3,0,Math.PI*2);cx.fill(); // Persian Gulf
+// Grid lines
+cx.strokeStyle=borderCol+"33";cx.lineWidth=0.5;
+for(var i=0;i<8;i++){cx.beginPath();cx.moveTo(w*i/8,0);cx.lineTo(w*i/8,h);cx.stroke();}
+for(var j=0;j<5;j++){cx.beginPath();cx.moveTo(0,h*j/5);cx.lineTo(w,h*j/5);cx.stroke();}
+// Location pins
+LOCS.forEach(function(loc,i){
+var lx=loc.x*w,ly=loc.y*h;
+var pulse=Math.sin(time*3+i)*0.3+0.7;
+if(loc.explored){
+cx.fillStyle=accentCol;cx.beginPath();cx.arc(lx,ly,6,0,Math.PI*2);cx.fill();
+}else{
+cx.fillStyle=accentCol+"66";cx.beginPath();cx.arc(lx,ly,5*pulse,0,Math.PI*2);cx.fill();
+cx.strokeStyle=accentCol+"44";cx.lineWidth=1;cx.beginPath();cx.arc(lx,ly,10*pulse,0,Math.PI*2);cx.stroke();
+}
+if(i===selLoc){cx.strokeStyle=accentCol;cx.lineWidth=2;cx.beginPath();cx.arc(lx,ly,12,0,Math.PI*2);cx.stroke();}
+cx.fillStyle=textCol;cx.font="9px Outfit,sans-serif";cx.textAlign="center";
+cx.fillText(loc.name[curLang]||loc.name.en,lx,ly-12);
+});
+animId=requestAnimationFrame(drawMap);
+}
+
+function handleClick(e){
+var c=document.getElementById("mapCanvas"),r=c.getBoundingClientRect();
+var mx=(e.clientX-r.left)*(c.width/r.width),my=(e.clientY-r.top)*(c.height/r.height);
+var closest=-1,minD=30;
+LOCS.forEach(function(loc,i){var dx=loc.x*c.width-mx,dy=loc.y*c.height-my;var d=Math.sqrt(dx*dx+dy*dy);if(d<minD){minD=d;closest=i;}});
+if(closest>=0){
+selLoc=closest;var loc=LOCS[closest];
+document.getElementById("locName").textContent=loc.name[curLang]||loc.name.en;
+document.getElementById("locAr").textContent=loc.ar;
+document.getElementById("locTr").textContent=loc[curLang]||loc.en;
+document.getElementById("locEvent").textContent=loc.event[curLang]||loc.event.en;
+if(!loc.explored){loc.explored=true;explored++;document.getElementById("expNum").textContent=explored;document.getElementById("expPill").textContent="Explored: "+explored;}
+snd("loc");
+try{var best=parseInt(localStorage.getItem(HS_KEY))||0;if(explored>best)localStorage.setItem(HS_KEY,explored);}catch(e){}
+}
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+document.getElementById("mapCanvas").addEventListener("click",handleClick);
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
+document.getElementById("enterBtn").onclick=function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";drawMap();};
+document.getElementById("soundBtn").onclick=function(){soundOn=!soundOn;this.textContent=soundOn?"Sound ON":"Sound OFF";};
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);}catch(e){}
+});
+</script></body></html>

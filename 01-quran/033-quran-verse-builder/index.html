@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Quran Verse Builder — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>
+[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh;overflow-x:hidden}[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
+.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:660px;margin:0 auto;padding:12px 16px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}.hdr h1{font-size:18px}.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:200px}
+.drop-zone{min-height:60px;background:var(--bg3);border:2px dashed var(--border2);border-radius:10px;padding:10px;margin-bottom:16px;display:flex;flex-wrap:wrap;gap:8px;direction:rtl;justify-content:center;align-items:center;transition:border-color .2s}
+.drop-zone.over{border-color:var(--accent)}
+.drop-zone.correct{border-color:var(--accent);background:var(--abg)}
+.word-bank{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;direction:rtl}
+.word-tile{padding:10px 16px;background:var(--bg3);border:2px solid var(--border);border-radius:10px;font-family:'Noto Sans Arabic',sans-serif;font-size:18px;font-weight:600;color:var(--heading);cursor:grab;user-select:none;transition:all .15s;direction:rtl}
+.word-tile:hover{border-color:var(--accent);color:var(--accent);transform:scale(1.05)}
+.word-tile.placed{opacity:.3;pointer-events:none}
+.word-tile.in-zone{cursor:pointer;background:var(--abg);border-color:var(--abr)}
+.word-tile.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.word-tile.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
+.ref-text{text-align:center;font-family:'Noto Sans Arabic',sans-serif;font-size:13px;color:var(--text2);margin-bottom:10px;direction:rtl}
+.translation{text-align:center;font-size:11px;color:var(--text3);margin-bottom:10px;line-height:1.6}
+.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden;margin:8px auto}.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:10px}.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;border-bottom:2px solid transparent}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}.help-item summary::before{content:"\25B8";color:var(--accent);font-size:10px}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
+.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div style="color:var(--text3);font-size:12px;margin-bottom:14px">&fdfc;</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Quran Verse Builder</h1><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Reconstruct Quran verses by arranging scattered Arabic words in the correct order. Progressive difficulty!</p><button class="btn-go" id="enterBtn">Start Building</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">T</button><button class="sw-btn" data-thm="midnight">M</button><button class="sw-btn" data-thm="ember">E</button><button class="sw-btn" data-thm="phosphor">P</button><button class="sw-btn" data-thm="signal">S</button><button class="sw-btn" data-thm="redshift">R</button><button class="sw-btn" data-thm="arctic">A</button><button class="sw-btn" data-thm="sand">D</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">&fdfc;</div><div class="hdr"><h1>Quran Verse Builder</h1><span class="pill" id="lvlPill">Level 1</span></div>
+<div class="ctrl"><button id="newBtn">New Verse</button><button class="btn-help" onclick="openHelp()">? Help</button><button id="soundBtn">Sound ON</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw"><button class="sw-btn on" data-thm="terminal">T</button><button class="sw-btn" data-thm="midnight">M</button><button class="sw-btn" data-thm="ember">E</button><button class="sw-btn" data-thm="phosphor">P</button><button class="sw-btn" data-thm="signal">S</button><button class="sw-btn" data-thm="redshift">R</button><button class="sw-btn" data-thm="arctic">A</button><button class="sw-btn" data-thm="sand">D</button></div></div>
+<div class="status" id="status">Arrange the words to form the verse</div>
+<div class="game-area" id="gameArea">
+<div class="ref-text" id="refText"></div>
+<div class="translation" id="transl"></div>
+<div class="drop-zone" id="dropZone"></div>
+<div class="word-bank" id="wordBank"></div>
+</div>
+<div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">Score</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Level</div><div class="score-num" id="lvl">1</div></div></div>
+<div class="foot">Workshop-Diy &mdash; Quran Verse Builder v1.0</div></div>
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">&times;</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div><div class="sidebar-body">
+<div class="help-content active" id="help-faq"><details class="help-item"><summary>What is Verse Builder?</summary><p>A word-ordering game where you reconstruct Quran verses from scattered Arabic words.</p></details><details class="help-item"><summary>How does difficulty work?</summary><p>Starts with short verses (3-4 words) and progresses to longer ones as you level up.</p></details><details class="help-item"><summary>Can I remove a placed word?</summary><p>Yes! Click any word in the drop zone to send it back to the word bank.</p></details></div>
+<div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>Look at the scattered word tiles below</p></div><div class="help-step"><span class="help-step-num">2</span><p>Click words in the correct order (right to left for Arabic)</p></div><div class="help-step"><span class="help-step-num">3</span><p>Words appear in the drop zone above</p></div><div class="help-step"><span class="help-step-num">4</span><p>Click a placed word to remove it</p></div><div class="help-step"><span class="help-step-num">5</span><p>Complete all words correctly to score</p></div></div>
+<div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>Quran Word Order</h3><p>Arabic reads right-to-left. Each word in the Quran carries precise meaning in its position.</p></div><div class="wiki-entry"><h3>Memorization</h3><p>Reconstructing verses helps build familiarity with Quran text and aids memorization.</p></div></div>
+</div><div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div></aside>
+<script>
+var VERSES=[
+{ar:"بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ",en:"In the name of Allah, the Most Gracious, the Most Merciful",fr:"Au nom d'Allah, le Misericordieux",ref:"1:1",words:["بِسْمِ","اللَّهِ","الرَّحْمَنِ","الرَّحِيمِ"]},
+{ar:"الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",en:"All praise is due to Allah, Lord of the worlds",fr:"Louange a Allah, Seigneur des mondes",ref:"1:2",words:["الْحَمْدُ","لِلَّهِ","رَبِّ","الْعَالَمِينَ"]},
+{ar:"إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",en:"You alone we worship, You alone we ask for help",fr:"C'est Toi que nous adorons et implorons",ref:"1:5",words:["إِيَّاكَ","نَعْبُدُ","وَإِيَّاكَ","نَسْتَعِينُ"]},
+{ar:"قُلْ هُوَ اللَّهُ أَحَدٌ",en:"Say: He is Allah, the One",fr:"Dis: Il est Allah, l'Unique",ref:"112:1",words:["قُلْ","هُوَ","اللَّهُ","أَحَدٌ"]},
+{ar:"اللَّهُ الصَّمَدُ",en:"Allah, the Eternal Refuge",fr:"Allah, le Seul a etre implore",ref:"112:2",words:["اللَّهُ","الصَّمَدُ"]},
+{ar:"لَمْ يَلِدْ وَلَمْ يُولَدْ",en:"He neither begets nor is born",fr:"Il n'a pas engendre ni n'a ete engendre",ref:"112:3",words:["لَمْ","يَلِدْ","وَلَمْ","يُولَدْ"]},
+{ar:"قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ",en:"Say: I seek refuge in the Lord of daybreak",fr:"Dis: Je cherche refuge aupres du Seigneur de l'aube",ref:"113:1",words:["قُلْ","أَعُوذُ","بِرَبِّ","الْفَلَقِ"]},
+{ar:"وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ",en:"And from the evil of an envier when he envies",fr:"Et contre le mal de l'envieux quand il envie",ref:"113:5",words:["وَمِنْ","شَرِّ","حَاسِدٍ","إِذَا","حَسَدَ"]},
+{ar:"إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ",en:"Indeed, We have granted you Al-Kawthar",fr:"Nous t'avons accorde l'Abondance",ref:"108:1",words:["إِنَّا","أَعْطَيْنَاكَ","الْكَوْثَرَ"]},
+{ar:"فَصَلِّ لِرَبِّكَ وَانْحَرْ",en:"So pray to your Lord and sacrifice",fr:"Accomplis la priere pour ton Seigneur et sacrifie",ref:"108:2",words:["فَصَلِّ","لِرَبِّكَ","وَانْحَرْ"]},
+{ar:"إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ",en:"Indeed, your enemy is the one cut off",fr:"Celui qui te hait sera le depourvu",ref:"108:3",words:["إِنَّ","شَانِئَكَ","هُوَ","الْأَبْتَرُ"]},
+{ar:"وَالْعَصْرِ إِنَّ الْإِنْسَانَ لَفِي خُسْرٍ",en:"By time, indeed mankind is in loss",fr:"Par le Temps, l'homme est certes en perdition",ref:"103:1-2",words:["وَالْعَصْرِ","إِنَّ","الْإِنْسَانَ","لَفِي","خُسْرٍ"]},
+{ar:"فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",en:"For indeed, with hardship comes ease",fr:"Car avec la difficulte vient la facilite",ref:"94:5",words:["فَإِنَّ","مَعَ","الْعُسْرِ","يُسْرًا"]},
+{ar:"رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي",en:"My Lord, expand my chest and ease my task",fr:"Seigneur, ouvre-moi ma poitrine et facilite ma mission",ref:"20:25-26",words:["رَبِّ","اشْرَحْ","لِي","صَدْرِي","وَيَسِّرْ","لِي","أَمْرِي"]},
+{ar:"رَبِّ زِدْنِي عِلْمًا",en:"My Lord, increase me in knowledge",fr:"Seigneur, augmente-moi en science",ref:"20:114",words:["رَبِّ","زِدْنِي","عِلْمًا"]}
+];
+
+var curLang="en",soundOn=true,actx,score=0,level=1,curIdx=0,placed=[],locked=false;
+var HS_KEY="wdiy-hs-quran-verse-builder";
+
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l);});try{localStorage.setItem("wdiy-lang",l);}catch(e){}}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th);});try{localStorage.setItem("wdiy-theme",th);}catch(e){}}
+function snd(type){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.04;var n=actx.currentTime;if(type==="place"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.08);o.start(n);o.stop(n+.08);}else if(type==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.03;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.15+i*.1);oo.start(n+i*.1);oo.stop(n+.15+i*.1);});}else if(type==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.12);o.start(n);o.stop(n+.12);}else{o.frequency.value=700;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+
+function getVersesForLevel(){
+var sorted=VERSES.slice().sort(function(a,b){return a.words.length-b.words.length;});
+var idx=Math.min(level-1,sorted.length-1);
+return sorted[idx];
+}
+
+function newVerse(){
+locked=false;placed=[];
+var v=VERSES[curIdx%VERSES.length];curIdx++;
+document.getElementById("refText").textContent="["+v.ref+"] "+v.ar;
+document.getElementById("transl").textContent=v[curLang]||v.en;
+var dz=document.getElementById("dropZone");dz.innerHTML="";dz.className="drop-zone";
+var wb=document.getElementById("wordBank");wb.innerHTML="";
+var shuffled=shuffle(v.words.slice());
+shuffled.forEach(function(w,i){
+var tile=document.createElement("div");tile.className="word-tile";tile.textContent=w;tile.dataset.word=w;tile.dataset.idx=i;
+tile.onclick=function(){if(locked)return;placeWord(tile,v);};
+wb.appendChild(tile);
+});
+document.getElementById("status").textContent=curLang==="ar"?"رتّب الكلمات لتكوين الآية":curLang==="fr"?"Arrangez les mots pour former le verset":"Arrange the words to form the verse";
+document.getElementById("status").className="status";
+}
+
+function placeWord(tile,verse){
+if(tile.classList.contains("placed"))return;
+tile.classList.add("placed");
+var clone=document.createElement("div");clone.className="word-tile in-zone";clone.textContent=tile.dataset.word;clone.dataset.srcIdx=tile.dataset.idx;
+clone.onclick=function(){
+tile.classList.remove("placed");
+clone.remove();
+placed=placed.filter(function(p){return p!==tile.dataset.word||placed.indexOf(p)!==placed.lastIndexOf(p)?true:false;});
+rebuildPlaced();
+snd("click");
+};
+document.getElementById("dropZone").appendChild(clone);
+placed.push(tile.dataset.word);
+snd("place");
+if(placed.length===verse.words.length){checkAnswer(verse);}
+}
+
+function rebuildPlaced(){
+placed=[];
+document.querySelectorAll("#dropZone .word-tile").forEach(function(t){placed.push(t.textContent);});
+}
+
+function checkAnswer(verse){
+locked=true;
+var correct=true;
+for(var i=0;i<verse.words.length;i++){if(placed[i]!==verse.words[i]){correct=false;break;}}
+var tiles=document.querySelectorAll("#dropZone .word-tile");
+if(correct){
+tiles.forEach(function(t){t.classList.add("correct");});
+document.getElementById("dropZone").classList.add("correct");
+score+=level*10;level++;
+document.getElementById("sc").textContent=score;
+document.getElementById("lvl").textContent=level;
+document.getElementById("lvlPill").textContent="Level "+level;
+document.getElementById("status").textContent=curLang==="ar"?"ممتاز! الآية صحيحة":curLang==="fr"?"Excellent! Verset correct!":"Excellent! Verse correct!";
+document.getElementById("status").className="status win";
+document.getElementById("prog").style.width=Math.min(100,level*8)+"%";
+snd("win");
+try{var best=parseInt(localStorage.getItem(HS_KEY))||0;if(score>best)localStorage.setItem(HS_KEY,score);}catch(e){}
+setTimeout(function(){newVerse();},1500);
+}else{
+tiles.forEach(function(t){t.classList.add("wrong");});
+document.getElementById("status").textContent=curLang==="ar"?"ليس بعد... حاول مرة أخرى":curLang==="fr"?"Pas encore... Reessayez":"Not quite... Try again";
+document.getElementById("status").className="status lose";
+snd("err");
+setTimeout(function(){
+placed=[];
+document.getElementById("dropZone").innerHTML="";
+document.getElementById("dropZone").className="drop-zone";
+document.querySelectorAll("#wordBank .word-tile").forEach(function(t){t.classList.remove("placed");});
+locked=false;
+},1000);
+}
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
+document.getElementById("enterBtn").onclick=function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newVerse();};
+document.getElementById("newBtn").onclick=function(){newVerse();snd("click");};
+document.getElementById("soundBtn").onclick=function(){soundOn=!soundOn;this.textContent=soundOn?"Sound ON":"Sound OFF";};
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);}catch(e){}
+});
+</script></body></html>

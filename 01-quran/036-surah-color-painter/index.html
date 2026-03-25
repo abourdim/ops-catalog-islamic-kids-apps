@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Surah Color Painter — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>
+[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh;overflow-x:hidden}[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:720px;margin:0 auto;padding:12px 16px}.app.on{display:block}.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}.hdr h1{font-size:18px}.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}.ctrl button,.ctrl select{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:13px;margin-bottom:10px;color:var(--text2);min-height:20px;font-style:italic}
+.palette-bar{display:flex;gap:4px;justify-content:center;margin-bottom:10px;flex-wrap:wrap;align-items:center}
+.pal-swatch{width:32px;height:32px;border-radius:8px;border:2px solid transparent;cursor:pointer;transition:all .15s}.pal-swatch:hover,.pal-swatch.active{border-color:var(--heading);transform:scale(1.15)}
+.brush-bar{display:flex;gap:6px;justify-content:center;margin-bottom:10px;align-items:center}
+.brush-bar button{padding:6px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:11px;cursor:pointer}.brush-bar button:hover,.brush-bar button.active{border-color:var(--accent);color:var(--accent)}
+.brush-bar input[type="range"]{width:80px}
+.canvas-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:6px;margin-bottom:12px}
+canvas{border-radius:8px;cursor:crosshair;touch-action:none;display:block;width:100%;background:#fff}
+.surah-sel{display:flex;gap:4px;justify-content:center;flex-wrap:wrap;margin-bottom:10px}
+.surah-chip{padding:6px 10px;background:var(--bg3);border:1px solid var(--border);border-radius:16px;font-size:10px;cursor:pointer;font-family:'Noto Sans Arabic',sans-serif;transition:all .15s}.surah-chip:hover,.surah-chip.active{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.btn-close:hover{border-color:var(--accent);color:var(--accent)}.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;border-bottom:2px solid transparent}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}.help-content{display:none}.help-content.active{display:block}.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none}.help-item summary::before{content:"\25B8";color:var(--accent);margin-right:6px}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}.help-step{display:flex;gap:10px;margin-bottom:12px}.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div style="color:var(--text3);font-size:12px;margin-bottom:14px">&fdfc;</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Surah Color Painter</h1><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Each surah inspires a unique color palette. Paint beautiful scenes using colors drawn from the meanings of the Quran.</p><button class="btn-go" id="enterBtn">Start Painting</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">T</button><button class="sw-btn" data-thm="midnight">M</button><button class="sw-btn" data-thm="ember">E</button><button class="sw-btn" data-thm="phosphor">P</button><button class="sw-btn" data-thm="signal">S</button><button class="sw-btn" data-thm="redshift">R</button><button class="sw-btn" data-thm="arctic">A</button><button class="sw-btn" data-thm="sand">D</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">&fdfc;</div><div class="hdr"><h1>Surah Color Painter</h1><span class="pill" id="surahPill">Al-Fatiha</span></div>
+<div class="ctrl"><button id="clearBtn">Clear</button><button id="undoBtn">Undo</button><button class="btn-help" onclick="openHelp()">? Help</button><button id="soundBtn">Sound ON</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw"><button class="sw-btn on" data-thm="terminal">T</button><button class="sw-btn" data-thm="midnight">M</button><button class="sw-btn" data-thm="ember">E</button><button class="sw-btn" data-thm="phosphor">P</button><button class="sw-btn" data-thm="signal">S</button><button class="sw-btn" data-thm="redshift">R</button><button class="sw-btn" data-thm="arctic">A</button><button class="sw-btn" data-thm="sand">D</button></div></div>
+<div class="surah-sel" id="surahSel"></div>
+<div class="status" id="status"></div>
+<div class="palette-bar" id="palBar"></div>
+<div class="brush-bar"><button class="active" data-bsz="3">Fine</button><button data-bsz="8">Medium</button><button data-bsz="16">Thick</button><button data-bsz="30">Wide</button><label style="color:var(--text2);font-size:10px">Opacity: <input type="range" id="opRange" min="10" max="100" value="100"/></label></div>
+<div class="canvas-wrap"><canvas id="paintCanvas" width="680" height="380"></canvas></div>
+<div class="foot">Workshop-Diy &mdash; Surah Color Painter v1.0</div></div>
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">&times;</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div><div class="sidebar-body">
+<div class="help-content active" id="help-faq"><details class="help-item"><summary>What is Surah Color Painter?</summary><p>A painting app where each surah provides a themed color palette inspired by its meanings and themes.</p></details><details class="help-item"><summary>Why these colors?</summary><p>Colors are chosen to evoke the themes: green for paradise, blue for sky/water, gold for light, etc.</p></details></div>
+<div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>Select a surah to load its color palette</p></div><div class="help-step"><span class="help-step-num">2</span><p>Click a color swatch to select it</p></div><div class="help-step"><span class="help-step-num">3</span><p>Choose brush size and opacity</p></div><div class="help-step"><span class="help-step-num">4</span><p>Paint on the canvas freely</p></div></div>
+<div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>Color in the Quran</h3><p>The Quran mentions colors: green for paradise garments, white for radiant faces, and describes nature's vivid palette as signs of Allah.</p></div></div>
+</div><div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div></aside>
+<script>
+var SURAHS=[
+{name:"Al-Fatiha",ar:"الفاتحة",theme:{en:"The Opening — guidance, mercy, worship",fr:"L'Ouverture — guide, misericorde",ar:"الفاتحة — هداية، رحمة، عبادة"},colors:["#2ecc71","#f1c40f","#3498db","#ecf0f1","#1abc9c","#e74c3c"]},
+{name:"Al-Baqarah",ar:"البقرة",theme:{en:"The Cow — law, faith, patience",fr:"La Vache — loi, foi, patience",ar:"البقرة — شريعة، إيمان، صبر"},colors:["#8e6e53","#f4d03f","#2c3e50","#27ae60","#d4a574","#1a5276"]},
+{name:"Yusuf",ar:"يوسف",theme:{en:"Joseph — beauty, patience, dreams",fr:"Joseph — beaute, patience, reves",ar:"يوسف — جمال، صبر، أحلام"},colors:["#9b59b6","#f39c12","#2ecc71","#3498db","#e8d5b7","#1a1a2e"]},
+{name:"Ar-Rahman",ar:"الرحمن",theme:{en:"The Most Merciful — creation, blessings, paradise",fr:"Le Misericordieux — creation, benedictions",ar:"الرحمن — خلق، نعم، جنة"},colors:["#00b894","#fd79a8","#6c5ce7","#ffeaa7","#00cec9","#e17055"]},
+{name:"Al-Kahf",ar:"الكهف",theme:{en:"The Cave — refuge, faith, trials",fr:"La Caverne — refuge, foi, epreuves",ar:"الكهف — ملجأ، إيمان، ابتلاء"},colors:["#636e72","#2d3436","#dfe6e9","#74b9ff","#a29bfe","#55a3a4"]},
+{name:"An-Nur",ar:"النور",theme:{en:"The Light — divine light, purity, guidance",fr:"La Lumiere — lumiere divine, purete",ar:"النور — نور إلهي، طهارة، هداية"},colors:["#f1c40f","#fff9c4","#ff9800","#fffde7","#ffc107","#e0e0e0"]},
+{name:"Al-Mulk",ar:"الملك",theme:{en:"The Sovereignty — creation, stars, power",fr:"La Royaute — creation, etoiles, pouvoir",ar:"الملك — خلق، نجوم، قدرة"},colors:["#0c0c3a","#1a237e","#4fc3f7","#b388ff","#ffd54f","#e8eaf6"]},
+{name:"Ad-Duha",ar:"الضحى",theme:{en:"The Morning Light — comfort, hope, warmth",fr:"La Clarte du jour — confort, espoir",ar:"الضحى — راحة، أمل، دفء"},colors:["#ff9800","#ffcc80","#fff3e0","#ff5722","#ffc107","#4caf50"]},
+{name:"Al-Ikhlas",ar:"الإخلاص",theme:{en:"Sincerity — oneness, purity, truth",fr:"La Sincerite — unicite, purete, verite",ar:"الإخلاص — توحيد، صفاء، حق"},colors:["#ffffff","#e8e8e8","#b0bec5","#78909c","#37474f","#263238"]},
+{name:"Al-Falaq",ar:"الفلق",theme:{en:"The Daybreak — dawn, protection, light vs dark",fr:"L'Aube naissante — aube, protection",ar:"الفلق — فجر، حماية، نور وظلمة"},colors:["#ff6f00","#ffab00","#1a237e","#311b92","#ffd600","#e65100"]}
+];
+
+var curLang="en",soundOn=true,actx,curSurah=0,curColor="#2ecc71",brushSize=8,drawing=false,strokes=[],curStroke=null;
+var HS_KEY="wdiy-hs-surah-color-painter";
+var canvas,ctx;
+
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l);});selectSurah(curSurah);try{localStorage.setItem("wdiy-lang",l);}catch(e){}}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th);});try{localStorage.setItem("wdiy-theme",th);}catch(e){}}
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.03;var n=actx.currentTime;o.frequency.value=t==="paint"?500+Math.random()*300:700;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}
+
+function buildSurahSel(){
+var el=document.getElementById("surahSel");el.innerHTML="";
+SURAHS.forEach(function(s,i){
+var c=document.createElement("span");c.className="surah-chip"+(i===curSurah?" active":"");
+c.textContent=s.ar;c.onclick=function(){selectSurah(i);snd("click");};
+el.appendChild(c);
+});
+}
+
+function selectSurah(i){
+curSurah=i;var s=SURAHS[i];
+document.getElementById("surahPill").textContent=s.ar+" - "+s.name;
+document.getElementById("status").textContent=s.theme[curLang]||s.theme.en;
+document.querySelectorAll(".surah-chip").forEach(function(c,j){c.classList.toggle("active",j===i);});
+buildPalette(s.colors);
+curColor=s.colors[0];
+}
+
+function buildPalette(colors){
+var el=document.getElementById("palBar");el.innerHTML="";
+colors.forEach(function(c,i){
+var sw=document.createElement("div");sw.className="pal-swatch"+(i===0?" active":"");
+sw.style.background=c;sw.onclick=function(){curColor=c;document.querySelectorAll(".pal-swatch").forEach(function(x){x.classList.remove("active");});sw.classList.add("active");snd("click");};
+el.appendChild(sw);
+});
+}
+
+function getPos(e){var r=canvas.getBoundingClientRect();var x,y;if(e.touches){x=e.touches[0].clientX-r.left;y=e.touches[0].clientY-r.top;}else{x=e.clientX-r.left;y=e.clientY-r.top;}return{x:x*(canvas.width/r.width),y:y*(canvas.height/r.height)};}
+function startDraw(e){e.preventDefault();drawing=true;var p=getPos(e);var op=parseInt(document.getElementById("opRange").value)/100;curStroke={pts:[p],color:curColor,size:brushSize,op:op};}
+function moveDraw(e){if(!drawing||!curStroke)return;e.preventDefault();var p=getPos(e);curStroke.pts.push(p);renderStroke(curStroke,curStroke.pts.length-2);}
+function endDraw(){if(!drawing)return;drawing=false;if(curStroke&&curStroke.pts.length>0){strokes.push(curStroke);snd("paint");}curStroke=null;}
+
+function renderStroke(s,from){
+ctx.save();ctx.globalAlpha=s.op;ctx.strokeStyle=s.color;ctx.lineWidth=s.size;ctx.lineCap="round";ctx.lineJoin="round";
+ctx.beginPath();var st=from||0;
+if(st===0)ctx.moveTo(s.pts[0].x,s.pts[0].y);else ctx.moveTo(s.pts[st].x,s.pts[st].y);
+for(var i=Math.max(1,st);i<s.pts.length;i++)ctx.lineTo(s.pts[i].x,s.pts[i].y);
+ctx.stroke();ctx.restore();
+}
+function redrawAll(){ctx.fillStyle="#ffffff";ctx.fillRect(0,0,canvas.width,canvas.height);strokes.forEach(function(s){renderStroke(s);});}
+
+document.addEventListener("DOMContentLoaded",function(){
+canvas=document.getElementById("paintCanvas");ctx=canvas.getContext("2d");
+ctx.fillStyle="#ffffff";ctx.fillRect(0,0,canvas.width,canvas.height);
+canvas.addEventListener("mousedown",startDraw);canvas.addEventListener("mousemove",moveDraw);canvas.addEventListener("mouseup",endDraw);canvas.addEventListener("mouseleave",endDraw);
+canvas.addEventListener("touchstart",startDraw);canvas.addEventListener("touchmove",moveDraw);canvas.addEventListener("touchend",endDraw);
+document.getElementById("clearBtn").onclick=function(){strokes=[];redrawAll();snd("click");};
+document.getElementById("undoBtn").onclick=function(){if(strokes.length){strokes.pop();redrawAll();snd("click");}};
+document.querySelectorAll("[data-bsz]").forEach(function(b){b.onclick=function(){brushSize=parseInt(b.dataset.bsz);document.querySelectorAll("[data-bsz]").forEach(function(x){x.classList.remove("active");});b.classList.add("active");snd("click");};});
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
+document.getElementById("enterBtn").onclick=function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";buildSurahSel();selectSurah(0);};
+document.getElementById("soundBtn").onclick=function(){soundOn=!soundOn;this.textContent=soundOn?"Sound ON":"Sound OFF";};
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();if(e.ctrlKey&&e.key==="z"){e.preventDefault();if(strokes.length){strokes.pop();redrawAll();}}});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);}catch(e){}
+});
+</script></body></html>

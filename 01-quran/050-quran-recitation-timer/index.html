@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Quran Recitation Timer — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>
+[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:500px;margin:0 auto;padding:12px 16px}.app.on{display:block}.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}.hdr h1{font-size:18px}.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}.ctrl button:hover{border-color:var(--abr)}
+.timer-display{text-align:center;margin-bottom:20px}
+.timer-ring{width:200px;height:200px;margin:0 auto 16px;position:relative}
+.timer-ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.timer-ring circle{fill:none;stroke-width:8}
+.timer-ring .bg{stroke:var(--bg3)}.timer-ring .fg{stroke:var(--accent);stroke-linecap:round;transition:stroke-dashoffset .5s}
+.timer-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Outfit',sans-serif;font-size:36px;font-weight:800;color:var(--heading)}
+.timer-label{font-size:11px;color:var(--text2);text-align:center;margin-bottom:4px}
+.timer-btns{display:flex;gap:8px;justify-content:center;margin-bottom:16px}
+.timer-btn{padding:10px 24px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer}.timer-btn:hover{border-color:var(--accent);color:var(--accent)}.timer-btn.primary{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.duration-sel{display:flex;gap:6px;justify-content:center;margin-bottom:16px}
+.dur-btn{padding:6px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:16px;font-size:11px;cursor:pointer;color:var(--text);font-family:'Outfit',sans-serif;font-weight:600}.dur-btn:hover,.dur-btn.active{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.stats-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:12px}
+.stats-title{font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;color:var(--heading);margin-bottom:8px;text-align:center}
+.stats-bar{display:flex;gap:2px;height:40px;align-items:flex-end;justify-content:center;margin-bottom:6px}
+.stats-col{width:24px;background:var(--accent);border-radius:4px 4px 0 0;min-height:2px;transition:height .3s}
+.stats-labels{display:flex;gap:2px;justify-content:center}.stats-lbl{width:24px;text-align:center;font-size:8px;color:var(--text3)}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:10px}.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.btn-close:hover{border-color:var(--accent);color:var(--accent)}.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;border-bottom:2px solid transparent}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}.help-content{display:none}.help-content.active{display:block}.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none}.help-item summary::before{content:"\25B8";color:var(--accent);margin-right:6px}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div style="color:var(--text3);font-size:12px;margin-bottom:14px">&fdfc;</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Quran Recitation Timer</h1><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Pomodoro-style timer for focused Quran study sessions. Track your daily reading goals with visual progress charts.</p><button class="btn-go" id="enterBtn">Start Timer</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">T</button><button class="sw-btn" data-thm="midnight">M</button><button class="sw-btn" data-thm="ember">E</button><button class="sw-btn" data-thm="phosphor">P</button><button class="sw-btn" data-thm="signal">S</button><button class="sw-btn" data-thm="redshift">R</button><button class="sw-btn" data-thm="arctic">A</button><button class="sw-btn" data-thm="sand">D</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">&fdfc;</div><div class="hdr"><h1>Quran Recitation Timer</h1><span class="pill" id="sesPill">Sessions: 0</span></div>
+<div class="ctrl"><button class="btn-help" onclick="openHelp()">? Help</button><button id="soundBtn">Sound ON</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw"><button class="sw-btn on" data-thm="terminal">T</button><button class="sw-btn" data-thm="midnight">M</button><button class="sw-btn" data-thm="ember">E</button><button class="sw-btn" data-thm="phosphor">P</button><button class="sw-btn" data-thm="signal">S</button><button class="sw-btn" data-thm="redshift">R</button><button class="sw-btn" data-thm="arctic">A</button><button class="sw-btn" data-thm="sand">D</button></div></div>
+<div class="timer-label" id="tmLabel">Select duration and press Start</div>
+<div class="duration-sel"><button class="dur-btn" data-dur="5">5 min</button><button class="dur-btn active" data-dur="15">15 min</button><button class="dur-btn" data-dur="25">25 min</button><button class="dur-btn" data-dur="45">45 min</button></div>
+<div class="timer-display"><div class="timer-ring"><svg viewBox="0 0 120 120"><circle class="bg" cx="60" cy="60" r="54"/><circle class="fg" id="ring" cx="60" cy="60" r="54" stroke-dasharray="339.3" stroke-dashoffset="0"/></svg><div class="timer-text" id="timerText">15:00</div></div></div>
+<div class="timer-btns"><button class="timer-btn primary" id="startBtn">Start</button><button class="timer-btn" id="resetBtn">Reset</button></div>
+<div class="stats-box"><div class="stats-title">This Week</div><div class="stats-bar" id="statsBar"></div><div class="stats-labels" id="statsLabels"></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">Sessions</div><div class="score-num" id="sesNum">0</div></div><div class="score-item"><div class="score-label">Total Min</div><div class="score-num" id="minNum">0</div></div></div>
+<div class="foot">Workshop-Diy &mdash; Quran Recitation Timer v1.0</div></div>
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">&times;</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div><div class="sidebar-body">
+<div class="help-content active" id="help-faq"><details class="help-item"><summary>What is a Pomodoro timer?</summary><p>A focused work technique: study for a set time, then take a break. Here adapted for Quran recitation sessions.</p></details><details class="help-item"><summary>Is my progress saved?</summary><p>Yes, session data is saved in localStorage and persists between visits.</p></details></div>
+<div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>Choose a session duration (5, 15, 25, or 45 minutes)</p></div><div class="help-step"><span class="help-step-num">2</span><p>Press Start and begin your Quran recitation</p></div><div class="help-step"><span class="help-step-num">3</span><p>The ring timer counts down visually</p></div><div class="help-step"><span class="help-step-num">4</span><p>A sound plays when time is up</p></div><div class="help-step"><span class="help-step-num">5</span><p>Track your weekly progress in the chart below</p></div></div>
+<div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>Daily Quran Recitation</h3><p>Regular daily recitation, even if short, is more beloved to Allah than occasional long sessions. Consistency is key.</p></div></div>
+</div><div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div></aside>
+<script>
+var curLang="en",soundOn=true,actx,duration=15,remaining=900,running=false,interval=null;
+var sessions=0,totalMin=0,weekData=[0,0,0,0,0,0,0];
+var HS_KEY="wdiy-hs-quran-recitation-timer";
+var CIRC=339.3;
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l);});try{localStorage.setItem("wdiy-lang",l);}catch(e){}}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th);});try{localStorage.setItem("wdiy-theme",th);}catch(e){}}
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var n=actx.currentTime;if(t==="done"){[523,659,784,1047,784,659,523].forEach(function(f,i){var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.04;o.frequency.value=f;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.2+i*.15);o.start(n+i*.15);o.stop(n+.2+i*.15);});}else if(t==="tick"){var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.01;o.frequency.value=440;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.02);o.start(n);o.stop(n+.02);}else{var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.03;o.frequency.value=600;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+
+function setDuration(d){duration=d;remaining=d*60;updateDisplay();document.querySelectorAll(".dur-btn").forEach(function(b){b.classList.toggle("active",parseInt(b.dataset.dur)===d);});}
+function updateDisplay(){
+var m=Math.floor(remaining/60),s=remaining%60;
+document.getElementById("timerText").textContent=m+":"+(s<10?"0":"")+s;
+var total=duration*60;var pct=remaining/total;
+document.getElementById("ring").style.strokeDashoffset=CIRC*(1-pct);
+}
+
+function startTimer(){
+if(running)return;running=true;
+document.getElementById("startBtn").textContent="Running...";
+document.getElementById("tmLabel").textContent="Reciting... Focus on the Quran";
+interval=setInterval(function(){
+remaining--;
+if(remaining<=0){
+remaining=0;updateDisplay();stopTimer();
+sessions++;totalMin+=duration;
+var day=new Date().getDay();weekData[day]+=duration;
+document.getElementById("sesNum").textContent=sessions;
+document.getElementById("minNum").textContent=totalMin;
+document.getElementById("sesPill").textContent="Sessions: "+sessions;
+document.getElementById("tmLabel").textContent="Session complete! Well done!";
+snd("done");saveData();renderStats();
+}else{
+updateDisplay();
+if(remaining%60===0)snd("tick");
+}
+},1000);
+}
+
+function stopTimer(){running=false;clearInterval(interval);document.getElementById("startBtn").textContent="Start";}
+function resetTimer(){stopTimer();remaining=duration*60;updateDisplay();document.getElementById("tmLabel").textContent="Select duration and press Start";}
+
+function saveData(){try{localStorage.setItem("wdiy-rt-sessions",sessions);localStorage.setItem("wdiy-rt-total",totalMin);localStorage.setItem("wdiy-rt-week",JSON.stringify(weekData));var best=parseInt(localStorage.getItem(HS_KEY))||0;if(totalMin>best)localStorage.setItem(HS_KEY,totalMin);}catch(e){}}
+function loadData(){try{sessions=parseInt(localStorage.getItem("wdiy-rt-sessions"))||0;totalMin=parseInt(localStorage.getItem("wdiy-rt-total"))||0;var wd=localStorage.getItem("wdiy-rt-week");if(wd)weekData=JSON.parse(wd);document.getElementById("sesNum").textContent=sessions;document.getElementById("minNum").textContent=totalMin;document.getElementById("sesPill").textContent="Sessions: "+sessions;}catch(e){}}
+
+function renderStats(){
+var bar=document.getElementById("statsBar"),lbl=document.getElementById("statsLabels");
+bar.innerHTML="";lbl.innerHTML="";
+var days=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+var max=Math.max.apply(null,weekData)||1;
+weekData.forEach(function(v,i){
+var col=document.createElement("div");col.className="stats-col";col.style.height=Math.max(2,v/max*36)+"px";
+bar.appendChild(col);
+var l=document.createElement("div");l.className="stats-lbl";l.textContent=days[i];
+lbl.appendChild(l);
+});
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+loadData();renderStats();setDuration(15);
+document.getElementById("startBtn").onclick=function(){startTimer();};
+document.getElementById("resetBtn").onclick=function(){resetTimer();snd("click");};
+document.querySelectorAll(".dur-btn").forEach(function(b){b.onclick=function(){if(!running){setDuration(parseInt(b.dataset.dur));snd("click");}};});
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
+document.getElementById("enterBtn").onclick=function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";};
+document.getElementById("soundBtn").onclick=function(){soundOn=!soundOn;this.textContent=soundOn?"Sound ON":"Sound OFF";};
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();if(e.code==="Space"){e.preventDefault();if(running)stopTimer();else startTimer();}});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);}catch(e){}
+});
+</script></body></html>

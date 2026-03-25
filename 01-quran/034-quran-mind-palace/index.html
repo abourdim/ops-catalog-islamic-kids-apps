@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Quran Mind Palace — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>
+[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh;overflow-x:hidden}[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:700px;margin:0 auto;padding:12px 16px}.app.on{display:block}.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}.hdr h1{font-size:18px}.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}.status.win{color:var(--accent)}
+.palace{position:relative;background:var(--bg2);border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden}
+canvas{display:block;width:100%;cursor:pointer}
+.room-nav{display:flex;gap:6px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}
+.room-btn{padding:8px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:11px;cursor:pointer;font-family:'Outfit',sans-serif;font-weight:600;transition:all .15s}.room-btn:hover,.room-btn.active{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.room-btn .badge{display:inline-block;background:var(--accent);color:var(--bg);border-radius:10px;padding:0 6px;font-size:9px;margin-left:4px}
+.verse-popup{display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--bg2);border:2px solid var(--accent);border-radius:12px;padding:20px;max-width:90%;width:320px;text-align:center;z-index:10;box-shadow:var(--glow);animation:fadeUp .3s}
+.verse-popup.show{display:block}
+.verse-popup .ar{font-family:'Noto Sans Arabic',sans-serif;font-size:18px;font-weight:700;color:var(--accent);direction:rtl;margin-bottom:8px;line-height:1.6}
+.verse-popup .tr{font-size:11px;color:var(--text2);margin-bottom:12px}
+.verse-popup button{padding:8px 16px;background:var(--accent);color:var(--bg);border:none;border-radius:6px;font-family:'Outfit',sans-serif;font-weight:700;cursor:pointer;font-size:12px}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:10px}.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.btn-close:hover{border-color:var(--accent);color:var(--accent)}.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;border-bottom:2px solid transparent}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}.help-content{display:none}.help-content.active{display:block}.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}.help-item summary::before{content:"\25B8";color:var(--accent)}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div style="color:var(--text3);font-size:12px;margin-bottom:14px">&fdfc;</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Quran Mind Palace</h1><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Use the ancient memory palace technique to memorize Quran verses. Place ayahs in rooms and revisit to recall them.</p><button class="btn-go" id="enterBtn">Enter Palace</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">T</button><button class="sw-btn" data-thm="midnight">M</button><button class="sw-btn" data-thm="ember">E</button><button class="sw-btn" data-thm="phosphor">P</button><button class="sw-btn" data-thm="signal">S</button><button class="sw-btn" data-thm="redshift">R</button><button class="sw-btn" data-thm="arctic">A</button><button class="sw-btn" data-thm="sand">D</button></div></div></div>
+
+<div class="app" id="app"><div class="hdr-bism">&fdfc;</div><div class="hdr"><h1>Quran Mind Palace</h1><span class="pill" id="memPill">Memorized: 0</span></div>
+<div class="ctrl"><button id="modeBtn">Place Mode</button><button id="testBtn">Test Mode</button><button class="btn-help" onclick="openHelp()">? Help</button><button id="soundBtn">Sound ON</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw"><button class="sw-btn on" data-thm="terminal">T</button><button class="sw-btn" data-thm="midnight">M</button><button class="sw-btn" data-thm="ember">E</button><button class="sw-btn" data-thm="phosphor">P</button><button class="sw-btn" data-thm="signal">S</button><button class="sw-btn" data-thm="redshift">R</button><button class="sw-btn" data-thm="arctic">A</button><button class="sw-btn" data-thm="sand">D</button></div></div>
+<div class="status" id="status">Click a spot in the room to place a verse</div>
+<div class="room-nav" id="roomNav"></div>
+<div class="palace" id="palace"><canvas id="roomCanvas" width="660" height="400"></canvas>
+<div class="verse-popup" id="popup"><div class="ar" id="popAr"></div><div class="tr" id="popTr"></div><button id="popClose">Got it!</button></div>
+</div>
+<div class="score-row"><div class="score-item"><div class="score-label">Placed</div><div class="score-num" id="placedNum">0</div></div><div class="score-item"><div class="score-label">Recalled</div><div class="score-num" id="recallNum">0</div></div></div>
+<div class="foot">Workshop-Diy &mdash; Quran Mind Palace v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">&times;</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div><div class="sidebar-body">
+<div class="help-content active" id="help-faq"><details class="help-item"><summary>What is a Mind Palace?</summary><p>The Method of Loci — an ancient memory technique where you place items to remember in mental locations within an imagined building.</p></details><details class="help-item"><summary>How does this help with Quran?</summary><p>By associating verses with visual locations, you create strong spatial memories that aid recall.</p></details><details class="help-item"><summary>What is Test Mode?</summary><p>In Test Mode, you revisit rooms and try to recall which verse was placed at each glowing spot.</p></details></div>
+<div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>In Place Mode, click spots in the room to assign verses</p></div><div class="help-step"><span class="help-step-num">2</span><p>Navigate between rooms using the room buttons</p></div><div class="help-step"><span class="help-step-num">3</span><p>Switch to Test Mode to test your recall</p></div><div class="help-step"><span class="help-step-num">4</span><p>Click glowing spots to reveal verses and check your memory</p></div></div>
+<div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>Method of Loci</h3><p>Used by Greek and Roman orators, this technique leverages spatial memory — one of the brain's strongest memory systems.</p></div><div class="wiki-entry"><h3>Islamic Scholars</h3><p>Many Islamic scholars memorized vast texts using spatial and associative memory techniques similar to the memory palace.</p></div></div>
+</div><div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div></aside>
+
+<script>
+var ROOMS=[
+{name:{en:"Entrance Hall",fr:"Hall d'entree",ar:"قاعة المدخل"},color:"#1a3a2a",spots:[{x:.2,y:.4},{x:.5,y:.3},{x:.8,y:.5},{x:.35,y:.7},{x:.65,y:.65}]},
+{name:{en:"Library",fr:"Bibliotheque",ar:"المكتبة"},color:"#1a1a3a",spots:[{x:.15,y:.35},{x:.45,y:.25},{x:.75,y:.4},{x:.3,y:.65},{x:.6,y:.7}]},
+{name:{en:"Garden",fr:"Jardin",ar:"الحديقة"},color:"#0a2a1a",spots:[{x:.25,y:.45},{x:.5,y:.2},{x:.8,y:.35},{x:.4,y:.75},{x:.7,y:.6}]},
+{name:{en:"Minaret Tower",fr:"Tour du Minaret",ar:"برج المئذنة"},color:"#2a1a2a",spots:[{x:.3,y:.3},{x:.5,y:.5},{x:.7,y:.35},{x:.2,y:.7},{x:.8,y:.65}]},
+{name:{en:"Courtyard",fr:"Cour",ar:"الفناء"},color:"#1a2a1a",spots:[{x:.2,y:.3},{x:.5,y:.4},{x:.8,y:.3},{x:.35,y:.65},{x:.65,y:.7}]}
+];
+
+var AYAHS=[
+{ar:"بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ",en:"In the name of Allah, Most Gracious, Most Merciful",fr:"Au nom d'Allah, le Misericordieux"},
+{ar:"الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",en:"Praise be to Allah, Lord of the worlds",fr:"Louange a Allah, Seigneur des mondes"},
+{ar:"الرَّحْمَنِ الرَّحِيمِ",en:"The Most Gracious, the Most Merciful",fr:"Le Tout Misericordieux, le Tres Misericordieux"},
+{ar:"مَالِكِ يَوْمِ الدِّينِ",en:"Master of the Day of Judgment",fr:"Maitre du Jour de la retribution"},
+{ar:"إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",en:"You alone we worship, You alone we ask for help",fr:"C'est Toi que nous adorons, c'est Toi dont nous implorons le secours"},
+{ar:"اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",en:"Guide us to the straight path",fr:"Guide-nous dans le droit chemin"},
+{ar:"قُلْ هُوَ اللَّهُ أَحَدٌ",en:"Say: He is Allah, the One",fr:"Dis: Il est Allah, l'Unique"},
+{ar:"اللَّهُ الصَّمَدُ",en:"Allah, the Eternal Refuge",fr:"Allah, le Seul a etre implore"},
+{ar:"لَمْ يَلِدْ وَلَمْ يُولَدْ",en:"He neither begets nor is born",fr:"Il n'a pas engendre ni n'a ete engendre"},
+{ar:"وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ",en:"And there is none comparable to Him",fr:"Et nul n'est egal a Lui"},
+{ar:"قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ",en:"Say: I seek refuge in the Lord of daybreak",fr:"Dis: Je cherche protection aupres du Seigneur de l'aube"},
+{ar:"قُلْ أَعُوذُ بِرَبِّ النَّاسِ",en:"Say: I seek refuge in the Lord of mankind",fr:"Dis: Je cherche protection aupres du Seigneur des hommes"},
+{ar:"إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ",en:"Indeed, We have granted you Al-Kawthar",fr:"Nous t'avons accorde l'Abondance"},
+{ar:"فَصَلِّ لِرَبِّكَ وَانْحَرْ",en:"So pray to your Lord and sacrifice",fr:"Accomplis la priere et sacrifie"},
+{ar:"وَالْعَصْرِ إِنَّ الْإِنْسَانَ لَفِي خُسْرٍ",en:"By time, indeed mankind is in loss",fr:"Par le Temps, l'homme est en perdition"},
+{ar:"فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",en:"For indeed, with hardship comes ease",fr:"Car avec la difficulte vient la facilite"},
+{ar:"رَبِّ زِدْنِي عِلْمًا",en:"My Lord, increase me in knowledge",fr:"Seigneur, augmente-moi en science"},
+{ar:"رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً",en:"Our Lord, give us good in this world",fr:"Notre Seigneur, accorde-nous le bien ici-bas"},
+{ar:"إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",en:"Indeed, Allah is with the patient",fr:"Certes, Allah est avec les patients"},
+{ar:"وَتَوَكَّلْ عَلَى اللَّهِ",en:"And put your trust in Allah",fr:"Et place ta confiance en Allah"},
+{ar:"فَاذْكُرُونِي أَذْكُرْكُمْ",en:"Remember Me, I will remember you",fr:"Souvenez-vous de Moi, Je me souviendrai de vous"},
+{ar:"وَإِنْ تَعُدُّوا نِعْمَةَ اللَّهِ لَا تُحْصُوهَا",en:"If you count Allah's blessings, you cannot enumerate them",fr:"Si vous comptez les bienfaits d'Allah, vous ne sauriez les denombrer"},
+{ar:"إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ",en:"Actions are but by intentions",fr:"Les actes ne valent que par les intentions"},
+{ar:"وَقُلْ رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا",en:"And say: My Lord, have mercy on them as they raised me when I was small",fr:"Dis: Seigneur, fais-leur misericorde comme ils m'ont eleve petit"},
+{ar:"يَا أَيُّهَا الَّذِينَ آمَنُوا اسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ",en:"O you who believe, seek help through patience and prayer",fr:"O croyants, cherchez secours dans la patience et la priere"}
+];
+
+var curLang="en",soundOn=true,actx,curRoom=0,mode="place",placed={},recalled=0,nextAyah=0;
+var HS_KEY="wdiy-hs-quran-mind-palace";
+
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l);});try{localStorage.setItem("wdiy-lang",l);}catch(e){}}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th);});try{localStorage.setItem("wdiy-theme",th);}catch(e){}}
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.04;var n=actx.currentTime;if(t==="place"){o.frequency.value=440;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);var o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.03;o2.frequency.value=660;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.1);o2.stop(n+.2);}else if(t==="recall"){[523,659,784].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.03;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.12+i*.08);oo.start(n+i*.08);oo.stop(n+.12+i*.08);});}else{o.frequency.value=600;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+
+function buildRoomNav(){
+var nav=document.getElementById("roomNav");nav.innerHTML="";
+ROOMS.forEach(function(r,i){
+var b=document.createElement("button");b.className="room-btn"+(i===curRoom?" active":"");
+b.textContent=r.name[curLang]||r.name.en;
+var key="r"+i;var cnt=placed[key]?Object.keys(placed[key]).length:0;
+if(cnt>0){var badge=document.createElement("span");badge.className="badge";badge.textContent=cnt;b.appendChild(badge);}
+b.onclick=function(){curRoom=i;buildRoomNav();drawRoom();snd("click");};
+nav.appendChild(b);
+});
+}
+
+function drawRoom(){
+var c=document.getElementById("roomCanvas"),cx=c.getContext("2d");
+var w=c.width,h=c.height;var room=ROOMS[curRoom];
+cx.clearRect(0,0,w,h);
+// Floor
+var cs=getComputedStyle(document.documentElement);
+var bgCol=cs.getPropertyValue('--bg3').trim()||'#161b22';
+var borderCol=cs.getPropertyValue('--border').trim()||'#21262d';
+var accentCol=cs.getPropertyValue('--accent').trim()||'#00ff88';
+cx.fillStyle=bgCol;cx.fillRect(0,0,w,h);
+// Walls perspective
+cx.strokeStyle=borderCol;cx.lineWidth=2;
+cx.beginPath();cx.moveTo(0,0);cx.lineTo(w*.15,h*.15);cx.lineTo(w*.85,h*.15);cx.lineTo(w,0);cx.stroke();
+cx.beginPath();cx.moveTo(0,h);cx.lineTo(w*.15,h*.85);cx.lineTo(w*.85,h*.85);cx.lineTo(w,h);cx.stroke();
+cx.beginPath();cx.moveTo(w*.15,h*.15);cx.lineTo(w*.15,h*.85);cx.stroke();
+cx.beginPath();cx.moveTo(w*.85,h*.15);cx.lineTo(w*.85,h*.85);cx.stroke();
+// Room name
+cx.fillStyle=accentCol;cx.font="bold 14px Outfit,sans-serif";cx.textAlign="center";
+cx.fillText(room.name[curLang]||room.name.en,w/2,h*.1);
+// Spots
+var key="r"+curRoom;
+room.spots.forEach(function(sp,si){
+var sx=sp.x*w,sy=sp.y*h;
+var hasVerse=placed[key]&&placed[key]["s"+si]!==undefined;
+cx.beginPath();cx.arc(sx,sy,hasVerse?16:12,0,Math.PI*2);
+if(hasVerse){
+cx.fillStyle=accentCol+"33";cx.fill();
+cx.strokeStyle=accentCol;cx.lineWidth=2;cx.stroke();
+// Glow
+cx.beginPath();cx.arc(sx,sy,20,0,Math.PI*2);cx.strokeStyle=accentCol+"44";cx.lineWidth=1;cx.stroke();
+}else{
+cx.fillStyle=borderCol+"66";cx.fill();
+cx.strokeStyle=borderCol;cx.lineWidth=1;cx.stroke();
+}
+cx.fillStyle=hasVerse?accentCol:"#888";cx.font="10px Outfit";cx.textAlign="center";cx.textBaseline="middle";
+cx.fillText(hasVerse?"*":"+",sx,sy);
+});
+}
+
+function handleCanvasClick(e){
+var c=document.getElementById("roomCanvas");var rect=c.getBoundingClientRect();
+var mx=(e.clientX-rect.left)*(c.width/rect.width);
+var my=(e.clientY-rect.top)*(c.height/rect.height);
+var room=ROOMS[curRoom];var key="r"+curRoom;
+if(!placed[key])placed[key]={};
+room.spots.forEach(function(sp,si){
+var sx=sp.x*c.width,sy=sp.y*c.height;
+var dist=Math.sqrt((mx-sx)*(mx-sx)+(my-sy)*(my-sy));
+if(dist<24){
+if(mode==="place"){
+if(placed[key]["s"+si]===undefined){
+placed[key]["s"+si]=nextAyah%AYAHS.length;
+nextAyah++;
+snd("place");
+showPopup(placed[key]["s"+si]);
+updateCounts();drawRoom();buildRoomNav();
+}else{showPopup(placed[key]["s"+si]);}
+}else{
+if(placed[key]["s"+si]!==undefined){
+recalled++;snd("recall");
+showPopup(placed[key]["s"+si]);
+document.getElementById("recallNum").textContent=recalled;
+}
+}
+}
+});
+}
+
+function showPopup(ayahIdx){
+var a=AYAHS[ayahIdx];
+document.getElementById("popAr").textContent=a.ar;
+document.getElementById("popTr").textContent=a[curLang]||a.en;
+document.getElementById("popup").classList.add("show");
+}
+
+function updateCounts(){
+var total=0;
+for(var k in placed){total+=Object.keys(placed[k]).length;}
+document.getElementById("placedNum").textContent=total;
+document.getElementById("memPill").textContent="Memorized: "+total;
+try{var best=parseInt(localStorage.getItem(HS_KEY))||0;if(total>best)localStorage.setItem(HS_KEY,total);}catch(e){}
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+document.getElementById("roomCanvas").addEventListener("click",handleCanvasClick);
+document.getElementById("popClose").onclick=function(){document.getElementById("popup").classList.remove("show");};
+document.getElementById("modeBtn").onclick=function(){mode="place";this.style.borderColor="var(--accent)";document.getElementById("testBtn").style.borderColor="";document.getElementById("status").textContent="Click a spot to place a verse";snd("click");};
+document.getElementById("testBtn").onclick=function(){mode="test";this.style.borderColor="var(--accent)";document.getElementById("modeBtn").style.borderColor="";document.getElementById("status").textContent="Click glowing spots to recall verses";snd("click");};
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);buildRoomNav();drawRoom();snd("click");});});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);drawRoom();snd("click");});});
+document.getElementById("enterBtn").onclick=function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";buildRoomNav();drawRoom();};
+document.getElementById("soundBtn").onclick=function(){soundOn=!soundOn;this.textContent=soundOn?"Sound ON":"Sound OFF";};
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){closeHelp();document.getElementById("popup").classList.remove("show");}});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);}catch(e){}
+});
+</script></body></html>

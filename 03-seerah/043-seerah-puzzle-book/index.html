@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Seerah Puzzle Book — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>
+[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}.app{display:none;max-width:640px;margin:0 auto;padding:12px 16px}.app.on{display:block}.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}.hdr h1{font-size:18px}.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}.ctrl button:hover{border-color:var(--abr)}.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}.status.win{color:var(--accent)}
+.puzzle-tabs{display:flex;gap:4px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}
+.pz-tab{padding:8px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;color:var(--heading);font-family:'Outfit',sans-serif;font-size:11px;cursor:pointer;transition:all .15s}
+.pz-tab:hover,.pz-tab.active{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.puzzle-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:300px}
+.ws-grid{display:inline-grid;gap:0;margin:0 auto;font-family:'IBM Plex Mono',monospace}
+.ws-cell{width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;border:1px solid var(--border);transition:all .1s;user-select:none}
+.ws-cell:hover{background:var(--abg);color:var(--accent)}
+.ws-cell.found{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.ws-cell.highlight{background:var(--abg);border-color:var(--accent)}
+.word-list{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:14px}
+.wl-item{padding:4px 10px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;font-size:11px;font-weight:600;color:var(--heading)}
+.wl-item.found{text-decoration:line-through;color:var(--accent);border-color:var(--accent)}
+.riddle-box{text-align:center;padding:20px}
+.riddle-text{font-size:14px;color:var(--heading);line-height:1.8;margin-bottom:16px;font-family:'Outfit',sans-serif;font-style:italic}
+.riddle-input{padding:10px 16px;background:var(--bg3);border:2px solid var(--border);border-radius:8px;color:var(--heading);font-family:'Outfit',sans-serif;font-size:14px;text-align:center;width:200px;outline:none}
+.riddle-input:focus{border-color:var(--accent)}
+.riddle-btn{padding:8px 20px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer;margin-left:8px}
+.riddle-result{margin-top:12px;font-size:12px;padding:10px;border-radius:8px}
+.riddle-result.correct{background:var(--abg);border:1px solid var(--abr);color:var(--accent)}
+.riddle-result.wrong{background:rgba(255,0,0,.05);border:1px solid rgba(255,0,0,.2);color:#ff4444}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:10px}.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.btn-close:hover{border-color:var(--accent);color:var(--accent)}.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;border-bottom:2px solid transparent}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}.help-content{display:none}.help-content.active{display:block}.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px}.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none}.help-item summary::before{content:"▸";color:var(--accent);margin-right:6px}.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Seerah Puzzle Book</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px">Puzzles of the Prophet's life</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">A collection of word searches and riddles all themed around the seerah. Find hidden words and solve riddles about the Prophet's ﷺ life.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app">
+<div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
+<div class="hdr"><h1>Seerah Puzzle Book</h1><span class="pill" id="scorePill">0 solved</span></div>
+<div class="ctrl"><button id="startBtn">▶ New Puzzles</button><button class="btn-help" onclick="openHelp()">❓</button><button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="status" id="status">Choose a puzzle type and start solving!</div>
+<div class="puzzle-tabs"><button class="pz-tab active" data-pz="wordsearch">🔍 Word Search</button><button class="pz-tab" data-pz="riddles">🧩 Riddles</button></div>
+<div class="puzzle-area" id="puzzleArea"></div>
+<div class="score-row"><div class="score-item"><div class="score-label">Solved</div><div class="score-num" id="sc">0</div></div></div>
+<div class="log-box" id="logBox"></div>
+<div class="foot">Workshop-Diy — Seerah Puzzle Book v1.0</div>
+</div>
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div><div class="sidebar-body"><div class="help-content active" id="help-faq"><details class="help-item"><summary>What is this?</summary><p>A collection of word search puzzles and riddles all themed around the seerah of the Prophet ﷺ.</p></details></div><div class="help-content" id="help-howto"><div style="padding:8px;font-size:11px;color:var(--text2)">Word Search: Click letters to select words. Riddles: Type your answer and submit.</div></div><div class="help-content" id="help-wiki"><div style="padding:8px;font-size:11px;color:var(--text2)">All puzzles are based on authentic seerah events and names.</div></div></div><div class="sidebar-footer">Workshop-DIY — v1.0</div></aside>
+<script>
+var WORDS=["BADR","UHUD","HIJRAH","MECCA","MEDINA","QURAN","SALAM","IQRA","THAWR","QUBA"];
+var RIDDLES=[
+{q:"I am a cave where a spider saved two travelers. What am I?",a:"thawr",hint:"The Prophet ﷺ and Abu Bakr hid here during the Hijrah."},
+{q:"I am the first word revealed to the Prophet ﷺ. What am I?",a:"iqra",hint:"It means 'Read!' in Arabic."},
+{q:"I am the city that welcomed the Prophet ﷺ with singing. What am I?",a:"medina",hint:"Tala'al Badru Alayna was sung here."},
+{q:"I am the first battle where 313 defeated over 1000. What am I?",a:"badr",hint:"It took place in Ramadan, 2 AH."},
+{q:"I am the night journey from Mecca to Jerusalem and the heavens. What am I?",a:"isra",hint:"The five daily prayers were prescribed during this event."},
+{q:"I am the treaty the Quran called a clear victory. What am I?",a:"hudaybiyyah",hint:"A 10-year peace treaty signed in 6 AH."},
+{q:"I am the first mosque built in Islam, near Medina. What am I?",a:"quba",hint:"The Prophet ﷺ built me upon arriving near Medina."},
+{q:"I am the mountain where archers left their posts. What am I?",a:"uhud",hint:"A battle in 3 AH where discipline was tested."}
+];
+var GRID_SIZE=10,wsGrid=[],wsFound=new Set(),curPuzzle="wordsearch",solved=0,curRiddle=0;
+var curLang="en",soundOn=true,actx,selecting=false,selCells=[];
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th)});}
+function snd(type){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(type==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.12);o.start(n);o.stop(n+.12);}else if(type==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){var b=document.getElementById("logBox"),d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+function generateGrid(){
+wsGrid=[];for(var r=0;r<GRID_SIZE;r++){wsGrid[r]=[];for(var c=0;c<GRID_SIZE;c++)wsGrid[r][c]="";}
+// Place words horizontally and vertically
+var placed=[];
+WORDS.forEach(function(word){
+var tries=0,ok=false;
+while(tries<100&&!ok){
+var dir=Math.random()>.5?"h":"v";
+var r=Math.floor(Math.random()*GRID_SIZE),c=Math.floor(Math.random()*GRID_SIZE);
+if(dir==="h"&&c+word.length<=GRID_SIZE){
+var fit=true;for(var i=0;i<word.length;i++){if(wsGrid[r][c+i]!==""&&wsGrid[r][c+i]!==word[i]){fit=false;break;}}
+if(fit){for(var i=0;i<word.length;i++)wsGrid[r][c+i]=word[i];placed.push({word:word,cells:Array.from({length:word.length},function(_,i){return r+","+(c+i);})});ok=true;}
+}else if(dir==="v"&&r+word.length<=GRID_SIZE){
+var fit=true;for(var i=0;i<word.length;i++){if(wsGrid[r+i][c]!==""&&wsGrid[r+i][c]!==word[i]){fit=false;break;}}
+if(fit){for(var i=0;i<word.length;i++)wsGrid[r+i][c]=word[i];placed.push({word:word,cells:Array.from({length:word.length},function(_,i){return(r+i)+","+c;})});ok=true;}
+}
+tries++;
+}
+});
+// Fill empty
+var abc="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+for(var r=0;r<GRID_SIZE;r++)for(var c=0;c<GRID_SIZE;c++){if(wsGrid[r][c]==="")wsGrid[r][c]=abc[Math.floor(Math.random()*26)];}
+return placed;
+}
+var placedWords=[];
+function showWordSearch(){
+wsFound.clear();selCells=[];
+placedWords=generateGrid();
+var html='<div style="text-align:center"><div class="ws-grid" id="wsGrid" style="grid-template-columns:repeat('+GRID_SIZE+',28px)">';
+for(var r=0;r<GRID_SIZE;r++)for(var c=0;c<GRID_SIZE;c++){
+html+='<div class="ws-cell" data-r="'+r+'" data-c="'+c+'">'+wsGrid[r][c]+'</div>';
+}
+html+='</div><div class="word-list" id="wordList">';
+WORDS.forEach(function(w){html+='<span class="wl-item" data-w="'+w+'">'+w+'</span>';});
+html+='</div></div>';
+document.getElementById("puzzleArea").innerHTML=html;
+// Click handler
+document.querySelectorAll(".ws-cell").forEach(function(cell){
+cell.addEventListener("click",function(){
+var r=parseInt(cell.dataset.r),c=parseInt(cell.dataset.c);
+cell.classList.toggle("highlight");
+var key=r+","+c;
+if(selCells.indexOf(key)>=0)selCells.splice(selCells.indexOf(key),1);
+else selCells.push(key);
+// Check if selection matches a word
+var selStr=selCells.map(function(k){var p=k.split(",");return wsGrid[p[0]][p[1]];}).join("");
+placedWords.forEach(function(pw){
+if(!wsFound.has(pw.word)){
+var wordCellStr=pw.cells.join("|");var selCellStr=selCells.join("|");
+if(selStr===pw.word||selStr===pw.word.split("").reverse().join("")){
+wsFound.add(pw.word);
+pw.cells.forEach(function(ck){document.querySelector('.ws-cell[data-r="'+ck.split(",")[0]+'"][data-c="'+ck.split(",")[1]+'"]').classList.add("found");});
+document.querySelector('.wl-item[data-w="'+pw.word+'"]').classList.add("found");
+solved++;snd("ok");document.getElementById("sc").textContent=solved;document.getElementById("scorePill").textContent=solved+" solved";
+selCells=[];document.querySelectorAll(".ws-cell.highlight").forEach(function(c){c.classList.remove("highlight");});
+log("Found: "+pw.word,"success");
+if(wsFound.size>=WORDS.length){snd("win");document.getElementById("status").textContent="All words found!";document.getElementById("status").className="status win";}
+}}
+});
+});
+});
+}
+function showRiddles(){
+curRiddle=0;renderRiddle();
+}
+function renderRiddle(){
+if(curRiddle>=RIDDLES.length){document.getElementById("puzzleArea").innerHTML='<div class="riddle-box"><div style="font-size:36px;margin-bottom:12px">🏆</div><div style="font-size:16px;font-weight:700;color:var(--heading)">All riddles solved!</div></div>';snd("win");return;}
+var r=RIDDLES[curRiddle];
+var html='<div class="riddle-box"><div style="font-size:11px;color:var(--text3);margin-bottom:8px">Riddle '+(curRiddle+1)+' of '+RIDDLES.length+'</div>';
+html+='<div class="riddle-text">"'+r.q+'"</div>';
+html+='<div><input class="riddle-input" id="riddleIn" placeholder="Your answer..." autocomplete="off"><button class="riddle-btn" id="riddleBtn">Check</button></div>';
+html+='<div style="margin-top:8px"><button style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 10px;color:var(--text3);font-size:10px;cursor:pointer" id="hintBtn">💡 Hint</button></div>';
+html+='<div id="riddleResult"></div></div>';
+document.getElementById("puzzleArea").innerHTML=html;
+document.getElementById("riddleBtn").addEventListener("click",checkRiddle);
+document.getElementById("riddleIn").addEventListener("keydown",function(e){if(e.key==="Enter")checkRiddle();});
+document.getElementById("hintBtn").addEventListener("click",function(){document.getElementById("riddleResult").innerHTML='<div class="riddle-result" style="background:var(--abg);border:1px solid var(--abr);color:var(--accent)">'+r.hint+'</div>';});
+document.getElementById("riddleIn").focus();
+}
+function checkRiddle(){
+var r=RIDDLES[curRiddle];var guess=document.getElementById("riddleIn").value.trim().toLowerCase();
+if(guess===r.a){
+solved++;snd("ok");document.getElementById("sc").textContent=solved;document.getElementById("scorePill").textContent=solved+" solved";
+document.getElementById("riddleResult").innerHTML='<div class="riddle-result correct">Correct! The answer is '+r.a.toUpperCase()+'.</div>';
+log("Riddle solved: "+r.a,"success");
+curRiddle++;setTimeout(renderRiddle,1200);
+}else{
+snd("click");document.getElementById("riddleResult").innerHTML='<div class="riddle-result wrong">Not quite. Try again!</div>';
+}
+}
+function newGame(){solved=0;wsFound.clear();curRiddle=0;document.getElementById("sc").textContent="0";document.getElementById("scorePill").textContent="0 solved";document.getElementById("logBox").innerHTML="";document.getElementById("status").textContent="Choose a puzzle type!";document.getElementById("status").className="status";if(curPuzzle==="wordsearch")showWordSearch();else showRiddles();log("Puzzle book opened!","success");}
+document.addEventListener("DOMContentLoaded",function(){
+setLang("en");setTheme("terminal");
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
+document.querySelectorAll(".pz-tab").forEach(function(tab){tab.addEventListener("click",function(){curPuzzle=tab.dataset.pz;document.querySelectorAll(".pz-tab").forEach(function(t){t.classList.remove("active");});tab.classList.add("active");if(curPuzzle==="wordsearch")showWordSearch();else showRiddles();snd("click");});});
+document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+document.getElementById("startBtn").addEventListener("click",newGame);
+document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"🔊":"🔇";});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="🔇";}}catch(e){}
+var _osl=setLang,_ost=setTheme;setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};
+});
+var HS_KEY="wdiy-hs-seerah-puzzle-book";
+</script></body></html>
