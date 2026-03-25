@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="terminal">
+<html lang="ar" dir="rtl" data-theme="terminal">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -185,11 +185,11 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 <body>
 
 <a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Adhkar Counter</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Your digital tasbeeh</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Count your adhkar with ease. Tap, track, and stay consistent.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Adhkar Counter</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Your digital tasbeeh</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Count your adhkar with ease. Tap, track, and stay consistent.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
 <div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Adhkar Counter</h1><span class="pill" id="scorePill">0 / 33</span><span class="timer-pill" id="dailyPill">Today: 0</span></div><div class="ctrl">
 <select id="dhikrSel"><option value="0">سُبْحَانَ اللَّهِ × 33</option><option value="1">الْحَمْدُ لِلَّهِ × 33</option><option value="2">اللَّهُ أَكْبَرُ × 34</option><option value="3">لَا إِلَهَ إِلَّا اللَّهُ × 100</option><option value="4">أَسْتَغْفِرُ اللَّهَ × 100</option><option value="5">صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ × 100</option><option value="6">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ × 100</option><option value="7">Custom</option></select>
 <button id="resetBtn">↺ Reset</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button><button id="soundBtn">🔊</button>
-<div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
 <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
 <div class="custom-row" id="customRow"><input type="text" id="customText" placeholder="Your dhikr text"/><input type="number" id="customTarget" placeholder="33" min="1" max="9999" value="33"/><button id="customSet">Set</button></div>
 <div class="status" id="status">Tap the circle or press Space</div>
@@ -368,7 +368,7 @@ function resetCounter(){
 }
 
 document.addEventListener("DOMContentLoaded",()=>{
-  setLang("en");setTheme("terminal");
+  setLang("ar");setTheme("terminal");
   dailyCount=loadDaily();
   document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
   document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));

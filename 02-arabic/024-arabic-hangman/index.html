@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="teal-ink">
+<html lang="ar" dir="rtl" data-theme="teal-ink">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -145,6 +145,9 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 .hint-text{font-size:12px;color:var(--text2);text-align:center;font-style:italic;max-width:300px}
 .keyboard{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;max-width:400px}.kb-key{width:34px;height:34px;border-radius:6px;border:1px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Noto Sans Arabic',sans-serif;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}.kb-key:hover{border-color:var(--accent);color:var(--accent)}.kb-key.used{opacity:.3;pointer-events:none}.kb-key.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}.kb-key.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
 .score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+
+.i18n-ar{display:none}.i18n-en{display:block}
+[lang="ar"] .i18n-ar{display:block}[lang="ar"] .i18n-en{display:none}
 </style>
 </head>
 <body>
@@ -155,12 +158,12 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 <div class="splash-bism">بِسْمِ ٱللَّـهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
 <div class="splash-art" data-icon="🏮"></div>
 <h1 class="heading" id="splashTitle">Hangman</h1>
-<div class="splash-sub">لعبة المشنقة</div>
+<div class="splash-sub" id="splashSub">ورشة اللغة العربية</div>
 <p class="splash-desc" id="splashDesc">Guess the hidden Arabic word!</p>
 <button class="btn-go" id="enterBtn">Start</button>
 <div class="sw" style="margin-top:18px">
 <span class="sw-label">Lang</span>
-<button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button>
+<button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button>
 </div>
 <div class="sw" style="margin-top:8px">
 <span class="sw-label">Theme</span>
@@ -185,12 +188,139 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">\u2753 Help</span><button class="btn-close" onclick="closeHelp()">\u2715</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div><div class="sidebar-body">
-<div class="help-content active" id="help-faq"><details class="help-item"><summary>What is this?</summary><p>A word guessing game with Islamic Arabic vocabulary. Guess letters to reveal the hidden word before the crescent moon drawing completes.</p></details><details class="help-item"><summary>How many wrong guesses?</summary><p>You get 8 wrong guesses before the game is over.</p></details></div>
-<div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>Read the hint to understand the word category</p></div><div class="help-step"><span class="help-step-num">2</span><p>Click Arabic letters on the keyboard to guess</p></div><div class="help-step"><span class="help-step-num">3</span><p>Correct letters appear in the word. Wrong guesses draw the moon.</p></div><div class="help-step"><span class="help-step-num">4</span><p>Guess the full word before 8 wrong attempts!</p></div></div>
-<div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>Islamic Vocabulary</h3><p>Words come from daily Islamic life, Quran, worship, and prophetic traditions.</p></div></div>
+<div class="help-content active" id="help-faq">
+<div class="i18n-en"><details class="help-item"><summary>What is this?</summary><p>A word guessing game with Islamic Arabic vocabulary. Guess letters to reveal the hidden word before the crescent moon drawing completes.</p></details><details class="help-item"><summary>How many wrong guesses?</summary><p>You get 8 wrong guesses before the game is over.</p></details></div>
+<div class="i18n-ar" style="display:none"><details class="help-item"><summary>ما هو هذا التطبيق؟</summary><p>اكتشف الكلمة المخفية حرفاً بحرف.</p></details>
+<details class="help-item"><summary>هل يعمل بدون إنترنت؟</summary><p>نعم. يعمل بالكامل في المتصفح بدون الحاجة للإنترنت.</p></details>
+<details class="help-item"><summary>هل يعمل على الهاتف؟</summary><p>نعم. يعمل على أي جهاز بمتصفح حديث.</p></details>
+<details class="help-item"><summary>هل بياناتي محمية؟</summary><p>نعم. كل شيء يعمل محلياً. لا تُرسل أي بيانات.</p></details>
+</div>
+</div>
+<div class="help-content" id="help-howto">
+<div class="i18n-en"><div class="help-step"><span class="help-step-num">1</span><p>Read the hint to understand the word category</p></div><div class="help-step"><span class="help-step-num">2</span><p>Click Arabic letters on the keyboard to guess</p></div><div class="help-step"><span class="help-step-num">3</span><p>Correct letters appear in the word. Wrong guesses draw the moon.</p></div><div class="help-step"><span class="help-step-num">4</span><p>Guess the full word before 8 wrong attempts!</p></div></div>
+<div class="i18n-ar" style="display:none"><div class="help-step"><span class="help-step-num">1</span><p>اضغط على زر ابدأ في شاشة البداية</p></div>
+<div class="help-step"><span class="help-step-num">2</span><p>اختر مستوى الصعوبة</p></div>
+<div class="help-step"><span class="help-step-num">3</span><p>اضغط ▶ لعبة جديدة للبدء</p></div>
+<div class="help-step"><span class="help-step-num">4</span><p>تفاعل مع اللعبة وأجب على الأسئلة</p></div>
+<div class="help-step"><span class="help-step-num">5</span><p>تابع نتيجتك وشريط التقدم</p></div>
+<div class="help-step"><span class="help-step-num">6</span><p>اضغط ▶ لعبة جديدة للعب مرة أخرى</p></div>
+</div>
+</div>
+<div class="help-content" id="help-wiki">
+<div class="i18n-en"><div class="wiki-entry"><h3>Islamic Vocabulary</h3><p>Words come from daily Islamic life, Quran, worship, and prophetic traditions.</p></div></div>
+<div class="i18n-ar" style="display:none"><div class="wiki-entry"><h3>🎯 الهدف</h3><p>اكتشف الكلمة المخفية حرفاً بحرف.</p></div>
+<div class="wiki-entry"><h3>🌐 اللغات</h3><p>ثلاث لغات: العربية، الإنجليزية، الفرنسية.</p></div>
+<div class="wiki-entry"><h3>🔒 الخصوصية</h3><p>تطبيق محلي. لا تتبع ولا تحليلات.</p></div>
+</div>
+</div>
 </div><div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div></aside>
 
 <script>
+
+const T = {
+  ar: {
+    title: "لعبة الحروف",
+    sub: "ورشة اللغة العربية",
+    desc: "خمّن الكلمة العربية المخفية!",
+    start: "ابدأ",
+    new_game: "▶ لعبة جديدة",
+    correct_lbl: "صحيح",
+    total_lbl: "المجموع",
+    pick: "اختر الإجابة الصحيحة!",
+    done: "🏆 أحسنت!",
+    easy: "سهل (10)",
+    medium: "متوسط (15)",
+    hard: "صعب (20)",
+    lang_label: "اللغة",
+    theme_label: "المظهر",
+    help_title: "❓ المساعدة",
+    faq_tab: "أسئلة شائعة",
+    howto_tab: "كيفية اللعب",
+    wiki_tab: "معلومات",
+    catalog: "→ الفهرس",
+    correct_log: "✓ صحيح!",
+    wrong_log: "✗ الإجابة:",
+    high_score: "🏆 أعلى نتيجة جديدة!",
+    best: "★ الأفضل:",
+    footer: "لعبة الحروف — الإصدار 1.0"
+  },
+  en: {
+    title: "024 Hangman",
+    sub: "Arabic Workshop",
+    start: "Start",
+    new_game: "▶ New Game",
+    correct_lbl: "Correct",
+    total_lbl: "Total",
+    easy: "Easy (10)",
+    medium: "Medium (15)",
+    hard: "Hard (20)",
+    lang_label: "Lang",
+    theme_label: "Theme",
+    help_title: "❓ Help",
+    faq_tab: "FAQ",
+    howto_tab: "How-To",
+    wiki_tab: "Wiki",
+    catalog: "← Catalog",
+    footer: ""
+  }
+};
+function tr(key) { var lang = document.documentElement.lang || "ar"; return (T[lang] && T[lang][key]) || (T.en && T.en[key]) || key; }
+function updateUI() {
+  var lang = document.documentElement.lang || "ar";
+  // Splash elements
+  var el;
+  el = document.getElementById("splashTitle") || document.getElementById("splTitle");
+  if (el && T[lang] && T[lang].title) el.textContent = T[lang].title;
+  el = document.getElementById("splashDesc") || document.getElementById("splDesc");
+  if (el && T[lang] && T[lang].desc) el.textContent = T[lang].desc;
+  el = document.getElementById("enterBtn");
+  if (el) el.textContent = tr("start");
+  // App elements
+  el = document.getElementById("appTitle");
+  if (el && T[lang] && T[lang].title) el.textContent = T[lang].title;
+  el = document.getElementById("startBtn");
+  if (el) el.textContent = tr("new_game");
+  // Score labels
+  el = document.getElementById("lbl0");
+  if (el) el.textContent = tr("correct_lbl");
+  el = document.getElementById("lbl1");
+  if (el) el.textContent = tr("total_lbl");
+  // Difficulty select
+  var sel = document.getElementById("diffSel");
+  if (sel && sel.options) {
+    for (var i = 0; i < sel.options.length; i++) {
+      var v = sel.options[i].value;
+      if (v === "10") sel.options[i].textContent = tr("easy");
+      else if (v === "15") sel.options[i].textContent = tr("medium");
+      else if (v === "20") sel.options[i].textContent = tr("hard");
+    }
+  }
+  // Status
+  el = document.getElementById("status");
+  if (el && el.textContent.indexOf("/") === -1) el.textContent = tr("pick");
+  // Back link
+  el = document.getElementById("backLink");
+  if (el) el.textContent = tr("catalog");
+  // Help sidebar
+  var st = document.querySelector(".sidebar-title");
+  if (st) st.textContent = tr("help_title");
+  var tabs = document.querySelectorAll(".help-tab");
+  if (tabs.length >= 3) {
+    tabs[0].textContent = tr("faq_tab");
+    tabs[1].textContent = tr("howto_tab");
+    tabs[2].textContent = tr("wiki_tab");
+  }
+  // Lang/Theme labels
+  document.querySelectorAll(".sw-label").forEach(function(lbl, idx) {
+    if (idx === 0) lbl.textContent = tr("lang_label");
+    else if (idx === 1) lbl.textContent = tr("theme_label");
+  });
+  // Toggle bilingual sidebar content
+  document.querySelectorAll(".i18n-ar").forEach(function(el) { el.style.display = lang === "ar" ? "block" : "none"; });
+  document.querySelectorAll(".i18n-en").forEach(function(el) { el.style.display = lang === "ar" ? "none" : "block"; });
+}
+
+
 
 var WORDS=[
 {word:"\u0628\u0633\u0645\u0644\u0629",hint:{en:"Saying Bismillah",fr:"Dire Bismillah",ar:"\u0642\u0648\u0644 \u0628\u0633\u0645 \u0627\u0644\u0644\u0647"}},
@@ -241,7 +371,7 @@ function renderKeyboard(){var el=document.getElementById("keyboard");el.innerHTM
 b.onclick=function(){guess(l);};el.appendChild(b);});}
 function guess(letter){if(gameOver||guessed.indexOf(letter)>=0)return;guessed.push(letter);if(currentWord.word.indexOf(letter)>=0){snd("ok");renderWord();renderKeyboard();var won=currentWord.word.split("").every(function(ch){return guessed.indexOf(ch)>=0;});if(won){gameOver=true;wins++;document.getElementById("wins").textContent=wins;document.getElementById("status").textContent=t("won");document.getElementById("status").className="status win";document.getElementById("scorePill").textContent=wins+" wins";snd("win");var best=parseInt(localStorage.getItem(HS_KEY))||0;if(wins>best)try{localStorage.setItem(HS_KEY,wins);}catch(e){}}}else{wrongCount++;drawMoon(wrongCount);snd("err");renderKeyboard();if(wrongCount>=maxWrong){gameOver=true;losses++;document.getElementById("losses").textContent=losses;document.getElementById("status").textContent=t("lost")+currentWord.word;document.getElementById("status").className="status lose";guessed=currentWord.word.split("").concat(guessed);renderWord();}}}
 document.getElementById("newBtn").onclick=function(){newGame();snd("click");};
-document.addEventListener("DOMContentLoaded",function(){setLang("en");setTheme("teal-ink");newGame();
+document.addEventListener("DOMContentLoaded",function(){setLang("ar");setTheme("teal-ink");newGame();
 document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
 document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
 document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";});

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="sahara"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Quran Verse Builder</title>
+<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="sahara"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Quran Verse Builder</title>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 [data-theme="sahara"]{--bg:#FFF8E7;--bg2:#FFFDF5;--bg3:#F5ECD7;--border:#E8D5A8;--border2:#D4C48E;--text:#4A3F2F;--text2:#7A6E5A;--text3:#A09580;--heading:#2C1810;--accent:#E6C200;--abg:#E6C2000A;--abr:#E6C20033;--glow:0 0 20px #E6C20015;--accent2:#2E8B57}
@@ -210,6 +210,165 @@ input[type="range"]{width:90px}
 <div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>Quran Word Order</h3><p>Arabic reads right-to-left. Each word in the Quran carries precise meaning in its position.</p></div><div class="wiki-entry"><h3>Memorization</h3><p>Reconstructing verses helps build familiarity with Quran text and aids memorization.</p></div></div>
 </div><div class="sidebar-footer">Amaloun &mdash; v1.0</div></aside>
 <script>
+// === i18n SYSTEM ===
+let currentLang="ar";
+const T={
+  ar:{
+    title:"بناء الآيات",
+    subtitle:"ابنِ الآيات كلمة بكلمة",
+    desc:"ابنِ الآيات كلمة بكلمة",
+    startMission:"ابدأ",
+    newGame:"▶ لعبة جديدة",
+    status:"رتّب الكلمات لتكوين الآية",
+    footer:"أمالون — بناء الآيات الإصدار ١.٠",
+    help:"المساعدة",
+    faq:"الأسئلة الشائعة",
+    howTo:"كيفية الاستخدام",
+    wiki:"معلومات",
+    lang:"اللغة",
+    theme:"المظهر",
+    catalog:"→ الفهرس",
+    play:"تشغيل",
+    score0:"النتيجة",
+    score1:"المستوى",
+    ui_start:"ابدأ",
+    ui_help:"المساعدة",
+    ui_faq:"الأسئلة الشائعة",
+    ui_how_to:"كيفية الاستخدام",
+    ui_wiki:"معلومات",
+    ui_lang:"اللغة",
+    ui_theme:"المظهر",
+    ui_catalog:"الفهرس",
+    ui_play:"تشغيل",
+    ui_10_qs:"١٠ أسئلة",
+    ui_15_qs:"١٥ سؤالاً",
+    ui_all_themes:"كل المواضيع",
+    ui_faith___tawheed:"الإيمان / التوحيد",
+    ui_prophets_stories:"قصص الأنبياء",
+    ui_islamic_law:"الشريعة الإسلامية",
+    ui_nature___creation:"الطبيعة / الخلق",
+    faq0q:"ما هو بناء الآيات؟",
+    faq0a:"لعبة تعليمية لبناء الآيات القرآنية كلمة بكلمة بالترتيب الصحيح.",
+    faq1q:"كيف تعمل مستويات الصعوبة؟",
+    faq1a:"المستوى الأعلى يعني آيات أطول وكلمات أكثر للترتيب.",
+    faq2q:"هل يمكنني إزالة كلمة موضوعة؟",
+    faq2a:"نعم. اضغط على الكلمة الموضوعة لإعادتها إلى مكانها.",
+    howto0:"اضغط على زر ابدأ في شاشة البداية",
+    howto1:"اختر مستوى الصعوبة إذا كان متاحاً",
+    howto2:"اقرأ التعليمات المعروضة على الشاشة",
+    howto3:"تفاعل مع العناصر على الشاشة",
+    howto4:"أكمل المهمة للحصول على نتيجتك",
+    wiki0t:"Quran Word Order",
+    wiki0c:"Arabic reads right-to-left. Each word in the Quran carries precise meaning in its position.",
+    wiki1t:"Memorization",
+    wiki1c:"مساعدة الأطفال المسلمين على تعلم القرآن الكريم من خلال ابنِ الآيات كلمة بكلمة."
+  },
+  en:{
+    title:"Quran Verse Builder",
+    subtitle:"Build verses word by word",
+    desc:"Build verses word by word",
+    startMission:"Start",
+    newGame:"▶ New Game",
+    status:"Arrange the words to form the verse",
+    footer:"Amaloun — Quran Verse Builder v1.0",
+    help:"Help",
+    faq:"FAQ",
+    howTo:"How-To",
+    wiki:"Wiki",
+    lang:"Lang",
+    theme:"Theme",
+    catalog:"← Catalog",
+    play:"Play",
+    score0:"Score",
+    score1:"Level",
+    ui_start:"Start",
+    ui_help:"Help",
+    ui_faq:"FAQ",
+    ui_how_to:"How-To",
+    ui_wiki:"Wiki",
+    ui_lang:"Lang",
+    ui_theme:"Theme",
+    ui_catalog:"Catalog",
+    ui_play:"Play",
+    ui_10_qs:"10 Qs",
+    ui_15_qs:"15 Qs",
+    ui_all_themes:"All Themes",
+    ui_faith___tawheed:"Faith / Tawheed",
+    ui_prophets_stories:"Prophets Stories",
+    ui_islamic_law:"Islamic Law",
+    ui_nature___creation:"Nature / Creation",
+    faq0q:"What is Verse Builder?",
+    faq0a:"A word-ordering game where you reconstruct Quran verses from scattered Arabic words.",
+    faq1q:"How does difficulty work?",
+    faq1a:"Starts with short verses (3-4 words) and progresses to longer ones as you level up.",
+    faq2q:"Can I remove a placed word?",
+    faq2a:"Yes! Click any word in the drop zone to send it back to the word bank.",
+    howto0:"Look at the scattered word tiles below",
+    howto1:"Click words in the correct order (right to left for Arabic)",
+    howto2:"Words appear in the drop zone above",
+    howto3:"Click a placed word to remove it",
+    howto4:"Complete all words correctly to score",
+    wiki0t:"Quran Word Order",
+    wiki0c:"Arabic reads right-to-left. Each word in the Quran carries precise meaning in its position.",
+    wiki1t:"Memorization",
+    wiki1c:"Reconstructing verses helps build familiarity with Quran text and aids memorization."
+  }
+};
+function tr(key){return T[currentLang]&&T[currentLang][key]||T["en"][key]||key;}
+function updateUI(){
+  // Title & splash
+  var st=document.querySelector(".splash-title");if(st)st.textContent=tr("title");
+  var ss=document.querySelector(".splash-subtitle");if(ss)ss.textContent=tr("subtitle");
+  var sd=document.getElementById("splDesc");if(sd)sd.textContent=tr("desc");
+  var eb=document.getElementById("enterBtn");if(eb)eb.textContent=tr("startMission");
+  // App header
+  var h1=document.querySelector(".app h1, .hdr h1");if(h1)h1.textContent=tr("title");
+  // Status
+  var sta=document.getElementById("status");if(sta&&!sta.classList.contains("win")&&!sta.classList.contains("lose"))sta.textContent=tr("status");
+  // Start button
+  var sb=document.getElementById("startBtn");if(sb)sb.textContent=tr("newGame");
+  // Footer
+  var ft=document.querySelector(".foot");if(ft)ft.textContent=tr("footer");
+  // Help sidebar
+  var ht=document.querySelector(".sidebar-title");if(ht)ht.innerHTML="\u2753 "+tr("help");
+  var tabs=document.querySelectorAll(".help-tab");
+  if(tabs.length>=3){tabs[0].textContent=tr("faq");tabs[1].textContent=tr("howTo");tabs[2].textContent=tr("wiki");}
+  // Back link
+  var bl=document.getElementById("backLink");if(bl)bl.textContent=tr("catalog");
+  // Lang/Theme labels
+  document.querySelectorAll(".sw-label").forEach(function(el,i){if(i===0)el.textContent=tr("lang");else if(i===1)el.textContent=tr("theme");});
+  // Score labels
+  document.querySelectorAll(".score-label").forEach(function(el,i){var k="score"+i;if(T[currentLang][k])el.textContent=tr(k);});
+  // Difficulty options
+  var ds=document.getElementById("diffSel");
+  if(ds){var opts=ds.querySelectorAll("option");opts.forEach(function(o,i){var k="diff"+i;if(T[currentLang][k])o.textContent=tr(k);});};
+  // FAQ items
+  var faqItems=document.querySelectorAll("#help-faq .help-item");
+  faqItems.forEach(function(item,i){
+    var sum=item.querySelector("summary");if(sum)sum.textContent=tr("faq"+i+"q");
+    var p=item.querySelector("p");if(p)p.textContent=tr("faq"+i+"a");
+  });
+  // Howto steps
+  var howtoSteps=document.querySelectorAll("#help-howto .help-step p");
+  howtoSteps.forEach(function(p,i){p.textContent=tr("howto"+i);});
+  // Wiki entries
+  var wikiEntries=document.querySelectorAll("#help-wiki .wiki-entry");
+  wikiEntries.forEach(function(entry,i){
+    var h=entry.querySelector("h3");if(h)h.textContent=tr("wiki"+i+"t");
+    var p=entry.querySelector("p");if(p)p.textContent=tr("wiki"+i+"c");
+  });
+  // Sidebar footer
+  var sf=document.querySelector(".sidebar-footer");if(sf)sf.textContent=tr("footer");
+  // Play button if exists
+  var pb=document.querySelector("#playBtn,button:not(.sw-btn):not(.btn-go):not(.btn-close):not(.btn-help):not(.help-tab)");
+  // Filter buttons with specific text
+  document.querySelectorAll(".filter-btn").forEach(function(btn){
+    var txt=btn.textContent.trim();
+    var k="ui_"+txt.replace(/ /g,"_").replace(/\//g,"_").toLowerCase();
+    if(T[currentLang][k])btn.textContent=tr(k);
+  });
+}
+
 var VERSES=[
 {ar:"بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ",en:"In the name of Allah, the Most Gracious, the Most Merciful",fr:"Au nom d'Allah, le Misericordieux",ref:"1:1",words:["بِسْمِ","اللَّهِ","الرَّحْمَنِ","الرَّحِيمِ"]},
 {ar:"الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",en:"All praise is due to Allah, Lord of the worlds",fr:"Louange a Allah, Seigneur des mondes",ref:"1:2",words:["الْحَمْدُ","لِلَّهِ","رَبِّ","الْعَالَمِينَ"]},
@@ -228,12 +387,12 @@ var VERSES=[
 {ar:"رَبِّ زِدْنِي عِلْمًا",en:"My Lord, increase me in knowledge",fr:"Seigneur, augmente-moi en science",ref:"20:114",words:["رَبِّ","زِدْنِي","عِلْمًا"]}
 ];
 
-var curLang="en",soundOn=true,actx,score=0,level=1,curIdx=0,placed=[],locked=false;
+var curLang="ar",soundOn=true,actx,score=0,level=1,curIdx=0,placed=[],locked=false;
 var HS_KEY="wdiy-hs-quran-verse-builder";
 
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
-function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l);});try{localStorage.setItem("wdiy-lang",l);}catch(e){}}
+function setLang(l){currentLang=l==="ar"?"ar":"en";curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l);});updateUI();try{localStorage.setItem("wdiy-lang",l);}catch(e){}}
 function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th);});try{localStorage.setItem("wdiy-theme",th);}catch(e){}}
 function snd(type){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.04;var n=actx.currentTime;if(type==="place"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.08);o.start(n);o.stop(n+.08);}else if(type==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.03;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.15+i*.1);oo.start(n+i*.1);oo.stop(n+.15+i*.1);});}else if(type==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.12);o.start(n);o.stop(n+.12);}else{o.frequency.value=700;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
 
@@ -325,6 +484,6 @@ document.getElementById("newBtn").onclick=function(){newVerse();snd("click");};
 document.getElementById("soundBtn").onclick=function(){soundOn=!soundOn;this.textContent=soundOn?"Sound ON":"Sound OFF";};
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
 document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
-try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);}catch(e){}
+setLang("ar");try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);}catch(e){}
 });
 </script></body></html>

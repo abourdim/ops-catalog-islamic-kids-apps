@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="sahara"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Surah Rhythm Tapper</title>
+<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="sahara"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Surah Rhythm Tapper</title>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 [data-theme="sahara"]{--bg:#FFF8E7;--bg2:#FFFDF5;--bg3:#F5ECD7;--border:#E8D5A8;--border2:#D4C48E;--text:#4A3F2F;--text2:#7A6E5A;--text3:#A09580;--heading:#2C1810;--accent:#E6C200;--abg:#E6C2000A;--abr:#E6C20033;--glow:0 0 20px #E6C20015;--accent2:#388E3C}
@@ -207,6 +207,157 @@ input[type="range"]{width:90px}
 <div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>Tajweed Rhythm</h3><p>Tajweed rules create natural rhythmic patterns in Quran recitation. Short vowels, long vowels, and stops each have specific timing.</p></div></div>
 </div><div class="sidebar-footer">Amaloun &mdash; v1.0</div></aside>
 <script>
+// === i18n SYSTEM ===
+let currentLang="ar";
+const T={
+  ar:{
+    title:"نقر إيقاع السور",
+    subtitle:"انقر على إيقاع تلاوة القرآن",
+    desc:"انقر على إيقاع تلاوة القرآن",
+    startMission:"ابدأ",
+    newGame:"▶ لعبة جديدة",
+    status:"اضغط تشغيل، ثم انقر الزر عندما تصل النبضات للدائرة",
+    footer:"أمالون — نقر إيقاع السور الإصدار ١.٠",
+    help:"المساعدة",
+    faq:"الأسئلة الشائعة",
+    howTo:"كيفية الاستخدام",
+    wiki:"معلومات",
+    lang:"اللغة",
+    theme:"المظهر",
+    catalog:"→ الفهرس",
+    play:"تشغيل",
+    score0:"إصابات",
+    score1:"أخطاء",
+    score2:"متتالية",
+    ui_start:"ابدأ",
+    ui_help:"المساعدة",
+    ui_faq:"الأسئلة الشائعة",
+    ui_how_to:"كيفية الاستخدام",
+    ui_wiki:"معلومات",
+    ui_lang:"اللغة",
+    ui_theme:"المظهر",
+    ui_catalog:"الفهرس",
+    ui_play:"تشغيل",
+    ui_10_qs:"١٠ أسئلة",
+    ui_15_qs:"١٥ سؤالاً",
+    ui_all_themes:"كل المواضيع",
+    ui_faith___tawheed:"الإيمان / التوحيد",
+    ui_prophets_stories:"قصص الأنبياء",
+    ui_islamic_law:"الشريعة الإسلامية",
+    ui_nature___creation:"الطبيعة / الخلق",
+    faq0q:"ما هو نقر الإيقاع؟",
+    faq0a:"لعبة تفاعلية لتعلم إيقاع تلاوة القرآن من خلال النقر على الشاشة.",
+    faq1q:"كيف أحصل على نقاط؟",
+    faq1a:"انقر في الوقت الصحيح عندما تصل النبضات إلى الدائرة. كلما كان توقيتك أدق، زادت نقاطك.",
+    howto0:"اضغط على زر ابدأ في شاشة البداية",
+    howto1:"اختر مستوى الصعوبة إذا كان متاحاً",
+    howto2:"اقرأ التعليمات المعروضة على الشاشة",
+    howto3:"تفاعل مع العناصر على الشاشة",
+    wiki0t:"Tajweed Rhythm",
+    wiki0c:"Tajweed rules create natural rhythmic patterns in Quran recitation. Short vowels, long vowels, and stops each have specific timing."
+  },
+  en:{
+    title:"Surah Rhythm Tapper",
+    subtitle:"Tap the rhythm of Quran recitation",
+    desc:"Tap the rhythm of Quran recitation",
+    startMission:"Start",
+    newGame:"▶ New Game",
+    status:"Press Play, then tap the button when beats reach the circle",
+    footer:"Amaloun — Surah Rhythm Tapper v1.0",
+    help:"Help",
+    faq:"FAQ",
+    howTo:"How-To",
+    wiki:"Wiki",
+    lang:"Lang",
+    theme:"Theme",
+    catalog:"← Catalog",
+    play:"Play",
+    score0:"Hits",
+    score1:"Misses",
+    score2:"Combo",
+    ui_start:"Start",
+    ui_help:"Help",
+    ui_faq:"FAQ",
+    ui_how_to:"How-To",
+    ui_wiki:"Wiki",
+    ui_lang:"Lang",
+    ui_theme:"Theme",
+    ui_catalog:"Catalog",
+    ui_play:"Play",
+    ui_10_qs:"10 Qs",
+    ui_15_qs:"15 Qs",
+    ui_all_themes:"All Themes",
+    ui_faith___tawheed:"Faith / Tawheed",
+    ui_prophets_stories:"Prophets Stories",
+    ui_islamic_law:"Islamic Law",
+    ui_nature___creation:"Nature / Creation",
+    faq0q:"What is Rhythm Tapper?",
+    faq0a:"A rhythm game where beats scroll across the screen and you tap when they reach the target circle. Rhythms are based on tajweed patterns.",
+    faq1q:"How do I score?",
+    faq1a:"Tap when a beat is within the hit zone. Consecutive hits build combos for higher scores.",
+    howto0:"Press Play to start beats scrolling",
+    howto1:"Watch beats move from right to left",
+    howto2:"Tap the button (or press Space) when a beat reaches the circle",
+    howto3:"Build combos by hitting consecutive beats accurately",
+    wiki0t:"Tajweed Rhythm",
+    wiki0c:"Tajweed rules create natural rhythmic patterns in Quran recitation. Short vowels, long vowels, and stops each have specific timing."
+  }
+};
+function tr(key){return T[currentLang]&&T[currentLang][key]||T["en"][key]||key;}
+function updateUI(){
+  // Title & splash
+  var st=document.querySelector(".splash-title");if(st)st.textContent=tr("title");
+  var ss=document.querySelector(".splash-subtitle");if(ss)ss.textContent=tr("subtitle");
+  var sd=document.getElementById("splDesc");if(sd)sd.textContent=tr("desc");
+  var eb=document.getElementById("enterBtn");if(eb)eb.textContent=tr("startMission");
+  // App header
+  var h1=document.querySelector(".app h1, .hdr h1");if(h1)h1.textContent=tr("title");
+  // Status
+  var sta=document.getElementById("status");if(sta&&!sta.classList.contains("win")&&!sta.classList.contains("lose"))sta.textContent=tr("status");
+  // Start button
+  var sb=document.getElementById("startBtn");if(sb)sb.textContent=tr("newGame");
+  // Footer
+  var ft=document.querySelector(".foot");if(ft)ft.textContent=tr("footer");
+  // Help sidebar
+  var ht=document.querySelector(".sidebar-title");if(ht)ht.innerHTML="\u2753 "+tr("help");
+  var tabs=document.querySelectorAll(".help-tab");
+  if(tabs.length>=3){tabs[0].textContent=tr("faq");tabs[1].textContent=tr("howTo");tabs[2].textContent=tr("wiki");}
+  // Back link
+  var bl=document.getElementById("backLink");if(bl)bl.textContent=tr("catalog");
+  // Lang/Theme labels
+  document.querySelectorAll(".sw-label").forEach(function(el,i){if(i===0)el.textContent=tr("lang");else if(i===1)el.textContent=tr("theme");});
+  // Score labels
+  document.querySelectorAll(".score-label").forEach(function(el,i){var k="score"+i;if(T[currentLang][k])el.textContent=tr(k);});
+  // Difficulty options
+  var ds=document.getElementById("diffSel");
+  if(ds){var opts=ds.querySelectorAll("option");opts.forEach(function(o,i){var k="diff"+i;if(T[currentLang][k])o.textContent=tr(k);});};
+  // FAQ items
+  var faqItems=document.querySelectorAll("#help-faq .help-item");
+  faqItems.forEach(function(item,i){
+    var sum=item.querySelector("summary");if(sum)sum.textContent=tr("faq"+i+"q");
+    var p=item.querySelector("p");if(p)p.textContent=tr("faq"+i+"a");
+  });
+  // Howto steps
+  var howtoSteps=document.querySelectorAll("#help-howto .help-step p");
+  howtoSteps.forEach(function(p,i){p.textContent=tr("howto"+i);});
+  // Wiki entries
+  var wikiEntries=document.querySelectorAll("#help-wiki .wiki-entry");
+  wikiEntries.forEach(function(entry,i){
+    var h=entry.querySelector("h3");if(h)h.textContent=tr("wiki"+i+"t");
+    var p=entry.querySelector("p");if(p)p.textContent=tr("wiki"+i+"c");
+  });
+  // Sidebar footer
+  var sf=document.querySelector(".sidebar-footer");if(sf)sf.textContent=tr("footer");
+  // Play button if exists
+  var pb=document.querySelector("#playBtn,button:not(.sw-btn):not(.btn-go):not(.btn-close):not(.btn-help):not(.help-tab)");
+  // Filter buttons with specific text
+  document.querySelectorAll(".filter-btn").forEach(function(btn){
+    var txt=btn.textContent.trim();
+    var k="ui_"+txt.replace(/ /g,"_").replace(/\//g,"_").toLowerCase();
+    if(T[currentLang][k])btn.textContent=tr(k);
+  });
+}
+
 var PATTERNS=[
 {name:"Al-Fatiha",ar:"الفاتحة",beats:[0,.4,.8,1.2,1.6,2.2,2.8,3.2,3.6,4.0,4.6,5.0,5.6,6.0,6.4],bpm:100},
 {name:"Al-Ikhlas",ar:"الإخلاص",beats:[0,.3,.6,1.0,1.5,1.8,2.2,2.6,3.0,3.5,3.8,4.2],bpm:110},
@@ -215,13 +366,13 @@ var PATTERNS=[
 {name:"Al-Falaq",ar:"الفلق",beats:[0,.4,.9,1.3,1.7,2.2,2.6,3.1,3.5,4.0,4.4,4.9,5.3],bpm:95}
 ];
 
-var curLang="en",soundOn=true,actx,playing=false,hits=0,misses=0,combo=0,maxCombo=0;
+var curLang="ar",soundOn=true,actx,playing=false,hits=0,misses=0,combo=0,maxCombo=0;
 var curPattern=0,beatEls=[],startTime=0,animId,beatStates=[];
 var HS_KEY="wdiy-hs-surah-rhythm-tapper";
 
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
-function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l);});try{localStorage.setItem("wdiy-lang",l);}catch(e){}}
+function setLang(l){currentLang=l==="ar"?"ar":"en";curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l);});updateUI();try{localStorage.setItem("wdiy-lang",l);}catch(e){}}
 function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th);});try{localStorage.setItem("wdiy-theme",th);}catch(e){}}
 function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.04;var n=actx.currentTime;if(t==="hit"){o.frequency.value=660;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.08);o.start(n);o.stop(n+.08);}else if(t==="miss"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);}else if(t==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.03;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.15+i*.1);oo.start(n+i*.1);oo.stop(n+.15+i*.1);});}else{o.frequency.value=440;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.04);o.start(n);o.stop(n+.04);}}
 
@@ -321,6 +472,6 @@ document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("
 document.getElementById("enterBtn").onclick=function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";};
 document.getElementById("soundBtn").onclick=function(){soundOn=!soundOn;this.textContent=soundOn?"Sound ON":"Sound OFF";};
 document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
-try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);}catch(e){}
+setLang("ar");try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);}catch(e){}
 });
 </script></body></html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="desert-dawn"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Prophets of Islam</title>
+<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="desert-dawn"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Prophets of Islam</title>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 [data-theme="desert-dawn"]{--bg:#1a1408;--bg2:#231c0e;--bg3:#2e2514;--border:#3d3420;--border2:#4e432c;--text:#d4c4a0;--text2:#a08c60;--text3:#6b5c3a;--heading:#f5e6c8;--accent:#FFBF00;--abg:rgba(255,191,0,.08);--abr:rgba(255,191,0,.25);--glow:0 0 20px rgba(255,191,0,.15)}
@@ -107,6 +107,9 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes sandDrift{0%{transform:translateX(0) translateY(0)}50%{transform:translateX(10px) translateY(-5px)}100%{transform:translateX(0) translateY(0)}}
+
+.i18n-ar{display:none}.i18n-en{display:block}
+[lang="ar"] .i18n-ar{display:block}[lang="ar"] .i18n-en{display:none}
 </style></head><body>
 <a href="../../index.html" class="back-link" id="backLink">&larr; Catalog</a>
 
@@ -121,7 +124,7 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 <div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px" id="splSub">The Noble Messengers</div>
 <p style="color:var(--text2);font-size:13px;line-height:1.7;margin-bottom:24px" id="splDesc">Learn about the 25 prophets mentioned in the Quran through an exciting quiz adventure!</p>
 <button class="btn-go" id="enterBtn">Start Mission</button>
-<div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
 <div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span>
 <button class="sw-btn on" data-thm="desert-dawn">&#9728;</button>
 <button class="sw-btn" data-thm="midnight-desert">&#127769;</button>
@@ -143,7 +146,7 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 <button id="startBtn">&#9654; New Game</button>
 <button class="btn-help" onclick="openHelp()">?</button>
 <button id="soundBtn">&#128266;</button>
-<div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+<div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
 <div class="sw">
 <button class="sw-btn on" data-thm="desert-dawn">&#9728;</button>
 <button class="sw-btn" data-thm="midnight-desert">&#127769;</button>
@@ -175,26 +178,147 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 <div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
 <div class="sidebar-body">
 <div class="help-content active" id="help-faq">
-<details class="help-item"><summary>What is this app?</summary><p>A fun quiz game to learn about the noble prophets mentioned in the Holy Quran. Test your knowledge!</p></details>
+<div class="i18n-en"><details class="help-item"><summary>What is this app?</summary><p>A fun quiz game to learn about the noble prophets mentioned in the Holy Quran. Test your knowledge!</p></details>
 <details class="help-item"><summary>How many prophets are covered?</summary><p>The quiz covers all 25 prophets mentioned by name in the Quran, peace be upon them all.</p></details>
-<details class="help-item"><summary>Is this educational?</summary><p>Yes! Each question teaches you about a prophet's story, miracles, and importance in Islam.</p></details>
+<details class="help-item"><summary>Is this educational?</summary><p>Yes! Each question teaches you about a prophet's story, miracles, and importance in Islam.</p></details></div>
+<div class="i18n-ar" style="display:none"><details class="help-item"><summary>ما هو هذا التطبيق؟</summary><p>تعلّم عن الأنبياء الخمسة والعشرين المذكورين في القرآن الكريم!</p></details>
+<details class="help-item"><summary>هل يعمل بدون إنترنت؟</summary><p>نعم. بمجرد تحميله، يعمل كل شيء في متصفحك بدون الحاجة للإنترنت.</p></details>
+<details class="help-item"><summary>هل يعمل على الهاتف؟</summary><p>نعم. يعمل على أي جهاز بمتصفح حديث.</p></details>
+<details class="help-item"><summary>هل هو تعليمي؟</summary><p>نعم! كل سؤال يعلّمك عن السيرة النبوية الشريفة.</p></details>
+<details class="help-item"><summary>هل بياناتي محمية؟</summary><p>نعم. كل شيء يعمل محلياً. لا تُرسل أي بيانات.</p></details>
+</div>
 </div>
 <div class="help-content" id="help-howto">
-<div class="help-step"><span class="help-step-num">1</span><p>Choose your difficulty level (Easy, Medium, or Hard)</p></div>
+<div class="i18n-en"><div class="help-step"><span class="help-step-num">1</span><p>Choose your difficulty level (Easy, Medium, or Hard)</p></div>
 <div class="help-step"><span class="help-step-num">2</span><p>Read the question about a prophet carefully</p></div>
 <div class="help-step"><span class="help-step-num">3</span><p>Click the correct answer from 4 choices</p></div>
-<div class="help-step"><span class="help-step-num">4</span><p>Try to beat your high score!</p></div>
+<div class="help-step"><span class="help-step-num">4</span><p>Try to beat your high score!</p></div></div>
+<div class="i18n-ar" style="display:none"><div class="help-step"><span class="help-step-num">1</span><p>اختر مستوى الصعوبة (سهل، متوسط، أو صعب)</p></div>
+<div class="help-step"><span class="help-step-num">2</span><p>اقرأ السؤال بعناية</p></div>
+<div class="help-step"><span class="help-step-num">3</span><p>اختر الإجابة الصحيحة من الخيارات</p></div>
+<div class="help-step"><span class="help-step-num">4</span><p>حاول تحقيق أعلى نتيجة!</p></div>
+<div class="help-step"><span class="help-step-num">5</span><p>اضغط ▶ لعبة جديدة للمحاولة مرة أخرى</p></div>
+</div>
 </div>
 <div class="help-content" id="help-wiki">
-<div class="wiki-entry"><h3>The Prophets</h3><p>Allah sent prophets to guide humanity. 25 are mentioned by name in the Quran, from Adam (AS) to Muhammad (SAW).</p></div>
+<div class="i18n-en"><div class="wiki-entry"><h3>The Prophets</h3><p>Allah sent prophets to guide humanity. 25 are mentioned by name in the Quran, from Adam (AS) to Muhammad (SAW).</p></div>
 <div class="wiki-entry"><h3>Ulul Azm</h3><p>The five greatest prophets: Nuh, Ibrahim, Musa, Isa, and Muhammad (peace be upon them all).</p></div>
-<div class="wiki-entry"><h3>Our Duty</h3><p>Muslims believe in all prophets without distinction and follow the final message of Prophet Muhammad (SAW).</p></div>
+<div class="wiki-entry"><h3>Our Duty</h3><p>Muslims believe in all prophets without distinction and follow the final message of Prophet Muhammad (SAW).</p></div></div>
+<div class="i18n-ar" style="display:none"><div class="wiki-entry"><h3>السيرة النبوية</h3><p>سيرة النبي محمد ﷺ هي قصة حياته ورسالته وأخلاقه العظيمة.</p></div>
+<div class="wiki-entry"><h3>الصحابة الكرام</h3><p>رفاق النبي ﷺ الذين آمنوا به ونصروه وساعدوا في نشر الإسلام.</p></div>
+<div class="wiki-entry"><h3>الدروس المستفادة</h3><p>في كل حدث من أحداث السيرة دروس وعبر نتعلم منها.</p></div>
+</div>
 </div>
 </div>
 <div class="sidebar-footer">Seerah Series &mdash; v2.0</div>
 </aside>
 
 <script>
+
+const T = {
+  ar: {
+    title: "أنبياء الإسلام",
+    sub: "الرسل الكرام",
+    desc: "تعلّم عن الأنبياء الخمسة والعشرين المذكورين في القرآن الكريم!",
+    start: "ابدأ المهمة",
+    new_game: "▶ لعبة جديدة",
+    correct_lbl: "صحيح",
+    total_lbl: "المجموع",
+    pick: "اختر الإجابة الصحيحة!",
+    done: "انتهى!",
+    easy: "سهل (10)",
+    medium: "متوسط (15)",
+    hard: "صعب (20)",
+    lang_label: "اللغة",
+    theme_label: "المظهر",
+    help_title: "❓ المساعدة",
+    faq_tab: "أسئلة شائعة",
+    howto_tab: "كيفية اللعب",
+    wiki_tab: "معلومات",
+    catalog: "→ الفهرس",
+    correct_log: "✓ صحيح!",
+    wrong_log: "✗ الإجابة:",
+    high_score: "🏆 أعلى نتيجة جديدة!",
+    best: "★ الأفضل:",
+    footer: "أنبياء الإسلام — الإصدار 1.0"
+  },
+  en: {
+    title: "",
+    sub: "",
+    start: "Start",
+    new_game: "▶ New Game",
+    correct_lbl: "Correct",
+    total_lbl: "Total",
+    easy: "Easy (10)",
+    medium: "Medium (15)",
+    hard: "Hard (20)",
+    lang_label: "Lang",
+    theme_label: "Theme",
+    help_title: "❓ Help",
+    faq_tab: "FAQ",
+    howto_tab: "How-To",
+    wiki_tab: "Wiki",
+    catalog: "← Catalog",
+    footer: ""
+  }
+};
+function tr(key) { var lang = document.documentElement.lang || "ar"; return (T[lang] && T[lang][key]) || (T.en && T.en[key]) || key; }
+function updateUI() {
+  var lang = document.documentElement.lang || "ar";
+  // Splash elements
+  var el;
+  el = document.getElementById("splashTitle") || document.getElementById("splTitle");
+  if (el && T[lang] && T[lang].title) el.textContent = T[lang].title;
+  el = document.getElementById("splashDesc") || document.getElementById("splDesc");
+  if (el && T[lang] && T[lang].desc) el.textContent = T[lang].desc;
+  el = document.getElementById("enterBtn");
+  if (el) el.textContent = tr("start");
+  // App elements
+  el = document.getElementById("appTitle");
+  if (el && T[lang] && T[lang].title) el.textContent = T[lang].title;
+  el = document.getElementById("startBtn");
+  if (el) el.textContent = tr("new_game");
+  // Score labels
+  el = document.getElementById("lbl0");
+  if (el) el.textContent = tr("correct_lbl");
+  el = document.getElementById("lbl1");
+  if (el) el.textContent = tr("total_lbl");
+  // Difficulty select
+  var sel = document.getElementById("diffSel");
+  if (sel && sel.options) {
+    for (var i = 0; i < sel.options.length; i++) {
+      var v = sel.options[i].value;
+      if (v === "10") sel.options[i].textContent = tr("easy");
+      else if (v === "15") sel.options[i].textContent = tr("medium");
+      else if (v === "20") sel.options[i].textContent = tr("hard");
+    }
+  }
+  // Status
+  el = document.getElementById("status");
+  if (el && el.textContent.indexOf("/") === -1) el.textContent = tr("pick");
+  // Back link
+  el = document.getElementById("backLink");
+  if (el) el.textContent = tr("catalog");
+  // Help sidebar
+  var st = document.querySelector(".sidebar-title");
+  if (st) st.textContent = tr("help_title");
+  var tabs = document.querySelectorAll(".help-tab");
+  if (tabs.length >= 3) {
+    tabs[0].textContent = tr("faq_tab");
+    tabs[1].textContent = tr("howto_tab");
+    tabs[2].textContent = tr("wiki_tab");
+  }
+  // Lang/Theme labels
+  document.querySelectorAll(".sw-label").forEach(function(lbl, idx) {
+    if (idx === 0) lbl.textContent = tr("lang_label");
+    else if (idx === 1) lbl.textContent = tr("theme_label");
+  });
+  // Toggle bilingual sidebar content
+  document.querySelectorAll(".i18n-ar").forEach(function(el) { el.style.display = lang === "ar" ? "block" : "none"; });
+  document.querySelectorAll(".i18n-en").forEach(function(el) { el.style.display = lang === "ar" ? "none" : "block"; });
+}
+
+
 var UI={
 title:{en:"Prophets of Islam",fr:"Proph\u00e8tes de l'Islam",ar:"\u0623\u0646\u0628\u064a\u0627\u0621 \u0627\u0644\u0625\u0633\u0644\u0627\u0645"},
 sub:{en:"The Noble Messengers",fr:"Les nobles messagers",ar:"\u0627\u0644\u0631\u0633\u0644 \u0627\u0644\u0643\u0631\u0627\u0645"},
@@ -252,7 +376,7 @@ function showHS(){var el=document.getElementById("bestDisp");if(el){var b=loadHS
 function createStars(){var box=document.getElementById("starsBox");for(var i=0;i<30;i++){var s=document.createElement("div");s.className="star";s.style.left=Math.random()*100+"%";s.style.top=Math.random()*60+"%";s.style.animationDelay=Math.random()*3+"s";s.style.width=Math.random()*2+1+"px";s.style.height=s.style.width;box.appendChild(s);}}
 
 document.addEventListener("DOMContentLoaded",function(){
-createStars();setLang("en");setTheme("desert-dawn");showHS();
+createStars();setLang("ar");setTheme("desert-dawn");showHS();
 document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
 document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
 document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});

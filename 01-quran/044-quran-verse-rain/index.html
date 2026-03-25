@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="sahara"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Quran Verse Rain</title>
+<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="sahara"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Quran Verse Rain</title>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 [data-theme="sahara"]{--bg:#FFF8E7;--bg2:#FFFDF5;--bg3:#F5ECD7;--border:#E8D5A8;--border2:#D4C48E;--text:#4A3F2F;--text2:#7A6E5A;--text3:#A09580;--heading:#2C1810;--accent:#B8860B;--abg:#B8860B0A;--abr:#B8860B33;--glow:0 0 20px #B8860B15;--accent2:#006B3F}
@@ -206,6 +206,155 @@ input[type="range"]{width:90px}
 <div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>Active Learning</h3><p>Catching words under time pressure builds rapid recognition of Arabic Quran vocabulary.</p></div></div>
 </div><div class="sidebar-footer">Amaloun &mdash; v1.0</div></aside>
 <script>
+// === i18n SYSTEM ===
+let currentLang="ar";
+const T={
+  ar:{
+    title:"مطر الآيات",
+    subtitle:"شاهد آيات القرآن تتساقط كالمطر",
+    desc:"شاهد آيات القرآن تتساقط كالمطر",
+    startMission:"ابدأ",
+    newGame:"▶ لعبة جديدة",
+    status:"اضغط على الكلمات المتساقطة بترتيب الآية الصحيح",
+    footer:"أمالون — مطر الآيات الإصدار ١.٠",
+    help:"المساعدة",
+    faq:"الأسئلة الشائعة",
+    howTo:"كيفية الاستخدام",
+    wiki:"معلومات",
+    lang:"اللغة",
+    theme:"المظهر",
+    catalog:"→ الفهرس",
+    play:"تشغيل",
+    score0:"النتيجة",
+    score1:"المستوى",
+    ui_start:"ابدأ",
+    ui_help:"المساعدة",
+    ui_faq:"الأسئلة الشائعة",
+    ui_how_to:"كيفية الاستخدام",
+    ui_wiki:"معلومات",
+    ui_lang:"اللغة",
+    ui_theme:"المظهر",
+    ui_catalog:"الفهرس",
+    ui_play:"تشغيل",
+    ui_10_qs:"١٠ أسئلة",
+    ui_15_qs:"١٥ سؤالاً",
+    ui_all_themes:"كل المواضيع",
+    ui_faith___tawheed:"الإيمان / التوحيد",
+    ui_prophets_stories:"قصص الأنبياء",
+    ui_islamic_law:"الشريعة الإسلامية",
+    ui_nature___creation:"الطبيعة / الخلق",
+    faq0q:"كيف تعمل اللعبة؟",
+    faq0a:"تتساقط كلمات من آية قرآنية من الأعلى. اضغط عليها بالترتيب الصحيح (من اليمين لليسار) قبل أن تصل للأسفل.",
+    faq1q:"ماذا يحدث عندما تزداد السرعة؟",
+    faq1a:"Each level, words fall faster, adding challenge as you advance.",
+    howto0:"اضغط على زر ابدأ في شاشة البداية",
+    howto1:"اختر مستوى الصعوبة إذا كان متاحاً",
+    howto2:"اقرأ التعليمات المعروضة على الشاشة",
+    howto3:"تفاعل مع العناصر على الشاشة",
+    wiki0t:"Active Learning",
+    wiki0c:"Catching words under time pressure builds rapid recognition of Arabic Quran vocabulary."
+  },
+  en:{
+    title:"Quran Verse Rain",
+    subtitle:"Watch Quran verses rain down",
+    desc:"Watch Quran verses rain down",
+    startMission:"Start",
+    newGame:"▶ New Game",
+    status:"Click falling words in the correct verse order",
+    footer:"Amaloun — Quran Verse Rain v1.0",
+    help:"Help",
+    faq:"FAQ",
+    howTo:"How-To",
+    wiki:"Wiki",
+    lang:"Lang",
+    theme:"Theme",
+    catalog:"← Catalog",
+    play:"Play",
+    score0:"Score",
+    score1:"Level",
+    ui_start:"Start",
+    ui_help:"Help",
+    ui_faq:"FAQ",
+    ui_how_to:"How-To",
+    ui_wiki:"Wiki",
+    ui_lang:"Lang",
+    ui_theme:"Theme",
+    ui_catalog:"Catalog",
+    ui_play:"Play",
+    ui_10_qs:"10 Qs",
+    ui_15_qs:"15 Qs",
+    ui_all_themes:"All Themes",
+    ui_faith___tawheed:"Faith / Tawheed",
+    ui_prophets_stories:"Prophets Stories",
+    ui_islamic_law:"Islamic Law",
+    ui_nature___creation:"Nature / Creation",
+    faq0q:"How does the game work?",
+    faq0a:"Words from a Quran verse fall from the top. Click them in the correct order (right to left) before they reach the bottom.",
+    faq1q:"What happens when speed increases?",
+    faq1a:"Each level, words fall faster, adding challenge as you advance.",
+    howto0:"Press Play to start words falling",
+    howto1:"Read the target verse shown above",
+    howto2:"Click falling words in correct order",
+    howto3:"Caught words appear in the catch zone below",
+    wiki0t:"Active Learning",
+    wiki0c:"Catching words under time pressure builds rapid recognition of Arabic Quran vocabulary."
+  }
+};
+function tr(key){return T[currentLang]&&T[currentLang][key]||T["en"][key]||key;}
+function updateUI(){
+  // Title & splash
+  var st=document.querySelector(".splash-title");if(st)st.textContent=tr("title");
+  var ss=document.querySelector(".splash-subtitle");if(ss)ss.textContent=tr("subtitle");
+  var sd=document.getElementById("splDesc");if(sd)sd.textContent=tr("desc");
+  var eb=document.getElementById("enterBtn");if(eb)eb.textContent=tr("startMission");
+  // App header
+  var h1=document.querySelector(".app h1, .hdr h1");if(h1)h1.textContent=tr("title");
+  // Status
+  var sta=document.getElementById("status");if(sta&&!sta.classList.contains("win")&&!sta.classList.contains("lose"))sta.textContent=tr("status");
+  // Start button
+  var sb=document.getElementById("startBtn");if(sb)sb.textContent=tr("newGame");
+  // Footer
+  var ft=document.querySelector(".foot");if(ft)ft.textContent=tr("footer");
+  // Help sidebar
+  var ht=document.querySelector(".sidebar-title");if(ht)ht.innerHTML="\u2753 "+tr("help");
+  var tabs=document.querySelectorAll(".help-tab");
+  if(tabs.length>=3){tabs[0].textContent=tr("faq");tabs[1].textContent=tr("howTo");tabs[2].textContent=tr("wiki");}
+  // Back link
+  var bl=document.getElementById("backLink");if(bl)bl.textContent=tr("catalog");
+  // Lang/Theme labels
+  document.querySelectorAll(".sw-label").forEach(function(el,i){if(i===0)el.textContent=tr("lang");else if(i===1)el.textContent=tr("theme");});
+  // Score labels
+  document.querySelectorAll(".score-label").forEach(function(el,i){var k="score"+i;if(T[currentLang][k])el.textContent=tr(k);});
+  // Difficulty options
+  var ds=document.getElementById("diffSel");
+  if(ds){var opts=ds.querySelectorAll("option");opts.forEach(function(o,i){var k="diff"+i;if(T[currentLang][k])o.textContent=tr(k);});};
+  // FAQ items
+  var faqItems=document.querySelectorAll("#help-faq .help-item");
+  faqItems.forEach(function(item,i){
+    var sum=item.querySelector("summary");if(sum)sum.textContent=tr("faq"+i+"q");
+    var p=item.querySelector("p");if(p)p.textContent=tr("faq"+i+"a");
+  });
+  // Howto steps
+  var howtoSteps=document.querySelectorAll("#help-howto .help-step p");
+  howtoSteps.forEach(function(p,i){p.textContent=tr("howto"+i);});
+  // Wiki entries
+  var wikiEntries=document.querySelectorAll("#help-wiki .wiki-entry");
+  wikiEntries.forEach(function(entry,i){
+    var h=entry.querySelector("h3");if(h)h.textContent=tr("wiki"+i+"t");
+    var p=entry.querySelector("p");if(p)p.textContent=tr("wiki"+i+"c");
+  });
+  // Sidebar footer
+  var sf=document.querySelector(".sidebar-footer");if(sf)sf.textContent=tr("footer");
+  // Play button if exists
+  var pb=document.querySelector("#playBtn,button:not(.sw-btn):not(.btn-go):not(.btn-close):not(.btn-help):not(.help-tab)");
+  // Filter buttons with specific text
+  document.querySelectorAll(".filter-btn").forEach(function(btn){
+    var txt=btn.textContent.trim();
+    var k="ui_"+txt.replace(/ /g,"_").replace(/\//g,"_").toLowerCase();
+    if(T[currentLang][k])btn.textContent=tr(k);
+  });
+}
+
 var VERSES=[
 {words:["بِسْمِ","اللَّهِ","الرَّحْمَنِ","الرَّحِيمِ"],ref:"1:1"},
 {words:["الْحَمْدُ","لِلَّهِ","رَبِّ","الْعَالَمِينَ"],ref:"1:2"},
@@ -221,14 +370,14 @@ var VERSES=[
 {words:["قُلْ","أَعُوذُ","بِرَبِّ","النَّاسِ"],ref:"114:1"}
 ];
 
-var curLang="en",soundOn=true,actx,score=0,level=1,playing=false,animId;
+var curLang="ar",soundOn=true,actx,score=0,level=1,playing=false,animId;
 var curVerse=0,nextWordIdx=0,caught=[],fallingWords=[],speed=1;
 var HS_KEY="wdiy-hs-quran-verse-rain";
 var canvas,ctx;
 
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
-function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l);});try{localStorage.setItem("wdiy-lang",l);}catch(e){}}
+function setLang(l){currentLang=l==="ar"?"ar":"en";curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l);});updateUI();try{localStorage.setItem("wdiy-lang",l);}catch(e){}}
 function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th);});try{localStorage.setItem("wdiy-theme",th);}catch(e){}}
 function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.04;var n=actx.currentTime;if(t==="catch"){o.frequency.value=660;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.08);o.start(n);o.stop(n+.08);}else if(t==="miss"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);}else if(t==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.03;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.15+i*.1);oo.start(n+i*.1);oo.stop(n+.15+i*.1);});}else{o.frequency.value=500;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.04);o.start(n);o.stop(n+.04);}}
 
@@ -346,6 +495,6 @@ document.getElementById("enterBtn").onclick=function(){document.getElementById("
 document.getElementById("soundBtn").onclick=function(){soundOn=!soundOn;this.textContent=soundOn?"Sound ON":"Sound OFF";};
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
 document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
-try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);}catch(e){}
+setLang("ar");try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);}catch(e){}
 });
 </script></body></html>

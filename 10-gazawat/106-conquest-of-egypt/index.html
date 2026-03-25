@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Conquest of Egypt — Gazawat</title><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet"/><style>
+<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>فتح مصر — الغزوات</title><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet"/><style>
 /* === GAZAWAT 8-THEME SYSTEM === */
 [data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#C19A6B;--abg:#C19A6B0f;--abr:#C19A6B33;--glow:0 0 20px #C19A6B1a}
 [data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#C19A6B;--abg:#C19A6B0f;--abr:#C19A6B33;--glow:0 0 20px #C19A6B1a}
@@ -98,7 +98,7 @@ canvas{border-radius:10px;cursor:grab;max-width:100%;touch-action:none}canvas:ac
 @media(max-width:600px){.splash-box{padding:28px 20px}.hdr h1{font-size:16px}.score-num{font-size:20px}canvas{height:auto}.sidebar{width:100%;max-width:100%}}
 
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">الفهرس →</a>
 
 <!-- SPLASH SCREEN -->
 <div class="splash" id="splash"><div class="splash-box">
@@ -108,7 +108,7 @@ canvas{border-radius:10px;cursor:grab;max-width:100%;touch-action:none}canvas:ac
 <div class="splash-subtitle">Lead the campaign into Egypt</div>
 <p class="splash-desc">Lead the campaign into Egypt. Learn through interactive gameplay designed for young Muslim minds.</p>
 <button class="btn-go" id="enterBtn">Start Mission</button>
-<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
 <div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div>
 </div></div>
 
@@ -121,7 +121,7 @@ canvas{border-radius:10px;cursor:grab;max-width:100%;touch-action:none}canvas:ac
   <button id="startBtn">&#9654; New Game</button>
   <button class="btn-help" id="helpBtn" onclick="openHelp()">&#10067;</button>
   <button id="soundBtn">&#128266;</button>
-  <div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+  <div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
   <div class="sw"><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div>
 </div>
 <div class="status" id="status">Lead the campaign into Egypt</div>
@@ -129,17 +129,17 @@ canvas{border-radius:10px;cursor:grab;max-width:100%;touch-action:none}canvas:ac
 <div class="score-row"><div class="score-item"><div class="score-label" data-i18n="score">Score</div><div class="score-num" id="scMain">0</div></div><div class="score-item"><div class="score-label" data-i18n="level">Level</div><div class="score-num" id="scLevel">1</div></div><div class="score-item"><div class="score-label" data-i18n="best">Best</div><div class="score-num" id="scBest">0</div></div></div>
 <div id="infoArea"></div>
 <div class="log-box" id="logBox"></div>
-<div class="foot">Gazawat &mdash; Conquest of Egypt v2.0</div>
+<div class="foot">الغزوات — فتح مصر v2.0</div>
 </div>
 
 <!-- HELP SIDEBAR -->
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
-  <div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
+  <div class="sidebar-header"><span class="sidebar-title">المساعدة</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
   <div class="help-tabs">
-    <button class="help-tab active" data-tab="faq">FAQ</button>
-    <button class="help-tab" data-tab="howto">How-To</button>
-    <button class="help-tab" data-tab="wiki">Wiki</button>
+    <button class="help-tab active" data-tab="faq">أسئلة شائعة</button>
+    <button class="help-tab" data-tab="howto">كيفية اللعب</button>
+    <button class="help-tab" data-tab="wiki">معلومات</button>
   </div>
   <div class="sidebar-body">
     <div class="help-content active" id="help-faq">
@@ -164,7 +164,7 @@ canvas{border-radius:10px;cursor:grab;max-width:100%;touch-action:none}canvas:ac
       <div class="wiki-entry"><h3>Themes &amp; Languages</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand. 3 languages: English, French, Arabic.</p></div>
     </div>
   </div>
-  <div class="sidebar-footer">Gazawat &mdash; v2.0</div>
+  <div class="sidebar-footer">الغزوات — الإصدار 2.0</div>
 </aside>
 
 <script>
@@ -184,7 +184,7 @@ const I18N={
   fr:{title:"Conquête de l'Égypte",subtitle:"Mène la campagne en Égypte",start:"Démarrer la Mission",newGame:"Nouvelle Partie",score:"Score",level:"Niveau",best:"Meilleur",progress:"Progrès",correct:"Correct",tasks:"Tâches",placed:"Placé",accuracy:"Précision",wellDone:"Bien joué!",tryAgain:"Réessaie",hint:"Indice",execute:"Exécuter",reset:"Réinitialiser",next:"Suivant",prev:"Précédent",complete:"Terminer",victory:"Victoire! MashaAllah!",defeat:"Réessaie, fais confiance en Allah",helpTitle:"Aide",faqTitle:"FAQ",howtoTitle:"Comment",wikiTitle:"Wiki",q1:"Qu'est-ce que cette application?",a1:"Une application éducative islamique sur Conquête de l'Égypte. Apprends par le jeu interactif conçu pour les enfants musulmans.",q2:"Comment jouer?",a2:"Suis les instructions à l'écran. Utilise les boutons et éléments interactifs pour progresser.",q3:"Fonctionne hors ligne?",a3:"Oui! Une fois chargé, tout fonctionne dans ton navigateur sans internet.",q4:"Changer le thème?",a4:"Clique sur n'importe quelle icône de thème dans la barre de contrôle.",q5:"Changer la langue?",a5:"Clique sur EN, FR ou ع. L'arabe active automatiquement la mise en page droite-à-gauche.",q6:"Mes données sont privées?",a6:"Oui. Tout fonctionne localement. Aucune donnée n'est envoyée.",q7:"Mobile compatible?",a7:"Oui! Les contrôles tactiles fonctionnent sur tous les appareils.",s1:"Clique sur Démarrer la Mission",s2:"Lis les instructions et le contexte historique",s3:"Interagis avec les éléments du jeu",s4:"Complète les objectifs pour gagner des points",s5:"Essaie de battre ton meilleur score!",w1Title:"Contexte Historique",w1Text:"Cette activité est basée sur l'histoire islamique authentique.",w2Title:"Valeur Éducative",w2Text:"Chaque interaction enseigne une leçon importante de l'histoire islamique.",w3Title:"Thèmes et Langues",w3Text:"8 thèmes intégrés. 3 langues: Anglais, Français, Arabe."},
   ar:{title:"فتح مصر",subtitle:"قُد الحملة إلى مصر",start:"ابدأ المهمة",newGame:"لعبة جديدة",score:"النقاط",level:"المستوى",best:"الأفضل",progress:"التقدم",correct:"صحيح",tasks:"المهام",placed:"تم وضعه",accuracy:"الدقة",wellDone:"أحسنت!",tryAgain:"حاول مرة أخرى",hint:"تلميح",execute:"نفّذ",reset:"إعادة",next:"التالي",prev:"السابق",complete:"أكمل",victory:"نصر! ما شاء الله!",defeat:"حاول مرة أخرى وتوكل على الله",helpTitle:"مساعدة",faqTitle:"أسئلة",howtoTitle:"كيف",wikiTitle:"ويكي",q1:"ما هذا التطبيق؟",a1:"تطبيق تعليمي إسلامي عن فتح مصر. تعلّم من خلال اللعب التفاعلي المصمم لأطفال المسلمين.",q2:"كيف ألعب؟",a2:"اتبع التعليمات على الشاشة. استخدم الأزرار والعناصر التفاعلية للتقدم.",q3:"يعمل بدون إنترنت؟",a3:"نعم! بمجرد تحميله يعمل كل شيء في متصفحك بدون إنترنت.",q4:"تغيير السمة؟",a4:"انقر على أي أيقونة سمة في شريط التحكم.",q5:"تغيير اللغة؟",a5:"انقر على EN أو FR أو ع. العربية تفعّل التخطيط من اليمين لليسار تلقائياً.",q6:"بياناتي خاصة؟",a6:"نعم. كل شيء يعمل محلياً. لا ترسل أي بيانات.",q7:"يعمل على الجوال؟",a7:"نعم! أدوات التحكم باللمس تعمل على جميع الأجهزة.",s1:"انقر على ابدأ المهمة",s2:"اقرأ التعليمات والسياق التاريخي",s3:"تفاعل مع عناصر اللعبة",s4:"أكمل الأهداف لكسب النقاط",s5:"حاول التغلب على أفضل نتيجة لك!",w1Title:"السياق التاريخي",w1Text:"هذا النشاط مبني على التاريخ الإسلامي الأصيل.",w2Title:"القيمة التعليمية",w2Text:"كل تفاعل يعلّم درساً مهماً من التاريخ الإسلامي.",w3Title:"السمات واللغات",w3Text:"٨ سمات مدمجة. ٣ لغات: الإنجليزية والفرنسية والعربية."}
 };
-let curLang="en";
+let curLang="ar";
 function t(k){return(I18N[curLang]&&I18N[curLang][k])||k;}
 function applyLang(){
   document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.dataset.i18n;if(I18N[curLang][k])el.textContent=I18N[curLang][k];});
@@ -193,6 +193,19 @@ function applyLang(){
   const btn=document.getElementById("enterBtn");if(btn)btn.textContent=t("start");
   const at=document.querySelector("#app h1");if(at)at.textContent=t("title");
 }
+
+/* Enhanced i18n */
+const T={
+ar:{title:"فتح مصر",sub:"عمرو بن العاص",desc:"شارك في فتح مصر!",
+newGame:"لعبة جديدة",start:"ابدأ المهمة",
+catalog:"الفهرس →",help:"المساعدة",
+pressNew:"اضغط لعبة جديدة!",wellDone:"أحسنت!",
+teaching:"الفائدة التاريخية"},
+en:{title:I18N.en.title,sub:I18N.en.subtitle,desc:I18N.en.subtitle,
+newGame:"New Game",start:"Start Mission",catalog:"← Catalog",help:"Help",
+pressNew:"Press New Game!",wellDone:"Well Done!",teaching:"Historical Teaching"}
+};
+function tr(k){return(T[curLang]&&T[curLang][k])||(I18N[curLang]&&I18N[curLang][k])||k}
 const HS_KEY="wdiy-gz-conquestegypt";
 function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
 function saveHS(s){try{const b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true;}}catch(e){}return false;}
@@ -265,6 +278,7 @@ function checkWin(){if(items.every(i=>i.placed)){gameState="won";score+=level*20
 function updateUI(){document.getElementById("scMain").textContent=score;document.getElementById("scLevel").textContent=level;document.getElementById("scBest").textContent=loadHS();}
 /* --- BOOT --- */
 document.addEventListener("DOMContentLoaded",()=>{
+setLang("ar");applyLang();
   showHS();
   document.getElementById("enterBtn").addEventListener("click",()=>{
     document.getElementById("splash").style.display="none";

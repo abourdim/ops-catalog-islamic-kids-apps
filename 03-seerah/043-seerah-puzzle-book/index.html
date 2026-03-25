@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="desert-dawn"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Seerah Puzzle Book</title>
+<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="desert-dawn"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Seerah Puzzle Book</title>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 [data-theme="desert-dawn"]{--bg:#1a1408;--bg2:#231c0e;--bg3:#2e2514;--border:#3d3420;--border2:#4e432c;--text:#d4c4a0;--text2:#a08c60;--text3:#6b5c3a;--heading:#f5e6c8;--accent:#FFBF00;--abg:rgba(255,191,0,.08);--abr:rgba(255,191,0,.25);--glow:0 0 20px rgba(255,191,0,.15)}
@@ -85,6 +85,9 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 .btn-help:hover{border-color:var(--accent);color:var(--accent)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
+
+.i18n-ar{display:none}.i18n-en{display:block}
+[lang="ar"] .i18n-ar{display:block}[lang="ar"] .i18n-en{display:none}
 </style></head><body>
 <a href="../../index.html" class="back-link" id="backLink">&larr; Catalog</a>
 <div class="splash" id="splash"><div class="splash-dunes"></div><div class="splash-box">
@@ -94,7 +97,7 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 <div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px" id="splSub">Brain Teasers</div>
 <p style="color:var(--text2);font-size:13px;line-height:1.7;margin-bottom:24px" id="splDesc">Solve Seerah-themed puzzles and brain teasers.</p>
 <button class="btn-go" id="enterBtn">Start Mission</button>
-<div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
 <div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span>
 <button class="sw-btn on" data-thm="desert-dawn">&#9728;</button><button class="sw-btn" data-thm="midnight-desert">&#127769;</button><button class="sw-btn" data-thm="sandstone">&#127966;</button><button class="sw-btn" data-thm="oasis">&#127795;</button><button class="sw-btn" data-thm="sunset">&#127773;</button><button class="sw-btn" data-thm="night-sky">&#11088;</button><button class="sw-btn" data-thm="caravan">&#128042;</button><button class="sw-btn" data-thm="parchment">&#128220;</button>
 </div></div></div>
@@ -106,7 +109,7 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 <button id="startBtn">&#9654; New Game</button>
 <button class="btn-help" onclick="openHelp()">?</button>
 <button id="soundBtn">&#128266;</button>
-<div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
 <div class="sw"><button class="sw-btn on" data-thm="desert-dawn">&#9728;</button><button class="sw-btn" data-thm="midnight-desert">&#127769;</button><button class="sw-btn" data-thm="sandstone">&#127966;</button><button class="sw-btn" data-thm="oasis">&#127795;</button><button class="sw-btn" data-thm="sunset">&#127773;</button><button class="sw-btn" data-thm="night-sky">&#11088;</button><button class="sw-btn" data-thm="caravan">&#128042;</button><button class="sw-btn" data-thm="parchment">&#128220;</button></div>
 </div>
 <div class="status" id="status">Loading...</div>
@@ -122,21 +125,142 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 <div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
 <div class="sidebar-body">
 <div class="help-content active" id="help-faq">
-<details class="help-item"><summary>What is this app?</summary><p>Solve Seerah-themed puzzles and brain teasers.</p></details>
-<details class="help-item"><summary>Is the content authentic?</summary><p>Based on authentic Seerah sources and scholarly works.</p></details>
+<div class="i18n-en"><details class="help-item"><summary>What is this app?</summary><p>Solve Seerah-themed puzzles and brain teasers.</p></details>
+<details class="help-item"><summary>Is the content authentic?</summary><p>Based on authentic Seerah sources and scholarly works.</p></details></div>
+<div class="i18n-ar" style="display:none"><details class="help-item"><summary>ما هو هذا التطبيق؟</summary><p>حل ألغازاً وأحاجي من السيرة النبوية.</p></details>
+<details class="help-item"><summary>هل يعمل بدون إنترنت؟</summary><p>نعم. بمجرد تحميله، يعمل كل شيء في متصفحك بدون الحاجة للإنترنت.</p></details>
+<details class="help-item"><summary>هل يعمل على الهاتف؟</summary><p>نعم. يعمل على أي جهاز بمتصفح حديث.</p></details>
+<details class="help-item"><summary>هل هو تعليمي؟</summary><p>نعم! كل سؤال يعلّمك عن السيرة النبوية الشريفة.</p></details>
+<details class="help-item"><summary>هل بياناتي محمية؟</summary><p>نعم. كل شيء يعمل محلياً. لا تُرسل أي بيانات.</p></details>
+</div>
 </div>
 <div class="help-content" id="help-howto">
-<div class="help-step"><span class="help-step-num">1</span><p>Start the activity from the splash screen</p></div>
+<div class="i18n-en"><div class="help-step"><span class="help-step-num">1</span><p>Start the activity from the splash screen</p></div>
 <div class="help-step"><span class="help-step-num">2</span><p>Answer questions to score points</p></div>
-<div class="help-step"><span class="help-step-num">3</span><p>Complete all items to finish!</p></div>
+<div class="help-step"><span class="help-step-num">3</span><p>Complete all items to finish!</p></div></div>
+<div class="i18n-ar" style="display:none"><div class="help-step"><span class="help-step-num">1</span><p>اختر مستوى الصعوبة (سهل، متوسط، أو صعب)</p></div>
+<div class="help-step"><span class="help-step-num">2</span><p>اقرأ السؤال بعناية</p></div>
+<div class="help-step"><span class="help-step-num">3</span><p>اختر الإجابة الصحيحة من الخيارات</p></div>
+<div class="help-step"><span class="help-step-num">4</span><p>حاول تحقيق أعلى نتيجة!</p></div>
+<div class="help-step"><span class="help-step-num">5</span><p>اضغط ▶ لعبة جديدة للمحاولة مرة أخرى</p></div>
+</div>
 </div>
 <div class="help-content" id="help-wiki">
-<div class="wiki-entry"><h3>About</h3><p>Solve Seerah-themed puzzles and brain teasers. Part of the Seerah learning series for Muslim kids.</p></div>
+<div class="i18n-en"><div class="wiki-entry"><h3>About</h3><p>Solve Seerah-themed puzzles and brain teasers. Part of the Seerah learning series for Muslim kids.</p></div></div>
+<div class="i18n-ar" style="display:none"><div class="wiki-entry"><h3>السيرة النبوية</h3><p>سيرة النبي محمد ﷺ هي قصة حياته ورسالته وأخلاقه العظيمة.</p></div>
+<div class="wiki-entry"><h3>الصحابة الكرام</h3><p>رفاق النبي ﷺ الذين آمنوا به ونصروه وساعدوا في نشر الإسلام.</p></div>
+<div class="wiki-entry"><h3>الدروس المستفادة</h3><p>في كل حدث من أحداث السيرة دروس وعبر نتعلم منها.</p></div>
+</div>
 </div></div>
 <div class="sidebar-footer">Seerah Series &mdash; v2.0</div>
 </aside>
 
 <script>
+
+const T = {
+  ar: {
+    title: "كتاب ألغاز السيرة",
+    sub: "ألغاز ذكية",
+    desc: "حل ألغازاً وأحاجي من السيرة النبوية.",
+    start: "ابدأ المهمة",
+    new_game: "▶ لعبة جديدة",
+    correct_lbl: "صحيح",
+    total_lbl: "المجموع",
+    pick: "اختر الإجابة الصحيحة!",
+    done: "انتهى!",
+    easy: "سهل (10)",
+    medium: "متوسط (15)",
+    hard: "صعب (20)",
+    lang_label: "اللغة",
+    theme_label: "المظهر",
+    help_title: "❓ المساعدة",
+    faq_tab: "أسئلة شائعة",
+    howto_tab: "كيفية اللعب",
+    wiki_tab: "معلومات",
+    catalog: "→ الفهرس",
+    correct_log: "✓ صحيح!",
+    wrong_log: "✗ الإجابة:",
+    high_score: "🏆 أعلى نتيجة جديدة!",
+    best: "★ الأفضل:",
+    footer: "كتاب ألغاز السيرة — الإصدار 1.0"
+  },
+  en: {
+    title: "",
+    sub: "",
+    start: "Start",
+    new_game: "▶ New Game",
+    correct_lbl: "Correct",
+    total_lbl: "Total",
+    easy: "Easy (10)",
+    medium: "Medium (15)",
+    hard: "Hard (20)",
+    lang_label: "Lang",
+    theme_label: "Theme",
+    help_title: "❓ Help",
+    faq_tab: "FAQ",
+    howto_tab: "How-To",
+    wiki_tab: "Wiki",
+    catalog: "← Catalog",
+    footer: ""
+  }
+};
+function tr(key) { var lang = document.documentElement.lang || "ar"; return (T[lang] && T[lang][key]) || (T.en && T.en[key]) || key; }
+function updateUI() {
+  var lang = document.documentElement.lang || "ar";
+  // Splash elements
+  var el;
+  el = document.getElementById("splashTitle") || document.getElementById("splTitle");
+  if (el && T[lang] && T[lang].title) el.textContent = T[lang].title;
+  el = document.getElementById("splashDesc") || document.getElementById("splDesc");
+  if (el && T[lang] && T[lang].desc) el.textContent = T[lang].desc;
+  el = document.getElementById("enterBtn");
+  if (el) el.textContent = tr("start");
+  // App elements
+  el = document.getElementById("appTitle");
+  if (el && T[lang] && T[lang].title) el.textContent = T[lang].title;
+  el = document.getElementById("startBtn");
+  if (el) el.textContent = tr("new_game");
+  // Score labels
+  el = document.getElementById("lbl0");
+  if (el) el.textContent = tr("correct_lbl");
+  el = document.getElementById("lbl1");
+  if (el) el.textContent = tr("total_lbl");
+  // Difficulty select
+  var sel = document.getElementById("diffSel");
+  if (sel && sel.options) {
+    for (var i = 0; i < sel.options.length; i++) {
+      var v = sel.options[i].value;
+      if (v === "10") sel.options[i].textContent = tr("easy");
+      else if (v === "15") sel.options[i].textContent = tr("medium");
+      else if (v === "20") sel.options[i].textContent = tr("hard");
+    }
+  }
+  // Status
+  el = document.getElementById("status");
+  if (el && el.textContent.indexOf("/") === -1) el.textContent = tr("pick");
+  // Back link
+  el = document.getElementById("backLink");
+  if (el) el.textContent = tr("catalog");
+  // Help sidebar
+  var st = document.querySelector(".sidebar-title");
+  if (st) st.textContent = tr("help_title");
+  var tabs = document.querySelectorAll(".help-tab");
+  if (tabs.length >= 3) {
+    tabs[0].textContent = tr("faq_tab");
+    tabs[1].textContent = tr("howto_tab");
+    tabs[2].textContent = tr("wiki_tab");
+  }
+  // Lang/Theme labels
+  document.querySelectorAll(".sw-label").forEach(function(lbl, idx) {
+    if (idx === 0) lbl.textContent = tr("lang_label");
+    else if (idx === 1) lbl.textContent = tr("theme_label");
+  });
+  // Toggle bilingual sidebar content
+  document.querySelectorAll(".i18n-ar").forEach(function(el) { el.style.display = lang === "ar" ? "block" : "none"; });
+  document.querySelectorAll(".i18n-en").forEach(function(el) { el.style.display = lang === "ar" ? "none" : "block"; });
+}
+
+
 var UI={
 title:{en:"Seerah Puzzle Book",fr:"Livre de Puzzles Seerah",ar:"كتاب ألغاز السيرة"},
 sub:{en:"Brain Teasers",fr:"Brain Teasers",ar:"Brain Teasers"},
@@ -164,7 +288,7 @@ function nextQ(){if(current>=total){snd("win");document.getElementById("status")
 function pick(btn,val){if(locked)return;locked=true;current++;if(String(val)===String(ans)){correct++;btn.classList.add("correct");snd("ok");}else{btn.classList.add("wrong");snd("err");document.querySelectorAll(".answer-btn").forEach(function(b){if(b.textContent==ans)b.classList.add("correct");});}document.getElementById("sc").textContent=correct;document.getElementById("tot").textContent=current;document.getElementById("scorePill").textContent=correct+" / "+current;document.getElementById("prog").style.width=(current/total*100)+"%";setTimeout(nextQ,900);}
 
 document.addEventListener("DOMContentLoaded",function(){
-setLang("en");setTheme("desert-dawn");
+setLang("ar");setTheme("desert-dawn");
 document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
 document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
 document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});

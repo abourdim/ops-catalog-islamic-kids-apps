@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="garden">
+<html lang="ar" dir="rtl" data-theme="garden">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Respect Radar — Amaloun Kids</title>
+<title>رادار الاحترام — أمالون كيدز</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Readex+Pro:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 /* ═══ ADAB CATEGORY THEMES ═══ */
@@ -128,7 +128,7 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:4px;backgroun
 </style>
 </head>
 <body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">الفهرس →</a>
 
 <!-- ═══ SPLASH SCREEN ═══ -->
 <div class="splash" id="splash">
@@ -142,9 +142,9 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:4px;backgroun
 <button class="btn-go" id="enterBtn">Start</button>
 <div class="sw" style="margin-top:20px">
 <span class="sw-label">Lang</span>
-<button class="sw-btn on" data-lang="en">EN</button>
+<button class="sw-btn" data-lang="en">EN</button>
 <button class="sw-btn" data-lang="fr">FR</button>
-<button class="sw-btn" data-lang="ar">ع</button>
+<button class="sw-btn on" data-lang="ar">ع</button>
 </div>
 <div class="sw" style="margin-top:8px">
 <span class="sw-label">Theme</span>
@@ -173,7 +173,7 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:4px;backgroun
 <button id="startBtn">▶ New Game</button>
 <button class="btn-help" onclick="openHelp()">?</button>
 <button id="soundBtn">🔊</button>
-<div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
 <div class="sw"><button class="sw-btn on" data-thm="garden">🌷</button><button class="sw-btn" data-thm="rose">🌹</button><button class="sw-btn" data-thm="sage">🌿</button><button class="sw-btn" data-thm="cream">☀️</button><button class="sw-btn" data-thm="twilight">🌙</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="night">⭐</button></div>
 </div>
 <div class="status" id="status">Detect respectful vs disrespectful behavior</div>
@@ -189,17 +189,17 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:4px;backgroun
 <div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div>
 </div>
 <div class="log-box" id="logBox"></div>
-<div class="foot">Amaloun Kids — Respect Radar v2.0</div>
+<div class="foot">أمالون كيدز — رادار الاحترام v2.0</div>
 </div>
 
 <!-- ═══ HELP SIDEBAR ═══ -->
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog">
-<div class="sidebar-header"><span class="sidebar-title">Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+<div class="sidebar-header"><span class="sidebar-title">المساعدة</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
 <div class="help-tabs">
-<button class="help-tab active" data-tab="faq">FAQ</button>
-<button class="help-tab" data-tab="howto">How-To</button>
-<button class="help-tab" data-tab="wiki">Wiki</button>
+<button class="help-tab active" data-tab="faq">أسئلة شائعة</button>
+<button class="help-tab" data-tab="howto">كيفية اللعب</button>
+<button class="help-tab" data-tab="wiki">معلومات</button>
 </div>
 <div class="sidebar-body">
 <div class="help-content active" id="help-faq">
@@ -227,21 +227,46 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;height:4px;backgroun
 <div class="wiki-entry"><h3>Privacy</h3><p>100% local. No tracking, no analytics, no external calls.</p></div>
 </div>
 </div>
-<div class="sidebar-footer">Amaloun Kids — v2.0</div>
+<div class="sidebar-footer">أمالون كيدز — الإصدار 2.0</div>
 </aside>
 
 <script>
 /* ═══ UI TRANSLATIONS ═══ */
 const UI={
 splashTitle:{en:"Respect Radar",fr:"Radar du Respect",ar:"رادار الاحترام"},
-splashSub:{en:"Detect respectful vs disrespectful behavior",fr:"Détecte les comportements respectueux et irrespectueux",ar:"اكتشف السلوك المحترم وغير المحترم"},
-splashDesc:{en:"Train your radar to spot good and bad manners!",fr:"Entraîne ton radar pour repérer les bonnes et mauvaises manières !",ar:"درب رادارك لاكتشاف الأخلاق الحسنة والسيئة!"},
+splashSub:{en:"Detect respectful vs disrespectful behavior",fr:"Détecte les comportements respectueux et irrespectueux",ar:"اكتشف مواقف الاحترام"},
+splashDesc:{en:"Train your radar to spot good and bad manners!",fr:"Entraîne ton radar pour repérer les bonnes et mauvaises manières !",ar:"تعلم كيف تتعرف على مواقف الاحترام وتمارسها."},
 appTitle:{en:"Respect Radar",fr:"Radar du Respect",ar:"رادار الاحترام"},
 newGame:{en:"▶ New Game",fr:"▶ Nouveau Jeu",ar:"▶ لعبة جديدة"},
 correct:{en:"Correct",fr:"Correct",ar:"صحيح"},
 total:{en:"Total",fr:"Total",ar:"المجموع"},
 };
-let curLang="en";
+let curLang="ar";
+/* i18n T object */
+const T={
+ar:{title:"رادار الاحترام",sub:"اكتشف مواقف الاحترام",desc:"تعلم كيف تتعرف على مواقف الاحترام وتمارسها.",
+newGame:"\u25b6 \u0644\u0639\u0628\u0629 \u062c\u062f\u064a\u062f\u0629",correct:"\u0635\u062d\u064a\u062d",total:"\u0627\u0644\u0645\u062c\u0645\u0648\u0639",
+start:"\u0627\u0628\u062f\u0623",easy:"\u0633\u0647\u0644 (10)",medium:"\u0645\u062a\u0648\u0633\u0637 (15)",hard:"\u0635\u0639\u0628 (25+)",
+catalog:"\u0627\u0644\u0641\u0647\u0631\u0633 \u2192",help:"\u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0629",
+question:"\u0633\u0624\u0627\u0644",of:"\u0645\u0646",done:"\u0627\u0646\u062a\u0647\u0649!",
+pressNew:"\u0627\u0636\u063a\u0637 \u0644\u0639\u0628\u0629 \u062c\u062f\u064a\u062f\u0629 \u0644\u0644\u0628\u062f\u0621!",
+wellDone:"\u0645\u0627 \u0634\u0627\u0621 \u0627\u0644\u0644\u0647!",teaching:"\u0627\u0644\u0641\u0627\u0626\u062f\u0629 \u0627\u0644\u0625\u0633\u0644\u0627\u0645\u064a\u0629"},
+en:{title:UI.splashTitle.en,sub:UI.splashSub.en,desc:UI.splashDesc.en,
+newGame:"\u25b6 New Game",correct:"Correct",total:"Total",
+start:"Start",easy:"Easy (10)",medium:"Medium (15)",hard:"Hard (25+)",
+catalog:"الفهرس →",help:"Help",
+question:"Question",of:"of",done:"Done!",
+pressNew:"Press New Game to start!",wellDone:"Well Done!",teaching:"Islamic Teaching"}
+};
+function tr(k){return(T[curLang]&&T[curLang][k])||k}
+function updateUI(){
+try{document.getElementById("splashTitle").textContent=tr("title");
+document.getElementById("splashSub").textContent=tr("sub");
+document.getElementById("splashDesc").textContent=tr("desc");
+document.getElementById("appTitle").textContent=tr("title");
+var bl=document.getElementById("backLink");if(bl)bl.textContent=curLang==="ar"?"\u0627\u0644\u0641\u0647\u0631\u0633 \u2192":"الفهرس →";
+}catch(e){}}
+
 
 /* ═══ CORE FUNCTIONS ═══ */
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open")}
@@ -352,7 +377,7 @@ function checkHS(){if(current>=total){const p=Math.round(correct/total*100);if(s
 
 /* ═══ INIT ═══ */
 document.addEventListener("DOMContentLoaded",()=>{
-  setLang("en");setTheme("garden");
+  setLang("ar");setTheme("garden");
   document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click")}));
   document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click")}));
   showHS();

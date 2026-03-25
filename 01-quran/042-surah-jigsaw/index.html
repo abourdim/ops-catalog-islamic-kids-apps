@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="sahara"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Surah Jigsaw</title>
+<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="sahara"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Surah Jigsaw</title>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 [data-theme="sahara"]{--bg:#FFF8E7;--bg2:#FFFDF5;--bg3:#F5ECD7;--border:#E8D5A8;--border2:#D4C48E;--text:#4A3F2F;--text2:#7A6E5A;--text3:#A09580;--heading:#2C1810;--accent:#DAA520;--abg:#DAA5200A;--abr:#DAA52033;--glow:0 0 20px #DAA52015;--accent2:#2E7D32}
@@ -209,6 +209,151 @@ input[type="range"]{width:90px}
 <div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>Islamic Geometric Art</h3><p>Islamic geometric patterns represent the infinite nature of Allah's creation. They adorn mosques and manuscripts worldwide.</p></div></div>
 </div><div class="sidebar-footer">Amaloun &mdash; v1.0</div></aside>
 <script>
+// === i18n SYSTEM ===
+let currentLang="ar";
+const T={
+  ar:{
+    title:"أحجية تركيب السور",
+    subtitle:"ركّب أحجيات السور قطعة بقطعة",
+    desc:"ركّب أحجيات السور قطعة بقطعة",
+    startMission:"ابدأ",
+    newGame:"▶ لعبة جديدة",
+    status:"اضغط على القطع بالترتيب الصحيح (١-٩) لتجميع النمط",
+    footer:"أمالون — أحجية تركيب السور الإصدار ١.٠",
+    help:"المساعدة",
+    faq:"الأسئلة الشائعة",
+    howTo:"كيفية الاستخدام",
+    wiki:"معلومات",
+    lang:"اللغة",
+    theme:"المظهر",
+    catalog:"→ الفهرس",
+    play:"تشغيل",
+    score0:"موضوعة",
+    score1:"الأحجيات",
+    ui_start:"ابدأ",
+    ui_help:"المساعدة",
+    ui_faq:"الأسئلة الشائعة",
+    ui_how_to:"كيفية الاستخدام",
+    ui_wiki:"معلومات",
+    ui_lang:"اللغة",
+    ui_theme:"المظهر",
+    ui_catalog:"الفهرس",
+    ui_play:"تشغيل",
+    ui_10_qs:"١٠ أسئلة",
+    ui_15_qs:"١٥ سؤالاً",
+    ui_all_themes:"كل المواضيع",
+    ui_faith___tawheed:"الإيمان / التوحيد",
+    ui_prophets_stories:"قصص الأنبياء",
+    ui_islamic_law:"الشريعة الإسلامية",
+    ui_nature___creation:"الطبيعة / الخلق",
+    faq0q:"كيف تعمل أحجية التركيب؟",
+    faq0a:"اضغط على القطع المرقمة بالترتيب (من ١ إلى ٩). كل قطعة موضوعة بشكل صحيح تكشف جزءاً من النمط.",
+    howto0:"اضغط على زر ابدأ في شاشة البداية",
+    howto1:"اختر مستوى الصعوبة إذا كان متاحاً",
+    howto2:"اقرأ التعليمات المعروضة على الشاشة",
+    howto3:"تفاعل مع العناصر على الشاشة",
+    wiki0t:"Islamic Geometric Art",
+    wiki0c:"Islamic geometric patterns represent the infinite nature of Allah's creation. They adorn mosques and manuscripts worldwide."
+  },
+  en:{
+    title:"Surah Jigsaw",
+    subtitle:"Piece together surah jigsaw puzzles",
+    desc:"Piece together surah jigsaw puzzles",
+    startMission:"Start",
+    newGame:"▶ New Game",
+    status:"Click pieces in the correct order (1-9) to assemble the pattern",
+    footer:"Amaloun — Surah Jigsaw v1.0",
+    help:"Help",
+    faq:"FAQ",
+    howTo:"How-To",
+    wiki:"Wiki",
+    lang:"Lang",
+    theme:"Theme",
+    catalog:"← Catalog",
+    play:"Play",
+    score0:"Placed",
+    score1:"Puzzles",
+    ui_start:"Start",
+    ui_help:"Help",
+    ui_faq:"FAQ",
+    ui_how_to:"How-To",
+    ui_wiki:"Wiki",
+    ui_lang:"Lang",
+    ui_theme:"Theme",
+    ui_catalog:"Catalog",
+    ui_play:"Play",
+    ui_10_qs:"10 Qs",
+    ui_15_qs:"15 Qs",
+    ui_all_themes:"All Themes",
+    ui_faith___tawheed:"Faith / Tawheed",
+    ui_prophets_stories:"Prophets Stories",
+    ui_islamic_law:"Islamic Law",
+    ui_nature___creation:"Nature / Creation",
+    faq0q:"How does the jigsaw work?",
+    faq0a:"Click the numbered pieces in order (1 through 9). Each correctly placed piece reveals a fact about a surah.",
+    howto0:"Find and click piece #1 first",
+    howto1:"Continue clicking pieces in numerical order",
+    howto2:"Read the surah fact revealed with each piece",
+    howto3:"Complete all 9 pieces to finish the pattern",
+    wiki0t:"Islamic Geometric Art",
+    wiki0c:"Islamic geometric patterns represent the infinite nature of Allah's creation. They adorn mosques and manuscripts worldwide."
+  }
+};
+function tr(key){return T[currentLang]&&T[currentLang][key]||T["en"][key]||key;}
+function updateUI(){
+  // Title & splash
+  var st=document.querySelector(".splash-title");if(st)st.textContent=tr("title");
+  var ss=document.querySelector(".splash-subtitle");if(ss)ss.textContent=tr("subtitle");
+  var sd=document.getElementById("splDesc");if(sd)sd.textContent=tr("desc");
+  var eb=document.getElementById("enterBtn");if(eb)eb.textContent=tr("startMission");
+  // App header
+  var h1=document.querySelector(".app h1, .hdr h1");if(h1)h1.textContent=tr("title");
+  // Status
+  var sta=document.getElementById("status");if(sta&&!sta.classList.contains("win")&&!sta.classList.contains("lose"))sta.textContent=tr("status");
+  // Start button
+  var sb=document.getElementById("startBtn");if(sb)sb.textContent=tr("newGame");
+  // Footer
+  var ft=document.querySelector(".foot");if(ft)ft.textContent=tr("footer");
+  // Help sidebar
+  var ht=document.querySelector(".sidebar-title");if(ht)ht.innerHTML="\u2753 "+tr("help");
+  var tabs=document.querySelectorAll(".help-tab");
+  if(tabs.length>=3){tabs[0].textContent=tr("faq");tabs[1].textContent=tr("howTo");tabs[2].textContent=tr("wiki");}
+  // Back link
+  var bl=document.getElementById("backLink");if(bl)bl.textContent=tr("catalog");
+  // Lang/Theme labels
+  document.querySelectorAll(".sw-label").forEach(function(el,i){if(i===0)el.textContent=tr("lang");else if(i===1)el.textContent=tr("theme");});
+  // Score labels
+  document.querySelectorAll(".score-label").forEach(function(el,i){var k="score"+i;if(T[currentLang][k])el.textContent=tr(k);});
+  // Difficulty options
+  var ds=document.getElementById("diffSel");
+  if(ds){var opts=ds.querySelectorAll("option");opts.forEach(function(o,i){var k="diff"+i;if(T[currentLang][k])o.textContent=tr(k);});};
+  // FAQ items
+  var faqItems=document.querySelectorAll("#help-faq .help-item");
+  faqItems.forEach(function(item,i){
+    var sum=item.querySelector("summary");if(sum)sum.textContent=tr("faq"+i+"q");
+    var p=item.querySelector("p");if(p)p.textContent=tr("faq"+i+"a");
+  });
+  // Howto steps
+  var howtoSteps=document.querySelectorAll("#help-howto .help-step p");
+  howtoSteps.forEach(function(p,i){p.textContent=tr("howto"+i);});
+  // Wiki entries
+  var wikiEntries=document.querySelectorAll("#help-wiki .wiki-entry");
+  wikiEntries.forEach(function(entry,i){
+    var h=entry.querySelector("h3");if(h)h.textContent=tr("wiki"+i+"t");
+    var p=entry.querySelector("p");if(p)p.textContent=tr("wiki"+i+"c");
+  });
+  // Sidebar footer
+  var sf=document.querySelector(".sidebar-footer");if(sf)sf.textContent=tr("footer");
+  // Play button if exists
+  var pb=document.querySelector("#playBtn,button:not(.sw-btn):not(.btn-go):not(.btn-close):not(.btn-help):not(.help-tab)");
+  // Filter buttons with specific text
+  document.querySelectorAll(".filter-btn").forEach(function(btn){
+    var txt=btn.textContent.trim();
+    var k="ui_"+txt.replace(/ /g,"_").replace(/\//g,"_").toLowerCase();
+    if(T[currentLang][k])btn.textContent=tr(k);
+  });
+}
+
 var GEOS=["&#9733;","&#9670;","&#9679;","&#9650;","&#9632;","&#10022;","&#10038;","&#10041;","&#9674;"];
 var FACTS=[
 [{ar:"الفاتحة",f:{en:"Al-Fatiha: The most recited surah, read in every prayer",fr:"Al-Fatiha: La sourate la plus recitee",ar:"الفاتحة: أكثر سورة تتلى"}},
@@ -231,11 +376,11 @@ var FACTS=[
 {ar:"هود",f:{en:"Hud: The Prophet said 'Hud and its sisters turned my hair grey'",fr:"Hud: Le Prophete dit que Hud l'a fait grisonner",ar:"هود: قال النبي: شيبتني هود وأخواتها"}}]
 ];
 
-var curLang="en",soundOn=true,actx,placedCount=0,puzzlesDone=0,nextPiece=0,curSet=0;
+var curLang="ar",soundOn=true,actx,placedCount=0,puzzlesDone=0,nextPiece=0,curSet=0;
 var HS_KEY="wdiy-hs-surah-jigsaw";
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
-function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l);});try{localStorage.setItem("wdiy-lang",l);}catch(e){}}
+function setLang(l){currentLang=l==="ar"?"ar":"en";curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l);});updateUI();try{localStorage.setItem("wdiy-lang",l);}catch(e){}}
 function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th);});try{localStorage.setItem("wdiy-theme",th);}catch(e){}}
 function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.04;var n=actx.currentTime;if(t==="place"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);}else if(t==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.03;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.15+i*.1);oo.start(n+i*.1);oo.stop(n+.15+i*.1);});}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.08);o.start(n);o.stop(n+.08);}else{o.frequency.value=700;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.04);o.start(n);o.stop(n+.04);}}
 
@@ -294,6 +439,6 @@ document.getElementById("enterBtn").onclick=function(){document.getElementById("
 document.getElementById("soundBtn").onclick=function(){soundOn=!soundOn;this.textContent=soundOn?"Sound ON":"Sound OFF";};
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
 document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
-try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);}catch(e){}
+setLang("ar");try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);}catch(e){}
 });
 </script></body></html>

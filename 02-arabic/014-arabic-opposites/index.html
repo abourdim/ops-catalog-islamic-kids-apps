@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="teal-ink">
+<html lang="ar" dir="rtl" data-theme="teal-ink">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -142,6 +142,9 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 @keyframes pulseRing{0%,100%{transform:scale(1);opacity:.3}50%{transform:scale(1.15);opacity:.1}}
 .timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
 .word-display{font-family:'Noto Sans Arabic',sans-serif;font-size:36px;font-weight:700;color:var(--accent);direction:rtl;margin-bottom:4px}.word-hint{font-size:12px;color:var(--text2);margin-bottom:12px}
+
+.i18n-ar{display:none}.i18n-en{display:block}
+[lang="ar"] .i18n-ar{display:block}[lang="ar"] .i18n-en{display:none}
 </style>
 </head>
 <body>
@@ -152,12 +155,12 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 <div class="splash-bism">بِسْمِ ٱللَّـهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
 <div class="splash-art" data-icon="⇄"></div>
 <h1 class="heading" id="splashTitle">Opposites</h1>
-<div class="splash-sub">الأضداد</div>
+<div class="splash-sub" id="splashSub">ورشة اللغة العربية</div>
 <p class="splash-desc" id="splashDesc">Match Arabic words with their opposites!</p>
 <button class="btn-go" id="enterBtn">Start</button>
 <div class="sw" style="margin-top:18px">
 <span class="sw-label">Lang</span>
-<button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button>
+<button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button>
 </div>
 <div class="sw" style="margin-top:8px">
 <span class="sw-label">Theme</span>
@@ -167,7 +170,7 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 </div>
 
 <div class="app" id="app">
-<div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Arabic Opposites</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><button id="startBtn">▶ New Game</button><button class="btn-help" onclick="openHelp()">❓</button><button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw"><button class="sw-btn on" data-thm="teal-ink">🕌</button><button class="sw-btn" data-thm="desert-night">🌙</button><button class="sw-btn" data-thm="calligraphy">✒</button><button class="sw-btn" data-thm="medina">🌿</button><button class="sw-btn" data-thm="oud">🪘</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="sunrise">🌅</button><button class="sw-btn" data-thm="manuscript">📜</button></div></div>
+<div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Arabic Opposites</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><button id="startBtn">▶ New Game</button><button class="btn-help" onclick="openHelp()">❓</button><button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw"><button class="sw-btn on" data-thm="teal-ink">🕌</button><button class="sw-btn" data-thm="desert-night">🌙</button><button class="sw-btn" data-thm="calligraphy">✒</button><button class="sw-btn" data-thm="medina">🌿</button><button class="sw-btn" data-thm="oud">🪘</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="sunrise">🌅</button><button class="sw-btn" data-thm="manuscript">📜</button></div></div>
 <div class="status" id="status">Find the opposite!</div>
 <div class="game-area" id="gameArea"><div id="question"></div><div class="answer-row" id="choices"></div><div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div></div>
 <div class="score-row"><div class="score-item"><div class="score-label">Matched</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
@@ -180,13 +183,140 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
 <div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
 <div class="sidebar-body">
-<div class="help-content active" id="help-faq"><details class="help-item"><summary>What is this app?</summary><p>A matching game to learn Arabic antonyms (opposites). See a word and pick its opposite from the choices.</p></details><details class="help-item"><summary>Does it work offline?</summary><p>Yes, fully offline once loaded.</p></details></div>
-<div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>See an Arabic word displayed</p></div><div class="help-step"><span class="help-step-num">2</span><p>Pick its opposite from 4 choices</p></div><div class="help-step"><span class="help-step-num">3</span><p>Complete all 12 pairs</p></div></div>
-<div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>Opposites in Arabic</h3><p>Arabic is rich in antonyms. Learning opposites helps build vocabulary quickly by learning two words at once.</p></div></div>
+<div class="help-content active" id="help-faq">
+<div class="i18n-en"><details class="help-item"><summary>What is this app?</summary><p>A matching game to learn Arabic antonyms (opposites). See a word and pick its opposite from the choices.</p></details><details class="help-item"><summary>Does it work offline?</summary><p>Yes, fully offline once loaded.</p></details></div>
+<div class="i18n-ar" style="display:none"><details class="help-item"><summary>ما هو هذا التطبيق؟</summary><p>تعلّم الأضداد في اللغة العربية: كبير-صغير، طويل-قصير...</p></details>
+<details class="help-item"><summary>هل يعمل بدون إنترنت؟</summary><p>نعم. يعمل بالكامل في المتصفح بدون الحاجة للإنترنت.</p></details>
+<details class="help-item"><summary>هل يعمل على الهاتف؟</summary><p>نعم. يعمل على أي جهاز بمتصفح حديث.</p></details>
+<details class="help-item"><summary>هل بياناتي محمية؟</summary><p>نعم. كل شيء يعمل محلياً. لا تُرسل أي بيانات.</p></details>
+</div>
+</div>
+<div class="help-content" id="help-howto">
+<div class="i18n-en"><div class="help-step"><span class="help-step-num">1</span><p>See an Arabic word displayed</p></div><div class="help-step"><span class="help-step-num">2</span><p>Pick its opposite from 4 choices</p></div><div class="help-step"><span class="help-step-num">3</span><p>Complete all 12 pairs</p></div></div>
+<div class="i18n-ar" style="display:none"><div class="help-step"><span class="help-step-num">1</span><p>اضغط على زر ابدأ في شاشة البداية</p></div>
+<div class="help-step"><span class="help-step-num">2</span><p>اختر مستوى الصعوبة</p></div>
+<div class="help-step"><span class="help-step-num">3</span><p>اضغط ▶ لعبة جديدة للبدء</p></div>
+<div class="help-step"><span class="help-step-num">4</span><p>تفاعل مع اللعبة وأجب على الأسئلة</p></div>
+<div class="help-step"><span class="help-step-num">5</span><p>تابع نتيجتك وشريط التقدم</p></div>
+<div class="help-step"><span class="help-step-num">6</span><p>اضغط ▶ لعبة جديدة للعب مرة أخرى</p></div>
+</div>
+</div>
+<div class="help-content" id="help-wiki">
+<div class="i18n-en"><div class="wiki-entry"><h3>Opposites in Arabic</h3><p>Arabic is rich in antonyms. Learning opposites helps build vocabulary quickly by learning two words at once.</p></div></div>
+<div class="i18n-ar" style="display:none"><div class="wiki-entry"><h3>🎯 الهدف</h3><p>تعلّم الأضداد في اللغة العربية: كبير-صغير، طويل-قصير...</p></div>
+<div class="wiki-entry"><h3>🌐 اللغات</h3><p>ثلاث لغات: العربية، الإنجليزية، الفرنسية.</p></div>
+<div class="wiki-entry"><h3>🔒 الخصوصية</h3><p>تطبيق محلي. لا تتبع ولا تحليلات.</p></div>
+</div>
+</div>
 </div><div class="sidebar-footer">Workshop-DIY — v1.0</div>
 </aside>
 
 <script>
+
+const T = {
+  ar: {
+    title: "الأضداد",
+    sub: "ورشة اللغة العربية",
+    desc: "طابق الكلمات مع أضدادها!",
+    start: "ابدأ",
+    new_game: "▶ لعبة جديدة",
+    correct_lbl: "صحيح",
+    total_lbl: "المجموع",
+    pick: "اختر الإجابة الصحيحة!",
+    done: "🏆 أحسنت!",
+    easy: "سهل (10)",
+    medium: "متوسط (15)",
+    hard: "صعب (20)",
+    lang_label: "اللغة",
+    theme_label: "المظهر",
+    help_title: "❓ المساعدة",
+    faq_tab: "أسئلة شائعة",
+    howto_tab: "كيفية اللعب",
+    wiki_tab: "معلومات",
+    catalog: "→ الفهرس",
+    correct_log: "✓ صحيح!",
+    wrong_log: "✗ الإجابة:",
+    high_score: "🏆 أعلى نتيجة جديدة!",
+    best: "★ الأفضل:",
+    footer: "الأضداد — الإصدار 1.0"
+  },
+  en: {
+    title: "014 Opposites",
+    sub: "Arabic Workshop",
+    start: "Start",
+    new_game: "▶ New Game",
+    correct_lbl: "Correct",
+    total_lbl: "Total",
+    easy: "Easy (10)",
+    medium: "Medium (15)",
+    hard: "Hard (20)",
+    lang_label: "Lang",
+    theme_label: "Theme",
+    help_title: "❓ Help",
+    faq_tab: "FAQ",
+    howto_tab: "How-To",
+    wiki_tab: "Wiki",
+    catalog: "← Catalog",
+    footer: ""
+  }
+};
+function tr(key) { var lang = document.documentElement.lang || "ar"; return (T[lang] && T[lang][key]) || (T.en && T.en[key]) || key; }
+function updateUI() {
+  var lang = document.documentElement.lang || "ar";
+  // Splash elements
+  var el;
+  el = document.getElementById("splashTitle") || document.getElementById("splTitle");
+  if (el && T[lang] && T[lang].title) el.textContent = T[lang].title;
+  el = document.getElementById("splashDesc") || document.getElementById("splDesc");
+  if (el && T[lang] && T[lang].desc) el.textContent = T[lang].desc;
+  el = document.getElementById("enterBtn");
+  if (el) el.textContent = tr("start");
+  // App elements
+  el = document.getElementById("appTitle");
+  if (el && T[lang] && T[lang].title) el.textContent = T[lang].title;
+  el = document.getElementById("startBtn");
+  if (el) el.textContent = tr("new_game");
+  // Score labels
+  el = document.getElementById("lbl0");
+  if (el) el.textContent = tr("correct_lbl");
+  el = document.getElementById("lbl1");
+  if (el) el.textContent = tr("total_lbl");
+  // Difficulty select
+  var sel = document.getElementById("diffSel");
+  if (sel && sel.options) {
+    for (var i = 0; i < sel.options.length; i++) {
+      var v = sel.options[i].value;
+      if (v === "10") sel.options[i].textContent = tr("easy");
+      else if (v === "15") sel.options[i].textContent = tr("medium");
+      else if (v === "20") sel.options[i].textContent = tr("hard");
+    }
+  }
+  // Status
+  el = document.getElementById("status");
+  if (el && el.textContent.indexOf("/") === -1) el.textContent = tr("pick");
+  // Back link
+  el = document.getElementById("backLink");
+  if (el) el.textContent = tr("catalog");
+  // Help sidebar
+  var st = document.querySelector(".sidebar-title");
+  if (st) st.textContent = tr("help_title");
+  var tabs = document.querySelectorAll(".help-tab");
+  if (tabs.length >= 3) {
+    tabs[0].textContent = tr("faq_tab");
+    tabs[1].textContent = tr("howto_tab");
+    tabs[2].textContent = tr("wiki_tab");
+  }
+  // Lang/Theme labels
+  document.querySelectorAll(".sw-label").forEach(function(lbl, idx) {
+    if (idx === 0) lbl.textContent = tr("lang_label");
+    else if (idx === 1) lbl.textContent = tr("theme_label");
+  });
+  // Toggle bilingual sidebar content
+  document.querySelectorAll(".i18n-ar").forEach(function(el) { el.style.display = lang === "ar" ? "block" : "none"; });
+  document.querySelectorAll(".i18n-en").forEach(function(el) { el.style.display = lang === "ar" ? "none" : "block"; });
+}
+
+
 
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
@@ -221,7 +351,7 @@ function showQ(){if(current>=PAIRS.length){endGame();return;}locked=false;var p=
 function pick(btn,ok,p){if(locked)return;locked=true;tot++;current++;if(ok){correct++;btn.classList.add("correct");snd("ok");document.getElementById("status").textContent=t("status_ok");document.getElementById("status").className="status win";log("✓ "+p.word+" ↔ "+p.opp,"success");}else{btn.classList.add("wrong");snd("err");document.getElementById("status").textContent=t("status_no")+" → "+p.opp;document.getElementById("status").className="status lose";document.querySelectorAll(".answer-btn").forEach(function(b){if(b.textContent===p.opp)b.classList.add("correct");});log("✗ "+p.word+" → "+p.opp,"error");}document.getElementById("sc").textContent=correct;document.getElementById("tot").textContent=tot;document.getElementById("scorePill").textContent=correct+" / "+tot;document.getElementById("prog").style.width=(current/PAIRS.length*100)+"%";setTimeout(showQ,1200);}
 function endGame(){stopTimer();snd("win");checkHS();document.getElementById("status").textContent=t("status_done");document.getElementById("status").className="status win";document.getElementById("question").innerHTML='<div style="font-size:48px">🔄</div><div style="font-family:Outfit,sans-serif;font-size:18px;font-weight:700;color:var(--heading)">'+correct+' / '+PAIRS.length+'</div><div style="font-size:12px;color:var(--text2);margin-top:8px">'+t("status_done")+'</div>';document.getElementById("choices").innerHTML="";document.getElementById("prog").style.width="100%";log("Complete! "+correct+"/"+PAIRS.length,"success");}
 var HS_KEY="wdiy-hs-arabic-opposites";function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}function saveHS(s){try{var b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true;}}catch(e){}return false;}function showHS(){var b=loadHS();if(b>0){var p=document.getElementById("scorePill");if(p&&!p.querySelector(".hs-badge"))p.innerHTML+=' <span class="hs-badge">🏆 '+b+'%</span>';}}function checkHS(){var pct=Math.round(correct/PAIRS.length*100);if(saveHS(pct))log("NEW HIGH SCORE: "+pct+"%!","success");}
-document.addEventListener("DOMContentLoaded",function(){setLang("en");setTheme("teal-ink");document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});showHS();document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});document.getElementById("startBtn").addEventListener("click",newGame);document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();if(e.key>="1"&&e.key<="4"){var btns=document.querySelectorAll(".answer-btn");var i=parseInt(e.key)-1;if(btns[i])btns[i].click();}});document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});});
+document.addEventListener("DOMContentLoaded",function(){setLang("ar");setTheme("teal-ink");document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});showHS();document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});document.getElementById("startBtn").addEventListener("click",newGame);document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();if(e.key>="1"&&e.key<="4"){var btns=document.querySelectorAll(".answer-btn");var i=parseInt(e.key)-1;if(btns[i])btns[i].click();}});document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});});
 try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}(function(){var _osl=setLang,_ost=setTheme;setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
 
 </script>

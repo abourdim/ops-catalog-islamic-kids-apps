@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="default"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Islamic Journal</title>
+<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="default"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>المذكرة الإسلامية</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 
@@ -186,28 +186,28 @@ h1,h2,h3,.heading{font-family:'Outfit', 'Noto Sans Arabic', sans-serif;color:var
 /* ═══ RESPONSIVE ═══ */
 @media(max-width:480px){.splash-box{padding:32px 20px 28px}.splash-title{font-size:22px}.game-area{padding:14px}.hdr h1{font-size:18px}.btn-go{padding:12px 32px;font-size:14px}.sidebar{width:300px}}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">الفهرس →</a>
 <div class="splash" id="splash"><div class="splash-box">
 <div class="splash-deco"></div>
 <div class="splash-bism">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
-<h1 class="splash-title heading">Islamic Journal</h1>
-<div class="splash-sub">Daily reflection</div>
-<p class="splash-desc">Daily reflection journal with Islamic prompts.</p>
-<button class="btn-go" id="enterBtn">Explore</button>
-<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div></div>
-<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><div class="sw"><button class="sw-btn on" data-thm="default">✨</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="forest">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="arctic">❄</button><button class="sw-btn" data-thm="sand">🏜</button><button class="sw-btn" data-thm="midnight">🌙</button></div></div>
+<h1 class="splash-title heading">المذكرة الإسلامية</h1>
+<div class="splash-sub">أداة للحياة اليومية</div>
+<p class="splash-desc">أداة تفاعلية تساعدك في تنظيم حياتك اليومية وفق المنهج الإسلامي.</p>
+<button class="btn-go" id="enterBtn">استكشف</button>
+<div class="sw" style="margin-top:20px"><span class="sw-label">اللغة</span><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">المظهر</span><div class="sw"><button class="sw-btn on" data-thm="default">✨</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="forest">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="arctic">❄</button><button class="sw-btn" data-thm="sand">🏜</button><button class="sw-btn" data-thm="midnight">🌙</button></div></div>
 </div></div>
 <div class="app" id="app">
 <div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
-<div class="hdr"><h1 id="appTitle">Islamic Journal</h1><span class="pill" id="countPill">0</span></div>
+<div class="hdr"><h1 id="appTitle">المذكرة الإسلامية</h1><span class="pill" id="countPill">0</span></div>
 <div class="ctrl">
 <button class="btn-help" onclick="openHelp()">❓</button>
 <button id="soundBtn">🔊</button>
-<div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw"><button class="sw-btn on" data-thm="default">✨</button><button class="sw-btn" data-thm="midnight">🌙</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="forest">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="arctic">❄</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw"><button class="sw-btn on" data-thm="default">✨</button><button class="sw-btn" data-thm="midnight">🌙</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="forest">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="arctic">❄</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
 <div id="toolArea"></div>
 <div class="game-area" id="mainArea"></div>
 <div class="detail-panel" id="detailPanel"></div>
-<div class="foot">Workshop-Diy &mdash; Islamic Journal v1.0</div>
+<div class="foot">ورشة-صنعها &mdash; المذكرة الإسلامية v1.0</div>
 </div>
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" role="dialog" aria-modal="true">
@@ -215,27 +215,27 @@ h1,h2,h3,.heading{font-family:'Outfit', 'Noto Sans Arabic', sans-serif;color:var
 <div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
 <div class="sidebar-body">
 <div class="help-content active" id="help-faq">
-<details class="help-item"><summary>What is this app?</summary><p>Daily reflection journal with Islamic prompts.</p></details>
-<details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
-<details class="help-item"><summary>How do I change language?</summary><p>Click EN, FR, or ع to switch. Arabic enables RTL layout automatically.</p></details>
-<details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme icon in the controls bar to switch instantly.</p></details>
-<details class="help-item"><summary>Is my data private?</summary><p>Yes. All data stays in your browser. Nothing is sent to any server.</p></details>
+<details class="help-item"><summary data-en="What is this app?" data-ar="ما هذا التطبيق؟">ما هذا التطبيق؟</summary><p>Daily reflection journal with Islamic prompts.</p></details>
+<details class="help-item"><summary data-en="Does it work offline?" data-ar="هل يعمل بدون إنترنت؟">هل يعمل بدون إنترنت؟</summary><p>نعم. بمجرد تحميله يعمل كل شيء في متصفحك بدون حاجة للإنترنت.</p></details>
+<details class="help-item"><summary data-en="How do I change language?" data-ar="كيف أغيّر اللغة؟">كيف أغيّر اللغة؟</summary><p>انقر EN أو FR أو ع للتبديل. العربية تفعّل التخطيط من اليمين لليسار تلقائياً.</p></details>
+<details class="help-item"><summary data-en="How do I change the theme?" data-ar="كيف أغيّر المظهر؟">كيف أغيّر المظهر؟</summary><p>انقر على أي رمز مظهر في شريط التحكم للتبديل فوراً.</p></details>
+<details class="help-item"><summary data-en="Is my data private?" data-ar="هل بياناتي خاصة؟">هل بياناتي خاصة؟</summary><p>نعم. جميع البيانات تبقى في متصفحك. لا يُرسل شيء لأي خادم.</p></details>
 </div>
 <div class="help-content" id="help-howto">
-<div class="help-step"><span class="help-step-num">1</span><p>Click Explore on the splash screen</p></div>
-<div class="help-step"><span class="help-step-num">2</span><p>Browse the content in the main area</p></div>
-<div class="help-step"><span class="help-step-num">3</span><p>Use search or filter tabs to narrow down</p></div>
-<div class="help-step"><span class="help-step-num">4</span><p>Click any item for full details</p></div>
-<div class="help-step"><span class="help-step-num">5</span><p>Switch languages or themes anytime</p></div>
+<div class="help-step"><span class="help-step-num">1</span><p>انقر استكشف على شاشة البداية</p></div>
+<div class="help-step"><span class="help-step-num">2</span><p>تصفّح المحتوى في المنطقة الرئيسية</p></div>
+<div class="help-step"><span class="help-step-num">3</span><p>استخدم البحث أو التصفية لتضييق النتائج</p></div>
+<div class="help-step"><span class="help-step-num">4</span><p>انقر على أي عنصر للتفاصيل الكاملة</p></div>
+<div class="help-step"><span class="help-step-num">5</span><p>بدّل اللغات أو المظاهر في أي وقت</p></div>
 </div>
 <div class="help-content" id="help-wiki">
-<div class="wiki-entry"><h3>📖 About</h3><p>Guided daily journal with Islamic reflection prompts.</p></div>
-<div class="wiki-entry"><h3>🎨 Themes</h3><p>8 themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
-<div class="wiki-entry"><h3>🌐 Languages</h3><p>English, Français, العربية with full RTL support.</p></div>
-<div class="wiki-entry"><h3>🔒 Privacy</h3><p>100% local. No tracking, no analytics, no server calls.</p></div>
+<div class="wiki-entry"><h3>📖 حول التطبيق</h3><p>Guided daily journal with Islamic reflection prompts.</p></div>
+<div class="wiki-entry"><h3>🎨 المظاهر</h3><p>8 مظاهر: الافتراضي، منتصف الليل، الغروب، الغابة، الملكي، المحيط، القطبي، الرمال.</p></div>
+<div class="wiki-entry"><h3>🌐 اللغات</h3><p>الإنجليزية والفرنسية والعربية مع دعم كامل للكتابة من اليمين لليسار.</p></div>
+<div class="wiki-entry"><h3>🔒 الخصوصية</h3><p>100% محلي. بدون تتبع أو تحليلات أو اتصال بالخوادم.</p></div>
 </div>
 </div>
-<div class="sidebar-footer">Islamic Journal &mdash; v2.0</div>
+<div class="sidebar-footer">المذكرة الإسلامية &mdash; v2.0</div>
 </aside>
 <script>
 
@@ -246,10 +246,26 @@ var oldST=localStorage.getItem("wdiy-theme");
 if(oldST&&THEME_MAP[oldST]){localStorage.setItem("wdiy-theme",THEME_MAP[oldST]);}
 })();
 
+var T={title:{en:"Islamic Journal",ar:"المذكرة الإسلامية"},subtitle:{en:"Daily reflection",ar:"أداة للحياة اليومية الإسلامية"},desc:{en:"Daily reflection journal with Islamic prompts.",ar:"أداة تفاعلية تساعدك في تنظيم حياتك اليومية وفق المنهج الإسلامي. سهلة وممتعة للأطفال."},startBtn:{en:"Explore",ar:"استكشف"},helpTitle:{en:"❓ Help",ar:"❓ المساعدة"},faqTab:{en:"FAQ",ar:"الأسئلة الشائعة"},howtoTab:{en:"How-To",ar:"كيف تستخدم"},wikiTab:{en:"Wiki",ar:"الموسوعة"},backLink:{en:"← Catalog",ar:"الفهرس →"},langLabel:{en:"Lang",ar:"اللغة"},themeLabel:{en:"Theme",ar:"المظهر"}};
+function tr(k){return T[k]&&T[k][curLang]||T[k]&&T[k].en||k;}
+function updateUI(){
+var L=curLang;
+var st=document.querySelector(".splash-title");if(st)st.textContent=tr("title");
+var ss=document.querySelector(".splash-sub");if(ss)ss.textContent=tr("subtitle");
+var sd=document.querySelector(".splash-desc");if(sd)sd.textContent=tr("desc");
+var eb=document.getElementById("enterBtn");if(eb)eb.textContent=tr("startBtn");
+var at=document.getElementById("appTitle");if(at)at.textContent=tr("title");
+var bl=document.getElementById("backLink");if(bl)bl.textContent=tr("backLink");
+var sbt=document.querySelector(".sidebar-title");if(sbt)sbt.innerHTML="❓ "+tr("helpTitle").replace("❓ ","");
+var tabs=document.querySelectorAll(".help-tab");if(tabs.length>=3){tabs[0].textContent=tr("faqTab");tabs[1].textContent=tr("howtoTab");tabs[2].textContent=tr("wikiTab");}
+document.querySelectorAll(".sw-label").forEach(function(el){if(el.textContent.match(/lang|اللغة/i))el.textContent=tr("langLabel");if(el.textContent.match(/theme|المظهر/i))el.textContent=tr("themeLabel");});
+document.title=tr("title");
+}
+
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open")}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
 function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===t)});try{localStorage.setItem("wdiy-theme",t)}catch(e){}}
-var soundOn=true,actx,curLang="en";
+var soundOn=true,actx,curLang="ar";
 function snd(type){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(type==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.12);o.start(n);o.stop(n+.12)}else if(type==="nav"){o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.06);o.start(n);o.stop(n+.06)}else if(type==="done"){[523,659,784].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.15+i*.1);oo.start(n+i*.1);oo.stop(n+.15+i*.1)})}}
 function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});try{localStorage.setItem("wdiy-lang",l)}catch(e){}if(typeof render==="function")render()}
 var HS_KEY="wdiy-hs-islamic-journal";
@@ -289,7 +305,7 @@ try{var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st)}catch(e){}
 try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="\u{1f507}"}}catch(e){}
 document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("nav")})});
 document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("nav")})});
-var eb=document.getElementById("enterBtn");if(eb)eb.addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";snd("ok");if(typeof render==="function")render()});
+var eb=document.getElementById("enterBtn");if(eb)eb.addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";snd("ok");if(typeof render==="function")render();updateUI();});
 var sb=document.getElementById("soundBtn");if(sb)sb.addEventListener("click",function(){soundOn=!soundOn;sb.textContent=soundOn?"\u{1f50a}":"\u{1f507}";try{localStorage.setItem("wdiy-mute",soundOn?"0":"1")}catch(e){}});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp()});
 document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active")});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active")});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active")})});

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="teal-ink">
+<html lang="ar" dir="rtl" data-theme="teal-ink">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -146,6 +146,9 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 .label-tag{position:absolute;padding:4px 10px;border-radius:8px;background:var(--accent);color:var(--bg);font-family:'Noto Sans Arabic','Outfit',sans-serif;font-size:12px;font-weight:700;cursor:grab;user-select:none;white-space:nowrap;z-index:10;transition:opacity .15s}.label-tag.placed{opacity:.5;pointer-events:none}
 .drop-zone{position:absolute;width:50px;height:22px;border:2px dashed var(--abr);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--text3);transition:all .15s}.drop-zone.hover{border-color:var(--accent);background:var(--abg)}.drop-zone.correct{border-color:var(--accent);background:var(--accent);color:var(--bg);font-weight:700;font-size:11px}.drop-zone.wrong{border-color:#ff4444;background:#ff4444;color:#fff}
 .tag-bank{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:10px 0;min-height:44px}
+
+.i18n-ar{display:none}.i18n-en{display:block}
+[lang="ar"] .i18n-ar{display:block}[lang="ar"] .i18n-en{display:none}
 </style>
 </head>
 <body>
@@ -156,12 +159,12 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 <div class="splash-bism">بِسْمِ ٱللَّـهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
 <div class="splash-art" data-icon="🫀"></div>
 <h1 class="heading" id="splashTitle">Body Parts</h1>
-<div class="splash-sub">أعضاء الجسم</div>
+<div class="splash-sub" id="splashSub">ورشة اللغة العربية</div>
 <p class="splash-desc" id="splashDesc">Learn body part names in Arabic!</p>
 <button class="btn-go" id="enterBtn">Start</button>
 <div class="sw" style="margin-top:18px">
 <span class="sw-label">Lang</span>
-<button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button>
+<button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button>
 </div>
 <div class="sw" style="margin-top:8px">
 <span class="sw-label">Theme</span>
@@ -189,29 +192,146 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 <div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
 <div class="sidebar-body">
 <div class="help-content active" id="help-faq">
-<details class="help-item"><summary>What is this app?</summary><p>An interactive drag-and-drop game to learn body part names in Arabic. Labels appear and you drag them onto the correct spots on a body diagram.</p></details>
+<div class="i18n-en"><details class="help-item"><summary>What is this app?</summary><p>An interactive drag-and-drop game to learn body part names in Arabic. Labels appear and you drag them onto the correct spots on a body diagram.</p></details>
 <details class="help-item"><summary>Is it suitable for kids?</summary><p>Yes! Designed for Muslim kids to learn Arabic vocabulary in a fun, interactive way.</p></details>
 <details class="help-item"><summary>Does it work offline?</summary><p>Yes, once loaded everything runs locally in your browser.</p></details>
 <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme icon in the controls bar to switch between 8 themes.</p></details>
-<details class="help-item"><summary>How do I switch language?</summary><p>Click EN / FR / ع to change the interface language. Arabic enables RTL.</p></details>
+<details class="help-item"><summary>How do I switch language?</summary><p>Click EN / FR / ع to change the interface language. Arabic enables RTL.</p></details></div>
+<div class="i18n-ar" style="display:none"><details class="help-item"><summary>ما هو هذا التطبيق؟</summary><p>تعلّم أسماء أعضاء الجسم البشري بالعربية.</p></details>
+<details class="help-item"><summary>هل يعمل بدون إنترنت؟</summary><p>نعم.</p></details>
+<details class="help-item"><summary>هل بياناتي محمية؟</summary><p>نعم.</p></details>
+</div>
 </div>
 <div class="help-content" id="help-howto">
-<div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+<div class="i18n-en"><div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
 <div class="help-step"><span class="help-step-num">2</span><p>See the body figure with empty drop zones</p></div>
 <div class="help-step"><span class="help-step-num">3</span><p>Drag Arabic labels from the bank to the matching body part</p></div>
 <div class="help-step"><span class="help-step-num">4</span><p>Green = correct, Red = wrong (label returns to bank)</p></div>
-<div class="help-step"><span class="help-step-num">5</span><p>Place all labels correctly to complete the round</p></div>
+<div class="help-step"><span class="help-step-num">5</span><p>Place all labels correctly to complete the round</p></div></div>
+<div class="i18n-ar" style="display:none"><div class="help-step"><span class="help-step-num">1</span><p>اضغط ابدأ</p></div>
+<div class="help-step"><span class="help-step-num">2</span><p>اسحب البطاقات إلى المكان الصحيح</p></div>
+<div class="help-step"><span class="help-step-num">3</span><p>طابق كل عضو باسمه العربي</p></div>
+<div class="help-step"><span class="help-step-num">4</span><p>تابع نتيجتك</p></div>
+</div>
 </div>
 <div class="help-content" id="help-wiki">
-<div class="wiki-entry"><h3>Arabic Vocabulary</h3><p>Learning body parts in Arabic is fundamental vocabulary. The Quran and Hadith mention many body parts in context of health, prayer, and wudu.</p></div>
+<div class="i18n-en"><div class="wiki-entry"><h3>Arabic Vocabulary</h3><p>Learning body parts in Arabic is fundamental vocabulary. The Quran and Hadith mention many body parts in context of health, prayer, and wudu.</p></div>
 <div class="wiki-entry"><h3>Wudu Connection</h3><p>Many body parts in this game are washed during wudu (ablution): face, hands, arms, feet.</p></div>
-<div class="wiki-entry"><h3>Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+<div class="wiki-entry"><h3>Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div></div>
+<div class="i18n-ar" style="display:none"><div class="wiki-entry"><h3>🎯 الهدف</h3><p>تعلّم أسماء أعضاء الجسم بالعربية.</p></div>
+<div class="wiki-entry"><h3>🔒 الخصوصية</h3><p>تطبيق محلي.</p></div>
+</div>
 </div>
 </div>
 <div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div>
 </aside>
 
 <script>
+
+const T = {
+  ar: {
+    title: "أعضاء الجسم",
+    sub: "ورشة اللغة العربية",
+    desc: "تعلّم أسماء أعضاء الجسم بالعربية!",
+    start: "ابدأ",
+    new_game: "▶ جولة جديدة",
+    correct_lbl: "صحيح",
+    total_lbl: "المجموع",
+    pick: "اختر الإجابة الصحيحة!",
+    done: "🏆 تم تسمية جميع الأعضاء!",
+    easy: "سهل (10)",
+    medium: "متوسط (15)",
+    hard: "صعب (20)",
+    lang_label: "اللغة",
+    theme_label: "المظهر",
+    help_title: "❓ المساعدة",
+    faq_tab: "أسئلة شائعة",
+    howto_tab: "كيفية اللعب",
+    wiki_tab: "معلومات",
+    catalog: "→ الفهرس",
+    correct_log: "✓ صحيح!",
+    wrong_log: "✗ الإجابة:",
+    high_score: "🏆 أعلى نتيجة جديدة!",
+    best: "★ الأفضل:",
+    footer: "أعضاء الجسم — الإصدار 1.0"
+  },
+  en: {
+    title: "Body Parts",
+    sub: "Arabic Workshop",
+    start: "Start",
+    new_game: "▶ New Game",
+    correct_lbl: "Correct",
+    total_lbl: "Total",
+    easy: "Easy (10)",
+    medium: "Medium (15)",
+    hard: "Hard (20)",
+    lang_label: "Lang",
+    theme_label: "Theme",
+    help_title: "❓ Help",
+    faq_tab: "FAQ",
+    howto_tab: "How-To",
+    wiki_tab: "Wiki",
+    catalog: "← Catalog",
+    footer: ""
+  }
+};
+function tr(key) { var lang = document.documentElement.lang || "ar"; return (T[lang] && T[lang][key]) || (T.en && T.en[key]) || key; }
+function updateUI() {
+  var lang = document.documentElement.lang || "ar";
+  // Splash elements
+  var el;
+  el = document.getElementById("splashTitle") || document.getElementById("splTitle");
+  if (el && T[lang] && T[lang].title) el.textContent = T[lang].title;
+  el = document.getElementById("splashDesc") || document.getElementById("splDesc");
+  if (el && T[lang] && T[lang].desc) el.textContent = T[lang].desc;
+  el = document.getElementById("enterBtn");
+  if (el) el.textContent = tr("start");
+  // App elements
+  el = document.getElementById("appTitle");
+  if (el && T[lang] && T[lang].title) el.textContent = T[lang].title;
+  el = document.getElementById("startBtn");
+  if (el) el.textContent = tr("new_game");
+  // Score labels
+  el = document.getElementById("lbl0");
+  if (el) el.textContent = tr("correct_lbl");
+  el = document.getElementById("lbl1");
+  if (el) el.textContent = tr("total_lbl");
+  // Difficulty select
+  var sel = document.getElementById("diffSel");
+  if (sel && sel.options) {
+    for (var i = 0; i < sel.options.length; i++) {
+      var v = sel.options[i].value;
+      if (v === "10") sel.options[i].textContent = tr("easy");
+      else if (v === "15") sel.options[i].textContent = tr("medium");
+      else if (v === "20") sel.options[i].textContent = tr("hard");
+    }
+  }
+  // Status
+  el = document.getElementById("status");
+  if (el && el.textContent.indexOf("/") === -1) el.textContent = tr("pick");
+  // Back link
+  el = document.getElementById("backLink");
+  if (el) el.textContent = tr("catalog");
+  // Help sidebar
+  var st = document.querySelector(".sidebar-title");
+  if (st) st.textContent = tr("help_title");
+  var tabs = document.querySelectorAll(".help-tab");
+  if (tabs.length >= 3) {
+    tabs[0].textContent = tr("faq_tab");
+    tabs[1].textContent = tr("howto_tab");
+    tabs[2].textContent = tr("wiki_tab");
+  }
+  // Lang/Theme labels
+  document.querySelectorAll(".sw-label").forEach(function(lbl, idx) {
+    if (idx === 0) lbl.textContent = tr("lang_label");
+    else if (idx === 1) lbl.textContent = tr("theme_label");
+  });
+  // Toggle bilingual sidebar content
+  document.querySelectorAll(".i18n-ar").forEach(function(el) { el.style.display = lang === "ar" ? "block" : "none"; });
+  document.querySelectorAll(".i18n-en").forEach(function(el) { el.style.display = lang === "ar" ? "none" : "block"; });
+}
+
+
 
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
@@ -335,7 +455,7 @@ function showHS(){var b=loadHS();if(b>0){var p=document.getElementById("scorePil
 function checkHS(){if(placed>=totalParts){var pct=Math.round(correct/attempts*100);if(saveHS(pct))log("NEW HIGH SCORE: "+pct+"%!","success");}}
 
 document.addEventListener("DOMContentLoaded",function(){
-setLang("en");setTheme("teal-ink");
+setLang("ar");setTheme("teal-ink");
 document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
 document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
 showHS();

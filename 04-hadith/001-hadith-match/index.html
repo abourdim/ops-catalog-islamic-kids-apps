@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="terminal">
+<html lang="ar" dir="rtl" data-theme="terminal">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -185,10 +185,10 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 <body>
 
 <a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Hadith Match</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Complete the words of the Prophet ﷺ</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Match the beginning of each hadith with its correct ending!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Hadith Match</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Complete the words of the Prophet ﷺ</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Match the beginning of each hadith with its correct ending!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
 <div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Hadith Match</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="10">Easy (10)</option><option value="15" selected>Medium (15)</option><option value="25">Hard (25+)</option></select>
     <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
-    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
     <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
 <div class="status" id="status">Complete the hadith!</div>
 <div class="game-area" id="gameArea">
@@ -256,7 +256,7 @@ const I18N={
   fr:{title:"Hadith Match",subtitle:"Compl\u00e8te les paroles du Proph\u00e8te ﷺ",status:"Compl\u00e8te le hadith !",correct:"Correct",total:"Total",newGame:"▶ Nouvelle Partie",easy:"Facile (10)",med:"Moyen (15)",hard:"Difficile (25+)",done:"Termin\u00e9 !",score:"Score",source:"Source",lesson:"Le\u00e7on",topic:"Th\u00e8me",pickRight:"Choisis la bonne fin !",newHS:"NOUVEAU RECORD"},
   ar:{title:"\u0645\u064f\u0637\u0627\u0628\u0642\u0629 \u0627\u0644\u062d\u062f\u064a\u062b",subtitle:"\u0623\u0643\u0645\u0644 \u0643\u0644\u0627\u0645 \u0627\u0644\u0646\u0628\u064a ﷺ",status:"\u0623\u0643\u0645\u0644 \u0627\u0644\u062d\u062f\u064a\u062b!",correct:"\u0635\u062d\u064a\u062d",total:"\u0627\u0644\u0645\u062c\u0645\u0648\u0639",newGame:"▶ \u0644\u0639\u0628\u0629 \u062c\u062f\u064a\u062f\u0629",easy:"\u0633\u0647\u0644 (10)",med:"\u0645\u062a\u0648\u0633\u0637 (15)",hard:"\u0635\u0639\u0628 (25+)",done:"\u0627\u0646\u062a\u0647\u0649!",score:"\u0627\u0644\u0646\u062a\u064a\u062c\u0629",source:"\u0627\u0644\u0645\u0635\u062f\u0631",lesson:"\u0627\u0644\u062f\u0631\u0633",topic:"\u0627\u0644\u0645\u0648\u0636\u0648\u0639",pickRight:"\u0627\u062e\u062a\u0631 \u0627\u0644\u0625\u062c\u0627\u0628\u0629 \u0627\u0644\u0635\u062d\u064a\u062d\u0629!",newHS:"\u0631\u0642\u0645 \u0642\u064a\u0627\u0633\u064a \u062c\u062f\u064a\u062f"}
 };
-let curLang="en";
+let curLang="ar";
 function t(k){return (I18N[curLang]&&I18N[curLang][k])||I18N.en[k]||k;}
 function updateUI(){
   curLang=document.documentElement.lang||"en";
@@ -406,7 +406,7 @@ function checkHS(){
 }
 
 document.addEventListener("DOMContentLoaded",()=>{
-  setLang("en");setTheme("terminal");
+  setLang("ar");setTheme("terminal");
   document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
   document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
   showHS();

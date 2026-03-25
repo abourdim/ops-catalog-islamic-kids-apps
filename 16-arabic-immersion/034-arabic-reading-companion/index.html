@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="default"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Arabic Reading Companion</title>
+<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="default"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>رفيق القراءة العربية</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 
@@ -186,33 +186,33 @@ h1,h2,h3,.heading{font-family:'Outfit', 'Noto Sans Arabic', sans-serif;color:var
 /* ═══ RESPONSIVE ═══ */
 @media(max-width:480px){.splash-box{padding:32px 20px 28px}.splash-title{font-size:22px}.game-area{padding:14px}.hdr h1{font-size:18px}.btn-go{padding:12px 32px;font-size:14px}.sidebar{width:300px}}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">الفهرس →</a>
 <div class="splash" id="splash"><div class="splash-box">
 <div class="splash-deco"></div>
 <div class="splash-bism">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
-<h1 class="splash-title heading">Arabic Reading Companion</h1>
-<div class="splash-sub">Guided Islamic Texts</div>
-<p class="splash-desc">Guided reading of simple Islamic texts with vocabulary help and comprehension.</p>
+<h1 class="splash-title heading">رفيق القراءة العربية</h1>
+<div class="splash-sub">تعلّم العربية بالممارسة</div>
+<p class="splash-desc">تعلّم اللغة العربية بطريقة تفاعلية وممتعة مصمّمة للأطفال.</p>
 <button class="btn-go" id="enterBtn">Start Reading</button>
-<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div></div>
-<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><div class="sw"><button class="sw-btn on" data-thm="default">✨</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="forest">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="arctic">❄</button><button class="sw-btn" data-thm="sand">🏜</button><button class="sw-btn" data-thm="midnight">🌙</button></div></div>
+<div class="sw" style="margin-top:20px"><span class="sw-label">اللغة</span><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">المظهر</span><div class="sw"><button class="sw-btn on" data-thm="default">✨</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="forest">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="arctic">❄</button><button class="sw-btn" data-thm="sand">🏜</button><button class="sw-btn" data-thm="midnight">🌙</button></div></div>
 </div></div>
 <div class="app" id="app">
-<div class="hdr-bism">بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ</div><div class="hdr"><h1 id="appTitle">Arabic Reading Companion</h1><span class="pill" id="progressPill"></span></div><div class="ctrl"><button class="btn-help" onclick="openHelp()">❓</button><button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw"><button class="sw-btn on" data-thm="default">✨</button><button class="sw-btn" data-thm="midnight">🌙</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="forest">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="arctic">❄</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="hdr-bism">بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ</div><div class="hdr"><h1 id="appTitle">رفيق القراءة العربية</h1><span class="pill" id="progressPill"></span></div><div class="ctrl"><button class="btn-help" onclick="openHelp()">❓</button><button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw"><button class="sw-btn on" data-thm="default">✨</button><button class="sw-btn" data-thm="midnight">🌙</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="forest">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="arctic">❄</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
 <div class="status" id="status"></div>
 <div class="game-area" id="gameArea"><div id="content"></div><div class="nav-r"><button class="nbtn" id="prevBtn">←</button><button class="nbtn pri" id="nextBtn">→</button></div></div>
-<div class="foot">Workshop-Diy — Arabic Reading Companion v1.0</div>
+<div class="foot">ورشة-صنعها — رفيق القراءة العربية v1.0</div>
 </div>
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" role="dialog" aria-modal="true">
 <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
 <div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
 <div class="sidebar-body">
-<div class="help-content active" id="help-faq"><details class="help-item"><summary>What texts?</summary><p>Simple Islamic texts about manners, knowledge, and rights.</p></details><details class="help-item"><summary>Offline?</summary><p>Yes.</p></details></div>
+<div class="help-content active" id="help-faq"><details class="help-item"><summary>What texts?</summary><p>Simple Islamic texts about manners, knowledge, and rights.</p></details><details class="help-item"><summary data-en="Offline?" data-ar="يعمل بدون إنترنت؟">يعمل بدون إنترنت؟</summary><p>Yes.</p></details></div>
 <div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>Read the Arabic text</p></div><div class="help-step"><span class="help-step-num">2</span><p>Check vocabulary words</p></div><div class="help-step"><span class="help-step-num">3</span><p>Read the translation</p></div><div class="help-step"><span class="help-step-num">4</span><p>Navigate to next text</p></div></div>
 <div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>Guided Reading</h3><p>Scaffolded texts build confidence.</p></div><div class="wiki-entry"><h3>Islamic Content</h3><p>Texts about Prophet's teachings and Islamic values.</p></div></div>
 </div>
-<div class="sidebar-footer">Arabic Reading Companion &mdash; v2.0</div>
+<div class="sidebar-footer">رفيق القراءة العربية &mdash; v2.0</div>
 </aside>
 <script>
 
@@ -223,10 +223,26 @@ var oldST=localStorage.getItem("wdiy-theme");
 if(oldST&&THEME_MAP[oldST]){localStorage.setItem("wdiy-theme",THEME_MAP[oldST]);}
 })();
 
+var T={title:{en:"Arabic Reading Companion",ar:"رفيق القراءة العربية"},subtitle:{en:"Guided Islamic Texts",ar:"تعلّم العربية بالممارسة"},desc:{en:"Guided reading of simple Islamic texts with vocabulary help and comprehension.",ar:"تعلّم اللغة العربية بطريقة تفاعلية وممتعة. مصمّم خصيصاً للأطفال المسلمين."},startBtn:{en:"Start Reading",ar:"ابدأ"},helpTitle:{en:"❓ Help",ar:"❓ المساعدة"},faqTab:{en:"FAQ",ar:"الأسئلة الشائعة"},howtoTab:{en:"How-To",ar:"كيف تستخدم"},wikiTab:{en:"Wiki",ar:"الموسوعة"},backLink:{en:"← Catalog",ar:"الفهرس →"},langLabel:{en:"Lang",ar:"اللغة"},themeLabel:{en:"Theme",ar:"المظهر"}};
+function tr(k){return T[k]&&T[k][curLang]||T[k]&&T[k].en||k;}
+function updateUI(){
+var L=curLang;
+var st=document.querySelector(".splash-title");if(st)st.textContent=tr("title");
+var ss=document.querySelector(".splash-sub");if(ss)ss.textContent=tr("subtitle");
+var sd=document.querySelector(".splash-desc");if(sd)sd.textContent=tr("desc");
+var eb=document.getElementById("enterBtn");if(eb)eb.textContent=tr("startBtn");
+var at=document.getElementById("appTitle");if(at)at.textContent=tr("title");
+var bl=document.getElementById("backLink");if(bl)bl.textContent=tr("backLink");
+var sbt=document.querySelector(".sidebar-title");if(sbt)sbt.innerHTML="❓ "+tr("helpTitle").replace("❓ ","");
+var tabs=document.querySelectorAll(".help-tab");if(tabs.length>=3){tabs[0].textContent=tr("faqTab");tabs[1].textContent=tr("howtoTab");tabs[2].textContent=tr("wikiTab");}
+document.querySelectorAll(".sw-label").forEach(function(el){if(el.textContent.match(/lang|اللغة/i))el.textContent=tr("langLabel");if(el.textContent.match(/theme|المظهر/i))el.textContent=tr("themeLabel");});
+document.title=tr("title");
+}
+
 var HS_KEY="wdiy-hs-arabic-reading-companion";
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open")}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
-var curLang="en";
+var curLang="ar";
 function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});if(typeof render==="function")render();try{localStorage.setItem("wdiy-lang",l)}catch(e){}}
 function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===t)});try{localStorage.setItem("wdiy-theme",t)}catch(e){}}
 var soundOn=true,actx;
@@ -250,7 +266,7 @@ document.getElementById("prevBtn").onclick=function(){curIdx=(curIdx-1+TEXTS.len
 function init(){render()}
 document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
 document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click")})});
-document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";if(typeof render==="function")render()});
+document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";if(typeof render==="function")render();updateUI();});
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07"});
 document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active")});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active")});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active")})});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp()});
