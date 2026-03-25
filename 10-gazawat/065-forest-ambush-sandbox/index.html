@@ -1,0 +1,339 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Forest Ambush Sandbox — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:700px;margin:0 auto;padding:12px 16px}.app.on{display:block}.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}.hdr h1{font-size:18px}.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:12px;min-height:400px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.game-area canvas{border-radius:8px;border:1px solid var(--border);cursor:crosshair;max-width:100%}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:100px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}.help-item summary::before{content:"\25B8";color:var(--accent);font-size:10px;transition:transform .2s}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+.unit-panel{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.unit-btn{padding:6px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;transition:all .15s}
+.unit-btn:hover,.unit-btn.active{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">&bismillah;</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Forest Ambush Sandbox</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px">Concealment &amp; Surprise</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Plan ambush points in forested terrain. Hide units behind trees, set up chokepoints on forest paths, and spring surprise attacks on enemy columns. Master the art of concealment.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div></div>
+
+<div class="app" id="app"><div class="hdr-bism">&bismillah;</div><div class="hdr"><h1>Forest Ambush</h1><span class="pill" id="scorePill">Score: 0</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl">
+<button id="startBtn">&#x25B6; New Game</button><button class="btn-help" onclick="openHelp()">&#x2753;</button>
+<button id="soundBtn">&#x1F50A;</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div>
+<div class="sw"><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div>
+<div class="status" id="status">Hide your ambush units near the forest path</div>
+<div class="game-area" id="gameArea">
+<canvas id="canvas" width="640" height="440"></canvas>
+<div class="unit-panel">
+<button class="unit-btn active" data-unit="archer">&#x1F3F9; Hidden Archer</button>
+<button class="unit-btn" data-unit="swordsman">&#x2694; Swordsman</button>
+<button class="unit-btn" data-unit="trap">&#x1FA64; Rope Trap</button>
+</div>
+<div style="font-size:11px;color:var(--text2);margin-top:4px">Units: <span id="unitsLeft">10</span> | Wave: <span id="waveNum">1</span>/5 | Enemies escaped: <span id="escaped">0</span></div>
+<button class="unit-btn" id="battleBtn" style="margin-top:6px;padding:8px 24px;font-size:13px">&#x1F3AF; Spring Ambush!</button>
+</div>
+<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">Score</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">Wave</div><div class="score-num" id="wv">1</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy &mdash; Forest Ambush Sandbox v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" role="dialog" aria-modal="true">
+<div class="sidebar-header"><span class="sidebar-title">&#x2753; Help</span><button class="btn-close" onclick="closeHelp()">&#x2715;</button></div>
+<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
+<div class="sidebar-body">
+<div class="help-content active" id="help-faq">
+<details class="help-item"><summary>What is Forest Ambush Sandbox?</summary><p>A stealth strategy game where you hide units in a forest and spring ambushes on enemy columns marching along a path. Units hidden near trees get a concealment bonus.</p></details>
+<details class="help-item"><summary>How does concealment work?</summary><p>Units placed near trees are hidden until enemies come within range. Hidden units deal double damage on their first attack (ambush bonus).</p></details>
+<details class="help-item"><summary>What are rope traps?</summary><p>Rope traps slow down enemies when triggered, giving your ambush units more time to attack. Place them on the path for maximum effect.</p></details>
+<details class="help-item"><summary>Does it work offline?</summary><p>Yes. Fully self-contained in your browser.</p></details>
+</div>
+<div class="help-content" id="help-howto">
+<div class="help-step"><span class="help-step-num">1</span><p>Observe the forest path where enemies will march</p></div>
+<div class="help-step"><span class="help-step-num">2</span><p>Place archers behind trees for concealed ranged attacks</p></div>
+<div class="help-step"><span class="help-step-num">3</span><p>Position swordsmen near chokepoints for melee ambush</p></div>
+<div class="help-step"><span class="help-step-num">4</span><p>Set rope traps on the path to slow enemies</p></div>
+<div class="help-step"><span class="help-step-num">5</span><p>Click Spring Ambush! when enemy column enters</p></div>
+</div>
+<div class="help-content" id="help-wiki">
+<div class="wiki-entry"><h3>&#x1F332; Ambush Tactics</h3><p>The Prophet (peace be upon him) used strategic scouts and ambush tactics. The expedition of Abdullah ibn Jahsh was one of the earliest intelligence and reconnaissance missions in Islamic history.</p></div>
+<div class="wiki-entry"><h3>&#x1F3AF; Surprise Element</h3><p>Islamic military strategy emphasized preparation and the element of surprise. The night march before Badr and the secret approach to Mecca are examples of strategic movement and concealment.</p></div>
+<div class="wiki-entry"><h3>&#x2694; Chokepoints</h3><p>Controlling narrow passages and paths was essential. At the Battle of the Trench (Khandaq), a single trench created an impassable chokepoint that nullified a much larger army.</p></div>
+</div>
+</div>
+<div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div>
+</aside>
+
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});curLang=l;renderLang();}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th)});}
+var soundOn=true,actx;
+function snd(tp){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(tp==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);}else if(tp==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(tp==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else if(tp==="ambush"){o.frequency.value=300;o.type="triangle";g.gain.value=.08;g.gain.exponentialRampToValueAtTime(.001,n+.2);o.start(n);o.stop(n+.2);}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){var b=document.getElementById("logBox");if(!b)return;var d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+var UI={
+status_place:{en:"Hide your ambush units near the forest path",fr:"Cachez vos unit\u00e9s pr\u00e8s du chemin forestier",ar:"\u0623\u062E\u0641\u0650 \u0648\u062D\u062F\u0627\u062A\u0643 \u0642\u0631\u0628 \u0645\u0645\u0631 \u0627\u0644\u063A\u0627\u0628\u0629"},
+status_battle:{en:"Ambush sprung! Enemy column under attack!",fr:"Embuscade d\u00e9clench\u00e9e ! Colonne ennemie attaqu\u00e9e !",ar:"\u0627\u0646\u0637\u0644\u0642 \u0627\u0644\u0643\u0645\u064A\u0646! \u0627\u0644\u0639\u062F\u0648 \u062A\u062D\u062A \u0627\u0644\u0647\u062C\u0648\u0645!"},
+status_won:{en:"Ambush successful! All enemies eliminated!",fr:"Embuscade r\u00e9ussie ! Tous les ennemis \u00e9limin\u00e9s !",ar:"\u0646\u062C\u062D \u0627\u0644\u0643\u0645\u064A\u0646! \u062A\u0645 \u0627\u0644\u0642\u0636\u0627\u0621 \u0639\u0644\u0649 \u0643\u0644 \u0627\u0644\u0623\u0639\u062F\u0627\u0621!"},
+status_lost:{en:"Too many enemies escaped the ambush!",fr:"Trop d'ennemis ont \u00e9chapp\u00e9 \u00e0 l'embuscade !",ar:"\u0647\u0631\u0628 \u0639\u062F\u062F \u0643\u0628\u064A\u0631 \u0645\u0646 \u0627\u0644\u0623\u0639\u062F\u0627\u0621!"},
+status_allwin:{en:"All ambushes succeeded! Master tactician!",fr:"Toutes les embuscades r\u00e9ussies ! Ma\u00eetre tacticien !",ar:"\u0646\u062C\u062D\u062A \u0643\u0644 \u0627\u0644\u0643\u0645\u0627\u0626\u0646! \u062A\u0643\u062A\u064A\u0643\u064A \u0645\u0627\u0647\u0631!"},
+new_game:{en:"\u25B6 New Game",fr:"\u25B6 Nouveau jeu",ar:"\u25B6 \u0644\u0639\u0628\u0629 \u062C\u062F\u064A\u062F\u0629"},
+score:{en:"Score",fr:"Score",ar:"\u0627\u0644\u0646\u0642\u0627\u0637"},wave:{en:"Wave",fr:"Vague",ar:"\u0627\u0644\u0645\u0648\u062C\u0629"}
+};
+var curLang="en";
+function t(k){return UI[k]?UI[k][curLang]||UI[k]["en"]:""}
+function renderLang(){curLang=document.documentElement.lang||"en";document.getElementById("status").textContent=t("status_place");document.getElementById("startBtn").textContent=t("new_game");document.getElementById("lbl0").textContent=t("score");document.getElementById("lbl1").textContent=t("wave");}
+
+var canvas,ctx,W=640,H=440;
+var trees=[],pathPoints=[],playerUnits=[],enemies=[];
+var selectedUnit="archer",unitsRemaining=10,wave=1,maxWaves=5,score=0,phase="place",animId=null,escaped=0,maxEscape=5;
+var timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(function(){timerSeconds++;var m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+function generateForest(){
+trees=[];pathPoints=[];
+// Generate winding path from left to right
+var py=H/2;
+for(var px=0;px<=W;px+=20){
+py+=Math.random()*30-15;py=Math.max(60,Math.min(H-60,py));
+pathPoints.push({x:px,y:py});
+}
+// Generate trees (avoiding path)
+for(var i=0;i<60;i++){
+var tx=30+Math.random()*(W-60),ty=30+Math.random()*(H-60);
+var onPath=false;
+for(var j=0;j<pathPoints.length;j++){
+if(Math.abs(tx-pathPoints[j].x)<25&&Math.abs(ty-pathPoints[j].y)<25){onPath=true;break;}
+}
+if(!onPath)trees.push({x:tx,y:ty,r:12+Math.random()*10});
+}
+}
+
+function nearTree(x,y){
+for(var i=0;i<trees.length;i++){
+var dx=x-trees[i].x,dy=y-trees[i].y;
+if(Math.sqrt(dx*dx+dy*dy)<trees[i].r+10)return true;
+}
+return false;
+}
+
+function getPathY(x){
+for(var i=0;i<pathPoints.length-1;i++){
+if(x>=pathPoints[i].x&&x<=pathPoints[i+1].x){
+var t=(x-pathPoints[i].x)/(pathPoints[i+1].x-pathPoints[i].x);
+return pathPoints[i].y*(1-t)+pathPoints[i+1].y*t;
+}
+}
+return H/2;
+}
+
+function drawForest(){
+var bg=getComputedStyle(document.documentElement).getPropertyValue('--bg3').trim()||"#222";
+var treeColor="rgba(30,90,30,0.6)";
+var trunkColor="rgba(80,50,20,0.8)";
+var pathColor=getComputedStyle(document.documentElement).getPropertyValue('--border2').trim()||"#444";
+ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+// Forest floor
+ctx.fillStyle="rgba(20,50,20,0.2)";ctx.fillRect(0,0,W,H);
+// Path
+ctx.beginPath();ctx.moveTo(pathPoints[0].x,pathPoints[0].y);
+for(var i=1;i<pathPoints.length;i++)ctx.lineTo(pathPoints[i].x,pathPoints[i].y);
+ctx.strokeStyle=pathColor;ctx.lineWidth=20;ctx.lineCap="round";ctx.lineJoin="round";ctx.stroke();
+ctx.strokeStyle="rgba(100,80,40,0.3)";ctx.lineWidth=22;ctx.stroke();
+// Trees
+trees.forEach(function(tr){
+ctx.fillStyle=trunkColor;ctx.fillRect(tr.x-2,tr.y,4,tr.r*0.6);
+ctx.fillStyle=treeColor;
+ctx.beginPath();ctx.arc(tr.x,tr.y-tr.r*0.3,tr.r,0,Math.PI*2);ctx.fill();
+ctx.fillStyle="rgba(40,110,40,0.4)";
+ctx.beginPath();ctx.arc(tr.x+3,tr.y-tr.r*0.4,tr.r*0.7,0,Math.PI*2);ctx.fill();
+});
+// Labels
+ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue('--text3').trim()||"#666";
+ctx.font="9px 'IBM Plex Mono'";ctx.textAlign="left";
+ctx.fillText("ENEMY ENTERS ->",5,15);
+ctx.textAlign="right";ctx.fillText("EXIT ->",W-5,15);
+}
+
+function drawUnit(u){
+if(!u.alive)return;
+ctx.save();
+if(u.team==="player"){
+var alpha=u.hidden?0.5:1.0;
+ctx.globalAlpha=alpha;
+if(u.type==="archer"){ctx.fillStyle="#44cc44";ctx.beginPath();ctx.moveTo(u.x,u.y-7);ctx.lineTo(u.x+6,u.y+5);ctx.lineTo(u.x-6,u.y+5);ctx.closePath();ctx.fill();}
+else if(u.type==="swordsman"){ctx.fillStyle="#4488ff";ctx.fillRect(u.x-6,u.y-6,12,12);}
+else if(u.type==="trap"){ctx.strokeStyle="#aa8844";ctx.lineWidth=2;ctx.setLineDash([3,3]);ctx.beginPath();ctx.arc(u.x,u.y,10,0,Math.PI*2);ctx.stroke();ctx.setLineDash([]);}
+ctx.strokeStyle="#fff";ctx.lineWidth=1;if(u.type!=="trap")ctx.stroke();
+if(u.type!=="trap"){var bw=12;ctx.fillStyle="#333";ctx.fillRect(u.x-bw/2,u.y-12,bw,2);ctx.fillStyle=u.hp/u.maxHp>0.5?"#44ff44":"#ff4444";ctx.fillRect(u.x-bw/2,u.y-12,bw*(u.hp/u.maxHp),2);}
+}else{
+ctx.fillStyle="#ff4444";ctx.beginPath();ctx.arc(u.x,u.y,6,0,Math.PI*2);ctx.fill();
+ctx.strokeStyle="#ffaaaa";ctx.lineWidth=1;ctx.stroke();
+var bw=12;ctx.fillStyle="#333";ctx.fillRect(u.x-bw/2,u.y-12,bw,2);
+ctx.fillStyle=u.hp/u.maxHp>0.5?"#ffaa44":"#ff4444";ctx.fillRect(u.x-bw/2,u.y-12,bw*(u.hp/u.maxHp),2);
+}
+ctx.restore();
+}
+
+function dist(a,b){return Math.sqrt((a.x-b.x)*(a.x-b.x)+(a.y-b.y)*(a.y-b.y));}
+
+function spawnEnemies(w){
+enemies=[];escaped=0;
+var count=5+w*3;
+for(var i=0;i<count;i++){
+var startY=getPathY(0)+Math.random()*10-5;
+enemies.push({x:-20-i*40,y:startY,hp:40+w*15,maxHp:40+w*15,speed:0.6+w*0.1,team:"enemy",alive:true,slowed:0,pathIdx:0});
+}
+}
+
+function battleStep(){
+// Enemies march along path
+enemies.forEach(function(e){
+if(!e.alive)return;
+var speed=e.slowed>0?e.speed*0.3:e.speed;
+if(e.slowed>0)e.slowed--;
+// Follow path
+var nextPt=null;
+for(var i=0;i<pathPoints.length;i++){
+if(pathPoints[i].x>e.x+2){nextPt=pathPoints[i];break;}
+}
+if(nextPt){
+var dx=nextPt.x-e.x,dy=nextPt.y-e.y,d=Math.sqrt(dx*dx+dy*dy);
+if(d>1){e.x+=dx/d*speed;e.y+=dy/d*speed;}
+else e.x+=speed;
+}else{e.x+=speed;}
+// Check if escaped
+if(e.x>W+10){e.alive=false;escaped++;document.getElementById("escaped").textContent=escaped;}
+// Check traps
+playerUnits.forEach(function(p){
+if(p.alive&&p.type==="trap"&&dist(e,p)<15){
+e.slowed=60;p.alive=false;snd("ambush");
+log("Rope trap triggered! Enemy slowed!","success");
+}
+});
+});
+// Player units attack
+playerUnits.forEach(function(p){
+if(!p.alive||p.type==="trap")return;
+var range=p.type==="archer"?100:35;
+if(nearTree(p.x,p.y))range*=1.2;
+var tgt=null,bd=Infinity;
+enemies.forEach(function(e){if(e.alive){var d=dist(p,e);if(d<bd){bd=d;tgt=e;}}});
+if(!tgt||bd>range)return;
+if(p.cooldown<=0){
+var dmg=p.type==="archer"?15:20;
+if(p.hidden){dmg*=2;p.hidden=false;log("Ambush strike! Double damage!","success");snd("ambush");}
+if(nearTree(p.x,p.y))dmg=Math.round(dmg*1.3);
+tgt.hp-=dmg;
+if(tgt.hp<=0){tgt.alive=false;score+=10;}
+p.cooldown=p.type==="archer"?15:20;
+}
+if(p.cooldown>0)p.cooldown--;
+});
+// Enemies fight back (if near player units)
+enemies.forEach(function(e){
+if(!e.alive)return;
+playerUnits.forEach(function(p){
+if(p.alive&&p.type!=="trap"&&!p.hidden&&dist(e,p)<30){
+p.hp-=3+wave;if(p.hp<=0){p.alive=false;log(p.type+" lost!","error");}
+}
+});
+});
+document.getElementById("sc").textContent=score;
+document.getElementById("scorePill").textContent="Score: "+score;
+}
+
+function render(){drawForest();playerUnits.forEach(drawUnit);enemies.forEach(drawUnit);}
+
+function gameLoop(){
+if(phase!=="battle")return;
+battleStep();render();
+var eAlive=enemies.filter(function(e){return e.alive;}).length;
+if(eAlive===0&&escaped<maxEscape){
+snd("ok");wave++;
+document.getElementById("wv").textContent=wave;document.getElementById("waveNum").textContent=wave;
+if(wave>maxWaves){phase="done";stopTimer();document.getElementById("status").textContent=t("status_allwin");document.getElementById("status").className="status win";snd("win");checkHS();render();return;}
+phase="place";unitsRemaining=5;document.getElementById("unitsLeft").textContent=unitsRemaining;
+document.getElementById("status").textContent=t("status_won");document.getElementById("status").className="status win";
+document.getElementById("battleBtn").style.display="";log(t("status_won"),"success");
+// Reset hidden state
+playerUnits.forEach(function(p){if(p.alive&&p.type!=="trap")p.hidden=true;});
+spawnEnemies(wave);render();return;
+}
+if(escaped>=maxEscape){phase="lost";snd("err");stopTimer();document.getElementById("status").textContent=t("status_lost");document.getElementById("status").className="status lose";log(t("status_lost"),"error");render();return;}
+if(eAlive>0)animId=requestAnimationFrame(gameLoop);
+}
+
+function newGame(){
+if(animId)cancelAnimationFrame(animId);
+startTimer();wave=1;score=0;unitsRemaining=10;phase="place";escaped=0;
+playerUnits=[];enemies=[];
+generateForest();
+document.getElementById("sc").textContent="0";document.getElementById("wv").textContent="1";
+document.getElementById("waveNum").textContent="1";document.getElementById("unitsLeft").textContent="10";
+document.getElementById("escaped").textContent="0";
+document.getElementById("scorePill").textContent="Score: 0";document.getElementById("logBox").innerHTML="";
+document.getElementById("status").textContent=t("status_place");document.getElementById("status").className="status";
+document.getElementById("battleBtn").style.display="";
+spawnEnemies(1);render();
+}
+
+var HS_KEY="wdiy-hs-forest-ambush-sandbox";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(s){try{var b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true;}}catch(e){}return false;}
+function showHS(){var b=loadHS();if(b>0){var p=document.getElementById("scorePill");if(p&&!p.querySelector(".hs-badge"))p.innerHTML+=' <span class="hs-badge">&#x1F3C6; '+b+'</span>';}}
+function checkHS(){if(saveHS(score))log("NEW HIGH SCORE: "+score+"!","success");}
+
+document.addEventListener("DOMContentLoaded",function(){
+canvas=document.getElementById("canvas");ctx=canvas.getContext("2d");
+setLang("en");setTheme("terminal");
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
+document.querySelectorAll(".unit-btn[data-unit]").forEach(function(b){b.addEventListener("click",function(){selectedUnit=b.dataset.unit;document.querySelectorAll(".unit-btn[data-unit]").forEach(function(x){x.classList.toggle("active",x===b);});snd("click");});});
+showHS();
+canvas.addEventListener("click",function(e){
+if(phase!=="place")return;
+var rect=canvas.getBoundingClientRect();var sx=W/rect.width,sy=H/rect.height;
+var x=(e.clientX-rect.left)*sx,y=(e.clientY-rect.top)*sy;
+if(unitsRemaining<=0){log("No units remaining","error");snd("err");return;}
+var hpMap={archer:50,swordsman:80,trap:1};
+var u={type:selectedUnit,x:x,y:y,hp:hpMap[selectedUnit],maxHp:hpMap[selectedUnit],team:"player",alive:true,cooldown:0,hidden:selectedUnit!=="trap"};
+playerUnits.push(u);unitsRemaining--;document.getElementById("unitsLeft").textContent=unitsRemaining;
+var concealed=nearTree(x,y)?" (concealed near tree!)":"";
+snd("ok");render();log("Placed "+selectedUnit+concealed,"success");
+});
+document.getElementById("battleBtn").addEventListener("click",function(){
+if(phase!=="place")return;
+if(playerUnits.filter(function(u){return u.alive;}).length===0){log("Place at least one unit!","error");snd("err");return;}
+phase="battle";snd("ambush");document.getElementById("status").textContent=t("status_battle");document.getElementById("status").className="status";
+document.getElementById("battleBtn").style.display="none";animId=requestAnimationFrame(gameLoop);
+});
+document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+document.getElementById("startBtn").addEventListener("click",newGame);
+document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07";try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+generateForest();drawForest();
+});
+try{if(localStorage.getItem("wdiy-mute")==="1")soundOn=false;}catch(e){}
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Cavalry vs Infantry — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:600px;margin:0 auto;padding:12px 16px}.app.on{display:block}.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}.hdr h1{font-size:18px}.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}.ctrl button:hover{border-color:var(--abr)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;min-height:300px}
+.setup-section{margin-bottom:16px}.setup-title{font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;color:var(--heading);margin-bottom:8px}
+.option-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.option-card{background:var(--bg3);border:2px solid var(--border);border-radius:10px;padding:10px;text-align:center;cursor:pointer;transition:all .15s}
+.option-card:hover,.option-card.selected{border-color:var(--accent);background:var(--abg)}
+.option-card .icon{font-size:24px;margin-bottom:4px}.option-card .label{font-size:11px;font-weight:600;color:var(--heading)}.option-card .desc{font-size:9px;color:var(--text2);margin-top:2px}
+.battle-display{text-align:center;padding:12px}
+.vs-row{display:flex;justify-content:center;align-items:center;gap:20px;margin:16px 0;flex-wrap:wrap}
+.army-box{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px 20px;text-align:center;min-width:140px}
+.army-box .name{font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;margin-bottom:6px}
+.army-box .stat{font-size:11px;color:var(--text2);margin:2px 0}
+.army-hp{width:100%;height:8px;background:var(--bg);border-radius:4px;overflow:hidden;margin-top:6px}
+.army-hp-fill{height:100%;border-radius:4px;transition:width .5s}
+.vs-text{font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;color:var(--accent)}
+.round-log{font-size:11px;color:var(--text2);line-height:1.8;text-align:center;margin-top:10px;max-height:120px;overflow-y:auto}
+.answer-btn{padding:10px 20px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;display:inline-block;margin:4px}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:100px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}.help-item summary::before{content:"\25B8";color:var(--accent);font-size:10px;transition:transform .2s}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
+.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">&bismillah;</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Cavalry vs Infantry</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px">Tactical Battle Simulator</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Compare cavalry and infantry strengths across different formations and terrains. Pick your army composition, formation, and terrain, then simulate the battle to learn which tactics work best.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div></div>
+
+<div class="app" id="app"><div class="hdr-bism">&bismillah;</div><div class="hdr"><h1>Cavalry vs Infantry</h1><span class="pill" id="scorePill">Wins: 0</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl">
+<button id="startBtn">&#x25B6; New Game</button><button class="btn-help" onclick="openHelp()">&#x2753;</button>
+<button id="soundBtn">&#x1F50A;</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div>
+<div class="sw"><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div>
+<div class="status" id="status">Choose your army, formation, and terrain</div>
+<div class="game-area" id="gameArea"></div>
+<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">Wins</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">Battles</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy &mdash; Cavalry vs Infantry v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" role="dialog" aria-modal="true">
+<div class="sidebar-header"><span class="sidebar-title">&#x2753; Help</span><button class="btn-close" onclick="closeHelp()">&#x2715;</button></div>
+<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
+<div class="sidebar-body">
+<div class="help-content active" id="help-faq">
+<details class="help-item"><summary>What is Cavalry vs Infantry?</summary><p>A tactical battle simulator. Choose your army type (cavalry-heavy or infantry-heavy), formation, and terrain, then watch how the battle plays out. Learn which combinations win.</p></details>
+<details class="help-item"><summary>How does terrain affect battle?</summary><p>Open plains favor cavalry charges. Hills and forests favor infantry defense. Rivers slow cavalry. Each terrain modifies attack and defense values differently.</p></details>
+<details class="help-item"><summary>How do formations work?</summary><p>Wedge gives attack bonus to cavalry. Shield wall gives defense bonus to infantry. Crescent formation provides flanking bonuses.</p></details>
+</div>
+<div class="help-content" id="help-howto">
+<div class="help-step"><span class="help-step-num">1</span><p>Select your army type: Cavalry-heavy, Balanced, or Infantry-heavy</p></div>
+<div class="help-step"><span class="help-step-num">2</span><p>Choose a formation: Wedge, Shield Wall, or Crescent</p></div>
+<div class="help-step"><span class="help-step-num">3</span><p>Pick the terrain: Plains, Hills, or Forest</p></div>
+<div class="help-step"><span class="help-step-num">4</span><p>Click Simulate Battle to watch the result</p></div>
+<div class="help-step"><span class="help-step-num">5</span><p>Learn from the outcome and try different combinations</p></div>
+</div>
+<div class="help-content" id="help-wiki">
+<div class="wiki-entry"><h3>&#x1F40E; Muslim Cavalry</h3><p>Khalid ibn al-Walid was called the Sword of Allah for his cavalry mastery. At Yarmouk, his mobile cavalry reserve turned the battle by flanking the Byzantine army.</p></div>
+<div class="wiki-entry"><h3>&#x1F6E1; Infantry Tactics</h3><p>At Badr, the Muslim infantry held a disciplined line. The Prophet (peace be upon him) arranged them in rows, showing that even a smaller force could prevail with good formation.</p></div>
+<div class="wiki-entry"><h3>&#x1F319; Crescent Formation</h3><p>Khalid ibn al-Walid used a crescent (hilal) formation at several battles, allowing the wings to envelop enemy flanks while the center held firm.</p></div>
+</div>
+</div>
+<div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div>
+</aside>
+
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});curLang=l;renderLang();}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th)});}
+var soundOn=true,actx;
+function snd(tp){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(tp==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);}else if(tp==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(tp==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){var b=document.getElementById("logBox");if(!b)return;var d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+
+var UI={
+status_pick:{en:"Choose your army, formation, and terrain",fr:"Choisissez votre arm\u00e9e, formation et terrain",ar:"\u0627\u062E\u062A\u0631 \u062C\u064A\u0634\u0643 \u0648\u062A\u0634\u0643\u064A\u0644\u0643 \u0648\u0627\u0644\u062A\u0636\u0627\u0631\u064A\u0633"},
+new_game:{en:"\u25B6 New Game",fr:"\u25B6 Nouveau jeu",ar:"\u25B6 \u0644\u0639\u0628\u0629 \u062C\u062F\u064A\u062F\u0629"},
+wins:{en:"Wins",fr:"Victoires",ar:"\u0627\u0644\u0627\u0646\u062A\u0635\u0627\u0631\u0627\u062A"},battles:{en:"Battles",fr:"Batailles",ar:"\u0627\u0644\u0645\u0639\u0627\u0631\u0643"}
+};
+var curLang="en";
+function t(k){return UI[k]?UI[k][curLang]||UI[k]["en"]:""}
+function renderLang(){curLang=document.documentElement.lang||"en";document.getElementById("status").textContent=t("status_pick");document.getElementById("startBtn").textContent=t("new_game");document.getElementById("lbl0").textContent=t("wins");document.getElementById("lbl1").textContent=t("battles");}
+
+var wins=0,battles=0,phase="setup";
+var selected={army:null,formation:null,terrain:null};
+var timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(function(){timerSeconds++;var m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+var ARMIES=[
+{id:"cavalry",icon:"\uD83D\uDC0E",label:"Cavalry-Heavy",desc:"Fast, strong charge",atk:80,def:40,hp:600},
+{id:"balanced",icon:"\u2694",label:"Balanced",desc:"Flexible army",atk:60,def:60,hp:700},
+{id:"infantry",icon:"\uD83D\uDEE1",label:"Infantry-Heavy",desc:"Strong defense",atk:45,def:80,hp:800}
+];
+var FORMATIONS=[
+{id:"wedge",icon:"\u25B2",label:"Wedge",desc:"Atk +25%",atkMod:1.25,defMod:0.9},
+{id:"shieldwall",icon:"\uD83D\uDEE1",label:"Shield Wall",desc:"Def +30%",atkMod:0.85,defMod:1.3},
+{id:"crescent",icon:"\uD83C\uDF19",label:"Crescent",desc:"Flank +20%",atkMod:1.1,defMod:1.1}
+];
+var TERRAINS=[
+{id:"plains",icon:"\uD83C\uDFDC",label:"Open Plains",desc:"Cavalry +30%",cavBonus:1.3,infBonus:1.0},
+{id:"hills",icon:"\u26F0",label:"Hills",desc:"Infantry +25%",cavBonus:0.85,infBonus:1.25},
+{id:"forest",icon:"\uD83C\uDF32",label:"Forest",desc:"Infantry +35%",cavBonus:0.7,infBonus:1.35}
+];
+
+function showSetup(){
+phase="setup";selected={army:null,formation:null,terrain:null};
+var ga=document.getElementById("gameArea");
+ga.innerHTML='<div class="setup-section"><div class="setup-title">\uD83D\uDEE1 Your Army</div><div class="option-grid" id="armyGrid"></div></div>'+
+'<div class="setup-section"><div class="setup-title">\u2694 Formation</div><div class="option-grid" id="formGrid"></div></div>'+
+'<div class="setup-section"><div class="setup-title">\uD83C\uDF0D Terrain</div><div class="option-grid" id="terrGrid"></div></div>'+
+'<div style="text-align:center;margin-top:12px"><button class="answer-btn" id="simBtn" style="padding:10px 28px;font-size:14px">\u2694 Simulate Battle</button></div>';
+function makeCards(arr,gridId,key){
+var grid=document.getElementById(gridId);
+arr.forEach(function(item){
+var card=document.createElement("div");
+card.className="option-card";
+card.dataset.id=item.id;
+card.innerHTML='<div class="icon">'+item.icon+'</div><div class="label">'+item.label+'</div><div class="desc">'+item.desc+'</div>';
+card.addEventListener("click",function(){
+grid.querySelectorAll(".option-card").forEach(function(c){c.classList.remove("selected");});
+card.classList.add("selected");selected[key]=item.id;snd("click");
+});
+grid.appendChild(card);
+});
+}
+makeCards(ARMIES,"armyGrid","army");
+makeCards(FORMATIONS,"formGrid","formation");
+makeCards(TERRAINS,"terrGrid","terrain");
+document.getElementById("simBtn").addEventListener("click",simulateBattle);
+document.getElementById("status").textContent=t("status_pick");
+document.getElementById("status").className="status";
+}
+
+function simulateBattle(){
+if(!selected.army||!selected.formation||!selected.terrain){log("Select all 3 options first!","error");snd("err");return;}
+phase="battle";battles++;
+var army=ARMIES.find(function(a){return a.id===selected.army;});
+var form=FORMATIONS.find(function(f){return f.id===selected.formation;});
+var terr=TERRAINS.find(function(t){return t.id===selected.terrain;});
+// Enemy is random
+var eArmy=ARMIES[Math.floor(Math.random()*ARMIES.length)];
+var eForm=FORMATIONS[Math.floor(Math.random()*FORMATIONS.length)];
+// Calculate stats
+var isCav=army.id==="cavalry";
+var terrMod=isCav?terr.cavBonus:terr.infBonus;
+var eIsCav=eArmy.id==="cavalry";
+var eTerrMod=eIsCav?terr.cavBonus:terr.infBonus;
+var pAtk=Math.round(army.atk*form.atkMod*terrMod);
+var pDef=Math.round(army.def*form.defMod*terrMod);
+var pHp=army.hp;
+var eAtk=Math.round(eArmy.atk*eForm.atkMod*eTerrMod);
+var eDef=Math.round(eArmy.def*eForm.defMod*eTerrMod);
+var eHp=eArmy.hp;
+// Simulate rounds
+var rounds=[];var maxRounds=10;
+var pCurHp=pHp,eCurHp=eHp;
+for(var r=0;r<maxRounds&&pCurHp>0&&eCurHp>0;r++){
+var pDmg=Math.max(5,pAtk-eDef/2+Math.floor(Math.random()*20)-10);
+var eDmg=Math.max(5,eAtk-pDef/2+Math.floor(Math.random()*20)-10);
+eCurHp-=pDmg;pCurHp-=eDmg;
+rounds.push({r:r+1,pDmg:pDmg,eDmg:eDmg,pHp:Math.max(0,pCurHp),eHp:Math.max(0,eCurHp)});
+}
+var won=pCurHp>eCurHp;
+if(won){wins++;score=wins;}
+// Display
+var ga=document.getElementById("gameArea");
+ga.innerHTML='<div class="battle-display">'+
+'<div class="vs-row">'+
+'<div class="army-box" style="border-color:'+(won?"var(--accent)":"#ff4444")+'"><div class="name" style="color:var(--accent)">'+army.icon+" YOUR ARMY</div>"+
+'<div class="stat">'+army.label+' | '+form.label+'</div><div class="stat">ATK:'+pAtk+' DEF:'+pDef+'</div>'+
+'<div class="army-hp"><div class="army-hp-fill" style="width:'+Math.max(0,Math.round(pCurHp/pHp*100))+'%;background:'+(won?"var(--accent)":"#ff4444")+'"></div></div></div>'+
+'<div class="vs-text">VS</div>'+
+'<div class="army-box" style="border-color:'+(won?"#ff4444":"var(--accent)")+'"><div class="name" style="color:#ff4444">'+eArmy.icon+" ENEMY</div>"+
+'<div class="stat">'+eArmy.label+' | '+eForm.label+'</div><div class="stat">ATK:'+eAtk+' DEF:'+eDef+'</div>'+
+'<div class="army-hp"><div class="army-hp-fill" style="width:'+Math.max(0,Math.round(eCurHp/eHp*100))+'%;background:'+(won?"#ff4444":"var(--accent)")+'"></div></div></div>'+
+'</div>'+
+'<div style="font-size:11px;color:var(--text2);margin-bottom:6px">Terrain: '+terr.icon+' '+terr.label+' ('+terr.desc+')</div>'+
+'<div class="round-log" id="roundLog"></div>'+
+'<div style="margin-top:12px"><button class="answer-btn" id="againBtn">Next Battle</button></div>'+
+'</div>';
+var rl=document.getElementById("roundLog");
+rounds.forEach(function(rd){
+rl.innerHTML+='<div>Round '+rd.r+': You deal '+rd.pDmg+' dmg, take '+rd.eDmg+' dmg | HP: '+rd.pHp+' vs '+rd.eHp+'</div>';
+});
+rl.innerHTML+='<div style="font-weight:700;font-size:14px;color:'+(won?"var(--accent)":"#ff4444")+';margin-top:8px">'+(won?"VICTORY!":"DEFEAT!")+'</div>';
+document.getElementById("sc").textContent=wins;
+document.getElementById("tot").textContent=battles;
+document.getElementById("scorePill").textContent="Wins: "+wins;
+document.getElementById("status").textContent=won?"Victory! Your tactics prevailed!":"Defeat! Try different tactics.";
+document.getElementById("status").className=won?"status win":"status lose";
+log((won?"Won":"Lost")+": "+army.label+"+"+form.label+" on "+terr.label+" vs "+eArmy.label+"+"+eForm.label,won?"success":"error");
+snd(won?"win":"err");
+if(won)checkHS();
+document.getElementById("againBtn").addEventListener("click",showSetup);
+}
+
+function newGame(){
+startTimer();wins=0;battles=0;
+document.getElementById("sc").textContent="0";document.getElementById("tot").textContent="0";
+document.getElementById("scorePill").textContent="Wins: 0";document.getElementById("logBox").innerHTML="";
+showSetup();
+}
+
+var HS_KEY="wdiy-hs-cavalry-vs-infantry";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(s){try{var b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true;}}catch(e){}return false;}
+function showHS(){var b=loadHS();if(b>0){var p=document.getElementById("scorePill");if(p&&!p.querySelector(".hs-badge"))p.innerHTML+=' <span class="hs-badge">&#x1F3C6; '+b+'</span>';}}
+function checkHS(){if(saveHS(wins))log("NEW HIGH SCORE: "+wins+" wins!","success");}
+
+document.addEventListener("DOMContentLoaded",function(){
+setLang("en");setTheme("terminal");
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
+showHS();
+document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+document.getElementById("startBtn").addEventListener("click",newGame);
+document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07";try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+});
+try{if(localStorage.getItem("wdiy-mute")==="1")soundOn=false;}catch(e){}
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
+(function(){var _osl=setLang,_ost=setTheme;setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+</script></body></html>
