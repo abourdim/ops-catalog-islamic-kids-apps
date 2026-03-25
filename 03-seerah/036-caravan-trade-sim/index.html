@@ -1,141 +1,174 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Caravan Trade Simulator — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>
-[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh;overflow-x:hidden}[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}.app{display:none;max-width:700px;margin:0 auto;padding:12px 16px}.app.on{display:block}.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}.hdr h1{font-size:18px}.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}.ctrl button:hover{border-color:var(--abr)}.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}.status.win{color:var(--accent)}
-.res-bar{display:flex;gap:10px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}.res-item{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:6px 14px;text-align:center}.res-val{font-size:18px;font-weight:700;color:var(--accent);font-family:'Outfit',sans-serif}.res-lbl{font-size:9px;color:var(--text3);text-transform:uppercase}
-.city-panel{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px}
-.city-name{font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;color:var(--heading);text-align:center;margin-bottom:4px}
-.city-desc{font-size:11px;color:var(--text2);text-align:center;margin-bottom:14px;line-height:1.5}
-.goods-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-bottom:14px}
-.good-card{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px;text-align:center}
-.good-icon{font-size:24px}.good-name{font-size:11px;font-weight:600;color:var(--heading);margin:4px 0}
-.good-price{font-size:13px;font-weight:700;color:var(--accent);font-family:'Outfit',sans-serif}
-.good-btns{display:flex;gap:4px;justify-content:center;margin-top:6px}
-.g-btn{padding:4px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:4px;font-size:10px;color:var(--heading);cursor:pointer;font-family:'Outfit',sans-serif}
-.g-btn:hover{border-color:var(--accent);color:var(--accent)}
-.travel-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
-.t-btn{padding:10px 18px;background:var(--bg3);border:2px solid var(--border);border-radius:8px;color:var(--heading);font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s}
-.t-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
-.inv-panel{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;margin-bottom:10px;font-size:11px;color:var(--text2)}
-.inv-panel strong{color:var(--accent)}
-.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.btn-close:hover{border-color:var(--accent);color:var(--accent)}.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;border-bottom:2px solid transparent}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}.help-content{display:none}.help-content.active{display:block}.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px}.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none}.help-item summary::before{content:"▸";color:var(--accent);margin-right:6px}.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}.help-step{display:flex;gap:10px;margin-bottom:12px}.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="desert-dawn"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Caravan Trade Simulator</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+[data-theme="desert-dawn"]{--bg:#1a1408;--bg2:#231c0e;--bg3:#2e2514;--border:#3d3420;--border2:#4e432c;--text:#d4c4a0;--text2:#a08c60;--text3:#6b5c3a;--heading:#f5e6c8;--accent:#FFBF00;--abg:rgba(255,191,0,.08);--abr:rgba(255,191,0,.25);--glow:0 0 20px rgba(255,191,0,.15)}
+[data-theme="midnight-desert"]{--bg:#0a0d1a;--bg2:#101528;--bg3:#171d35;--border:#1e2745;--border2:#2a3558;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#DAA520;--abg:rgba(218,165,32,.08);--abr:rgba(218,165,32,.25);--glow:0 0 20px rgba(218,165,32,.12)}
+[data-theme="sandstone"]{--bg:#f5ede0;--bg2:#faf5ea;--bg3:#ede4d2;--border:#d8ccb5;--border2:#c5b89e;--text:#4a3f2e;--text2:#7a6e55;--text3:#a09575;--heading:#2a2010;--accent:#8B6914;--abg:rgba(139,105,20,.08);--abr:rgba(139,105,20,.2);--glow:0 0 15px rgba(139,105,20,.1)}
+[data-theme="oasis"]{--bg:#0a1510;--bg2:#0e1c14;--bg3:#14261c;--border:#1e3528;--border2:#284535;--text:#a8d4b8;--text2:#6a9a78;--text3:#3a6848;--heading:#d0f0dc;--accent:#50C878;--abg:rgba(80,200,120,.08);--abr:rgba(80,200,120,.2);--glow:0 0 20px rgba(80,200,120,.1)}
+[data-theme="sunset"]{--bg:#1a0e08;--bg2:#221410;--bg3:#2e1c16;--border:#3d2a20;--border2:#4e382c;--text:#d4b8a0;--text2:#a07e60;--text3:#6a5038;--heading:#f5dcc8;--accent:#ff6b35;--abg:rgba(255,107,53,.08);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.12)}
+[data-theme="night-sky"]{--bg:#08091a;--bg2:#0e1028;--bg3:#151835;--border:#1e2248;--border2:#2a2e5a;--text:#b0b8d8;--text2:#7078a8;--text3:#484e78;--heading:#dde0f5;--accent:#7B68EE;--abg:rgba(123,104,238,.08);--abr:rgba(123,104,238,.25);--glow:0 0 20px rgba(123,104,238,.12)}
+[data-theme="caravan"]{--bg:#100808;--bg2:#180e0e;--bg3:#221616;--border:#331e1e;--border2:#442828;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#CD853F;--abg:rgba(205,133,63,.08);--abr:rgba(205,133,63,.25);--glow:0 0 20px rgba(205,133,63,.12)}
+[data-theme="parchment"]{--bg:#f0e8d8;--bg2:#f8f2e5;--bg3:#e8ddc8;--border:#d0c4a8;--border2:#b8aa8e;--text:#3a3020;--text2:#6a5e45;--text3:#9a8e70;--heading:#1a1408;--accent:#A0522D;--abg:rgba(160,82,45,.08);--abr:rgba(160,82,45,.2);--glow:0 0 15px rgba(160,82,45,.1)}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Amiri','Noto Sans Arabic',serif;font-size:14px;min-height:100vh;overflow-x:hidden}
+[lang="ar"] body{font-family:'Noto Sans Arabic','Amiri',serif}
+h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;position:relative;overflow:hidden}
+.splash::before{content:'';position:absolute;bottom:0;left:0;right:0;height:35%;background:linear-gradient(0deg,var(--accent) 0%,transparent);opacity:.04;pointer-events:none}
+.splash-dunes{position:absolute;bottom:0;left:0;right:0;height:100px;overflow:hidden;pointer-events:none}
+.splash-dunes::before{content:'';position:absolute;bottom:-30px;left:-10%;width:120%;height:80px;border-radius:50%;background:var(--bg3);border-top:2px solid var(--border)}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .6s;position:relative;z-index:2}
+.splash-bism{color:var(--text3);font-size:13px;margin-bottom:14px;font-family:'Amiri',serif}
+.btn-go{padding:14px 36px;background:linear-gradient(135deg,var(--accent),#DAA520);color:#1a1408;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase;transition:transform .15s,box-shadow .15s}
+.btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,191,0,.3)}
+.sw{display:flex;gap:4px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:30px;height:30px;border-radius:8px;border:1px solid var(--border);background:none;color:var(--text2);font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-btn:hover{border-color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:560px;margin:0 auto;padding:16px 20px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:12px;margin-bottom:10px;font-family:'Amiri',serif}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:20px;font-weight:800}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'Outfit',sans-serif}
+.ctrl{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:8px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--heading);font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .15s}
+.ctrl button:hover{border-color:var(--accent);color:var(--accent)}
+.status{text-align:center;font-size:15px;margin-bottom:14px;font-weight:600;color:var(--heading);min-height:24px;font-family:'Outfit',sans-serif}
+.status.win{color:var(--accent)}
+.items-area{display:flex;flex-direction:column;gap:12px;margin-bottom:14px}
+.item-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:16px;cursor:pointer;transition:all .2s;animation:fadeUp .4s both}
+.item-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.item-card.active{border-color:var(--accent);background:var(--abg)}
+.item-card h3{font-family:'Outfit',sans-serif;font-size:15px;color:var(--heading);margin-bottom:6px}
+.item-card p{font-size:12px;color:var(--text2);line-height:1.6;display:none}
+.item-card.active p{display:block}
+.score-row{display:flex;gap:24px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:12px}
+.score-item{text-align:center}
+.score-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px}
+.score-num{font-size:26px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;max-height:80px;overflow-y:auto;font-size:11px;color:var(--text2);margin-bottom:12px}
+.log-line{padding:2px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:11px;padding:16px 0;border-top:1px solid var(--border);font-family:'Outfit',sans-serif}
+.back-link{position:fixed;top:10px;left:10px;z-index:100;padding:6px 12px;border-radius:8px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:12px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s;display:none}
+.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}
+[dir="rtl"] .back-link{left:auto;right:10px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:16px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:10px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.help-item summary{padding:10px 14px;cursor:pointer;font-size:13px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"\25B8";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 14px 10px;font-size:12px;color:var(--text2);line-height:1.7}
+.help-step{display:flex;gap:10px;margin-bottom:14px;align-items:flex-start}
+.help-step-num{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#DAA520);color:#1a1408;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:12px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:16px}.wiki-entry h3{font-size:14px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:12px;color:var(--text2);line-height:1.7}
+.sidebar-footer{padding:12px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:8px 12px;border-radius:8px;font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .15s}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px" id="splTitle">Caravan Trade Simulator</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px" id="splSub">Trade the ancient routes</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px" id="splDesc">Travel the trade routes the Prophet ﷺ traveled as a merchant. Buy and sell goods between cities, practice honest trade.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<a href="../../index.html" class="back-link" id="backLink">&larr; Catalog</a>
+<div class="splash" id="splash"><div class="splash-dunes"></div><div class="splash-box">
+<div class="splash-bism">بِسْمِ ٱللَّوهِ ٱلرَّحْمَـنِ ٱلرَّحِيمِ</div>
+<div style="display:flex;justify-content:center;gap:4px;margin-bottom:16px;align-items:flex-end"><div style="width:16px;height:20px;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--accent),var(--bg3));opacity:.7"></div><div style="width:16px;height:28px;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--accent),var(--bg3));opacity:.7"></div><div style="width:16px;height:36px;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--accent),var(--bg3));opacity:.7"></div><div style="width:16px;height:44px;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--accent),var(--bg3));opacity:.7"></div><div style="width:16px;height:52px;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--accent),var(--bg3));opacity:.7"></div><div style="width:16px;height:60px;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--accent),var(--bg3));opacity:.7"></div></div>
+<h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splTitle">Caravan Trade Simulator</h1>
+<div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px" id="splSub">Desert Trader</div>
+<p style="color:var(--text2);font-size:13px;line-height:1.7;margin-bottom:24px" id="splDesc">Manage a caravan and learn about trade ethics in Islam.</p>
+<button class="btn-go" id="enterBtn">Start Mission</button>
+<div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span>
+<button class="sw-btn on" data-thm="desert-dawn">&#9728;</button><button class="sw-btn" data-thm="midnight-desert">&#127769;</button><button class="sw-btn" data-thm="sandstone">&#127966;</button><button class="sw-btn" data-thm="oasis">&#127795;</button><button class="sw-btn" data-thm="sunset">&#127773;</button><button class="sw-btn" data-thm="night-sky">&#11088;</button><button class="sw-btn" data-thm="caravan">&#128042;</button><button class="sw-btn" data-thm="parchment">&#128220;</button>
+</div></div></div>
+
 <div class="app" id="app">
-<div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
-<div class="hdr"><h1 id="appTitle">Caravan Trade Simulator</h1><span class="pill" id="scorePill">Day 1</span></div>
-<div class="ctrl"><button id="startBtn">▶ New Journey</button><button class="btn-help" onclick="openHelp()">❓</button><button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
-<div class="res-bar">
-<div class="res-item"><div class="res-val" id="resGold">200</div><div class="res-lbl">Gold Dinars</div></div>
-<div class="res-item"><div class="res-val" id="resTrust">100</div><div class="res-lbl">Trust ❤️</div></div>
-<div class="res-item"><div class="res-val" id="resDay">1</div><div class="res-lbl">Day</div></div>
+<div class="hdr-bism">بِسْمِ ٱللَّوهِ ٱلرَّحْمَـنِ ٱلرَّحِيمِ</div>
+<div class="hdr"><h1 id="appTitle">Caravan Trade Simulator</h1><span class="pill" id="scorePill">0 / 0</span></div>
+<div class="ctrl">
+<button id="startBtn">&#9654; New Game</button>
+<button class="btn-help" onclick="openHelp()">?</button>
+<button id="soundBtn">&#128266;</button>
+<div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw"><button class="sw-btn on" data-thm="desert-dawn">&#9728;</button><button class="sw-btn" data-thm="midnight-desert">&#127769;</button><button class="sw-btn" data-thm="sandstone">&#127966;</button><button class="sw-btn" data-thm="oasis">&#127795;</button><button class="sw-btn" data-thm="sunset">&#127773;</button><button class="sw-btn" data-thm="night-sky">&#11088;</button><button class="sw-btn" data-thm="caravan">&#128042;</button><button class="sw-btn" data-thm="parchment">&#128220;</button></div>
 </div>
-<div class="status" id="status">Buy goods cheap, travel to another city, sell for profit!</div>
-<div class="city-panel" id="cityPanel"></div>
-<div class="inv-panel" id="invPanel"><strong>Inventory:</strong> Empty</div>
+<div class="status" id="status">Loading...</div>
+<div id="itemsArea" class="items-area"></div>
+<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">Score</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">Total</div><div class="score-num" id="tot">0</div></div></div>
 <div class="log-box" id="logBox"></div>
-<div class="foot">Workshop-Diy — Caravan Trade Simulator v1.0</div>
+<div class="foot">Caravan Trade Simulator &mdash; Seerah Series v2.0</div>
 </div>
+
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
-<aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div><div class="sidebar-body"><div class="help-content active" id="help-faq"><details class="help-item"><summary>What is this?</summary><p>A trading simulation where you buy and sell goods between ancient Arabian cities, following the trade routes the Prophet ﷺ traveled.</p></details><details class="help-item"><summary>How does trust work?</summary><p>Honest dealings increase trust. Selling at fair prices and being generous earns you trust, reflecting the Prophet's ﷺ title of Al-Amin (The Trustworthy).</p></details></div><div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>Buy goods that are cheap in your current city</p></div><div class="help-step"><span class="help-step-num">2</span><p>Travel to a city where those goods are expensive</p></div><div class="help-step"><span class="help-step-num">3</span><p>Sell for profit and build your wealth honestly</p></div><div class="help-step"><span class="help-step-num">4</span><p>Reach 1000 gold dinars to become a master merchant</p></div></div><div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>🐪 The Prophet as Merchant</h3><p>Before prophethood, Muhammad ﷺ was known as Al-Amin (The Trustworthy) and Al-Sadiq (The Truthful) for his honest trading practices.</p></div><div class="wiki-entry"><h3>💍 Khadijah's Trade</h3><p>Khadijah was a wealthy merchant who hired Muhammad ﷺ to lead her caravan to Syria. His honesty and skill impressed her greatly.</p></div></div></div><div class="sidebar-footer">Workshop-DIY — v1.0</div></aside>
+<aside class="sidebar sidebar-left" id="helpPanel">
+<div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">&times;</button></div>
+<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
+<div class="sidebar-body">
+<div class="help-content active" id="help-faq">
+<details class="help-item"><summary>What is this app?</summary><p>Manage a caravan and learn about trade ethics in Islam.</p></details>
+<details class="help-item"><summary>Is the content authentic?</summary><p>Based on authentic Seerah sources and scholarly works.</p></details>
+</div>
+<div class="help-content" id="help-howto">
+<div class="help-step"><span class="help-step-num">1</span><p>Start the activity from the splash screen</p></div>
+<div class="help-step"><span class="help-step-num">2</span><p>Explore each item by clicking on it</p></div>
+<div class="help-step"><span class="help-step-num">3</span><p>Complete all items to finish!</p></div>
+</div>
+<div class="help-content" id="help-wiki">
+<div class="wiki-entry"><h3>About</h3><p>Manage a caravan and learn about trade ethics in Islam. Part of the Seerah learning series for Muslim kids.</p></div>
+</div></div>
+<div class="sidebar-footer">Seerah Series &mdash; v2.0</div>
+</aside>
+
 <script>
-var CITIES=[
-{name:{en:"Mecca",fr:"La Mecque",ar:"مكة"},icon:"🕋",desc:{en:"The blessed city, center of Arabian trade. Hub for pilgrims and merchants.",fr:"La ville benie, centre du commerce arabe.",ar:"المدينة المباركة، مركز التجارة العربية."},prices:{dates:8,incense:15,silk:40,leather:12,spices:22,perfume:30}},
-{name:{en:"Medina (Yathrib)",fr:"Medine (Yathrib)",ar:"المدينة (يثرب)"},icon:"🌴",desc:{en:"The City of the Prophet ﷺ. Known for its date palms and agriculture.",fr:"La ville du Prophete ﷺ. Connue pour ses palmiers et son agriculture.",ar:"مدينة النبي ﷺ. مشهورة بنخيلها وزراعتها."},prices:{dates:5,incense:20,silk:45,leather:10,spices:25,perfume:35}},
-{name:{en:"Damascus (Sham)",fr:"Damas (Cham)",ar:"دمشق (الشام)"},icon:"🏛",desc:{en:"A great city of the Byzantine Empire. Gateway to Mediterranean trade.",fr:"Une grande ville de l'Empire byzantin. Porte du commerce mediterraneen.",ar:"مدينة عظيمة في الإمبراطورية البيزنطية. بوابة التجارة المتوسطية."},prices:{dates:18,incense:8,silk:20,leather:15,spices:12,perfume:18}},
-{name:{en:"Sana'a (Yemen)",fr:"Sanaa (Yemen)",ar:"صنعاء (اليمن)"},icon:"⛰",desc:{en:"Capital of ancient Yemen. Famous for incense, spices, and perfume.",fr:"Capitale de l'ancien Yemen. Celebre pour l'encens, les epices et le parfum.",ar:"عاصمة اليمن القديم. مشهورة بالبخور والتوابل والعطور."},prices:{dates:14,incense:5,silk:50,leather:8,spices:8,perfume:10}}
-];
-var GOODS=[
-{id:"dates",icon:"🌴",name:{en:"Dates",fr:"Dattes",ar:"تمور"}},
-{id:"incense",icon:"🪔",name:{en:"Incense",fr:"Encens",ar:"بخور"}},
-{id:"silk",icon:"🧶",name:{en:"Silk",fr:"Soie",ar:"حرير"}},
-{id:"leather",icon:"🐄",name:{en:"Leather",fr:"Cuir",ar:"جلود"}},
-{id:"spices",icon:"🌶",name:{en:"Spices",fr:"Epices",ar:"توابل"}},
-{id:"perfume",icon:"🌹",name:{en:"Perfume",fr:"Parfum",ar:"عطور"}}
-];
-var curLang="en",soundOn=true,actx,gold=200,trust=100,day=1,curCity=0,inventory={};
-var UI={title:{en:"Caravan Trade Simulator",fr:"Simulateur de Caravane",ar:"محاكي تجارة القوافل"},sub:{en:"Trade the ancient routes",fr:"Commercez sur les routes antiques",ar:"تاجر على الطرق القديمة"},desc:{en:"Travel the trade routes the Prophet ﷺ traveled as a merchant.",fr:"Parcourez les routes commerciales du Prophete ﷺ.",ar:"سافر على طرق التجارة التي سلكها النبي ﷺ تاجراً."},status_play:{en:"Buy goods cheap, travel to another city, sell for profit!",fr:"Achetez bon marche, voyagez, vendez avec profit !",ar:"اشترِ بسعر رخيص، سافر، وبع بربح!"},new_game:{en:"▶ New Journey",fr:"▶ Nouveau voyage",ar:"▶ رحلة جديدة"},buy:{en:"Buy",fr:"Acheter",ar:"شراء"},sell:{en:"Sell",fr:"Vendre",ar:"بيع"},travel_to:{en:"Travel to",fr:"Voyager a",ar:"سافر إلى"},win:{en:"Master Merchant! You earned the title Al-Amin!",fr:"Maitre Marchand ! Vous avez gagne le titre Al-Amin !",ar:"تاجر بارع! حصلت على لقب الأمين!"}};
+var UI={
+title:{en:"Caravan Trade Simulator",fr:"Simulateur de Caravane",ar:"محاكي القوافل"},
+sub:{en:"Desert Trader",fr:"Desert Trader",ar:"Desert Trader"},
+desc:{en:"Manage a caravan and learn about trade ethics in Islam.",fr:"Manage a caravan and learn about trade ethics in Islam.",ar:"Manage a caravan and learn about trade ethics in Islam."},
+new_game:{en:"\u25b6 New Game",fr:"\u25b6 Nouveau jeu",ar:"\u25b6 \u0644\u0639\u0628\u0629 \u062c\u062f\u064a\u062f\u0629"}
+};
+var curLang="en",soundOn=true,actx;
 function t(k){return UI[k]?UI[k][curLang]||UI[k].en:"";}
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
-function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});rl();}
+function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});
+document.getElementById("splTitle").textContent=t("title");document.getElementById("splSub").textContent=t("sub");document.getElementById("splDesc").textContent=t("desc");document.getElementById("appTitle").textContent=t("title");document.getElementById("startBtn").textContent=t("new_game");}
 function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th)});}
-function rl(){document.getElementById("splTitle").textContent=t("title");document.getElementById("splSub").textContent=t("sub");document.getElementById("splDesc").textContent=t("desc");document.getElementById("appTitle").textContent=t("title");document.getElementById("startBtn").textContent=t("new_game");renderCity();}
-function snd(type){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(type==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.12);o.start(n);o.stop(n+.12);}else if(type==="sell"){o.frequency.value=659;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);}else if(type==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(type==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
-function log(msg,cls){var b=document.getElementById("logBox"),d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="[Day "+day+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
-function updateRes(){
-document.getElementById("resGold").textContent=gold;
-document.getElementById("resTrust").textContent=trust;
-document.getElementById("resDay").textContent=day;
-document.getElementById("scorePill").textContent="Day "+day;
-// Check win
-if(gold>=1000&&!won){won=true;snd("win");document.getElementById("status").textContent=t("win");document.getElementById("status").className="status win";checkHS();log("Achieved Al-Amin status!","success");}
-}
-var won=false;
-function updateInv(){
-var items=[];
-for(var k in inventory){if(inventory[k]>0){var g=GOODS.find(function(x){return x.id===k;});items.push(g.icon+" "+(g.name[curLang]||g.name.en)+": "+inventory[k]);}}
-document.getElementById("invPanel").innerHTML="<strong>Inventory:</strong> "+(items.length?items.join(" | "):"Empty");
-}
-function renderCity(){
-var city=CITIES[curCity];
-var html='<div class="city-name">'+city.icon+" "+(city.name[curLang]||city.name.en)+'</div>';
-html+='<div class="city-desc">'+(city.desc[curLang]||city.desc.en)+'</div>';
-html+='<div class="goods-grid">';
-// Add price variation
-var variation=Math.random()*.3-.15;
-GOODS.forEach(function(g){
-var basePrice=city.prices[g.id];
-var price=Math.round(basePrice*(1+variation));if(price<1)price=1;
-var myQty=inventory[g.id]||0;
-html+='<div class="good-card"><div class="good-icon">'+g.icon+'</div><div class="good-name">'+(g.name[curLang]||g.name.en)+'</div><div class="good-price">'+price+' 💰</div>';
-html+='<div style="font-size:9px;color:var(--text3)">You have: '+myQty+'</div>';
-html+='<div class="good-btns"><button class="g-btn" onclick="buyGood(\''+g.id+'\','+price+')">'+t("buy")+'</button><button class="g-btn" onclick="sellGood(\''+g.id+'\','+price+')">'+t("sell")+'</button></div></div>';
-});
-html+='</div>';
-html+='<div class="travel-btns">';
-CITIES.forEach(function(c,ci){
-if(ci!==curCity){html+='<button class="t-btn" onclick="travelTo('+ci+')">🐪 '+t("travel_to")+' '+(c.name[curLang]||c.name.en)+'</button>';}
-});
-html+='</div>';
-document.getElementById("cityPanel").innerHTML=html;
-updateInv();updateRes();
-}
-function buyGood(id,price){
-if(gold<price){snd("err");log("Not enough gold!","error");return;}
-gold-=price;inventory[id]=(inventory[id]||0)+1;trust+=1;
-snd("ok");var g=GOODS.find(function(x){return x.id===id;});
-log("Bought "+(g.name.en)+" for "+price+" gold","success");
-renderCity();
-}
-function sellGood(id,price){
-if(!inventory[id]||inventory[id]<=0){snd("err");log("You don't have any to sell!","error");return;}
-inventory[id]--;gold+=price;trust+=2;
-snd("sell");var g=GOODS.find(function(x){return x.id===id;});
-log("Sold "+(g.name.en)+" for "+price+" gold","success");
-renderCity();
-}
-function travelTo(ci){
-curCity=ci;day++;snd("click");
-var city=CITIES[ci];
-log("Traveled to "+(city.name.en),"");
-renderCity();
-}
-function newGame(){gold=200;trust=100;day=1;curCity=0;inventory={};won=false;document.getElementById("logBox").innerHTML="";document.getElementById("status").textContent=t("status_play");document.getElementById("status").className="status";renderCity();log("Journey begins from Mecca!","success");}
-var HS_KEY="wdiy-hs-caravan-trade-sim";
+function snd(type){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(type==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(type==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(type==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){var b=document.getElementById("logBox"),d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+var HS_KEY="seerah-hs-036-caravan-trade-sim";
 function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0;}catch(e){return 0;}}
-function saveHS(s){try{var b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true;}}catch(e){}return false;}
-function checkHS(){if(saveHS(gold))log("NEW HIGH SCORE: "+gold+" gold!","success");}
+function saveHS(s){try{localStorage.setItem(HS_KEY,s);}catch(e){}}
+
+var ITEMS=[{name:{en:"Load your camels",fr:"Load your camels",ar:"Load your camels"},desc:{en:"Choose goods: dates, perfume, cloth, spices",fr:"Choose goods: dates, perfume, cloth, spices",ar:"Choose goods: dates, perfume, cloth, spices"}},{name:{en:"Choose your route",fr:"Choose your route",ar:"Choose your route"},desc:{en:"Northern route to Sham or southern to Yemen",fr:"Northern route to Sham or southern to Yemen",ar:"Northern route to Sham or southern to Yemen"}},{name:{en:"Trade ethics",fr:"Trade ethics",ar:"Trade ethics"},desc:{en:"No cheating, no hoarding, fair prices",fr:"No cheating, no hoarding, fair prices",ar:"No cheating, no hoarding, fair prices"}},{name:{en:"Market dealings",fr:"Market dealings",ar:"Market dealings"},desc:{en:"Islamic rules: no deception, full disclosure",fr:"Islamic rules: no deception, full disclosure",ar:"Islamic rules: no deception, full disclosure"}},{name:{en:"Sadaqah",fr:"Sadaqah",ar:"Sadaqah"},desc:{en:"Give charity from your profits",fr:"Give charity from your profits",ar:"Give charity from your profits"}},{name:{en:"Barakah",fr:"Barakah",ar:"Barakah"},desc:{en:"Honest trading brings blessing",fr:"Honest trading brings blessing",ar:"Honest trading brings blessing"}},{name:{en:"Return home",fr:"Return home",ar:"Return home"},desc:{en:"A successful and halal trade journey",fr:"A successful and halal trade journey",ar:"A successful and halal trade journey"}}];
+var explored=new Set();
+function renderItems(){var area=document.getElementById("itemsArea");area.innerHTML="";ITEMS.forEach(function(p,i){var card=document.createElement("div");card.className="item-card"+(explored.has(i)?" active":"");card.style.animationDelay=(i*.06)+"s";card.innerHTML='<h3>'+(p.name[curLang]||p.name.en)+'</h3><p>'+(p.desc[curLang]||p.desc.en)+'</p>';card.onclick=function(){if(!explored.has(i)){explored.add(i);snd("ok");log("Explored: "+(p.name.en),"success");document.getElementById("sc").textContent=explored.size;document.getElementById("scorePill").textContent=explored.size+" / "+ITEMS.length;if(explored.size>=ITEMS.length){snd("win");document.getElementById("status").textContent="All explored! MashaAllah!";document.getElementById("status").className="status win";}}card.classList.toggle("active");};area.appendChild(card);});}
+function newGame(){explored.clear();document.getElementById("sc").textContent="0";document.getElementById("tot").textContent=ITEMS.length;document.getElementById("scorePill").textContent="0 / "+ITEMS.length;document.getElementById("status").textContent="Tap each item to explore";document.getElementById("status").className="status";document.getElementById("logBox").innerHTML="";renderItems();}
+
 document.addEventListener("DOMContentLoaded",function(){
-setLang("en");setTheme("terminal");
+setLang("en");setTheme("desert-dawn");
 document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
 document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
 document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
 document.getElementById("startBtn").addEventListener("click",newGame);
-document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"🔊":"🔇";});
-document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
-document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
-try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="🔇";}}catch(e){}
-var _osl=setLang,_ost=setTheme;setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};
+document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"\ud83d\udd0a":"\ud83d\udd07";try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();if(e.key>="1"&&e.key<="4"){var btns=document.querySelectorAll(".answer-btn");var i=parseInt(e.key)-1;if(btns[i])btns[i].click();}if(e.key==="Enter"){var go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();}});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active")});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active")});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="\ud83d\udd07";}}catch(e){}
+var osl=setLang,ost=setTheme;setLang=function(l){osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};setTheme=function(t){ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};
 });
 </script></body></html>

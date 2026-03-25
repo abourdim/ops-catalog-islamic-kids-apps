@@ -1,123 +1,148 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Battle Timeline — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
-[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
-[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
-[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
-[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
-[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
-[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
-[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Battle Timeline — Gazawat</title><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet"/><style>
+/* === GAZAWAT 8-THEME SYSTEM === */
+[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#708090;--abg:#7080900f;--abr:#70809033;--glow:0 0 20px #7080901a}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#708090;--abg:#7080900f;--abr:#70809033;--glow:0 0 20px #7080901a}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#708090;--abg:#7080900f;--abr:#70809033;--glow:0 0 20px #7080901a}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#708090;--abg:#7080900f;--abr:#70809033;--glow:0 0 15px #70809010}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#708090;--abg:#7080900f;--abr:#70809033;--glow:0 0 25px #70809022}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#708090;--abg:#7080900f;--abr:#70809033;--glow:0 0 20px #7080901a}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#708090;--abg:#7080900f;--abr:#70809033;--glow:0 0 20px #7080901a}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#708090;--abg:#7080900f;--abr:#70809033;--glow:0 0 15px #70809010}
+
+/* === BASE RESET === */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh;background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,#70809008 39px,#70809008 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,#70809008 39px,#70809008 40px)}
 [lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
 h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+
+/* === SPLASH SCREEN === */
 .splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
-.app.on~.back-link,.back-link{}
-.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
-.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
-.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
-.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
-.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
-.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
-.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(ellipse at center,#70809008,transparent 70%)}
+.splash-box{background:var(--bg2);border:2px solid var(--border);border-radius:20px;padding:44px 36px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow),0 8px 32px rgba(0,0,0,.3);animation:fadeUp .6s ease-out;position:relative;overflow:hidden}
+.splash-box::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,#708090,transparent)}
+.splash-box::after{content:"";position:absolute;bottom:0;left:0;right:0;height:50%;background:linear-gradient(180deg,transparent,#70809005);pointer-events:none}
+
+.splash-art{position:relative;width:200px;height:140px;margin:0 auto 20px}
+.splash-art::before{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:160px;height:80px;background:linear-gradient(135deg,#70809022,#70809011);border:2px solid #70809044;border-radius:8px 8px 0 0;clip-path:polygon(0 100%,5% 30%,15% 10%,25% 25%,35% 5%,50% 20%,65% 5%,75% 25%,85% 10%,95% 30%,100% 100%)}
+.splash-art::after{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);width:4px;height:70px;background:#70809066;border-radius:2px;box-shadow:0 -6px 0 8px #70809033}
+.shield-icon{position:absolute;top:20px;left:50%;transform:translateX(-50%);width:50px;height:55px;background:linear-gradient(180deg,#70809044,#70809022);border:2px solid #70809055;border-radius:50% 50% 50% 50%/40% 40% 60% 60%;display:flex;align-items:center;justify-content:center;font-size:18px;color:#708090}
+.splash-bism{color:var(--text3);font-size:13px;margin-bottom:16px;font-family:'Noto Sans Arabic',serif;letter-spacing:1px}
+.splash-subtitle{color:#708090;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+.splash-desc{color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px}
+.btn-go{padding:14px 36px;background:linear-gradient(135deg,#708090,#708090cc);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:2px;text-transform:uppercase;transition:all .2s;box-shadow:0 4px 15px #70809033}
+.btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 20px #70809044}
+.btn-go:active{transform:translateY(0)}
+.sw{display:flex;gap:4px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:28px;height:28px;border-radius:8px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent);box-shadow:0 0 8px var(--abr)}
+.sw-btn:hover{border-color:var(--accent)}
 .sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
-.app{display:none;margin:0 auto;padding:12px 16px;max-width:1100px}.app.on{display:block}
-.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
-.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
-.hdr h1{font-size:18px}
-.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
-.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
-.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
-.ctrl button:hover{border-color:var(--abr)}
-.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
-.status.win{color:var(--accent)}.status.lose{color:#ff4444}
-.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;min-height:200px;position:relative;overflow:hidden}
-.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden;margin:0 auto 12px}
-.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
+
+/* === MAIN APP === */
+.app{display:none;max-width:920px;margin:0 auto;padding:14px 18px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:12px;margin-bottom:8px;font-family:'Noto Sans Arabic',serif}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:20px;display:flex;align-items:center;gap:8px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:7px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer;transition:all .15s}
+.ctrl button:hover{border-color:var(--accent);color:var(--accent)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:14px;position:relative;overflow:hidden}
+.game-area::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#70809044,transparent)}
 .score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:12px}
-.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
-.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
-.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
-.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
-.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
-.sidebar-overlay.open{opacity:1;pointer-events:auto}
-.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
-.sidebar-left{left:0;transform:translateX(-100%)}
-[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
-.sidebar-left.open{transform:translateX(0)}
-.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
-.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
-.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
-.btn-close:hover{border-color:var(--accent);color:var(--accent)}
-.help-tabs{display:flex;border-bottom:1px solid var(--border)}
-.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
-.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
-.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px}.score-num{font-size:24px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;max-height:110px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:12px}
+.log-line{padding:2px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:16px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* === FORTRESS BORDER PATTERN === */
+.app::before{content:"";display:block;height:6px;margin-bottom:10px;background:repeating-linear-gradient(90deg,#70809022 0px,#70809022 16px,transparent 16px,transparent 20px,#70809011 20px,#70809011 24px,transparent 24px,transparent 40px);border-radius:3px}
+
+/* === NAVIGATION === */
+.back-link{position:fixed;top:10px;left:10px;z-index:100;padding:5px 12px;border-radius:8px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s;display:flex;align-items:center;gap:4px}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:10px}
+
+/* === HELP SIDEBAR === */
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:360px;max-width:88vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:16px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .15s}.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:10px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:16px 18px}
 .help-content{display:none}.help-content.active{display:block}
-.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
-.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
-.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
-.help-item[open] summary::before{transform:rotate(90deg)}
-.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
-.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
-.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
-.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
-.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
-.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
-.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:10px;overflow:hidden}.help-item summary{padding:12px 14px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 14px 12px;font-size:11px;color:var(--text2);line-height:1.7}
+.help-step{display:flex;gap:10px;margin-bottom:14px;align-items:flex-start}.help-step-num{width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:16px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.7}
+.sidebar-footer{padding:12px 18px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:7px 12px;border-radius:8px;font-size:11px;font-family:inherit;cursor:pointer;transition:all .15s}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
 .hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
-.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:3px 10px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+canvas{border-radius:10px;cursor:grab;max-width:100%;touch-action:none}canvas:active{cursor:grabbing}
+.info-panel{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:12px;font-size:11px;color:var(--text2);line-height:1.7}.info-panel h3{font-size:14px;color:var(--heading);margin-bottom:6px;font-family:'Outfit',sans-serif}.info-panel .highlight{color:var(--accent);font-weight:600}
+.victory-box{background:var(--abg);border:2px solid var(--accent);border-radius:14px;padding:20px;text-align:center;margin-bottom:12px;animation:fadeUp .4s}.victory-box h2{font-family:'Outfit',sans-serif;color:var(--accent);font-size:22px;margin-bottom:8px}.victory-box p{font-size:13px;color:var(--text);line-height:1.7}
+.btn-execute{padding:12px 28px;background:linear-gradient(135deg,var(--accent),#708090cc);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase;transition:all .2s}.btn-execute:disabled{opacity:.4;cursor:not-allowed}.btn-execute:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 4px 12px #70809033}
+.btn-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:10px}
+.btn-secondary{padding:9px 18px;background:var(--bg3);border:1px solid var(--border);color:var(--heading);border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .15s}.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
 
-/* Timeline-specific styles */
-.timeline-wrap{position:relative;width:100%;overflow-x:auto;overflow-y:visible;padding-bottom:16px;-webkit-overflow-scrolling:touch}
-.timeline-canvas{display:block;cursor:grab}
-.timeline-canvas:active{cursor:grabbing}
-.card-tray{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:12px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;margin-top:12px;min-height:60px}
-.drag-card{padding:8px 14px;border-radius:8px;border:2px solid var(--border);background:var(--bg2);color:var(--heading);font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;cursor:grab;user-select:none;transition:all .15s;white-space:nowrap}
-.drag-card:hover{border-color:var(--accent);background:var(--abg)}
-.drag-card.dragging{opacity:.5;border-color:var(--accent)}
-.drag-card.correct-flash{background:var(--accent);color:var(--bg);border-color:var(--accent);animation:pulseGreen .5s}
-.drag-card.wrong-flash{background:#ff4444;color:#fff;border-color:#ff4444;animation:shake .4s}
-@keyframes pulseGreen{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
-@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
-.phase-legend{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:10px;font-size:10px;font-family:'Outfit',sans-serif}
-.phase-dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:4px;vertical-align:middle}
-.completion-view{display:none;text-align:center;padding:20px}
-.completion-view.show{display:block}
-.completion-view h2{font-family:'Outfit',sans-serif;color:var(--accent);margin-bottom:12px}
-.completed-timeline{max-width:100%;overflow-x:auto;padding:10px 0}
+/* === ISLAMIC GEOMETRIC PATTERN (top decorative band) === */
+.islamic-band{height:8px;background:repeating-linear-gradient(90deg,#70809033 0px,#70809033 8px,transparent 8px,transparent 12px,#70809022 12px,#70809022 16px,transparent 16px,transparent 24px);margin-bottom:8px;border-radius:4px}
+
+/* === CRESCENT MOON DECORATION === */
+.crescent-deco{position:absolute;top:16px;right:16px;width:20px;height:20px}.crescent-deco::before{content:"";position:absolute;width:20px;height:20px;border-radius:50%;background:#70809022;border:2px solid #70809033}.crescent-deco::after{content:"";position:absolute;top:-2px;left:4px;width:16px;height:16px;border-radius:50%;background:var(--bg2)}
+
+/* === RESPONSIVE === */
+@media(max-width:600px){.splash-box{padding:28px 20px}.hdr h1{font-size:16px}.score-num{font-size:20px}canvas{height:auto}.sidebar{width:100%;max-width:100%}}
+
+.timeline-area{position:relative;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px 16px;margin-bottom:12px;min-height:200px}
+.tl-line{position:absolute;left:50%;top:20px;bottom:20px;width:3px;background:#70809033;transform:translateX(-50%)}
+.tl-event{position:relative;padding:10px 16px;margin:8px 0;cursor:pointer;border:1px solid var(--border);border-radius:10px;background:var(--bg3);transition:all .2s;width:45%;font-size:12px}
+.tl-event:nth-child(odd){margin-left:5%}.tl-event:nth-child(even){margin-left:50%}
+.tl-event:hover{border-color:#70809044;transform:scale(1.02)}
+.tl-event.placed{border-color:#70809044;background:#70809008}
+.tl-dot{position:absolute;top:50%;width:12px;height:12px;border-radius:50%;background:#70809044;border:2px solid #708090}
+.tl-event:nth-child(odd) .tl-dot{right:-28px;transform:translateY(-50%)}.tl-event:nth-child(even) .tl-dot{left:-28px;transform:translateY(-50%)}
+.tl-event.placed .tl-dot{background:#708090}
+.tl-year{font-weight:700;color:#708090;font-family:Outfit,sans-serif;margin-bottom:2px}
+.tl-title{color:var(--text)}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Battle Timeline</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Map the campaigns of the Prophet &#65018;</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Drag battles onto the timeline to build the history of the Prophet's campaigns in Medina (622-632 CE).</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div></div></div>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
 
-<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>Battle Timeline</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<!-- SPLASH SCREEN -->
+<div class="splash" id="splash"><div class="splash-box">
+<div class="splash-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
+<div class="splash-art"><div class="shield-icon">⚔</div></div>
+<h1 class="heading" style="font-size:24px;margin-bottom:6px">Battle Timeline</h1>
+<div class="splash-subtitle">Build the timeline of all major battles</div>
+<p class="splash-desc">Build the timeline of all major battles. Learn through interactive gameplay designed for young Muslim minds.</p>
+<button class="btn-go" id="enterBtn">Start Mission</button>
+<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div>
+</div></div>
+
+<!-- MAIN APP -->
+<div class="app" id="app">
+<div class="islamic-band"></div>
+<div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
+<div class="hdr"><h1>Battle Timeline</h1><span class="pill" id="scorePill">Strategy</span><span class="timer-pill" id="timerPill">0:00</span></div>
 <div class="ctrl">
-<select id="diffSel" onchange="setDiff()"><option value="easy">Easy (8 major)</option><option value="medium" selected>Medium (14)</option><option value="hard">Hard (20+)</option></select>
-<button id="startBtn">&#9654; New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">&#10067;</button>
-<button id="soundBtn">&#128266;</button>
-<div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
-<div class="sw"><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div>
+  <button id="startBtn">&#9654; New Game</button>
+  <button class="btn-help" id="helpBtn" onclick="openHelp()">&#10067;</button>
+  <button id="soundBtn">&#128266;</button>
+  <div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+  <div class="sw"><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div>
 </div>
-<div class="status" id="status">Drag battle cards onto the timeline!</div>
-<div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
-<div class="game-area" id="gameArea">
-  <div class="timeline-wrap" id="timelineWrap"><canvas class="timeline-canvas" id="tlCanvas"></canvas></div>
-  <div class="card-tray" id="cardTray"></div>
-  <div class="phase-legend" id="phaseLegend">
-    <span><span class="phase-dot" style="background:#4fc3f7"></span>Early/Defensive</span>
-    <span><span class="phase-dot" style="background:#ffd54f"></span>Siege Defense</span>
-    <span><span class="phase-dot" style="background:#ff8a65"></span>Offensive</span>
-    <span><span class="phase-dot" style="background:#81c784"></span>Peaceful/Diplomacy</span>
-    <span><span class="phase-dot" style="background:#ce93d8"></span>Key Event</span>
-  </div>
-</div>
-<div class="score-row"><div class="score-item"><div class="score-label">Placed</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="status" id="status">Build the timeline of all major battles</div>
+<div class="timeline-area" id="timelineArea"></div>
+<div class="score-row"><div class="score-item"><div class="score-label" data-i18n="placed">Placed</div><div class="score-num" id="scMain">0</div></div><div class="score-item"><div class="score-label" data-i18n="accuracy">Accuracy</div><div class="score-num" id="scLevel">-</div></div><div class="score-item"><div class="score-label" data-i18n="best">Best</div><div class="score-num" id="scBest">0</div></div></div>
+<div id="infoArea"></div>
 <div class="log-box" id="logBox"></div>
-<div class="foot">Workshop-Diy &mdash; Battle Timeline v1.0</div>
+<div class="foot">Gazawat &mdash; Battle Timeline v2.0</div>
 </div>
 
+<!-- HELP SIDEBAR -->
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
   <div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
@@ -128,442 +153,126 @@ h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--headi
   </div>
   <div class="sidebar-body">
     <div class="help-content active" id="help-faq">
-        <details class="help-item"><summary>What is Battle Timeline?</summary><p>An interactive timeline builder where you drag battles and key events from the Prophet's time in Medina (622-632 CE) onto their correct positions on a timeline.</p></details>
-        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
-        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser. On touch devices, tap and drag cards onto the timeline.</p></details>
-        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
-        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / &#1593;. Arabic enables right-to-left layout automatically.</p></details>
-        <details class="help-item"><summary>What are the difficulty levels?</summary><p>Easy has 8 major battles, Medium has 14, and Hard includes 20+ events including key treaties and milestones.</p></details>
-        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+      <details class="help-item"><summary id="faq1q">What is this app?</summary><p id="faq1a">An educational Islamic app about Battle Timeline. Learn through interactive gameplay designed for Muslim kids.</p></details>
+      <details class="help-item"><summary id="faq2q">How do I play?</summary><p id="faq2a">Follow the on-screen instructions. Use buttons and interactive elements to progress through the activity.</p></details>
+      <details class="help-item"><summary id="faq3q">Does it work offline?</summary><p id="faq3a">Yes! Once loaded, everything runs in your browser with no internet needed.</p></details>
+      <details class="help-item"><summary id="faq4q">How do I change the theme?</summary><p id="faq4a">Click any theme icon in the controls bar. There are 8 beautiful themes to choose from.</p></details>
+      <details class="help-item"><summary id="faq5q">How do I change language?</summary><p id="faq5a">Click EN, FR, or &#1593; buttons. Arabic enables right-to-left layout automatically.</p></details>
+      <details class="help-item"><summary id="faq6q">Is my data private?</summary><p id="faq6a">Yes. Everything runs locally. No data is sent anywhere.</p></details>
+      <details class="help-item"><summary id="faq7q">Can I play on mobile?</summary><p id="faq7a">Yes! Touch controls work on all devices.</p></details>
     </div>
     <div class="help-content" id="help-howto">
-        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
-        <div class="help-step"><span class="help-step-num">2</span><p>Choose a difficulty level (Easy, Medium, Hard)</p></div>
-        <div class="help-step"><span class="help-step-num">3</span><p>Press New Game to begin</p></div>
-        <div class="help-step"><span class="help-step-num">4</span><p>Drag battle cards from the tray below onto the correct year on the timeline</p></div>
-        <div class="help-step"><span class="help-step-num">5</span><p>If correct, the card plants on the timeline with a green glow and a description appears</p></div>
-        <div class="help-step"><span class="help-step-num">6</span><p>If wrong, the card bounces back with a red flash</p></div>
-        <div class="help-step"><span class="help-step-num">7</span><p>Place all events to complete the timeline and see the full progression</p></div>
-        <div class="help-step"><span class="help-step-num">8</span><p>Click &larr; Catalog to go back and try another game</p></div>
+      <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+      <div class="help-step"><span class="help-step-num">2</span><p>Read the instructions and historical context</p></div>
+      <div class="help-step"><span class="help-step-num">3</span><p>Interact with the game elements</p></div>
+      <div class="help-step"><span class="help-step-num">4</span><p>Complete the objectives to earn points</p></div>
+      <div class="help-step"><span class="help-step-num">5</span><p>Try to beat your high score!</p></div>
     </div>
     <div class="help-content" id="help-wiki">
-        <div class="wiki-entry"><h3>Purpose</h3><p>Learn the chronological order of the Prophet's military campaigns and key events during his time in Medina (622-632 CE).</p></div>
-        <div class="wiki-entry"><h3>Strategy Evolution</h3><p>The timeline shows how strategy evolved: defensive at Badr, siege defense at Khandaq, offensive campaigns at Khaybar, and the peaceful Conquest of Mecca.</p></div>
-        <div class="wiki-entry"><h3>Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
-        <div class="wiki-entry"><h3>Languages</h3><p>Trilingual: English, Fran&ccedil;ais, &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;. Arabic auto-enables RTL layout.</p></div>
-        <div class="wiki-entry"><h3>Sound</h3><p>Web Audio API &mdash; no files needed. Correct = rising tone, wrong = buzz, win = melody. Toggle with the sound button.</p></div>
-        <div class="wiki-entry"><h3>Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+      <div class="wiki-entry"><h3>Historical Context</h3><p>This activity is based on authentic Islamic history. Learn about the events, people, and lessons from the early Muslim community.</p></div>
+      <div class="wiki-entry"><h3>Educational Value</h3><p>Every interaction teaches an important lesson from Islamic history. Pay attention to the details and reflect on the wisdom.</p></div>
+      <div class="wiki-entry"><h3>Themes &amp; Languages</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand. 3 languages: English, French, Arabic.</p></div>
     </div>
   </div>
-  <div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div>
+  <div class="sidebar-footer">Gazawat &mdash; v2.0</div>
 </aside>
 
 <script>
-/* ===== Sidebar ===== */
+/* === SHARED HELPERS === */
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
-function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";}
 function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
-
-/* ===== Sound ===== */
 let soundOn=true,actx;
 function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
 function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
 
-/* ===== Timer ===== */
-let timerInterval,timerSeconds=0;
-function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+/* === APP LOGIC === */
+
+const I18N={
+  en:{title:"Battle Timeline",subtitle:"Build the timeline of all major battles",start:"Start Mission",newGame:"New Game",score:"Score",level:"Level",best:"Best",progress:"Progress",correct:"Correct",tasks:"Tasks",placed:"Placed",accuracy:"Accuracy",wellDone:"Well Done!",tryAgain:"Try Again",hint:"Hint",execute:"Execute",reset:"Reset",next:"Next",prev:"Previous",complete:"Complete",victory:"Victory! MashaAllah!",defeat:"Try again, trust in Allah",helpTitle:"Help",faqTitle:"FAQ",howtoTitle:"How-To",wikiTitle:"Wiki",q1:"What is this app?",a1:"An educational Islamic app about Battle Timeline. Learn through interactive gameplay designed for Muslim kids.",q2:"How do I play?",a2:"Follow the on-screen instructions. Use buttons and interactive elements to progress through the activity.",q3:"Does it work offline?",a3:"Yes! Once loaded, everything runs in your browser with no internet needed.",q4:"How do I change the theme?",a4:"Click any theme icon in the controls bar. There are 8 beautiful themes to choose from.",q5:"How do I change language?",a5:"Click EN, FR, or ع buttons. Arabic enables right-to-left layout automatically.",q6:"Is my data private?",a6:"Yes. Everything runs locally. No data is sent anywhere.",q7:"Can I play on mobile?",a7:"Yes! Touch controls work on all devices.",s1:"Click Start Mission on the splash screen",s2:"Read the instructions and historical context",s3:"Interact with the game elements",s4:"Complete the objectives to earn points",s5:"Try to beat your high score!",w1Title:"Historical Context",w1Text:"This activity is based on authentic Islamic history. Learn about the events, people, and lessons from the early Muslim community.",w2Title:"Educational Value",w2Text:"Every interaction teaches an important lesson from Islamic history. Pay attention to the details and reflect on the wisdom.",w3Title:"Themes & Languages",w3Text:"8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand. 3 languages: English, French, Arabic."},
+  fr:{title:"Chronologie des Batailles",subtitle:"Construis la chronologie des grandes batailles",start:"Démarrer la Mission",newGame:"Nouvelle Partie",score:"Score",level:"Niveau",best:"Meilleur",progress:"Progrès",correct:"Correct",tasks:"Tâches",placed:"Placé",accuracy:"Précision",wellDone:"Bien joué!",tryAgain:"Réessaie",hint:"Indice",execute:"Exécuter",reset:"Réinitialiser",next:"Suivant",prev:"Précédent",complete:"Terminer",victory:"Victoire! MashaAllah!",defeat:"Réessaie, fais confiance en Allah",helpTitle:"Aide",faqTitle:"FAQ",howtoTitle:"Comment",wikiTitle:"Wiki",q1:"Qu'est-ce que cette application?",a1:"Une application éducative islamique sur Chronologie des Batailles. Apprends par le jeu interactif conçu pour les enfants musulmans.",q2:"Comment jouer?",a2:"Suis les instructions à l'écran. Utilise les boutons et éléments interactifs pour progresser.",q3:"Fonctionne hors ligne?",a3:"Oui! Une fois chargé, tout fonctionne dans ton navigateur sans internet.",q4:"Changer le thème?",a4:"Clique sur n'importe quelle icône de thème dans la barre de contrôle.",q5:"Changer la langue?",a5:"Clique sur EN, FR ou ع. L'arabe active automatiquement la mise en page droite-à-gauche.",q6:"Mes données sont privées?",a6:"Oui. Tout fonctionne localement. Aucune donnée n'est envoyée.",q7:"Mobile compatible?",a7:"Oui! Les contrôles tactiles fonctionnent sur tous les appareils.",s1:"Clique sur Démarrer la Mission",s2:"Lis les instructions et le contexte historique",s3:"Interagis avec les éléments du jeu",s4:"Complète les objectifs pour gagner des points",s5:"Essaie de battre ton meilleur score!",w1Title:"Contexte Historique",w1Text:"Cette activité est basée sur l'histoire islamique authentique.",w2Title:"Valeur Éducative",w2Text:"Chaque interaction enseigne une leçon importante de l'histoire islamique.",w3Title:"Thèmes et Langues",w3Text:"8 thèmes intégrés. 3 langues: Anglais, Français, Arabe."},
+  ar:{title:"الجدول الزمني للغزوات",subtitle:"ابنِ الجدول الزمني لجميع الغزوات",start:"ابدأ المهمة",newGame:"لعبة جديدة",score:"النقاط",level:"المستوى",best:"الأفضل",progress:"التقدم",correct:"صحيح",tasks:"المهام",placed:"تم وضعه",accuracy:"الدقة",wellDone:"أحسنت!",tryAgain:"حاول مرة أخرى",hint:"تلميح",execute:"نفّذ",reset:"إعادة",next:"التالي",prev:"السابق",complete:"أكمل",victory:"نصر! ما شاء الله!",defeat:"حاول مرة أخرى وتوكل على الله",helpTitle:"مساعدة",faqTitle:"أسئلة",howtoTitle:"كيف",wikiTitle:"ويكي",q1:"ما هذا التطبيق؟",a1:"تطبيق تعليمي إسلامي عن الجدول الزمني للغزوات. تعلّم من خلال اللعب التفاعلي المصمم لأطفال المسلمين.",q2:"كيف ألعب؟",a2:"اتبع التعليمات على الشاشة. استخدم الأزرار والعناصر التفاعلية للتقدم.",q3:"يعمل بدون إنترنت؟",a3:"نعم! بمجرد تحميله يعمل كل شيء في متصفحك بدون إنترنت.",q4:"تغيير السمة؟",a4:"انقر على أي أيقونة سمة في شريط التحكم.",q5:"تغيير اللغة؟",a5:"انقر على EN أو FR أو ع. العربية تفعّل التخطيط من اليمين لليسار تلقائياً.",q6:"بياناتي خاصة؟",a6:"نعم. كل شيء يعمل محلياً. لا ترسل أي بيانات.",q7:"يعمل على الجوال؟",a7:"نعم! أدوات التحكم باللمس تعمل على جميع الأجهزة.",s1:"انقر على ابدأ المهمة",s2:"اقرأ التعليمات والسياق التاريخي",s3:"تفاعل مع عناصر اللعبة",s4:"أكمل الأهداف لكسب النقاط",s5:"حاول التغلب على أفضل نتيجة لك!",w1Title:"السياق التاريخي",w1Text:"هذا النشاط مبني على التاريخ الإسلامي الأصيل.",w2Title:"القيمة التعليمية",w2Text:"كل تفاعل يعلّم درساً مهماً من التاريخ الإسلامي.",w3Title:"السمات واللغات",w3Text:"٨ سمات مدمجة. ٣ لغات: الإنجليزية والفرنسية والعربية."}
+};
+let curLang="en";
+function t(k){return(I18N[curLang]&&I18N[curLang][k])||k;}
+function applyLang(){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.dataset.i18n;if(I18N[curLang][k])el.textContent=I18N[curLang][k];});
+  const tt=document.querySelector(".splash-box h1");if(tt)tt.textContent=t("title");
+  const st=document.querySelector(".splash-subtitle");if(st)st.textContent=t("subtitle");
+  const btn=document.getElementById("enterBtn");if(btn)btn.textContent=t("start");
+  const at=document.querySelector("#app h1");if(at)at.textContent=t("title");
+}
+const HS_KEY="wdiy-gz-timeline";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(s){try{const b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true;}}catch(e){}return false;}
+function showHS(){const b=loadHS();if(b>0){const p=document.getElementById("scorePill");if(p&&!p.querySelector(".hs-badge"))p.innerHTML+=' <span class="hs-badge">🏆 '+b+'</span>';}}
+function checkHS(s){if(saveHS(s)){log("NEW HIGH SCORE: "+s+"!","success");showHS();}}
+let timerInterval,timerSec=0;
+function startTimer(){timerSec=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSec++;const m=Math.floor(timerSec/60),s=timerSec%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
 function stopTimer(){clearInterval(timerInterval);}
 
-/* ===== High Score ===== */
-const HS_KEY="wdiy-hs-battle-timeline";
-function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
-function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
-function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">\u{1F3C6} '+best+'</span>';}}
-function checkHS(){
-  if(placed>=totalCards){
-    const pct=Math.round(correctCount/totalCards*100);
-    if(saveHS(pct)){log("\u{1F3C6} NEW HIGH SCORE: "+pct+"%!","success");}
-  }
-}
-
-/* ===== Battle Data ===== */
-const ALL_EVENTS=[
-  {id:"hijrah",name:"Hijrah",year:622,desc:"Migration from Mecca to Medina, marking Year 1 of the Islamic calendar.",phase:"event",cat:"easy"},
-  {id:"constitution",name:"Constitution of Medina",year:622,desc:"A charter establishing a multi-faith community and mutual defense pact.",phase:"event",cat:"hard"},
-  {id:"badr",name:"Battle of Badr",year:624,desc:"First major battle. 313 Muslims defeated ~1000 Quraysh. A decisive defensive victory.",phase:"defensive",cat:"easy"},
-  {id:"banu_qaynuqa",name:"Banu Qaynuqa",year:624,desc:"Siege of the Banu Qaynuqa tribe after they broke the Medina charter.",phase:"defensive",cat:"medium"},
-  {id:"uhud",name:"Battle of Uhud",year:625,desc:"Quraysh attacked with 3000 men. Muslims suffered losses after archers left positions.",phase:"defensive",cat:"easy"},
-  {id:"banu_nadir",name:"Banu Nadir",year:625,desc:"Expulsion of Banu Nadir after a plot against the Prophet was uncovered.",phase:"defensive",cat:"medium"},
-  {id:"banu_mustaliq",name:"Banu Mustaliq",year:626,desc:"Pre-emptive campaign against a tribe preparing to attack Medina.",phase:"defensive",cat:"hard"},
-  {id:"khandaq",name:"Battle of Khandaq",year:627,desc:"Also known as the Battle of the Trench. A 10,000-strong coalition repelled by a defensive trench.",phase:"siege",cat:"easy"},
-  {id:"banu_qurayza",name:"Banu Qurayza",year:627,desc:"Siege after Banu Qurayza broke their alliance during the Battle of the Trench.",phase:"siege",cat:"medium"},
-  {id:"hudaybiyyah",name:"Treaty of Hudaybiyyah",year:628,desc:"A peace treaty with Quraysh allowing Muslims to perform pilgrimage the next year.",phase:"peaceful",cat:"easy"},
-  {id:"khaybar",name:"Battle of Khaybar",year:628,desc:"Offensive campaign against the fortified oasis of Khaybar. First major offensive victory.",phase:"offensive",cat:"easy"},
-  {id:"dhat_al_riqa",name:"Dhat al-Riqa",year:628,desc:"An expedition in Najd to deter raiding tribes. No major battle ensued.",phase:"offensive",cat:"hard"},
-  {id:"mutah",name:"Battle of Mu'tah",year:629,desc:"First Muslim encounter with Byzantine forces in modern-day Jordan. Three commanders fell.",phase:"offensive",cat:"medium"},
-  {id:"umrah",name:"Umrah al-Qadiyyah",year:629,desc:"Fulfillment of the Hudaybiyyah treaty. Muslims performed pilgrimage in Mecca peacefully.",phase:"peaceful",cat:"hard"},
-  {id:"mecca",name:"Conquest of Mecca",year:630,desc:"10,000 Muslims entered Mecca with almost no bloodshed. A peaceful conquest and general amnesty.",phase:"peaceful",cat:"easy"},
-  {id:"hunayn",name:"Battle of Hunayn",year:630,desc:"Hawazin and Thaqif ambushed the Muslims after Mecca. Victory after initial setback.",phase:"offensive",cat:"medium"},
-  {id:"taif",name:"Siege of Taif",year:630,desc:"Siege of the Thaqif stronghold following Hunayn. The siege was lifted after two weeks.",phase:"offensive",cat:"medium"},
-  {id:"tabuk",name:"Expedition to Tabuk",year:630,desc:"The largest Muslim expedition (30,000). March to the Byzantine border. No battle occurred.",phase:"offensive",cat:"medium"},
-  {id:"demolition_idols",name:"Destruction of Idols",year:630,desc:"Expeditions sent to destroy idols across Arabia after the Conquest of Mecca.",phase:"peaceful",cat:"hard"},
-  {id:"yaman_missions",name:"Missions to Yemen",year:631,desc:"Delegations and envoys sent to Yemen. Many tribes accepted Islam peacefully.",phase:"peaceful",cat:"hard"},
-  {id:"farewell",name:"Farewell Pilgrimage",year:632,desc:"The Prophet's final Hajj. He delivered his famous Farewell Sermon at Arafat.",phase:"event",cat:"easy"},
-  {id:"usama",name:"Usama's Expedition",year:632,desc:"The Prophet dispatched a force under young Usama ibn Zayd toward Syria.",phase:"offensive",cat:"hard"},
-];
-
-const PHASE_COLORS={defensive:"#4fc3f7",siege:"#ffd54f",offensive:"#ff8a65",peaceful:"#81c784",event:"#ce93d8"};
-const DIFF_MAP={easy:e=>e.cat==="easy",medium:e=>e.cat==="easy"||e.cat==="medium",hard:()=>true};
-
-/* ===== Game State ===== */
-let gameEvents=[],trayCards=[],placedEvents=[],placed=0,correctCount=0,totalCards=0;
-let difficulty="medium";
-let dragging=null,dragOffX=0,dragOffY=0,dragEl=null;
-
-/* ===== Canvas Timeline ===== */
-const canvas=document.getElementById("tlCanvas");
-const ctx=canvas.getContext("2d");
-let canvasW=900,canvasH=300;
-const TL_Y=100,TL_PAD=60;
-const YEAR_MIN=622,YEAR_MAX=632;
-let dropZones=[];
-let placedOnCanvas=[];
-
-function getCS(prop){return getComputedStyle(document.documentElement).getPropertyValue(prop).trim();}
-
-function yearToX(year){
-  return TL_PAD+(year-YEAR_MIN)/(YEAR_MAX-YEAR_MIN)*(canvasW-TL_PAD*2);
-}
-
-function resizeCanvas(){
-  const wrap=document.getElementById("timelineWrap");
-  const w=Math.max(wrap.clientWidth,800);
-  canvasW=w;canvasH=300;
-  canvas.width=canvasW*window.devicePixelRatio;
-  canvas.height=canvasH*window.devicePixelRatio;
-  canvas.style.width=canvasW+"px";
-  canvas.style.height=canvasH+"px";
-  ctx.setTransform(window.devicePixelRatio,0,0,window.devicePixelRatio,0,0);
-  drawTimeline();
-}
-
-function drawTimeline(){
-  ctx.clearRect(0,0,canvasW,canvasH);
-  const bg=getCS("--bg2")||"#0d1117";
-  const border=getCS("--border")||"#21262d";
-  const text2=getCS("--text2")||"#8b949e";
-  const text3=getCS("--text3")||"#484f58";
-  const accent=getCS("--accent")||"#00ff88";
-  const heading=getCS("--heading")||"#e6edf3";
-
-  // Timeline line
-  ctx.strokeStyle=border;ctx.lineWidth=2;
-  ctx.beginPath();ctx.moveTo(TL_PAD,TL_Y);ctx.lineTo(canvasW-TL_PAD,TL_Y);ctx.stroke();
-
-  // Year markers
-  dropZones=[];
-  for(let y=YEAR_MIN;y<=YEAR_MAX;y++){
-    const x=yearToX(y);
-    ctx.strokeStyle=border;ctx.lineWidth=1;
-    ctx.beginPath();ctx.moveTo(x,TL_Y-12);ctx.lineTo(x,TL_Y+12);ctx.stroke();
-    ctx.fillStyle=text2;ctx.font="600 12px Outfit,sans-serif";ctx.textAlign="center";
-    ctx.fillText(y+" CE",x,TL_Y+30);
-    dropZones.push({year:y,x:x-30,y:TL_Y-60,w:60,h:120});
-  }
-
-  // Phase labels at top
-  const phases=[
-    {label:"Early / Defensive",x1:622,x2:625,color:"#4fc3f7"},
-    {label:"Siege Defense",x1:626,x2:627.5,color:"#ffd54f"},
-    {label:"Offensive",x1:627.5,x2:630.5,color:"#ff8a65"},
-    {label:"Peaceful Conquest",x1:630,x2:632,color:"#81c784"},
+let gameState="idle",score=0,placed=0,total=8;
+let events=[];
+function initGame(){startNewGame();}
+function startNewGame(){
+  gameState="playing";score=0;placed=0;
+  events=[
+    {year:"1 AH",title:"Hijra to Madinah",placed:false},
+    {year:"2 AH",title:"Battle of Badr",placed:false},
+    {year:"3 AH",title:"Battle of Uhud",placed:false},
+    {year:"5 AH",title:"Battle of Khandaq",placed:false},
+    {year:"6 AH",title:"Treaty of Hudaybiyyah",placed:false},
+    {year:"7 AH",title:"Battle of Khaybar",placed:false},
+    {year:"8 AH",title:"Conquest of Mecca",placed:false},
+    {year:"11 AH",title:"Farewell Pilgrimage",placed:false}
   ];
-  phases.forEach(p=>{
-    const x1=yearToX(p.x1),x2=yearToX(p.x2);
-    ctx.fillStyle=p.color+"22";ctx.fillRect(x1,TL_Y-55,x2-x1,50);
-    ctx.strokeStyle=p.color+"44";ctx.lineWidth=1;ctx.strokeRect(x1,TL_Y-55,x2-x1,50);
-    ctx.fillStyle=p.color;ctx.font="600 9px Outfit,sans-serif";ctx.textAlign="center";
-    ctx.fillText(p.label,(x1+x2)/2,TL_Y-60);
-  });
-
-  // Draw placed events on canvas
-  placedOnCanvas.forEach((ev,i)=>{
-    const x=yearToX(ev.year);
-    const col=PHASE_COLORS[ev.phase]||accent;
-    // Vertical connector
-    ctx.strokeStyle=col;ctx.lineWidth=2;
-    const slotY=TL_Y+48+ev._slot*52;
-    ctx.beginPath();ctx.moveTo(x,TL_Y+12);ctx.lineTo(x,slotY);ctx.stroke();
-    // Card on timeline
-    const cw=130,ch=44;
-    const cx=x-cw/2,cy=slotY;
-    ctx.fillStyle=col+"22";
-    ctx.strokeStyle=col;ctx.lineWidth=1.5;
-    roundRect(ctx,cx,cy,cw,ch,6);ctx.fill();ctx.stroke();
-    // Glow
-    ctx.shadowColor=col;ctx.shadowBlur=10;
-    roundRect(ctx,cx,cy,cw,ch,6);ctx.stroke();
-    ctx.shadowBlur=0;
-    // Text
-    ctx.fillStyle=heading;ctx.font="600 10px Outfit,sans-serif";ctx.textAlign="center";
-    ctx.fillText(ev.name,x,cy+16);
-    ctx.fillStyle=text2;ctx.font="10px 'IBM Plex Mono',monospace";
-    ctx.fillText(ev.year+" CE",x,cy+32);
-  });
-
-  // Drop zone highlights if dragging
-  if(dragging){
-    dropZones.forEach(dz=>{
-      ctx.fillStyle=accent+"18";
-      ctx.fillRect(dz.x,dz.y,dz.w,dz.h);
-      ctx.strokeStyle=accent+"44";ctx.lineWidth=1;
-      ctx.strokeRect(dz.x,dz.y,dz.w,dz.h);
-    });
+  total=events.length;startTimer();renderTimeline();updateUI();log(t("subtitle"));
+}
+function renderTimeline(){
+  const area=document.getElementById("timelineArea");if(!area)return;
+  area.innerHTML='<div class="tl-line"></div>'+events.map((ev,i)=>
+    '<div class="tl-event'+(ev.placed?" placed":"")+'" onclick="placeEvent('+i+')"><div class="tl-dot"></div><div class="tl-year">'+ev.year+'</div><div class="tl-title">'+ev.title+'</div></div>'
+  ).join("");
+}
+function placeEvent(i){
+  if(events[i].placed)return;
+  events[i].placed=true;placed++;score+=12;snd("ok");
+  log(events[i].year+": "+events[i].title+" ✓","success");
+  checkWin();renderTimeline();updateUI();
+}
+function checkWin(){
+  if(placed>=total){
+    gameState="won";stopTimer();snd("win");log(t("victory"),"success");checkHS(score);
+    const area=document.getElementById("infoArea");
+    if(area)area.innerHTML='<div class="victory-box"><h2>'+t("victory")+'</h2><p>'+t("score")+": "+score+'</p></div>';
   }
 }
-
-function roundRect(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.lineTo(x+w-r,y);c.quadraticCurveTo(x+w,y,x+w,y+r);c.lineTo(x+w,y+h-r);c.quadraticCurveTo(x+w,y+h,x+w-r,y+h);c.lineTo(x+r,y+h);c.quadraticCurveTo(x,y+h,x,y+h-r);c.lineTo(x,y+r);c.quadraticCurveTo(x,y,x+r,y);}
-
-/* ===== Drag & Drop ===== */
-function buildTray(){
-  const tray=document.getElementById("cardTray");
-  tray.innerHTML="";
-  trayCards=[];
-  const shuffled=[...gameEvents].sort(()=>Math.random()-.5);
-  shuffled.forEach(ev=>{
-    const el=document.createElement("div");
-    el.className="drag-card";
-    el.textContent=ev.name;
-    el.dataset.id=ev.id;
-    el.draggable=false;
-    // Mouse events
-    el.addEventListener("mousedown",e=>startDrag(e,ev,el));
-    // Touch events
-    el.addEventListener("touchstart",e=>startDragTouch(e,ev,el),{passive:false});
-    tray.appendChild(el);
-    trayCards.push({el,ev});
-  });
+function updateUI(){
+  document.getElementById("scMain").textContent=placed;
+  document.getElementById("scLevel").textContent=placed>=total?"100%":Math.round((placed/total)*100)+"%";
+  document.getElementById("scBest").textContent=loadHS();
 }
-
-let ghostEl=null;
-function createGhost(ev){
-  ghostEl=document.createElement("div");
-  ghostEl.className="drag-card";
-  ghostEl.textContent=ev.name;
-  ghostEl.style.position="fixed";
-  ghostEl.style.zIndex="999";
-  ghostEl.style.pointerEvents="none";
-  ghostEl.style.opacity="0.85";
-  ghostEl.style.borderColor=getCS("--accent");
-  ghostEl.style.boxShadow="0 4px 20px rgba(0,0,0,.3)";
-  document.body.appendChild(ghostEl);
-}
-
-function moveGhost(x,y){
-  if(!ghostEl)return;
-  ghostEl.style.left=(x-dragOffX)+"px";
-  ghostEl.style.top=(y-dragOffY)+"px";
-}
-
-function removeGhost(){
-  if(ghostEl){ghostEl.remove();ghostEl=null;}
-}
-
-function startDrag(e,ev,el){
-  e.preventDefault();
-  dragging=ev;dragEl=el;
-  const r=el.getBoundingClientRect();
-  dragOffX=e.clientX-r.left;dragOffY=e.clientY-r.top;
-  el.classList.add("dragging");
-  createGhost(ev);
-  moveGhost(e.clientX,e.clientY);
-  drawTimeline();
-  document.addEventListener("mousemove",onDragMove);
-  document.addEventListener("mouseup",onDragEnd);
-}
-
-function onDragMove(e){
-  moveGhost(e.clientX,e.clientY);
-}
-
-function onDragEnd(e){
-  document.removeEventListener("mousemove",onDragMove);
-  document.removeEventListener("mouseup",onDragEnd);
-  if(!dragging){removeGhost();return;}
-  const canvasRect=canvas.getBoundingClientRect();
-  const mx=e.clientX-canvasRect.left;
-  const my=e.clientY-canvasRect.top;
-  tryDrop(mx,my);
-}
-
-function startDragTouch(e,ev,el){
-  e.preventDefault();
-  dragging=ev;dragEl=el;
-  const touch=e.touches[0];
-  const r=el.getBoundingClientRect();
-  dragOffX=touch.clientX-r.left;dragOffY=touch.clientY-r.top;
-  el.classList.add("dragging");
-  createGhost(ev);
-  moveGhost(touch.clientX,touch.clientY);
-  drawTimeline();
-  const onMove=e2=>{e2.preventDefault();moveGhost(e2.touches[0].clientX,e2.touches[0].clientY);};
-  const onEnd=e2=>{
-    document.removeEventListener("touchmove",onMove);
-    document.removeEventListener("touchend",onEnd);
-    if(!dragging){removeGhost();return;}
-    const t=e2.changedTouches[0];
-    const canvasRect=canvas.getBoundingClientRect();
-    const mx=t.clientX-canvasRect.left;
-    const my=t.clientY-canvasRect.top;
-    tryDrop(mx,my);
-  };
-  document.addEventListener("touchmove",onMove,{passive:false});
-  document.addEventListener("touchend",onEnd);
-}
-
-function tryDrop(mx,my){
-  removeGhost();
-  if(!dragging||!dragEl){dragging=null;return;}
-  const ev=dragging;
-  const el=dragEl;
-
-  // Scale mouse coordinates for devicePixelRatio
-  const scaleX=canvasW/canvas.getBoundingClientRect().width;
-  const scaleY=canvasH/canvas.getBoundingClientRect().height;
-  const cx=mx*scaleX, cy=my*scaleY;
-
-  // Find which year zone the drop is in
-  let hitZone=null;
-  for(const dz of dropZones){
-    if(cx>=dz.x&&cx<=dz.x+dz.w&&cy>=dz.y-40&&cy<=dz.y+dz.h+40){
-      hitZone=dz;break;
-    }
-  }
-
-  if(hitZone&&hitZone.year===ev.year){
-    // Correct placement
-    placed++;correctCount++;
-    const slot=placedOnCanvas.filter(p=>p.year===ev.year).length;
-    ev._slot=slot;
-    placedOnCanvas.push(ev);
-    el.classList.remove("dragging");
-    el.classList.add("correct-flash");
-    snd("ok");
-    log("\u2713 "+ev.name+" placed correctly at "+ev.year+" CE","success");
-    setTimeout(()=>{el.remove();},500);
-    updateScore();
-    drawTimeline();
-    // Show desc in status
-    document.getElementById("status").textContent=ev.name+": "+ev.desc;
-    document.getElementById("status").className="status";
-  } else if(hitZone){
-    // Wrong year
-    el.classList.remove("dragging");
-    el.classList.add("wrong-flash");
-    snd("err");
-    log("\u2717 "+ev.name+" — wrong year ("+hitZone.year+" CE)","error");
-    setTimeout(()=>{el.classList.remove("wrong-flash");},500);
-    dragging=null;dragEl=null;
-    drawTimeline();
-    return;
-  } else {
-    // Dropped outside timeline
-    el.classList.remove("dragging");
-    dragging=null;dragEl=null;
-    drawTimeline();
-    return;
-  }
-
-  dragging=null;dragEl=null;
-
-  if(placed>=totalCards){
-    stopTimer();
-    checkHS();
-    snd("win");
-    document.getElementById("status").textContent="\u{1F3C6} Timeline Complete! "+correctCount+"/"+totalCards+" placed correctly!";
-    document.getElementById("status").className="status win";
-    log("\u{1F3C6} Timeline complete! Score: "+correctCount+"/"+totalCards,"success");
-    showCompletionScroll();
-  }
-}
-
-function updateScore(){
-  document.getElementById("sc").textContent=placed;
-  document.getElementById("tot").textContent=totalCards;
-  document.getElementById("scorePill").textContent=placed+" / "+totalCards;
-  document.getElementById("prog").style.width=(placed/totalCards*100)+"%";
-}
-
-function showCompletionScroll(){
-  // Auto-scroll through the timeline slowly
-  const wrap=document.getElementById("timelineWrap");
-  wrap.scrollLeft=0;
-  let scrollTarget=wrap.scrollWidth-wrap.clientWidth;
-  if(scrollTarget<=0)return;
-  let startTime=null;
-  const duration=3000;
-  function step(ts){
-    if(!startTime)startTime=ts;
-    const prog=Math.min((ts-startTime)/duration,1);
-    wrap.scrollLeft=prog*scrollTarget;
-    if(prog<1)requestAnimationFrame(step);
-  }
-  setTimeout(()=>requestAnimationFrame(step),800);
-}
-
-/* ===== Difficulty & Game Init ===== */
-function setDiff(){difficulty=document.getElementById("diffSel").value;}
-
-function newGame(){
-  startTimer();
-  difficulty=document.getElementById("diffSel").value;
-  gameEvents=ALL_EVENTS.filter(DIFF_MAP[difficulty]);
-  totalCards=gameEvents.length;
-  placed=0;correctCount=0;
-  placedOnCanvas=[];
-  document.getElementById("sc").textContent="0";
-  document.getElementById("tot").textContent=totalCards;
-  document.getElementById("scorePill").textContent="0 / "+totalCards;
-  document.getElementById("prog").style.width="0%";
-  document.getElementById("status").textContent="Drag battle cards onto the timeline!";
-  document.getElementById("status").className="status";
-  document.getElementById("logBox").innerHTML="";
-  log("New game started ("+difficulty+", "+totalCards+" events)");
-  resizeCanvas();
-  buildTray();
-}
-
-/* ===== Init ===== */
+/* --- BOOT --- */
 document.addEventListener("DOMContentLoaded",()=>{
-  setLang("en");setTheme("terminal");
-  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
-  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");if(placedOnCanvas.length>0)drawTimeline();}));
   showHS();
-  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
-  document.getElementById("startBtn").addEventListener("click",newGame);
-  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\u{1F50A}":"\u{1F507}";});
-
-  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
-  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
-
-  window.addEventListener("resize",()=>{if(document.getElementById("app").classList.contains("on"))resizeCanvas();});
+  document.getElementById("enterBtn").addEventListener("click",()=>{
+    document.getElementById("splash").style.display="none";
+    document.getElementById("app").classList.add("on");
+    document.getElementById("backLink").style.display="";
+    initGame();
+  });
+  document.getElementById("startBtn").addEventListener("click",()=>{startNewGame();});
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{
+    curLang=b.dataset.lang;setLang(curLang);applyLang();
+    document.querySelectorAll("[data-lang]").forEach(bb=>bb.classList.toggle("on",bb.dataset.lang===curLang));
+  }));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);}));
+  document.querySelectorAll(".help-tab").forEach(tb=>tb.addEventListener("click",()=>{
+    document.querySelectorAll(".help-tab").forEach(t2=>t2.classList.remove("active"));
+    document.querySelectorAll(".help-content").forEach(c=>c.classList.remove("active"));
+    tb.classList.add("active");document.getElementById("help-"+tb.dataset.tab).classList.add("active");
+  }));
 });
-
-// Keyboard shortcuts
-document.addEventListener("keydown",function(e){
-  if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
-  if(e.key==="h"||e.key==="H"||e.key==="?")openHelp();
-});
-
-// Persist sound preference
-try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="\u{1F507}";}}catch(e){}
-var _origSoundClick=document.getElementById("soundBtn");
-if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
-
-// Persist theme and language
-try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
-(function(){var _osl=setLang,_ost=setTheme;
-setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
-setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
 </script></body></html>

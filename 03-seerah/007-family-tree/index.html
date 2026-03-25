@@ -1,359 +1,174 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Prophet's Family — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
-[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
-[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
-[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
-[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
-[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
-[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
-[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="desert-dawn"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Family Tree</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+[data-theme="desert-dawn"]{--bg:#1a1408;--bg2:#231c0e;--bg3:#2e2514;--border:#3d3420;--border2:#4e432c;--text:#d4c4a0;--text2:#a08c60;--text3:#6b5c3a;--heading:#f5e6c8;--accent:#FFBF00;--abg:rgba(255,191,0,.08);--abr:rgba(255,191,0,.25);--glow:0 0 20px rgba(255,191,0,.15)}
+[data-theme="midnight-desert"]{--bg:#0a0d1a;--bg2:#101528;--bg3:#171d35;--border:#1e2745;--border2:#2a3558;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#DAA520;--abg:rgba(218,165,32,.08);--abr:rgba(218,165,32,.25);--glow:0 0 20px rgba(218,165,32,.12)}
+[data-theme="sandstone"]{--bg:#f5ede0;--bg2:#faf5ea;--bg3:#ede4d2;--border:#d8ccb5;--border2:#c5b89e;--text:#4a3f2e;--text2:#7a6e55;--text3:#a09575;--heading:#2a2010;--accent:#8B6914;--abg:rgba(139,105,20,.08);--abr:rgba(139,105,20,.2);--glow:0 0 15px rgba(139,105,20,.1)}
+[data-theme="oasis"]{--bg:#0a1510;--bg2:#0e1c14;--bg3:#14261c;--border:#1e3528;--border2:#284535;--text:#a8d4b8;--text2:#6a9a78;--text3:#3a6848;--heading:#d0f0dc;--accent:#50C878;--abg:rgba(80,200,120,.08);--abr:rgba(80,200,120,.2);--glow:0 0 20px rgba(80,200,120,.1)}
+[data-theme="sunset"]{--bg:#1a0e08;--bg2:#221410;--bg3:#2e1c16;--border:#3d2a20;--border2:#4e382c;--text:#d4b8a0;--text2:#a07e60;--text3:#6a5038;--heading:#f5dcc8;--accent:#ff6b35;--abg:rgba(255,107,53,.08);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.12)}
+[data-theme="night-sky"]{--bg:#08091a;--bg2:#0e1028;--bg3:#151835;--border:#1e2248;--border2:#2a2e5a;--text:#b0b8d8;--text2:#7078a8;--text3:#484e78;--heading:#dde0f5;--accent:#7B68EE;--abg:rgba(123,104,238,.08);--abr:rgba(123,104,238,.25);--glow:0 0 20px rgba(123,104,238,.12)}
+[data-theme="caravan"]{--bg:#100808;--bg2:#180e0e;--bg3:#221616;--border:#331e1e;--border2:#442828;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#CD853F;--abg:rgba(205,133,63,.08);--abr:rgba(205,133,63,.25);--glow:0 0 20px rgba(205,133,63,.12)}
+[data-theme="parchment"]{--bg:#f0e8d8;--bg2:#f8f2e5;--bg3:#e8ddc8;--border:#d0c4a8;--border2:#b8aa8e;--text:#3a3020;--text2:#6a5e45;--text3:#9a8e70;--heading:#1a1408;--accent:#A0522D;--abg:rgba(160,82,45,.08);--abr:rgba(160,82,45,.2);--glow:0 0 15px rgba(160,82,45,.1)}
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
-[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
-h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
-.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
-.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
-.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
-.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
-.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
-.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
-.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+body{background:var(--bg);color:var(--text);font-family:'Amiri','Noto Sans Arabic',serif;font-size:14px;min-height:100vh;overflow-x:hidden}
+[lang="ar"] body{font-family:'Noto Sans Arabic','Amiri',serif}
+h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;position:relative;overflow:hidden}
+.splash::before{content:'';position:absolute;bottom:0;left:0;right:0;height:35%;background:linear-gradient(0deg,var(--accent) 0%,transparent);opacity:.04;pointer-events:none}
+.splash-dunes{position:absolute;bottom:0;left:0;right:0;height:100px;overflow:hidden;pointer-events:none}
+.splash-dunes::before{content:'';position:absolute;bottom:-30px;left:-10%;width:120%;height:80px;border-radius:50%;background:var(--bg3);border-top:2px solid var(--border)}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .6s;position:relative;z-index:2}
+.splash-bism{color:var(--text3);font-size:13px;margin-bottom:14px;font-family:'Amiri',serif}
+.btn-go{padding:14px 36px;background:linear-gradient(135deg,var(--accent),#DAA520);color:#1a1408;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase;transition:transform .15s,box-shadow .15s}
+.btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,191,0,.3)}
+.sw{display:flex;gap:4px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:30px;height:30px;border-radius:8px;border:1px solid var(--border);background:none;color:var(--text2);font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}
 .sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-btn:hover{border-color:var(--accent)}
 .sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
-.app{display:none;max-width:540px;margin:0 auto;padding:12px 16px}.app.on{display:block}
-.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
-.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
-.hdr h1{font-size:18px}
-.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
-.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
-.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
-.ctrl button:hover{border-color:var(--abr)}
-.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
-.status.win{color:var(--accent)}.status.lose{color:#ff4444}
-.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
-.big-text{font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;color:var(--heading);text-align:center;line-height:1.5;padding:0 8px}
-.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
-.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .15s;min-width:50px;text-align:center}
-.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
-.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
-.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
-.grid-pick{display:grid;gap:8px;justify-content:center;margin:10px auto;width:100%}
-.grid-pick.g2{grid-template-columns:repeat(2,1fr);max-width:360px}
-.pick-card{padding:14px 10px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;cursor:pointer;text-align:center;transition:all .15s}
-.pick-card:hover{border-color:var(--accent);background:var(--abg)}
-.pick-card.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
-.pick-card.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
-.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
-.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
-.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
-.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
-.fact-box{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-top:4px;text-align:center;animation:fadeUp .3s;width:100%;max-width:400px}
-.fact-box .fact-name{font-family:'Noto Sans Arabic',sans-serif;font-size:20px;color:var(--accent);margin-bottom:4px}
-.fact-box .fact-rel{font-family:'Outfit',sans-serif;font-size:13px;color:var(--heading);font-weight:700;margin-bottom:4px}
-.fact-box .fact-detail{font-size:11px;color:var(--text2);line-height:1.6}
-.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
-.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
-.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
+.app{display:none;max-width:560px;margin:0 auto;padding:16px 20px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:12px;margin-bottom:10px;font-family:'Amiri',serif}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:20px;font-weight:800}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'Outfit',sans-serif}
+.ctrl{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:8px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--heading);font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .15s}
+.ctrl button:hover{border-color:var(--accent);color:var(--accent)}
+.status{text-align:center;font-size:15px;margin-bottom:14px;font-weight:600;color:var(--heading);min-height:24px;font-family:'Outfit',sans-serif}
+.status.win{color:var(--accent)}
+.items-area{display:flex;flex-direction:column;gap:12px;margin-bottom:14px}
+.item-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:16px;cursor:pointer;transition:all .2s;animation:fadeUp .4s both}
+.item-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.item-card.active{border-color:var(--accent);background:var(--abg)}
+.item-card h3{font-family:'Outfit',sans-serif;font-size:15px;color:var(--heading);margin-bottom:6px}
+.item-card p{font-size:12px;color:var(--text2);line-height:1.6;display:none}
+.item-card.active p{display:block}
+.score-row{display:flex;gap:24px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:12px}
+.score-item{text-align:center}
+.score-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px}
+.score-num{font-size:26px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;max-height:80px;overflow-y:auto;font-size:11px;color:var(--text2);margin-bottom:12px}
+.log-line{padding:2px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:11px;padding:16px 0;border-top:1px solid var(--border);font-family:'Outfit',sans-serif}
+.back-link{position:fixed;top:10px;left:10px;z-index:100;padding:6px 12px;border-radius:8px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:12px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s;display:none}
+.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}
+[dir="rtl"] .back-link{left:auto;right:10px}
 .sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
 .sidebar-overlay.open{opacity:1;pointer-events:auto}
 .sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
 .sidebar-left{left:0;transform:translateX(-100%)}
 [dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
 .sidebar-left.open{transform:translateX(0)}
-.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
-.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
-.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:16px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .15s}
 .btn-close:hover{border-color:var(--accent);color:var(--accent)}
 .help-tabs{display:flex;border-bottom:1px solid var(--border)}
-.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab{flex:1;padding:10px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
 .help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
-.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.sidebar-body{flex:1;overflow-y:auto;padding:16px}
 .help-content{display:none}.help-content.active{display:block}
-.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
-.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
-.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.help-item summary{padding:10px 14px;cursor:pointer;font-size:13px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"\25B8";color:var(--accent);font-size:10px;transition:transform .2s}
 .help-item[open] summary::before{transform:rotate(90deg)}
-.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
-.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
-.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
-.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
-.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
-.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
+.help-item p{padding:0 14px 10px;font-size:12px;color:var(--text2);line-height:1.7}
+.help-step{display:flex;gap:10px;margin-bottom:14px;align-items:flex-start}
+.help-step-num{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#DAA520);color:#1a1408;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:12px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:16px}.wiki-entry h3{font-size:14px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:12px;color:var(--text2);line-height:1.7}
+.sidebar-footer{padding:12px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:8px 12px;border-radius:8px;font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .15s}
 .btn-help:hover{border-color:var(--accent);color:var(--accent)}
-.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
-.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Prophet's Family</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Know the family of Muhammad ﷺ</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Learn about the beloved family members of the Prophet ﷺ through an interactive quiz!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Prophet's Family</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="easy">Easy (10)</option><option value="medium" selected>Medium (15)</option><option value="hard">Hard (20+)</option></select>
-    <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
-    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
-    <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
-<div class="status" id="status">Pick the correct family member!</div>
-<div class="game-area" id="gameArea"><div class="big-text" id="question">?</div><div class="grid-pick g2" id="choices"></div><div id="factArea"></div><div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div></div>
-<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
-<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Prophet's Family v1.0</div></div>
+<a href="../../index.html" class="back-link" id="backLink">&larr; Catalog</a>
+<div class="splash" id="splash"><div class="splash-dunes"></div><div class="splash-box">
+<div class="splash-bism">بِسْمِ ٱللَّوهِ ٱلرَّحْمَـنِ ٱلرَّحِيمِ</div>
+<div style="width:80px;height:80px;margin:0 auto 16px;border-radius:50%;background:radial-gradient(circle,var(--accent) 20%,transparent 70%);opacity:.3;animation:pulse 3s infinite"></div>
+<h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splTitle">Family Tree</h1>
+<div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px" id="splSub">Noble Lineage</div>
+<p style="color:var(--text2);font-size:13px;line-height:1.7;margin-bottom:24px" id="splDesc">Explore the family tree of Prophet Muhammad (SAW).</p>
+<button class="btn-go" id="enterBtn">Start Mission</button>
+<div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span>
+<button class="sw-btn on" data-thm="desert-dawn">&#9728;</button><button class="sw-btn" data-thm="midnight-desert">&#127769;</button><button class="sw-btn" data-thm="sandstone">&#127966;</button><button class="sw-btn" data-thm="oasis">&#127795;</button><button class="sw-btn" data-thm="sunset">&#127773;</button><button class="sw-btn" data-thm="night-sky">&#11088;</button><button class="sw-btn" data-thm="caravan">&#128042;</button><button class="sw-btn" data-thm="parchment">&#128220;</button>
+</div></div></div>
+
+<div class="app" id="app">
+<div class="hdr-bism">بِسْمِ ٱللَّوهِ ٱلرَّحْمَـنِ ٱلرَّحِيمِ</div>
+<div class="hdr"><h1 id="appTitle">Family Tree</h1><span class="pill" id="scorePill">0 / 0</span></div>
+<div class="ctrl">
+<button id="startBtn">&#9654; New Game</button>
+<button class="btn-help" onclick="openHelp()">?</button>
+<button id="soundBtn">&#128266;</button>
+<div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw"><button class="sw-btn on" data-thm="desert-dawn">&#9728;</button><button class="sw-btn" data-thm="midnight-desert">&#127769;</button><button class="sw-btn" data-thm="sandstone">&#127966;</button><button class="sw-btn" data-thm="oasis">&#127795;</button><button class="sw-btn" data-thm="sunset">&#127773;</button><button class="sw-btn" data-thm="night-sky">&#11088;</button><button class="sw-btn" data-thm="caravan">&#128042;</button><button class="sw-btn" data-thm="parchment">&#128220;</button></div>
+</div>
+<div class="status" id="status">Loading...</div>
+<div id="itemsArea" class="items-area"></div>
+<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">Score</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div>
+<div class="foot">Family Tree &mdash; Seerah Series v2.0</div>
+</div>
 
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
-<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
-  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
-  <div class="help-tabs">
-    <button class="help-tab active" data-tab="faq">FAQ</button>
-    <button class="help-tab" data-tab="howto">How-To</button>
-    <button class="help-tab" data-tab="wiki">Wiki</button>
-  </div>
-  <div class="sidebar-body">
-    <div class="help-content active" id="help-faq">
-        <details class="help-item"><summary>What is Prophet's Family?</summary><p>An interactive quiz to learn about the family members of Prophet Muhammad ﷺ, their names, relationships, and roles in Islamic history.</p></details>
-        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
-        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
-        <details class="help-item"><summary>What are the difficulty levels?</summary><p>Easy covers the 10 closest family members. Medium adds 15 members. Hard includes all 20+ family members with more detailed questions.</p></details>
-        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
-        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
-        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
-    </div>
-    <div class="help-content" id="help-howto">
-        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
-        <div class="help-step"><span class="help-step-num">2</span><p>Choose your difficulty: Easy, Medium, or Hard</p></div>
-        <div class="help-step"><span class="help-step-num">3</span><p>Press ▶ New Game to begin a new round</p></div>
-        <div class="help-step"><span class="help-step-num">4</span><p>Read the description and pick the correct family member from 4 options</p></div>
-        <div class="help-step"><span class="help-step-num">5</span><p>After a correct answer, read the fact card to learn more</p></div>
-        <div class="help-step"><span class="help-step-num">6</span><p>Watch your score and progress bar</p></div>
-        <div class="help-step"><span class="help-step-num">7</span><p>Use keyboard shortcuts 1-4 to answer quickly</p></div>
-        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div>
-    </div>
-    <div class="help-content" id="help-wiki">
-        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Learn the names and roles of Prophet Muhammad's ﷺ family members. Build knowledge of Seerah through interactive play.</p></div>
-        <div class="wiki-entry"><h3>👨‍👩‍👧‍👦 Family Members</h3><p>20+ members: parents, grandparents, uncles, wives, daughters, sons-in-law, grandchildren, caretakers, and adopted son.</p></div>
-        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
-        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Francais, العربية. Arabic auto-enables RTL layout.</p></div>
-        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Correct = rising tone, wrong = buzz, win = melody. Toggle with 🔊 button.</p></div>
-        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
-    </div>
-  </div>
-  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+<aside class="sidebar sidebar-left" id="helpPanel">
+<div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">&times;</button></div>
+<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
+<div class="sidebar-body">
+<div class="help-content active" id="help-faq">
+<details class="help-item"><summary>What is this app?</summary><p>Explore the family tree of Prophet Muhammad (SAW).</p></details>
+<details class="help-item"><summary>Is the content authentic?</summary><p>Based on authentic Seerah sources and scholarly works.</p></details>
+</div>
+<div class="help-content" id="help-howto">
+<div class="help-step"><span class="help-step-num">1</span><p>Start the activity from the splash screen</p></div>
+<div class="help-step"><span class="help-step-num">2</span><p>Explore each item by clicking on it</p></div>
+<div class="help-step"><span class="help-step-num">3</span><p>Complete all items to finish!</p></div>
+</div>
+<div class="help-content" id="help-wiki">
+<div class="wiki-entry"><h3>About</h3><p>Explore the family tree of Prophet Muhammad (SAW). Part of the Seerah learning series for Muslim kids.</p></div>
+</div></div>
+<div class="sidebar-footer">Seerah Series &mdash; v2.0</div>
 </aside>
+
 <script>
+var UI={
+title:{en:"Family Tree",fr:"Arbre Généalogique",ar:"شجرة العائلة"},
+sub:{en:"Noble Lineage",fr:"Noble Lineage",ar:"Noble Lineage"},
+desc:{en:"Explore the family tree of Prophet Muhammad (SAW).",fr:"Explore the family tree of Prophet Muhammad (SAW).",ar:"Explore the family tree of Prophet Muhammad (SAW)."},
+new_game:{en:"\u25b6 New Game",fr:"\u25b6 Nouveau jeu",ar:"\u25b6 \u0644\u0639\u0628\u0629 \u062c\u062f\u064a\u062f\u0629"}
+};
+var curLang="en",soundOn=true,actx;
+function t(k){return UI[k]?UI[k][curLang]||UI[k].en:"";}
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
-function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
-function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
-let soundOn=true,actx;
-function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
-function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});
+document.getElementById("splTitle").textContent=t("title");document.getElementById("splSub").textContent=t("sub");document.getElementById("splDesc").textContent=t("desc");document.getElementById("appTitle").textContent=t("title");document.getElementById("startBtn").textContent=t("new_game");}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th)});}
+function snd(type){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(type==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(type==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(type==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){var b=document.getElementById("logBox"),d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+var HS_KEY="seerah-hs-007-family-tree";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0;}catch(e){return 0;}}
+function saveHS(s){try{localStorage.setItem(HS_KEY,s);}catch(e){}}
 
-// ── Family Members Data ──
-const FAMILY=[
-{id:"abdullah",name:"Abdullah",ar:"عبد الله",rel:"Father",tier:1,
- questions:["Who was the Prophet's ﷺ father?","Who passed away before the Prophet ﷺ was born?","Which family member did the Prophet ﷺ never meet because he died before his birth?"],
- fact:"Abdullah ibn Abd al-Muttalib was the Prophet's father. He passed away before the Prophet ﷺ was born, while on a trade journey to Madinah."},
-{id:"aminah",name:"Aminah",ar:"آمنة",rel:"Mother",tier:1,
- questions:["Who was the Prophet's ﷺ mother?","Who passed away when the Prophet ﷺ was six years old?","Which woman gave birth to the Prophet ﷺ in the Year of the Elephant?"],
- fact:"Aminah bint Wahb was the Prophet's mother. She raised him lovingly but passed away when he was only six years old during a journey from Madinah."},
-{id:"abdulmuttalib",name:"Abdul Muttalib",ar:"عبد المطلب",rel:"Grandfather",tier:1,
- questions:["Who raised the Prophet ﷺ after his mother passed away?","Who was the respected chief of Quraysh and the Prophet's grandfather?","Who took care of the Prophet ﷺ from age 6 to 8?"],
- fact:"Abdul Muttalib was the Prophet's grandfather and chief of Quraysh. He lovingly raised the Prophet ﷺ after Aminah's death, until he himself passed away when the Prophet ﷺ was eight."},
-{id:"abutalib",name:"Abu Talib",ar:"أبو طالب",rel:"Uncle & Protector",tier:1,
- questions:["Which uncle raised and protected the Prophet ﷺ after his grandfather died?","Who shielded the Prophet ﷺ from Quraysh's persecution for many years?","Which uncle took the young Prophet ﷺ on a trade journey to Syria?"],
- fact:"Abu Talib was the Prophet's uncle who raised him from age 8. He protected the Prophet ﷺ from the Quraysh throughout the early years of Islam, even during the boycott in the valley."},
-{id:"khadijah",name:"Khadijah",ar:"خديجة",rel:"First Wife",tier:1,
- questions:["Who was the Prophet's ﷺ first wife?","Who was the first person to believe in the Prophet's ﷺ message?","Which successful businesswoman married the Prophet ﷺ?","Who comforted the Prophet ﷺ after his first revelation in the Cave of Hira?"],
- fact:"Khadijah bint Khuwaylid was the Prophet's first wife and the first person to accept Islam. She was a successful merchant who supported the Prophet ﷺ with her wealth, love, and unwavering faith."},
-{id:"fatimah",name:"Fatimah",ar:"فاطمة",rel:"Youngest Daughter",tier:1,
- questions:["Who was the Prophet's ﷺ youngest and most beloved daughter?","Which daughter of the Prophet ﷺ married Ali ibn Abi Talib?","Who is known as 'the leader of the women of Paradise'?","Which daughter of the Prophet ﷺ was called az-Zahra (the Radiant)?"],
- fact:"Fatimah az-Zahra was the Prophet's youngest daughter with Khadijah. She married Ali ibn Abi Talib and is the mother of Hasan and Husayn. She is known as the leader of the women of Paradise."},
-{id:"ali",name:"Ali ibn Abi Talib",ar:"علي بن أبي طالب",rel:"Son-in-law & Cousin",tier:1,
- questions:["Who was the Prophet's ﷺ cousin and son-in-law?","Who was the first young boy to accept Islam?","Who married Fatimah, the Prophet's ﷺ daughter?","Who became the fourth Rightly-Guided Caliph?"],
- fact:"Ali ibn Abi Talib was the Prophet's cousin and son-in-law. He was the first child to accept Islam, married Fatimah, and later became the fourth Rightly-Guided Caliph. He was known for his bravery and knowledge."},
-{id:"hasan",name:"Hasan",ar:"الحسن",rel:"Grandson",tier:1,
- questions:["Who was the Prophet's ﷺ elder grandson?","Which grandson of the Prophet ﷺ is known for bringing peace between Muslims?","Who is one of the 'leaders of the youth of Paradise'?"],
- fact:"Hasan ibn Ali was the Prophet's elder grandson through Fatimah. The Prophet ﷺ loved him dearly. He is known for uniting the Muslim community by making peace, and is called a leader of the youth of Paradise."},
-{id:"husayn",name:"Husayn",ar:"الحسين",rel:"Grandson",tier:1,
- questions:["Who was the Prophet's ﷺ younger grandson?","Which grandson of the Prophet ﷺ stood for justice at Karbala?","About whom did the Prophet ﷺ say 'Husayn is from me and I am from Husayn'?"],
- fact:"Husayn ibn Ali was the Prophet's younger grandson through Fatimah. The Prophet ﷺ loved him deeply. He is remembered for his courageous stand for justice and truth at Karbala."},
-{id:"hamza",name:"Hamza",ar:"حمزة",rel:"Uncle, Lion of Allah",tier:1,
- questions:["Who was known as the 'Lion of Allah'?","Which uncle of the Prophet ﷺ was martyred at the Battle of Uhud?","Which uncle of the Prophet ﷺ was known for his great strength and bravery?"],
- fact:"Hamza ibn Abdul Muttalib was the Prophet's uncle, known as the Lion of Allah and the Chief of Martyrs. He was one of the bravest warriors of Islam and was martyred at the Battle of Uhud."},
-{id:"aisha",name:"Aisha",ar:"عائشة",rel:"Wife & Great Scholar",tier:2,
- questions:["Which wife of the Prophet ﷺ was known as a great scholar of Islam?","Which wife of the Prophet ﷺ narrated the most hadiths among the Mothers of the Believers?","Who was the daughter of Abu Bakr and wife of the Prophet ﷺ?"],
- fact:"Aisha bint Abu Bakr was the Prophet's wife and one of the greatest scholars of Islam. She narrated thousands of hadiths and people came from far and wide to learn from her knowledge of the Quran and Sunnah."},
-{id:"abbas",name:"Abbas",ar:"العباس",rel:"Uncle",tier:2,
- questions:["Which uncle of the Prophet ﷺ supported him at the Second Pledge of Aqabah?","Who was the ancestor of the Abbasid dynasty?","Which uncle of the Prophet ﷺ accepted Islam near the conquest of Makkah?"],
- fact:"Abbas ibn Abdul Muttalib was the Prophet's uncle. He supported the Prophet ﷺ in Madinah and at the Pledge of Aqabah. His descendants later founded the Abbasid Caliphate."},
-{id:"zainab_d",name:"Zainab bint Muhammad",ar:"زينب بنت محمد",rel:"Eldest Daughter",tier:2,
- questions:["Who was the Prophet's ﷺ eldest daughter?","Which daughter of the Prophet ﷺ married Abul-Aas ibn al-Rabi?","Which daughter of the Prophet ﷺ was the firstborn child?"],
- fact:"Zainab was the Prophet's eldest daughter with Khadijah. She married Abul-Aas ibn al-Rabi before Islam. Her story of patience and faith while separated from her husband is deeply moving."},
-{id:"ruqayyah",name:"Ruqayyah",ar:"رقية",rel:"Daughter",tier:2,
- questions:["Which daughter of the Prophet ﷺ migrated to Abyssinia with Uthman?","Which daughter of the Prophet ﷺ first married Uthman ibn Affan?","Who passed away during the Battle of Badr?"],
- fact:"Ruqayyah was the Prophet's daughter with Khadijah. She married Uthman ibn Affan and they were among the first Muslims to migrate to Abyssinia. She passed away during the time of the Battle of Badr."},
-{id:"umm_kulthum",name:"Umm Kulthum",ar:"أم كلثوم",rel:"Daughter",tier:2,
- questions:["Which daughter of the Prophet ﷺ married Uthman after Ruqayyah?","Why was Uthman called 'Dhun-Nurayn' (Possessor of Two Lights)?","Which daughter of the Prophet ﷺ was Uthman's second wife from the Prophet's family?"],
- fact:"Umm Kulthum was the Prophet's daughter with Khadijah. After Ruqayyah's death, she married Uthman ibn Affan, which is why Uthman was given the title Dhun-Nurayn — Possessor of Two Lights."},
-{id:"uthman",name:"Uthman ibn Affan",ar:"عثمان بن عفان",rel:"Son-in-law, 3rd Caliph",tier:2,
- questions:["Which son-in-law of the Prophet ﷺ married two of his daughters?","Who was called 'Dhun-Nurayn' (Possessor of Two Lights)?","Which son-in-law became the third Rightly-Guided Caliph?"],
- fact:"Uthman ibn Affan married two of the Prophet's daughters: Ruqayyah and then Umm Kulthum. He was known for his generosity, compiled the Quran into one standard book, and became the third Rightly-Guided Caliph."},
-{id:"halimah",name:"Halimah Sa'diyah",ar:"حليمة السعدية",rel:"Wet Nurse / Foster Mother",tier:2,
- questions:["Who was the Prophet's ﷺ wet nurse from the desert?","Who raised the young Prophet ﷺ among the Banu Sa'd tribe?","In whose care did the miraculous opening of the Prophet's chest occur?"],
- fact:"Halimah Sa'diyah was the Prophet's wet nurse from the Banu Sa'd tribe. She nursed and raised the young Prophet ﷺ in the desert, where he grew up strong. Many blessings came to her family through him."},
-{id:"barakah",name:"Barakah (Umm Ayman)",ar:"بركة (أم أيمن)",rel:"Caretaker",tier:3,
- questions:["Who cared for the Prophet ﷺ from his infancy as a devoted caretaker?","Who was also known as Umm Ayman?","Which woman served the Prophet's family since before his birth and was like a second mother to him?"],
- fact:"Barakah, known as Umm Ayman, was an Abyssinian woman who cared for the Prophet ﷺ from his birth. She was like a second mother to him. The Prophet ﷺ said about her: 'She is the remainder of my family.'"},
-{id:"zayd",name:"Zayd ibn Harithah",ar:"زيد بن حارثة",rel:"Adopted Son",tier:3,
- questions:["Who was the Prophet's ﷺ adopted son?","Who was the only companion mentioned by name in the Quran?","Who chose to stay with the Prophet ﷺ rather than return to his own father?"],
- fact:"Zayd ibn Harithah was the Prophet's adopted son and one of the first to accept Islam. He is the only companion mentioned by name in the Quran. He chose to stay with the Prophet ﷺ over his own family, showing deep love."},
-{id:"ibrahim",name:"Ibrahim",ar:"إبراهيم",rel:"Son (passed away young)",tier:3,
- questions:["Which son of the Prophet ﷺ passed away as an infant?","Whose death caused the Prophet ﷺ to weep and say 'The eyes shed tears and the heart grieves'?","Which son of the Prophet ﷺ was born to Mariyah?"],
- fact:"Ibrahim was the Prophet's son born to Mariyah al-Qibtiyyah. He passed away as a young infant. The Prophet ﷺ wept at his passing and said: 'The eyes shed tears and the heart grieves, but we say only what pleases our Lord.'"}
-];
+var ITEMS=[{name:{en:"Abdullah & Aminah",fr:"Abdullah & Aminah",ar:"Abdullah & Aminah"},desc:{en:"The Prophet's parents",fr:"The Prophet's parents",ar:"The Prophet's parents"}},{name:{en:"Abdul Muttalib",fr:"Abdul Muttalib",ar:"Abdul Muttalib"},desc:{en:"The Prophet's grandfather, chief of Quraysh",fr:"The Prophet's grandfather, chief of Quraysh",ar:"The Prophet's grandfather, chief of Quraysh"}},{name:{en:"Abu Talib",fr:"Abu Talib",ar:"Abu Talib"},desc:{en:"Uncle who protected the Prophet",fr:"Uncle who protected the Prophet",ar:"Uncle who protected the Prophet"}},{name:{en:"Khadijah (RA)",fr:"Khadijah (RA)",ar:"Khadijah (RA)"},desc:{en:"First wife and first believer",fr:"First wife and first believer",ar:"First wife and first believer"}},{name:{en:"Fatimah (RA)",fr:"Fatimah (RA)",ar:"Fatimah (RA)"},desc:{en:"Beloved daughter, mother of Hassan and Hussain",fr:"Beloved daughter, mother of Hassan and Hussain",ar:"Beloved daughter, mother of Hassan and Hussain"}},{name:{en:"Hassan & Hussain",fr:"Hassan & Hussain",ar:"Hassan & Hussain"},desc:{en:"Grandsons, leaders of youth in Paradise",fr:"Grandsons, leaders of youth in Paradise",ar:"Grandsons, leaders of youth in Paradise"}},{name:{en:"Halimah Sa'diyah",fr:"Halimah Sa'diyah",ar:"Halimah Sa'diyah"},desc:{en:"Wet nurse who raised him in the desert",fr:"Wet nurse who raised him in the desert",ar:"Wet nurse who raised him in the desert"}}];
+var explored=new Set();
+function renderItems(){var area=document.getElementById("itemsArea");area.innerHTML="";ITEMS.forEach(function(p,i){var card=document.createElement("div");card.className="item-card"+(explored.has(i)?" active":"");card.style.animationDelay=(i*.06)+"s";card.innerHTML='<h3>'+(p.name[curLang]||p.name.en)+'</h3><p>'+(p.desc[curLang]||p.desc.en)+'</p>';card.onclick=function(){if(!explored.has(i)){explored.add(i);snd("ok");log("Explored: "+(p.name.en),"success");document.getElementById("sc").textContent=explored.size;document.getElementById("scorePill").textContent=explored.size+" / "+ITEMS.length;if(explored.size>=ITEMS.length){snd("win");document.getElementById("status").textContent="All explored! MashaAllah!";document.getElementById("status").className="status win";}}card.classList.toggle("active");};area.appendChild(card);});}
+function newGame(){explored.clear();document.getElementById("sc").textContent="0";document.getElementById("tot").textContent=ITEMS.length;document.getElementById("scorePill").textContent="0 / "+ITEMS.length;document.getElementById("status").textContent="Tap each item to explore";document.getElementById("status").className="status";document.getElementById("logBox").innerHTML="";renderItems();}
 
-let total=10,current=0,correct=0,ans=null,locked=false,usedQuestions=[],difficulty="medium";
-
-function getDiffMembers(){
-  if(difficulty==="easy") return FAMILY.filter(m=>m.tier===1);
-  if(difficulty==="medium") return FAMILY.filter(m=>m.tier<=2);
-  return FAMILY.slice();
-}
-function getDiffTotal(){
-  if(difficulty==="easy") return 10;
-  if(difficulty==="medium") return 15;
-  return 20;
-}
-function setDiff(){
-  difficulty=document.getElementById("diffSel").value;
-  total=getDiffTotal();
-}
-
-function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
-
-function genQ(){
-  const pool=getDiffMembers();
-  const member=pool[Math.floor(Math.random()*pool.length)];
-  const qList=member.questions.filter(q=>!usedQuestions.includes(q));
-  const question=qList.length>0?qList[Math.floor(Math.random()*qList.length)]:member.questions[Math.floor(Math.random()*member.questions.length)];
-  usedQuestions.push(question);
-  const opts=[member.name];
-  const others=pool.filter(m=>m.id!==member.id);
-  shuffle(others);
-  for(let i=0;i<Math.min(3,others.length);i++) opts.push(others[i].name);
-  while(opts.length<4){
-    const all=FAMILY.filter(m=>!opts.includes(m.name));
-    if(all.length===0) break;
-    opts.push(all[Math.floor(Math.random()*all.length)].name);
-  }
-  return{question:question,ans:member.name,memberId:member.id,opts:shuffle(opts)};
-}
-
-let timerInterval,timerSeconds=0;
-function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
-function stopTimer(){clearInterval(timerInterval);}
-
-function newGame(){
-  startTimer();
-  difficulty=document.getElementById("diffSel")?document.getElementById("diffSel").value:"medium";
-  total=getDiffTotal();
-  current=0;correct=0;usedQuestions=[];
-  document.getElementById("sc").textContent="0";
-  document.getElementById("tot").textContent="0";
-  document.getElementById("scorePill").textContent="0 / 0";
-  document.getElementById("factArea").innerHTML="";
-  nextQ();
-}
-
-function nextQ(){
-  if(current>=total){
-    stopTimer();checkHS();snd("win");
-    document.getElementById("status").textContent="🏆 Done! "+correct+"/"+total;
-    document.getElementById("status").className="status win";
-    log("🏆 Score: "+correct+"/"+total,"success");
-    return;
-  }
-  locked=false;
-  document.getElementById("factArea").innerHTML="";
-  const q=genQ();
-  document.getElementById("question").textContent=q.question;
-  ans=q.ans;
-  const el=document.getElementById("choices");
-  el.innerHTML="";
-  q.opts.forEach(o=>{
-    const b=document.createElement("button");
-    b.className="pick-card";
-    b.textContent=o;
-    b.onclick=()=>pick(b,o,q.memberId);
-    el.appendChild(b);
-  });
-  document.getElementById("status").textContent=(current+1)+"/"+total;
-  document.getElementById("status").className="status";
-  document.getElementById("prog").style.width=(current/total*100)+"%";
-}
-
-function showFact(memberId){
-  const m=FAMILY.find(f=>f.id===memberId);
-  if(!m) return;
-  const fa=document.getElementById("factArea");
-  fa.innerHTML='<div class="fact-box"><div class="fact-name">'+m.ar+'</div><div class="fact-rel">'+m.name+' — '+m.rel+'</div><div class="fact-detail">'+m.fact+'</div></div>';
-}
-
-function pick(btn,val,memberId){
-  if(locked) return;
-  locked=true;current++;
-  if(String(val)===String(ans)){
-    correct++;btn.classList.add("correct");snd("ok");
-    log("✓ "+val+" — Correct!","success");
-    showFact(memberId);
-  }else{
-    btn.classList.add("wrong");snd("err");
-    log("✗ "+val+" — Answer: "+ans,"error");
-    document.querySelectorAll(".pick-card").forEach(b=>{if(b.textContent===ans)b.classList.add("correct");});
-    showFact(memberId);
-  }
-  document.getElementById("sc").textContent=correct;
-  document.getElementById("tot").textContent=current;
-  document.getElementById("scorePill").textContent=correct+" / "+current;
-  document.getElementById("prog").style.width=(current/total*100)+"%";
-  setTimeout(nextQ, current>=total?900:2200);
-}
-
-// High Score
-const HS_KEY="wdiy-hs-family-tree";
-function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
-function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
-function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
-function checkHS(){
-  if(typeof correct!=="undefined"&&typeof total!=="undefined"&&current>=total){
-    const pct=Math.round(correct/total*100);
-    if(saveHS(pct)){log("🏆 NEW HIGH SCORE: "+pct+"%!","success");}
-  }
-}
-
-document.addEventListener("DOMContentLoaded",()=>{
-  setLang("en");setTheme("terminal");
-  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
-  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
-  showHS();
-  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
-  document.getElementById("startBtn").addEventListener("click",newGame);
-  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
-
-document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
-document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+document.addEventListener("DOMContentLoaded",function(){
+setLang("en");setTheme("desert-dawn");
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
+document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+document.getElementById("startBtn").addEventListener("click",newGame);
+document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"\ud83d\udd0a":"\ud83d\udd07";try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();if(e.key>="1"&&e.key<="4"){var btns=document.querySelectorAll(".answer-btn");var i=parseInt(e.key)-1;if(btns[i])btns[i].click();}if(e.key==="Enter"){var go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();}});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active")});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active")});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="\ud83d\udd07";}}catch(e){}
+var osl=setLang,ost=setTheme;setLang=function(l){osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};setTheme=function(t){ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};
 });
-
-// Keyboard shortcuts: 1-4 for answers, Enter for next
-document.addEventListener("keydown",function(e){
-if(e.key>="1"&&e.key<="4"){const btns=document.querySelectorAll(".pick-card");const i=parseInt(e.key)-1;if(btns[i])btns[i].click();}
-if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
-});
-
-// Persist sound preference
-try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
-var _origSoundClick=document.getElementById("soundBtn");
-if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
-
-// Persist theme and language
-try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
-(function(){var _osl=setLang,_ost=setTheme;
-setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
-setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
 </script></body></html>

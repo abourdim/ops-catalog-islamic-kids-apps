@@ -1,162 +1,178 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Seerah Board Game — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>
-[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh;overflow-x:hidden}[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}.app{display:none;max-width:900px;margin:0 auto;padding:12px 16px}.app.on{display:block}.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}.hdr h1{font-size:18px}.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}.ctrl button:hover{border-color:var(--abr)}.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}.status.win{color:var(--accent)}.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:8px;margin-bottom:12px}canvas{width:100%;border-radius:8px;display:block;cursor:pointer}.dice-area{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:12px}.dice{width:64px;height:64px;background:var(--bg3);border:2px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:var(--accent);font-family:'Outfit',sans-serif;cursor:pointer;transition:all .15s;user-select:none}.dice:hover{border-color:var(--accent);transform:scale(1.05)}.dice.rolling{animation:diceRoll .5s ease-out}@keyframes diceRoll{0%{transform:rotate(0) scale(1)}50%{transform:rotate(180deg) scale(1.2)}100%{transform:rotate(360deg) scale(1)}}.question-box{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:12px;text-align:center;display:none}.question-text{font-size:13px;color:var(--heading);line-height:1.7;margin-bottom:12px;font-family:'Outfit',sans-serif}.q-opts{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}.q-btn{padding:10px 16px;background:var(--bg2);border:2px solid var(--border);border-radius:8px;color:var(--heading);font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .15s}.q-btn:hover{border-color:var(--accent);color:var(--accent)}.q-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}.q-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}.info-panel{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;margin-bottom:10px;font-size:11px;line-height:1.6;color:var(--text2)}.info-panel strong{color:var(--accent)}.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.btn-close:hover{border-color:var(--accent);color:var(--accent)}.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;border-bottom:2px solid transparent}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}.help-content{display:none}.help-content.active{display:block}.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px}.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none}.help-item summary::before{content:"▸";color:var(--accent);margin-right:6px}.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}.help-step{display:flex;gap:10px;margin-bottom:12px}.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="desert-dawn"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Seerah Board Game</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+[data-theme="desert-dawn"]{--bg:#1a1408;--bg2:#231c0e;--bg3:#2e2514;--border:#3d3420;--border2:#4e432c;--text:#d4c4a0;--text2:#a08c60;--text3:#6b5c3a;--heading:#f5e6c8;--accent:#FFBF00;--abg:rgba(255,191,0,.08);--abr:rgba(255,191,0,.25);--glow:0 0 20px rgba(255,191,0,.15)}
+[data-theme="midnight-desert"]{--bg:#0a0d1a;--bg2:#101528;--bg3:#171d35;--border:#1e2745;--border2:#2a3558;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#DAA520;--abg:rgba(218,165,32,.08);--abr:rgba(218,165,32,.25);--glow:0 0 20px rgba(218,165,32,.12)}
+[data-theme="sandstone"]{--bg:#f5ede0;--bg2:#faf5ea;--bg3:#ede4d2;--border:#d8ccb5;--border2:#c5b89e;--text:#4a3f2e;--text2:#7a6e55;--text3:#a09575;--heading:#2a2010;--accent:#8B6914;--abg:rgba(139,105,20,.08);--abr:rgba(139,105,20,.2);--glow:0 0 15px rgba(139,105,20,.1)}
+[data-theme="oasis"]{--bg:#0a1510;--bg2:#0e1c14;--bg3:#14261c;--border:#1e3528;--border2:#284535;--text:#a8d4b8;--text2:#6a9a78;--text3:#3a6848;--heading:#d0f0dc;--accent:#50C878;--abg:rgba(80,200,120,.08);--abr:rgba(80,200,120,.2);--glow:0 0 20px rgba(80,200,120,.1)}
+[data-theme="sunset"]{--bg:#1a0e08;--bg2:#221410;--bg3:#2e1c16;--border:#3d2a20;--border2:#4e382c;--text:#d4b8a0;--text2:#a07e60;--text3:#6a5038;--heading:#f5dcc8;--accent:#ff6b35;--abg:rgba(255,107,53,.08);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.12)}
+[data-theme="night-sky"]{--bg:#08091a;--bg2:#0e1028;--bg3:#151835;--border:#1e2248;--border2:#2a2e5a;--text:#b0b8d8;--text2:#7078a8;--text3:#484e78;--heading:#dde0f5;--accent:#7B68EE;--abg:rgba(123,104,238,.08);--abr:rgba(123,104,238,.25);--glow:0 0 20px rgba(123,104,238,.12)}
+[data-theme="caravan"]{--bg:#100808;--bg2:#180e0e;--bg3:#221616;--border:#331e1e;--border2:#442828;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#CD853F;--abg:rgba(205,133,63,.08);--abr:rgba(205,133,63,.25);--glow:0 0 20px rgba(205,133,63,.12)}
+[data-theme="parchment"]{--bg:#f0e8d8;--bg2:#f8f2e5;--bg3:#e8ddc8;--border:#d0c4a8;--border2:#b8aa8e;--text:#3a3020;--text2:#6a5e45;--text3:#9a8e70;--heading:#1a1408;--accent:#A0522D;--abg:rgba(160,82,45,.08);--abr:rgba(160,82,45,.2);--glow:0 0 15px rgba(160,82,45,.1)}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Amiri','Noto Sans Arabic',serif;font-size:14px;min-height:100vh;overflow-x:hidden}
+[lang="ar"] body{font-family:'Noto Sans Arabic','Amiri',serif}
+h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;position:relative;overflow:hidden}
+.splash::before{content:'';position:absolute;bottom:0;left:0;right:0;height:35%;background:linear-gradient(0deg,var(--accent) 0%,transparent);opacity:.04;pointer-events:none}
+.splash-dunes{position:absolute;bottom:0;left:0;right:0;height:100px;overflow:hidden;pointer-events:none}
+.splash-dunes::before{content:'';position:absolute;bottom:-30px;left:-10%;width:120%;height:80px;border-radius:50%;background:var(--bg3);border-top:2px solid var(--border)}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .6s;position:relative;z-index:2}
+.splash-bism{color:var(--text3);font-size:13px;margin-bottom:14px;font-family:'Amiri',serif}
+.btn-go{padding:14px 36px;background:linear-gradient(135deg,var(--accent),#DAA520);color:#1a1408;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase;transition:transform .15s,box-shadow .15s}
+.btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,191,0,.3)}
+.sw{display:flex;gap:4px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:30px;height:30px;border-radius:8px;border:1px solid var(--border);background:none;color:var(--text2);font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-btn:hover{border-color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.app{display:none;max-width:560px;margin:0 auto;padding:16px 20px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:12px;margin-bottom:10px;font-family:'Amiri',serif}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:20px;font-weight:800}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'Outfit',sans-serif}
+.ctrl{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:8px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--heading);font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .15s}
+.ctrl button:hover{border-color:var(--accent);color:var(--accent)}
+.status{text-align:center;font-size:15px;margin-bottom:14px;font-weight:600;color:var(--heading);min-height:24px;font-family:'Outfit',sans-serif}
+.status.win{color:var(--accent)}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:14px;min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;position:relative;overflow:hidden}
+.big-text{font-family:'Outfit',sans-serif;font-size:22px;font-weight:700;color:var(--heading);text-align:center;line-height:1.5;padding:0 10px}
+.answer-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:100%}
+.answer-btn{padding:12px 20px;border-radius:12px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;min-width:60px}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg);transform:translateY(-2px)}
+.answer-btn.correct{background:linear-gradient(135deg,#2d8a4e,#50C878);color:#fff;border-color:#50C878;transform:scale(1.05)}
+.answer-btn.wrong{background:#c0392b;color:#fff;border-color:#e74c3c}
+.progress{width:100%;max-width:320px;height:10px;background:var(--bg3);border-radius:5px;overflow:hidden}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--accent),#DAA520);border-radius:5px;transition:width .4s}
+.score-row{display:flex;gap:24px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:12px}
+.score-item{text-align:center}
+.score-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px}
+.score-num{font-size:26px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;max-height:80px;overflow-y:auto;font-size:11px;color:var(--text2);margin-bottom:12px}
+.log-line{padding:2px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:11px;padding:16px 0;border-top:1px solid var(--border);font-family:'Outfit',sans-serif}
+.back-link{position:fixed;top:10px;left:10px;z-index:100;padding:6px 12px;border-radius:8px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:12px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s;display:none}
+.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}
+[dir="rtl"] .back-link{left:auto;right:10px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}
+[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:16px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:10px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:16px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.help-item summary{padding:10px 14px;cursor:pointer;font-size:13px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"\25B8";color:var(--accent);font-size:10px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 14px 10px;font-size:12px;color:var(--text2);line-height:1.7}
+.help-step{display:flex;gap:10px;margin-bottom:14px;align-items:flex-start}
+.help-step-num{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#DAA520);color:#1a1408;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:12px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:16px}.wiki-entry h3{font-size:14px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:12px;color:var(--text2);line-height:1.7}
+.sidebar-footer{padding:12px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:8px 12px;border-radius:8px;font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .15s}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px" id="splTitle">Seerah Board Game</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px" id="splSub">Roll through the Prophet's life</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px" id="splDesc">A digital board game moving through the Prophet's ﷺ life events. Roll dice, answer questions to advance through the seerah!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<a href="../../index.html" class="back-link" id="backLink">&larr; Catalog</a>
+<div class="splash" id="splash"><div class="splash-dunes"></div><div class="splash-box">
+<div class="splash-bism">بِسْمِ ٱللَّوهِ ٱلرَّحْمَـنِ ٱلرَّحِيمِ</div>
+<div style="display:flex;justify-content:center;gap:6px;margin-bottom:16px"><div style="width:44px;height:44px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);display:flex;align-items:center;justify-content:center;font-family:Outfit;font-weight:700;color:var(--text3);font-size:16px">A</div><div style="width:44px;height:44px;border-radius:10px;border:2px solid var(--accent);background:var(--abg);display:flex;align-items:center;justify-content:center;font-family:Outfit;font-weight:700;color:var(--accent);font-size:16px">B</div><div style="width:44px;height:44px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);display:flex;align-items:center;justify-content:center;font-family:Outfit;font-weight:700;color:var(--text3);font-size:16px">C</div><div style="width:44px;height:44px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);display:flex;align-items:center;justify-content:center;font-family:Outfit;font-weight:700;color:var(--text3);font-size:16px">D</div></div>
+<h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splTitle">Seerah Board Game</h1>
+<div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px" id="splSub">Roll & Learn</div>
+<p style="color:var(--text2);font-size:13px;line-height:1.7;margin-bottom:24px" id="splDesc">A board game journey through the life of the Prophet (SAW).</p>
+<button class="btn-go" id="enterBtn">Start Mission</button>
+<div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span>
+<button class="sw-btn on" data-thm="desert-dawn">&#9728;</button><button class="sw-btn" data-thm="midnight-desert">&#127769;</button><button class="sw-btn" data-thm="sandstone">&#127966;</button><button class="sw-btn" data-thm="oasis">&#127795;</button><button class="sw-btn" data-thm="sunset">&#127773;</button><button class="sw-btn" data-thm="night-sky">&#11088;</button><button class="sw-btn" data-thm="caravan">&#128042;</button><button class="sw-btn" data-thm="parchment">&#128220;</button>
+</div></div></div>
+
 <div class="app" id="app">
-<div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
-<div class="hdr"><h1 id="appTitle">Seerah Board Game</h1><span class="pill" id="scorePill">Tile 0</span></div>
-<div class="ctrl"><button id="startBtn">▶ New Game</button><button class="btn-help" onclick="openHelp()">❓</button><button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
-<div class="status" id="status">Roll the dice to advance through the Prophet's ﷺ life!</div>
-<div class="game-area"><canvas id="gc" width="860" height="360"></canvas></div>
-<div class="dice-area"><div class="dice" id="dice" title="Click to roll!">🎲</div><div id="diceInfo" style="font-size:12px;color:var(--text2)">Click the dice to roll</div></div>
-<div class="question-box" id="qBox"><div class="question-text" id="qText"></div><div class="q-opts" id="qOpts"></div></div>
-<div class="info-panel" id="infoPanel">Roll the dice and journey through the major events of the Prophet's ﷺ life from birth to farewell.</div>
-<div class="log-box" id="logBox"></div>
-<div class="foot">Workshop-Diy — Seerah Board Game v1.0</div>
+<div class="hdr-bism">بِسْمِ ٱللَّوهِ ٱلرَّحْمَـنِ ٱلرَّحِيمِ</div>
+<div class="hdr"><h1 id="appTitle">Seerah Board Game</h1><span class="pill" id="scorePill">0 / 0</span></div>
+<div class="ctrl">
+<button id="startBtn">&#9654; New Game</button>
+<button class="btn-help" onclick="openHelp()">?</button>
+<button id="soundBtn">&#128266;</button>
+<div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw"><button class="sw-btn on" data-thm="desert-dawn">&#9728;</button><button class="sw-btn" data-thm="midnight-desert">&#127769;</button><button class="sw-btn" data-thm="sandstone">&#127966;</button><button class="sw-btn" data-thm="oasis">&#127795;</button><button class="sw-btn" data-thm="sunset">&#127773;</button><button class="sw-btn" data-thm="night-sky">&#11088;</button><button class="sw-btn" data-thm="caravan">&#128042;</button><button class="sw-btn" data-thm="parchment">&#128220;</button></div>
 </div>
+<div class="status" id="status">Loading...</div>
+<div class="game-area"><div class="big-text" id="question">?</div><div class="answer-row" id="choices"></div><div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">Score</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div>
+<div class="foot">Seerah Board Game &mdash; Seerah Series v2.0</div>
+</div>
+
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
-<aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div><div class="sidebar-body"><div class="help-content active" id="help-faq"><details class="help-item"><summary>What is this?</summary><p>A board game where you roll a dice to move through tiles representing major seerah events. Answer questions to advance!</p></details><details class="help-item"><summary>What if I answer wrong?</summary><p>You stay on your current tile and try again on your next turn.</p></details></div><div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>Click the dice to roll</p></div><div class="help-step"><span class="help-step-num">2</span><p>Your piece advances to a new tile</p></div><div class="help-step"><span class="help-step-num">3</span><p>Answer the question about that tile's event</p></div><div class="help-step"><span class="help-step-num">4</span><p>Reach the final tile to complete the game</p></div></div><div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>🎲 The Journey</h3><p>Each tile represents a major event in the Prophet's ﷺ life, from his birth in 570 CE to the Farewell Sermon in 632 CE.</p></div></div></div><div class="sidebar-footer">Workshop-DIY — v1.0</div></aside>
+<aside class="sidebar sidebar-left" id="helpPanel">
+<div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">&times;</button></div>
+<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
+<div class="sidebar-body">
+<div class="help-content active" id="help-faq">
+<details class="help-item"><summary>What is this app?</summary><p>A board game journey through the life of the Prophet (SAW).</p></details>
+<details class="help-item"><summary>Is the content authentic?</summary><p>Based on authentic Seerah sources and scholarly works.</p></details>
+</div>
+<div class="help-content" id="help-howto">
+<div class="help-step"><span class="help-step-num">1</span><p>Start the activity from the splash screen</p></div>
+<div class="help-step"><span class="help-step-num">2</span><p>Answer questions to score points</p></div>
+<div class="help-step"><span class="help-step-num">3</span><p>Complete all items to finish!</p></div>
+</div>
+<div class="help-content" id="help-wiki">
+<div class="wiki-entry"><h3>About</h3><p>A board game journey through the life of the Prophet (SAW). Part of the Seerah learning series for Muslim kids.</p></div>
+</div></div>
+<div class="sidebar-footer">Seerah Series &mdash; v2.0</div>
+</aside>
+
 <script>
-var TILES=[
-{name:{en:"Birth of the Prophet ﷺ",fr:"Naissance du Prophete ﷺ",ar:"مولد النبي ﷺ"},year:"570 CE",icon:"⭐",q:{en:"In which city was the Prophet ﷺ born?",fr:"Dans quelle ville le Prophete ﷺ est-il ne ?",ar:"في أي مدينة وُلد النبي ﷺ؟"},opts:{en:["Mecca","Medina","Taif","Jerusalem"],fr:["La Mecque","Medine","Taif","Jerusalem"],ar:["مكة","المدينة","الطائف","القدس"]},ans:0},
-{name:{en:"Year of the Elephant",fr:"Annee de l'Elephant",ar:"عام الفيل"},year:"570 CE",icon:"🐘",q:{en:"Who led the army with elephants against the Ka'bah?",fr:"Qui mena l'armee avec des elephants contre la Ka'bah ?",ar:"من قاد الجيش بالأفيال ضد الكعبة؟"},opts:{en:["Abraha","Pharaoh","Nimrod","Caesar"],fr:["Abraha","Pharaon","Nimrod","Cesar"],ar:["أبرهة","فرعون","نمرود","قيصر"]},ans:0},
-{name:{en:"First Revelation",fr:"Premiere Revelation",ar:"الوحي الأول"},year:"610 CE",icon:"📖",q:{en:"What was the first word revealed to the Prophet ﷺ?",fr:"Quel fut le premier mot revele au Prophete ﷺ ?",ar:"ما أول كلمة نزلت على النبي ﷺ؟"},opts:{en:["Read (Iqra)","Pray","Believe","Worship"],fr:["Lis (Iqra)","Prie","Crois","Adore"],ar:["اقرأ","صلِّ","آمن","اعبد"]},ans:0},
-{name:{en:"Open Preaching",fr:"Predication publique",ar:"الدعوة الجهرية"},year:"613 CE",icon:"📢",q:{en:"From which hill did the Prophet ﷺ first publicly call the people of Quraysh?",fr:"Depuis quelle colline le Prophete ﷺ appela-t-il publiquement les Quraysh ?",ar:"من أي جبل دعا النبي ﷺ قريشاً علناً لأول مرة؟"},opts:{en:["Mount Safa","Mount Uhud","Mount Hira","Mount Arafat"],fr:["Mont Safa","Mont Uhud","Mont Hira","Mont Arafat"],ar:["جبل الصفا","جبل أحد","جبل حراء","جبل عرفات"]},ans:0},
-{name:{en:"Migration to Abyssinia",fr:"Migration vers l'Abyssinie",ar:"الهجرة إلى الحبشة"},year:"615 CE",icon:"🚢",q:{en:"Which just king protected the Muslim refugees in Abyssinia?",fr:"Quel roi juste protegea les refugies musulmans en Abyssinie ?",ar:"أي ملك عادل حمى اللاجئين المسلمين في الحبشة؟"},opts:{en:["Negus (An-Najashi)","Heraclius","Muqawqis","Khosrow"],fr:["Negus (An-Najashi)","Heraclius","Muqawqis","Khosrow"],ar:["النجاشي","هرقل","المقوقس","كسرى"]},ans:0},
-{name:{en:"Isra and Mi'raj",fr:"Isra et Mi'raj",ar:"الإسراء والمعراج"},year:"620 CE",icon:"🌙",q:{en:"How many daily prayers were prescribed during the Mi'raj?",fr:"Combien de prieres quotidiennes furent prescrites lors du Mi'raj ?",ar:"كم صلاة يومية فُرضت في المعراج؟"},opts:{en:["Five","Three","Two","Seven"],fr:["Cinq","Trois","Deux","Sept"],ar:["خمس","ثلاث","اثنتان","سبع"]},ans:0},
-{name:{en:"The Hijrah",fr:"La Hijrah",ar:"الهجرة"},year:"622 CE",icon:"🐪",q:{en:"Who accompanied the Prophet ﷺ during the Hijrah?",fr:"Qui accompagna le Prophete ﷺ pendant la Hijrah ?",ar:"من رافق النبي ﷺ في الهجرة؟"},opts:{en:["Abu Bakr","Umar","Ali","Uthman"],fr:["Abu Bakr","Umar","Ali","Uthman"],ar:["أبو بكر","عمر","علي","عثمان"]},ans:0},
-{name:{en:"Battle of Badr",fr:"Bataille de Badr",ar:"غزوة بدر"},year:"624 CE",icon:"⚔️",q:{en:"How many Muslim fighters were at Badr?",fr:"Combien de combattants musulmans etaient a Badr ?",ar:"كم عدد المقاتلين المسلمين في بدر؟"},opts:{en:["About 313","About 1000","About 500","About 100"],fr:["Environ 313","Environ 1000","Environ 500","Environ 100"],ar:["حوالي 313","حوالي 1000","حوالي 500","حوالي 100"]},ans:0},
-{name:{en:"Battle of Uhud",fr:"Bataille d'Uhud",ar:"غزوة أحد"},year:"625 CE",icon:"🏔",q:{en:"What mistake caused difficulty for the Muslims at Uhud?",fr:"Quelle erreur causa des difficultes aux musulmans a Uhud ?",ar:"ما الخطأ الذي سبب صعوبة للمسلمين في أحد؟"},opts:{en:["Archers left their positions","Lack of weapons","Too few soldiers","Bad weather"],fr:["Les archers quitterent leurs positions","Manque d'armes","Trop peu de soldats","Mauvais temps"],ar:["ترك الرماة مواقعهم","نقص الأسلحة","قلة الجنود","سوء الطقس"]},ans:0},
-{name:{en:"Treaty of Hudaybiyyah",fr:"Traite de Hudaybiyyah",ar:"صلح الحديبية"},year:"628 CE",icon:"📜",q:{en:"The Quran described this treaty as what?",fr:"Le Coran a decrit ce traite comme quoi ?",ar:"كيف وصف القرآن هذا الصلح؟"},opts:{en:["A clear victory (Fath Mubin)","A great trial","A difficult test","A minor truce"],fr:["Une victoire eclatante (Fath Mubin)","Une grande epreuve","Un test difficile","Une treve mineure"],ar:["فتحاً مبيناً","ابتلاءً عظيماً","اختباراً صعباً","هدنة صغيرة"]},ans:0},
-{name:{en:"Conquest of Mecca",fr:"Conquete de La Mecque",ar:"فتح مكة"},year:"630 CE",icon:"🕋",q:{en:"How did the Prophet ﷺ enter Mecca?",fr:"Comment le Prophete ﷺ entra-t-il a La Mecque ?",ar:"كيف دخل النبي ﷺ مكة؟"},opts:{en:["Peacefully, with mercy","With a great battle","In secret at night","Through negotiation only"],fr:["Pacifiquement, avec misericorde","Avec une grande bataille","En secret la nuit","Par negociation seulement"],ar:["سلماً بالرحمة","بمعركة كبيرة","سراً ليلاً","بالتفاوض فقط"]},ans:0},
-{name:{en:"Farewell Sermon",fr:"Sermon d'Adieu",ar:"خطبة الوداع"},year:"632 CE",icon:"🏆",q:{en:"Where did the Prophet ﷺ deliver the Farewell Sermon?",fr:"Ou le Prophete ﷺ prononca-t-il le Sermon d'Adieu ?",ar:"أين ألقى النبي ﷺ خطبة الوداع؟"},opts:{en:["Mount Arafat","Masjid al-Haram","Masjid an-Nabawi","Mina"],fr:["Mont Arafat","Masjid al-Haram","Masjid an-Nabawi","Mina"],ar:["جبل عرفات","المسجد الحرام","المسجد النبوي","منى"]},ans:0}
-];
-var curLang="en",soundOn=true,actx,pos=0,diceVal=0,rolling=false,answering=false,score=0;
-var UI={title:{en:"Seerah Board Game",fr:"Jeu de Plateau du Seerah",ar:"لعبة لوح السيرة"},sub:{en:"Roll through the Prophet's life",fr:"Parcourez la vie du Prophete",ar:"تنقل عبر حياة النبي ﷺ"},desc:{en:"A digital board game moving through the Prophet's ﷺ life events. Roll dice, answer to advance!",fr:"Un jeu de plateau numerique parcourant la vie du Prophete ﷺ. Lancez le de, repondez pour avancer !",ar:"لعبة لوح رقمية تتنقل عبر أحداث حياة النبي ﷺ. ارمِ النرد وأجب لتتقدم!"},status_play:{en:"Roll the dice to advance!",fr:"Lancez le de pour avancer !",ar:"ارمِ النرد لتتقدم!"},new_game:{en:"▶ New Game",fr:"▶ Nouveau jeu",ar:"▶ لعبة جديدة"},roll:{en:"Click the dice to roll",fr:"Cliquez sur le de",ar:"انقر النرد للرمي"},correct:{en:"Correct! You advance!",fr:"Correct ! Vous avancez !",ar:"صحيح! تتقدم!"},wrong:{en:"Wrong! Stay on your tile.",fr:"Faux ! Restez sur votre case.",ar:"خطأ! ابقَ في مكانك."},win:{en:"You completed the Prophet's ﷺ journey!",fr:"Vous avez termine le voyage du Prophete ﷺ !",ar:"أكملت رحلة حياة النبي ﷺ!"}};
+var UI={
+title:{en:"Seerah Board Game",fr:"Jeu de Plateau Seerah",ar:"لعبة السيرة"},
+sub:{en:"Roll & Learn",fr:"Roll & Learn",ar:"Roll & Learn"},
+desc:{en:"A board game journey through the life of the Prophet (SAW).",fr:"A board game journey through the life of the Prophet (SAW).",ar:"A board game journey through the life of the Prophet (SAW)."},
+new_game:{en:"\u25b6 New Game",fr:"\u25b6 Nouveau jeu",ar:"\u25b6 \u0644\u0639\u0628\u0629 \u062c\u062f\u064a\u062f\u0629"}
+};
+var curLang="en",soundOn=true,actx;
 function t(k){return UI[k]?UI[k][curLang]||UI[k].en:"";}
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
-function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});rl();}
+function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});
+document.getElementById("splTitle").textContent=t("title");document.getElementById("splSub").textContent=t("sub");document.getElementById("splDesc").textContent=t("desc");document.getElementById("appTitle").textContent=t("title");document.getElementById("startBtn").textContent=t("new_game");}
 function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th)});}
-function rl(){document.getElementById("splTitle").textContent=t("title");document.getElementById("splSub").textContent=t("sub");document.getElementById("splDesc").textContent=t("desc");document.getElementById("appTitle").textContent=t("title");document.getElementById("startBtn").textContent=t("new_game");document.getElementById("diceInfo").textContent=t("roll");}
-function snd(type){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(type==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.12);o.start(n);o.stop(n+.12);}else if(type==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(type==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else if(type==="dice"){o.frequency.value=300;o.type="triangle";g.gain.exponentialRampToValueAtTime(.001,n+.08);o.start(n);o.stop(n+.08);}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function snd(type){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(type==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(type==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(type==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
 function log(msg,cls){var b=document.getElementById("logBox"),d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
-var cv,ctx,W,H;
-function initCanvas(){cv=document.getElementById("gc");var r=cv.parentElement.getBoundingClientRect();W=Math.min(860,r.width-16);H=Math.round(W*.42);cv.width=W;cv.height=H;ctx=cv.getContext("2d");}
-function drawBoard(){
-if(!ctx)return;
-var bg3=getComputedStyle(document.documentElement).getPropertyValue("--bg3").trim();
-var accent=getComputedStyle(document.documentElement).getPropertyValue("--accent").trim();
-var heading=getComputedStyle(document.documentElement).getPropertyValue("--heading").trim();
-var border=getComputedStyle(document.documentElement).getPropertyValue("--border").trim();
-var text2=getComputedStyle(document.documentElement).getPropertyValue("--text2").trim();
-ctx.fillStyle=bg3;ctx.fillRect(0,0,W,H);
-var total=TILES.length;var cols=Math.min(6,total);var rows=Math.ceil(total/cols);
-var tileW=W/cols;var tileH=H/rows;
-TILES.forEach(function(tile,i){
-var row=Math.floor(i/cols);var col=row%2===0?i%cols:(cols-1-i%cols);
-var x=col*tileW;var y=row*tileH;
-// Tile background
-if(i<pos){ctx.fillStyle=accent+"33";}else if(i===pos){ctx.fillStyle=accent+"66";}else{ctx.fillStyle=bg3;}
-ctx.fillRect(x+2,y+2,tileW-4,tileH-4);
-ctx.strokeStyle=i===pos?accent:border;ctx.lineWidth=i===pos?2:1;ctx.strokeRect(x+2,y+2,tileW-4,tileH-4);
-// Icon
-ctx.font=Math.min(tileW,tileH)*.3+"px sans-serif";ctx.textAlign="center";ctx.textBaseline="middle";
-ctx.fillText(tile.icon,x+tileW/2,y+tileH*.35);
-// Name
-ctx.fillStyle=i===pos?accent:heading;ctx.font="bold "+Math.max(7,tileW*.08)+"px Outfit";
-var name=tile.name[curLang]||tile.name.en;
-if(name.length>18)name=name.substring(0,16)+"...";
-ctx.fillText(name,x+tileW/2,y+tileH*.65);
-// Year
-ctx.fillStyle=text2;ctx.font=Math.max(6,tileW*.06)+"px 'IBM Plex Mono'";
-ctx.fillText(tile.year,x+tileW/2,y+tileH*.82);
-// Player marker
-if(i===pos){
-var time=Date.now()*.004;var bounce=Math.sin(time)*3;
-ctx.fillStyle=accent;ctx.beginPath();ctx.arc(x+tileW/2,y+tileH*.15+bounce,6,0,Math.PI*2);ctx.fill();
-ctx.fillStyle="#000";ctx.font="bold 8px sans-serif";ctx.fillText("☪",x+tileW/2,y+tileH*.15+bounce+3);
-}
-ctx.textAlign="start";ctx.textBaseline="alphabetic";
-});
-requestAnimationFrame(drawBoard);
-}
-function rollDice(){
-if(rolling||answering)return;
-if(pos>=TILES.length-1){return;}
-rolling=true;
-var dice=document.getElementById("dice");dice.classList.add("rolling");
-snd("dice");
-var rolls=0,interval=setInterval(function(){
-diceVal=Math.floor(Math.random()*6)+1;
-dice.textContent=diceVal;rolls++;
-if(rolls>8){
-clearInterval(interval);dice.classList.remove("rolling");rolling=false;
-var target=Math.min(pos+diceVal,TILES.length-1);
-document.getElementById("diceInfo").textContent="Rolled "+diceVal+"! Moving to tile "+(target+1);
-log("Rolled "+diceVal,"");
-showQuestion(target);
-}
-},80);
-}
-function showQuestion(target){
-answering=true;
-var tile=TILES[target];
-var box=document.getElementById("qBox");box.style.display="block";
-document.getElementById("qText").textContent=tile.q[curLang]||tile.q.en;
-var optsEl=document.getElementById("qOpts");optsEl.innerHTML="";
-var opts=tile.opts[curLang]||tile.opts.en;
-opts.forEach(function(o,oi){
-var btn=document.createElement("button");btn.className="q-btn";btn.textContent=o;
-btn.addEventListener("click",function(){
-if(!answering)return;
-if(oi===tile.ans){
-btn.classList.add("correct");snd("ok");pos=target;score++;
-document.getElementById("status").textContent=t("correct");document.getElementById("status").className="status win";
-document.getElementById("scorePill").textContent="Tile "+(pos+1);
-document.getElementById("infoPanel").innerHTML="<strong>"+(tile.name[curLang]||tile.name.en)+" ("+tile.year+")</strong>";
-log("Correct! Advanced to tile "+(pos+1),"success");
-if(pos>=TILES.length-1){setTimeout(function(){endGame();},600);}
-}else{
-btn.classList.add("wrong");snd("err");
-document.querySelectorAll(".q-btn")[tile.ans].classList.add("correct");
-document.getElementById("status").textContent=t("wrong");document.getElementById("status").className="status lose";
-log("Wrong! Staying on tile "+(pos+1),"error");
-}
-document.querySelectorAll(".q-btn").forEach(function(b){b.style.pointerEvents="none";});
-setTimeout(function(){box.style.display="none";answering=false;document.getElementById("status").textContent=t("status_play");document.getElementById("status").className="status";},1500);
-});
-optsEl.appendChild(btn);
-});
-}
-function endGame(){
-document.getElementById("status").textContent=t("win");document.getElementById("status").className="status win";
-snd("win");checkHS();log("Journey complete! Score: "+score,"success");
-document.getElementById("infoPanel").innerHTML="<strong>"+t("win")+"</strong> Score: "+score+"/"+TILES.length;
-}
-function newGame(){pos=0;score=0;rolling=false;answering=false;diceVal=0;
-document.getElementById("dice").textContent="🎲";document.getElementById("diceInfo").textContent=t("roll");
-document.getElementById("sc")||0;document.getElementById("scorePill").textContent="Tile 1";
-document.getElementById("qBox").style.display="none";document.getElementById("logBox").innerHTML="";
-document.getElementById("status").textContent=t("status_play");document.getElementById("status").className="status";
-document.getElementById("infoPanel").textContent=t("desc");log("New game started!","success");}
-var HS_KEY="wdiy-hs-seerah-board-game";
+var HS_KEY="seerah-hs-033-seerah-board-game";
 function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0;}catch(e){return 0;}}
-function saveHS(s){try{var b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true;}}catch(e){}return false;}
-function checkHS(){if(saveHS(score))log("NEW HIGH SCORE: "+score+"!","success");}
+function saveHS(s){try{localStorage.setItem(HS_KEY,s);}catch(e){}}
+
+var Q=[{q:{en:"What year was the Prophet born?",fr:"What year was the Prophet born?",ar:"What year was the Prophet born?"},a:"570 CE",o:["570 CE","580 CE","560 CE","590 CE"]},{q:{en:"What was the Prophet's grandfather's name?",fr:"What was the Prophet's grandfather's name?",ar:"What was the Prophet's grandfather's name?"},a:"Abdul Muttalib",o:["Abdul Muttalib","Abu Talib","Abu Sufyan","Abbas"]},{q:{en:"How old was the Prophet at first revelation?",fr:"How old was the Prophet at first revelation?",ar:"How old was the Prophet at first revelation?"},a:"40",o:["40","35","45","30"]},{q:{en:"What was the name of the Prophet's camel?",fr:"What was the name of the Prophet's camel?",ar:"What was the name of the Prophet's camel?"},a:"Qaswa",o:["Qaswa","Buraq","Adba","Duldul"]},{q:{en:"Which Surah was revealed first?",fr:"Which Surah was revealed first?",ar:"Which Surah was revealed first?"},a:"Al-Alaq",o:["Al-Alaq","Al-Fatiha","Al-Baqarah","Al-Ikhlas"]},{q:{en:"How many years did the Prophet live in Medina?",fr:"How many years did the Prophet live in Medina?",ar:"How many years did the Prophet live in Medina?"},a:"10",o:["10","13","8","15"]}];
+var total=Q.length,current=0,correct=0,ans,locked=false,qi=0;
+function genQ(){var q=Q[qi%Q.length];qi++;return{text:q.q[curLang]||q.q.en,ans:q.a,opts:q.o.slice().sort(function(){return Math.random()-.5})};}
+function newGame(){current=0;correct=0;qi=0;Q.sort(function(){return Math.random()-.5});document.getElementById("sc").textContent="0";document.getElementById("tot").textContent="0";document.getElementById("scorePill").textContent="0 / 0";document.getElementById("logBox").innerHTML="";document.getElementById("status").className="status";nextQ();}
+function nextQ(){if(current>=total){snd("win");document.getElementById("status").textContent="Done! "+correct+"/"+total;document.getElementById("status").className="status win";log(correct+"/"+total,"success");var best=loadHS();if(correct>best){saveHS(correct);log("NEW HIGH SCORE!","success");}return;}locked=false;var q=genQ();document.getElementById("question").textContent=q.text;ans=q.ans;var el=document.getElementById("choices");el.innerHTML="";q.opts.forEach(function(o){var b=document.createElement("button");b.className="answer-btn";b.textContent=o;b.onclick=function(){pick(b,o)};el.appendChild(b);});document.getElementById("status").textContent=(current+1)+"/"+total;document.getElementById("prog").style.width=(current/total*100)+"%";}
+function pick(btn,val){if(locked)return;locked=true;current++;if(String(val)===String(ans)){correct++;btn.classList.add("correct");snd("ok");}else{btn.classList.add("wrong");snd("err");document.querySelectorAll(".answer-btn").forEach(function(b){if(b.textContent==ans)b.classList.add("correct");});}document.getElementById("sc").textContent=correct;document.getElementById("tot").textContent=current;document.getElementById("scorePill").textContent=correct+" / "+current;document.getElementById("prog").style.width=(current/total*100)+"%";setTimeout(nextQ,900);}
+
 document.addEventListener("DOMContentLoaded",function(){
-setLang("en");setTheme("terminal");
+setLang("en");setTheme("desert-dawn");
 document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
 document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
-document.getElementById("dice").addEventListener("click",rollDice);
-document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";initCanvas();newGame();drawBoard();});
-document.getElementById("startBtn").addEventListener("click",function(){initCanvas();newGame();});
-document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"🔊":"🔇";});
-document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();if(e.key===" "||e.key==="Enter")rollDice();});
-document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
-try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="🔇";}}catch(e){}
-var _osl=setLang,_ost=setTheme;setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};
+document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+document.getElementById("startBtn").addEventListener("click",newGame);
+document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"\ud83d\udd0a":"\ud83d\udd07";try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();if(e.key>="1"&&e.key<="4"){var btns=document.querySelectorAll(".answer-btn");var i=parseInt(e.key)-1;if(btns[i])btns[i].click();}if(e.key==="Enter"){var go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();}});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active")});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active")});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="\ud83d\udd07";}}catch(e){}
+var osl=setLang,ost=setTheme;setLang=function(l){osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};setTheme=function(t){ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};
 });
 </script></body></html>

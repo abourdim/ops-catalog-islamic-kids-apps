@@ -1,351 +1,142 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Prophet Timeline — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
-[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
-[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
-[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
-[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
-[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
-[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
-[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="desert-dawn"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Prophet Timeline</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+[data-theme="desert-dawn"]{--bg:#1a1408;--bg2:#231c0e;--bg3:#2e2514;--border:#3d3420;--border2:#4e432c;--text:#d4c4a0;--text2:#a08c60;--text3:#6b5c3a;--heading:#f5e6c8;--accent:#FFBF00;--abg:rgba(255,191,0,.08);--abr:rgba(255,191,0,.25);--glow:0 0 20px rgba(255,191,0,.15)}
+[data-theme="midnight-desert"]{--bg:#0a0d1a;--bg2:#101528;--bg3:#171d35;--border:#1e2745;--border2:#2a3558;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#DAA520;--abg:rgba(218,165,32,.08);--abr:rgba(218,165,32,.25);--glow:0 0 20px rgba(218,165,32,.12)}
+[data-theme="sandstone"]{--bg:#f5ede0;--bg2:#faf5ea;--bg3:#ede4d2;--border:#d8ccb5;--border2:#c5b89e;--text:#4a3f2e;--text2:#7a6e55;--text3:#a09575;--heading:#2a2010;--accent:#8B6914;--abg:rgba(139,105,20,.08);--abr:rgba(139,105,20,.2);--glow:0 0 15px rgba(139,105,20,.1)}
+[data-theme="oasis"]{--bg:#0a1510;--bg2:#0e1c14;--bg3:#14261c;--border:#1e3528;--border2:#284535;--text:#a8d4b8;--text2:#6a9a78;--text3:#3a6848;--heading:#d0f0dc;--accent:#50C878;--abg:rgba(80,200,120,.08);--abr:rgba(80,200,120,.2);--glow:0 0 20px rgba(80,200,120,.1)}
+[data-theme="sunset"]{--bg:#1a0e08;--bg2:#221410;--bg3:#2e1c16;--border:#3d2a20;--border2:#4e382c;--text:#d4b8a0;--text2:#a07e60;--text3:#6a5038;--heading:#f5dcc8;--accent:#ff6b35;--abg:rgba(255,107,53,.08);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.12)}
+[data-theme="night-sky"]{--bg:#08091a;--bg2:#0e1028;--bg3:#151835;--border:#1e2248;--border2:#2a2e5a;--text:#b0b8d8;--text2:#7078a8;--text3:#484e78;--heading:#dde0f5;--accent:#7B68EE;--abg:rgba(123,104,238,.08);--abr:rgba(123,104,238,.25);--glow:0 0 20px rgba(123,104,238,.12)}
+[data-theme="caravan"]{--bg:#100808;--bg2:#180e0e;--bg3:#221616;--border:#331e1e;--border2:#442828;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#CD853F;--abg:rgba(205,133,63,.08);--abr:rgba(205,133,63,.25);--glow:0 0 20px rgba(205,133,63,.12)}
+[data-theme="parchment"]{--bg:#f0e8d8;--bg2:#f8f2e5;--bg3:#e8ddc8;--border:#d0c4a8;--border2:#b8aa8e;--text:#3a3020;--text2:#6a5e45;--text3:#9a8e70;--heading:#1a1408;--accent:#A0522D;--abg:rgba(160,82,45,.08);--abr:rgba(160,82,45,.2);--glow:0 0 15px rgba(160,82,45,.1)}
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
-[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
-h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
-.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
-.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
-.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
-.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
-.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
-.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
-.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+body{background:var(--bg);color:var(--text);font-family:'Amiri','Noto Sans Arabic',serif;font-size:14px;min-height:100vh;overflow-x:hidden}
+[lang="ar"] body{font-family:'Noto Sans Arabic','Amiri',serif}
+h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;position:relative;overflow:hidden}
+.splash::before{content:'';position:absolute;bottom:0;left:0;right:0;height:35%;background:linear-gradient(0deg,var(--accent) 0%,transparent);opacity:.04;pointer-events:none}
+.splash-dunes{position:absolute;bottom:0;left:0;right:0;height:100px;overflow:hidden;pointer-events:none}
+.splash-dunes::before{content:'';position:absolute;bottom:-30px;left:-10%;width:120%;height:80px;border-radius:50%;background:var(--bg3);border-top:2px solid var(--border)}
+.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .6s;position:relative;z-index:2}
+.splash-bism{color:var(--text3);font-size:13px;margin-bottom:14px;font-family:'Amiri',serif}
+.btn-go{padding:14px 36px;background:linear-gradient(135deg,var(--accent),#DAA520);color:#1a1408;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase;transition:transform .15s,box-shadow .15s}
+.btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,191,0,.3)}
+.sw{display:flex;gap:4px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:30px;height:30px;border-radius:8px;border:1px solid var(--border);background:none;color:var(--text2);font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}
 .sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.sw-btn:hover{border-color:var(--accent)}
 .sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
-.app{display:none;max-width:560px;margin:0 auto;padding:12px 16px}.app.on{display:block}
-.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
-.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
-.hdr h1{font-size:18px}
-.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
-.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
-.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
-.ctrl button:hover{border-color:var(--abr)}
-.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
-.status.win{color:var(--accent)}.status.lose{color:#ff4444}
-.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
-.progress{width:100%;max-width:400px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
-.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
-.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:10px}
-.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
-.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
-.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
-.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-@keyframes popIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
-.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
-.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
-.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.app{display:none;max-width:560px;margin:0 auto;padding:16px 20px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:12px;margin-bottom:10px;font-family:'Amiri',serif}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:20px;font-weight:800}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'Outfit',sans-serif}
+.ctrl{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:8px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--heading);font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .15s}
+.ctrl button:hover{border-color:var(--accent);color:var(--accent)}
+.status{text-align:center;font-size:15px;margin-bottom:14px;font-weight:600;color:var(--heading);min-height:24px;font-family:'Outfit',sans-serif}
+.status.win{color:var(--accent)}
+.items-area{display:flex;flex-direction:column;gap:12px;margin-bottom:14px}
+.item-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:16px;cursor:pointer;transition:all .2s;animation:fadeUp .4s both}
+.item-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.item-card.active{border-color:var(--accent);background:var(--abg)}
+.item-card h3{font-family:'Outfit',sans-serif;font-size:15px;color:var(--heading);margin-bottom:6px}
+.item-card p{font-size:12px;color:var(--text2);line-height:1.6;display:none}
+.item-card.active p{display:block}
+.score-row{display:flex;gap:24px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:12px}
+.score-item{text-align:center}.score-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px}.score-num{font-size:26px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;max-height:80px;overflow-y:auto;font-size:11px;color:var(--text2);margin-bottom:12px}
+.log-line{padding:2px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:11px;padding:16px 0;border-top:1px solid var(--border);font-family:'Outfit',sans-serif}
+.back-link{position:fixed;top:10px;left:10px;z-index:100;padding:6px 12px;border-radius:8px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:12px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s;display:none}
+.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}
+[dir="rtl"] .back-link{left:auto;right:10px}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}
 .sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
-.sidebar-left{left:0;transform:translateX(-100%)}
-[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
-.sidebar-left.open{transform:translateX(0)}
-.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
-.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
-.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
-.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:16px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .15s}.btn-close:hover{border-color:var(--accent);color:var(--accent)}
 .help-tabs{display:flex;border-bottom:1px solid var(--border)}
-.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
-.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
-.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
+.help-tab{flex:1;padding:10px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:16px}
 .help-content{display:none}.help-content.active{display:block}
-.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
-.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
-.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
-.help-item[open] summary::before{transform:rotate(90deg)}
-.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
-.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
-.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
-.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
-.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
-.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
-.btn-help:hover{border-color:var(--accent);color:var(--accent)}
-.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
-.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
-/* Prophet cards */
-.card-grid{display:grid;gap:8px;width:100%;max-width:500px}
-.card-grid.g2{grid-template-columns:repeat(2,1fr)}
-.card-grid.g3{grid-template-columns:repeat(3,1fr)}
-.card-grid.g5{grid-template-columns:repeat(5,1fr)}
-.p-card{padding:10px 6px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:center;transition:all .15s;animation:popIn .3s;line-height:1.3}
-.p-card:hover{border-color:var(--accent);background:var(--abg)}
-.p-card .ar{font-family:'Noto Sans Arabic',sans-serif;font-size:15px;font-weight:700;display:block;margin-bottom:2px}
-.p-card .en{font-size:11px;display:block;color:var(--text2)}
-.p-card.correct{background:var(--accent);color:var(--bg);border-color:var(--accent);cursor:default;pointer-events:none}
-.p-card.correct .en{color:var(--bg)}
-.p-card.wrong{background:#ff4444;color:#fff;border-color:#ff4444;animation:shake .3s}
-.p-card.placed{opacity:.45;pointer-events:none;cursor:default}
-@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
-.timeline-row{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;align-items:center;min-height:30px;padding:6px;border:1px dashed var(--border2);border-radius:8px;width:100%;max-width:500px}
-.tl-chip{padding:3px 8px;border-radius:6px;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;animation:popIn .2s}
-.fact-box{background:var(--abg);border:1px solid var(--abr);border-radius:8px;padding:8px 12px;text-align:center;font-size:11px;color:var(--accent);max-width:400px;width:100%;line-height:1.5;animation:fadeUp .3s}
-.fact-box .fact-name{font-weight:700;font-size:13px;margin-bottom:2px}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.help-item summary{padding:10px 14px;cursor:pointer;font-size:13px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
+.help-item summary::before{content:"\25B8";color:var(--accent);font-size:10px;transition:transform .2s}.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 14px 10px;font-size:12px;color:var(--text2);line-height:1.7}
+.help-step{display:flex;gap:10px;margin-bottom:14px;align-items:flex-start}
+.help-step-num{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#DAA520);color:#1a1408;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:12px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:16px}.wiki-entry h3{font-size:14px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:12px;color:var(--text2);line-height:1.7}
+.sidebar-footer{padding:12px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:8px 12px;border-radius:8px;font-size:12px;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .15s}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Prophet Timeline</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Order the Prophets of Allah</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Tap the prophets in chronological order!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div></div>
-
+<a href="../../index.html" class="back-link" id="backLink">&larr; Catalog</a>
+<div class="splash" id="splash"><div class="splash-dunes"></div><div class="splash-box">
+<div class="splash-bism">بِسْمِ ٱللَّوهِ ٱلرَّحْمَـنِ ٱلرَّحِيمِ</div>
+<div style="width:80px;height:80px;margin:0 auto 16px;border-radius:50%;background:radial-gradient(circle,var(--accent) 20%,transparent 70%);opacity:.3;animation:pulse 3s infinite"></div>
+<h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splTitle">Prophet Timeline</h1>
+<div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px" id="splSub">Through the Ages</div>
+<p style="color:var(--text2);font-size:13px;line-height:1.7;margin-bottom:24px" id="splDesc">Explore the chronological order of prophets and their key stories.</p>
+<button class="btn-go" id="enterBtn">Start Mission</button>
+<div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span>
+<button class="sw-btn on" data-thm="desert-dawn">&#9728;</button><button class="sw-btn" data-thm="midnight-desert">&#127769;</button><button class="sw-btn" data-thm="sandstone">&#127966;</button><button class="sw-btn" data-thm="oasis">&#127795;</button><button class="sw-btn" data-thm="sunset">&#127773;</button><button class="sw-btn" data-thm="night-sky">&#11088;</button><button class="sw-btn" data-thm="caravan">&#128042;</button><button class="sw-btn" data-thm="parchment">&#128220;</button>
+</div></div></div>
 <div class="app" id="app">
-<div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
-<div class="hdr"><h1>Prophet Timeline</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<div class="hdr-bism">بِسْمِ ٱللَّوهِ ٱلرَّحْمَـنِ ٱلرَّحِيمِ</div>
+<div class="hdr"><h1 id="appTitle">Prophet Timeline</h1><span class="pill" id="scorePill">0 / 0</span></div>
 <div class="ctrl">
-<select id="diffSel" onchange="setDiff()"><option value="10">Easy (10)</option><option value="15" selected>Medium (15)</option><option value="25">Hard (25)</option></select>
-<button id="startBtn">&#9654; New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">&#10067;</button>
-<button id="soundBtn">&#128266;</button>
-<div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
-<div class="sw"><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div>
+<button id="startBtn">&#9654; New Game</button><button class="btn-help" onclick="openHelp()">?</button><button id="soundBtn">&#128266;</button>
+<div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw"><button class="sw-btn on" data-thm="desert-dawn">&#9728;</button><button class="sw-btn" data-thm="midnight-desert">&#127769;</button><button class="sw-btn" data-thm="sandstone">&#127966;</button><button class="sw-btn" data-thm="oasis">&#127795;</button><button class="sw-btn" data-thm="sunset">&#127773;</button><button class="sw-btn" data-thm="night-sky">&#11088;</button><button class="sw-btn" data-thm="caravan">&#128042;</button><button class="sw-btn" data-thm="parchment">&#128220;</button></div>
 </div>
-<div class="status" id="status">Tap prophets in chronological order!</div>
-<div class="game-area" id="gameArea">
-<div class="timeline-row" id="timeline"></div>
-<div class="fact-box" id="factBox" style="display:none"></div>
-<div class="card-grid g3" id="cardGrid"></div>
-<div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
-</div>
-<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Mistakes</div><div class="score-num" id="mis">0</div></div><div class="score-item"><div class="score-label">Progress</div><div class="score-num" id="tot">0/0</div></div></div>
+<div class="status" id="status">Loading...</div>
+<div id="itemsArea" class="items-area"></div>
+<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">Score</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">Total</div><div class="score-num" id="tot">0</div></div></div>
 <div class="log-box" id="logBox"></div>
-<div class="foot">Workshop-Diy &mdash; Prophet Timeline v1.0</div>
+<div class="foot">Prophet Timeline &mdash; Seerah Series v2.0</div>
 </div>
-
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
-<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
-  <div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
-  <div class="help-tabs">
-    <button class="help-tab active" data-tab="faq">FAQ</button>
-    <button class="help-tab" data-tab="howto">How-To</button>
-    <button class="help-tab" data-tab="wiki">Wiki</button>
-  </div>
-  <div class="sidebar-body">
-    <div class="help-content active" id="help-faq">
-        <details class="help-item"><summary>What is Prophet Timeline?</summary><p>An interactive game to learn the chronological order of the 25 prophets mentioned in the Quran. Tap each prophet in the correct order!</p></details>
-        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
-        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
-        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
-        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / &#1593;. Arabic enables right-to-left layout automatically.</p></details>
-        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
-    </div>
-    <div class="help-content" id="help-howto">
-        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
-        <div class="help-step"><span class="help-step-num">2</span><p>Choose difficulty: Easy (10), Medium (15), or Hard (25 prophets)</p></div>
-        <div class="help-step"><span class="help-step-num">3</span><p>Press &#9654; New Game to begin</p></div>
-        <div class="help-step"><span class="help-step-num">4</span><p>Cards appear shuffled — tap the prophet who comes NEXT in chronological order</p></div>
-        <div class="help-step"><span class="help-step-num">5</span><p>Correct taps add the prophet to the timeline and show a fun fact</p></div>
-        <div class="help-step"><span class="help-step-num">6</span><p>Wrong taps add a mistake — try to finish with zero mistakes!</p></div>
-        <div class="help-step"><span class="help-step-num">7</span><p>Complete the timeline to win. Your best score is saved automatically.</p></div>
-        <div class="help-step"><span class="help-step-num">8</span><p>Click &#8592; Catalog to go back and try another game</p></div>
-    </div>
-    <div class="help-content" id="help-wiki">
-        <div class="wiki-entry"><h3>&#127919; Purpose</h3><p>Learn the order of the 25 prophets mentioned in the Quran through an engaging card-sorting game.</p></div>
-        <div class="wiki-entry"><h3>&#127912; Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
-        <div class="wiki-entry"><h3>&#127760; Languages</h3><p>Trilingual: English, Fran&#231;ais, &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;. Arabic auto-enables RTL layout.</p></div>
-        <div class="wiki-entry"><h3>&#128266; Sound</h3><p>Web Audio API — no files needed. Correct = rising tone, wrong = buzz, win = melody. Toggle with the sound button.</p></div>
-        <div class="wiki-entry"><h3>&#128279; Source</h3><p>The 25 prophets are those explicitly named in the Holy Quran.</p></div>
-        <div class="wiki-entry"><h3>&#128274; Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
-    </div>
-  </div>
-  <div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div>
-</aside>
-
+<aside class="sidebar sidebar-left" id="helpPanel">
+<div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">&times;</button></div>
+<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
+<div class="sidebar-body">
+<div class="help-content active" id="help-faq"><details class="help-item"><summary>What is this?</summary><p>Explore the chronological order of prophets and their key stories.</p></details></div>
+<div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>Start and explore the content</p></div><div class="help-step"><span class="help-step-num">2</span><p>Click items to learn</p></div></div>
+<div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>About</h3><p>Explore the chronological order of prophets and their key stories.</p></div></div>
+</div><div class="sidebar-footer">Seerah Series &mdash; v2.0</div></aside>
 <script>
-/* ── Helpers ── */
+var UI={title:{en:"Prophet Timeline",fr:"Chronologie des Prophetes",ar:"الخط الزمني للأنبياء"},sub:{en:"Through the Ages",fr:"Through the Ages",ar:"Through the Ages"},desc:{en:"Explore the chronological order of prophets and their key stories.",fr:"Explore the chronological order of prophets and their key stories.",ar:"Explore the chronological order of prophets and their key stories."},new_game:{en:"\u25b6 New Game",fr:"\u25b6 Nouveau jeu",ar:"\u25b6 \u0644\u0639\u0628\u0629 \u062c\u062f\u064a\u062f\u0629"}};
+var curLang="en",soundOn=true,actx;
+function t(k){return UI[k]?UI[k][curLang]||UI[k].en:"";}
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
-function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
-function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
-let soundOn=true,actx;
-function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
-function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
-
-/* ── Prophet Data (25 in chronological order) ── */
-const PROPHETS=[
-{i:0,ar:"\u0622\u062F\u0645",en:"Adam",fact:"The first human and first prophet, created by Allah from clay."},
-{i:1,ar:"\u0625\u062F\u0631\u064A\u0633",en:"Idris",fact:"Known for his wisdom; raised to a high station by Allah."},
-{i:2,ar:"\u0646\u0648\u062D",en:"Nuh",fact:"Built the great Ark and preached for 950 years."},
-{i:3,ar:"\u0647\u0648\u062F",en:"Hud",fact:"Sent to the people of 'Ad who built lofty pillars."},
-{i:4,ar:"\u0635\u0627\u0644\u062D",en:"Salih",fact:"Allah sent a miraculous she-camel as a sign to Thamud."},
-{i:5,ar:"\u0625\u0628\u0631\u0627\u0647\u064A\u0645",en:"Ibrahim",fact:"The Friend of Allah (Khalilullah) who built the Ka'bah."},
-{i:6,ar:"\u0644\u0648\u0637",en:"Lut",fact:"Nephew of Ibrahim, sent to the sinful cities."},
-{i:7,ar:"\u0625\u0633\u0645\u0627\u0639\u064A\u0644",en:"Ismail",fact:"Son of Ibrahim; helped build the Ka'bah in Makkah."},
-{i:8,ar:"\u0625\u0633\u062D\u0627\u0642",en:"Ishaq",fact:"Son of Ibrahim and Sarah, born in their old age."},
-{i:9,ar:"\u064A\u0639\u0642\u0648\u0628",en:"Yaqub",fact:"Also called Israel; father of the twelve tribes."},
-{i:10,ar:"\u064A\u0648\u0633\u0641",en:"Yusuf",fact:"Blessed with beauty and dream interpretation; became ruler of Egypt."},
-{i:11,ar:"\u0634\u0639\u064A\u0628",en:"Shuaib",fact:"Preached honesty in trade to the people of Madyan."},
-{i:12,ar:"\u0623\u064A\u0648\u0628",en:"Ayyub",fact:"A model of patience through severe trials and illness."},
-{i:13,ar:"\u0645\u0648\u0633\u0649",en:"Musa",fact:"Spoke directly to Allah; led Bani Israel out of Egypt."},
-{i:14,ar:"\u0647\u0627\u0631\u0648\u0646",en:"Harun",fact:"Brother and helper of Musa, an eloquent speaker."},
-{i:15,ar:"\u0630\u0648 \u0627\u0644\u0643\u0641\u0644",en:"Dhul-Kifl",fact:"Known for his patience and righteousness."},
-{i:16,ar:"\u062F\u0627\u0648\u0648\u062F",en:"Dawud",fact:"Given the Zabur (Psalms); iron was made soft for him."},
-{i:17,ar:"\u0633\u0644\u064A\u0645\u0627\u0646",en:"Sulaiman",fact:"Could command the wind, jinn, and understood animal speech."},
-{i:18,ar:"\u0625\u0644\u064A\u0627\u0633",en:"Ilyas",fact:"Called his people away from idol Baal worship."},
-{i:19,ar:"\u0627\u0644\u064A\u0633\u0639",en:"Al-Yasa",fact:"Successor of Ilyas, known for miracles and righteousness."},
-{i:20,ar:"\u064A\u0648\u0646\u0633",en:"Yunus",fact:"Swallowed by a great fish; called out from the darkness."},
-{i:21,ar:"\u0632\u0643\u0631\u064A\u0627",en:"Zakariya",fact:"Guardian of Maryam; prayed for a righteous son."},
-{i:22,ar:"\u064A\u062D\u064A\u0649",en:"Yahya",fact:"Son of Zakariya, given wisdom as a child."},
-{i:23,ar:"\u0639\u064A\u0633\u0649",en:"Isa",fact:"Born miraculously to Maryam; spoke in the cradle."},
-{i:24,ar:"\u0645\u062D\u0645\u062F \uFDFA",en:"Muhammad \uFDFA",fact:"The Seal of the Prophets, sent as a mercy to all worlds."}
-];
-
-/* ── Game State ── */
-let total=15,currentIdx=0,mistakes=0,locked=false,gameProphets=[],shuffled=[];
-let timerInterval,timerSeconds=0;
-
-function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
-function stopTimer(){clearInterval(timerInterval);}
-function setDiff(){total=parseInt(document.getElementById("diffSel").value);}
-
-function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
-
-function newGame(){
-  startTimer();
-  total=parseInt(document.getElementById("diffSel").value);
-  currentIdx=0;mistakes=0;locked=false;
-  document.getElementById("sc").textContent="0";
-  document.getElementById("mis").textContent="0";
-  document.getElementById("tot").textContent="0/"+total;
-  document.getElementById("scorePill").textContent="0 / "+total;
-  document.getElementById("prog").style.width="0%";
-  document.getElementById("timeline").innerHTML="";
-  document.getElementById("factBox").style.display="none";
-  document.getElementById("status").textContent="Tap prophets in chronological order!";
-  document.getElementById("status").className="status";
-  document.getElementById("logBox").innerHTML="";
-  // Pick prophets evenly spread
-  if(total>=25){gameProphets=[...PROPHETS];}
-  else{
-    const step=25/total;
-    const indices=[];
-    for(let k=0;k<total;k++){indices.push(Math.min(24,Math.round(k*step)));}
-    // Ensure no duplicates
-    const unique=[...new Set(indices)];
-    while(unique.length<total){for(let j=0;j<25&&unique.length<total;j++){if(!unique.includes(j))unique.push(j);}}
-    unique.sort((a,b)=>a-b);
-    gameProphets=unique.map(idx=>PROPHETS[idx]);
-  }
-  shuffled=shuffle(gameProphets);
-  renderCards();
-  log("New game started: "+total+" prophets","success");
-}
-
-function renderCards(){
-  const grid=document.getElementById("cardGrid");
-  grid.innerHTML="";
-  // Responsive grid columns
-  if(total<=10)grid.className="card-grid g2";
-  else if(total<=15)grid.className="card-grid g3";
-  else grid.className="card-grid g5";
-  shuffled.forEach((p,si)=>{
-    const card=document.createElement("div");
-    card.className="p-card";
-    card.dataset.prophetIndex=p.i;
-    card.dataset.shuffleIndex=si;
-    card.innerHTML='<span class="ar">'+p.ar+'</span><span class="en">'+p.en+'</span>';
-    card.onclick=()=>pickCard(card,p);
-    grid.appendChild(card);
-  });
-}
-
-function pickCard(card,prophet){
-  if(locked)return;
-  const expected=gameProphets[currentIdx];
-  if(prophet.i===expected.i){
-    // Correct
-    locked=true;
-    card.classList.add("correct");
-    snd("ok");
-    currentIdx++;
-    document.getElementById("sc").textContent=currentIdx;
-    document.getElementById("tot").textContent=currentIdx+"/"+total;
-    document.getElementById("scorePill").textContent=currentIdx+" / "+total;
-    document.getElementById("prog").style.width=(currentIdx/total*100)+"%";
-    // Add to timeline
-    const tl=document.getElementById("timeline");
-    const chip=document.createElement("span");
-    chip.className="tl-chip";
-    chip.textContent=prophet.en;
-    tl.appendChild(chip);
-    // Show fact
-    const fb=document.getElementById("factBox");
-    fb.style.display="block";
-    fb.innerHTML='<div class="fact-name">'+prophet.ar+' &mdash; '+prophet.en+'</div>'+prophet.fact;
-    log("\u2713 "+prophet.en+" ("+prophet.ar+")","success");
-    // Mark placed after brief delay
-    setTimeout(()=>{
-      card.classList.remove("correct");
-      card.classList.add("placed");
-      locked=false;
-      if(currentIdx>=total){
-        // WIN
-        stopTimer();
-        checkHS();
-        snd("win");
-        const pct=Math.round((total/(total+mistakes))*100);
-        document.getElementById("status").textContent="\uD83C\uDFC6 Complete! "+pct+"% accuracy in "+document.getElementById("timerPill").textContent;
-        document.getElementById("status").className="status win";
-        log("\uD83C\uDFC6 Timeline complete! Mistakes: "+mistakes,"success");
-      } else {
-        document.getElementById("status").textContent="Next: #"+(currentIdx+1)+" of "+total;
-      }
-    },600);
-  } else {
-    // Wrong
-    card.classList.add("wrong");
-    snd("err");
-    mistakes++;
-    document.getElementById("mis").textContent=mistakes;
-    log("\u2717 Wrong! "+prophet.en+" is not next. Expected: "+expected.en,"error");
-    document.getElementById("status").textContent="\u2717 Not "+prophet.en+"! Try again.";
-    document.getElementById("status").className="status lose";
-    setTimeout(()=>{card.classList.remove("wrong");document.getElementById("status").className="status";document.getElementById("status").textContent="Pick #"+(currentIdx+1)+" of "+total;},500);
-  }
-}
-
-/* ── High Score ── */
-const HS_KEY="wdiy-hs-prophet-timeline";
-function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
-function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
-function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">\uD83C\uDFC6 '+best+'%</span>';}}
-function checkHS(){
-  if(currentIdx>=total){
-    const pct=Math.round((total/(total+mistakes))*100);
-    if(saveHS(pct)){log("\uD83C\uDFC6 NEW HIGH SCORE: "+pct+"%!","success");}
-  }
-}
-
-/* ── Init ── */
-document.addEventListener("DOMContentLoaded",()=>{
-  setLang("en");setTheme("terminal");
-  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
-  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
-  showHS();
-  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
-  document.getElementById("startBtn").addEventListener("click",newGame);
-  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07";});
-
-  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
-  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});document.getElementById("splTitle").textContent=t("title");document.getElementById("splSub").textContent=t("sub");document.getElementById("splDesc").textContent=t("desc");document.getElementById("appTitle").textContent=t("title");document.getElementById("startBtn").textContent=t("new_game");}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th)});}
+function snd(type){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(type==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(type==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(type==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){var b=document.getElementById("logBox"),d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+var HS_KEY="seerah-hs-002-prophet-timeline";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0;}catch(e){return 0;}}
+function saveHS(s){try{localStorage.setItem(HS_KEY,s);}catch(e){}}
+var ITEMS=[{"name":{"en":"Adam (AS)","fr":"Adam (AS)","ar":"Adam (AS)"},"desc":{"en":"First human and prophet, created from clay","fr":"Premier prophete","ar":""}},{"name":{"en":"Idris (AS)","fr":"Idris (AS)","ar":"Idris (AS)"},"desc":{"en":"Raised to a high station, known for patience","fr":"Connu pour sa patience","ar":""}},{"name":{"en":"Nuh (AS)","fr":"Nuh (AS)","ar":"Nuh (AS)"},"desc":{"en":"Preached 950 years, built the Ark","fr":"A preche 950 ans","ar":""}},{"name":{"en":"Ibrahim (AS)","fr":"Ibrahim (AS)","ar":"Ibrahim (AS)"},"desc":{"en":"Friend of Allah, built the Kaaba","fr":"Ami d'Allah","ar":""}},{"name":{"en":"Yusuf (AS)","fr":"Yusuf (AS)","ar":"Yusuf (AS)"},"desc":{"en":"Dream interpreter, rose to power in Egypt","fr":"Interprete des reves","ar":""}},{"name":{"en":"Musa (AS)","fr":"Musa (AS)","ar":"Musa (AS)"},"desc":{"en":"Spoke to Allah, parted the Red Sea","fr":"A parle a Allah","ar":""}},{"name":{"en":"Dawud (AS)","fr":"Dawud (AS)","ar":"Dawud (AS)"},"desc":{"en":"Given the Zabur, iron made soft","fr":"A recu le Zabur","ar":""}},{"name":{"en":"Sulayman (AS)","fr":"Sulayman (AS)","ar":"Sulayman (AS)"},"desc":{"en":"Controlled wind, jinn and animals","fr":"Controlait le vent","ar":""}},{"name":{"en":"Isa (AS)","fr":"Isa (AS)","ar":"Isa (AS)"},"desc":{"en":"Born to Maryam, spoke from the cradle","fr":"Ne de Maryam","ar":""}},{"name":{"en":"Muhammad (SAW)","fr":"Muhammad (SAW)","ar":"Muhammad (SAW)"},"desc":{"en":"Seal of Prophets, received the Quran","fr":"Sceau des prophetes","ar":""}}];
+var explored=new Set();
+function renderItems(){var area=document.getElementById("itemsArea");area.innerHTML="";ITEMS.forEach(function(p,i){var card=document.createElement("div");card.className="item-card"+(explored.has(i)?" active":"");card.style.animationDelay=(i*.06)+"s";card.innerHTML='<h3>'+(p.name[curLang]||p.name.en)+'</h3><p>'+(p.desc[curLang]||p.desc.en)+'</p>';card.onclick=function(){if(!explored.has(i)){explored.add(i);snd("ok");log("Explored: "+(p.name.en),"success");document.getElementById("sc").textContent=explored.size;document.getElementById("scorePill").textContent=explored.size+" / "+ITEMS.length;if(explored.size>=ITEMS.length){snd("win");document.getElementById("status").textContent="All explored! MashaAllah!";document.getElementById("status").className="status win";}}card.classList.toggle("active");};area.appendChild(card);});}
+function newGame(){explored.clear();document.getElementById("sc").textContent="0";document.getElementById("tot").textContent=ITEMS.length;document.getElementById("scorePill").textContent="0 / "+ITEMS.length;document.getElementById("status").textContent="Tap each item to explore";document.getElementById("status").className="status";document.getElementById("logBox").innerHTML="";renderItems();}
+document.addEventListener("DOMContentLoaded",function(){
+setLang("en");setTheme("desert-dawn");
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
+document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
+document.getElementById("startBtn").addEventListener("click",newGame);
+document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"\ud83d\udd0a":"\ud83d\udd07";try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();if(e.key>="1"&&e.key<="4"){var btns=document.querySelectorAll(".answer-btn");var i=parseInt(e.key)-1;if(btns[i])btns[i].click();}if(e.key==="Enter"){var go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();}});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active")});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active")});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="\ud83d\udd07";}}catch(e){}
+var osl=setLang,ost=setTheme;setLang=function(l){osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};setTheme=function(t){ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};
 });
-
-/* ── Keyboard shortcuts ── */
-document.addEventListener("keydown",function(e){
-  if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
-  // Number keys 1-9 to tap cards by visible order
-  if(e.key>="1"&&e.key<="9"){const cards=document.querySelectorAll(".p-card:not(.placed)");const i=parseInt(e.key)-1;if(cards[i])cards[i].click();}
-});
-
-/* ── Persist sound preference ── */
-try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="\uD83D\uDD07";}}catch(e){}
-var _origSoundClick=document.getElementById("soundBtn");
-if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
-
-/* ── Persist theme and language ── */
-try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
-(function(){var _osl=setLang,_ost=setTheme;
-setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
-setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
 </script></body></html>

@@ -1,206 +1,277 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Camel Caravan Loader — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
-.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
-.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
-.app{display:none;max-width:700px;margin:0 auto;padding:12px 16px}.app.on{display:block}.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}.hdr h1{font-size:18px}.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
-.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}.ctrl button:hover{border-color:var(--abr)}
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Camel Caravan — Gazawat</title><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet"/><style>
+/* === GAZAWAT 8-THEME SYSTEM === */
+[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#D2B48C;--abg:#D2B48C0f;--abr:#D2B48C33;--glow:0 0 20px #D2B48C1a}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#D2B48C;--abg:#D2B48C0f;--abr:#D2B48C33;--glow:0 0 20px #D2B48C1a}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#D2B48C;--abg:#D2B48C0f;--abr:#D2B48C33;--glow:0 0 20px #D2B48C1a}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#D2B48C;--abg:#D2B48C0f;--abr:#D2B48C33;--glow:0 0 15px #D2B48C10}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#D2B48C;--abg:#D2B48C0f;--abr:#D2B48C33;--glow:0 0 25px #D2B48C22}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#D2B48C;--abg:#D2B48C0f;--abr:#D2B48C33;--glow:0 0 20px #D2B48C1a}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#D2B48C;--abg:#D2B48C0f;--abr:#D2B48C33;--glow:0 0 20px #D2B48C1a}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#D2B48C;--abg:#D2B48C0f;--abr:#D2B48C33;--glow:0 0 15px #D2B48C10}
+
+/* === BASE RESET === */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh;background-image:repeating-linear-gradient(90deg,#D2B48C06 0px,#D2B48C06 2px,transparent 2px,transparent 20px)}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+
+/* === SPLASH SCREEN === */
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(ellipse at center,#D2B48C08,transparent 70%)}
+.splash-box{background:var(--bg2);border:2px solid var(--border);border-radius:20px;padding:44px 36px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow),0 8px 32px rgba(0,0,0,.3);animation:fadeUp .6s ease-out;position:relative;overflow:hidden}
+.splash-box::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,#D2B48C,transparent)}
+.splash-box::after{content:"";position:absolute;bottom:0;left:0;right:0;height:50%;background:linear-gradient(180deg,transparent,#D2B48C05);pointer-events:none}
+
+.splash-art{position:relative;width:200px;height:140px;margin:0 auto 20px}
+.splash-art::before{content:"";position:absolute;bottom:0;left:10%;width:80%;height:60px;background:repeating-linear-gradient(90deg,#D2B48C22 0px,#D2B48C22 20px,#D2B48C11 20px,#D2B48C11 24px);border-top:3px solid #D2B48C44;border-radius:4px 4px 0 0}
+.splash-art::after{content:"";position:absolute;bottom:60px;left:30%;width:40%;height:30px;background:#D2B48C22;border:2px solid #D2B48C33;border-bottom:none;border-radius:4px 4px 0 0}
+.tower-icon{position:absolute;top:15px;left:50%;transform:translateX(-50%);font-size:28px;color:#D2B48C}
+.splash-bism{color:var(--text3);font-size:13px;margin-bottom:16px;font-family:'Noto Sans Arabic',serif;letter-spacing:1px}
+.splash-subtitle{color:#D2B48C;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+.splash-desc{color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px}
+.btn-go{padding:14px 36px;background:linear-gradient(135deg,#D2B48C,#D2B48Ccc);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:2px;text-transform:uppercase;transition:all .2s;box-shadow:0 4px 15px #D2B48C33}
+.btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 20px #D2B48C44}
+.btn-go:active{transform:translateY(0)}
+.sw{display:flex;gap:4px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:28px;height:28px;border-radius:8px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent);box-shadow:0 0 8px var(--abr)}
+.sw-btn:hover{border-color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+
+/* === MAIN APP === */
+.app{display:none;max-width:920px;margin:0 auto;padding:14px 18px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:12px;margin-bottom:8px;font-family:'Noto Sans Arabic',serif}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:20px;display:flex;align-items:center;gap:8px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:7px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer;transition:all .15s}
+.ctrl button:hover{border-color:var(--accent);color:var(--accent)}
 .status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}.status.win{color:var(--accent)}.status.lose{color:#ff4444}
-.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;min-height:300px}
-.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
-.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:100px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
-.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
-.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.btn-close:hover{border-color:var(--accent);color:var(--accent)}
-.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}.help-content{display:none}.help-content.active{display:block}.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}.help-item summary::before{content:"\25B8";color:var(--accent);font-size:10px;transition:transform .2s}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
-.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:14px;position:relative;overflow:hidden}
+.game-area::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#D2B48C44,transparent)}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:12px}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px}.score-num{font-size:24px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;max-height:110px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:12px}
+.log-line{padding:2px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:16px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* === FORTRESS BORDER PATTERN === */
+.app::before{content:"";display:block;height:6px;margin-bottom:10px;background:repeating-linear-gradient(90deg,#D2B48C22 0px,#D2B48C22 16px,transparent 16px,transparent 20px,#D2B48C11 20px,#D2B48C11 24px,transparent 24px,transparent 40px);border-radius:3px}
+
+/* === NAVIGATION === */
+.back-link{position:fixed;top:10px;left:10px;z-index:100;padding:5px 12px;border-radius:8px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s;display:flex;align-items:center;gap:4px}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:10px}
+
+/* === HELP SIDEBAR === */
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:360px;max-width:88vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:16px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .15s}.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:10px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:16px 18px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:10px;overflow:hidden}.help-item summary{padding:12px 14px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 14px 12px;font-size:11px;color:var(--text2);line-height:1.7}
+.help-step{display:flex;gap:10px;margin-bottom:14px;align-items:flex-start}.help-step-num{width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:16px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.7}
+.sidebar-footer{padding:12px 18px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:7px 12px;border-radius:8px;font-size:11px;font-family:inherit;cursor:pointer;transition:all .15s}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
 .hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
-.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
-/* Caravan specific */
-.caravan-layout{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.supply-list{display:flex;flex-direction:column;gap:6px;min-width:160px}
-.supply-item{display:flex;align-items:center;gap:8px;padding:8px;background:var(--bg3);border:1px solid var(--border);border-radius:8px}
-.supply-item .icon{font-size:20px}
-.supply-item .info{flex:1;font-size:11px}
-.supply-item .info .name{font-weight:600;color:var(--heading)}
-.supply-item .info .det{font-size:9px;color:var(--text3)}
-.supply-item .ctrls{display:flex;align-items:center;gap:4px}
-.supply-item .ctrls button{width:22px;height:22px;border-radius:4px;border:1px solid var(--border);background:var(--bg2);color:var(--heading);cursor:pointer;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
-.supply-item .ctrls button:hover{border-color:var(--accent);color:var(--accent)}
-.supply-item .ctrls span{min-width:20px;text-align:center;font-weight:700;font-size:12px;color:var(--heading)}
-.camel-display{flex:1;min-width:180px;text-align:center;padding:12px;background:var(--bg3);border:1px solid var(--border);border-radius:12px}
-.camel-display .camel-icon{font-size:48px;margin-bottom:6px}
-.weight-bar{width:100%;height:14px;background:var(--bg);border-radius:7px;overflow:hidden;margin:6px 0;position:relative}
-.weight-bar .fill{height:100%;border-radius:7px;transition:width .3s}
-.weight-bar .fill.ok{background:var(--accent)}.weight-bar .fill.warn{background:#ffa500}.weight-bar .fill.over{background:#ff4444}
-.weight-label{font-size:10px;color:var(--text2);margin-bottom:8px}
-.mission-info{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:8px;margin-top:8px;font-size:10px;color:var(--text2);line-height:1.5}
-.mission-info h4{color:var(--heading);font-size:11px;font-family:'Outfit',sans-serif;margin-bottom:4px}
-.act-btn{padding:10px 24px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;cursor:pointer;display:block;margin:10px auto}
-.act-btn:disabled{opacity:.4;cursor:default}
-.result-box{text-align:center;padding:16px;font-family:'Outfit',sans-serif}
-.result-box h2{font-size:18px;color:var(--heading);margin-bottom:8px}
-.result-box .big{font-size:28px;font-weight:800;color:var(--accent)}
-.result-box p{font-size:11px;color:var(--text2);margin-top:6px;line-height:1.6}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:3px 10px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+canvas{border-radius:10px;cursor:grab;max-width:100%;touch-action:none}canvas:active{cursor:grabbing}
+.info-panel{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:12px;font-size:11px;color:var(--text2);line-height:1.7}.info-panel h3{font-size:14px;color:var(--heading);margin-bottom:6px;font-family:'Outfit',sans-serif}.info-panel .highlight{color:var(--accent);font-weight:600}
+.victory-box{background:var(--abg);border:2px solid var(--accent);border-radius:14px;padding:20px;text-align:center;margin-bottom:12px;animation:fadeUp .4s}.victory-box h2{font-family:'Outfit',sans-serif;color:var(--accent);font-size:22px;margin-bottom:8px}.victory-box p{font-size:13px;color:var(--text);line-height:1.7}
+.btn-execute{padding:12px 28px;background:linear-gradient(135deg,var(--accent),#D2B48Ccc);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase;transition:all .2s}.btn-execute:disabled{opacity:.4;cursor:not-allowed}.btn-execute:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 4px 12px #D2B48C33}
+.btn-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:10px}
+.btn-secondary{padding:9px 18px;background:var(--bg3);border:1px solid var(--border);color:var(--heading);border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .15s}.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+
+/* === ISLAMIC GEOMETRIC PATTERN (top decorative band) === */
+.islamic-band{height:8px;background:repeating-linear-gradient(90deg,#D2B48C33 0px,#D2B48C33 8px,transparent 8px,transparent 12px,#D2B48C22 12px,#D2B48C22 16px,transparent 16px,transparent 24px);margin-bottom:8px;border-radius:4px}
+
+/* === CRESCENT MOON DECORATION === */
+.crescent-deco{position:absolute;top:16px;right:16px;width:20px;height:20px}.crescent-deco::before{content:"";position:absolute;width:20px;height:20px;border-radius:50%;background:#D2B48C22;border:2px solid #D2B48C33}.crescent-deco::after{content:"";position:absolute;top:-2px;left:4px;width:16px;height:16px;border-radius:50%;background:var(--bg2)}
+
+/* === RESPONSIVE === */
+@media(max-width:600px){.splash-box{padding:28px 20px}.hdr h1{font-size:16px}.score-num{font-size:20px}canvas{height:auto}.sidebar{width:100%;max-width:100%}}
+
+.workspace{display:grid;grid-template-columns:1fr 300px;gap:12px;margin-bottom:12px}
+@media(max-width:700px){.workspace{grid-template-columns:1fr}}
+.workspace-main{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px}
+.workspace-panel{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px}
+.task-list{display:flex;flex-direction:column;gap:8px}
+.task-item{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;transition:all .2s}
+.task-item.done{border-color:#D2B48C33;background:#D2B48C08}
+.task-num{width:24px;height:24px;border-radius:50%;background:#D2B48C22;color:#D2B48C;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;font-family:Outfit,sans-serif;flex-shrink:0}
+.task-item.done .task-num{background:#D2B48C;color:var(--bg)}
+.task-text{flex:1;font-size:12px;color:var(--text)}
+.task-check{color:#D2B48C;font-weight:700;font-size:16px}
+.btn-task{padding:5px 12px;background:#D2B48C22;border:1px solid #D2B48C44;color:#D2B48C;border-radius:6px;font-size:10px;font-weight:600;cursor:pointer;font-family:Outfit,sans-serif}
+.btn-task:hover{background:#D2B48C33}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">&bismillah;</div><h1 class="heading" style="font-size:22px;margin-bottom:4px" id="splashTitle">Camel Caravan Loader</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px">Load &bull; Balance &bull; Travel</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px" id="splashDesc">Load supply camels for a military campaign. Balance weight between food, water, weapons, and medicine. Optimize for the journey distance!</p><button class="btn-go" id="enterBtn">Start Loading</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">&bismillah;</div><div class="hdr"><h1 id="appTitle">Camel Caravan Loader</h1><span class="pill" id="scorePill">0</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl">
-<button id="startBtn">&#x25B6; New Mission</button><button class="btn-help" onclick="openHelp()">&#x2753;</button><button id="soundBtn">&#x1F50A;</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw"><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div>
-<div class="status" id="status">Load your camel for the journey</div>
-<div class="game-area" id="gameArea"></div>
-<div class="score-row"><div class="score-item"><div class="score-label" id="lbl1">Journey Score</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl2">Best</div><div class="score-num" id="bestSc">0</div></div></div>
-<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy &mdash; Camel Caravan Loader v1.0</div></div>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
+
+<!-- SPLASH SCREEN -->
+<div class="splash" id="splash"><div class="splash-box">
+<div class="splash-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
+<div class="splash-art"><div class="tower-icon">🏰</div></div>
+<h1 class="heading" style="font-size:24px;margin-bottom:6px">Camel Caravan</h1>
+<div class="splash-subtitle">Load and manage the supply caravan</div>
+<p class="splash-desc">Load and manage the supply caravan. Learn through interactive gameplay designed for young Muslim minds.</p>
+<button class="btn-go" id="enterBtn">Start Mission</button>
+<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div>
+</div></div>
+
+<!-- MAIN APP -->
+<div class="app" id="app">
+<div class="islamic-band"></div>
+<div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
+<div class="hdr"><h1>Camel Caravan</h1><span class="pill" id="scorePill">Simulation</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<div class="ctrl">
+  <button id="startBtn">&#9654; New Game</button>
+  <button class="btn-help" id="helpBtn" onclick="openHelp()">&#10067;</button>
+  <button id="soundBtn">&#128266;</button>
+  <div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+  <div class="sw"><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div>
+</div>
+<div class="status" id="status">Load and manage the supply caravan</div>
+<div class="workspace"><div class="workspace-main" id="workArea"></div><div class="workspace-panel" id="infoPanel"></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label" data-i18n="progress">Progress</div><div class="score-num" id="scMain">0%</div></div><div class="score-item"><div class="score-label" data-i18n="tasks">Tasks</div><div class="score-num" id="scLevel">0</div></div><div class="score-item"><div class="score-label" data-i18n="best">Best</div><div class="score-num" id="scBest">0</div></div></div>
+<div id="infoArea"></div>
+<div class="log-box" id="logBox"></div>
+<div class="foot">Gazawat &mdash; Camel Caravan v2.0</div>
+</div>
+
+<!-- HELP SIDEBAR -->
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
-<div class="sidebar-header"><span class="sidebar-title">&#x2753; Help</span><button class="btn-close" onclick="closeHelp()">&#x2715;</button></div>
-<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
-<div class="sidebar-body">
-<div class="help-content active" id="help-faq">
-<details class="help-item"><summary>What is Camel Caravan Loader?</summary><p>A logistics puzzle where you load supply camels for a military campaign. Balance food, water, weapons, medicine, and tools within the camel's weight capacity.</p></details>
-<details class="help-item"><summary>Why camels?</summary><p>Camels were essential to desert military campaigns. They could carry heavy loads across vast distances. The Prophet (peace be upon him) used camel caravans for all major expeditions.</p></details>
-<details class="help-item"><summary>How is the score calculated?</summary><p>Score depends on having enough of each essential supply, staying within weight, and matching the mission requirements. Missing essentials lowers your score significantly.</p></details>
-</div>
-<div class="help-content" id="help-howto">
-<div class="help-step"><span class="help-step-num">1</span><p>Read the mission brief to understand distance and needs</p></div>
-<div class="help-step"><span class="help-step-num">2</span><p>Use + and - buttons to load supplies onto the camel</p></div>
-<div class="help-step"><span class="help-step-num">3</span><p>Watch the weight bar — overloading slows the caravan</p></div>
-<div class="help-step"><span class="help-step-num">4</span><p>Every item category is important — balance is key</p></div>
-<div class="help-step"><span class="help-step-num">5</span><p>Click Depart to see how your caravan fares</p></div>
-</div>
-<div class="help-content" id="help-wiki">
-<div class="wiki-entry"><h3>Camel in Islam</h3><p>The Quran mentions camels as signs of Allah's creation (88:17). They were vital for trade, travel, and military logistics in early Islamic history.</p></div>
-<div class="wiki-entry"><h3>Military Logistics</h3><p>The Prophet (peace be upon him) carefully planned supplies for every expedition. At Badr, despite limited resources, he ensured water and provisions were distributed fairly.</p></div>
-<div class="wiki-entry"><h3>Desert Travel</h3><p>A camel can carry up to 200kg and travel 40km/day in desert conditions. Proper loading and balanced supplies were critical for survival on long campaigns.</p></div>
-</div>
-</div>
-<div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div>
+  <div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+      <details class="help-item"><summary id="faq1q">What is this app?</summary><p id="faq1a">An educational Islamic app about Camel Caravan. Learn through interactive gameplay designed for Muslim kids.</p></details>
+      <details class="help-item"><summary id="faq2q">How do I play?</summary><p id="faq2a">Follow the on-screen instructions. Use buttons and interactive elements to progress through the activity.</p></details>
+      <details class="help-item"><summary id="faq3q">Does it work offline?</summary><p id="faq3a">Yes! Once loaded, everything runs in your browser with no internet needed.</p></details>
+      <details class="help-item"><summary id="faq4q">How do I change the theme?</summary><p id="faq4a">Click any theme icon in the controls bar. There are 8 beautiful themes to choose from.</p></details>
+      <details class="help-item"><summary id="faq5q">How do I change language?</summary><p id="faq5a">Click EN, FR, or &#1593; buttons. Arabic enables right-to-left layout automatically.</p></details>
+      <details class="help-item"><summary id="faq6q">Is my data private?</summary><p id="faq6a">Yes. Everything runs locally. No data is sent anywhere.</p></details>
+      <details class="help-item"><summary id="faq7q">Can I play on mobile?</summary><p id="faq7a">Yes! Touch controls work on all devices.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+      <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+      <div class="help-step"><span class="help-step-num">2</span><p>Read the instructions and historical context</p></div>
+      <div class="help-step"><span class="help-step-num">3</span><p>Interact with the game elements</p></div>
+      <div class="help-step"><span class="help-step-num">4</span><p>Complete the objectives to earn points</p></div>
+      <div class="help-step"><span class="help-step-num">5</span><p>Try to beat your high score!</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+      <div class="wiki-entry"><h3>Historical Context</h3><p>This activity is based on authentic Islamic history. Learn about the events, people, and lessons from the early Muslim community.</p></div>
+      <div class="wiki-entry"><h3>Educational Value</h3><p>Every interaction teaches an important lesson from Islamic history. Pay attention to the details and reflect on the wisdom.</p></div>
+      <div class="wiki-entry"><h3>Themes &amp; Languages</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand. 3 languages: English, French, Arabic.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Gazawat &mdash; v2.0</div>
 </aside>
+
 <script>
+/* === SHARED HELPERS === */
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
-function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));curLang=l;renderLang();}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";}
 function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
-var soundOn=true,actx;
-function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
-function log(msg,cls){var b=document.getElementById("logBox");if(!b)return;var d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
 
-var curLang="en";
-var UI={
-title:{en:"Camel Caravan Loader",fr:"Chargeur de Caravane",ar:"\u062a\u062d\u0645\u064a\u0644 \u0642\u0627\u0641\u0644\u0629 \u0627\u0644\u0625\u0628\u0644"},
-splash_desc:{en:"Load supply camels for a military campaign. Balance weight between food, water, weapons, and medicine!",fr:"Chargez des chameaux pour une campagne militaire. \u00c9quilibrez nourriture, eau, armes et m\u00e9dicaments!",ar:"\u062d\u0645\u0651\u0644 \u0627\u0644\u0625\u0628\u0644 \u0644\u062d\u0645\u0644\u0629 \u0639\u0633\u0643\u0631\u064a\u0629. \u0648\u0627\u0632\u0646 \u0628\u064a\u0646 \u0627\u0644\u0637\u0639\u0627\u0645 \u0648\u0627\u0644\u0645\u0627\u0621 \u0648\u0627\u0644\u0633\u0644\u0627\u062d!"},
-load_status:{en:"Load your camel for the journey",fr:"Chargez votre chameau",ar:"\u062d\u0645\u0651\u0644 \u062c\u0645\u0644\u0643 \u0644\u0644\u0631\u062d\u0644\u0629"},
-new_mission:{en:"\u25b6 New Mission",fr:"\u25b6 Nouvelle Mission",ar:"\u25b6 \u0645\u0647\u0645\u0629 \u062c\u062f\u064a\u062f\u0629"},
-depart:{en:"Depart!",fr:"Partir!",ar:"\u0627\u0646\u0637\u0644\u0642!"},
-weight:{en:"Weight",fr:"Poids",ar:"\u0627\u0644\u0648\u0632\u0646"},
-lbl1:{en:"Journey Score",fr:"Score",ar:"\u0646\u062a\u064a\u062c\u0629 \u0627\u0644\u0631\u062d\u0644\u0629"},lbl2:{en:"Best",fr:"Meilleur",ar:"\u0627\u0644\u0623\u0641\u0636\u0644"}
+/* === APP LOGIC === */
+
+const I18N={
+  en:{title:"Camel Caravan",subtitle:"Load and manage the supply caravan",start:"Start Mission",newGame:"New Game",score:"Score",level:"Level",best:"Best",progress:"Progress",correct:"Correct",tasks:"Tasks",placed:"Placed",accuracy:"Accuracy",wellDone:"Well Done!",tryAgain:"Try Again",hint:"Hint",execute:"Execute",reset:"Reset",next:"Next",prev:"Previous",complete:"Complete",victory:"Victory! MashaAllah!",defeat:"Try again, trust in Allah",helpTitle:"Help",faqTitle:"FAQ",howtoTitle:"How-To",wikiTitle:"Wiki",q1:"What is this app?",a1:"An educational Islamic app about Camel Caravan. Learn through interactive gameplay designed for Muslim kids.",q2:"How do I play?",a2:"Follow the on-screen instructions. Use buttons and interactive elements to progress through the activity.",q3:"Does it work offline?",a3:"Yes! Once loaded, everything runs in your browser with no internet needed.",q4:"How do I change the theme?",a4:"Click any theme icon in the controls bar. There are 8 beautiful themes to choose from.",q5:"How do I change language?",a5:"Click EN, FR, or ع buttons. Arabic enables right-to-left layout automatically.",q6:"Is my data private?",a6:"Yes. Everything runs locally. No data is sent anywhere.",q7:"Can I play on mobile?",a7:"Yes! Touch controls work on all devices.",s1:"Click Start Mission on the splash screen",s2:"Read the instructions and historical context",s3:"Interact with the game elements",s4:"Complete the objectives to earn points",s5:"Try to beat your high score!",w1Title:"Historical Context",w1Text:"This activity is based on authentic Islamic history. Learn about the events, people, and lessons from the early Muslim community.",w2Title:"Educational Value",w2Text:"Every interaction teaches an important lesson from Islamic history. Pay attention to the details and reflect on the wisdom.",w3Title:"Themes & Languages",w3Text:"8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand. 3 languages: English, French, Arabic."},
+  fr:{title:"Caravane de Chameaux",subtitle:"Charge et gère la caravane de ravitaillement",start:"Démarrer la Mission",newGame:"Nouvelle Partie",score:"Score",level:"Niveau",best:"Meilleur",progress:"Progrès",correct:"Correct",tasks:"Tâches",placed:"Placé",accuracy:"Précision",wellDone:"Bien joué!",tryAgain:"Réessaie",hint:"Indice",execute:"Exécuter",reset:"Réinitialiser",next:"Suivant",prev:"Précédent",complete:"Terminer",victory:"Victoire! MashaAllah!",defeat:"Réessaie, fais confiance en Allah",helpTitle:"Aide",faqTitle:"FAQ",howtoTitle:"Comment",wikiTitle:"Wiki",q1:"Qu'est-ce que cette application?",a1:"Une application éducative islamique sur Caravane de Chameaux. Apprends par le jeu interactif conçu pour les enfants musulmans.",q2:"Comment jouer?",a2:"Suis les instructions à l'écran. Utilise les boutons et éléments interactifs pour progresser.",q3:"Fonctionne hors ligne?",a3:"Oui! Une fois chargé, tout fonctionne dans ton navigateur sans internet.",q4:"Changer le thème?",a4:"Clique sur n'importe quelle icône de thème dans la barre de contrôle.",q5:"Changer la langue?",a5:"Clique sur EN, FR ou ع. L'arabe active automatiquement la mise en page droite-à-gauche.",q6:"Mes données sont privées?",a6:"Oui. Tout fonctionne localement. Aucune donnée n'est envoyée.",q7:"Mobile compatible?",a7:"Oui! Les contrôles tactiles fonctionnent sur tous les appareils.",s1:"Clique sur Démarrer la Mission",s2:"Lis les instructions et le contexte historique",s3:"Interagis avec les éléments du jeu",s4:"Complète les objectifs pour gagner des points",s5:"Essaie de battre ton meilleur score!",w1Title:"Contexte Historique",w1Text:"Cette activité est basée sur l'histoire islamique authentique.",w2Title:"Valeur Éducative",w2Text:"Chaque interaction enseigne une leçon importante de l'histoire islamique.",w3Title:"Thèmes et Langues",w3Text:"8 thèmes intégrés. 3 langues: Anglais, Français, Arabe."},
+  ar:{title:"قافلة الجمال",subtitle:"حمّل وأدِر قافلة الإمدادات",start:"ابدأ المهمة",newGame:"لعبة جديدة",score:"النقاط",level:"المستوى",best:"الأفضل",progress:"التقدم",correct:"صحيح",tasks:"المهام",placed:"تم وضعه",accuracy:"الدقة",wellDone:"أحسنت!",tryAgain:"حاول مرة أخرى",hint:"تلميح",execute:"نفّذ",reset:"إعادة",next:"التالي",prev:"السابق",complete:"أكمل",victory:"نصر! ما شاء الله!",defeat:"حاول مرة أخرى وتوكل على الله",helpTitle:"مساعدة",faqTitle:"أسئلة",howtoTitle:"كيف",wikiTitle:"ويكي",q1:"ما هذا التطبيق؟",a1:"تطبيق تعليمي إسلامي عن قافلة الجمال. تعلّم من خلال اللعب التفاعلي المصمم لأطفال المسلمين.",q2:"كيف ألعب؟",a2:"اتبع التعليمات على الشاشة. استخدم الأزرار والعناصر التفاعلية للتقدم.",q3:"يعمل بدون إنترنت؟",a3:"نعم! بمجرد تحميله يعمل كل شيء في متصفحك بدون إنترنت.",q4:"تغيير السمة؟",a4:"انقر على أي أيقونة سمة في شريط التحكم.",q5:"تغيير اللغة؟",a5:"انقر على EN أو FR أو ع. العربية تفعّل التخطيط من اليمين لليسار تلقائياً.",q6:"بياناتي خاصة؟",a6:"نعم. كل شيء يعمل محلياً. لا ترسل أي بيانات.",q7:"يعمل على الجوال؟",a7:"نعم! أدوات التحكم باللمس تعمل على جميع الأجهزة.",s1:"انقر على ابدأ المهمة",s2:"اقرأ التعليمات والسياق التاريخي",s3:"تفاعل مع عناصر اللعبة",s4:"أكمل الأهداف لكسب النقاط",s5:"حاول التغلب على أفضل نتيجة لك!",w1Title:"السياق التاريخي",w1Text:"هذا النشاط مبني على التاريخ الإسلامي الأصيل.",w2Title:"القيمة التعليمية",w2Text:"كل تفاعل يعلّم درساً مهماً من التاريخ الإسلامي.",w3Title:"السمات واللغات",w3Text:"٨ سمات مدمجة. ٣ لغات: الإنجليزية والفرنسية والعربية."}
 };
-function t(k){return UI[k]?(UI[k][curLang]||UI[k].en):k;}
-function renderLang(){
-document.getElementById("splashTitle").textContent=t("title");document.getElementById("splashDesc").textContent=t("splash_desc");
-document.getElementById("appTitle").textContent=t("title");document.getElementById("status").textContent=t("load_status");
-document.getElementById("startBtn").textContent=t("new_mission");document.getElementById("lbl1").textContent=t("lbl1");document.getElementById("lbl2").textContent=t("lbl2");
+let curLang="en";
+function t(k){return(I18N[curLang]&&I18N[curLang][k])||k;}
+function applyLang(){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.dataset.i18n;if(I18N[curLang][k])el.textContent=I18N[curLang][k];});
+  const tt=document.querySelector(".splash-box h1");if(tt)tt.textContent=t("title");
+  const st=document.querySelector(".splash-subtitle");if(st)st.textContent=t("subtitle");
+  const btn=document.getElementById("enterBtn");if(btn)btn.textContent=t("start");
+  const at=document.querySelector("#app h1");if(at)at.textContent=t("title");
 }
-
-var SUPPLIES=[
-{id:"water",icon:"\u{1F4A7}",name:{en:"Water Skins",fr:"Outres d'eau",ar:"\u0642\u0631\u0628 \u0645\u0627\u0621"},weight:8,essential:true,need:3},
-{id:"food",icon:"\u{1F35E}",name:{en:"Dates & Bread",fr:"Dattes et pain",ar:"\u062a\u0645\u0631 \u0648\u062e\u0628\u0632"},weight:5,essential:true,need:3},
-{id:"weapons",icon:"\u2694\uFE0F",name:{en:"Swords & Arrows",fr:"\u00c9p\u00e9es et fl\u00e8ches",ar:"\u0633\u064a\u0648\u0641 \u0648\u0633\u0647\u0627\u0645"},weight:10,essential:true,need:2},
-{id:"medicine",icon:"\u{1FA7A}",name:{en:"Medicine",fr:"M\u00e9dicaments",ar:"\u0623\u062f\u0648\u064a\u0629"},weight:3,essential:true,need:1},
-{id:"tools",icon:"\u{1F6E0}",name:{en:"Tools & Rope",fr:"Outils et cordes",ar:"\u0623\u062f\u0648\u0627\u062a \u0648\u062d\u0628\u0627\u0644"},weight:6,essential:false,need:0},
-{id:"feed",icon:"\u{1F33E}",name:{en:"Camel Feed",fr:"Fourrage",ar:"\u0639\u0644\u0641"},weight:7,essential:false,need:1},
-{id:"tent",icon:"\u26FA",name:{en:"Tent Materials",fr:"Mat\u00e9riel de tente",ar:"\u0645\u0648\u0627\u062f \u0627\u0644\u062e\u064a\u0645\u0629"},weight:12,essential:false,need:0},
-{id:"gold",icon:"\u{1FA99}",name:{en:"Gold Coins",fr:"Pi\u00e8ces d'or",ar:"\u0639\u0645\u0644\u0627\u062a \u0630\u0647\u0628\u064a\u0629"},weight:4,essential:false,need:0}
-];
-
-var MISSIONS=[
-{name:{en:"Short Raid (3 days)",fr:"Raid court (3 jours)",ar:"\u063a\u0627\u0631\u0629 \u0642\u0635\u064a\u0631\u0629 (3 \u0623\u064a\u0627\u0645)"},maxWeight:80,waterNeed:2,foodNeed:2,weaponNeed:2,medNeed:1},
-{name:{en:"Desert March (7 days)",fr:"Marche d\u00e9sertique (7 jours)",ar:"\u0645\u0633\u064a\u0631\u0629 \u0635\u062d\u0631\u0627\u0648\u064a\u0629 (7 \u0623\u064a\u0627\u0645)"},maxWeight:120,waterNeed:4,foodNeed:3,weaponNeed:2,medNeed:2},
-{name:{en:"Long Campaign (14 days)",fr:"Campagne longue (14 jours)",ar:"\u062d\u0645\u0644\u0629 \u0637\u0648\u064a\u0644\u0629 (14 \u064a\u0648\u0645\u0627\u064b)"},maxWeight:180,waterNeed:5,foodNeed:5,weaponNeed:3,medNeed:2}
-];
-
-var counts={},mission=null,bestScore=0,timerInterval,timerSec=0;
-function startTimer(){timerSec=0;clearInterval(timerInterval);timerInterval=setInterval(function(){timerSec++;var m=Math.floor(timerSec/60),s=timerSec%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+const HS_KEY="wdiy-gz-caravan";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(s){try{const b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true;}}catch(e){}return false;}
+function showHS(){const b=loadHS();if(b>0){const p=document.getElementById("scorePill");if(p&&!p.querySelector(".hs-badge"))p.innerHTML+=' <span class="hs-badge">🏆 '+b+'</span>';}}
+function checkHS(s){if(saveHS(s)){log("NEW HIGH SCORE: "+s+"!","success");showHS();}}
+let timerInterval,timerSec=0;
+function startTimer(){timerSec=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSec++;const m=Math.floor(timerSec/60),s=timerSec%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
 function stopTimer(){clearInterval(timerInterval);}
 
-function newGame(){
-startTimer();counts={};SUPPLIES.forEach(function(s){counts[s.id]=0;});
-mission=MISSIONS[Math.floor(Math.random()*MISSIONS.length)];
-document.getElementById("logBox").innerHTML="";
-log("Mission: "+(mission.name.en)+" | Max weight: "+mission.maxWeight+"kg","success");
-renderBoard();
-document.getElementById("status").textContent=t("load_status");document.getElementById("status").className="status";
+let gameState="idle",score=0,tasksTotal=5,tasksDone=0;
+let steps=[];
+function initGame(){startNewGame();}
+function startNewGame(){
+  gameState="playing";score=0;tasksDone=0;
+  steps=[
+    {text:t("s1"),done:false},{text:t("s2"),done:false},{text:t("s3"),done:false},
+    {text:t("s4"),done:false},{text:t("s5"),done:false}
+  ];
+  startTimer();renderWorkspace();updateUI();log(t("subtitle"));
 }
-
-function totalWeight(){
-var w=0;SUPPLIES.forEach(function(s){w+=counts[s.id]*s.weight;});return w;
+function renderWorkspace(){
+  const wa=document.getElementById("workArea");if(!wa)return;
+  wa.innerHTML='<div class="task-list">'+steps.map((s,i)=>
+    '<div class="task-item'+(s.done?" done":"")+'"><span class="task-num">'+(i+1)+'</span><span class="task-text">'+s.text+'</span>'+(s.done?'<span class="task-check">✓</span>':'<button class="btn-task" onclick="completeTask('+i+')">'+t("complete")+'</button>')+'</div>'
+  ).join("")+'</div>';
+  const ip=document.getElementById("infoPanel");
+  if(ip)ip.innerHTML='<div class="info-panel"><h3>'+t("title")+'</h3><p>'+t("subtitle")+'</p></div>';
 }
-
-function renderBoard(){
-var ga=document.getElementById("gameArea");
-var tw=totalWeight(),mw=mission.maxWeight,pct=Math.min(100,Math.round(tw/mw*100));
-var barClass=pct>100?"over":pct>85?"warn":"ok";
-var mn=mission.name[curLang]||mission.name.en;
-var html='<div class="caravan-layout"><div class="supply-list">';
-SUPPLIES.forEach(function(s){
-var n=s.name[curLang]||s.name.en;
-html+='<div class="supply-item"><span class="icon">'+s.icon+'</span><div class="info"><div class="name">'+n+'</div><div class="det">'+s.weight+'kg each</div></div><div class="ctrls"><button onclick="changeSupply(\''+s.id+'\',-1)">-</button><span>'+counts[s.id]+'</span><button onclick="changeSupply(\''+s.id+'\',1)">+</button></div></div>';
+function completeTask(i){
+  if(steps[i].done)return;
+  steps[i].done=true;tasksDone++;score+=20;snd("ok");
+  log(t("wellDone")+" +20","success");
+  checkWin();renderWorkspace();updateUI();
+}
+function checkWin(){
+  if(tasksDone>=steps.length){
+    gameState="won";stopTimer();snd("win");
+    log(t("victory"),"success");checkHS(score);
+    const area=document.getElementById("infoArea");
+    if(area)area.innerHTML='<div class="victory-box"><h2>'+t("victory")+'</h2><p>'+t("score")+": "+score+'</p></div>';
+  }
+}
+function updateUI(){
+  document.getElementById("scMain").textContent=Math.round((tasksDone/steps.length)*100)+"%";
+  document.getElementById("scLevel").textContent=tasksDone;
+  document.getElementById("scBest").textContent=loadHS();
+}
+/* --- BOOT --- */
+document.addEventListener("DOMContentLoaded",()=>{
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",()=>{
+    document.getElementById("splash").style.display="none";
+    document.getElementById("app").classList.add("on");
+    document.getElementById("backLink").style.display="";
+    initGame();
+  });
+  document.getElementById("startBtn").addEventListener("click",()=>{startNewGame();});
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{
+    curLang=b.dataset.lang;setLang(curLang);applyLang();
+    document.querySelectorAll("[data-lang]").forEach(bb=>bb.classList.toggle("on",bb.dataset.lang===curLang));
+  }));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);}));
+  document.querySelectorAll(".help-tab").forEach(tb=>tb.addEventListener("click",()=>{
+    document.querySelectorAll(".help-tab").forEach(t2=>t2.classList.remove("active"));
+    document.querySelectorAll(".help-content").forEach(c=>c.classList.remove("active"));
+    tb.classList.add("active");document.getElementById("help-"+tb.dataset.tab).classList.add("active");
+  }));
 });
-html+='</div><div class="camel-display"><div class="camel-icon">\u{1F42A}</div><div class="weight-label">'+tw+'kg / '+mw+'kg</div><div class="weight-bar"><div class="fill '+barClass+'" style="width:'+pct+'%"></div></div><div class="mission-info"><h4>'+mn+'</h4><div>Water needed: '+mission.waterNeed+' | Food: '+mission.foodNeed+'</div><div>Weapons: '+mission.weaponNeed+' | Medicine: '+mission.medNeed+'</div></div><button class="act-btn" onclick="depart()" style="margin-top:12px">'+t("depart")+'</button></div></div>';
-ga.innerHTML=html;
-}
-
-function changeSupply(id,delta){
-var newVal=counts[id]+delta;
-if(newVal<0)return;
-counts[id]=newVal;
-snd(delta>0?"ok":"click");
-renderBoard();
-}
-
-function depart(){
-stopTimer();
-var tw=totalWeight(),mw=mission.maxWeight;
-var overPenalty=tw>mw?Math.floor((tw-mw)/5)*10:0;
-var underBonus=tw<=mw?10:0;
-var waterScore=Math.min(counts.water,mission.waterNeed)*15;
-var foodScore=Math.min(counts.food,mission.foodNeed)*12;
-var weaponScore=Math.min(counts.weapons,mission.weaponNeed)*10;
-var medScore=Math.min(counts.medicine,mission.medNeed)*8;
-var waterPenalty=counts.water<mission.waterNeed?(mission.waterNeed-counts.water)*20:0;
-var foodPenalty=counts.food<mission.foodNeed?(mission.foodNeed-counts.food)*15:0;
-var bonusItems=(counts.tools>0?5:0)+(counts.feed>0?5:0)+(counts.tent>0?5:0)+(counts.gold>0?3:0);
-var score=Math.max(0,waterScore+foodScore+weaponScore+medScore+underBonus+bonusItems-overPenalty-waterPenalty-foodPenalty);
-document.getElementById("sc").textContent=score;
-if(score>bestScore){bestScore=score;document.getElementById("bestSc").textContent=score;}
-document.getElementById("scorePill").textContent=score;
-var ga=document.getElementById("gameArea");
-var verdict=score>=80?"Excellent caravan! Your army is well-supplied.":score>=50?"Good effort, but some essentials were lacking.":"The caravan struggled. Balance your supplies better.";
-ga.innerHTML='<div class="result-box"><div style="font-size:48px">\u{1F42A}</div><h2>Journey Complete!</h2><div class="big">'+score+'</div><p>'+verdict+'</p><p style="margin-top:8px">Weight: '+tw+'kg/'+mw+'kg | Water: '+counts.water+'/'+mission.waterNeed+' | Food: '+counts.food+'/'+mission.foodNeed+'</p></div>';
-document.getElementById("status").textContent="Journey Score: "+score;
-document.getElementById("status").className=score>=50?"status win":"status lose";
-snd(score>=50?"win":"err");
-log("Journey score: "+score,"success");
-checkHS(score);
-}
-
-var HS_KEY="wdiy-hs-camel-caravan-loader";
-function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0;}catch(e){return 0;}}
-function saveHS(s){try{var b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true;}}catch(e){}return false;}
-function showHS(){var b=loadHS();if(b>0){bestScore=b;document.getElementById("bestSc").textContent=b;var p=document.getElementById("scorePill");if(p&&!p.querySelector(".hs-badge"))p.innerHTML+=' <span class="hs-badge">&#x1F3C6; '+b+'</span>';}}
-function checkHS(score){if(saveHS(score)){log("NEW HIGH SCORE: "+score+"!","success");}}
-
-document.addEventListener("DOMContentLoaded",function(){
-setLang("en");setTheme("terminal");
-document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
-document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
-showHS();
-document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
-document.getElementById("startBtn").addEventListener("click",newGame);
-document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"&#x1F50A;":"&#x1F507;";});
-document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
-document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
-});
-try{if(localStorage.getItem("wdiy-mute")==="1")soundOn=false;}catch(e){}
-try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setTimeout(function(){setLang(_sl);},0);var _st=localStorage.getItem("wdiy-theme");if(_st)setTimeout(function(){setTheme(_st);},0);}catch(e){}
-(function(){var _osl=setLang,_ost=setTheme;setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};setTheme=function(t2){_ost(t2);try{localStorage.setItem("wdiy-theme",t2);}catch(e){}};})();
 </script></body></html>

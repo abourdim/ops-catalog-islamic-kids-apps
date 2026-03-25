@@ -1,116 +1,277 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Uhud Aftermath Hospital — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}.app{display:none;max-width:560px;margin:0 auto;padding:12px 16px}.app.on{display:block}.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}.hdr h1{font-size:18px}.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}.ctrl button:hover{border-color:var(--abr)}.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}.status.win{color:var(--accent)}.status.lose{color:#ff4444}.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}.answer-btn{padding:12px 20px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .15s;min-width:120px;text-align:center}.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:100px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.btn-close:hover{border-color:var(--accent);color:var(--accent)}.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}.help-content{display:none}.help-content.active{display:block}.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}.help-item summary::before{content:"\u25B8";color:var(--accent);font-size:10px;transition:transform .2s}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}.btn-help:hover{border-color:var(--accent);color:var(--accent)}.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
-.patient-card{background:var(--bg3);border:2px solid var(--border);border-radius:10px;padding:14px;max-width:420px;width:100%;text-align:center}
-.patient-icon{font-size:40px;margin-bottom:6px}
-.patient-name{font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;color:var(--heading);margin-bottom:4px}
-.patient-injury{font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:8px}
-.triage-tag{display:inline-block;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-bottom:8px}
-.triage-urgent{background:rgba(255,68,68,.15);border:1px solid rgba(255,68,68,.3);color:#ff4444}
-.triage-moderate{background:rgba(255,165,0,.15);border:1px solid rgba(255,165,0,.3);color:orange}
-.triage-mild{background:rgba(0,200,100,.15);border:1px solid rgba(0,200,100,.3);color:#00c864}
-.result-box{background:var(--abg);border:1px solid var(--abr);border-radius:10px;padding:14px;text-align:center;max-width:420px;animation:fadeUp .3s;font-size:12px;color:var(--text);line-height:1.6}.result-box strong{color:var(--accent)}
-.lesson-box{text-align:center;padding:16px;max-width:420px}.lesson-box h2{font-family:'Outfit',sans-serif;font-size:20px;color:var(--heading);margin-bottom:10px}.lesson-box p{font-size:12px;color:var(--text2);line-height:1.7;margin-bottom:8px}
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Uhud Field Hospital — Gazawat</title><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet"/><style>
+/* === GAZAWAT 8-THEME SYSTEM === */
+[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#DC143C;--abg:#DC143C0f;--abr:#DC143C33;--glow:0 0 20px #DC143C1a}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#DC143C;--abg:#DC143C0f;--abr:#DC143C33;--glow:0 0 20px #DC143C1a}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#DC143C;--abg:#DC143C0f;--abr:#DC143C33;--glow:0 0 20px #DC143C1a}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#DC143C;--abg:#DC143C0f;--abr:#DC143C33;--glow:0 0 15px #DC143C10}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#DC143C;--abg:#DC143C0f;--abr:#DC143C33;--glow:0 0 25px #DC143C22}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#DC143C;--abg:#DC143C0f;--abr:#DC143C33;--glow:0 0 20px #DC143C1a}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#DC143C;--abg:#DC143C0f;--abr:#DC143C33;--glow:0 0 20px #DC143C1a}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#DC143C;--abg:#DC143C0f;--abr:#DC143C33;--glow:0 0 15px #DC143C10}
+
+/* === BASE RESET === */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh;background-image:radial-gradient(circle at 20px 20px,#DC143C06 1px,transparent 1px);background-size:40px 40px}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+
+/* === SPLASH SCREEN === */
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(ellipse at center,#DC143C08,transparent 70%)}
+.splash-box{background:var(--bg2);border:2px solid var(--border);border-radius:20px;padding:44px 36px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow),0 8px 32px rgba(0,0,0,.3);animation:fadeUp .6s ease-out;position:relative;overflow:hidden}
+.splash-box::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,#DC143C,transparent)}
+.splash-box::after{content:"";position:absolute;bottom:0;left:0;right:0;height:50%;background:linear-gradient(180deg,transparent,#DC143C05);pointer-events:none}
+
+.splash-art{position:relative;width:200px;height:140px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center}
+.splash-art::before{content:"";position:absolute;width:120px;height:120px;border:3px solid #DC143C33;border-radius:50%;background:radial-gradient(circle,#DC143C11,transparent)}
+.splash-art::after{content:"";position:absolute;width:80px;height:80px;border:2px solid #DC143C44;transform:rotate(45deg);background:#DC143C08}
+.scale-icon{position:relative;z-index:1;font-size:32px;color:#DC143C}
+.splash-bism{color:var(--text3);font-size:13px;margin-bottom:16px;font-family:'Noto Sans Arabic',serif;letter-spacing:1px}
+.splash-subtitle{color:#DC143C;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+.splash-desc{color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px}
+.btn-go{padding:14px 36px;background:linear-gradient(135deg,#DC143C,#DC143Ccc);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:2px;text-transform:uppercase;transition:all .2s;box-shadow:0 4px 15px #DC143C33}
+.btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 20px #DC143C44}
+.btn-go:active{transform:translateY(0)}
+.sw{display:flex;gap:4px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:28px;height:28px;border-radius:8px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent);box-shadow:0 0 8px var(--abr)}
+.sw-btn:hover{border-color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+
+/* === MAIN APP === */
+.app{display:none;max-width:920px;margin:0 auto;padding:14px 18px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:12px;margin-bottom:8px;font-family:'Noto Sans Arabic',serif}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:20px;display:flex;align-items:center;gap:8px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:7px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer;transition:all .15s}
+.ctrl button:hover{border-color:var(--accent);color:var(--accent)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:14px;position:relative;overflow:hidden}
+.game-area::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#DC143C44,transparent)}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:12px}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px}.score-num{font-size:24px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;max-height:110px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:12px}
+.log-line{padding:2px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:16px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* === FORTRESS BORDER PATTERN === */
+.app::before{content:"";display:block;height:6px;margin-bottom:10px;background:repeating-linear-gradient(90deg,#DC143C22 0px,#DC143C22 16px,transparent 16px,transparent 20px,#DC143C11 20px,#DC143C11 24px,transparent 24px,transparent 40px);border-radius:3px}
+
+/* === NAVIGATION === */
+.back-link{position:fixed;top:10px;left:10px;z-index:100;padding:5px 12px;border-radius:8px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s;display:flex;align-items:center;gap:4px}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:10px}
+
+/* === HELP SIDEBAR === */
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:360px;max-width:88vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:16px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .15s}.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:10px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:16px 18px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:10px;overflow:hidden}.help-item summary{padding:12px 14px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 14px 12px;font-size:11px;color:var(--text2);line-height:1.7}
+.help-step{display:flex;gap:10px;margin-bottom:14px;align-items:flex-start}.help-step-num{width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:16px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.7}
+.sidebar-footer{padding:12px 18px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:7px 12px;border-radius:8px;font-size:11px;font-family:inherit;cursor:pointer;transition:all .15s}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:3px 10px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+canvas{border-radius:10px;cursor:grab;max-width:100%;touch-action:none}canvas:active{cursor:grabbing}
+.info-panel{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:12px;font-size:11px;color:var(--text2);line-height:1.7}.info-panel h3{font-size:14px;color:var(--heading);margin-bottom:6px;font-family:'Outfit',sans-serif}.info-panel .highlight{color:var(--accent);font-weight:600}
+.victory-box{background:var(--abg);border:2px solid var(--accent);border-radius:14px;padding:20px;text-align:center;margin-bottom:12px;animation:fadeUp .4s}.victory-box h2{font-family:'Outfit',sans-serif;color:var(--accent);font-size:22px;margin-bottom:8px}.victory-box p{font-size:13px;color:var(--text);line-height:1.7}
+.btn-execute{padding:12px 28px;background:linear-gradient(135deg,var(--accent),#DC143Ccc);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase;transition:all .2s}.btn-execute:disabled{opacity:.4;cursor:not-allowed}.btn-execute:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 4px 12px #DC143C33}
+.btn-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:10px}
+.btn-secondary{padding:9px 18px;background:var(--bg3);border:1px solid var(--border);color:var(--heading);border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .15s}.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+
+/* === ISLAMIC GEOMETRIC PATTERN (top decorative band) === */
+.islamic-band{height:8px;background:repeating-linear-gradient(90deg,#DC143C33 0px,#DC143C33 8px,transparent 8px,transparent 12px,#DC143C22 12px,#DC143C22 16px,transparent 16px,transparent 24px);margin-bottom:8px;border-radius:4px}
+
+/* === CRESCENT MOON DECORATION === */
+.crescent-deco{position:absolute;top:16px;right:16px;width:20px;height:20px}.crescent-deco::before{content:"";position:absolute;width:20px;height:20px;border-radius:50%;background:#DC143C22;border:2px solid #DC143C33}.crescent-deco::after{content:"";position:absolute;top:-2px;left:4px;width:16px;height:16px;border-radius:50%;background:var(--bg2)}
+
+/* === RESPONSIVE === */
+@media(max-width:600px){.splash-box{padding:28px 20px}.hdr h1{font-size:16px}.score-num{font-size:20px}canvas{height:auto}.sidebar{width:100%;max-width:100%}}
+
+.workspace{display:grid;grid-template-columns:1fr 300px;gap:12px;margin-bottom:12px}
+@media(max-width:700px){.workspace{grid-template-columns:1fr}}
+.workspace-main{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px}
+.workspace-panel{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px}
+.task-list{display:flex;flex-direction:column;gap:8px}
+.task-item{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;transition:all .2s}
+.task-item.done{border-color:#DC143C33;background:#DC143C08}
+.task-num{width:24px;height:24px;border-radius:50%;background:#DC143C22;color:#DC143C;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;font-family:Outfit,sans-serif;flex-shrink:0}
+.task-item.done .task-num{background:#DC143C;color:var(--bg)}
+.task-text{flex:1;font-size:12px;color:var(--text)}
+.task-check{color:#DC143C;font-weight:700;font-size:16px}
+.btn-task{padding:5px 12px;background:#DC143C22;border:1px solid #DC143C44;color:#DC143C;border-radius:6px;font-size:10px;font-weight:600;cursor:pointer;font-family:Outfit,sans-serif}
+.btn-task:hover{background:#DC143C33}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Uhud Aftermath Hospital</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px">Early Islamic Medicine</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Triage and treat the wounded after the Battle of Uhud. Match treatments to injuries and learn about early Islamic medicine and the role of women healers.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>Uhud Hospital</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl">
-<button id="startBtn">&#9654; New Game</button><button class="btn-help" onclick="openHelp()">&#10067;</button>
-<button id="soundBtn">&#x1F50A;</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
-<div class="sw"><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div>
-<div class="status" id="status">Treat the wounded</div>
-<div class="game-area" id="gameArea"><div id="question"></div><div class="answer-row" id="choices"></div><div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div></div>
-<div class="score-row"><div class="score-item"><div class="score-label">Treated</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
-<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy &mdash; Uhud Aftermath Hospital v1.0</div></div>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
+
+<!-- SPLASH SCREEN -->
+<div class="splash" id="splash"><div class="splash-box">
+<div class="splash-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
+<div class="splash-art"><div class="scale-icon">⚖</div></div>
+<h1 class="heading" style="font-size:24px;margin-bottom:6px">Uhud Field Hospital</h1>
+<div class="splash-subtitle">Treat the wounded after Uhud</div>
+<p class="splash-desc">Treat the wounded after Uhud. Learn through interactive gameplay designed for young Muslim minds.</p>
+<button class="btn-go" id="enterBtn">Start Mission</button>
+<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div>
+</div></div>
+
+<!-- MAIN APP -->
+<div class="app" id="app">
+<div class="islamic-band"></div>
+<div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
+<div class="hdr"><h1>Uhud Field Hospital</h1><span class="pill" id="scorePill">Ethics</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<div class="ctrl">
+  <button id="startBtn">&#9654; New Game</button>
+  <button class="btn-help" id="helpBtn" onclick="openHelp()">&#10067;</button>
+  <button id="soundBtn">&#128266;</button>
+  <div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+  <div class="sw"><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div>
+</div>
+<div class="status" id="status">Treat the wounded after Uhud</div>
+<div class="workspace"><div class="workspace-main" id="workArea"></div><div class="workspace-panel" id="infoPanel"></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label" data-i18n="progress">Progress</div><div class="score-num" id="scMain">0%</div></div><div class="score-item"><div class="score-label" data-i18n="tasks">Tasks</div><div class="score-num" id="scLevel">0</div></div><div class="score-item"><div class="score-label" data-i18n="best">Best</div><div class="score-num" id="scBest">0</div></div></div>
+<div id="infoArea"></div>
+<div class="log-box" id="logBox"></div>
+<div class="foot">Gazawat &mdash; Uhud Field Hospital v2.0</div>
+</div>
+
+<!-- HELP SIDEBAR -->
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
-<div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
-<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
-<div class="sidebar-body">
-<div class="help-content active" id="help-faq">
-<details class="help-item"><summary>What is this game?</summary><p>A medical triage game set after the Battle of Uhud. Match treatments to injuries using knowledge of early Islamic medicine.</p></details>
-<details class="help-item"><summary>Who were the healers at Uhud?</summary><p>Women like Rufaydah al-Aslamiyyah (first female Muslim surgeon) and Nusaybah bint Ka'b tended the wounded. The Prophet himself received medical treatment.</p></details>
-</div>
-<div class="help-content" id="help-howto">
-<div class="help-step"><span class="help-step-num">1</span><p>Read the patient's injury description</p></div>
-<div class="help-step"><span class="help-step-num">2</span><p>Choose the correct treatment</p></div>
-<div class="help-step"><span class="help-step-num">3</span><p>Learn about early Islamic medicine</p></div>
-</div>
-<div class="help-content" id="help-wiki">
-<div class="wiki-entry"><h3>&#x1FA7A; Rufaydah al-Aslamiyyah</h3><p>The first female Muslim surgeon and nurse. She set up a field hospital tent at the mosque of Medina and treated the wounded after battles.</p></div>
-<div class="wiki-entry"><h3>&#x1F3E5; Islamic Medicine</h3><p>The Prophet encouraged seeking medical treatment: 'O servants of Allah, seek treatment, for Allah has not created a disease without creating a cure for it.'</p></div>
-</div></div>
-<div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div></aside>
+  <div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+      <details class="help-item"><summary id="faq1q">What is this app?</summary><p id="faq1a">An educational Islamic app about Uhud Field Hospital. Learn through interactive gameplay designed for Muslim kids.</p></details>
+      <details class="help-item"><summary id="faq2q">How do I play?</summary><p id="faq2a">Follow the on-screen instructions. Use buttons and interactive elements to progress through the activity.</p></details>
+      <details class="help-item"><summary id="faq3q">Does it work offline?</summary><p id="faq3a">Yes! Once loaded, everything runs in your browser with no internet needed.</p></details>
+      <details class="help-item"><summary id="faq4q">How do I change the theme?</summary><p id="faq4a">Click any theme icon in the controls bar. There are 8 beautiful themes to choose from.</p></details>
+      <details class="help-item"><summary id="faq5q">How do I change language?</summary><p id="faq5a">Click EN, FR, or &#1593; buttons. Arabic enables right-to-left layout automatically.</p></details>
+      <details class="help-item"><summary id="faq6q">Is my data private?</summary><p id="faq6a">Yes. Everything runs locally. No data is sent anywhere.</p></details>
+      <details class="help-item"><summary id="faq7q">Can I play on mobile?</summary><p id="faq7a">Yes! Touch controls work on all devices.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+      <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+      <div class="help-step"><span class="help-step-num">2</span><p>Read the instructions and historical context</p></div>
+      <div class="help-step"><span class="help-step-num">3</span><p>Interact with the game elements</p></div>
+      <div class="help-step"><span class="help-step-num">4</span><p>Complete the objectives to earn points</p></div>
+      <div class="help-step"><span class="help-step-num">5</span><p>Try to beat your high score!</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+      <div class="wiki-entry"><h3>Historical Context</h3><p>This activity is based on authentic Islamic history. Learn about the events, people, and lessons from the early Muslim community.</p></div>
+      <div class="wiki-entry"><h3>Educational Value</h3><p>Every interaction teaches an important lesson from Islamic history. Pay attention to the details and reflect on the wisdom.</p></div>
+      <div class="wiki-entry"><h3>Themes &amp; Languages</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand. 3 languages: English, French, Arabic.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Gazawat &mdash; v2.0</div>
+</aside>
+
 <script>
+/* === SHARED HELPERS === */
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
-var curLang="en";
-function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});curLang=l;renderLang();}
-function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th)});}
-var soundOn=true,actx;
-function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);var o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
-function log(msg,cls){var b=document.getElementById("logBox");if(!b)return;var d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
 
-var PATIENTS=[
-{icon:"\u{1FA78}",name:{en:"The Prophet \uFDFA",fr:"Le Prophete \uFDFA",ar:"النبي ﷺ"},injury:{en:"Stone struck his face — broken tooth (lower incisor), cut lip, and two metal rings from his helmet embedded in his cheek.",fr:"Une pierre a frappe son visage — dent cassee, levre coupee, et deux anneaux de son casque incrustes dans sa joue.",ar:"حجر أصاب وجهه — سن مكسورة (رباعية سفلى) وشفة مقطوعة وحلقتان من خوذته مغروستان في خده."},triage:"urgent",
-opts:[{t:{en:"Remove metal rings with teeth (as Abu Ubaydah did), clean with water, apply burnt mat ash to stop bleeding",fr:"Retirer les anneaux avec les dents, nettoyer a l'eau, appliquer de la cendre de natte brulee",ar:"إزالة الحلقتين بالأسنان (كما فعل أبو عبيدة) وتنظيف بالماء ووضع رماد حصير محروق لوقف النزيف"},c:true},{t:{en:"Apply cold compress and wait",fr:"Appliquer une compresse froide et attendre",ar:"وضع كمادة باردة والانتظار"},c:false},{t:{en:"Bandage the entire face tightly",fr:"Bander tout le visage etroitement",ar:"لف الوجه بإحكام"},c:false}],
-explain:{en:"Abu Ubaydah ibn al-Jarrah pulled the helmet rings from the Prophet's cheek with his own teeth (losing two teeth in the process). Fatimah washed the wound and applied burnt mat ash — an early form of cauterization to stop bleeding. This was real battlefield surgery."}},
-{icon:"\u{1F4AA}",name:{en:"Talhah ibn Ubaydallah",fr:"Talhah ibn Ubaydallah",ar:"طلحة بن عبيد الله"},injury:{en:"Over 70 wounds covering his body from shielding the Prophet. His hand is permanently paralyzed from blocking a sword strike aimed at the Prophet's head.",fr:"Plus de 70 blessures couvrant son corps. Sa main est paralysee apres avoir bloque un coup d'epee.",ar:"أكثر من 70 جرحاً يغطي جسده من حماية النبي ﷺ. يده مشلولة دائماً من صد ضربة سيف موجهة لرأس النبي ﷺ."},triage:"urgent",
-opts:[{t:{en:"Stop bleeding first with pressure bandages, then clean and dress each wound individually",fr:"Arreter le saignement d'abord avec des bandages compressifs, puis nettoyer chaque blessure",ar:"أوقفوا النزيف أولاً بضمادات ضاغطة ثم نظفوا وضمدوا كل جرح على حدة"},c:true},{t:{en:"Immerse him in cold water",fr:"L'immerger dans l'eau froide",ar:"اغمروه في ماء بارد"},c:false},{t:{en:"Apply honey to all wounds at once",fr:"Appliquer du miel sur toutes les blessures en une fois",ar:"ضعوا العسل على كل الجروح مرة واحدة"},c:false}],
-explain:{en:"Talhah received so many wounds that he fainted from blood loss. The priority was stopping hemorrhaging through pressure. The Prophet later said about Talhah: 'Whoever wants to see a walking martyr, let him look at Talhah.'"}},
-{icon:"\u{1F3F9}",name:{en:"Sa'd ibn Abi Waqqas",fr:"Sa'd ibn Abi Waqqas",ar:"سعد بن أبي وقاص"},injury:{en:"Arrow wound to the arm from defending the Prophet. The arrowhead is embedded in the flesh and needs extraction.",fr:"Blessure par fleche au bras. La pointe de fleche est incrustee dans la chair.",ar:"جرح سهم في الذراع من الدفاع عن النبي ﷺ. رأس السهم مغروس في اللحم ويحتاج استخراج."},triage:"moderate",
-opts:[{t:{en:"Extract the arrowhead carefully, clean with water, apply herbal poultice, bandage firmly",fr:"Extraire la pointe soigneusement, nettoyer a l'eau, appliquer un cataplasme, bander fermement",ar:"استخرجوا رأس السهم بحذر ونظفوا بالماء وضعوا لبخة أعشاب ولفوا بإحكام"},c:true},{t:{en:"Push the arrow through and out the other side",fr:"Pousser la fleche a travers et hors de l'autre cote",ar:"ادفعوا السهم ليخرج من الجهة الأخرى"},c:false},{t:{en:"Leave the arrowhead in and bandage over it",fr:"Laisser la pointe et bander par-dessus",ar:"اتركوا رأس السهم ولفوا فوقه"},c:false}],
-explain:{en:"Arrow extraction was a known skill in early Islamic medicine. The wound would be widened slightly to remove the arrowhead, then cleaned with water (the Prophet recommended clean water for wounds) and dressed with healing herbs."}},
-{icon:"\u{1F9D5}",name:{en:"Nusaybah bint Ka'b",fr:"Nusaybah bint Ka'b",ar:"نسيبة بنت كعب"},injury:{en:"Deep shoulder wound from a sword strike received while fighting to protect the Prophet. She continued fighting despite the wound.",fr:"Blessure profonde a l'epaule d'un coup d'epee recu en combattant pour proteger le Prophete.",ar:"جرح عميق في الكتف من ضربة سيف تلقتها أثناء القتال لحماية النبي ﷺ. واصلت القتال رغم الجرح."},triage:"urgent",
-opts:[{t:{en:"Apply pressure to stop bleeding, clean the wound, suture if possible, immobilize the shoulder",fr:"Appliquer une pression pour arreter le saignement, nettoyer, suturer si possible, immobiliser l'epaule",ar:"اضغطوا لوقف النزيف ونظفوا الجرح وخيطوه إن أمكن وثبتوا الكتف"},c:true},{t:{en:"Give her water and let her rest",fr:"Lui donner de l'eau et la laisser se reposer",ar:"أعطوها ماء ودعوها تستريح"},c:false},{t:{en:"Cauterize the wound immediately",fr:"Cauteriser la blessure immediatement",ar:"اكووا الجرح فوراً"},c:false}],
-explain:{en:"Nusaybah was one of the bravest fighters at Uhud. She received 12 wounds. The Prophet himself called for bandages for her wound, saying 'Bandage your wound!' Her story shows that women were active participants in Islamic history — as fighters and healers."}},
-{icon:"\u{1FA7A}",name:{en:"Wounded Companion — Heat Exhaustion",fr:"Compagnon blesse — Coup de chaleur",ar:"صحابي جريح — ضربة شمس"},injury:{en:"A companion has collapsed from heat and dehydration after hours of fighting in armor under the sun. He is disoriented and pale.",fr:"Un compagnon s'est effondre de chaleur et deshydratation apres des heures de combat sous le soleil.",ar:"صحابي انهار من الحرارة والجفاف بعد ساعات من القتال بالدروع تحت الشمس. مشوش وشاحب."},triage:"moderate",
-opts:[{t:{en:"Move to shade, remove armor, give water in small sips, cool the body",fr:"Deplacer a l'ombre, retirer l'armure, donner de l'eau par petites gorgees, refroidir le corps",ar:"انقلوه للظل وانزعوا الدرع وأعطوه ماء بجرعات صغيرة وبرّدوا جسمه"},c:true},{t:{en:"Pour a bucket of water over him",fr:"Verser un seau d'eau sur lui",ar:"صبوا دلو ماء عليه"},c:false},{t:{en:"Make him stand and walk to recover",fr:"Le faire se lever et marcher pour recuperer",ar:"أقيموه وأمشوه للتعافي"},c:false}],
-explain:{en:"The Prophet encouraged hydration and shade for the ill. Small sips of water (not large amounts) prevent shock. Removing heavy armor allows the body to cool. The Quran describes water as the source of all life."}},
-{icon:"\u{1F9B4}",name:{en:"Companion with Broken Arm",fr:"Compagnon avec bras casse",ar:"صحابي بذراع مكسورة"},injury:{en:"A companion's forearm is broken from being struck by a mace. The bone is misaligned but the skin is not broken (closed fracture).",fr:"L'avant-bras d'un compagnon est casse par un coup de masse. L'os est mal aligne mais la peau n'est pas ouverte.",ar:"ساعد صحابي مكسور من ضربة صولجان. العظم غير مستقيم لكن الجلد سليم (كسر مغلق)."},triage:"moderate",
-opts:[{t:{en:"Realign the bone, splint with wooden sticks, bind firmly with cloth strips",fr:"Realigner l'os, atteler avec des batons en bois, lier fermement avec des bandes de tissu",ar:"أعيدوا العظم لمكانه وجبروه بعصي خشبية ولفوه بإحكام بشرائط قماش"},c:true},{t:{en:"Apply a tight bandage and hope it heals",fr:"Appliquer un bandage serre et esperer qu'il guerisse",ar:"ضعوا ضمادة محكمة وأملوا أن يشفى"},c:false},{t:{en:"Amputate to prevent infection",fr:"Amputer pour prevenir l'infection",ar:"ابتروا لمنع العدوى"},c:false}],
-explain:{en:"Bone-setting (al-jabr) was a well-known practice in early Islamic medicine. Wooden splints were standard treatment. The Arabic word 'algebra' actually comes from 'al-jabr' — the art of restoring broken things."}},
-{icon:"\u{1F489}",name:{en:"Companion with Infected Wound",fr:"Compagnon avec blessure infectee",ar:"صحابي بجرح ملتهب"},injury:{en:"A wound from a previous skirmish has become swollen, red, and warm — signs of infection. There is pus forming around the wound edges.",fr:"Une blessure d'une escarmouche precedente est devenue enflee, rouge et chaude — signes d'infection.",ar:"جرح من مناوشة سابقة أصبح متورماً وأحمر ودافئاً — علامات التهاب. قيح يتشكل حول حواف الجرح."},triage:"urgent",
-opts:[{t:{en:"Open and drain the infection, clean thoroughly with water, apply honey as antiseptic",fr:"Ouvrir et drainer l'infection, nettoyer a l'eau, appliquer du miel comme antiseptique",ar:"افتحوا واستنزفوا الالتهاب ونظفوا جيداً بالماء وضعوا العسل كمطهر"},c:true},{t:{en:"Apply a hot compress and wait",fr:"Appliquer une compresse chaude et attendre",ar:"ضعوا كمادة ساخنة وانتظروا"},c:false},{t:{en:"Bandage it tightly to contain the infection",fr:"Le bander etroitement pour contenir l'infection",ar:"لفوه بإحكام لاحتواء الالتهاب"},c:false}],
-explain:{en:"The Prophet recommended honey for healing: 'In honey there is a cure.' Modern science confirms honey's powerful antibacterial properties. Islamic physicians were pioneers in understanding infection and the need for drainage and cleaning."}},
-{icon:"\u{1F947}",name:{en:"Companion — Psychological Trauma",fr:"Compagnon — Traumatisme psychologique",ar:"صحابي — صدمة نفسية"},injury:{en:"A young companion who fought bravely is now sitting alone, shaking, unable to speak after witnessing the death of his close friend. He stares blankly.",fr:"Un jeune compagnon qui a combattu bravement est maintenant assis seul, tremblant, incapable de parler apres avoir vu la mort de son ami.",ar:"صحابي شاب قاتل بشجاعة يجلس الآن وحيداً يرتجف عاجزاً عن الكلام بعد مشاهدة مقتل صديقه المقرب. يحدق بلا حراك."},triage:"mild",
-opts:[{t:{en:"Sit with him, speak gently, remind him of Allah's decree and the reward of martyrdom",fr:"S'asseoir avec lui, parler doucement, lui rappeler le decret d'Allah et la recompense du martyre",ar:"اجلسوا معه وتحدثوا بلطف وذكروه بقدر الله وثواب الشهادة"},c:true},{t:{en:"Tell him to be strong and stop crying",fr:"Lui dire d'etre fort et d'arreter de pleurer",ar:"قولوا له كن قوياً وتوقف عن البكاء"},c:false},{t:{en:"Give him medicine to sleep",fr:"Lui donner un medicament pour dormir",ar:"أعطوه دواءً للنوم"},c:false}],
-explain:{en:"The Prophet was deeply empathetic. He wept himself at Uhud and said: 'The eye weeps and the heart grieves, but we say only what pleases our Lord.' Islam recognizes emotional pain as real and treats it with compassion, not dismissal."}},
-{icon:"\u{1F932}",name:{en:"Companion — Severe Thirst",fr:"Compagnon — Soif severe",ar:"صحابي — عطش شديد"},injury:{en:"A badly wounded companion begs for water. He is losing blood and extremely thirsty. Your water supply is very limited.",fr:"Un compagnon gravement blesse supplie pour de l'eau. Il perd du sang et a tres soif. Votre eau est tres limitee.",ar:"صحابي جريح بشدة يستجدي الماء. ينزف ويعاني عطشاً شديداً. مخزون المياه محدود جداً."},triage:"urgent",
-opts:[{t:{en:"Give him water — the wounded have priority over the healthy",fr:"Lui donner de l'eau — les blesses ont la priorite",ar:"أعطوه ماء — الجرحى لهم الأولوية على الأصحاء"},c:true},{t:{en:"Save water for those who can still fight",fr:"Garder l'eau pour ceux qui peuvent encore combattre",ar:"احفظوا الماء لمن يستطيع القتال"},c:false},{t:{en:"Give everyone equal small amounts",fr:"Donner a tous de petites quantites egales",ar:"أعطوا الجميع كميات صغيرة متساوية"},c:false}],
-explain:{en:"At Uhud, the story of the three wounded companions is famous: each refused water saying 'give it to my brother' until all three died as martyrs. Islam teaches that the wounded and sick have priority in receiving care and resources."}},
-{icon:"\u{1F3E5}",name:{en:"Setting Up the Field Hospital",fr:"Installation de l'hopital de campagne",ar:"إعداد المستشفى الميداني"},injury:{en:"Rufaydah al-Aslamiyyah needs help setting up her field hospital tent. What should the hospital prioritize?",fr:"Rufaydah al-Aslamiyyah a besoin d'aide pour installer sa tente d'hopital. Quelle devrait etre la priorite?",ar:"رفيدة الأسلمية تحتاج مساعدة لإعداد خيمة المستشفى الميداني. ما الذي يجب أن يكون الأولوية؟"},triage:"mild",
-opts:[{t:{en:"Triage first — sort patients by severity, treat the most critical first",fr:"Triage d'abord — trier les patients par gravite, traiter les plus critiques d'abord",ar:"الفرز أولاً — صنفوا المرضى حسب الخطورة وعالجوا الأشد حرجاً أولاً"},c:true},{t:{en:"Treat everyone in the order they arrive",fr:"Traiter tout le monde dans l'ordre d'arrivee",ar:"عالجوا الجميع حسب ترتيب الوصول"},c:false},{t:{en:"Focus only on commanders and leaders",fr:"Se concentrer uniquement sur les commandants",ar:"ركزوا فقط على القادة والأمراء"},c:false}],
-explain:{en:"Rufaydah al-Aslamiyyah is considered the first female Muslim surgeon and nurse. She established the concept of triage — sorting patients by severity. Her field hospital at the mosque of Medina was a revolutionary model. The Prophet directed that wounded be brought specifically to her tent."}}
-];
+/* === APP LOGIC === */
 
-var UI={status_ask:{en:"Choose the correct treatment",fr:"Choisissez le bon traitement",ar:"اختر العلاج الصحيح"},status_correct:{en:"Patient treated successfully!",fr:"Patient traite avec succes !",ar:"المريض عُولج بنجاح!"},status_wrong:{en:"That treatment could cause harm...",fr:"Ce traitement pourrait causer du tort...",ar:"هذا العلاج قد يسبب ضرراً..."},btn_next:{en:"Next Patient",fr:"Patient suivant",ar:"المريض التالي"},done_title:{en:"Hospital Complete!",fr:"Hopital termine !",ar:"المستشفى اكتمل!"},done_score:{en:"You treated {0} of {1} patients correctly",fr:"Vous avez traite {0} patients sur {1} correctement",ar:"عالجت {0} من أصل {1} مريضاً بشكل صحيح"},done_lesson:{en:"Early Islamic medicine was remarkably advanced. Women like Rufaydah al-Aslamiyyah pioneered field hospitals and triage. The Prophet encouraged seeking medical treatment and used honey, water, and herbal remedies. Islamic civilization later produced the greatest physicians of the medieval world.",fr:"La medecine islamique etait remarquablement avancee. Des femmes comme Rufaydah ont ete pionnieres des hopitaux de campagne.",ar:"كان الطب الإسلامي المبكر متقدماً بشكل ملحوظ. نساء مثل رفيدة الأسلمية ريادات في المستشفيات الميدانية والفرز. شجع النبي ﷺ على طلب العلاج واستخدم العسل والماء والأعشاب."},correct_label:{en:"Treated",fr:"Traite",ar:"عُولج"},total_label:{en:"Total",fr:"Total",ar:"المجموع"},new_game:{en:"\u25B6 New Game",fr:"\u25B6 Nouveau jeu",ar:"\u25B6 لعبة جديدة"},case_label:{en:"Patient {0} of {1}",fr:"Patient {0} sur {1}",ar:"المريض {0} من {1}"}};
-function t(k){return UI[k]?UI[k][curLang]||UI[k]["en"]:"";}
-function renderLang(){document.getElementById("status").textContent=t("status_ask");document.getElementById("startBtn").textContent=t("new_game");document.querySelectorAll(".score-label").forEach(function(el,i){el.textContent=i===0?t("correct_label"):t("total_label");});}
-var total=10,current=0,correct=0,locked=false,order=[];
-var timerInterval,timerSeconds=0;
-function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(function(){timerSeconds++;var m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+const I18N={
+  en:{title:"Uhud Field Hospital",subtitle:"Treat the wounded after Uhud",start:"Start Mission",newGame:"New Game",score:"Score",level:"Level",best:"Best",progress:"Progress",correct:"Correct",tasks:"Tasks",placed:"Placed",accuracy:"Accuracy",wellDone:"Well Done!",tryAgain:"Try Again",hint:"Hint",execute:"Execute",reset:"Reset",next:"Next",prev:"Previous",complete:"Complete",victory:"Victory! MashaAllah!",defeat:"Try again, trust in Allah",helpTitle:"Help",faqTitle:"FAQ",howtoTitle:"How-To",wikiTitle:"Wiki",q1:"What is this app?",a1:"An educational Islamic app about Uhud Field Hospital. Learn through interactive gameplay designed for Muslim kids.",q2:"How do I play?",a2:"Follow the on-screen instructions. Use buttons and interactive elements to progress through the activity.",q3:"Does it work offline?",a3:"Yes! Once loaded, everything runs in your browser with no internet needed.",q4:"How do I change the theme?",a4:"Click any theme icon in the controls bar. There are 8 beautiful themes to choose from.",q5:"How do I change language?",a5:"Click EN, FR, or ع buttons. Arabic enables right-to-left layout automatically.",q6:"Is my data private?",a6:"Yes. Everything runs locally. No data is sent anywhere.",q7:"Can I play on mobile?",a7:"Yes! Touch controls work on all devices.",s1:"Click Start Mission on the splash screen",s2:"Read the instructions and historical context",s3:"Interact with the game elements",s4:"Complete the objectives to earn points",s5:"Try to beat your high score!",w1Title:"Historical Context",w1Text:"This activity is based on authentic Islamic history. Learn about the events, people, and lessons from the early Muslim community.",w2Title:"Educational Value",w2Text:"Every interaction teaches an important lesson from Islamic history. Pay attention to the details and reflect on the wisdom.",w3Title:"Themes & Languages",w3Text:"8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand. 3 languages: English, French, Arabic."},
+  fr:{title:"Hôpital de Campagne d'Uhud",subtitle:"Soigne les blessés après Uhud",start:"Démarrer la Mission",newGame:"Nouvelle Partie",score:"Score",level:"Niveau",best:"Meilleur",progress:"Progrès",correct:"Correct",tasks:"Tâches",placed:"Placé",accuracy:"Précision",wellDone:"Bien joué!",tryAgain:"Réessaie",hint:"Indice",execute:"Exécuter",reset:"Réinitialiser",next:"Suivant",prev:"Précédent",complete:"Terminer",victory:"Victoire! MashaAllah!",defeat:"Réessaie, fais confiance en Allah",helpTitle:"Aide",faqTitle:"FAQ",howtoTitle:"Comment",wikiTitle:"Wiki",q1:"Qu'est-ce que cette application?",a1:"Une application éducative islamique sur Hôpital de Campagne d'Uhud. Apprends par le jeu interactif conçu pour les enfants musulmans.",q2:"Comment jouer?",a2:"Suis les instructions à l'écran. Utilise les boutons et éléments interactifs pour progresser.",q3:"Fonctionne hors ligne?",a3:"Oui! Une fois chargé, tout fonctionne dans ton navigateur sans internet.",q4:"Changer le thème?",a4:"Clique sur n'importe quelle icône de thème dans la barre de contrôle.",q5:"Changer la langue?",a5:"Clique sur EN, FR ou ع. L'arabe active automatiquement la mise en page droite-à-gauche.",q6:"Mes données sont privées?",a6:"Oui. Tout fonctionne localement. Aucune donnée n'est envoyée.",q7:"Mobile compatible?",a7:"Oui! Les contrôles tactiles fonctionnent sur tous les appareils.",s1:"Clique sur Démarrer la Mission",s2:"Lis les instructions et le contexte historique",s3:"Interagis avec les éléments du jeu",s4:"Complète les objectifs pour gagner des points",s5:"Essaie de battre ton meilleur score!",w1Title:"Contexte Historique",w1Text:"Cette activité est basée sur l'histoire islamique authentique.",w2Title:"Valeur Éducative",w2Text:"Chaque interaction enseigne une leçon importante de l'histoire islamique.",w3Title:"Thèmes et Langues",w3Text:"8 thèmes intégrés. 3 langues: Anglais, Français, Arabe."},
+  ar:{title:"مستشفى ميدان أحد",subtitle:"عالج الجرحى بعد أحد",start:"ابدأ المهمة",newGame:"لعبة جديدة",score:"النقاط",level:"المستوى",best:"الأفضل",progress:"التقدم",correct:"صحيح",tasks:"المهام",placed:"تم وضعه",accuracy:"الدقة",wellDone:"أحسنت!",tryAgain:"حاول مرة أخرى",hint:"تلميح",execute:"نفّذ",reset:"إعادة",next:"التالي",prev:"السابق",complete:"أكمل",victory:"نصر! ما شاء الله!",defeat:"حاول مرة أخرى وتوكل على الله",helpTitle:"مساعدة",faqTitle:"أسئلة",howtoTitle:"كيف",wikiTitle:"ويكي",q1:"ما هذا التطبيق؟",a1:"تطبيق تعليمي إسلامي عن مستشفى ميدان أحد. تعلّم من خلال اللعب التفاعلي المصمم لأطفال المسلمين.",q2:"كيف ألعب؟",a2:"اتبع التعليمات على الشاشة. استخدم الأزرار والعناصر التفاعلية للتقدم.",q3:"يعمل بدون إنترنت؟",a3:"نعم! بمجرد تحميله يعمل كل شيء في متصفحك بدون إنترنت.",q4:"تغيير السمة؟",a4:"انقر على أي أيقونة سمة في شريط التحكم.",q5:"تغيير اللغة؟",a5:"انقر على EN أو FR أو ع. العربية تفعّل التخطيط من اليمين لليسار تلقائياً.",q6:"بياناتي خاصة؟",a6:"نعم. كل شيء يعمل محلياً. لا ترسل أي بيانات.",q7:"يعمل على الجوال؟",a7:"نعم! أدوات التحكم باللمس تعمل على جميع الأجهزة.",s1:"انقر على ابدأ المهمة",s2:"اقرأ التعليمات والسياق التاريخي",s3:"تفاعل مع عناصر اللعبة",s4:"أكمل الأهداف لكسب النقاط",s5:"حاول التغلب على أفضل نتيجة لك!",w1Title:"السياق التاريخي",w1Text:"هذا النشاط مبني على التاريخ الإسلامي الأصيل.",w2Title:"القيمة التعليمية",w2Text:"كل تفاعل يعلّم درساً مهماً من التاريخ الإسلامي.",w3Title:"السمات واللغات",w3Text:"٨ سمات مدمجة. ٣ لغات: الإنجليزية والفرنسية والعربية."}
+};
+let curLang="en";
+function t(k){return(I18N[curLang]&&I18N[curLang][k])||k;}
+function applyLang(){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.dataset.i18n;if(I18N[curLang][k])el.textContent=I18N[curLang][k];});
+  const tt=document.querySelector(".splash-box h1");if(tt)tt.textContent=t("title");
+  const st=document.querySelector(".splash-subtitle");if(st)st.textContent=t("subtitle");
+  const btn=document.getElementById("enterBtn");if(btn)btn.textContent=t("start");
+  const at=document.querySelector("#app h1");if(at)at.textContent=t("title");
+}
+const HS_KEY="wdiy-gz-hospital";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(s){try{const b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true;}}catch(e){}return false;}
+function showHS(){const b=loadHS();if(b>0){const p=document.getElementById("scorePill");if(p&&!p.querySelector(".hs-badge"))p.innerHTML+=' <span class="hs-badge">🏆 '+b+'</span>';}}
+function checkHS(s){if(saveHS(s)){log("NEW HIGH SCORE: "+s+"!","success");showHS();}}
+let timerInterval,timerSec=0;
+function startTimer(){timerSec=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSec++;const m=Math.floor(timerSec/60),s=timerSec%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
 function stopTimer(){clearInterval(timerInterval);}
-function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var tmp=a[i];a[i]=a[j];a[j]=tmp;}return a;}
-function newGame(){startTimer();current=0;correct=0;locked=false;document.getElementById("sc").textContent="0";document.getElementById("tot").textContent="0";document.getElementById("scorePill").textContent="0 / 0";document.getElementById("logBox").innerHTML="";document.getElementById("prog").style.width="0%";order=shuffle(Array.from({length:PATIENTS.length},function(_,i){return i;}));showPatient();}
-function showPatient(){if(current>=total){endGame();return;}locked=false;var p=PATIENTS[order[current]];var triageClass=p.triage==="urgent"?"triage-urgent":p.triage==="moderate"?"triage-moderate":"triage-mild";var triageLabel=p.triage==="urgent"?"URGENT":p.triage==="moderate"?"MODERATE":"MILD";
-var q=document.getElementById("question");
-q.innerHTML='<div class="patient-card"><div class="patient-icon">'+p.icon+'</div><div class="patient-name">'+(p.name[curLang]||p.name.en)+'</div><span class="triage-tag '+triageClass+'">'+triageLabel+'</span><div class="patient-injury">'+(p.injury[curLang]||p.injury.en)+'</div></div>';
-var el=document.getElementById("choices");el.innerHTML="";
-var opts=shuffle(p.opts.map(function(o){return{text:o.t,correct:o.c};}));
-opts.forEach(function(opt){var b=document.createElement("button");b.className="answer-btn";b.style.fontSize="11px";b.style.minWidth="100px";b.textContent=opt.text[curLang]||opt.text.en;b.onclick=function(){pickPatient(b,opt.correct,p);};el.appendChild(b);});
-document.getElementById("status").textContent=t("case_label").replace("{0}",current+1).replace("{1}",total);document.getElementById("status").className="status";document.getElementById("prog").style.width=(current/total*100)+"%";}
-function pickPatient(btn,isCorrect,patient){if(locked)return;locked=true;current++;
-if(isCorrect){correct++;btn.classList.add("correct");snd("ok");document.getElementById("status").textContent=t("status_correct");document.getElementById("status").className="status win";log("\u2713 "+(patient.name.en),"success");}
-else{btn.classList.add("wrong");snd("err");document.getElementById("status").textContent=t("status_wrong");document.getElementById("status").className="status lose";log("\u2717 "+(patient.name.en),"error");}
-document.getElementById("sc").textContent=correct;document.getElementById("tot").textContent=current;document.getElementById("scorePill").textContent=correct+" / "+current;document.getElementById("prog").style.width=(current/total*100)+"%";
-var rd=document.createElement("div");rd.className="result-box";rd.innerHTML=(patient.explain[curLang]||patient.explain.en);document.getElementById("question").appendChild(rd);
-document.getElementById("choices").innerHTML='<button class="answer-btn" id="nextBtn" style="min-width:160px">'+t("btn_next")+'</button>';document.getElementById("nextBtn").onclick=function(){showPatient();};}
-function endGame(){stopTimer();checkHS();snd("win");document.getElementById("status").textContent="\u{1F3C6} "+t("done_title");document.getElementById("status").className="status win";log("\u{1F3C6} "+correct+"/"+total,"success");document.getElementById("question").innerHTML='<div class="lesson-box"><h2>\u{1FA7A} '+t("done_title")+'</h2><p style="font-size:14px;color:var(--heading);font-weight:700;margin-bottom:12px">'+t("done_score").replace("{0}",correct).replace("{1}",total)+'</p><p>'+t("done_lesson")+'</p></div>';document.getElementById("choices").innerHTML="";document.getElementById("prog").style.width="100%";}
-var HS_KEY="wdiy-hs-uhud-aftermath-hospital";
-function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}function saveHS(s){try{var b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true;}}catch(e){}return false;}function showHS(){var b=loadHS();if(b>0){var p=document.getElementById("scorePill");if(p&&!p.querySelector(".hs-badge"))p.innerHTML+=' <span class="hs-badge">\u{1F3C6} '+b+'%</span>';}}function checkHS(){if(current>=total){var pct=Math.round(correct/total*100);if(saveHS(pct))log("\u{1F3C6} NEW HIGH SCORE: "+pct+"%!","success");}}
-document.addEventListener("DOMContentLoaded",function(){setLang("en");setTheme("terminal");document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});showHS();document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});document.getElementById("startBtn").addEventListener("click",newGame);document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\u{1F50A}":"\u{1F507}";});document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});});
-document.addEventListener("keydown",function(e){if(e.key>="1"&&e.key<="3"){var btns=document.querySelectorAll(".answer-btn");var i=parseInt(e.key)-1;if(btns[i])btns[i].click();}if(e.key==="Enter"){var go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();var nxt=document.getElementById("nextBtn");if(nxt)nxt.click();}});
-try{if(localStorage.getItem("wdiy-mute")==="1")soundOn=false;}catch(e){}
-try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
-(function(){var _osl=setLang,_ost=setTheme;setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
+
+let gameState="idle",score=0,tasksTotal=5,tasksDone=0;
+let steps=[];
+function initGame(){startNewGame();}
+function startNewGame(){
+  gameState="playing";score=0;tasksDone=0;
+  steps=[
+    {text:t("s1"),done:false},{text:t("s2"),done:false},{text:t("s3"),done:false},
+    {text:t("s4"),done:false},{text:t("s5"),done:false}
+  ];
+  startTimer();renderWorkspace();updateUI();log(t("subtitle"));
+}
+function renderWorkspace(){
+  const wa=document.getElementById("workArea");if(!wa)return;
+  wa.innerHTML='<div class="task-list">'+steps.map((s,i)=>
+    '<div class="task-item'+(s.done?" done":"")+'"><span class="task-num">'+(i+1)+'</span><span class="task-text">'+s.text+'</span>'+(s.done?'<span class="task-check">✓</span>':'<button class="btn-task" onclick="completeTask('+i+')">'+t("complete")+'</button>')+'</div>'
+  ).join("")+'</div>';
+  const ip=document.getElementById("infoPanel");
+  if(ip)ip.innerHTML='<div class="info-panel"><h3>'+t("title")+'</h3><p>'+t("subtitle")+'</p></div>';
+}
+function completeTask(i){
+  if(steps[i].done)return;
+  steps[i].done=true;tasksDone++;score+=20;snd("ok");
+  log(t("wellDone")+" +20","success");
+  checkWin();renderWorkspace();updateUI();
+}
+function checkWin(){
+  if(tasksDone>=steps.length){
+    gameState="won";stopTimer();snd("win");
+    log(t("victory"),"success");checkHS(score);
+    const area=document.getElementById("infoArea");
+    if(area)area.innerHTML='<div class="victory-box"><h2>'+t("victory")+'</h2><p>'+t("score")+": "+score+'</p></div>';
+  }
+}
+function updateUI(){
+  document.getElementById("scMain").textContent=Math.round((tasksDone/steps.length)*100)+"%";
+  document.getElementById("scLevel").textContent=tasksDone;
+  document.getElementById("scBest").textContent=loadHS();
+}
+/* --- BOOT --- */
+document.addEventListener("DOMContentLoaded",()=>{
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",()=>{
+    document.getElementById("splash").style.display="none";
+    document.getElementById("app").classList.add("on");
+    document.getElementById("backLink").style.display="";
+    initGame();
+  });
+  document.getElementById("startBtn").addEventListener("click",()=>{startNewGame();});
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{
+    curLang=b.dataset.lang;setLang(curLang);applyLang();
+    document.querySelectorAll("[data-lang]").forEach(bb=>bb.classList.toggle("on",bb.dataset.lang===curLang));
+  }));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);}));
+  document.querySelectorAll(".help-tab").forEach(tb=>tb.addEventListener("click",()=>{
+    document.querySelectorAll(".help-tab").forEach(t2=>t2.classList.remove("active"));
+    document.querySelectorAll(".help-content").forEach(c=>c.classList.remove("active"));
+    tb.classList.add("active");document.getElementById("help-"+tb.dataset.tab).classList.add("active");
+  }));
+});
 </script></body></html>

@@ -1,41 +1,288 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Ancient Algebra — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh;overflow-x:hidden}[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}.app{display:none;max-width:700px;margin:0 auto;padding:12px 16px}.app.on{display:block}.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}.hdr h1{font-size:18px}.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}.ctrl button:hover{border-color:var(--abr)}.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:8px;margin-bottom:12px;position:relative;min-height:200px}canvas{width:100%;border-radius:8px;display:block;cursor:pointer}.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:10px}.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.btn-close:hover{border-color:var(--accent);color:var(--accent)}.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}.help-content{display:none}.help-content.active{display:block}.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}.help-item summary::before{content:"\25b8";color:var(--accent);font-size:10px;transition:transform .2s}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}.btn-help:hover{border-color:var(--accent);color:var(--accent)}.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}.toolbar{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:8px}.tool-btn{padding:6px 12px;border-radius:8px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;transition:all .15s}.tool-btn:hover,.tool-btn.on{border-color:var(--accent);color:var(--accent);background:var(--abg)}.card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:8px;cursor:pointer;transition:all .15s}.card:hover{border-color:var(--accent);background:var(--abg)}.card h3{font-family:'Outfit',sans-serif;font-size:14px;color:var(--heading);margin-bottom:4px}.card p{font-size:11px;color:var(--text2);line-height:1.5}.meter{width:100%;height:12px;background:var(--bg3);border-radius:6px;overflow:hidden;margin:4px 0}.meter-fill{height:100%;border-radius:6px;transition:width .3s}.choice-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;min-width:100px;text-align:center}.choice-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}.choice-btn.selected{background:var(--accent);color:var(--bg);border-color:var(--accent)}.choice-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:12px}</style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّـهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px" id="sT">Ancient Algebra</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px" id="sS">Solve with Al-Khwarizmi</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px" id="sD">Solve algebra problems interactively with visual equation balancing.</p><button class="btn-go" id="enterBtn">Start</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّـهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1 id="appTitle">Ancient Algebra</h1><span class="pill" id="scorePill">0</span></div>
-<div class="ctrl"><button id="resetBtn">↻ Reset</button><button class="btn-help" onclick="openHelp()">❓</button><button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
-<div class="status" id="status">Choose the best response</div>
-<div class="game-area" style="padding:20px"><div style="font-family:Outfit,sans-serif;font-size:16px;font-weight:700;color:var(--heading);text-align:center;margin-bottom:14px" id="scenText"></div><div class="choice-row" id="optBtns"></div><div id="feedback" style="text-align:center;margin-top:12px;font-size:13px;display:none"></div></div>
-<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="cN">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tN">0</div></div></div>
-<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Ancient Algebra v1.0</div></div>
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="parchment">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Ancient Algebra — Amaloun Kids</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Philosopher:wght@400;700&family=Nunito:wght@700;800;900&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+[data-theme="parchment"]{--bg:#F5ECD7;--bg2:#FFF8E7;--bg3:#EDE0C8;--border:#CD7F3230;--border2:#CD7F3250;--text:#3D2B1F;--text2:#6B5344;--text3:#9A8574;--heading:#1A0E07;--accent:#B87333;--accent2:#CD7F32;--abg:#B8733310;--abr:#B8733335;--glow:0 4px 24px #B8733318;--splash-bg:linear-gradient(135deg,#F5ECD7 0%,#E8D5B5 50%,#F0E4CC 100%);--card-shadow:0 2px 16px rgba(0,0,0,.08)}
+[data-theme="manuscript"]{--bg:#F0E6D2;--bg2:#FAF3E5;--bg3:#E5D8C0;--border:#80002030;--border2:#80002050;--text:#3D1A10;--text2:#6B4434;--text3:#9A7464;--heading:#1A0500;--accent:#800020;--accent2:#C5A028;--abg:#80002010;--abr:#80002035;--glow:0 4px 24px #80002018;--splash-bg:linear-gradient(135deg,#F0E6D2 0%,#E0D0B5 50%,#E8DCCA 100%);--card-shadow:0 2px 16px rgba(128,0,32,.06)}
+[data-theme="bronze"]{--bg:#F8F0E0;--bg2:#FFFAF0;--bg3:#EDE2CE;--border:#B8733330;--border2:#B8733350;--text:#3D2815;--text2:#6B5035;--text3:#9A7855;--heading:#1A1005;--accent:#B87333;--accent2:#CD7F32;--abg:#B8733310;--abr:#B8733335;--glow:0 4px 24px #B8733318;--splash-bg:linear-gradient(135deg,#F8F0E0 0%,#E8D8C0 50%,#F0E6D4 100%);--card-shadow:0 2px 16px rgba(184,115,51,.06)}
+[data-theme="gold"]{--bg:#FFFDF0;--bg2:#FFFFFF;--bg3:#FFF5D5;--border:#C5A02830;--border2:#C5A02850;--text:#3D3010;--text2:#6B5830;--text3:#9A8050;--heading:#1A1500;--accent:#C5A028;--accent2:#FFD700;--abg:#C5A02810;--abr:#C5A02835;--glow:0 4px 24px #C5A02818;--splash-bg:linear-gradient(135deg,#FFFDF0 0%,#FFF0C0 50%,#FFF5D5 100%);--card-shadow:0 2px 16px rgba(197,160,40,.08)}
+[data-theme="midnight"]{--bg:#0E0A1A;--bg2:#161025;--bg3:#1E1535;--border:#C5A02830;--border2:#C5A02850;--text:#C8B8A0;--text2:#968870;--text3:#645840;--heading:#F0E8D0;--accent:#C5A028;--accent2:#CD7F32;--abg:#C5A02810;--abr:#C5A02835;--glow:0 4px 24px #C5A02818;--splash-bg:linear-gradient(135deg,#0E0A1A 0%,#1E1535 50%,#0E0A1A 100%);--card-shadow:0 2px 16px rgba(197,160,40,.08)}
+[data-theme="desert"]{--bg:#F5E6D0;--bg2:#FFF5E5;--bg3:#E8D5B8;--border:#CD7F3225;--border2:#CD7F3245;--text:#4A3020;--text2:#7A5840;--text3:#AA8860;--heading:#2A1508;--accent:#CD7F32;--accent2:#8B6914;--abg:#CD7F3210;--abr:#CD7F3235;--glow:0 4px 24px #CD7F3215;--splash-bg:linear-gradient(135deg,#F5E6D0 0%,#E8D0A8 50%,#F0DCC0 100%);--card-shadow:0 2px 16px rgba(205,127,50,.06)}
+[data-theme="calligraphy"]{--bg:#FAF5EE;--bg2:#FFFFFF;--bg3:#F0E8DD;--border:#1A0E0720;--border2:#1A0E0740;--text:#1A0E07;--text2:#4A3828;--text3:#7A6858;--heading:#0A0400;--accent:#1A0E07;--accent2:#CD7F32;--abg:#1A0E0708;--abr:#1A0E0720;--glow:0 4px 24px #1A0E0710;--splash-bg:linear-gradient(135deg,#FAF5EE 0%,#F0E8DD 50%,#F5EDE2 100%);--card-shadow:0 2px 16px rgba(26,14,7,.06)}
+[data-theme="emerald"]{--bg:#F0F8F0;--bg2:#FFFFFF;--bg3:#E0F0E0;--border:#2E7D3230;--border2:#2E7D3250;--text:#1A3A1A;--text2:#3A5A3A;--text3:#5A7A5A;--heading:#0A1A0A;--accent:#2E7D32;--accent2:#C5A028;--abg:#2E7D3210;--abr:#2E7D3230;--glow:0 4px 24px #2E7D3215;--splash-bg:linear-gradient(135deg,#F0F8F0 0%,#D8F0D8 50%,#E8F5E8 100%);--card-shadow:0 2px 16px rgba(46,125,50,.06)}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Philosopher','Noto Sans Arabic',serif;font-size:14px;min-height:100vh;overflow-x:hidden}
+[lang="ar"] body{font-family:'Amiri','Noto Sans Arabic',serif}
+h1,.heading{font-family:'Amiri','Philosopher',serif;color:var(--heading);font-weight:700}
+
+body::before{content:'';position:fixed;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#B87333,#CD7F32,#B87333);z-index:999;opacity:.5}
+body::after{content:'';position:fixed;bottom:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#CD7F32,#B87333,#CD7F32);z-index:999;opacity:.3}
+
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--splash-bg);position:relative;overflow:hidden}
+.splash::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30 Z' fill='none' stroke='%23CD7F32' stroke-width='.5' opacity='.06'/%3E%3C/svg%3E") repeat}
+.splash-box{background:var(--bg2);border:2px solid var(--border2);border-radius:4px;padding:48px 36px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow),var(--card-shadow),inset 0 0 60px rgba(205,127,50,.03);animation:splashIn .6s ease-out;position:relative;overflow:hidden}
+.splash-frame{position:absolute;inset:8px;border:1px solid var(--border2);border-radius:2px;pointer-events:none}
+.splash-frame::before{content:'';position:absolute;inset:4px;border:1px solid var(--border);pointer-events:none}
+.splash-icon{font-size:56px;margin-bottom:12px;display:block;animation:uniqueFloat 4s ease-in-out infinite}
+.splash-bism{color:var(--accent);font-size:16px;margin-bottom:16px;font-family:'Amiri','Noto Sans Arabic',serif}
+.splash-title{font-size:30px;margin-bottom:6px;color:var(--heading);font-family:'Amiri',serif;letter-spacing:1px}
+.splash-sub{color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;font-weight:700;font-family:'Philosopher',sans-serif}
+.splash-desc{color:var(--text2);font-size:13px;line-height:1.8;margin-bottom:28px;font-family:'Philosopher',sans-serif}
+.btn-go{padding:14px 40px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Philosopher',sans-serif;letter-spacing:2px;text-transform:uppercase;box-shadow:0 4px 16px #B8733340;transition:all .2s}
+.btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 24px #B8733350}
+
+.sw{display:flex;gap:4px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:30px;height:30px;border-radius:4px;border:2px solid var(--border);background:var(--bg3);color:var(--text2);font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;font-weight:700}
+.sw-btn.on{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 2px 8px #B8733340}
+.sw-btn:hover{border-color:var(--accent);transform:scale(1.1)}
+.sw-label{color:var(--text3);font-size:10px;text-transform:uppercase;letter-spacing:2px;margin-right:8px;align-self:center;font-weight:700;font-family:'Philosopher',sans-serif}
+
+.app{display:none;max-width:580px;margin:0 auto;padding:16px 20px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--accent);font-size:14px;margin-bottom:10px;font-family:'Amiri','Noto Sans Arabic',serif}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:22px;display:flex;align-items:center;gap:8px}
+.hdr h1 .hdr-icon{font-size:26px}
+.pill{background:linear-gradient(135deg,var(--abg),var(--accent)15);border:2px solid var(--abr);color:var(--accent);padding:4px 14px;border-radius:4px;font-size:12px;font-weight:700;font-family:'Philosopher',sans-serif}
+.ctrl{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:8px 14px;background:var(--bg2);border:2px solid var(--border);border-radius:4px;color:var(--heading);font-size:12px;font-family:inherit;cursor:pointer;font-weight:700;transition:all .2s}
+.ctrl select:hover,.ctrl button:hover{border-color:var(--accent);color:var(--accent)}
+.status{text-align:center;font-size:15px;margin-bottom:14px;font-weight:700;color:var(--heading);min-height:24px;font-family:'Philosopher',sans-serif}
+.status.win{color:var(--accent)}.status.lose{color:#8B0000}
+
+.game-area{background:var(--bg2);border:2px solid var(--border);border-radius:4px;padding:24px;margin-bottom:14px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;box-shadow:var(--card-shadow);position:relative;overflow:hidden}
+.game-area::before{content:'';position:absolute;inset:6px;border:1px solid var(--border);border-radius:2px;pointer-events:none;opacity:.5}
+.scenario-emoji{font-size:48px;animation:uniqueFloat 4s ease-in-out infinite}
+.scenario-text{font-size:17px;font-weight:700;color:var(--heading);text-align:center;line-height:1.6;max-width:480px;font-family:'Philosopher',sans-serif}
+.answer-row{display:flex;gap:10px;align-items:stretch;justify-content:center;flex-wrap:wrap;width:100%;max-width:500px}
+.answer-btn{flex:1 1 45%;padding:14px 16px;border-radius:4px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Philosopher',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;text-align:center;min-height:52px;line-height:1.4}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg);transform:translateY(-2px);box-shadow:var(--card-shadow)}
+.answer-btn.correct{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border-color:var(--accent);box-shadow:0 4px 16px #B8733340}
+.answer-btn.wrong{background:#8B0000;color:#fff;border-color:#8B0000}
+.teaching-box{background:var(--abg);border:2px solid var(--abr);border-radius:4px;padding:16px 20px;font-size:13px;color:var(--accent);text-align:center;line-height:1.7;max-width:480px;animation:slideUp .3s ease-out;font-family:'Philosopher',sans-serif}
+.teaching-box .teaching-label{font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;opacity:.7}
+.progress{width:100%;max-width:320px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden;border:1px solid var(--border)}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:4px;transition:width .4s ease}
+
+.score-row{display:flex;gap:24px;justify-content:center;margin-bottom:12px}
+.score-item{text-align:center}.score-label{font-size:11px;color:var(--text3);font-weight:700;text-transform:uppercase;letter-spacing:1px;font-family:'Philosopher',sans-serif}.score-num{font-size:28px;font-weight:700;color:var(--heading);font-family:'Amiri',serif}
+
+.log-box{background:var(--bg2);border:2px solid var(--border);border-radius:4px;padding:10px 14px;max-height:80px;overflow-y:auto;font-size:11px;color:var(--text2);margin-bottom:12px}
+.log-line{padding:2px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#8B0000}
+.foot{text-align:center;color:var(--text3);font-size:11px;padding:16px 0;border-top:2px solid var(--border);font-weight:600;font-family:'Philosopher',sans-serif}
+
+.back-link{position:fixed;top:12px;left:12px;z-index:100;padding:6px 14px;border-radius:4px;background:var(--bg2);border:2px solid var(--border);color:var(--text2);font-size:12px;text-decoration:none;font-family:'Philosopher',sans-serif;font-weight:700;transition:all .2s;box-shadow:var(--card-shadow)}
+.back-link:hover{border-color:var(--accent);color:var(--accent)}
+[dir="rtl"] .back-link{left:auto;right:12px}
+
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s;backdrop-filter:blur(4px)}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:340px;max-width:85vw;height:100%;background:var(--bg2);border:2px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .3s ease;box-shadow:-4px 0 24px rgba(0,0,0,.1)}
+.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:2px solid var(--border)}
+.sidebar-title{font-weight:700;font-size:16px;color:var(--heading);font-family:'Amiri',serif}
+.btn-close{background:var(--bg3);border:2px solid var(--border);color:var(--text2);width:32px;height:32px;border-radius:4px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:2px solid var(--border)}
+.help-tab{flex:1;padding:10px;background:none;border:none;color:var(--text3);font-family:'Philosopher',sans-serif;font-size:12px;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:1px;border-bottom:3px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:16px 18px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:10px;border:2px solid var(--border);border-radius:4px;overflow:hidden}
+.help-item summary{padding:12px 14px;cursor:pointer;font-size:13px;font-weight:700;color:var(--heading);list-style:none;display:flex;align-items:center;gap:8px;font-family:'Philosopher',sans-serif}
+.help-item summary::before{content:"\25B8";color:var(--accent);font-size:11px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 14px 12px;font-size:12px;color:var(--text2);line-height:1.7}
+.help-step{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
+.help-step-num{width:28px;height:28px;border-radius:4px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Nunito',sans-serif}
+.help-step p{font-size:12px;color:var(--text2);line-height:1.7;margin:0}
+.wiki-entry{margin-bottom:16px}.wiki-entry h3{font-size:14px;margin-bottom:6px;color:var(--heading);font-weight:700;font-family:'Amiri',serif}.wiki-entry p{font-size:12px;color:var(--text2);line-height:1.7}
+.sidebar-footer{padding:12px 18px;border-top:2px solid var(--border);text-align:center;color:var(--text3);font-size:11px;font-weight:600}
+.btn-help{background:var(--bg3);border:2px solid var(--border);color:var(--text2);padding:8px 14px;border-radius:4px;font-size:12px;font-family:inherit;cursor:pointer;font-weight:700;transition:all .2s}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 10px;border-radius:4px;background:rgba(197,160,40,.15);border:2px solid rgba(197,160,40,.4);color:#C5A028;font-size:11px;font-weight:700;margin-left:8px;font-family:'Philosopher',sans-serif}
+.timer-pill{background:var(--bg3);border:2px solid var(--border);color:var(--text2);padding:4px 10px;border-radius:4px;font-size:11px;font-family:monospace;font-weight:700;margin-left:8px}
+
+@keyframes uniqueFloat{0%,100%{opacity:.9;transform:translateY(0)}50%{opacity:1;transform:translateY(-8px)}}
+@keyframes splashIn{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:480px){.splash-box{padding:32px 20px}.splash-title{font-size:24px}.game-area{padding:16px}.answer-btn{font-size:13px;padding:12px}.score-num{font-size:24px}}
+</style>
+</head>
+<body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">\u2190 Catalog</a>
+<div class="splash" id="splash">
+<div class="splash-box">
+<div class="splash-frame"></div>
+<span class="splash-icon">➕</span>
+<div class="splash-bism">\u0628\u0650\u0633\u0652\u0645\u0650 \u0649\u0644\u0644\u0651\u064E\u0648\u0647\u0650 \u0649\u0644\u0631\u0651\u064E\u062D\u0652\u0645\u064E\u0640\u0648\u0646\u0650 \u0649\u0644\u0631\u0651\u064E\u062D\u0650\u064A\u0645\u0650</div>
+<h1 class="splash-title heading" id="splashTitle">Ancient Algebra</h1>
+<div class="splash-sub" id="splashSub">Solve equations like Al-Khwarizmi</div>
+<p class="splash-desc" id="splashDesc">Practice algebra invented by Muslim mathematicians!</p>
+<button class="btn-go" id="enterBtn">Start</button>
+<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">\u0639</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span>
+<button class="sw-btn on" data-thm="parchment">\ud83d\udcdc</button>
+<button class="sw-btn" data-thm="manuscript">\ud83d\udcd5</button>
+<button class="sw-btn" data-thm="bronze">\ud83e\ude99</button>
+<button class="sw-btn" data-thm="gold">\u2728</button>
+<button class="sw-btn" data-thm="midnight">\ud83c\udf19</button>
+<button class="sw-btn" data-thm="desert">\ud83c\udfdc\ufe0f</button>
+<button class="sw-btn" data-thm="calligraphy">\u270d\ufe0f</button>
+<button class="sw-btn" data-thm="emerald">\ud83d\udc8e</button>
+</div>
+</div>
+</div>
+
+<div class="app" id="app">
+<div class="hdr-bism">\u0628\u0650\u0633\u0652\u0645\u0650 \u0649\u0644\u0644\u0651\u064E\u0648\u0647\u0650 \u0649\u0644\u0631\u0651\u064E\u062D\u0652\u0645\u064E\u0640\u0648\u0646\u0650 \u0649\u0644\u0631\u0651\u064E\u062D\u0650\u064A\u0645\u0650</div>
+<div class="hdr">
+<h1><span class="hdr-icon">➕</span> <span id="appTitle">Ancient Algebra</span></h1>
+<span class="pill" id="scorePill">0 / 0</span>
+<span class="timer-pill" id="timerPill">0:00</span>
+</div>
+<div class="ctrl">
+<select id="diffSel"><option value="10">Easy (10)</option><option value="15" selected>Medium (15)</option><option value="25">Hard (25+)</option></select>
+<button id="startBtn">\u25b6 New Game</button>
+<button class="btn-help" onclick="openHelp()">?</button>
+<button id="soundBtn">\ud83d\udd0a</button>
+<div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">\u0639</button></div>
+<div class="sw">
+<button class="sw-btn on" data-thm="parchment">\ud83d\udcdc</button>
+<button class="sw-btn" data-thm="manuscript">\ud83d\udcd5</button>
+<button class="sw-btn" data-thm="bronze">\ud83e\ude99</button>
+<button class="sw-btn" data-thm="gold">\u2728</button>
+<button class="sw-btn" data-thm="midnight">\ud83c\udf19</button>
+<button class="sw-btn" data-thm="desert">\ud83c\udfdc\ufe0f</button>
+<button class="sw-btn" data-thm="calligraphy">\u270d\ufe0f</button>
+<button class="sw-btn" data-thm="emerald">\ud83d\udc8e</button>
+</div>
+</div>
+<div class="status" id="status">Solve equations like Al-Khwarizmi</div>
+<div class="game-area" id="gameArea">
+<div class="scenario-emoji" id="emoji">\ud83c\udf1f</div>
+<div class="scenario-text" id="question">Press New Game to start!</div>
+<div class="answer-row" id="choices"></div>
+<div id="teachingArea"></div>
+<div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+</div>
+<div class="score-row">
+<div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div>
+<div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div>
+</div>
+<div class="log-box" id="logBox"></div>
+<div class="foot">Amaloun Kids \u2014 Ancient Algebra v2.0</div>
+</div>
+
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
-<aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div><div class="sidebar-body"><div class="help-content active" id="help-faq"><details class="help-item"><summary>What is Ancient Algebra?</summary><p>Solve Al-Khwarizmis algebra problems with visual balancing.</p></details><details class="help-item"><summary>Does it work offline?</summary><p>Yes. Everything runs locally in your browser with no internet needed.</p></details><details class="help-item"><summary>How do I change themes?</summary><p>Click any theme icon in the control bar to switch between 8 themes.</p></details></div><div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>Click Start to enter the app</p></div><div class="help-step"><span class="help-step-num">2</span><p>Interact with the main interface</p></div><div class="help-step"><span class="help-step-num">3</span><p>Track your progress and beat your record</p></div></div><div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>💚 Ancient Algebra</h3><p>Solve Al-Khwarizmis algebra problems with visual balancing.</p></div><div class="wiki-entry"><h3>🕌 Islamic Values</h3><p>All content is aligned with Islamic principles and values.</p></div></div></div><div class="sidebar-footer">Workshop-DIY — v1.0</div></aside>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog">
+<div class="sidebar-header"><span class="sidebar-title">Help</span><button class="btn-close" onclick="closeHelp()">\u2715</button></div>
+<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
+<div class="sidebar-body">
+<div class="help-content active" id="help-faq">
+<details class="help-item"><summary>What is Ancient Algebra?</summary><p>Practice algebra invented by Muslim mathematicians!</p></details>
+<details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser.</p></details>
+<details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser.</p></details>
+<details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button. 8 historical themes available!</p></details>
+<details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / \u0639. Arabic enables RTL layout.</p></details>
+<details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally. No data is sent anywhere.</p></details>
+</div>
+<div class="help-content" id="help-howto">
+<div class="help-step"><span class="help-step-num">1</span><p>Click Start on the splash screen</p></div>
+<div class="help-step"><span class="help-step-num">2</span><p>Choose your difficulty level</p></div>
+<div class="help-step"><span class="help-step-num">3</span><p>Press New Game to begin</p></div>
+<div class="help-step"><span class="help-step-num">4</span><p>Read each question carefully</p></div>
+<div class="help-step"><span class="help-step-num">5</span><p>Pick the correct answer</p></div>
+<div class="help-step"><span class="help-step-num">6</span><p>Learn from the historical teaching shown</p></div>
+<div class="help-step"><span class="help-step-num">7</span><p>Try to beat your high score!</p></div>
+</div>
+<div class="help-content" id="help-wiki">
+<div class="wiki-entry"><h3>Purpose</h3><p>Practice algebra invented by Muslim mathematicians! Part of the Islamic History series.</p></div>
+<div class="wiki-entry"><h3>Themes</h3><p>8 historical themes: Parchment, Manuscript, Bronze, Gold, Midnight, Desert, Calligraphy, Emerald.</p></div>
+<div class="wiki-entry"><h3>Languages</h3><p>Trilingual: English, Francais, \u0627\u0644\u0639\u0631\u0628\u064a\u0629 with full RTL support.</p></div>
+<div class="wiki-entry"><h3>Sound</h3><p>Web Audio API sound effects. Toggle with the sound button.</p></div>
+<div class="wiki-entry"><h3>Privacy</h3><p>100% local. No tracking, no analytics, no external calls.</p></div>
+</div>
+</div>
+<div class="sidebar-footer">Amaloun Kids \u2014 v2.0</div>
+</aside>
+
 <script>
-const HS_KEY="wdiy-hs-ancient-algebra";
-let soundOn=true,actx,curLang="en";
-function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
-function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
-function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=600+Math.random()*400;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.08);o.start(n);o.stop(n+.08);}}
-function log(m,c){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(c||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+m;b.appendChild(d);b.scrollTop=b.scrollHeight;}
-function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));try{localStorage.setItem("wdiy-lang",l)}catch(e){}}
+const UI={
+splashTitle:{en:"Ancient Algebra",fr:"Algèbre Ancienne",ar:"الجبر القديم"},
+splashSub:{en:"Solve equations like Al-Khwarizmi",fr:"Résous des équations comme Al-Khwarizmi",ar:"حل معادلات كالخوارزمي"},
+splashDesc:{en:"Practice algebra invented by Muslim mathematicians!",fr:"undefined",ar:"undefined"},
+appTitle:{en:"Ancient Algebra",fr:"Algèbre Ancienne",ar:"الجبر القديم"}
+};
+let curLang="en";
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open")}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
+function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));
+try{document.getElementById("splashTitle").textContent=UI.splashTitle[l];document.getElementById("splashSub").textContent=UI.splashSub[l];document.getElementById("splashDesc").textContent=UI.splashDesc[l];document.getElementById("appTitle").textContent=UI.appTitle[l]}catch(e){}
+try{localStorage.setItem("wdiy-lang",l)}catch(e){}}
 function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===t));try{localStorage.setItem("wdiy-theme",t)}catch(e){}}
-function getHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
-function saveHS(v){try{const b=getHS();if(v>b){localStorage.setItem(HS_KEY,""+v);return true;}}catch(e){}return false;}
-const SC=[{"t": "Solve: x + 5 = 12", "a": "x = 7", "b": "x = 5", "c": "x = 17"}, {"t": "Solve: 2x = 10", "a": "x = 5", "b": "x = 2", "c": "x = 20"}, {"t": "Solve: x - 3 = 8", "a": "x = 11", "b": "x = 5", "c": "x = 3"}, {"t": "Solve: 3x + 1 = 16", "a": "x = 5", "b": "x = 3", "c": "x = 16"}];let si=0,cn=0,tn=0;
-function initGame(){si=0;cn=0;tn=0;document.getElementById("cN").textContent="0";document.getElementById("tN").textContent="0";showSc();log("Started!","success");}
-function showSc(){if(si>=SC.length){document.getElementById("scenText").textContent="Done! "+cn+"/"+tn;document.getElementById("optBtns").innerHTML="";snd("win");saveHS(cn);return;}
-const s=SC[si];document.getElementById("scenText").textContent=s.t;document.getElementById("feedback").style.display="none";
-const b=document.getElementById("optBtns");b.innerHTML="";["a","b","c"].forEach(k=>{const btn=document.createElement("button");btn.className="choice-btn";btn.textContent=s[k];btn.onclick=()=>pick(k);b.appendChild(btn);});}
-function pick(k){tn++;if(k==="a"){cn++;snd("ok");document.getElementById("feedback").innerHTML='<span style="color:var(--accent)">Excellent!</span>';}else{snd("err");document.getElementById("feedback").innerHTML='<span style="color:#ff4444">Better: '+SC[si].a+'</span>';}
-document.getElementById("feedback").style.display="block";document.getElementById("cN").textContent=cn;document.getElementById("tN").textContent=tn;document.getElementById("scorePill").textContent=cn+"/"+tn;si++;setTimeout(showSc,1500);}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=440;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.12);o.start(n);o.stop(n+.12);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.04;o2.frequency.value=554;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.22);o2.start(n+.1);o2.stop(n+.22)}else if(t==="err"){o.frequency.value=180;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15)}else if(t==="win"){[440,554,659,880].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.3+i*.15);oo.start(n+i*.15);oo.stop(n+.3+i*.15)})}else{o.frequency.value=700;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05)}}
+function log(m,c){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(c||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+m;b.appendChild(d);b.scrollTop=b.scrollHeight}
+
+/* GAME DATA - History quiz about Ancient Algebra */
+const SCENARIOS=[
+{emoji:"➕",q:"Practice algebra invented by Muslim mathematicians - What do you know?",a:"It was a major contribution of Muslim civilization",w:["It has no historical significance","It was invented in modern times","It has nothing to do with Islam"],t:"Muslim civilization made enormous contributions to ancient algebra that shaped the world we live in today."},
+{emoji:"\ud83d\udd4c",q:"What role did mosques play in Islamic civilization?",a:"Centers of learning, worship, and community",w:["Only places for prayer","Government buildings","Market places only"],t:"Mosques served as centers of education, community gathering, and worship. Many contained libraries and schools."},
+{emoji:"\ud83d\udcda",q:"During the Islamic Golden Age, what was Bayt al-Hikma?",a:"The House of Wisdom - a major center of learning in Baghdad",w:["A royal palace","A military fortress","A trading post"],t:"Bayt al-Hikma (House of Wisdom) in Baghdad was one of the greatest centers of learning, where scholars translated and preserved texts from many civilizations."},
+{emoji:"\ud83c\udf0d",q:"How did Muslim scholars contribute to geography?",a:"They created detailed maps and explored new lands",w:["They had no interest in geography","They only studied local areas","They copied Roman maps only"],t:"Muslim geographers like Al-Idrisi created some of the most accurate and detailed maps of the medieval world."},
+{emoji:"\u2795",q:"Who is considered the father of algebra?",a:"Al-Khwarizmi, a Muslim mathematician",w:["Pythagoras","Euclid","Newton"],t:"Muhammad ibn Musa al-Khwarizmi wrote the foundational text on algebra. The word 'algebra' comes from the Arabic 'al-jabr'."},
+{emoji:"\ud83c\udf1f",q:"What was significant about Islamic astronomy?",a:"Muslims named many stars and improved astronomical instruments",w:["They did not study astronomy","They only observed the moon","They copied Greek work without changes"],t:"Muslim astronomers named many stars we still use today (Aldebaran, Betelgeuse, Rigel) and perfected the astrolabe."},
+{emoji:"\ud83c\udfe5",q:"How did Muslim physicians advance medicine?",a:"They established hospitals, wrote medical encyclopedias, and developed surgical tools",w:["They relied only on herbal remedies","They did not practice medicine","They only used Greek medicine"],t:"Ibn Sina (Avicenna) wrote The Canon of Medicine, used as a textbook in Europe for centuries. Muslim doctors developed many surgical instruments."},
+{emoji:"\ud83c\udff0",q:"What made the Alhambra palace in Spain special?",a:"Its stunning Islamic geometric art and architecture",w:["It was the largest building in the world","It had no decorations","It was built by Romans"],t:"The Alhambra in Granada, Spain is one of the finest examples of Islamic art and architecture, with intricate geometric patterns and arabesques."},
+{emoji:"\ud83d\udcdc",q:"Why was paper-making important in Islamic civilization?",a:"It enabled the spread of knowledge through affordable books",w:["Paper was not used much","It was only for government documents","It replaced stone tablets for building"],t:"Muslims learned paper-making from Chinese prisoners and spread it across the Islamic world, enabling a golden age of scholarship and literature."},
+{emoji:"\ud83e\udded",q:"What is an astrolabe used for?",a:"Navigation, timekeeping, and finding the direction of Mecca",w:["Cooking food","Building houses","Writing letters"],t:"The astrolabe was perfected by Muslim astronomers and used for navigation, determining prayer times, and finding the qibla (direction of Mecca)."},
+{emoji:"\ud83d\udc2b",q:"Why was the Silk Road important to Muslims?",a:"It connected Muslim lands to the wider world for trade and knowledge exchange",w:["Muslims never used the Silk Road","It was only for silk trading","It was a modern highway"],t:"Muslim merchants and scholars traveled the Silk Road, spreading Islam, trade goods, and scientific knowledge across continents."},
+{emoji:"\u2699\ufe0f",q:"Who was Al-Jazari?",a:"A brilliant Muslim engineer who invented mechanical devices",w:["A famous cook","A political leader","A fiction writer"],t:"Al-Jazari was a 12th-century engineer who designed remarkable mechanical devices including water clocks, automated servants, and programmable machines."},
+{emoji:"\u270d\ufe0f",q:"Why is Arabic calligraphy considered an art form?",a:"It combines beauty with the sacred words of the Quran",w:["It is just regular handwriting","It has no artistic value","It was only used for documents"],t:"Arabic calligraphy is one of the highest forms of Islamic art. Calligraphers spent years perfecting scripts like Naskh, Thuluth, and Diwani."},
+{emoji:"\ud83c\udfdb\ufe0f",q:"What was the Ottoman Empire known for?",a:"Its vast territory, architectural marvels, and cultural achievements",w:["It was a small kingdom","It only lasted a few years","It had no cultural significance"],t:"The Ottoman Empire lasted over 600 years and created architectural masterpieces like the Blue Mosque in Istanbul, while fostering arts, science, and trade."},
+{emoji:"\u2696\ufe0f",q:"What were the Rightly Guided Caliphs known for?",a:"Justice, expansion of Islam, and establishing Islamic governance",w:["They were only military leaders","They had no religious significance","They ruled for centuries"],t:"The four Rightly Guided Caliphs - Abu Bakr, Umar, Uthman, and Ali - are revered for their justice, piety, and leadership after the Prophet Muhammad (pbuh)."}
+];
+
+let total=15,current=0,correct=0,ans,curTeaching="",locked=false,usedIdx=[];
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function genQ(){
+  if(usedIdx.length>=SCENARIOS.length)usedIdx=[];
+  let idx;do{idx=Math.floor(Math.random()*SCENARIOS.length)}while(usedIdx.includes(idx));
+  usedIdx.push(idx);const s=SCENARIOS[idx];
+  return{emoji:s.emoji,text:s.q,ans:s.a,teaching:s.t,opts:shuffle([s.a,...s.w])};
+}
+function setDiff(){total=parseInt(document.getElementById("diffSel").value)}
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s},1000)}
+function stopTimer(){clearInterval(timerInterval)}
+function newGame(){startTimer();total=parseInt(document.getElementById("diffSel").value)||15;current=0;correct=0;usedIdx=[];document.getElementById("sc").textContent="0";document.getElementById("tot").textContent="0";document.getElementById("scorePill").textContent="0 / 0";document.getElementById("teachingArea").innerHTML="";nextQ()}
+function nextQ(){if(current>=total){stopTimer();checkHS();snd("win");document.getElementById("status").textContent="Done! "+correct+"/"+total;document.getElementById("status").className="status win";document.getElementById("emoji").textContent="\ud83c\udfc6";document.getElementById("question").textContent="MashaAllah! You scored "+correct+" out of "+total+"!";document.getElementById("choices").innerHTML="";document.getElementById("teachingArea").innerHTML="";log("Score: "+correct+"/"+total,"success");return}locked=false;const q=genQ();document.getElementById("emoji").textContent=q.emoji;document.getElementById("question").textContent=q.text;ans=q.ans;curTeaching=q.teaching;const el=document.getElementById("choices");el.innerHTML="";document.getElementById("teachingArea").innerHTML="";q.opts.forEach(o=>{const b=document.createElement("button");b.className="answer-btn";b.textContent=o;b.onclick=()=>pick(b,o);el.appendChild(b)});document.getElementById("status").textContent="Question "+(current+1)+" of "+total;document.getElementById("status").className="status";document.getElementById("prog").style.width=(current/total*100)+"%"}
+function pick(btn,val){if(locked)return;locked=true;current++;if(val===ans){correct++;btn.classList.add("correct");snd("ok");log("Correct!","success")}else{btn.classList.add("wrong");snd("err");log("Answer: "+ans,"error");document.querySelectorAll(".answer-btn").forEach(b=>{if(b.textContent===ans)b.classList.add("correct")})}if(curTeaching)document.getElementById("teachingArea").innerHTML='<div class="teaching-box"><div class="teaching-label">Historical Insight</div>'+curTeaching+'</div>';document.getElementById("sc").textContent=correct;document.getElementById("tot").textContent=current;document.getElementById("scorePill").textContent=correct+" / "+current;document.getElementById("prog").style.width=(current/total*100)+"%";setTimeout(nextQ,2500)}
+const HS_KEY="wdiy-hs-029-ancient-algebra";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0}}
+function saveHS(s){try{const b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true}}catch(e){}return false}
+function showHS(){const b=loadHS();if(b>0){const p=document.getElementById("scorePill");if(p&&!p.querySelector(".hs-badge"))p.innerHTML+=' <span class="hs-badge">\u2605 '+b+'</span>'}}
+function checkHS(){if(current>=total){const p=Math.round(correct/total*100);if(saveHS(p))log("NEW HIGH SCORE: "+p+"%!","success")}}
 document.addEventListener("DOMContentLoaded",()=>{
-setLang("en");setTheme("terminal");
-try{const sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);const st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="\ud83d\udd07";}}catch(e){}
-document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
-document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
-document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\ud83d\udd0a":"\ud83d\udd07";try{localStorage.setItem("wdiy-mute",soundOn?"0":"1")}catch(e){}});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeHelp();});
-document.querySelectorAll(".help-tab").forEach(tab=>tab.addEventListener("click",()=>{document.querySelectorAll(".help-tab").forEach(t=>t.classList.remove("active"));document.querySelectorAll(".help-content").forEach(c=>c.classList.remove("active"));tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");}));
-document.getElementById("enterBtn").addEventListener("click",()=>{document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";if(typeof initGame==="function")initGame();});
-if(document.getElementById("resetBtn"))document.getElementById("resetBtn").addEventListener("click",()=>{if(typeof initGame==="function")initGame();});
+  setLang("en");setTheme("parchment");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click")}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click")}));
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame()});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\ud83d\udd0a":"\ud83d\udd07"});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeHelp()});
+  document.querySelectorAll(".help-tab").forEach(tab=>tab.addEventListener("click",()=>{document.querySelectorAll(".help-tab").forEach(t=>t.classList.remove("active"));document.querySelectorAll(".help-content").forEach(c=>c.classList.remove("active"));tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active")}));
 });
-</script></body></html>
+document.addEventListener("keydown",e=>{if(e.key>="1"&&e.key<="4"){const btns=document.querySelectorAll(".answer-btn");const i=parseInt(e.key)-1;if(btns[i])btns[i].click()}if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const s=document.getElementById("startBtn");if(s&&s.offsetParent!==null)s.click()}});
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="\ud83d\udd07"}}catch(e){}
+document.getElementById("soundBtn")?.addEventListener("click",()=>{try{localStorage.setItem("wdiy-mute",soundOn?"0":"1")}catch(e){}});
+try{const sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);const st=localStorage.getItem("wdiy-theme");if(st)setTheme(st)}catch(e){}
+</script>
+</body>
+</html>

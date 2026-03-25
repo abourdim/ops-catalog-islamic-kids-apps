@@ -1,111 +1,150 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Refuge in Abyssinia — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
-[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
-[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
-[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
-[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
-[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
-[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
-[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Abyssinia Refuge — Gazawat</title><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet"/><style>
+/* === GAZAWAT 8-THEME SYSTEM === */
+[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#2E8B57;--abg:#2E8B570f;--abr:#2E8B5733;--glow:0 0 20px #2E8B571a}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#2E8B57;--abg:#2E8B570f;--abr:#2E8B5733;--glow:0 0 20px #2E8B571a}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#2E8B57;--abg:#2E8B570f;--abr:#2E8B5733;--glow:0 0 20px #2E8B571a}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#2E8B57;--abg:#2E8B570f;--abr:#2E8B5733;--glow:0 0 15px #2E8B5710}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#2E8B57;--abg:#2E8B570f;--abr:#2E8B5733;--glow:0 0 25px #2E8B5722}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#2E8B57;--abg:#2E8B570f;--abr:#2E8B5733;--glow:0 0 20px #2E8B571a}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#2E8B57;--abg:#2E8B570f;--abr:#2E8B5733;--glow:0 0 20px #2E8B571a}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#2E8B57;--abg:#2E8B570f;--abr:#2E8B5733;--glow:0 0 15px #2E8B5710}
+
+/* === BASE RESET === */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh;background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,#2E8B5708 39px,#2E8B5708 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,#2E8B5708 39px,#2E8B5708 40px)}
 [lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
 h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
-.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
-.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
-.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:400px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}
-.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}
-.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}
-.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}
-.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
-.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
-.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
-.app{display:none;max-width:600px;margin:0 auto;padding:12px 16px}.app.on{display:block}
-.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}
-.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
-.hdr h1{font-size:18px}
-.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
-.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
-.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}
-.ctrl button:hover{border-color:var(--abr)}
-.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}
-.status.win{color:var(--accent)}.status.lose{color:#ff4444}
-.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
-.game-area canvas{border-radius:8px;max-width:100%;cursor:pointer}
-.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
-.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;min-width:50px;text-align:left;line-height:1.4}
-.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
-.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}
-.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
-.answer-btn.selected{border-color:var(--accent);background:var(--abg)}
-.progress{width:100%;max-width:400px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
-.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
-.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}
-.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}
-.dialogue-box{background:var(--bg3);border:1px solid var(--border2);border-radius:10px;padding:14px 16px;width:100%;max-width:500px;font-size:12px;line-height:1.7;color:var(--text)}
-.dialogue-box .speaker{font-family:'Outfit',sans-serif;font-weight:700;color:var(--accent);font-size:13px;margin-bottom:4px}
-.dialogue-box .speech{color:var(--text);margin-bottom:8px}
-.dialogue-box .arabic-verse{color:var(--accent);font-family:'Noto Sans Arabic',serif;font-size:14px;text-align:center;margin:8px 0;direction:rtl}
-.choice-row{display:flex;flex-direction:column;gap:6px;width:100%;max-width:500px}
-.nav-btn{padding:10px 24px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif}
-.nav-btn:hover{opacity:.9}
-.nav-btn:disabled{opacity:.4;cursor:default}
-.lesson-box{background:var(--abg);border:1px solid var(--abr);border-radius:10px;padding:14px 16px;width:100%;max-width:500px}
-.lesson-box h3{font-family:'Outfit',sans-serif;font-size:14px;color:var(--accent);margin-bottom:6px}
-.lesson-box ul{list-style:none;padding:0}.lesson-box li{font-size:11px;color:var(--text2);padding:3px 0;line-height:1.6}.lesson-box li::before{content:"✦ ";color:var(--accent)}
-.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:80px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}
-.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
-.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}
-.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}
-.sidebar-overlay.open{opacity:1;pointer-events:auto}
-.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
-.sidebar-left{left:0;transform:translateX(-100%)}
-[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
-.sidebar-left.open{transform:translateX(0)}
-.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}
-.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}
-.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
-.btn-close:hover{border-color:var(--accent);color:var(--accent)}
-.help-tabs{display:flex;border-bottom:1px solid var(--border)}
-.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}
-.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
-.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}
-.help-content{display:none}.help-content.active{display:block}
-.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
-.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}
-.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}
-.help-item[open] summary::before{transform:rotate(90deg)}
-.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}
-.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
-.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
-.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}
-.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
-.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}
-.btn-help:hover{border-color:var(--accent);color:var(--accent)}
-.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
-.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
-</style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Refuge in Abyssinia</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">When a Christian king protected Muslims</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Journey across the sea, face the court of Najashi, and witness the power of truth and justice.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Refuge in Abyssinia</h1><span class="pill" id="scorePill">Phase 1 / 5</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl">
-    <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
-    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
-    <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
-<div class="status" id="status">Navigate the ship across the Red Sea!</div>
-<div class="game-area" id="gameArea">
-  <canvas id="cvs" width="560" height="340"></canvas>
-  <div id="dialogueContainer"></div>
-  <div class="choice-row" id="choiceContainer"></div>
-  <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
-</div>
-<div class="score-row"><div class="score-item"><div class="score-label">Phase</div><div class="score-num" id="sc">1</div></div><div class="score-item"><div class="score-label">Score</div><div class="score-num" id="tot">0</div></div></div>
-<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Refuge in Abyssinia v1.0</div></div>
 
+/* === SPLASH SCREEN === */
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(ellipse at center,#2E8B5708,transparent 70%)}
+.splash-box{background:var(--bg2);border:2px solid var(--border);border-radius:20px;padding:44px 36px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow),0 8px 32px rgba(0,0,0,.3);animation:fadeUp .6s ease-out;position:relative;overflow:hidden}
+.splash-box::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,#2E8B57,transparent)}
+.splash-box::after{content:"";position:absolute;bottom:0;left:0;right:0;height:50%;background:linear-gradient(180deg,transparent,#2E8B5705);pointer-events:none}
+
+.splash-art{position:relative;width:200px;height:140px;margin:0 auto 20px}
+.splash-art::before{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:160px;height:80px;background:linear-gradient(135deg,#2E8B5722,#2E8B5711);border:2px solid #2E8B5744;border-radius:8px 8px 0 0;clip-path:polygon(0 100%,5% 30%,15% 10%,25% 25%,35% 5%,50% 20%,65% 5%,75% 25%,85% 10%,95% 30%,100% 100%)}
+.splash-art::after{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);width:4px;height:70px;background:#2E8B5766;border-radius:2px;box-shadow:0 -6px 0 8px #2E8B5733}
+.shield-icon{position:absolute;top:20px;left:50%;transform:translateX(-50%);width:50px;height:55px;background:linear-gradient(180deg,#2E8B5744,#2E8B5722);border:2px solid #2E8B5755;border-radius:50% 50% 50% 50%/40% 40% 60% 60%;display:flex;align-items:center;justify-content:center;font-size:18px;color:#2E8B57}
+.splash-bism{color:var(--text3);font-size:13px;margin-bottom:16px;font-family:'Noto Sans Arabic',serif;letter-spacing:1px}
+.splash-subtitle{color:#2E8B57;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+.splash-desc{color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px}
+.btn-go{padding:14px 36px;background:linear-gradient(135deg,#2E8B57,#2E8B57cc);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:2px;text-transform:uppercase;transition:all .2s;box-shadow:0 4px 15px #2E8B5733}
+.btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 20px #2E8B5744}
+.btn-go:active{transform:translateY(0)}
+.sw{display:flex;gap:4px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:28px;height:28px;border-radius:8px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent);box-shadow:0 0 8px var(--abr)}
+.sw-btn:hover{border-color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+
+/* === MAIN APP === */
+.app{display:none;max-width:920px;margin:0 auto;padding:14px 18px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:12px;margin-bottom:8px;font-family:'Noto Sans Arabic',serif}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:20px;display:flex;align-items:center;gap:8px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:7px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer;transition:all .15s}
+.ctrl button:hover{border-color:var(--accent);color:var(--accent)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:14px;position:relative;overflow:hidden}
+.game-area::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#2E8B5744,transparent)}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:12px}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px}.score-num{font-size:24px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;max-height:110px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:12px}
+.log-line{padding:2px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:16px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* === FORTRESS BORDER PATTERN === */
+.app::before{content:"";display:block;height:6px;margin-bottom:10px;background:repeating-linear-gradient(90deg,#2E8B5722 0px,#2E8B5722 16px,transparent 16px,transparent 20px,#2E8B5711 20px,#2E8B5711 24px,transparent 24px,transparent 40px);border-radius:3px}
+
+/* === NAVIGATION === */
+.back-link{position:fixed;top:10px;left:10px;z-index:100;padding:5px 12px;border-radius:8px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s;display:flex;align-items:center;gap:4px}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:10px}
+
+/* === HELP SIDEBAR === */
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:360px;max-width:88vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:16px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .15s}.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:10px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:16px 18px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:10px;overflow:hidden}.help-item summary{padding:12px 14px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 14px 12px;font-size:11px;color:var(--text2);line-height:1.7}
+.help-step{display:flex;gap:10px;margin-bottom:14px;align-items:flex-start}.help-step-num{width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:16px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.7}
+.sidebar-footer{padding:12px 18px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:7px 12px;border-radius:8px;font-size:11px;font-family:inherit;cursor:pointer;transition:all .15s}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:3px 10px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+canvas{border-radius:10px;cursor:grab;max-width:100%;touch-action:none}canvas:active{cursor:grabbing}
+.info-panel{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:12px;font-size:11px;color:var(--text2);line-height:1.7}.info-panel h3{font-size:14px;color:var(--heading);margin-bottom:6px;font-family:'Outfit',sans-serif}.info-panel .highlight{color:var(--accent);font-weight:600}
+.victory-box{background:var(--abg);border:2px solid var(--accent);border-radius:14px;padding:20px;text-align:center;margin-bottom:12px;animation:fadeUp .4s}.victory-box h2{font-family:'Outfit',sans-serif;color:var(--accent);font-size:22px;margin-bottom:8px}.victory-box p{font-size:13px;color:var(--text);line-height:1.7}
+.btn-execute{padding:12px 28px;background:linear-gradient(135deg,var(--accent),#2E8B57cc);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase;transition:all .2s}.btn-execute:disabled{opacity:.4;cursor:not-allowed}.btn-execute:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 4px 12px #2E8B5733}
+.btn-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:10px}
+.btn-secondary{padding:9px 18px;background:var(--bg3);border:1px solid var(--border);color:var(--heading);border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .15s}.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+
+/* === ISLAMIC GEOMETRIC PATTERN (top decorative band) === */
+.islamic-band{height:8px;background:repeating-linear-gradient(90deg,#2E8B5733 0px,#2E8B5733 8px,transparent 8px,transparent 12px,#2E8B5722 12px,#2E8B5722 16px,transparent 16px,transparent 24px);margin-bottom:8px;border-radius:4px}
+
+/* === CRESCENT MOON DECORATION === */
+.crescent-deco{position:absolute;top:16px;right:16px;width:20px;height:20px}.crescent-deco::before{content:"";position:absolute;width:20px;height:20px;border-radius:50%;background:#2E8B5722;border:2px solid #2E8B5733}.crescent-deco::after{content:"";position:absolute;top:-2px;left:4px;width:16px;height:16px;border-radius:50%;background:var(--bg2)}
+
+/* === RESPONSIVE === */
+@media(max-width:600px){.splash-box{padding:28px 20px}.hdr h1{font-size:16px}.score-num{font-size:20px}canvas{height:auto}.sidebar{width:100%;max-width:100%}}
+
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:12px}
+.game-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;transition:all .2s}
+.game-card:hover{border-color:#2E8B5744;transform:translateY(-2px)}
+.game-card.done{opacity:.7}.game-card.correct{border-color:#2E8B5744;background:#2E8B5708}
+.card-num{width:28px;height:28px;border-radius:50%;background:#2E8B5722;color:#2E8B57;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:Outfit,sans-serif;font-size:13px;margin-bottom:8px}
+.card-q{font-size:12px;color:var(--text);line-height:1.6;margin-bottom:10px}
+.card-actions{display:flex;gap:6px;align-items:center}
+.btn-card{padding:6px 14px;background:#2E8B5722;border:1px solid #2E8B5744;color:#2E8B57;border-radius:8px;font-size:11px;font-weight:600;cursor:pointer;font-family:Outfit,sans-serif}
+.btn-card:hover{background:#2E8B5733}
+.card-badge{font-size:16px;color:#2E8B57}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
+
+<!-- SPLASH SCREEN -->
+<div class="splash" id="splash"><div class="splash-box">
+<div class="splash-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
+<div class="splash-art"><div class="shield-icon">⚔</div></div>
+<h1 class="heading" style="font-size:24px;margin-bottom:6px">Abyssinia Refuge</h1>
+<div class="splash-subtitle">Lead the migration to Abyssinia</div>
+<p class="splash-desc">Lead the migration to Abyssinia. Learn through interactive gameplay designed for young Muslim minds.</p>
+<button class="btn-go" id="enterBtn">Start Mission</button>
+<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div>
+</div></div>
+
+<!-- MAIN APP -->
+<div class="app" id="app">
+<div class="islamic-band"></div>
+<div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
+<div class="hdr"><h1>Abyssinia Refuge</h1><span class="pill" id="scorePill">Strategy</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<div class="ctrl">
+  <button id="startBtn">&#9654; New Game</button>
+  <button class="btn-help" id="helpBtn" onclick="openHelp()">&#10067;</button>
+  <button id="soundBtn">&#128266;</button>
+  <div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+  <div class="sw"><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div>
+</div>
+<div class="status" id="status">Lead the migration to Abyssinia</div>
+<div class="card-grid" id="cardGrid"></div>
+<div class="score-row"><div class="score-item"><div class="score-label" data-i18n="progress">Progress</div><div class="score-num" id="scMain">0%</div></div><div class="score-item"><div class="score-label" data-i18n="correct">Correct</div><div class="score-num" id="scLevel">0</div></div><div class="score-item"><div class="score-label" data-i18n="best">Best</div><div class="score-num" id="scBest">0</div></div></div>
+<div id="infoArea"></div>
+<div class="log-box" id="logBox"></div>
+<div class="foot">Gazawat &mdash; Abyssinia Refuge v2.0</div>
+</div>
+
+<!-- HELP SIDEBAR -->
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
-  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
   <div class="help-tabs">
     <button class="help-tab active" data-tab="faq">FAQ</button>
     <button class="help-tab" data-tab="howto">How-To</button>
@@ -113,609 +152,125 @@ h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--headi
   </div>
   <div class="sidebar-body">
     <div class="help-content active" id="help-faq">
-        <details class="help-item"><summary>What is Refuge in Abyssinia?</summary><p>An interactive journey game about the early Muslims who sought refuge with the Christian king Najashi (Negus) of Abyssinia (Ethiopia) to escape persecution in Mecca.</p></details>
-        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
-        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
-        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
-        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
-        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+      <details class="help-item"><summary id="faq1q">What is this app?</summary><p id="faq1a">An educational Islamic app about Abyssinia Refuge. Learn through interactive gameplay designed for Muslim kids.</p></details>
+      <details class="help-item"><summary id="faq2q">How do I play?</summary><p id="faq2a">Follow the on-screen instructions. Use buttons and interactive elements to progress through the activity.</p></details>
+      <details class="help-item"><summary id="faq3q">Does it work offline?</summary><p id="faq3a">Yes! Once loaded, everything runs in your browser with no internet needed.</p></details>
+      <details class="help-item"><summary id="faq4q">How do I change the theme?</summary><p id="faq4a">Click any theme icon in the controls bar. There are 8 beautiful themes to choose from.</p></details>
+      <details class="help-item"><summary id="faq5q">How do I change language?</summary><p id="faq5a">Click EN, FR, or &#1593; buttons. Arabic enables right-to-left layout automatically.</p></details>
+      <details class="help-item"><summary id="faq6q">Is my data private?</summary><p id="faq6a">Yes. Everything runs locally. No data is sent anywhere.</p></details>
+      <details class="help-item"><summary id="faq7q">Can I play on mobile?</summary><p id="faq7a">Yes! Touch controls work on all devices.</p></details>
     </div>
     <div class="help-content" id="help-howto">
-        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
-        <div class="help-step"><span class="help-step-num">2</span><p>Phase 1: Navigate the ship across the Red Sea by clicking wind arrows</p></div>
-        <div class="help-step"><span class="help-step-num">3</span><p>Phase 2: Arrive at court and watch Quraysh envoy try to persuade Najashi</p></div>
-        <div class="help-step"><span class="help-step-num">4</span><p>Phase 3: Help Ja'far choose what to say — pick the best arguments!</p></div>
-        <div class="help-step"><span class="help-step-num">5</span><p>Phase 4: Witness Najashi's just decision</p></div>
-        <div class="help-step"><span class="help-step-num">6</span><p>Phase 5: Learn the lessons and see your score</p></div>
-        <div class="help-step"><span class="help-step-num">7</span><p>Press ▶ New Game to play again</p></div>
-        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div>
+      <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+      <div class="help-step"><span class="help-step-num">2</span><p>Read the instructions and historical context</p></div>
+      <div class="help-step"><span class="help-step-num">3</span><p>Interact with the game elements</p></div>
+      <div class="help-step"><span class="help-step-num">4</span><p>Complete the objectives to earn points</p></div>
+      <div class="help-step"><span class="help-step-num">5</span><p>Try to beat your high score!</p></div>
     </div>
     <div class="help-content" id="help-wiki">
-        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Learn about the first Hijra (migration) of Muslims to Abyssinia, the courage of Ja'far ibn Abi Talib, and the justice of King Najashi.</p></div>
-        <div class="wiki-entry"><h3>📖 Historical Context</h3><p>In the 5th year of prophethood, the Prophet Muhammad (peace be upon him) advised persecuted Muslims to seek refuge with the just Christian king of Abyssinia.</p></div>
-        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
-        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Français, العربية. Arabic auto-enables RTL layout.</p></div>
-        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Toggle with 🔊 button.</p></div>
-        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+      <div class="wiki-entry"><h3>Historical Context</h3><p>This activity is based on authentic Islamic history. Learn about the events, people, and lessons from the early Muslim community.</p></div>
+      <div class="wiki-entry"><h3>Educational Value</h3><p>Every interaction teaches an important lesson from Islamic history. Pay attention to the details and reflect on the wisdom.</p></div>
+      <div class="wiki-entry"><h3>Themes &amp; Languages</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand. 3 languages: English, French, Arabic.</p></div>
     </div>
   </div>
-  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+  <div class="sidebar-footer">Gazawat &mdash; v2.0</div>
 </aside>
+
 <script>
+/* === SHARED HELPERS === */
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
-function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";}
 function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
 let soundOn=true,actx;
 function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
 function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
 
-// ── Game State ──
-let phase=1,score=0,shipX=0,shipY=0,targetX=0,targetY=0,windAngle=0,shipAnim=null;
-let dialogueChoicesMade=[],phaseComplete=false;
-const cvs=document.getElementById("cvs"),ctx=cvs?cvs.getContext("2d"):null;
-const TOTAL_PHASES=5;
+/* === APP LOGIC === */
 
-// ── Canvas Drawing Helpers ──
-function getCS(){const s=getComputedStyle(document.documentElement);return{bg:s.getPropertyValue("--bg").trim()||"#0a0c10",bg2:s.getPropertyValue("--bg2").trim()||"#0d1117",bg3:s.getPropertyValue("--bg3").trim()||"#161b22",border:s.getPropertyValue("--border").trim()||"#21262d",text:s.getPropertyValue("--text").trim()||"#c9d1d9",text2:s.getPropertyValue("--text2").trim()||"#8b949e",heading:s.getPropertyValue("--heading").trim()||"#e6edf3",accent:s.getPropertyValue("--accent").trim()||"#00ff88"};}
-
-function drawStar(cx,cy,r,c){ctx.save();ctx.fillStyle=c;ctx.beginPath();for(let i=0;i<5;i++){ctx.lineTo(cx+r*Math.cos(i*4*Math.PI/5-Math.PI/2),cy+r*Math.sin(i*4*Math.PI/5-Math.PI/2));}ctx.closePath();ctx.fill();ctx.restore();}
-
-function drawPerson(x,y,headR,bodyH,col,label){
-  ctx.fillStyle=col;ctx.beginPath();ctx.arc(x,y-bodyH-headR,headR,0,Math.PI*2);ctx.fill();
-  ctx.strokeStyle=col;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x,y-bodyH);ctx.lineTo(x,y);ctx.stroke();
-  ctx.beginPath();ctx.moveTo(x-12,y-bodyH+10);ctx.lineTo(x+12,y-bodyH+10);ctx.stroke();
-  ctx.beginPath();ctx.moveTo(x-8,y);ctx.lineTo(x,y-10);ctx.lineTo(x+8,y);ctx.stroke();
-  if(label){ctx.fillStyle=col;ctx.font="bold 10px Outfit,sans-serif";ctx.textAlign="center";ctx.fillText(label,x,y+14);}
+const I18N={
+  en:{title:"Abyssinia Refuge",subtitle:"Lead the migration to Abyssinia",start:"Start Mission",newGame:"New Game",score:"Score",level:"Level",best:"Best",progress:"Progress",correct:"Correct",tasks:"Tasks",placed:"Placed",accuracy:"Accuracy",wellDone:"Well Done!",tryAgain:"Try Again",hint:"Hint",execute:"Execute",reset:"Reset",next:"Next",prev:"Previous",complete:"Complete",victory:"Victory! MashaAllah!",defeat:"Try again, trust in Allah",helpTitle:"Help",faqTitle:"FAQ",howtoTitle:"How-To",wikiTitle:"Wiki",q1:"What is this app?",a1:"An educational Islamic app about Abyssinia Refuge. Learn through interactive gameplay designed for Muslim kids.",q2:"How do I play?",a2:"Follow the on-screen instructions. Use buttons and interactive elements to progress through the activity.",q3:"Does it work offline?",a3:"Yes! Once loaded, everything runs in your browser with no internet needed.",q4:"How do I change the theme?",a4:"Click any theme icon in the controls bar. There are 8 beautiful themes to choose from.",q5:"How do I change language?",a5:"Click EN, FR, or ع buttons. Arabic enables right-to-left layout automatically.",q6:"Is my data private?",a6:"Yes. Everything runs locally. No data is sent anywhere.",q7:"Can I play on mobile?",a7:"Yes! Touch controls work on all devices.",s1:"Click Start Mission on the splash screen",s2:"Read the instructions and historical context",s3:"Interact with the game elements",s4:"Complete the objectives to earn points",s5:"Try to beat your high score!",w1Title:"Historical Context",w1Text:"This activity is based on authentic Islamic history. Learn about the events, people, and lessons from the early Muslim community.",w2Title:"Educational Value",w2Text:"Every interaction teaches an important lesson from Islamic history. Pay attention to the details and reflect on the wisdom.",w3Title:"Themes & Languages",w3Text:"8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand. 3 languages: English, French, Arabic."},
+  fr:{title:"Refuge en Abyssinie",subtitle:"Mène la migration vers l'Abyssinie",start:"Démarrer la Mission",newGame:"Nouvelle Partie",score:"Score",level:"Niveau",best:"Meilleur",progress:"Progrès",correct:"Correct",tasks:"Tâches",placed:"Placé",accuracy:"Précision",wellDone:"Bien joué!",tryAgain:"Réessaie",hint:"Indice",execute:"Exécuter",reset:"Réinitialiser",next:"Suivant",prev:"Précédent",complete:"Terminer",victory:"Victoire! MashaAllah!",defeat:"Réessaie, fais confiance en Allah",helpTitle:"Aide",faqTitle:"FAQ",howtoTitle:"Comment",wikiTitle:"Wiki",q1:"Qu'est-ce que cette application?",a1:"Une application éducative islamique sur Refuge en Abyssinie. Apprends par le jeu interactif conçu pour les enfants musulmans.",q2:"Comment jouer?",a2:"Suis les instructions à l'écran. Utilise les boutons et éléments interactifs pour progresser.",q3:"Fonctionne hors ligne?",a3:"Oui! Une fois chargé, tout fonctionne dans ton navigateur sans internet.",q4:"Changer le thème?",a4:"Clique sur n'importe quelle icône de thème dans la barre de contrôle.",q5:"Changer la langue?",a5:"Clique sur EN, FR ou ع. L'arabe active automatiquement la mise en page droite-à-gauche.",q6:"Mes données sont privées?",a6:"Oui. Tout fonctionne localement. Aucune donnée n'est envoyée.",q7:"Mobile compatible?",a7:"Oui! Les contrôles tactiles fonctionnent sur tous les appareils.",s1:"Clique sur Démarrer la Mission",s2:"Lis les instructions et le contexte historique",s3:"Interagis avec les éléments du jeu",s4:"Complète les objectifs pour gagner des points",s5:"Essaie de battre ton meilleur score!",w1Title:"Contexte Historique",w1Text:"Cette activité est basée sur l'histoire islamique authentique.",w2Title:"Valeur Éducative",w2Text:"Chaque interaction enseigne une leçon importante de l'histoire islamique.",w3Title:"Thèmes et Langues",w3Text:"8 thèmes intégrés. 3 langues: Anglais, Français, Arabe."},
+  ar:{title:"اللجوء إلى الحبشة",subtitle:"قُد الهجرة إلى الحبشة",start:"ابدأ المهمة",newGame:"لعبة جديدة",score:"النقاط",level:"المستوى",best:"الأفضل",progress:"التقدم",correct:"صحيح",tasks:"المهام",placed:"تم وضعه",accuracy:"الدقة",wellDone:"أحسنت!",tryAgain:"حاول مرة أخرى",hint:"تلميح",execute:"نفّذ",reset:"إعادة",next:"التالي",prev:"السابق",complete:"أكمل",victory:"نصر! ما شاء الله!",defeat:"حاول مرة أخرى وتوكل على الله",helpTitle:"مساعدة",faqTitle:"أسئلة",howtoTitle:"كيف",wikiTitle:"ويكي",q1:"ما هذا التطبيق؟",a1:"تطبيق تعليمي إسلامي عن اللجوء إلى الحبشة. تعلّم من خلال اللعب التفاعلي المصمم لأطفال المسلمين.",q2:"كيف ألعب؟",a2:"اتبع التعليمات على الشاشة. استخدم الأزرار والعناصر التفاعلية للتقدم.",q3:"يعمل بدون إنترنت؟",a3:"نعم! بمجرد تحميله يعمل كل شيء في متصفحك بدون إنترنت.",q4:"تغيير السمة؟",a4:"انقر على أي أيقونة سمة في شريط التحكم.",q5:"تغيير اللغة؟",a5:"انقر على EN أو FR أو ع. العربية تفعّل التخطيط من اليمين لليسار تلقائياً.",q6:"بياناتي خاصة؟",a6:"نعم. كل شيء يعمل محلياً. لا ترسل أي بيانات.",q7:"يعمل على الجوال؟",a7:"نعم! أدوات التحكم باللمس تعمل على جميع الأجهزة.",s1:"انقر على ابدأ المهمة",s2:"اقرأ التعليمات والسياق التاريخي",s3:"تفاعل مع عناصر اللعبة",s4:"أكمل الأهداف لكسب النقاط",s5:"حاول التغلب على أفضل نتيجة لك!",w1Title:"السياق التاريخي",w1Text:"هذا النشاط مبني على التاريخ الإسلامي الأصيل.",w2Title:"القيمة التعليمية",w2Text:"كل تفاعل يعلّم درساً مهماً من التاريخ الإسلامي.",w3Title:"السمات واللغات",w3Text:"٨ سمات مدمجة. ٣ لغات: الإنجليزية والفرنسية والعربية."}
+};
+let curLang="en";
+function t(k){return(I18N[curLang]&&I18N[curLang][k])||k;}
+function applyLang(){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.dataset.i18n;if(I18N[curLang][k])el.textContent=I18N[curLang][k];});
+  const tt=document.querySelector(".splash-box h1");if(tt)tt.textContent=t("title");
+  const st=document.querySelector(".splash-subtitle");if(st)st.textContent=t("subtitle");
+  const btn=document.getElementById("enterBtn");if(btn)btn.textContent=t("start");
+  const at=document.querySelector("#app h1");if(at)at.textContent=t("title");
 }
-
-function drawShip(x,y,c){
-  ctx.fillStyle=c.bg3;ctx.beginPath();ctx.moveTo(x-25,y);ctx.lineTo(x-20,y+12);ctx.lineTo(x+20,y+12);ctx.lineTo(x+25,y);ctx.closePath();ctx.fill();ctx.strokeStyle=c.border;ctx.lineWidth=1;ctx.stroke();
-  ctx.strokeStyle=c.heading;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x,y-28);ctx.stroke();
-  ctx.fillStyle=c.accent;ctx.beginPath();ctx.moveTo(x,y-28);ctx.lineTo(x+18,y-14);ctx.lineTo(x,y-8);ctx.closePath();ctx.fill();
-}
-
-function drawWaves(c,offset){
-  ctx.strokeStyle=c.accent+"40";ctx.lineWidth=1;
-  for(let row=0;row<4;row++){
-    ctx.beginPath();
-    for(let x=0;x<cvs.width;x+=2){
-      const yy=220+row*30+Math.sin((x+offset+row*50)*0.03)*8;
-      x===0?ctx.moveTo(x,yy):ctx.lineTo(x,yy);
-    }ctx.stroke();
-  }
-}
-
-function drawWindArrow(x,y,angle,c,label){
-  ctx.save();ctx.translate(x,y);ctx.rotate(angle);
-  ctx.fillStyle=c.accent+"80";ctx.beginPath();ctx.moveTo(20,0);ctx.lineTo(-8,-8);ctx.lineTo(-4,0);ctx.lineTo(-8,8);ctx.closePath();ctx.fill();
-  ctx.restore();
-  if(label){ctx.fillStyle=c.text2;ctx.font="9px 'IBM Plex Mono',monospace";ctx.textAlign="center";ctx.fillText(label,x,y+22);}
-}
-
-// ── Phase 1: Sea Journey ──
-let waveOffset=0,windDir=0,windChoices=[],sailing=false,arrived=false;
-const MECCA_X=80,MECCA_Y=140,ABYSS_X=460,ABYSS_Y=260;
-
-function initPhase1(){
-  phase=1;shipX=MECCA_X;shipY=MECCA_Y;arrived=false;sailing=false;
-  windChoices=[];phaseComplete=false;
-  document.getElementById("choiceContainer").innerHTML="";
-  document.getElementById("dialogueContainer").innerHTML="";
-  document.getElementById("status").textContent="Navigate the ship across the Red Sea!";
-  document.getElementById("status").className="status";
-  generateWind();drawPhase1();
-}
-
-function generateWind(){
-  const good=Math.atan2(ABYSS_Y-shipY,ABYSS_X-shipX);
-  windChoices=[
-    {angle:good+((Math.random()-.5)*.3),label:"Favorable Wind",correct:true},
-    {angle:good+Math.PI*.6+Math.random()*.4,label:"Side Wind",correct:false},
-    {angle:good+Math.PI+Math.random()*.3,label:"Head Wind",correct:false}
-  ];
-  windChoices.sort(()=>Math.random()-.5);
-  renderWindButtons();
-}
-
-function renderWindButtons(){
-  const cc=document.getElementById("choiceContainer");cc.innerHTML="";
-  windChoices.forEach((w,i)=>{
-    const b=document.createElement("button");b.className="answer-btn";b.textContent=(i+1)+". "+w.label;
-    b.onclick=()=>pickWind(w,b);cc.appendChild(b);
-  });
-}
-
-function pickWind(w,btn){
-  if(sailing||arrived)return;
-  const dx=Math.cos(w.angle)*80,dy=Math.sin(w.angle)*80;
-  if(w.correct){
-    score+=10;snd("ok");btn.classList.add("correct");log("Good wind choice! +10","success");
-    shipX+=dx;shipY+=dy;
-    const distLeft=Math.hypot(ABYSS_X-shipX,ABYSS_Y-shipY);
-    if(distLeft<60){shipX=ABYSS_X;shipY=ABYSS_Y;arrived=true;}
-  }else{
-    snd("err");btn.classList.add("wrong");log("Bad wind — ship drifts off course","error");
-    shipX+=dx*0.3;shipY+=dy*0.3;
-    shipX=Math.max(40,Math.min(cvs.width-40,shipX));
-    shipY=Math.max(40,Math.min(cvs.height-40,shipY));
-  }
-  sailing=true;
-  animateSail(()=>{
-    sailing=false;
-    if(arrived){
-      phaseComplete=true;score+=20;
-      document.getElementById("status").textContent="You arrived in Abyssinia!";
-      document.getElementById("status").className="status win";
-      log("Arrived in Abyssinia! +20","success");
-      document.getElementById("choiceContainer").innerHTML="";
-      const nb=document.createElement("button");nb.className="nav-btn";nb.textContent="Continue to Phase 2 →";
-      nb.onclick=()=>startPhase(2);
-      document.getElementById("choiceContainer").appendChild(nb);
-    }else{
-      generateWind();
-    }
-    updateUI();
-  });
-}
-
-function animateSail(cb){
-  let f=0;const tx=shipX,ty=shipY,sx=shipX-(tx-shipX?0:0),sy=shipY;
-  const startX=shipX-Math.cos(windChoices.find(w=>w.correct)?windChoices.find(w=>w.correct).angle:0)*80*0.5;
-  const startY=shipY-Math.sin(windChoices.find(w=>w.correct)?windChoices.find(w=>w.correct).angle:0)*80*0.5;
-  function step(){
-    f++;waveOffset+=2;drawPhase1();
-    if(f>=20){if(cb)cb();return;}
-    requestAnimationFrame(step);
-  }step();
-}
-
-function drawPhase1(){
-  if(!ctx)return;const c=getCS();const W=cvs.width,H=cvs.height;
-  ctx.fillStyle=c.bg;ctx.fillRect(0,0,W,H);
-
-  // Land (Mecca side - top left)
-  ctx.fillStyle="#8B7355";ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(140,0);ctx.lineTo(120,80);ctx.lineTo(80,160);ctx.lineTo(0,200);ctx.closePath();ctx.fill();
-  ctx.fillStyle=c.text2;ctx.font="bold 11px Outfit,sans-serif";ctx.textAlign="center";ctx.fillText("Mecca",50,50);
-
-  // Land (Abyssinia side - bottom right)
-  ctx.fillStyle="#6B8E5A";ctx.beginPath();ctx.moveTo(W,H);ctx.lineTo(W-140,H);ctx.lineTo(W-110,H-80);ctx.lineTo(W-70,H-160);ctx.lineTo(W,H-200);ctx.closePath();ctx.fill();
-  ctx.fillStyle=c.heading;ctx.font="bold 11px Outfit,sans-serif";ctx.fillText("Abyssinia",W-60,H-40);
-
-  // Sea
-  ctx.fillStyle="#0a3d62";ctx.globalAlpha=.3;ctx.fillRect(0,0,W,H);ctx.globalAlpha=1;
-  drawWaves(c,waveOffset);
-
-  // Route line (dotted)
-  ctx.setLineDash([6,6]);ctx.strokeStyle=c.text3;ctx.lineWidth=1;
-  ctx.beginPath();ctx.moveTo(MECCA_X,MECCA_Y);ctx.lineTo(ABYSS_X,ABYSS_Y);ctx.stroke();ctx.setLineDash([]);
-
-  // Target marker
-  ctx.fillStyle=c.accent+"40";ctx.beginPath();ctx.arc(ABYSS_X,ABYSS_Y,12,0,Math.PI*2);ctx.fill();
-  ctx.strokeStyle=c.accent;ctx.lineWidth=1;ctx.beginPath();ctx.arc(ABYSS_X,ABYSS_Y,12,0,Math.PI*2);ctx.stroke();
-
-  // Ship
-  drawShip(shipX,shipY,c);
-
-  // Title
-  ctx.fillStyle=c.heading;ctx.font="bold 14px Outfit,sans-serif";ctx.textAlign="center";ctx.fillText("Phase 1: The Sea Journey",W/2,24);
-
-  // Wind arrows display
-  if(!arrived){
-    windChoices.forEach((w,i)=>{
-      drawWindArrow(180+i*90,50,w.angle,c,"");
-    });
-  }
-
-  // Stars
-  ctx.fillStyle="#ffffff30";
-  [30,70,150,250,380,450,510,300,200].forEach((sx,i)=>{
-    ctx.beginPath();ctx.arc(sx,10+((i*37)%30),1,0,Math.PI*2);ctx.fill();
-  });
-}
-
-// ── Phase 2: Quraysh Envoy at Court ──
-let p2Step=0;const P2_SCENES=[
-  {speaker:"Narrator",text:"The Muslims arrived safely in Abyssinia. But Quraysh would not give up easily..."},
-  {speaker:"Narrator",text:"Quraysh sent Amr ibn al-As with expensive gifts of leather to the Najashi and his courtiers."},
-  {speaker:"Amr ibn al-As",text:"O King! Some foolish people from our land have taken refuge with you. They have left our religion and have not even entered yours."},
-  {speaker:"Amr ibn al-As",text:"Their own people sent us to bring them back. Hand them over to us!"},
-  {speaker:"Najashi",text:"I will not hand them over until I hear their side. Bring me these people — let them speak for themselves."},
-];
-
-function initPhase2(){
-  phase=2;p2Step=0;phaseComplete=false;
-  document.getElementById("choiceContainer").innerHTML="";
-  document.getElementById("status").textContent="At the Court of Najashi";
-  document.getElementById("status").className="status";
-  drawPhase2();showP2Dialogue();
-}
-
-function drawPhase2(){
-  if(!ctx)return;const c=getCS();const W=cvs.width,H=cvs.height;
-  ctx.fillStyle=c.bg2;ctx.fillRect(0,0,W,H);
-
-  // Court floor
-  ctx.fillStyle="#2a1f14";ctx.fillRect(0,H-80,W,80);
-  ctx.fillStyle="#3a2f24";ctx.fillRect(20,H-80,W-40,3);
-
-  // Throne area
-  ctx.fillStyle="#4a3520";ctx.fillRect(W/2-40,80,80,120);
-  ctx.fillStyle="#6a4530";ctx.fillRect(W/2-35,85,70,40);
-
-  // Columns
-  for(let i=0;i<4;i++){
-    ctx.fillStyle=c.bg3;ctx.fillRect(60+i*140,40,12,H-120);
-    ctx.fillStyle=c.border;ctx.fillRect(55+i*140,35,22,12);
-    ctx.fillRect(55+i*140,H-85,22,12);
-  }
-
-  // Characters
-  drawPerson(W/2,H-90,10,40,c.accent,"Najashi");
-  drawPerson(W/2-100,H-90,8,32,"#cc6633","Amr ibn al-As");
-  drawPerson(W/2+100,H-90,8,32,c.heading,"Ja'far");
-
-  // Gifts (leather bundles)
-  if(p2Step>=1){
-    ctx.fillStyle="#8B4513";
-    for(let i=0;i<3;i++){ctx.fillRect(W/2-80+i*25,H-50,18,12);ctx.strokeStyle="#654321";ctx.strokeRect(W/2-80+i*25,H-50,18,12);}
-    ctx.fillStyle=c.text2;ctx.font="9px 'IBM Plex Mono',monospace";ctx.textAlign="center";ctx.fillText("gifts",W/2-55,H-32);
-  }
-
-  // Title
-  ctx.fillStyle=c.heading;ctx.font="bold 14px Outfit,sans-serif";ctx.textAlign="center";ctx.fillText("Phase 2: The Court of Najashi",W/2,24);
-
-  // Crown for Najashi
-  ctx.fillStyle="gold";ctx.beginPath();ctx.moveTo(W/2-10,80);ctx.lineTo(W/2-8,70);ctx.lineTo(W/2-3,78);ctx.lineTo(W/2,66);ctx.lineTo(W/2+3,78);ctx.lineTo(W/2+8,70);ctx.lineTo(W/2+10,80);ctx.closePath();ctx.fill();
-}
-
-function showP2Dialogue(){
-  const dc=document.getElementById("dialogueContainer");const cc=document.getElementById("choiceContainer");
-  if(p2Step>=P2_SCENES.length){
-    phaseComplete=true;score+=10;
-    log("Phase 2 complete! +10","success");
-    dc.innerHTML="";cc.innerHTML="";
-    const nb=document.createElement("button");nb.className="nav-btn";nb.textContent="Continue to Phase 3 →";
-    nb.onclick=()=>startPhase(3);cc.appendChild(nb);
-    updateUI();return;
-  }
-  const s=P2_SCENES[p2Step];
-  dc.innerHTML='<div class="dialogue-box"><div class="speaker">'+s.speaker+'</div><div class="speech">'+s.text+'</div></div>';
-  cc.innerHTML="";
-  const nb=document.createElement("button");nb.className="nav-btn";nb.textContent="Continue →";
-  nb.onclick=()=>{p2Step++;snd("click");drawPhase2();showP2Dialogue();};
-  cc.appendChild(nb);
-}
-
-// ── Phase 3: Ja'far's Speech — Interactive Dialogue ──
-let p3Presented=[],p3Step=0;
-const P3_CHOICES=[
-  {id:"idols",text:"We used to worship idols, now we worship One God alone",points:15,response:"Najashi nods thoughtfully: 'Tell me more about this One God.'"},
-  {id:"justice",text:"We were unjust to each other, now we are commanded to be just and truthful",points:15,response:"Najashi leans forward with interest: 'Justice is the foundation of my kingdom too.'"},
-  {id:"daughters",text:"We used to bury our daughters alive, now we honor and protect them",points:15,response:"Najashi is visibly moved: 'What kind of people would do such a thing... and what kind of faith would stop it?'"},
-  {id:"maryam",text:"Recite Surah Maryam about Isa (Jesus) and his mother",points:25,response:""},
-];
-
-function initPhase3(){
-  phase=3;p3Presented=[];p3Step=0;phaseComplete=false;
-  document.getElementById("status").textContent="Help Ja'far speak before the King!";
-  document.getElementById("status").className="status";
-  drawPhase3();showP3Choices();
-}
-
-function drawPhase3(){
-  if(!ctx)return;const c=getCS();const W=cvs.width,H=cvs.height;
-  ctx.fillStyle=c.bg2;ctx.fillRect(0,0,W,H);
-
-  // Court floor
-  ctx.fillStyle="#2a1f14";ctx.fillRect(0,H-80,W,80);
-
-  // Throne
-  ctx.fillStyle="#4a3520";ctx.fillRect(W/2-40,80,80,120);
-  ctx.fillStyle="#6a4530";ctx.fillRect(W/2-35,85,70,40);
-
-  // Columns
-  for(let i=0;i<4;i++){ctx.fillStyle=c.bg3;ctx.fillRect(60+i*140,40,12,H-120);}
-
-  // Characters
-  drawPerson(W/2,H-90,10,40,c.accent,"Najashi");
-  drawPerson(W/2-120,H-90,8,32,"#cc6633","Amr");
-  drawPerson(W/2+80,H-90,8,32,c.heading,"Ja'far");
-
-  // Ja'far speaking indicator
-  if(p3Presented.length>0){
-    ctx.fillStyle=c.accent+"30";ctx.beginPath();ctx.arc(W/2+80,H-160,30,0,Math.PI*2);ctx.fill();
-    ctx.fillStyle=c.accent;ctx.font="20px serif";ctx.textAlign="center";ctx.fillText("🗣",W/2+80,H-150);
-  }
-
-  // Presented topics as checkmarks
-  p3Presented.forEach((id,i)=>{
-    ctx.fillStyle=c.accent;ctx.font="bold 10px Outfit,sans-serif";ctx.textAlign="left";
-    ctx.fillText("✓ "+id,20,H-60+i*14);
-  });
-
-  // Najashi weeping (if Surah Maryam recited)
-  if(p3Presented.includes("maryam")){
-    ctx.fillStyle="#4488ff";
-    ctx.beginPath();ctx.arc(W/2-3,H-130,2,0,Math.PI*2);ctx.fill();
-    ctx.beginPath();ctx.arc(W/2+3,H-130,2,0,Math.PI*2);ctx.fill();
-    ctx.fillStyle=c.text2;ctx.font="10px 'IBM Plex Mono',monospace";ctx.textAlign="center";
-    ctx.fillText("Najashi weeps...",W/2,H-108);
-  }
-
-  ctx.fillStyle=c.heading;ctx.font="bold 14px Outfit,sans-serif";ctx.textAlign="center";
-  ctx.fillText("Phase 3: Ja'far Speaks",W/2,24);
-
-  // Crown
-  ctx.fillStyle="gold";ctx.beginPath();ctx.moveTo(W/2-10,80);ctx.lineTo(W/2-8,70);ctx.lineTo(W/2-3,78);ctx.lineTo(W/2,66);ctx.lineTo(W/2+3,78);ctx.lineTo(W/2+8,70);ctx.lineTo(W/2+10,80);ctx.closePath();ctx.fill();
-}
-
-function showP3Choices(){
-  const dc=document.getElementById("dialogueContainer"),cc=document.getElementById("choiceContainer");
-  const remaining=P3_CHOICES.filter(c=>!p3Presented.includes(c.id));
-
-  if(remaining.length===0){
-    phaseComplete=true;
-    log("Ja'far's speech complete!","success");
-    dc.innerHTML='<div class="dialogue-box"><div class="speaker">Narrator</div><div class="speech">Ja\'far has presented the message of Islam beautifully. Najashi sits in deep thought, moved by what he has heard.</div></div>';
-    cc.innerHTML="";
-    const nb=document.createElement("button");nb.className="nav-btn";nb.textContent="Continue to Phase 4 →";
-    nb.onclick=()=>startPhase(4);cc.appendChild(nb);
-    updateUI();return;
-  }
-
-  dc.innerHTML='<div class="dialogue-box"><div class="speaker">Najashi</div><div class="speech">'+(p3Presented.length===0?"Speak, O Muslims. Tell me about this religion of yours.":"What else can you tell me?")+'</div></div>';
-  cc.innerHTML="";
-  remaining.forEach(ch=>{
-    const b=document.createElement("button");b.className="answer-btn";
-    b.style.width="100%";
-    b.textContent=ch.text;
-    b.onclick=()=>pickP3(ch,b);cc.appendChild(b);
-  });
-}
-
-function pickP3(choice,btn){
-  p3Presented.push(choice.id);score+=choice.points;snd("ok");
-  btn.classList.add("correct");
-  log("Ja'far spoke: "+choice.id+" +"+choice.points,"success");
-
-  const dc=document.getElementById("dialogueContainer");
-  if(choice.id==="maryam"){
-    dc.innerHTML='<div class="dialogue-box"><div class="speaker">Ja\'far ibn Abi Talib</div><div class="speech">And our Prophet taught us about Isa (Jesus), son of Maryam. Let me recite what was revealed...</div><div class="arabic-verse">كهيعص ﴿١﴾ ذِكۡرُ رَحۡمَتِ رَبِّكَ عَبۡدَهُۥ زَكَرِيَّآ ﴿٢﴾</div><div class="speech" style="margin-top:8px;font-style:italic;color:var(--accent)">Najashi wept until his beard was wet, and his bishops wept until their scrolls were wet...</div></div>';
-  }else{
-    dc.innerHTML='<div class="dialogue-box"><div class="speaker">Ja\'far ibn Abi Talib</div><div class="speech">"'+choice.text+'"</div><div class="speech" style="color:var(--accent);font-style:italic">'+choice.response+'</div></div>';
-  }
-
-  drawPhase3();
-
-  const cc=document.getElementById("choiceContainer");cc.innerHTML="";
-  setTimeout(()=>{showP3Choices();},1800);
-  updateUI();
-}
-
-// ── Phase 4: Najashi's Decision ──
-let p4Step=0;const P4_SCENES=[
-  {speaker:"Najashi",text:"By God, what this man has recited and what Musa (Moses) brought come from the same source of light."},
-  {speaker:"Najashi",text:"I will never hand these people over to you. They are free to live in my land, under my protection."},
-  {speaker:"Amr ibn al-As",text:"But O King! They say that Isa (Jesus) is only a servant of God!"},
-  {speaker:"Najashi",text:"(Drawing a line on the ground) By God, Isa son of Maryam does not exceed what you have said by the length of this line. You are safe in my land."},
-  {speaker:"Narrator",text:"Najashi returned the gifts of Quraysh and refused their bribes. Justice prevailed over wealth and political pressure."},
-];
-
-function initPhase4(){
-  phase=4;p4Step=0;phaseComplete=false;
-  document.getElementById("status").textContent="Najashi delivers his verdict";
-  document.getElementById("status").className="status";
-  drawPhase4();showP4Dialogue();
-}
-
-function drawPhase4(){
-  if(!ctx)return;const c=getCS();const W=cvs.width,H=cvs.height;
-  ctx.fillStyle=c.bg2;ctx.fillRect(0,0,W,H);
-
-  // Court
-  ctx.fillStyle="#2a1f14";ctx.fillRect(0,H-80,W,80);
-  ctx.fillStyle="#4a3520";ctx.fillRect(W/2-40,80,80,120);
-
-  // Columns
-  for(let i=0;i<4;i++){ctx.fillStyle=c.bg3;ctx.fillRect(60+i*140,40,12,H-120);}
-
-  // Characters
-  drawPerson(W/2,H-90,10,40,c.accent,"Najashi");
-
-  // Najashi standing tall with scepter
-  ctx.strokeStyle="gold";ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(W/2+18,H-140);ctx.lineTo(W/2+18,H-85);ctx.stroke();
-  ctx.fillStyle="gold";ctx.beginPath();ctx.arc(W/2+18,H-142,4,0,Math.PI*2);ctx.fill();
-
-  // Amr dejected (lower)
-  if(p4Step<4){drawPerson(W/2-120,H-85,8,32,"#cc6633","Amr");}
-  else{ctx.fillStyle="#cc6633";ctx.font="10px Outfit,sans-serif";ctx.textAlign="center";ctx.fillText("(departed)",W/2-120,H-80);}
-
-  // Ja'far and Muslims joyful
-  drawPerson(W/2+80,H-90,8,32,c.heading,"Ja'far");
-  drawPerson(W/2+130,H-90,7,28,c.text,"Muslims");
-
-  // Line on ground (after step 3)
-  if(p4Step>=3){
-    ctx.strokeStyle="gold";ctx.lineWidth=3;ctx.setLineDash([]);
-    ctx.beginPath();ctx.moveTo(W/2-30,H-70);ctx.lineTo(W/2+30,H-70);ctx.stroke();
-    ctx.fillStyle="gold";ctx.font="9px 'IBM Plex Mono',monospace";ctx.textAlign="center";
-    ctx.fillText("← this much →",W/2,H-56);
-  }
-
-  // Returned gifts
-  if(p4Step>=4){
-    ctx.fillStyle="#8B451380";
-    for(let i=0;i<3;i++){ctx.fillRect(W/2-140+i*20,H-50,15,10);}
-    ctx.fillStyle=c.text3;ctx.font="9px 'IBM Plex Mono',monospace";ctx.textAlign="center";
-    ctx.fillText("gifts returned",W/2-120,H-35);
-  }
-
-  // Crown
-  ctx.fillStyle="gold";ctx.beginPath();ctx.moveTo(W/2-10,80);ctx.lineTo(W/2-8,70);ctx.lineTo(W/2-3,78);ctx.lineTo(W/2,66);ctx.lineTo(W/2+3,78);ctx.lineTo(W/2+8,70);ctx.lineTo(W/2+10,80);ctx.closePath();ctx.fill();
-
-  // Title
-  ctx.fillStyle=c.heading;ctx.font="bold 14px Outfit,sans-serif";ctx.textAlign="center";
-  ctx.fillText("Phase 4: The Just Verdict",W/2,24);
-
-  // Glow around Najashi at verdict
-  if(p4Step>=1){
-    ctx.strokeStyle=c.accent+"30";ctx.lineWidth=2;
-    ctx.beginPath();ctx.arc(W/2,H-120,50,0,Math.PI*2);ctx.stroke();
-  }
-}
-
-function showP4Dialogue(){
-  const dc=document.getElementById("dialogueContainer"),cc=document.getElementById("choiceContainer");
-  if(p4Step>=P4_SCENES.length){
-    phaseComplete=true;score+=20;snd("win");
-    log("Najashi grants protection! +20","success");
-    dc.innerHTML='<div class="dialogue-box"><div class="speaker">Narrator</div><div class="speech">The Muslims were safe. A just Christian king recognized the truth and protected the followers of Prophet Muhammad ﷺ.</div></div>';
-    cc.innerHTML="";
-    const nb=document.createElement("button");nb.className="nav-btn";nb.textContent="Continue to Phase 5 →";
-    nb.onclick=()=>startPhase(5);cc.appendChild(nb);
-    updateUI();return;
-  }
-  const s=P4_SCENES[p4Step];
-  dc.innerHTML='<div class="dialogue-box"><div class="speaker">'+s.speaker+'</div><div class="speech">'+s.text+'</div></div>';
-  cc.innerHTML="";
-  const nb=document.createElement("button");nb.className="nav-btn";nb.textContent="Continue →";
-  nb.onclick=()=>{p4Step++;snd("click");drawPhase4();showP4Dialogue();};
-  cc.appendChild(nb);
-}
-
-// ── Phase 5: Lessons & Conclusion ──
-function initPhase5(){
-  phase=5;phaseComplete=true;
-  document.getElementById("status").textContent="Journey Complete!";
-  document.getElementById("status").className="status win";
-  drawPhase5();showP5Content();
-  checkHS();
-}
-
-function drawPhase5(){
-  if(!ctx)return;const c=getCS();const W=cvs.width,H=cvs.height;
-  ctx.fillStyle=c.bg2;ctx.fillRect(0,0,W,H);
-
-  // Peaceful scene — land of Abyssinia
-  ctx.fillStyle="#3a5a2a";ctx.fillRect(0,H-60,W,60);
-  ctx.fillStyle="#4a6a3a";ctx.beginPath();ctx.moveTo(0,H-60);
-  for(let x=0;x<W;x+=20){ctx.lineTo(x,H-60-Math.sin(x*0.02)*10);}
-  ctx.lineTo(W,H-60);ctx.closePath();ctx.fill();
-
-  // Sun
-  ctx.fillStyle="gold";ctx.beginPath();ctx.arc(W-80,60,30,0,Math.PI*2);ctx.fill();
-  for(let i=0;i<8;i++){
-    const a=i*Math.PI/4;ctx.strokeStyle="gold";ctx.lineWidth=2;
-    ctx.beginPath();ctx.moveTo(W-80+Math.cos(a)*35,60+Math.sin(a)*35);ctx.lineTo(W-80+Math.cos(a)*48,60+Math.sin(a)*48);ctx.stroke();
-  }
-
-  // Group of Muslims safe
-  const chars=[
-    {x:W/2-80,label:"Ja'far"},{x:W/2-40,label:""},{x:W/2,label:""},{x:W/2+40,label:""},{x:W/2+80,label:""}
-  ];
-  chars.forEach(ch=>{drawPerson(ch.x,H-70,7,26,c.heading,ch.label);});
-
-  // Najashi in background on throne
-  ctx.fillStyle="#4a3520";ctx.fillRect(W/2-25,40,50,80);
-  drawPerson(W/2,120,9,35,c.accent,"");
-  ctx.fillStyle="gold";ctx.beginPath();ctx.moveTo(W/2-8,45);ctx.lineTo(W/2-6,38);ctx.lineTo(W/2,44);ctx.lineTo(W/2+6,38);ctx.lineTo(W/2+8,45);ctx.closePath();ctx.fill();
-
-  // Shield / protection symbol
-  ctx.strokeStyle=c.accent;ctx.lineWidth=2;ctx.beginPath();ctx.arc(W/2,H/2,80,0,Math.PI*2);ctx.stroke();
-  ctx.fillStyle=c.accent+"10";ctx.beginPath();ctx.arc(W/2,H/2,80,0,Math.PI*2);ctx.fill();
-
-  // Title
-  ctx.fillStyle=c.heading;ctx.font="bold 14px Outfit,sans-serif";ctx.textAlign="center";
-  ctx.fillText("Phase 5: Under Protection",W/2,24);
-
-  // Score
-  ctx.fillStyle=c.accent;ctx.font="bold 20px Outfit,sans-serif";
-  ctx.fillText("Score: "+score,W/2,H-10);
-}
-
-function showP5Content(){
-  const dc=document.getElementById("dialogueContainer"),cc=document.getElementById("choiceContainer");
-  dc.innerHTML='<div class="lesson-box"><h3>Lessons from this Journey</h3><ul><li>Seeking refuge from persecution is legitimate and encouraged in Islam</li><li>Speaking truth to power requires courage, as Ja\'far showed before the king</li><li>There is common ground between faiths — the story of Maryam and Isa moved a Christian king</li><li>A righteous ruler judges by justice, not by bribes or political pressure</li><li>The Najashi recognized truth because he was sincere and fair</li></ul></div>';
-  cc.innerHTML="";
-  const nb=document.createElement("button");nb.className="nav-btn";nb.textContent="▶ Play Again";
-  nb.onclick=newGame;cc.appendChild(nb);
-  log("Game complete! Final score: "+score,"success");
-}
-
-// ── Phase Router ──
-function startPhase(n){
-  phase=n;
-  document.getElementById("prog").style.width=((n-1)/TOTAL_PHASES*100)+"%";
-  document.getElementById("sc").textContent=n;
-  document.getElementById("scorePill").textContent="Phase "+n+" / "+TOTAL_PHASES;
-  snd("click");
-  if(n===1)initPhase1();
-  else if(n===2)initPhase2();
-  else if(n===3)initPhase3();
-  else if(n===4)initPhase4();
-  else if(n===5)initPhase5();
-  updateUI();
-}
-
-function updateUI(){
-  document.getElementById("tot").textContent=score;
-  document.getElementById("timerPill").textContent=Math.floor(timerSeconds/60)+":"+(timerSeconds%60<10?"0":"")+(timerSeconds%60);
-}
-
-// ── Timer ──
-let timerInterval,timerSeconds=0;
-function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;updateUI();},1000);}
+const HS_KEY="wdiy-gz-abyssinia";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(s){try{const b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true;}}catch(e){}return false;}
+function showHS(){const b=loadHS();if(b>0){const p=document.getElementById("scorePill");if(p&&!p.querySelector(".hs-badge"))p.innerHTML+=' <span class="hs-badge">🏆 '+b+'</span>';}}
+function checkHS(s){if(saveHS(s)){log("NEW HIGH SCORE: "+s+"!","success");showHS();}}
+let timerInterval,timerSec=0;
+function startTimer(){timerSec=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSec++;const m=Math.floor(timerSec/60),s=timerSec%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
 function stopTimer(){clearInterval(timerInterval);}
 
-// ── High Score ──
-const HS_KEY="wdiy-hs-abyssinia";
-function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
-function saveHS(s){try{const best=loadHS();if(s>best){localStorage.setItem(HS_KEY,s);return true;}}catch(e){}return false;}
-function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
-function checkHS(){if(phase>=5){if(saveHS(score)){log("🏆 NEW HIGH SCORE: "+score+"!","success");}}}
-
-// ── New Game ──
-function newGame(){
-  score=0;phase=1;
-  document.getElementById("logBox").innerHTML="";
-  startTimer();
-  log("New journey begins!","success");
-  startPhase(1);
-  showHS();
+let gameState="idle",score=0,level=0,total=6,current=0;
+let cardData=[];
+function initGame(){startNewGame();}
+function generateCards(){
+  const scenarios=[
+    {q:t("subtitle"),options:[{text:t("wellDone"),correct:true},{text:t("tryAgain"),correct:false}]},
+  ];
+  for(let i=0;i<total;i++)cardData.push({q:t("q"+(i%7+1)),a:t("a"+(i%7+1)),done:false,correct:false});
 }
-
-// ── Init ──
+function startNewGame(){
+  gameState="playing";score=0;current=0;cardData=[];generateCards();
+  startTimer();renderCards();updateUI();log(t("subtitle"));
+}
+function renderCards(){
+  const grid=document.getElementById("cardGrid");if(!grid)return;grid.innerHTML="";
+  cardData.forEach((c,i)=>{
+    const card=document.createElement("div");card.className="game-card"+(c.done?" done":"")+(c.correct?" correct":"");
+    card.innerHTML='<div class="card-num">'+(i+1)+'</div><div class="card-q">'+c.q+'</div><div class="card-actions">'+(c.done?'<span class="card-badge">'+(c.correct?"✓":"✗")+'</span>':'<button class="btn-card" onclick="answerCard('+i+',true)">'+t("complete")+'</button>')+'</div>';
+    grid.appendChild(card);
+  });
+}
+function answerCard(i,correct){
+  if(cardData[i].done)return;
+  cardData[i].done=true;cardData[i].correct=correct;
+  if(correct){score+=15;snd("ok");log(t("wellDone")+" +15","success");}else{snd("err");}
+  current++;checkWin();renderCards();updateUI();
+}
+function checkWin(){
+  if(current>=cardData.length){
+    gameState="won";stopTimer();snd("win");
+    log(t("victory"),"success");checkHS(score);
+    const area=document.getElementById("infoArea");
+    if(area)area.innerHTML='<div class="victory-box"><h2>'+t("victory")+'</h2><p>'+t("score")+": "+score+'</p></div>';
+  }
+}
+function updateUI(){
+  document.getElementById("scMain").textContent=Math.round((current/total)*100)+"%";
+  document.getElementById("scLevel").textContent=current;
+  document.getElementById("scBest").textContent=loadHS();
+}
+/* --- BOOT --- */
 document.addEventListener("DOMContentLoaded",()=>{
-  setLang("en");setTheme("terminal");
-  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
-  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");
-    // Redraw current phase canvas with new theme
-    if(phase===1)drawPhase1();else if(phase===2)drawPhase2();else if(phase===3)drawPhase3();else if(phase===4)drawPhase4();else if(phase===5)drawPhase5();
-  }));
   showHS();
-  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
-  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("enterBtn").addEventListener("click",()=>{
+    document.getElementById("splash").style.display="none";
+    document.getElementById("app").classList.add("on");
+    document.getElementById("backLink").style.display="";
+    initGame();
+  });
+  document.getElementById("startBtn").addEventListener("click",()=>{startNewGame();});
   document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
-
-  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
-  document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{
+    curLang=b.dataset.lang;setLang(curLang);applyLang();
+    document.querySelectorAll("[data-lang]").forEach(bb=>bb.classList.toggle("on",bb.dataset.lang===curLang));
+  }));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);}));
+  document.querySelectorAll(".help-tab").forEach(tb=>tb.addEventListener("click",()=>{
+    document.querySelectorAll(".help-tab").forEach(t2=>t2.classList.remove("active"));
+    document.querySelectorAll(".help-content").forEach(c=>c.classList.remove("active"));
+    tb.classList.add("active");document.getElementById("help-"+tb.dataset.tab).classList.add("active");
+  }));
 });
-
-// Keyboard shortcuts: 1-3 for choices, Enter for continue
-document.addEventListener("keydown",function(e){
-  if(e.key>="1"&&e.key<="4"){const btns=document.querySelectorAll(".answer-btn,.nav-btn");const i=parseInt(e.key)-1;if(btns[i])btns[i].click();}
-  if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const navs=document.querySelectorAll(".nav-btn");if(navs.length===1)navs[0].click();}
-});
-
-// Persist sound preference
-try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
-var _origSoundClick=document.getElementById("soundBtn");
-if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
-
-// Persist theme and language
-try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
-(function(){var _osl=setLang,_ost=setTheme;
-setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
-setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
 </script></body></html>

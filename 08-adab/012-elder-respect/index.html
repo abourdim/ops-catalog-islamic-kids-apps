@@ -1,28 +1,374 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Elder Respect — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}.app{display:none;max-width:560px;margin:0 auto;padding:12px 16px}.app.on{display:block}.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}.hdr h1{font-size:18px}.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}.ctrl button:hover{border-color:var(--abr)}.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}.status.win{color:var(--accent)}.status.lose{color:#ff4444}.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}.answer-btn{padding:12px 20px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .15s;min-width:120px;text-align:center}.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif}.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3)}.score-num{font-size:22px;font-weight:700;color:var(--heading)}.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:100px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.btn-close:hover{border-color:var(--accent);color:var(--accent)}.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}.help-content{display:none}.help-content.active{display:block}.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}.help-item summary::before{content:"\25B8";color:var(--accent);font-size:10px;transition:transform .2s}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}.btn-help:hover{border-color:var(--accent);color:var(--accent)}.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}.scenario-box{font-size:12px;color:var(--text);line-height:1.7;text-align:center;max-width:440px;padding:14px;background:var(--bg3);border:1px solid var(--border);border-radius:10px}.scenario-emoji{font-size:32px;margin-bottom:8px}.feedback-box{font-size:12px;color:var(--text);line-height:1.6;text-align:center;max-width:420px;padding:10px 14px;background:var(--abg);border:1px solid var(--abr);border-radius:10px;animation:fadeUp .3s}.feedback-box strong{color:var(--accent)}.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;width:100%;max-width:500px}.card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;cursor:pointer;transition:all .15s}.card:hover{border-color:var(--accent);transform:translateY(-2px)}.card.active{border-color:var(--accent);background:var(--abg)}.card-emoji{font-size:28px;margin-bottom:6px}.card-title{font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;color:var(--heading)}.card-sub{font-size:10px;color:var(--text2);margin-top:2px}.detail-box{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:16px;max-width:460px;width:100%;text-align:center}.detail-box h3{font-family:'Outfit',sans-serif;font-size:16px;color:var(--heading);margin-bottom:8px}.detail-box p{font-size:11px;color:var(--text2);line-height:1.7;margin-bottom:6px}.lesson-box{text-align:center;padding:16px;max-width:420px}.lesson-box h2{font-family:'Outfit',sans-serif;font-size:20px;color:var(--heading);margin-bottom:10px}.lesson-box p{font-size:12px;color:var(--text2);line-height:1.7;margin-bottom:8px}</style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّـهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px" id="splashTitle">Elder Respect</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px" id="splashSub">Honoring Elders</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px" id="splashDesc">Scenarios teaching respect for elders in Islam.</p><button class="btn-go" id="enterBtn">Start</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّـهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1 id="appTitle">Elder Respect</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><button id="startBtn">▶ New Game</button><button class="btn-help" onclick="openHelp()">❓</button><button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div><div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
-<div class="status" id="status"></div>
-<div class="game-area" id="gameArea"><div id="question"></div><div class="answer-row" id="choices"></div><div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div></div>
-<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">Total</div><div class="score-num" id="tot">0</div></div></div>
-<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Elder Respect v1.0</div></div>
-<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
-<aside class="sidebar sidebar-left" id="helpPanel" role="dialog" aria-modal="true"><div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div><div class="sidebar-body"><div class="help-content active" id="help-faq"><details class="help-item"><summary>What is this?</summary><p>Interactive quiz on Elder Respect.</p></details><details class="help-item"><summary>Works offline?</summary><p>Yes, fully offline.</p></details><details class="help-item"><summary>Change theme?</summary><p>Click theme icons.</p></details><details class="help-item"><summary>Change language?</summary><p>Click EN/FR/ع.</p></details></div><div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>Click Start</p></div><div class="help-step"><span class="help-step-num">2</span><p>Read the scenario</p></div><div class="help-step"><span class="help-step-num">3</span><p>Choose the best answer</p></div><div class="help-step"><span class="help-step-num">4</span><p>Learn the Islamic teaching</p></div><div class="help-step"><span class="help-step-num">5</span><p>Complete all questions</p></div></div><div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>Respect</h3><p>Islam places great emphasis on honoring elders.</p></div><div class="wiki-entry"><h3>Hadith</h3><p>The Prophet said: He is not one of us who does not respect our elders.</p></div></div></div><div class="sidebar-footer">Workshop-DIY — v1.0</div></aside>
-<script>
-var DATA=[{"emoji":"🧓","q":{"en":"An elderly person enters the room. What do you do?","fr":"An elderly person enters the room. What do you do?","ar":"An elderly person enters the room. What do you do?"},"o":[{"t":{"en":"Stand up and offer your seat","fr":"Stand up and offer your seat","ar":"Stand up and offer your seat"},"c":true},{"t":{"en":"Stay seated","fr":"Stay seated","ar":"Stay seated"},"c":false},{"t":{"en":"Ignore them","fr":"Ignore them","ar":"Ignore them"},"c":false}],"fb":{"en":"The Prophet ﷺ said: He is not one of us who does not show mercy to our young and respect to our elders.","fr":"The Prophet ﷺ said: He is not one of us who does not show mercy to our young and respect to our elders.","ar":"The Prophet ﷺ said: He is not one of us who does not show mercy to our young and respect to our elders."}},{"emoji":"🚗","q":{"en":"You see an elderly person struggling to cross the street.","fr":"You see an elderly person struggling to cross the street.","ar":"You see an elderly person struggling to cross the street."},"o":[{"t":{"en":"Help them across safely","fr":"Help them across safely","ar":"Help them across safely"},"c":true},{"t":{"en":"Walk past quickly","fr":"Walk past quickly","ar":"Walk past quickly"},"c":false},{"t":{"en":"Watch from afar","fr":"Watch from afar","ar":"Watch from afar"},"c":false}],"fb":{"en":"Helping the elderly is a noble act. The Prophet ﷺ honored elders and taught us to assist them.","fr":"Helping the elderly is a noble act. The Prophet ﷺ honored elders and taught us to assist them.","ar":"Helping the elderly is a noble act. The Prophet ﷺ honored elders and taught us to assist them."}},{"emoji":"🗣","q":{"en":"An elder is speaking. What should you do?","fr":"An elder is speaking. What should you do?","ar":"An elder is speaking. What should you do?"},"o":[{"t":{"en":"Listen attentively without interrupting","fr":"Listen attentively without interrupting","ar":"Listen attentively without interrupting"},"c":true},{"t":{"en":"Check your phone","fr":"Check your phone","ar":"Check your phone"},"c":false},{"t":{"en":"Talk over them","fr":"Talk over them","ar":"Talk over them"},"c":false}],"fb":{"en":"Islam teaches us to listen respectfully when elders speak. The Prophet ﷺ gave priority to elders in gatherings.","fr":"Islam teaches us to listen respectfully when elders speak. The Prophet ﷺ gave priority to elders in gatherings.","ar":"Islam teaches us to listen respectfully when elders speak. The Prophet ﷺ gave priority to elders in gatherings."}},{"emoji":"🏠","q":{"en":"Your grandmother asks for help with chores.","fr":"Your grandmother asks for help with chores.","ar":"Your grandmother asks for help with chores."},"o":[{"t":{"en":"Help cheerfully and promptly","fr":"Help cheerfully and promptly","ar":"Help cheerfully and promptly"},"c":true},{"t":{"en":"Say you are busy","fr":"Say you are busy","ar":"Say you are busy"},"c":false},{"t":{"en":"Do it reluctantly","fr":"Do it reluctantly","ar":"Do it reluctantly"},"c":false}],"fb":{"en":"Serving parents and grandparents is one of the greatest deeds. The Quran commands: Be kind to parents (17:23).","fr":"Serving parents and grandparents is one of the greatest deeds. The Quran commands: Be kind to parents (17:23).","ar":"Serving parents and grandparents is one of the greatest deeds. The Quran commands: Be kind to parents (17:23)."}},{"emoji":"🤔","q":{"en":"An elder gives you advice you disagree with.","fr":"An elder gives you advice you disagree with.","ar":"An elder gives you advice you disagree with."},"o":[{"t":{"en":"Listen respectfully, then share your view gently","fr":"Listen respectfully, then share your view gently","ar":"Listen respectfully, then share your view gently"},"c":true},{"t":{"en":"Argue immediately","fr":"Argue immediately","ar":"Argue immediately"},"c":false},{"t":{"en":"Roll your eyes","fr":"Roll your eyes","ar":"Roll your eyes"},"c":false}],"fb":{"en":"Even in disagreement, maintain respect. The Prophet ﷺ showed the utmost respect to elders in all situations.","fr":"Even in disagreement, maintain respect. The Prophet ﷺ showed the utmost respect to elders in all situations.","ar":"Even in disagreement, maintain respect. The Prophet ﷺ showed the utmost respect to elders in all situations."}}];
-var UI={"sa":{"en":"Correct!","fr":"Correct!","ar":"Correct!"},"sc2":{"en":"Correct!","fr":"Correct!","ar":"صحيح!"},"sw":{"en":"Not quite...","fr":"Pas tout a fait...","ar":"ليس تماما..."},"dt":{"en":"Well Done!","fr":"Well Done!","ar":"Well Done!"},"ds":{"en":"You got {0} out of {1}!","fr":"{0} sur {1}!","ar":"أصبت {0} من {1}!"},"dl":{"en":"Respecting elders is fundamental in Islam. The Prophet showed the greatest honor to older people.","fr":"Respecting elders is fundamental in Islam. The Prophet showed the greatest honor to older people.","ar":"Respecting elders is fundamental in Islam. The Prophet showed the greatest honor to older people."},"cl":{"en":"Correct","fr":"Correct","ar":"صحيح"},"tl":{"en":"Total","fr":"Total","ar":"المجموع"},"ng":{"en":"▶ New Game","fr":"▶ Nouveau jeu","ar":"▶ لعبة جديدة"},"sl":{"en":"Q {0}/{1}","fr":"Q {0}/{1}","ar":"س{0}/{1}"},"bn":{"en":"Next","fr":"Suivant","ar":"التالي"},"st":{"en":"Elder Respect","fr":"Elder Respect","ar":"Elder Respect"},"ss":{"en":"Honoring Elders","fr":"Honoring Elders","ar":"Honoring Elders"},"sd":{"en":"Scenarios teaching respect for elders.","fr":"Scenarios teaching respect for elders.","ar":"Scenarios teaching respect for elders."}};
-function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open")}function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});curLang=l;renderLang()}function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th)})}var soundOn=true,actx;function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var n=actx.currentTime;if(t==="ok"){var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);var o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2)}else if(t==="err"){var o3=actx.createOscillator(),g3=actx.createGain();o3.connect(g3);g3.connect(actx.destination);g3.gain.value=.06;o3.frequency.value=200;o3.type="square";g3.gain.exponentialRampToValueAtTime(.001,n+.15);o3.start(n);o3.stop(n+.15)}else if(t==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12)})}else{var o4=actx.createOscillator(),g4=actx.createGain();o4.connect(g4);g4.connect(actx.destination);g4.gain.value=.06;o4.frequency.value=800;o4.type="sine";g4.gain.exponentialRampToValueAtTime(.001,n+.05);o4.start(n);o4.stop(n+.05)}}function log(msg,cls){var b=document.getElementById("logBox");var d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight}
-var curLang="en",current=0,correct=0,total=DATA.length,locked=false,order=[];
-function t(k){return UI[k]?(UI[k][curLang]||UI[k].en):""}
-function renderLang(){curLang=document.documentElement.lang||"en";try{document.getElementById("status").textContent=t("sa")}catch(e){}try{document.getElementById("startBtn").innerHTML=t("ng")}catch(e){}try{document.getElementById("lbl0").textContent=t("cl")}catch(e){}try{document.getElementById("lbl1").textContent=t("tl")}catch(e){}try{document.getElementById("splashTitle").textContent=t("st")}catch(e){}try{document.getElementById("splashSub").textContent=t("ss")}catch(e){}try{document.getElementById("splashDesc").textContent=t("sd")}catch(e){}try{document.getElementById("appTitle").textContent=t("st")}catch(e){}}
-var timerInterval,timerSec=0;function startTimer(){timerSec=0;clearInterval(timerInterval);timerInterval=setInterval(function(){timerSec++;var m=Math.floor(timerSec/60),s=timerSec%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s},1000)}function stopTimer(){clearInterval(timerInterval)}
-function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var tmp=a[i];a[i]=a[j];a[j]=tmp}return a}
-function newGame(){startTimer();current=0;correct=0;locked=false;document.getElementById("sc").textContent="0";document.getElementById("tot").textContent="0";document.getElementById("scorePill").textContent="0 / 0";document.getElementById("logBox").innerHTML="";document.getElementById("prog").style.width="0%";order=shuffle(Array.from({length:DATA.length},function(_,i){return i}));showQ()}
-function showQ(){if(current>=total){endGame();return}locked=false;var s=DATA[order[current]];var q=document.getElementById("question");q.innerHTML='<div class="scenario-emoji">'+s.emoji+'</div><div class="scenario-box">'+(s.q[curLang]||s.q.en)+'</div>';var el=document.getElementById("choices");el.innerHTML="";var opts=s.o.map(function(o,i){return{t:o.t,c:o.c,i:i}});shuffle(opts).forEach(function(o){var b=document.createElement("button");b.className="answer-btn";b.textContent=o.t[curLang]||o.t.en;b.dataset.correct=o.c?"1":"0";b.onclick=function(){pick(b,o.c,s)};el.appendChild(b)});document.getElementById("status").textContent=t("sl").replace("{0}",current+1).replace("{1}",total);document.getElementById("status").className="status";document.getElementById("prog").style.width=(current/total*100)+"%"}
-function pick(btn,isC,sc){if(locked)return;locked=true;current++;if(isC){correct++;btn.classList.add("correct");snd("ok");document.getElementById("status").textContent=t("sc2");document.getElementById("status").className="status win";log("\u2713","success")}else{btn.classList.add("wrong");snd("err");document.getElementById("status").textContent=t("sw");document.getElementById("status").className="status lose";document.querySelectorAll(".answer-btn").forEach(function(b){if(b.dataset.correct==="1")b.classList.add("correct")});log("\u2717","error")}document.getElementById("sc").textContent=correct;document.getElementById("tot").textContent=current;document.getElementById("scorePill").textContent=correct+" / "+current;document.getElementById("prog").style.width=(current/total*100)+"%";var fb=document.createElement("div");fb.className="feedback-box";fb.innerHTML="<strong>"+(isC?"\u2713":"\u2717")+"</strong> "+(sc.fb[curLang]||sc.fb.en);document.getElementById("question").appendChild(fb);document.getElementById("choices").innerHTML='<button class="answer-btn" id="nextBtn" style="min-width:160px">'+t("bn")+'</button>';document.getElementById("nextBtn").onclick=function(){showQ()}}
-function endGame(){stopTimer();checkHS();snd("win");document.getElementById("status").textContent="\uD83C\uDFC6 "+t("dt");document.getElementById("status").className="status win";log("\uD83C\uDFC6 "+correct+"/"+total,"success");document.getElementById("question").innerHTML='<div class="lesson-box"><h2>\uD83C\uDFC6 '+t("dt")+'</h2><p style="font-size:14px;color:var(--heading);font-weight:700;margin-bottom:12px">'+t("ds").replace("{0}",correct).replace("{1}",total)+'</p><p>'+t("dl")+'</p></div>';document.getElementById("choices").innerHTML="";document.getElementById("prog").style.width="100%"}
-var HS_KEY="wdiy-hs-elder-respect";function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0}}function saveHS(s){try{var b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true}}catch(e){}return false}function showHS(){var b=loadHS();if(b>0){var p=document.getElementById("scorePill");if(p&&!p.querySelector(".hs-badge"))p.innerHTML+=' <span class="hs-badge">\uD83C\uDFC6 '+b+'%</span>'}}function checkHS(){var pct=Math.round(correct/total*100);if(saveHS(pct))log("\uD83C\uDFC6 NEW HIGH SCORE: "+pct+"%!","success")}
-document.addEventListener("DOMContentLoaded",function(){setLang("en");setTheme("terminal");document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click")})});showHS();document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame()});document.getElementById("startBtn").addEventListener("click",newGame);document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07"});document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp()});document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t2){t2.classList.remove("active")});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active")});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active")})})});document.addEventListener("keydown",function(e){if(e.key>="1"&&e.key<="4"){var btns=document.querySelectorAll(".answer-btn");var i=parseInt(e.key)-1;if(btns[i])btns[i].click()}if(e.key==="Enter"){var go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();var nxt=document.getElementById("nextBtn");if(nxt)nxt.click()}});try{if(localStorage.getItem("wdiy-mute")==="1")soundOn=false}catch(e){}try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st)}catch(e){}(function(){var _osl=setLang,_ost=setTheme;setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l)}catch(e){}};setTheme=function(th){_ost(th);try{localStorage.setItem("wdiy-theme",th)}catch(e){}}})()
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="garden">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Elder Respect — Amaloun Kids</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Readex+Pro:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ═══ ADAB CATEGORY THEMES ═══ */
+[data-theme="garden"]{--bg:#FFF9F0;--bg2:#FFFFFF;--bg3:#FFF0E6;--border:#7F8C8D25;--border2:#7F8C8D40;--text:#4A3728;--text2:#7A6558;--text3:#A89888;--heading:#2D1810;--accent:#7F8C8D;--accent2:#E74C3C;--abg:#7F8C8D10;--abr:#7F8C8D30;--glow:0 4px 24px #7F8C8D15;--splash-bg:linear-gradient(135deg,#FFF5E6 0%,#FFE8D6 50%,#FFF0E6 100%);--card-shadow:0 2px 12px rgba(0,0,0,.06)}
+[data-theme="rose"]{--bg:#FFF5F5;--bg2:#FFFFFF;--bg3:#FFE8E8;--border:#FF6B6B25;--border2:#FF6B6B40;--text:#4A2828;--text2:#7A5858;--text3:#A88888;--heading:#2D1010;--accent:#FF6B6B;--accent2:#FFB4B4;--abg:#FF6B6B10;--abr:#FF6B6B30;--glow:0 4px 24px #FF6B6B15;--splash-bg:linear-gradient(135deg,#FFF5F5 0%,#FFE0E0 50%,#FFF0F0 100%);--card-shadow:0 2px 12px rgba(255,107,107,.08)}
+[data-theme="sage"]{--bg:#F5FAF5;--bg2:#FFFFFF;--bg3:#E8F5E8;--border:#A8D8A825;--border2:#A8D8A840;--text:#284A28;--text2:#587A58;--text3:#88A888;--heading:#102D10;--accent:#4CAF50;--accent2:#A8D8A8;--abg:#4CAF5010;--abr:#4CAF5030;--glow:0 4px 24px #4CAF5015;--splash-bg:linear-gradient(135deg,#F5FAF5 0%,#E0F0E0 50%,#F0FAF0 100%);--card-shadow:0 2px 12px rgba(76,175,80,.08)}
+[data-theme="cream"]{--bg:#FFFDF5;--bg2:#FFFFFF;--bg3:#FFF8E8;--border:#F39C1225;--border2:#F39C1240;--text:#4A4028;--text2:#7A7058;--text3:#A89888;--heading:#2D2010;--accent:#F39C12;--accent2:#FFD700;--abg:#F39C1210;--abr:#F39C1230;--glow:0 4px 24px #F39C1215;--splash-bg:linear-gradient(135deg,#FFFDF5 0%,#FFF0D0 50%,#FFF8E8 100%);--card-shadow:0 2px 12px rgba(243,156,18,.08)}
+[data-theme="twilight"]{--bg:#1A1025;--bg2:#221535;--bg3:#2D1D45;--border:#8E44AD30;--border2:#8E44AD50;--text:#D4B8E8;--text2:#A080C0;--text3:#705890;--heading:#F0E0FF;--accent:#BB86FC;--accent2:#CF6679;--abg:#BB86FC10;--abr:#BB86FC30;--glow:0 4px 24px #BB86FC15;--splash-bg:linear-gradient(135deg,#1A1025 0%,#2D1D45 50%,#1A1025 100%);--card-shadow:0 2px 12px rgba(187,134,252,.1)}
+[data-theme="ocean"]{--bg:#F0F8FF;--bg2:#FFFFFF;--bg3:#E0F0FF;--border:#3498DB25;--border2:#3498DB40;--text:#1A3A5C;--text2:#4A6A8C;--text3:#7A9ABC;--heading:#0A2A4C;--accent:#3498DB;--accent2:#1ABC9C;--abg:#3498DB10;--abr:#3498DB30;--glow:0 4px 24px #3498DB15;--splash-bg:linear-gradient(135deg,#F0F8FF 0%,#D0E8FF 50%,#E0F0FF 100%);--card-shadow:0 2px 12px rgba(52,152,219,.08)}
+[data-theme="sunset"]{--bg:#FFF5F0;--bg2:#FFFFFF;--bg3:#FFE8DD;--border:#E6731325;--border2:#E6731340;--text:#4A2818;--text2:#7A5848;--text3:#A88878;--heading:#2D1008;--accent:#E67313;--accent2:#FF9A5C;--abg:#E6731310;--abr:#E6731330;--glow:0 4px 24px #E6731315;--splash-bg:linear-gradient(135deg,#FFF5F0 0%,#FFE0CC 50%,#FFE8DD 100%);--card-shadow:0 2px 12px rgba(230,115,19,.08)}
+[data-theme="night"]{--bg:#0D1117;--bg2:#161B22;--bg3:#1C2333;--border:#A8D8A825;--border2:#A8D8A840;--text:#B8C8D8;--text2:#8898A8;--text3:#586878;--heading:#E8F0F8;--accent:#A8D8A8;--accent2:#FF6B6B;--abg:#A8D8A810;--abr:#A8D8A830;--glow:0 4px 24px #A8D8A815;--splash-bg:linear-gradient(135deg,#0D1117 0%,#1C2333 50%,#0D1117 100%);--card-shadow:0 2px 12px rgba(168,216,168,.08)}
 
-</script></body></html>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Nunito','Noto Sans Arabic',sans-serif;font-size:14px;min-height:100vh;overflow-x:hidden}
+[lang="ar"] body{font-family:'Readex Pro','Noto Sans Arabic',sans-serif}
+h1,.heading{font-family:'Nunito','Readex Pro',sans-serif;color:var(--heading);font-weight:800}
+
+/* ═══ VINE BORDER DECORATION ═══ */
+body::before{content:'';position:fixed;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#7F8C8D,#E74C3C,#7F8C8D);z-index:999;opacity:.6}
+
+/* ═══ SPLASH SCREEN ═══ */
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--splash-bg);position:relative;overflow:hidden}
+.splash::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,#7F8C8D08 0%,transparent 50%),radial-gradient(circle at 70% 60%,#E74C3C08 0%,transparent 50%)}
+.splash-box{background:var(--bg2);border:2px solid var(--border2);border-radius:24px;padding:48px 36px;max-width:420px;width:100%;text-align:center;box-shadow:var(--glow),var(--card-shadow);animation:splashIn .6s ease-out;position:relative;overflow:hidden}
+.splash-decor{position:absolute;top:-2px;left:-2px;right:-2px;height:6px;background:linear-gradient(90deg,#7F8C8D,#E74C3C,#7F8C8D);border-radius:24px 24px 0 0}
+.splash-icon{font-size:52px;margin-bottom:12px;display:block;animation:uniqueFloat 3s ease-in-out infinite}
+.splash-bism{color:var(--accent);font-size:14px;margin-bottom:16px;font-family:'Readex Pro','Noto Sans Arabic',sans-serif;letter-spacing:1px}
+.splash-title{font-size:28px;margin-bottom:6px;background:linear-gradient(135deg,var(--heading),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.splash-sub{color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;font-weight:700}
+.splash-desc{color:var(--text2);font-size:13px;line-height:1.7;margin-bottom:28px}
+.btn-go{padding:14px 40px;background:linear-gradient(135deg,var(--accent),#E74C3C);color:#fff;border:none;border-radius:50px;font-size:15px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;letter-spacing:2px;text-transform:uppercase;box-shadow:0 4px 16px #7F8C8D40;transition:all .2s}
+.btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 24px #7F8C8D50}
+.btn-go:active{transform:translateY(0)}
+
+/* ═══ SWITCHERS ═══ */
+.sw{display:flex;gap:4px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:30px;height:30px;border-radius:50%;border:2px solid var(--border);background:var(--bg3);color:var(--text2);font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;font-weight:700}
+.sw-btn.on{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 2px 8px #7F8C8D40}
+.sw-btn:hover{border-color:var(--accent);transform:scale(1.1)}
+.sw-label{color:var(--text3);font-size:10px;text-transform:uppercase;letter-spacing:2px;margin-right:8px;align-self:center;font-weight:700}
+
+/* ═══ APP LAYOUT ═══ */
+.app{display:none;max-width:580px;margin:0 auto;padding:16px 20px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--accent);font-size:12px;margin-bottom:10px;font-family:'Readex Pro','Noto Sans Arabic',sans-serif}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:20px;display:flex;align-items:center;gap:8px}
+.hdr h1 .hdr-icon{font-size:24px}
+.pill{background:linear-gradient(135deg,var(--abg),var(--accent)15);border:2px solid var(--abr);color:var(--accent);padding:4px 14px;border-radius:50px;font-size:12px;font-weight:800}
+.ctrl{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:8px 14px;background:var(--bg2);border:2px solid var(--border);border-radius:50px;color:var(--heading);font-size:12px;font-family:inherit;cursor:pointer;font-weight:700;transition:all .2s}
+.ctrl select:hover,.ctrl button:hover{border-color:var(--accent);color:var(--accent);box-shadow:var(--card-shadow)}
+.status{text-align:center;font-size:15px;margin-bottom:14px;font-weight:700;color:var(--heading);min-height:24px}
+.status.win{color:var(--accent)}.status.lose{color:#E74C3C}
+
+/* ═══ GAME AREA ═══ */
+.game-area{background:var(--bg2);border:2px solid var(--border);border-radius:20px;padding:24px;margin-bottom:14px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;box-shadow:var(--card-shadow);position:relative;overflow:hidden}
+.game-area::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));opacity:.4}
+.scenario-emoji{font-size:44px;animation:uniqueFloat 3s ease-in-out infinite}
+.scenario-text{font-size:17px;font-weight:700;color:var(--heading);text-align:center;line-height:1.6;max-width:480px}
+.answer-row{display:flex;gap:10px;align-items:stretch;justify-content:center;flex-wrap:wrap;width:100%;max-width:500px}
+.answer-btn{flex:1 1 45%;padding:14px 16px;border-radius:16px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;text-align:center;min-height:52px;line-height:1.4}
+.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg);transform:translateY(-2px);box-shadow:var(--card-shadow)}
+.answer-btn.correct{background:linear-gradient(135deg,var(--accent),#E74C3C);color:#fff;border-color:var(--accent);box-shadow:0 4px 16px #7F8C8D40}
+.answer-btn.wrong{background:#E74C3C;color:#fff;border-color:#E74C3C}
+.teaching-box{background:var(--abg);border:2px solid var(--abr);border-radius:16px;padding:16px 20px;font-size:13px;color:var(--accent);text-align:center;line-height:1.7;max-width:480px;animation:slideUp .3s ease-out}
+.teaching-box .teaching-label{font-weight:800;font-size:10px;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;opacity:.7}
+.progress{width:100%;max-width:320px;height:10px;background:var(--bg3);border-radius:50px;overflow:hidden;border:1px solid var(--border)}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:50px;transition:width .4s ease}
+
+/* ═══ SCORE ROW ═══ */
+.score-row{display:flex;gap:24px;justify-content:center;margin-bottom:12px}
+.score-item{text-align:center}.score-label{font-size:11px;color:var(--text3);font-weight:700;text-transform:uppercase;letter-spacing:1px}.score-num{font-size:28px;font-weight:900;color:var(--heading)}
+
+/* ═══ LOG BOX ═══ */
+.log-box{background:var(--bg2);border:2px solid var(--border);border-radius:14px;padding:10px 14px;max-height:80px;overflow-y:auto;font-size:11px;color:var(--text2);margin-bottom:12px}
+.log-line{padding:2px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#E74C3C}
+
+/* ═══ FOOTER ═══ */
+.foot{text-align:center;color:var(--text3);font-size:11px;padding:16px 0;border-top:2px solid var(--border);font-weight:600}
+
+/* ═══ BACK LINK ═══ */
+.back-link{position:fixed;top:12px;left:12px;z-index:100;padding:6px 14px;border-radius:50px;background:var(--bg2);border:2px solid var(--border);color:var(--text2);font-size:12px;text-decoration:none;font-family:'Nunito',sans-serif;font-weight:700;transition:all .2s;box-shadow:var(--card-shadow)}
+.back-link:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+[dir="rtl"] .back-link{left:auto;right:12px}
+
+/* ═══ HELP SIDEBAR ═══ */
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s;backdrop-filter:blur(4px)}
+.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:340px;max-width:85vw;height:100%;background:var(--bg2);border:2px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .3s ease;box-shadow:-4px 0 24px rgba(0,0,0,.1)}
+.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:2px solid var(--border)}
+.sidebar-title{font-weight:800;font-size:16px;color:var(--heading)}
+.btn-close{background:var(--bg3);border:2px solid var(--border);color:var(--text2);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.btn-close:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.help-tabs{display:flex;border-bottom:2px solid var(--border)}
+.help-tab{flex:1;padding:10px;background:none;border:none;color:var(--text3);font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;cursor:pointer;text-transform:uppercase;letter-spacing:1px;border-bottom:3px solid transparent;transition:all .15s}
+.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:16px 18px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:10px;border:2px solid var(--border);border-radius:14px;overflow:hidden}
+.help-item summary{padding:12px 14px;cursor:pointer;font-size:13px;font-weight:700;color:var(--heading);list-style:none;display:flex;align-items:center;gap:8px}
+.help-item summary::before{content:"▸";color:var(--accent);font-size:11px;transition:transform .2s;font-weight:900}
+.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 14px 12px;font-size:12px;color:var(--text2);line-height:1.7}
+.help-step{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
+.help-step-num{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:12px;color:var(--text2);line-height:1.7;margin:0}
+.wiki-entry{margin-bottom:16px}.wiki-entry h3{font-size:14px;margin-bottom:6px;color:var(--heading);font-weight:800}.wiki-entry p{font-size:12px;color:var(--text2);line-height:1.7}
+.sidebar-footer{padding:12px 18px;border-top:2px solid var(--border);text-align:center;color:var(--text3);font-size:11px;font-weight:600}
+.btn-help{background:var(--bg3);border:2px solid var(--border);color:var(--text2);padding:8px 14px;border-radius:50px;font-size:12px;font-family:inherit;cursor:pointer;font-weight:700;transition:all .2s}
+.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 10px;border-radius:50px;background:rgba(255,215,0,.15);border:2px solid rgba(255,215,0,.4);color:#F39C12;font-size:11px;font-weight:800;margin-left:8px}
+.timer-pill{background:var(--bg3);border:2px solid var(--border);color:var(--text2);padding:4px 10px;border-radius:50px;font-size:11px;font-family:'Nunito',monospace;font-weight:700;margin-left:8px}
+
+/* ═══ UNIQUE ANIMATION ═══ */
+@keyframes uniqueFloat{0%,100%{transform:scale(1) translateY(0)}50%{transform:scale(1.03) translateY(-5px)}}
+@keyframes splashIn{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:480px){.splash-box{padding:32px 20px;border-radius:20px}.splash-title{font-size:22px}.game-area{padding:16px}.answer-btn{font-size:13px;padding:12px}.score-num{font-size:24px}}
+</style>
+</head>
+<body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
+
+<!-- ═══ SPLASH SCREEN ═══ -->
+<div class="splash" id="splash">
+<div class="splash-box">
+<div class="splash-decor"></div>
+<span class="splash-icon">🧓</span>
+<div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
+<h1 class="splash-title heading" id="splashTitle">Elder Respect</h1>
+<div class="splash-sub" id="splashSub">Honor those older than you</div>
+<p class="splash-desc" id="splashDesc">Learn how Islam teaches us to respect elders.</p>
+<button class="btn-go" id="enterBtn">Start</button>
+<div class="sw" style="margin-top:20px">
+<span class="sw-label">Lang</span>
+<button class="sw-btn on" data-lang="en">EN</button>
+<button class="sw-btn" data-lang="fr">FR</button>
+<button class="sw-btn" data-lang="ar">ع</button>
+</div>
+<div class="sw" style="margin-top:8px">
+<span class="sw-label">Theme</span>
+<button class="sw-btn on" data-thm="garden">🌷</button>
+<button class="sw-btn" data-thm="rose">🌹</button>
+<button class="sw-btn" data-thm="sage">🌿</button>
+<button class="sw-btn" data-thm="cream">☀️</button>
+<button class="sw-btn" data-thm="twilight">🌙</button>
+<button class="sw-btn" data-thm="ocean">🌊</button>
+<button class="sw-btn" data-thm="sunset">🌅</button>
+<button class="sw-btn" data-thm="night">⭐</button>
+</div>
+</div>
+</div>
+
+<!-- ═══ MAIN APP ═══ -->
+<div class="app" id="app">
+<div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
+<div class="hdr">
+<h1><span class="hdr-icon">🧓</span> <span id="appTitle">Elder Respect</span></h1>
+<span class="pill" id="scorePill">0 / 0</span>
+<span class="timer-pill" id="timerPill">0:00</span>
+</div>
+<div class="ctrl">
+<select id="diffSel"><option value="10">Easy (10)</option><option value="15" selected>Medium (15)</option><option value="25">Hard (25+)</option></select>
+<button id="startBtn">▶ New Game</button>
+<button class="btn-help" onclick="openHelp()">?</button>
+<button id="soundBtn">🔊</button>
+<div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw"><button class="sw-btn on" data-thm="garden">🌷</button><button class="sw-btn" data-thm="rose">🌹</button><button class="sw-btn" data-thm="sage">🌿</button><button class="sw-btn" data-thm="cream">☀️</button><button class="sw-btn" data-thm="twilight">🌙</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="night">⭐</button></div>
+</div>
+<div class="status" id="status">Honor those older than you</div>
+<div class="game-area" id="gameArea">
+<div class="scenario-emoji" id="emoji">🌟</div>
+<div class="scenario-text" id="question">Press New Game to start!</div>
+<div class="answer-row" id="choices"></div>
+<div id="teachingArea"></div>
+<div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
+</div>
+<div class="score-row">
+<div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div>
+<div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div>
+</div>
+<div class="log-box" id="logBox"></div>
+<div class="foot">Amaloun Kids — Elder Respect v2.0</div>
+</div>
+
+<!-- ═══ HELP SIDEBAR ═══ -->
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog">
+<div class="sidebar-header"><span class="sidebar-title">Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+<div class="help-tabs">
+<button class="help-tab active" data-tab="faq">FAQ</button>
+<button class="help-tab" data-tab="howto">How-To</button>
+<button class="help-tab" data-tab="wiki">Wiki</button>
+</div>
+<div class="sidebar-body">
+<div class="help-content active" id="help-faq">
+<details class="help-item"><summary>What is Elder Respect?</summary><p>Learn how Islam teaches us to respect elders.</p></details>
+<details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
+<details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser.</p></details>
+<details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar. 8 unique themes available!</p></details>
+<details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
+<details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally. No data is sent anywhere.</p></details>
+</div>
+<div class="help-content" id="help-howto">
+<div class="help-step"><span class="help-step-num">1</span><p>Click Start on the splash screen</p></div>
+<div class="help-step"><span class="help-step-num">2</span><p>Choose your difficulty level</p></div>
+<div class="help-step"><span class="help-step-num">3</span><p>Press New Game to begin</p></div>
+<div class="help-step"><span class="help-step-num">4</span><p>Read each question carefully</p></div>
+<div class="help-step"><span class="help-step-num">5</span><p>Pick the best Islamic answer</p></div>
+<div class="help-step"><span class="help-step-num">6</span><p>Learn from the teaching shown after each answer</p></div>
+<div class="help-step"><span class="help-step-num">7</span><p>Try to beat your high score!</p></div>
+</div>
+<div class="help-content" id="help-wiki">
+<div class="wiki-entry"><h3>Purpose</h3><p>Learn how Islam teaches us to respect elders. Covers Islamic manners, etiquette, and character building.</p></div>
+<div class="wiki-entry"><h3>Themes</h3><p>8 beautiful themes: Garden, Rose, Sage, Cream, Twilight, Ocean, Sunset, Night.</p></div>
+<div class="wiki-entry"><h3>Languages</h3><p>Trilingual: English, Francais, العربية with full RTL support.</p></div>
+<div class="wiki-entry"><h3>Sound</h3><p>Web Audio API sound effects. Toggle with the sound button.</p></div>
+<div class="wiki-entry"><h3>Privacy</h3><p>100% local. No tracking, no analytics, no external calls.</p></div>
+</div>
+</div>
+<div class="sidebar-footer">Amaloun Kids — v2.0</div>
+</aside>
+
+<script>
+/* ═══ UI TRANSLATIONS ═══ */
+const UI={
+splashTitle:{en:"Elder Respect",fr:"Respect des Aînés",ar:"احترام الكبار"},
+splashSub:{en:"Honor those older than you",fr:"Honore ceux qui sont plus âgés",ar:"احترم من هم أكبر منك"},
+splashDesc:{en:"Learn how Islam teaches us to respect elders.",fr:"Apprends comment l’Islam nous enseigne le respect des aînés.",ar:"تعلم كيف يعلمنا الإسلام احترام الكبار."},
+appTitle:{en:"Elder Respect",fr:"Respect des Aînés",ar:"احترام الكبار"},
+newGame:{en:"▶ New Game",fr:"▶ Nouveau Jeu",ar:"▶ لعبة جديدة"},
+correct:{en:"Correct",fr:"Correct",ar:"صحيح"},
+total:{en:"Total",fr:"Total",ar:"المجموع"},
+};
+let curLang="en";
+
+/* ═══ CORE FUNCTIONS ═══ */
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open")}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
+function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));
+try{document.getElementById("splashTitle").textContent=UI.splashTitle[l];document.getElementById("splashSub").textContent=UI.splashSub[l];document.getElementById("splashDesc").textContent=UI.splashDesc[l];document.getElementById("appTitle").textContent=UI.appTitle[l]}catch(e){}
+try{localStorage.setItem("wdiy-lang",l)}catch(e){}}
+function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===t));try{localStorage.setItem("wdiy-theme",t)}catch(e){}}
+
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.12);o.start(n);o.stop(n+.12);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.22);o2.start(n+.1);o2.stop(n+.22)}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15)}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.25+i*.12);oo.start(n+i*.12);oo.stop(n+.25+i*.12)})}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05)}}
+function log(m,c){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(c||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+m;b.appendChild(d);b.scrollTop=b.scrollHeight}
+
+/* ═══ GAME DATA ═══ */
+/* elder respect scenarios */
+
+/* ═══ GAME LOGIC ═══ */
+let total=15,current=0,correct=0,ans,curTeaching="",locked=false,usedIdx=[];
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+
+
+/* Generic scenario quiz */
+
+const SCENARIOS=[
+{emoji:"🧓",q:"Learn how Islam teaches us to respect elders.",a:"Choose the Islamic way",w:["Ignore it","Be rude","Do nothing"],t:"Islam teaches us the best manners in all situations."},
+{emoji:"🤲",q:"How should you start any good action?",a:"Say Bismillah",w:["Just start without thinking","Complain first","Wait for others"],t:"The Prophet (pbuh) said: Every important matter not begun with Bismillah is cut off from blessing."},
+{emoji:"😊",q:"Someone is unkind to you. What do you do?",a:"Respond with kindness and patience",w:["Be unkind back","Ignore them forever","Gossip about them"],t:"Allah says: Repel evil with that which is better. (Quran 41:34)"},
+{emoji:"🕌",q:"You see someone struggling with heavy bags.",a:"Offer to help them carry the bags",w:["Walk past quickly","Laugh at them","Tell them to be stronger"],t:"The Prophet (pbuh) said: Allah helps the servant as long as the servant helps his brother."},
+{emoji:"📖",q:"A friend asks about Islam.",a:"Explain with kindness and patience",w:["Tell them to look it up","Ignore the question","Get angry at them"],t:"Allah says: Invite to the way of your Lord with wisdom and good instruction. (Quran 16:125)"},
+{emoji:"💚",q:"You made a mistake and feel bad.",a:"Ask Allah for forgiveness and try to do better",w:["Blame someone else","Give up trying","Pretend nothing happened"],t:"The Prophet (pbuh) said: Every son of Adam sins, and the best sinners are those who repent."},
+{emoji:"🤝",q:"You disagree with a classmate on something.",a:"Discuss respectfully and listen to their view",w:["Argue loudly","Stop being their friend","Tell everyone they're wrong"],t:"The Prophet (pbuh) said: The believer is not one who argues or fights."},
+{emoji:"🌟",q:"You see someone doing something good.",a:"Say MashaAllah and encourage them",w:["Feel jealous","Ignore it","Try to one-up them"],t:"The Prophet (pbuh) said: Whoever guides someone to goodness will have a reward like the one who did it."},
+{emoji:"🎓",q:"Your teacher corrects you in front of the class.",a:"Accept it humbly and learn from it",w:["Argue back","Feel angry all day","Stop trying in class"],t:"The Prophet (pbuh) said: Whoever humbles himself for Allah, Allah will raise him."},
+{emoji:"🍎",q:"You have more food than you need.",a:"Share with those who have less",w:["Keep it all for yourself","Throw the extra away","Hide it from others"],t:"The Prophet (pbuh) said: The food of two is enough for three, and the food of three is enough for four."},
+{emoji:"⏰",q:"You promised to meet a friend at a specific time.",a:"Be punctual — keeping promises is Islamic",w:["Arrive whenever you want","Cancel without telling them","Make them wait"],t:"The Prophet (pbuh) said: The signs of a hypocrite are three: when he speaks he lies, when he promises he breaks it."},
+{emoji:"🌳",q:"You see a beautiful garden.",a:"Say SubhanAllah and appreciate Allah's creation",w:["Pick the flowers without permission","Litter in the garden","Ignore the beauty"],t:"Allah says: Indeed, in the creation of heavens and earth are signs for those of understanding. (Quran 3:190)"},
+{emoji:"👨‍👩‍👦",q:"Your parents disagree on something.",a:"Stay respectful and don't take sides rudely",w:["Argue with both parents","Run away from the situation","Blame one parent"],t:"Allah says: And lower to them the wing of humility out of mercy. (Quran 17:24)"},
+{emoji:"💪",q:"A friend wants you to do something haram.",a:"Refuse politely and explain why",w:["Do it to keep the friendship","Make fun of them","Pressure them back"],t:"The Prophet (pbuh) said: There is no obedience to creation in disobedience to the Creator."},
+{emoji:"🎯",q:"You keep failing at something important.",a:"Keep trying with patience and dua",w:["Give up permanently","Blame others","Get angry and quit"],t:"Allah says: Indeed, with hardship comes ease. (Quran 94:6)"}
+];
+function genQ(){
+  if(typeof SCENARIOS==='undefined')return{emoji:"🌟",text:"Press New Game!",ans:"Start",teaching:"",opts:["Start"]};
+  if(usedIdx.length>=SCENARIOS.length)usedIdx=[];
+  let idx;do{idx=Math.floor(Math.random()*SCENARIOS.length)}while(usedIdx.includes(idx));
+  usedIdx.push(idx);const s=SCENARIOS[idx];
+  return{emoji:s.emoji,text:s.q,ans:s.a,teaching:s.t,opts:shuffle([s.a,...s.w])};
+}
+
+
+function setDiff(){total=parseInt(document.getElementById("diffSel").value)}
+
+let timerInterval,timerSeconds=0;
+function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s},1000)}
+function stopTimer(){clearInterval(timerInterval)}
+
+function newGame(){
+  startTimer();total=parseInt(document.getElementById("diffSel").value)||15;
+  current=0;correct=0;usedIdx=[];
+  document.getElementById("sc").textContent="0";
+  document.getElementById("tot").textContent="0";
+  document.getElementById("scorePill").textContent="0 / 0";
+  document.getElementById("teachingArea").innerHTML="";
+  nextQ();
+}
+
+function nextQ(){
+  if(current>=total){stopTimer();checkHS();snd("win");
+    document.getElementById("status").textContent="Done! "+correct+"/"+total;
+    document.getElementById("status").className="status win";
+    document.getElementById("emoji").textContent="🏆";
+    document.getElementById("question").textContent="MashaAllah! You scored "+correct+" out of "+total+"!";
+    document.getElementById("choices").innerHTML="";
+    document.getElementById("teachingArea").innerHTML="";
+    log("Score: "+correct+"/"+total,"success");return}
+  locked=false;const q=genQ();
+  document.getElementById("emoji").textContent=q.emoji;
+  document.getElementById("question").textContent=q.text;
+  ans=q.ans;curTeaching=q.teaching;
+  const el=document.getElementById("choices");el.innerHTML="";
+  document.getElementById("teachingArea").innerHTML="";
+  const ansKey=q.ansText||q.ans;
+  q.opts.forEach((o,i)=>{const b=document.createElement("button");b.className="answer-btn";b.textContent=o;b.onclick=()=>pick(b,o,ansKey);el.appendChild(b)});
+  document.getElementById("status").textContent="Question "+(current+1)+" of "+total;
+  document.getElementById("status").className="status";
+  document.getElementById("prog").style.width=(current/total*100)+"%";
+}
+
+function pick(btn,val,ansKey){
+  if(locked)return;locked=true;current++;
+  const correctVal=ansKey||ans;
+  if(String(val)===String(correctVal)){correct++;btn.classList.add("correct");snd("ok");log("Correct!","success");
+  }else{btn.classList.add("wrong");snd("err");log("Answer: "+correctVal,"error");
+    document.querySelectorAll(".answer-btn").forEach(b=>{if(b.textContent===correctVal)b.classList.add("correct")})}
+  if(curTeaching)document.getElementById("teachingArea").innerHTML='<div class="teaching-box"><div class="teaching-label">Islamic Teaching</div>'+curTeaching+'</div>';
+  document.getElementById("sc").textContent=correct;
+  document.getElementById("tot").textContent=current;
+  document.getElementById("scorePill").textContent=correct+" / "+current;
+  document.getElementById("prog").style.width=(current/total*100)+"%";
+  setTimeout(nextQ,2500);
+}
+
+/* ═══ HIGH SCORE ═══ */
+const HS_KEY="wdiy-hs-012-elder-respect";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0}}
+function saveHS(s){try{const b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true}}catch(e){}return false}
+function showHS(){const b=loadHS();if(b>0){const p=document.getElementById("scorePill");if(p&&!p.querySelector(".hs-badge"))p.innerHTML+=' <span class="hs-badge">★ '+b+'</span>'}}
+function checkHS(){if(current>=total){const p=Math.round(correct/total*100);if(saveHS(p))log("NEW HIGH SCORE: "+p+"%!","success")}}
+
+/* ═══ INIT ═══ */
+document.addEventListener("DOMContentLoaded",()=>{
+  setLang("en");setTheme("garden");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click")}));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click")}));
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame()});
+  document.getElementById("startBtn").addEventListener("click",newGame);
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇"});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeHelp()});
+  document.querySelectorAll(".help-tab").forEach(tab=>tab.addEventListener("click",()=>{document.querySelectorAll(".help-tab").forEach(t=>t.classList.remove("active"));document.querySelectorAll(".help-content").forEach(c=>c.classList.remove("active"));tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active")}));
+});
+document.addEventListener("keydown",e=>{
+  if(e.key>="1"&&e.key<="4"){const btns=document.querySelectorAll(".answer-btn");const i=parseInt(e.key)-1;if(btns[i])btns[i].click()}
+  if(e.key==="Enter"){const go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();const s=document.getElementById("startBtn");if(s&&s.offsetParent!==null)s.click()}
+});
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="🔇"}}catch(e){}
+document.getElementById("soundBtn")?.addEventListener("click",()=>{try{localStorage.setItem("wdiy-mute",soundOn?"0":"1")}catch(e){}});
+try{const sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);const st=localStorage.getItem("wdiy-theme");if(st)setTheme(st)}catch(e){}
+</script>
+</body>
+</html>

@@ -1,206 +1,277 @@
-<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Dhat al-Riqa Fear Prayer — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}.app{display:none;max-width:560px;margin:0 auto;padding:12px 16px}.app.on{display:block}.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}.hdr h1{font-size:18px}.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}.ctrl button:hover{border-color:var(--abr)}.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}.status.win{color:var(--accent)}.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;max-height:100px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:10px}.log-line{padding:1px 0}.log-line.success{color:var(--accent)}.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.btn-close:hover{border-color:var(--accent);color:var(--accent)}.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}.help-content{display:none}.help-content.active{display:block}.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}.btn-help:hover{border-color:var(--accent);color:var(--accent)}.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
-canvas{display:block;margin:0 auto 8px;border-radius:8px;max-width:100%}
-.step-card{background:var(--bg3);border:2px solid var(--border);border-radius:12px;padding:16px;text-align:center;width:100%;max-width:440px;animation:fadeUp .3s}
-.step-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;margin-bottom:6px}
-.step-title{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--heading);margin-bottom:6px}
-.step-desc{font-size:12px;color:var(--text2);line-height:1.7;margin-bottom:8px}
-.step-arabic{font-family:'Noto Sans Arabic',sans-serif;font-size:14px;color:var(--accent);direction:rtl;margin:4px 0}
-.answer-btn{padding:10px 18px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;min-width:100px;text-align:center}.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--abg)}.answer-btn.correct{background:var(--accent);color:var(--bg);border-color:var(--accent)}.answer-btn.wrong{background:#ff4444;color:#fff;border-color:#ff4444}
-.progress{width:100%;max-width:300px;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden;margin:4px auto}.progress-bar{height:100%;background:var(--accent);border-radius:4px;transition:width .3s}
-.answer-row{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
-.quiz-desc{font-size:12px;color:var(--text);line-height:1.6;margin-bottom:10px;max-width:420px;text-align:center}
-</style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><h1 class="heading" style="font-size:22px;margin-bottom:4px" id="splashTitle">Dhat al-Riqa Fear Prayer</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px" id="splashSub">Prayer never stops</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px" id="splashDesc">Learn about Salat al-Khawf (the Fear Prayer) — how Muslims prayed in shifts during battle at Dhat al-Riqa. An interactive step-by-step visualization with quiz.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1 id="appTitle">Fear Prayer</h1><span class="pill" id="scorePill">0 / 0</span></div><div class="ctrl">
-<button id="startBtn">&#9654; Start Again</button><button class="btn-help" onclick="openHelp()">&#10067;</button><button id="soundBtn">&#128266;</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
-<div class="sw"><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div></div>
-<div class="status" id="status">Learn how Muslims prayed during battle</div>
-<div class="game-area" id="gameArea"><canvas id="vizCanvas" width="500" height="200"></canvas><div id="stepUI"></div></div>
-<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy &mdash; Dhat al-Riqa Fear Prayer v1.0</div></div>
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Fear Prayer — Gazawat</title><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet"/><style>
+/* === GAZAWAT 8-THEME SYSTEM === */
+[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#8A2BE2;--abg:#8A2BE20f;--abr:#8A2BE233;--glow:0 0 20px #8A2BE21a}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#8A2BE2;--abg:#8A2BE20f;--abr:#8A2BE233;--glow:0 0 20px #8A2BE21a}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#8A2BE2;--abg:#8A2BE20f;--abr:#8A2BE233;--glow:0 0 20px #8A2BE21a}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#8A2BE2;--abg:#8A2BE20f;--abr:#8A2BE233;--glow:0 0 15px #8A2BE210}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#8A2BE2;--abg:#8A2BE20f;--abr:#8A2BE233;--glow:0 0 25px #8A2BE222}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#8A2BE2;--abg:#8A2BE20f;--abr:#8A2BE233;--glow:0 0 20px #8A2BE21a}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#8A2BE2;--abg:#8A2BE20f;--abr:#8A2BE233;--glow:0 0 20px #8A2BE21a}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#8A2BE2;--abg:#8A2BE20f;--abr:#8A2BE233;--glow:0 0 15px #8A2BE210}
 
+/* === BASE RESET === */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh;background-image:radial-gradient(circle at 20px 20px,#8A2BE206 1px,transparent 1px);background-size:40px 40px}
+[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+
+/* === SPLASH SCREEN === */
+.splash .back-link,.splash~.back-link{opacity:0;pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(ellipse at center,#8A2BE208,transparent 70%)}
+.splash-box{background:var(--bg2);border:2px solid var(--border);border-radius:20px;padding:44px 36px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow),0 8px 32px rgba(0,0,0,.3);animation:fadeUp .6s ease-out;position:relative;overflow:hidden}
+.splash-box::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,#8A2BE2,transparent)}
+.splash-box::after{content:"";position:absolute;bottom:0;left:0;right:0;height:50%;background:linear-gradient(180deg,transparent,#8A2BE205);pointer-events:none}
+
+.splash-art{position:relative;width:200px;height:140px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center}
+.splash-art::before{content:"";position:absolute;width:120px;height:120px;border:3px solid #8A2BE233;border-radius:50%;background:radial-gradient(circle,#8A2BE211,transparent)}
+.splash-art::after{content:"";position:absolute;width:80px;height:80px;border:2px solid #8A2BE244;transform:rotate(45deg);background:#8A2BE208}
+.scale-icon{position:relative;z-index:1;font-size:32px;color:#8A2BE2}
+.splash-bism{color:var(--text3);font-size:13px;margin-bottom:16px;font-family:'Noto Sans Arabic',serif;letter-spacing:1px}
+.splash-subtitle{color:#8A2BE2;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+.splash-desc{color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px}
+.btn-go{padding:14px 36px;background:linear-gradient(135deg,#8A2BE2,#8A2BE2cc);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:2px;text-transform:uppercase;transition:all .2s;box-shadow:0 4px 15px #8A2BE233}
+.btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 20px #8A2BE244}
+.btn-go:active{transform:translateY(0)}
+.sw{display:flex;gap:4px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:28px;height:28px;border-radius:8px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent);box-shadow:0 0 8px var(--abr)}
+.sw-btn:hover{border-color:var(--accent)}
+.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+
+/* === MAIN APP === */
+.app{display:none;max-width:920px;margin:0 auto;padding:14px 18px}.app.on{display:block}
+.hdr-bism{text-align:center;color:var(--text3);font-size:12px;margin-bottom:8px;font-family:'Noto Sans Arabic',serif}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:20px;display:flex;align-items:center;gap:8px}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600}
+.ctrl{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:7px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer;transition:all .15s}
+.ctrl button:hover{border-color:var(--accent);color:var(--accent)}
+.status{text-align:center;font-size:14px;margin-bottom:12px;font-weight:600;color:var(--heading);min-height:22px}.status.win{color:var(--accent)}.status.lose{color:#ff4444}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:14px;position:relative;overflow:hidden}
+.game-area::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#8A2BE244,transparent)}
+.score-row{display:flex;gap:20px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:12px}
+.score-item{text-align:center}.score-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px}.score-num{font-size:24px;font-weight:700;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;max-height:110px;overflow-y:auto;font-size:10px;color:var(--text2);margin-bottom:12px}
+.log-line{padding:2px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#ff4444}
+.foot{text-align:center;color:var(--text3);font-size:10px;padding:16px 0;border-top:1px solid var(--border)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* === FORTRESS BORDER PATTERN === */
+.app::before{content:"";display:block;height:6px;margin-bottom:10px;background:repeating-linear-gradient(90deg,#8A2BE222 0px,#8A2BE222 16px,transparent 16px,transparent 20px,#8A2BE211 20px,#8A2BE211 24px,transparent 24px,transparent 40px);border-radius:3px}
+
+/* === NAVIGATION === */
+.back-link{position:fixed;top:10px;left:10px;z-index:100;padding:5px 12px;border-radius:8px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s;display:flex;align-items:center;gap:4px}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:10px}
+
+/* === HELP SIDEBAR === */
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:360px;max-width:88vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid var(--border)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:16px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .15s}.btn-close:hover{border-color:var(--accent);color:var(--accent)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:10px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:16px 18px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:10px;overflow:hidden}.help-item summary{padding:12px 14px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 14px 12px;font-size:11px;color:var(--text2);line-height:1.7}
+.help-step{display:flex;gap:10px;margin-bottom:14px;align-items:flex-start}.help-step-num{width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}
+.wiki-entry{margin-bottom:16px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.7}
+.sidebar-footer{padding:12px 18px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:7px 12px;border-radius:8px;font-size:11px;font-family:inherit;cursor:pointer;transition:all .15s}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:12px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:gold;font-size:10px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:3px 10px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
+canvas{border-radius:10px;cursor:grab;max-width:100%;touch-action:none}canvas:active{cursor:grabbing}
+.info-panel{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:12px;font-size:11px;color:var(--text2);line-height:1.7}.info-panel h3{font-size:14px;color:var(--heading);margin-bottom:6px;font-family:'Outfit',sans-serif}.info-panel .highlight{color:var(--accent);font-weight:600}
+.victory-box{background:var(--abg);border:2px solid var(--accent);border-radius:14px;padding:20px;text-align:center;margin-bottom:12px;animation:fadeUp .4s}.victory-box h2{font-family:'Outfit',sans-serif;color:var(--accent);font-size:22px;margin-bottom:8px}.victory-box p{font-size:13px;color:var(--text);line-height:1.7}
+.btn-execute{padding:12px 28px;background:linear-gradient(135deg,var(--accent),#8A2BE2cc);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase;transition:all .2s}.btn-execute:disabled{opacity:.4;cursor:not-allowed}.btn-execute:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 4px 12px #8A2BE233}
+.btn-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:10px}
+.btn-secondary{padding:9px 18px;background:var(--bg3);border:1px solid var(--border);color:var(--heading);border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .15s}.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+
+/* === ISLAMIC GEOMETRIC PATTERN (top decorative band) === */
+.islamic-band{height:8px;background:repeating-linear-gradient(90deg,#8A2BE233 0px,#8A2BE233 8px,transparent 8px,transparent 12px,#8A2BE222 12px,#8A2BE222 16px,transparent 16px,transparent 24px);margin-bottom:8px;border-radius:4px}
+
+/* === CRESCENT MOON DECORATION === */
+.crescent-deco{position:absolute;top:16px;right:16px;width:20px;height:20px}.crescent-deco::before{content:"";position:absolute;width:20px;height:20px;border-radius:50%;background:#8A2BE222;border:2px solid #8A2BE233}.crescent-deco::after{content:"";position:absolute;top:-2px;left:4px;width:16px;height:16px;border-radius:50%;background:var(--bg2)}
+
+/* === RESPONSIVE === */
+@media(max-width:600px){.splash-box{padding:28px 20px}.hdr h1{font-size:16px}.score-num{font-size:20px}canvas{height:auto}.sidebar{width:100%;max-width:100%}}
+
+.workspace{display:grid;grid-template-columns:1fr 300px;gap:12px;margin-bottom:12px}
+@media(max-width:700px){.workspace{grid-template-columns:1fr}}
+.workspace-main{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px}
+.workspace-panel{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px}
+.task-list{display:flex;flex-direction:column;gap:8px}
+.task-item{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;transition:all .2s}
+.task-item.done{border-color:#8A2BE233;background:#8A2BE208}
+.task-num{width:24px;height:24px;border-radius:50%;background:#8A2BE222;color:#8A2BE2;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;font-family:Outfit,sans-serif;flex-shrink:0}
+.task-item.done .task-num{background:#8A2BE2;color:var(--bg)}
+.task-text{flex:1;font-size:12px;color:var(--text)}
+.task-check{color:#8A2BE2;font-weight:700;font-size:16px}
+.btn-task{padding:5px 12px;background:#8A2BE222;border:1px solid #8A2BE244;color:#8A2BE2;border-radius:6px;font-size:10px;font-weight:600;cursor:pointer;font-family:Outfit,sans-serif}
+.btn-task:hover{background:#8A2BE233}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
+
+<!-- SPLASH SCREEN -->
+<div class="splash" id="splash"><div class="splash-box">
+<div class="splash-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
+<div class="splash-art"><div class="scale-icon">⚖</div></div>
+<h1 class="heading" style="font-size:24px;margin-bottom:6px">Fear Prayer</h1>
+<div class="splash-subtitle">Learn Salat al-Khawf</div>
+<p class="splash-desc">Learn Salat al-Khawf. Learn through interactive gameplay designed for young Muslim minds.</p>
+<button class="btn-go" id="enterBtn">Start Mission</button>
+<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div>
+</div></div>
+
+<!-- MAIN APP -->
+<div class="app" id="app">
+<div class="islamic-band"></div>
+<div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
+<div class="hdr"><h1>Fear Prayer</h1><span class="pill" id="scorePill">Ethics</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<div class="ctrl">
+  <button id="startBtn">&#9654; New Game</button>
+  <button class="btn-help" id="helpBtn" onclick="openHelp()">&#10067;</button>
+  <button id="soundBtn">&#128266;</button>
+  <div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+  <div class="sw"><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div>
+</div>
+<div class="status" id="status">Learn Salat al-Khawf</div>
+<div class="workspace"><div class="workspace-main" id="workArea"></div><div class="workspace-panel" id="infoPanel"></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label" data-i18n="progress">Progress</div><div class="score-num" id="scMain">0%</div></div><div class="score-item"><div class="score-label" data-i18n="tasks">Tasks</div><div class="score-num" id="scLevel">0</div></div><div class="score-item"><div class="score-label" data-i18n="best">Best</div><div class="score-num" id="scBest">0</div></div></div>
+<div id="infoArea"></div>
+<div class="log-box" id="logBox"></div>
+<div class="foot">Gazawat &mdash; Fear Prayer v2.0</div>
+</div>
+
+<!-- HELP SIDEBAR -->
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
-<div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
-<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
-<div class="sidebar-body">
-<div class="help-content active" id="help-faq">
-<details class="help-item"><summary>What is Salat al-Khawf?</summary><p>The Fear Prayer — a special way of praying during battle or danger. The army splits into two groups that take turns praying while the other guards. Mentioned in Quran 4:102.</p></details>
-<details class="help-item"><summary>What was Dhat al-Riqa?</summary><p>A military expedition in 4 AH where the Prophet first performed Salat al-Khawf. Named because the companions' feet were so blistered they wrapped them in rags (riqa).</p></details>
-<details class="help-item"><summary>Is this prayer still valid today?</summary><p>Yes. Salat al-Khawf is a legitimate prayer method for Muslims in danger situations, showing Islam's emphasis that prayer should never be abandoned.</p></details>
-</div>
-<div class="help-content" id="help-howto">
-<div class="help-step"><span class="help-step-num">1</span><p>Learn each step of the Fear Prayer with animated visualization</p></div>
-<div class="help-step"><span class="help-step-num">2</span><p>Watch how Group A and Group B take turns</p></div>
-<div class="help-step"><span class="help-step-num">3</span><p>After learning, take a quiz to test your understanding</p></div>
-<div class="help-step"><span class="help-step-num">4</span><p>Score points for each correct answer</p></div>
-</div>
-<div class="help-content" id="help-wiki">
-<div class="wiki-entry"><h3>&#128214; Quran 4:102</h3><p>"When you are among them and lead the prayer, let one group stand with you while the other guards. Then let the second group pray while the first guards."</p></div>
-<div class="wiki-entry"><h3>&#128330; Why It Matters</h3><p>Salat al-Khawf shows that prayer is so important it is never abandoned — even in the middle of a battlefield. Allah provided a special method to maintain worship during danger.</p></div>
-</div>
-</div>
-<div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div>
+  <div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
+  <div class="help-tabs">
+    <button class="help-tab active" data-tab="faq">FAQ</button>
+    <button class="help-tab" data-tab="howto">How-To</button>
+    <button class="help-tab" data-tab="wiki">Wiki</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="help-content active" id="help-faq">
+      <details class="help-item"><summary id="faq1q">What is this app?</summary><p id="faq1a">An educational Islamic app about Fear Prayer. Learn through interactive gameplay designed for Muslim kids.</p></details>
+      <details class="help-item"><summary id="faq2q">How do I play?</summary><p id="faq2a">Follow the on-screen instructions. Use buttons and interactive elements to progress through the activity.</p></details>
+      <details class="help-item"><summary id="faq3q">Does it work offline?</summary><p id="faq3a">Yes! Once loaded, everything runs in your browser with no internet needed.</p></details>
+      <details class="help-item"><summary id="faq4q">How do I change the theme?</summary><p id="faq4a">Click any theme icon in the controls bar. There are 8 beautiful themes to choose from.</p></details>
+      <details class="help-item"><summary id="faq5q">How do I change language?</summary><p id="faq5a">Click EN, FR, or &#1593; buttons. Arabic enables right-to-left layout automatically.</p></details>
+      <details class="help-item"><summary id="faq6q">Is my data private?</summary><p id="faq6a">Yes. Everything runs locally. No data is sent anywhere.</p></details>
+      <details class="help-item"><summary id="faq7q">Can I play on mobile?</summary><p id="faq7a">Yes! Touch controls work on all devices.</p></details>
+    </div>
+    <div class="help-content" id="help-howto">
+      <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
+      <div class="help-step"><span class="help-step-num">2</span><p>Read the instructions and historical context</p></div>
+      <div class="help-step"><span class="help-step-num">3</span><p>Interact with the game elements</p></div>
+      <div class="help-step"><span class="help-step-num">4</span><p>Complete the objectives to earn points</p></div>
+      <div class="help-step"><span class="help-step-num">5</span><p>Try to beat your high score!</p></div>
+    </div>
+    <div class="help-content" id="help-wiki">
+      <div class="wiki-entry"><h3>Historical Context</h3><p>This activity is based on authentic Islamic history. Learn about the events, people, and lessons from the early Muslim community.</p></div>
+      <div class="wiki-entry"><h3>Educational Value</h3><p>Every interaction teaches an important lesson from Islamic history. Pay attention to the details and reflect on the wisdom.</p></div>
+      <div class="wiki-entry"><h3>Themes &amp; Languages</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand. 3 languages: English, French, Arabic.</p></div>
+    </div>
+  </div>
+  <div class="sidebar-footer">Gazawat &mdash; v2.0</div>
 </aside>
+
 <script>
+/* === SHARED HELPERS === */
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
-var curLang="en";
-function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l);});renderLang();try{localStorage.setItem("wdiy-lang",l);}catch(e){}}
-function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th);});try{localStorage.setItem("wdiy-theme",th);}catch(e){}}
-var soundOn=true,actx;
-function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);var o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
-function log(msg,cls){var b=document.getElementById("logBox");if(!b)return;var d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+let soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
+function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
 
-var STEPS=[
-{title:{en:"Army Splits into Two Groups",fr:"L'armee se divise en deux groupes",ar:"ينقسم الجيش إلى مجموعتين"},desc:{en:"The Prophet divides the army into Group A and Group B. Group A will pray first while Group B faces the enemy and guards.",fr:"Le Prophete divise l'armee en Groupe A et Groupe B. Le Groupe A prie d'abord tandis que le Groupe B garde.",ar:"يقسم النبي ﷺ الجيش إلى المجموعة أ والمجموعة ب. المجموعة أ تصلي أولاً والمجموعة ب تحرس."},groupA:"standing",groupB:"guarding",imam:"standing"},
-{title:{en:"Group A Prays First Rak'ah with Imam",fr:"Le Groupe A prie la premiere Rak'ah avec l'Imam",ar:"المجموعة أ تصلي الركعة الأولى مع الإمام"},desc:{en:"Group A stands behind the Prophet (Imam) and prays the first rak'ah together — with takbir, recitation, ruku, and sujud. Group B continues guarding.",fr:"Le Groupe A se tient derriere le Prophete (Imam) et prie la premiere rak'ah ensemble. Le Groupe B continue de garder.",ar:"المجموعة أ تقف خلف النبي ﷺ (الإمام) وتصلي الركعة الأولى معاً. المجموعة ب تستمر في الحراسة."},groupA:"praying",groupB:"guarding",imam:"praying"},
-{title:{en:"Group A Goes to Guard, Group B Comes to Pray",fr:"Le Groupe A part garder, le Groupe B vient prier",ar:"المجموعة أ تذهب للحراسة، المجموعة ب تأتي للصلاة"},desc:{en:"After the first rak'ah, Group A moves to the guard position facing the enemy. Group B now comes behind the Imam to pray their first rak'ah.",fr:"Apres la premiere rak'ah, le Groupe A va en position de garde. Le Groupe B vient derriere l'Imam pour prier.",ar:"بعد الركعة الأولى، تنتقل المجموعة أ لموقع الحراسة. المجموعة ب تأتي خلف الإمام لتصلي ركعتها الأولى."},groupA:"guarding",groupB:"praying",imam:"praying"},
-{title:{en:"Group B Prays First Rak'ah with Imam",fr:"Le Groupe B prie la premiere Rak'ah avec l'Imam",ar:"المجموعة ب تصلي الركعة الأولى مع الإمام"},desc:{en:"The Imam now prays his second rak'ah (Group B's first). Group B performs ruku and sujud with him. The Imam completes his prayer with taslim.",fr:"L'Imam prie maintenant sa deuxieme rak'ah (la premiere du Groupe B). L'Imam termine sa priere avec le taslim.",ar:"الإمام يصلي الآن ركعته الثانية (الأولى للمجموعة ب). المجموعة ب تركع وتسجد معه. الإمام يُتم صلاته بالتسليم."},groupA:"guarding",groupB:"praying",imam:"finishing"},
-{title:{en:"Group B Completes Individually",fr:"Le Groupe B termine individuellement",ar:"المجموعة ب تُتم فرادى"},desc:{en:"Group B stands and completes their second rak'ah on their own (without the Imam, who has finished). Meanwhile Group A continues guarding.",fr:"Le Groupe B se leve et termine sa deuxieme rak'ah seul (sans l'Imam qui a fini). Le Groupe A continue de garder.",ar:"المجموعة ب تقوم وتُتم ركعتها الثانية بمفردها (بدون الإمام الذي انتهى). المجموعة أ تستمر في الحراسة."},groupA:"guarding",groupB:"praying_alone",imam:"done"},
-{title:{en:"Group A Completes Individually",fr:"Le Groupe A termine individuellement",ar:"المجموعة أ تُتم فرادى"},desc:{en:"Now Group B goes to guard, and Group A comes back to complete their second rak'ah individually. Both groups have now prayed their full prayer!",fr:"Le Groupe B va garder, et le Groupe A revient pour terminer sa deuxieme rak'ah. Les deux groupes ont maintenant complete leur priere!",ar:"الآن المجموعة ب تذهب للحراسة، والمجموعة أ تعود لإتمام ركعتها الثانية فرادى. كلا المجموعتين أتمتا صلاتهما كاملة!"},groupA:"praying_alone",groupB:"guarding",imam:"done"},
-{title:{en:"Prayer Complete — Both Groups Guarded!",fr:"Priere terminee — Les deux groupes ont garde!",ar:"اكتملت الصلاة — كلا المجموعتين حرستا!"},desc:{en:"The entire army has prayed 2 rak'ahs each, and the enemy was never unguarded. This is the miracle of Salat al-Khawf — worship never stops, even on the battlefield.",fr:"Toute l'armee a prie 2 rak'ahs chacun, et l'ennemi n'a jamais ete sans surveillance. C'est le miracle de Salat al-Khawf.",ar:"الجيش بأكمله صلى ركعتين، والعدو لم يُترك بدون حراسة أبداً. هذه معجزة صلاة الخوف — العبادة لا تتوقف حتى في ساحة المعركة."},groupA:"standing",groupB:"standing",imam:"done"}
-];
+/* === APP LOGIC === */
 
-var QUIZ=[
-{q:{en:"How many groups does the army split into for Salat al-Khawf?",fr:"En combien de groupes l'armee se divise-t-elle?",ar:"إلى كم مجموعة ينقسم الجيش لصلاة الخوف؟"},answer:1,choices:{en:["One","Two","Three","Four"],fr:["Un","Deux","Trois","Quatre"],ar:["واحدة","اثنتين","ثلاث","أربع"]}},
-{q:{en:"What does Group B do while Group A prays?",fr:"Que fait le Groupe B pendant que le Groupe A prie?",ar:"ماذا تفعل المجموعة ب بينما المجموعة أ تصلي؟"},answer:0,choices:{en:["Guards against the enemy","Rests and eats","Prepares weapons","Sleeps"],fr:["Garde contre l'ennemi","Se repose et mange","Prepare les armes","Dort"],ar:["تحرس ضد العدو","تستريح وتأكل","تجهز الأسلحة","تنام"]}},
-{q:{en:"Which Quran verse mentions Salat al-Khawf?",fr:"Quel verset du Coran mentionne Salat al-Khawf?",ar:"أي آية قرآنية تذكر صلاة الخوف؟"},answer:2,choices:{en:["2:238","3:102","4:102","5:6"],fr:["2:238","3:102","4:102","5:6"],ar:["البقرة:238","آل عمران:102","النساء:102","المائدة:6"]}},
-{q:{en:"How many rak'ahs does each group pray in total?",fr:"Combien de rak'ahs chaque groupe prie-t-il au total?",ar:"كم ركعة تصلي كل مجموعة إجمالاً؟"},answer:1,choices:{en:["One","Two","Three","Four"],fr:["Une","Deux","Trois","Quatre"],ar:["واحدة","اثنتين","ثلاث","أربع"]}},
-{q:{en:"What was the expedition of Dhat al-Riqa named after?",fr:"D'ou vient le nom de l'expedition de Dhat al-Riqa?",ar:"ما سبب تسمية غزوة ذات الرقاع؟"},answer:0,choices:{en:["Rags wrapped around blistered feet","A type of armor","A mountain near the battlefield","The name of the enemy tribe"],fr:["Des chiffons enroules autour des pieds ampoules","Un type d'armure","Une montagne pres du champ de bataille","Le nom de la tribu ennemie"],ar:["الرقاع التي لُفّت على الأقدام المتقرحة","نوع من الدروع","جبل قرب ساحة المعركة","اسم قبيلة العدو"]}},
-{q:{en:"What does Salat al-Khawf teach us about prayer?",fr:"Que nous enseigne Salat al-Khawf sur la priere?",ar:"ماذا تعلمنا صلاة الخوف عن الصلاة؟"},answer:0,choices:{en:["Prayer is never abandoned, even in battle","Prayer can be skipped during emergencies","Only leaders need to pray during war","Prayer is optional during travel"],fr:["La priere n'est jamais abandonnee, meme en bataille","La priere peut etre omise en urgence","Seuls les chefs prient pendant la guerre","La priere est optionnelle en voyage"],ar:["الصلاة لا تُترك أبداً حتى في المعركة","يمكن ترك الصلاة في الطوارئ","فقط القادة يصلون في الحرب","الصلاة اختيارية في السفر"]}}
-];
-
-var UI={
-title:{en:"Dhat al-Riqa Fear Prayer",fr:"Priere de la Peur de Dhat al-Riqa",ar:"صلاة الخوف في ذات الرقاع"},
-sub:{en:"Prayer never stops",fr:"La priere ne s'arrete jamais",ar:"الصلاة لا تتوقف"},
-desc:{en:"Learn about Salat al-Khawf — how Muslims prayed in shifts during battle.",fr:"Apprenez la Salat al-Khawf — comment les musulmans priaient par equipes pendant la bataille.",ar:"تعلّم صلاة الخوف — كيف صلى المسلمون بالتناوب أثناء المعركة."},
-next:{en:"Next Step",fr:"Etape suivante",ar:"الخطوة التالية"},
-start_quiz:{en:"Start Quiz",fr:"Commencer le Quiz",ar:"ابدأ الاختبار"},
-correct:{en:"Correct!",fr:"Correct!",ar:"صحيح!"},
-wrong:{en:"Not quite — review the steps!",fr:"Pas tout a fait — revoir les etapes!",ar:"ليس تماماً — راجع الخطوات!"},
-done_title:{en:"Fear Prayer Mastered!",fr:"Priere de la Peur maitrisee!",ar:"أتقنت صلاة الخوف!"},
-done_msg:{en:"You scored {0} out of {1}. Prayer is the pillar of Islam — it never stops, even in battle!",fr:"Vous avez obtenu {0} sur {1}. La priere est le pilier de l'Islam — elle ne s'arrete jamais!",ar:"أحرزت {0} من أصل {1}. الصلاة عماد الدين — لا تتوقف حتى في المعركة!"},
-step_of:{en:"Step {0} of {1}",fr:"Etape {0} sur {1}",ar:"الخطوة {0} من {1}"},
-q_of:{en:"Question {0} of {1}",fr:"Question {0} sur {1}",ar:"السؤال {0} من {1}"},
-correct_lbl:{en:"Correct",fr:"Correct",ar:"صحيح"},total_lbl:{en:"Total",fr:"Total",ar:"المجموع"},
-new_game:{en:"▶ Start Again",fr:"▶ Recommencer",ar:"▶ ابدأ من جديد"},
-next_q:{en:"Next Question",fr:"Question suivante",ar:"السؤال التالي"}
+const I18N={
+  en:{title:"Fear Prayer",subtitle:"Learn Salat al-Khawf",start:"Start Mission",newGame:"New Game",score:"Score",level:"Level",best:"Best",progress:"Progress",correct:"Correct",tasks:"Tasks",placed:"Placed",accuracy:"Accuracy",wellDone:"Well Done!",tryAgain:"Try Again",hint:"Hint",execute:"Execute",reset:"Reset",next:"Next",prev:"Previous",complete:"Complete",victory:"Victory! MashaAllah!",defeat:"Try again, trust in Allah",helpTitle:"Help",faqTitle:"FAQ",howtoTitle:"How-To",wikiTitle:"Wiki",q1:"What is this app?",a1:"An educational Islamic app about Fear Prayer. Learn through interactive gameplay designed for Muslim kids.",q2:"How do I play?",a2:"Follow the on-screen instructions. Use buttons and interactive elements to progress through the activity.",q3:"Does it work offline?",a3:"Yes! Once loaded, everything runs in your browser with no internet needed.",q4:"How do I change the theme?",a4:"Click any theme icon in the controls bar. There are 8 beautiful themes to choose from.",q5:"How do I change language?",a5:"Click EN, FR, or ع buttons. Arabic enables right-to-left layout automatically.",q6:"Is my data private?",a6:"Yes. Everything runs locally. No data is sent anywhere.",q7:"Can I play on mobile?",a7:"Yes! Touch controls work on all devices.",s1:"Click Start Mission on the splash screen",s2:"Read the instructions and historical context",s3:"Interact with the game elements",s4:"Complete the objectives to earn points",s5:"Try to beat your high score!",w1Title:"Historical Context",w1Text:"This activity is based on authentic Islamic history. Learn about the events, people, and lessons from the early Muslim community.",w2Title:"Educational Value",w2Text:"Every interaction teaches an important lesson from Islamic history. Pay attention to the details and reflect on the wisdom.",w3Title:"Themes & Languages",w3Text:"8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand. 3 languages: English, French, Arabic."},
+  fr:{title:"Prière de la Peur",subtitle:"Apprends la Salat al-Khawf",start:"Démarrer la Mission",newGame:"Nouvelle Partie",score:"Score",level:"Niveau",best:"Meilleur",progress:"Progrès",correct:"Correct",tasks:"Tâches",placed:"Placé",accuracy:"Précision",wellDone:"Bien joué!",tryAgain:"Réessaie",hint:"Indice",execute:"Exécuter",reset:"Réinitialiser",next:"Suivant",prev:"Précédent",complete:"Terminer",victory:"Victoire! MashaAllah!",defeat:"Réessaie, fais confiance en Allah",helpTitle:"Aide",faqTitle:"FAQ",howtoTitle:"Comment",wikiTitle:"Wiki",q1:"Qu'est-ce que cette application?",a1:"Une application éducative islamique sur Prière de la Peur. Apprends par le jeu interactif conçu pour les enfants musulmans.",q2:"Comment jouer?",a2:"Suis les instructions à l'écran. Utilise les boutons et éléments interactifs pour progresser.",q3:"Fonctionne hors ligne?",a3:"Oui! Une fois chargé, tout fonctionne dans ton navigateur sans internet.",q4:"Changer le thème?",a4:"Clique sur n'importe quelle icône de thème dans la barre de contrôle.",q5:"Changer la langue?",a5:"Clique sur EN, FR ou ع. L'arabe active automatiquement la mise en page droite-à-gauche.",q6:"Mes données sont privées?",a6:"Oui. Tout fonctionne localement. Aucune donnée n'est envoyée.",q7:"Mobile compatible?",a7:"Oui! Les contrôles tactiles fonctionnent sur tous les appareils.",s1:"Clique sur Démarrer la Mission",s2:"Lis les instructions et le contexte historique",s3:"Interagis avec les éléments du jeu",s4:"Complète les objectifs pour gagner des points",s5:"Essaie de battre ton meilleur score!",w1Title:"Contexte Historique",w1Text:"Cette activité est basée sur l'histoire islamique authentique.",w2Title:"Valeur Éducative",w2Text:"Chaque interaction enseigne une leçon importante de l'histoire islamique.",w3Title:"Thèmes et Langues",w3Text:"8 thèmes intégrés. 3 langues: Anglais, Français, Arabe."},
+  ar:{title:"صلاة الخوف",subtitle:"تعلّم صلاة الخوف",start:"ابدأ المهمة",newGame:"لعبة جديدة",score:"النقاط",level:"المستوى",best:"الأفضل",progress:"التقدم",correct:"صحيح",tasks:"المهام",placed:"تم وضعه",accuracy:"الدقة",wellDone:"أحسنت!",tryAgain:"حاول مرة أخرى",hint:"تلميح",execute:"نفّذ",reset:"إعادة",next:"التالي",prev:"السابق",complete:"أكمل",victory:"نصر! ما شاء الله!",defeat:"حاول مرة أخرى وتوكل على الله",helpTitle:"مساعدة",faqTitle:"أسئلة",howtoTitle:"كيف",wikiTitle:"ويكي",q1:"ما هذا التطبيق؟",a1:"تطبيق تعليمي إسلامي عن صلاة الخوف. تعلّم من خلال اللعب التفاعلي المصمم لأطفال المسلمين.",q2:"كيف ألعب؟",a2:"اتبع التعليمات على الشاشة. استخدم الأزرار والعناصر التفاعلية للتقدم.",q3:"يعمل بدون إنترنت؟",a3:"نعم! بمجرد تحميله يعمل كل شيء في متصفحك بدون إنترنت.",q4:"تغيير السمة؟",a4:"انقر على أي أيقونة سمة في شريط التحكم.",q5:"تغيير اللغة؟",a5:"انقر على EN أو FR أو ع. العربية تفعّل التخطيط من اليمين لليسار تلقائياً.",q6:"بياناتي خاصة؟",a6:"نعم. كل شيء يعمل محلياً. لا ترسل أي بيانات.",q7:"يعمل على الجوال؟",a7:"نعم! أدوات التحكم باللمس تعمل على جميع الأجهزة.",s1:"انقر على ابدأ المهمة",s2:"اقرأ التعليمات والسياق التاريخي",s3:"تفاعل مع عناصر اللعبة",s4:"أكمل الأهداف لكسب النقاط",s5:"حاول التغلب على أفضل نتيجة لك!",w1Title:"السياق التاريخي",w1Text:"هذا النشاط مبني على التاريخ الإسلامي الأصيل.",w2Title:"القيمة التعليمية",w2Text:"كل تفاعل يعلّم درساً مهماً من التاريخ الإسلامي.",w3Title:"السمات واللغات",w3Text:"٨ سمات مدمجة. ٣ لغات: الإنجليزية والفرنسية والعربية."}
 };
-function t(k){return UI[k]?UI[k][curLang]||UI[k]["en"]:"";}
-function renderLang(){document.getElementById("splashTitle").textContent=t("title");document.getElementById("splashSub").textContent=t("sub");document.getElementById("splashDesc").textContent=t("desc");document.getElementById("appTitle").textContent=t("title");document.getElementById("startBtn").textContent=t("new_game");}
-
-var stepIdx=0,quizIdx=0,correct=0,phase="learn",locked=false;
-
-function drawViz(s){
-var c=document.getElementById("vizCanvas");if(!c)return;var ctx=c.getContext("2d");
-var cs=getComputedStyle(document.documentElement);
-var bgCol=cs.getPropertyValue("--bg3").trim()||"#161b22";
-var accentCol=cs.getPropertyValue("--accent").trim()||"#00ff88";
-var textCol=cs.getPropertyValue("--text2").trim()||"#8b949e";
-var headCol=cs.getPropertyValue("--heading").trim()||"#e6edf3";
-ctx.fillStyle=bgCol;ctx.fillRect(0,0,c.width,c.height);
-// Qibla arrow
-ctx.fillStyle=textCol;ctx.font="10px Outfit";ctx.textAlign="center";ctx.fillText("QIBLA →",c.width-40,15);
-// Labels
-ctx.font="bold 11px Outfit";ctx.fillStyle=accentCol;ctx.fillText("GROUP A",130,20);ctx.fillStyle="#ff6b35";ctx.fillText("GROUP B",370,20);ctx.fillStyle="gold";ctx.fillText("IMAM",250,20);
-// Enemy
-ctx.fillStyle="#ff4444";ctx.fillText("ENEMY",250,190);ctx.fillRect(180,170,140,16);
-// Draw groups
-function drawGroup(x,y,state,color,label){
-ctx.fillStyle=color;
-for(var i=0;i<5;i++){
-var px=x-30+i*15,py=y;
-if(state==="praying"||state==="praying_alone"){ctx.fillRect(px,py+6,10,4);ctx.fillStyle=color;ctx.beginPath();ctx.arc(px+5,py,4,0,Math.PI*2);ctx.fill();}
-else if(state==="guarding"){ctx.fillRect(px,py-8,3,16);ctx.beginPath();ctx.arc(px+1,py-10,4,0,Math.PI*2);ctx.fill();}
-else{ctx.beginPath();ctx.arc(px+5,py,5,0,Math.PI*2);ctx.fill();ctx.fillRect(px+3,py+5,4,10);}
-ctx.fillStyle=color;}
-ctx.font="9px IBM Plex Mono";ctx.textAlign="center";
-var stateLabel=state==="praying"?"PRAYING":state==="guarding"?"GUARDING":state==="praying_alone"?"PRAYING (solo)":state==="finishing"?"FINISHING":state==="done"?"DONE":"READY";
-ctx.fillText(stateLabel,x,y+30);
+let curLang="en";
+function t(k){return(I18N[curLang]&&I18N[curLang][k])||k;}
+function applyLang(){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.dataset.i18n;if(I18N[curLang][k])el.textContent=I18N[curLang][k];});
+  const tt=document.querySelector(".splash-box h1");if(tt)tt.textContent=t("title");
+  const st=document.querySelector(".splash-subtitle");if(st)st.textContent=t("subtitle");
+  const btn=document.getElementById("enterBtn");if(btn)btn.textContent=t("start");
+  const at=document.querySelector("#app h1");if(at)at.textContent=t("title");
 }
-drawGroup(130,70,s.groupA,accentCol,"A");
-drawGroup(370,70,s.groupB,"#ff6b35","B");
-// Imam
-var imamState=s.imam;
-ctx.fillStyle="gold";
-var ix=250,iy=80;
-if(imamState==="praying"||imamState==="finishing"){ctx.fillRect(ix-5,iy+6,10,4);ctx.beginPath();ctx.arc(ix,iy,5,0,Math.PI*2);ctx.fill();}
-else if(imamState==="done"){ctx.beginPath();ctx.arc(ix,iy,5,0,Math.PI*2);ctx.fill();ctx.fillRect(ix-2,iy+5,4,10);}
-else{ctx.beginPath();ctx.arc(ix,iy,5,0,Math.PI*2);ctx.fill();ctx.fillRect(ix-2,iy+5,4,10);}
-ctx.font="9px IBM Plex Mono";ctx.textAlign="center";
-ctx.fillText(imamState==="praying"?"LEADING":imamState==="finishing"?"COMPLETING":imamState==="done"?"FINISHED":"READY",ix,iy+30);
-// Divider
-ctx.strokeStyle=textCol;ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(0,150);ctx.lineTo(c.width,150);ctx.stroke();ctx.setLineDash([]);
-ctx.fillStyle=textCol;ctx.font="9px IBM Plex Mono";ctx.fillText("— FRONT LINE —",250,148);
+const HS_KEY="wdiy-gz-fearprayer";
+function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
+function saveHS(s){try{const b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true;}}catch(e){}return false;}
+function showHS(){const b=loadHS();if(b>0){const p=document.getElementById("scorePill");if(p&&!p.querySelector(".hs-badge"))p.innerHTML+=' <span class="hs-badge">🏆 '+b+'</span>';}}
+function checkHS(s){if(saveHS(s)){log("NEW HIGH SCORE: "+s+"!","success");showHS();}}
+let timerInterval,timerSec=0;
+function startTimer(){timerSec=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSec++;const m=Math.floor(timerSec/60),s=timerSec%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
+function stopTimer(){clearInterval(timerInterval);}
+
+let gameState="idle",score=0,tasksTotal=5,tasksDone=0;
+let steps=[];
+function initGame(){startNewGame();}
+function startNewGame(){
+  gameState="playing";score=0;tasksDone=0;
+  steps=[
+    {text:t("s1"),done:false},{text:t("s2"),done:false},{text:t("s3"),done:false},
+    {text:t("s4"),done:false},{text:t("s5"),done:false}
+  ];
+  startTimer();renderWorkspace();updateUI();log(t("subtitle"));
 }
-
-function newGame(){stepIdx=0;quizIdx=0;correct=0;phase="learn";locked=false;document.getElementById("scorePill").textContent="0 / 0";document.getElementById("logBox").innerHTML="";showStep();}
-
-function showStep(){
-if(stepIdx>=STEPS.length){phase="quiz";showQuiz();return;}
-var s=STEPS[stepIdx];drawViz(s);
-var ui=document.getElementById("stepUI");
-ui.innerHTML='<div class="step-card"><div class="step-num">'+(stepIdx+1)+'</div><div class="step-title">'+(s.title[curLang]||s.title["en"])+'</div><div class="step-desc">'+(s.desc[curLang]||s.desc["en"])+'</div></div>'+
-'<div class="answer-row"><button class="answer-btn" id="nextBtn">'+(stepIdx<STEPS.length-1?t("next"):t("start_quiz"))+'</button></div>'+
-'<div class="progress"><div class="progress-bar" style="width:'+(stepIdx/STEPS.length*100)+'%"></div></div>';
-document.getElementById("nextBtn").onclick=function(){stepIdx++;snd("click");showStep();};
-document.getElementById("status").textContent=t("step_of").replace("{0}",stepIdx+1).replace("{1}",STEPS.length);document.getElementById("status").className="status";
+function renderWorkspace(){
+  const wa=document.getElementById("workArea");if(!wa)return;
+  wa.innerHTML='<div class="task-list">'+steps.map((s,i)=>
+    '<div class="task-item'+(s.done?" done":"")+'"><span class="task-num">'+(i+1)+'</span><span class="task-text">'+s.text+'</span>'+(s.done?'<span class="task-check">✓</span>':'<button class="btn-task" onclick="completeTask('+i+')">'+t("complete")+'</button>')+'</div>'
+  ).join("")+'</div>';
+  const ip=document.getElementById("infoPanel");
+  if(ip)ip.innerHTML='<div class="info-panel"><h3>'+t("title")+'</h3><p>'+t("subtitle")+'</p></div>';
 }
-
-function showQuiz(){
-if(quizIdx>=QUIZ.length){endGame();return;}locked=false;
-var q=QUIZ[quizIdx];var choices=q.choices[curLang]||q.choices["en"];
-var c=document.getElementById("vizCanvas");var ctx=c.getContext("2d");
-var bgCol=getComputedStyle(document.documentElement).getPropertyValue("--bg3").trim()||"#161b22";
-ctx.fillStyle=bgCol;ctx.fillRect(0,0,c.width,c.height);
-ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue("--accent").trim();
-ctx.font="bold 16px Outfit";ctx.textAlign="center";ctx.fillText("QUIZ TIME",c.width/2,60);
-ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue("--text2").trim();
-ctx.font="12px Outfit";ctx.fillText(t("q_of").replace("{0}",quizIdx+1).replace("{1}",QUIZ.length),c.width/2,90);
-
-var ui=document.getElementById("stepUI");
-ui.innerHTML='<div class="quiz-desc" style="font-weight:700">'+(q.q[curLang]||q.q["en"])+'</div><div class="answer-row" id="choiceRow"></div>';
-var row=document.getElementById("choiceRow");
-choices.forEach(function(ch,i){var b=document.createElement("button");b.className="answer-btn";b.style.minWidth="45%";b.style.fontSize="12px";b.textContent=ch;b.onclick=function(){pickQuiz(b,i,q.answer);};row.appendChild(b);});
-document.getElementById("status").textContent=t("q_of").replace("{0}",quizIdx+1).replace("{1}",QUIZ.length);document.getElementById("status").className="status";
+function completeTask(i){
+  if(steps[i].done)return;
+  steps[i].done=true;tasksDone++;score+=20;snd("ok");
+  log(t("wellDone")+" +20","success");
+  checkWin();renderWorkspace();updateUI();
 }
-
-function pickQuiz(btn,idx,ans){
-if(locked)return;locked=true;quizIdx++;
-if(idx===ans){correct++;snd("ok");btn.classList.add("correct");document.getElementById("status").textContent=t("correct");document.getElementById("status").className="status win";log("Q"+(quizIdx)+" Correct!","success");}
-else{snd("err");btn.classList.add("wrong");document.getElementById("status").textContent=t("wrong");document.getElementById("status").className="status lose";log("Q"+(quizIdx)+" Wrong","error");document.querySelectorAll("#choiceRow .answer-btn").forEach(function(b,i){if(i===ans)b.classList.add("correct");});}
-document.getElementById("scorePill").textContent=correct+" / "+quizIdx;
-var nxt=document.createElement("div");nxt.className="answer-row";nxt.style.marginTop="8px";nxt.innerHTML='<button class="answer-btn" id="nextBtn">'+t("next_q")+'</button>';
-document.getElementById("stepUI").appendChild(nxt);document.getElementById("nextBtn").onclick=showQuiz;
+function checkWin(){
+  if(tasksDone>=steps.length){
+    gameState="won";stopTimer();snd("win");
+    log(t("victory"),"success");checkHS(score);
+    const area=document.getElementById("infoArea");
+    if(area)area.innerHTML='<div class="victory-box"><h2>'+t("victory")+'</h2><p>'+t("score")+": "+score+'</p></div>';
+  }
 }
-
-function endGame(){snd("win");checkHS();document.getElementById("status").textContent=t("done_title");document.getElementById("status").className="status win";
-var c=document.getElementById("vizCanvas");var ctx=c.getContext("2d");
-var bgCol=getComputedStyle(document.documentElement).getPropertyValue("--bg3").trim();ctx.fillStyle=bgCol;ctx.fillRect(0,0,c.width,c.height);
-ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue("--accent").trim();ctx.font="bold 18px Outfit";ctx.textAlign="center";ctx.fillText(t("done_title"),c.width/2,80);
-ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue("--heading").trim();ctx.font="14px Outfit";ctx.fillText(correct+"/"+QUIZ.length,c.width/2,110);
-document.getElementById("stepUI").innerHTML='<div style="text-align:center"><p style="font-size:13px;color:var(--text);line-height:1.7;max-width:400px;margin:0 auto">'+t("done_msg").replace("{0}",correct).replace("{1}",QUIZ.length)+'</p></div>';
-log("Complete! "+correct+"/"+QUIZ.length,"success");}
-
-var HS_KEY="wdiy-hs-dhat-al-riqa-fear-prayer";
-function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0;}catch(e){return 0;}}
-function saveHS(s){try{var b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true;}}catch(e){}return false;}
-function showHS(){var b=loadHS();if(b>0){var p=document.getElementById("scorePill");if(p&&!p.querySelector(".hs-badge"))p.innerHTML+=' <span class="hs-badge">&#127942; '+b+'</span>';}}
-function checkHS(){var pct=Math.round(correct/QUIZ.length*100);if(saveHS(pct))log("NEW HIGH SCORE: "+pct+"%!","success");}
-
-document.addEventListener("DOMContentLoaded",function(){
-setLang("en");setTheme("terminal");
-try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);}catch(e){}
-document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
-document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
-showHS();
-document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
-document.getElementById("startBtn").addEventListener("click",newGame);
-document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"🔊":"🔇";try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});
-try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="🔇";}}catch(e){}
-document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();if(e.key>="1"&&e.key<="4"){var btns=document.querySelectorAll("#choiceRow .answer-btn");var i=parseInt(e.key)-1;if(btns[i])btns[i].click();}if(e.key==="Enter"){var n=document.getElementById("nextBtn");if(n)n.click();var en=document.getElementById("enterBtn");if(en&&en.offsetParent!==null)en.click();}});
-document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+function updateUI(){
+  document.getElementById("scMain").textContent=Math.round((tasksDone/steps.length)*100)+"%";
+  document.getElementById("scLevel").textContent=tasksDone;
+  document.getElementById("scBest").textContent=loadHS();
+}
+/* --- BOOT --- */
+document.addEventListener("DOMContentLoaded",()=>{
+  showHS();
+  document.getElementById("enterBtn").addEventListener("click",()=>{
+    document.getElementById("splash").style.display="none";
+    document.getElementById("app").classList.add("on");
+    document.getElementById("backLink").style.display="";
+    initGame();
+  });
+  document.getElementById("startBtn").addEventListener("click",()=>{startNewGame();});
+  document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{
+    curLang=b.dataset.lang;setLang(curLang);applyLang();
+    document.querySelectorAll("[data-lang]").forEach(bb=>bb.classList.toggle("on",bb.dataset.lang===curLang));
+  }));
+  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);}));
+  document.querySelectorAll(".help-tab").forEach(tb=>tb.addEventListener("click",()=>{
+    document.querySelectorAll(".help-tab").forEach(t2=>t2.classList.remove("active"));
+    document.querySelectorAll(".help-content").forEach(c=>c.classList.remove("active"));
+    tb.classList.add("active");document.getElementById("help-"+tb.dataset.tab).classList.add("active");
+  }));
 });
 </script></body></html>
