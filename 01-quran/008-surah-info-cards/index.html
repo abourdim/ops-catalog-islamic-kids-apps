@@ -1,0 +1,212 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="terminal"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Surah Info Cards — Workshop-Diy</title><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/><style>[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--border2:#30363d;--text:#c9d1d9;--text2:#8b949e;--text3:#484f58;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2);--glow:0 0 20px rgba(0,255,136,.1)}
+[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--border2:#2a2f45;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25);--glow:0 0 20px rgba(108,92,231,.1)}
+[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--border2:#3d302c;--text:#d4b8a8;--text2:#9a7e70;--text3:#6a5448;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.1)}
+[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--border2:#b8c4d0;--text:#3a4555;--text2:#6b7a8d;--text3:#9aa8b8;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2);--glow:0 0 15px rgba(0,102,204,.08)}
+[data-theme="phosphor"]{--bg:#001100;--bg2:#001a00;--bg3:#002200;--border:#003300;--border2:#004400;--text:#33cc33;--text2:#228822;--text3:#116611;--heading:#44ff44;--accent:#44ff44;--abg:rgba(68,255,68,.06);--abr:rgba(68,255,68,.2);--glow:0 0 25px rgba(68,255,68,.15)}
+[data-theme="signal"]{--bg:#0c0a14;--bg2:#110e1c;--bg3:#1a1628;--border:#252040;--border2:#352e55;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a80;--heading:#e8ddf8;--accent:#00e5ff;--abg:rgba(0,229,255,.06);--abr:rgba(0,229,255,.2);--glow:0 0 20px rgba(0,229,255,.1)}
+[data-theme="redshift"]{--bg:#100808;--bg2:#180c0c;--bg3:#221414;--border:#331a1a;--border2:#442222;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#ff3355;--abg:rgba(255,51,85,.06);--abr:rgba(255,51,85,.25);--glow:0 0 20px rgba(255,51,85,.1)}
+[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--border2:#c5b8a0;--text:#4a4035;--text2:#7a6e60;--text3:#a09585;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2);--glow:0 0 15px rgba(184,134,11,.08)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;min-height:100vh}[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Mono',monospace}h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .5s}.splash-bism{color:var(--text3);font-size:12px;margin-bottom:14px}.btn-go{padding:12px 32px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase}.sw{display:flex;gap:3px;justify-content:center;margin-top:14px;flex-wrap:wrap}.sw-btn{width:26px;height:26px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}.sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}.sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}.app{display:none;max-width:620px;margin:0 auto;padding:12px 16px}.app.on{display:block}.hdr-bism{text-align:center;color:var(--text3);font-size:11px;margin-bottom:8px}.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}.hdr h1{font-size:18px}.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}.ctrl{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}.ctrl select,.ctrl button{padding:6px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--heading);font-size:11px;font-family:inherit;cursor:pointer}.ctrl button:hover{border-color:var(--abr)}.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px;min-height:200px}.foot{text-align:center;color:var(--text3);font-size:10px;padding:14px 0;border-top:1px solid var(--border)}@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.back-link{position:fixed;top:8px;left:8px;z-index:100;padding:4px 10px;border-radius:6px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:11px;text-decoration:none;font-family:'Outfit',sans-serif;opacity:.7;transition:all .15s}.back-link:hover{opacity:1;border-color:var(--accent);color:var(--accent)}[dir="rtl"] .back-link{left:auto;right:8px}.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .25s}.sidebar-overlay.open{opacity:1;pointer-events:auto}.sidebar{position:fixed;top:0;width:320px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .25s ease}.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--border)}.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading)}.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}.btn-close:hover{border-color:var(--accent);color:var(--accent)}.help-tabs{display:flex;border-bottom:1px solid var(--border)}.help-tab{flex:1;padding:8px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .15s}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}.sidebar-body{flex:1;overflow-y:auto;padding:14px 16px}.help-content{display:none}.help-content.active{display:block}.help-item{margin-bottom:8px;border:1px solid var(--border);border-radius:8px;overflow:hidden}.help-item summary{padding:10px 12px;cursor:pointer;font-size:12px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:6px}.help-item summary::before{content:"▸";color:var(--accent);font-size:10px;transition:transform .2s}.help-item[open] summary::before{transform:rotate(90deg)}.help-item p{padding:0 12px 10px;font-size:11px;color:var(--text2);line-height:1.6}.help-step{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}.help-step-num{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.help-step p{font-size:11px;color:var(--text2);line-height:1.6;margin:0}.wiki-entry{margin-bottom:14px}.wiki-entry h3{font-size:13px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:11px;color:var(--text2);line-height:1.6}.sidebar-footer{padding:10px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 10px;border-radius:6px;font-size:11px;font-family:inherit;cursor:pointer}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.search-box{width:100%;padding:8px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;color:var(--heading);font-family:inherit;font-size:12px;margin-bottom:12px}.search-box:focus{outline:none;border-color:var(--accent)}.filter-row{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}.filter-btn{padding:4px 10px;border-radius:14px;border:1px solid var(--border);background:none;color:var(--text2);font-size:10px;cursor:pointer;font-family:'Outfit',sans-serif}.filter-btn:hover,.filter-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;max-height:60vh;overflow-y:auto;padding:4px}.s-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px;cursor:pointer;transition:all .15s;animation:fadeUp .3s}.s-card:hover{border-color:var(--accent);box-shadow:var(--glow)}.s-card-num{font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;color:var(--accent);float:right;margin-left:8px;line-height:1}.s-card-name{font-family:'Outfit','Noto Sans Arabic',sans-serif;font-size:15px;font-weight:700;color:var(--heading)}.s-card-ar{font-family:'Noto Sans Arabic',sans-serif;font-size:14px;color:var(--text2);direction:rtl}.s-card-meta{font-size:10px;color:var(--text3);margin-top:6px;display:flex;gap:8px;flex-wrap:wrap}.s-card-tag{display:inline-block;padding:2px 6px;border-radius:8px;font-size:9px;font-weight:600}.tag-makki{background:rgba(255,179,71,.15);color:#ffb347}.tag-madani{background:rgba(100,200,100,.15);color:#64c864}.s-card-detail{display:none;margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:11px;color:var(--text2);line-height:1.7}.s-card.expanded .s-card-detail{display:block}.counter{font-family:'Outfit',sans-serif;font-size:12px;color:var(--text3);margin-bottom:8px;text-align:center}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Surah Info Cards</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px">Explore Every Surah</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Browse beautiful cards with info about each surah — revelation place, verse count, key themes, and more.</p><button class="btn-go" id="enterBtn">Explore</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>Surah Info Cards</h1><span class="pill" id="countPill">114 Surahs</span></div><div class="ctrl"><button id="helpBtn" class="btn-help" onclick="openHelp()">&#10067;</button><button id="soundBtn">&#128266;</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div><div class="sw"><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div></div>
+<input class="search-box" id="searchBox" type="text" placeholder="Search surahs..."/>
+<div class="filter-row" id="filterRow"><button class="filter-btn on" data-f="all">All</button><button class="filter-btn" data-f="makki">Makki</button><button class="filter-btn" data-f="madani">Madani</button></div>
+<div class="counter" id="counter"></div>
+<div class="game-area"><div class="cards-grid" id="cardsGrid"></div></div>
+<div class="foot">Workshop-Diy &#8212; Surah Info Cards v1.0</div></div>
+
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel" role="dialog" aria-modal="true">
+<div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
+<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
+<div class="sidebar-body">
+<div class="help-content active" id="help-faq">
+<details class="help-item"><summary>What is Surah Info Cards?</summary><p>An interactive catalog of all 114 surahs of the Quran. Each card shows the surah name, number, revelation place, verse count, and key themes.</p></details>
+<details class="help-item"><summary>Can I search for a surah?</summary><p>Yes! Use the search box to find surahs by name (English or Arabic) or number.</p></details>
+<details class="help-item"><summary>Can I filter Makki/Madani?</summary><p>Yes. Click the filter buttons to show only Makki or Madani surahs.</p></details>
+<details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs locally in your browser.</p></details>
+</div>
+<div class="help-content" id="help-howto">
+<div class="help-step"><span class="help-step-num">1</span><p>Browse the cards or use search to find a surah</p></div>
+<div class="help-step"><span class="help-step-num">2</span><p>Click a card to expand it and see more details</p></div>
+<div class="help-step"><span class="help-step-num">3</span><p>Use Makki/Madani filters to categorize surahs</p></div>
+<div class="help-step"><span class="help-step-num">4</span><p>Switch languages and themes as you like</p></div>
+</div>
+<div class="help-content" id="help-wiki">
+<div class="wiki-entry"><h3>&#128214; Surah</h3><p>A surah is a chapter of the Quran. There are 114 surahs, varying in length from 3 to 286 verses.</p></div>
+<div class="wiki-entry"><h3>&#128330; Makki vs Madani</h3><p>Makki surahs were revealed in Mecca (before Hijrah) and often discuss faith and the hereafter. Madani surahs were revealed in Medina and often contain laws and social guidance.</p></div>
+<div class="wiki-entry"><h3>&#127752; Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+</div></div>
+<div class="sidebar-footer">Workshop-DIY &#8212; v1.0</div></aside>
+
+<script>
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open")}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));curLang=l;render()}
+function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===t))}
+var soundOn=true,actx;
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;var n=actx.currentTime;o.frequency.value=t==="click"?800:600;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.06);o.start(n);o.stop(n+.06)}
+var curLang="en",curFilter="all",expanded=null;
+var SURAHS=[
+{n:1,en:"Al-Fatihah",ar:"الفاتحة",v:7,mk:true,th:{en:"Opening prayer, praise of Allah, guidance",fr:"Priere d'ouverture, louange d'Allah, guidance",ar:"دعاء الافتتاح، حمد الله، الهداية"}},
+{n:2,en:"Al-Baqarah",ar:"البقرة",v:286,mk:false,th:{en:"Laws, stories of Bani Israel, faith foundations",fr:"Lois, histoires de Bani Israel, fondements de la foi",ar:"الأحكام، قصص بني إسرائيل، أصول الإيمان"}},
+{n:3,en:"Aal-Imran",ar:"آل عمران",v:200,mk:false,th:{en:"Family of Imran, Battle of Uhud, patience",fr:"Famille d'Imran, bataille d'Uhud, patience",ar:"آل عمران، غزوة أحد، الصبر"}},
+{n:4,en:"An-Nisa",ar:"النساء",v:176,mk:false,th:{en:"Women's rights, inheritance, justice",fr:"Droits des femmes, heritage, justice",ar:"حقوق المرأة، الميراث، العدل"}},
+{n:5,en:"Al-Ma'idah",ar:"المائدة",v:120,mk:false,th:{en:"Contracts, lawful food, People of the Book",fr:"Contrats, nourriture licite, Gens du Livre",ar:"العقود، الطعام الحلال، أهل الكتاب"}},
+{n:6,en:"Al-An'am",ar:"الأنعام",v:165,mk:true,th:{en:"Monotheism, rejecting idolatry, prophets",fr:"Monotheisme, rejet de l'idolatrie, prophetes",ar:"التوحيد، رفض الشرك، الأنبياء"}},
+{n:7,en:"Al-A'raf",ar:"الأعراف",v:206,mk:true,th:{en:"Adam, prophets' stories, Heights between paradise and hell",fr:"Adam, histoires des prophetes, les Hauteurs",ar:"آدم، قصص الأنبياء، الأعراف"}},
+{n:8,en:"Al-Anfal",ar:"الأنفال",v:75,mk:false,th:{en:"Battle of Badr, war spoils, trust in Allah",fr:"Bataille de Badr, butin de guerre, confiance en Allah",ar:"غزوة بدر، الأنفال، التوكل"}},
+{n:9,en:"At-Tawbah",ar:"التوبة",v:129,mk:false,th:{en:"Repentance, treaties, hypocrites",fr:"Repentir, traites, hypocrites",ar:"التوبة، المعاهدات، المنافقون"}},
+{n:10,en:"Yunus",ar:"يونس",v:109,mk:true,th:{en:"Prophet Yunus, faith, divine mercy",fr:"Prophete Yunus, foi, misericorde divine",ar:"النبي يونس، الإيمان، الرحمة الإلهية"}},
+{n:11,en:"Hud",ar:"هود",v:123,mk:true,th:{en:"Prophet Hud, destroyed nations, steadfastness",fr:"Prophete Hud, nations detruites, fermete",ar:"النبي هود، الأمم المهلكة، الثبات"}},
+{n:12,en:"Yusuf",ar:"يوسف",v:111,mk:true,th:{en:"Prophet Yusuf's story, patience, beauty of character",fr:"Histoire du prophete Yusuf, patience, beaute du caractere",ar:"قصة يوسف، الصبر، حسن الخلق"}},
+{n:13,en:"Ar-Ra'd",ar:"الرعد",v:43,mk:false,th:{en:"Thunder, signs in nature, Allah's power",fr:"Tonnerre, signes dans la nature, puissance d'Allah",ar:"الرعد، آيات في الطبيعة، قدرة الله"}},
+{n:14,en:"Ibrahim",ar:"إبراهيم",v:52,mk:true,th:{en:"Prophet Ibrahim's prayers, gratitude, ingratitude",fr:"Prieres du prophete Ibrahim, gratitude",ar:"دعاء إبراهيم، الشكر، الكفر بالنعمة"}},
+{n:15,en:"Al-Hijr",ar:"الحجر",v:99,mk:true,th:{en:"Quran preservation, Prophet Lut, Thamud",fr:"Preservation du Coran, prophete Lut, Thamud",ar:"حفظ القرآن، قوم لوط، ثمود"}},
+{n:16,en:"An-Nahl",ar:"النحل",v:128,mk:true,th:{en:"Bees, blessings of Allah, gratitude",fr:"Abeilles, bienfaits d'Allah, gratitude",ar:"النحل، نعم الله، الشكر"}},
+{n:17,en:"Al-Isra",ar:"الإسراء",v:111,mk:true,th:{en:"Night Journey, good conduct, Bani Israel",fr:"Voyage nocturne, bonne conduite, Bani Israel",ar:"الإسراء، حسن السلوك، بنو إسرائيل"}},
+{n:18,en:"Al-Kahf",ar:"الكهف",v:110,mk:true,th:{en:"People of the Cave, Dhul-Qarnayn, trials of faith",fr:"Gens de la Caverne, Dhul-Qarnayn, epreuves de foi",ar:"أهل الكهف، ذو القرنين، فتن الإيمان"}},
+{n:19,en:"Maryam",ar:"مريم",v:98,mk:true,th:{en:"Maryam, Prophet Isa, mercy of Allah",fr:"Maryam, prophete Isa, misericorde d'Allah",ar:"مريم، النبي عيسى، رحمة الله"}},
+{n:20,en:"Ta-Ha",ar:"طه",v:135,mk:true,th:{en:"Prophet Musa, Pharaoh, divine guidance",fr:"Prophete Musa, Pharaon, guidance divine",ar:"موسى، فرعون، الهداية"}},
+{n:21,en:"Al-Anbiya",ar:"الأنبياء",v:112,mk:true,th:{en:"Stories of many prophets, monotheism",fr:"Histoires de nombreux prophetes, monotheisme",ar:"قصص الأنبياء، التوحيد"}},
+{n:22,en:"Al-Hajj",ar:"الحج",v:78,mk:false,th:{en:"Pilgrimage, sacrifice, Day of Judgment",fr:"Pelerinage, sacrifice, Jour du Jugement",ar:"الحج، الأضحية، يوم القيامة"}},
+{n:23,en:"Al-Mu'minun",ar:"المؤمنون",v:118,mk:true,th:{en:"Qualities of believers, success through faith",fr:"Qualites des croyants, reussite par la foi",ar:"صفات المؤمنين، الفلاح بالإيمان"}},
+{n:24,en:"An-Nur",ar:"النور",v:64,mk:false,th:{en:"Light of Allah, modesty, social ethics",fr:"Lumiere d'Allah, pudeur, ethique sociale",ar:"نور الله، الحياء، آداب المجتمع"}},
+{n:25,en:"Al-Furqan",ar:"الفرقان",v:77,mk:true,th:{en:"Criterion between truth and falsehood",fr:"Critere entre verite et mensonge",ar:"الفرقان بين الحق والباطل"}},
+{n:26,en:"Ash-Shu'ara",ar:"الشعراء",v:227,mk:true,th:{en:"Poets, stories of prophets with their people",fr:"Poetes, histoires des prophetes avec leurs peuples",ar:"الشعراء، قصص الأنبياء مع أقوامهم"}},
+{n:27,en:"An-Naml",ar:"النمل",v:93,mk:true,th:{en:"Prophet Sulayman, the ant, Queen of Sheba",fr:"Prophete Sulayman, la fourmi, Reine de Saba",ar:"سليمان، النملة، ملكة سبأ"}},
+{n:28,en:"Al-Qasas",ar:"القصص",v:88,mk:true,th:{en:"Story of Musa in detail, Qarun's arrogance",fr:"Histoire de Musa en detail, arrogance de Qarun",ar:"قصة موسى بالتفصيل، تكبر قارون"}},
+{n:29,en:"Al-Ankabut",ar:"العنكبوت",v:69,mk:true,th:{en:"Spider, tests of faith, patience",fr:"Araignee, epreuves de foi, patience",ar:"العنكبوت، ابتلاء الإيمان، الصبر"}},
+{n:30,en:"Ar-Rum",ar:"الروم",v:60,mk:true,th:{en:"Romans, prophecy, signs of Allah",fr:"Romains, prophetie, signes d'Allah",ar:"الروم، النبوءة، آيات الله"}},
+{n:31,en:"Luqman",ar:"لقمان",v:34,mk:true,th:{en:"Luqman's wisdom, advice to his son",fr:"Sagesse de Luqman, conseils a son fils",ar:"حكمة لقمان، نصائحه لابنه"}},
+{n:32,en:"As-Sajdah",ar:"السجدة",v:30,mk:true,th:{en:"Prostration, creation, hereafter",fr:"Prosternation, creation, au-dela",ar:"السجدة، الخلق، الآخرة"}},
+{n:33,en:"Al-Ahzab",ar:"الأحزاب",v:73,mk:false,th:{en:"Confederates, Prophet's household, modesty",fr:"Confederes, famille du Prophete, pudeur",ar:"الأحزاب، أهل بيت النبي، الحجاب"}},
+{n:34,en:"Saba",ar:"سبأ",v:54,mk:true,th:{en:"People of Saba, gratitude and ingratitude",fr:"Peuple de Saba, gratitude et ingratitude",ar:"أهل سبأ، الشكر والكفران"}},
+{n:35,en:"Fatir",ar:"فاطر",v:45,mk:true,th:{en:"Creator, angels, original creation",fr:"Createur, anges, creation originelle",ar:"فاطر السموات، الملائكة، الخلق"}},
+{n:36,en:"Ya-Sin",ar:"يس",v:83,mk:true,th:{en:"Heart of Quran, resurrection, signs",fr:"Coeur du Coran, resurrection, signes",ar:"قلب القرآن، البعث، الآيات"}},
+{n:37,en:"As-Saffat",ar:"الصافات",v:182,mk:true,th:{en:"Angels in rows, prophets, monotheism",fr:"Anges en rangs, prophetes, monotheisme",ar:"الملائكة الصافات، الأنبياء، التوحيد"}},
+{n:38,en:"Sad",ar:"ص",v:88,mk:true,th:{en:"Prophet Dawud, Sulayman, patience",fr:"Prophete Dawud, Sulayman, patience",ar:"داود، سليمان، الصبر"}},
+{n:39,en:"Az-Zumar",ar:"الزمر",v:75,mk:true,th:{en:"Groups, sincerity in worship, hope in mercy",fr:"Groupes, sincerite dans le culte, espoir en la misericorde",ar:"الزمر، الإخلاص، الرجاء في الرحمة"}},
+{n:40,en:"Ghafir",ar:"غافر",v:85,mk:true,th:{en:"Forgiver, believer from Pharaoh's people",fr:"Pardonneur, croyant du peuple de Pharaon",ar:"غافر، مؤمن آل فرعون"}},
+{n:41,en:"Fussilat",ar:"فصلت",v:54,mk:true,th:{en:"Detailed verses, dawah methodology",fr:"Versets detailles, methodologie de dawah",ar:"الآيات المفصلة، منهج الدعوة"}},
+{n:42,en:"Ash-Shura",ar:"الشورى",v:53,mk:true,th:{en:"Consultation, unity, divine decree",fr:"Consultation, unite, decret divin",ar:"الشورى، الوحدة، القدر"}},
+{n:43,en:"Az-Zukhruf",ar:"الزخرف",v:89,mk:true,th:{en:"Gold ornaments, following truth vs tradition",fr:"Ornements d'or, suivre la verite vs la tradition",ar:"الزخرف، اتباع الحق لا التقليد"}},
+{n:44,en:"Ad-Dukhan",ar:"الدخان",v:59,mk:true,th:{en:"Smoke, Pharaoh's destruction, Day of Judgment",fr:"Fumee, destruction de Pharaon, Jour du Jugement",ar:"الدخان، هلاك فرعون، يوم القيامة"}},
+{n:45,en:"Al-Jathiyah",ar:"الجاثية",v:37,mk:true,th:{en:"Kneeling, signs in creation, accountability",fr:"Agenouillement, signes dans la creation, reddition des comptes",ar:"الجاثية، آيات في الخلق، المحاسبة"}},
+{n:46,en:"Al-Ahqaf",ar:"الأحقاف",v:35,mk:true,th:{en:"Sand dunes, people of Ad, honoring parents",fr:"Dunes de sable, peuple de Ad, honorer les parents",ar:"الأحقاف، قوم عاد، بر الوالدين"}},
+{n:47,en:"Muhammad",ar:"محمد",v:38,mk:false,th:{en:"Prophet Muhammad, fighting for justice",fr:"Prophete Muhammad, combat pour la justice",ar:"محمد ﷺ، القتال في سبيل الله"}},
+{n:48,en:"Al-Fath",ar:"الفتح",v:29,mk:false,th:{en:"Victory, Treaty of Hudaybiyyah, allegiance",fr:"Victoire, traite de Hudaybiyyah, allegeance",ar:"الفتح، صلح الحديبية، البيعة"}},
+{n:49,en:"Al-Hujurat",ar:"الحجرات",v:18,mk:false,th:{en:"Manners, brotherhood, avoiding suspicion",fr:"Bonnes manieres, fraternite, eviter les soupcons",ar:"الآداب، الأخوة، اجتناب الظن"}},
+{n:50,en:"Qaf",ar:"ق",v:45,mk:true,th:{en:"Resurrection, watchful angels, death",fr:"Resurrection, anges gardiens, mort",ar:"البعث، الملائكة الرقباء، الموت"}},
+{n:51,en:"Adh-Dhariyat",ar:"الذاريات",v:60,mk:true,th:{en:"Winds, purpose of creation, provision",fr:"Vents, but de la creation, provision",ar:"الرياح، الغاية من الخلق، الرزق"}},
+{n:52,en:"At-Tur",ar:"الطور",v:49,mk:true,th:{en:"Mount Sinai, paradise, truth of Quran",fr:"Mont Sinai, paradis, verite du Coran",ar:"الطور، الجنة، صدق القرآن"}},
+{n:53,en:"An-Najm",ar:"النجم",v:62,mk:true,th:{en:"Star, Isra and Mi'raj, limits of knowledge",fr:"Etoile, Isra et Mi'raj, limites du savoir",ar:"النجم، الإسراء والمعراج، حدود العلم"}},
+{n:54,en:"Al-Qamar",ar:"القمر",v:55,mk:true,th:{en:"Moon split, destroyed nations, easy Quran",fr:"Lune fendue, nations detruites, Coran facile",ar:"انشقاق القمر، الأمم المهلكة، يسر القرآن"}},
+{n:55,en:"Ar-Rahman",ar:"الرحمن",v:78,mk:false,th:{en:"The Most Merciful, blessings, paradise",fr:"Le Tout Misericordieux, bienfaits, paradis",ar:"الرحمن، النعم، الجنة"}},
+{n:56,en:"Al-Waqi'ah",ar:"الواقعة",v:96,mk:true,th:{en:"The Event, three groups of people",fr:"L'Evenement, trois groupes de personnes",ar:"الواقعة، أصناف الناس الثلاثة"}},
+{n:57,en:"Al-Hadid",ar:"الحديد",v:29,mk:false,th:{en:"Iron, spending in Allah's way, monasticism",fr:"Fer, depenser dans le chemin d'Allah",ar:"الحديد، الإنفاق في سبيل الله"}},
+{n:58,en:"Al-Mujadilah",ar:"المجادلة",v:22,mk:false,th:{en:"The pleading woman, secret conversations",fr:"La plaideuse, conversations secretes",ar:"المجادلة، النجوى"}},
+{n:59,en:"Al-Hashr",ar:"الحشر",v:24,mk:false,th:{en:"Exile, names of Allah, Banu Nadir",fr:"Exil, noms d'Allah, Banu Nadir",ar:"الحشر، أسماء الله، بنو النضير"}},
+{n:60,en:"Al-Mumtahanah",ar:"الممتحنة",v:13,mk:false,th:{en:"Testing faith, relations with non-Muslims",fr:"Test de foi, relations avec les non-musulmans",ar:"امتحان الإيمان، العلاقة مع غير المسلمين"}},
+{n:61,en:"As-Saff",ar:"الصف",v:14,mk:false,th:{en:"Rows in prayer and battle, supporting truth",fr:"Rangs dans la priere et la bataille",ar:"الصف في الصلاة والجهاد، نصرة الحق"}},
+{n:62,en:"Al-Jumu'ah",ar:"الجمعة",v:11,mk:false,th:{en:"Friday prayer, seeking knowledge",fr:"Priere du vendredi, recherche du savoir",ar:"صلاة الجمعة، طلب العلم"}},
+{n:63,en:"Al-Munafiqun",ar:"المنافقون",v:11,mk:false,th:{en:"Hypocrites, their traits and danger",fr:"Hypocrites, leurs traits et danger",ar:"المنافقون، صفاتهم وخطرهم"}},
+{n:64,en:"At-Taghabun",ar:"التغابن",v:18,mk:false,th:{en:"Mutual loss, trials of wealth and children",fr:"Perte mutuelle, epreuves de richesse et enfants",ar:"التغابن، فتنة المال والأولاد"}},
+{n:65,en:"At-Talaq",ar:"الطلاق",v:12,mk:false,th:{en:"Divorce laws, trusting Allah's plan",fr:"Lois du divorce, confiance au plan d'Allah",ar:"أحكام الطلاق، التوكل على الله"}},
+{n:66,en:"At-Tahrim",ar:"التحريم",v:12,mk:false,th:{en:"Prohibition, family matters, examples of women",fr:"Interdiction, affaires familiales, exemples de femmes",ar:"التحريم، الشؤون الأسرية، نماذج النساء"}},
+{n:67,en:"Al-Mulk",ar:"الملك",v:30,mk:true,th:{en:"Sovereignty, protection from grave, creation",fr:"Souverainete, protection de la tombe, creation",ar:"الملك، الحماية من عذاب القبر، الخلق"}},
+{n:68,en:"Al-Qalam",ar:"القلم",v:52,mk:true,th:{en:"The Pen, good character, story of the garden",fr:"Le Calame, bon caractere, histoire du jardin",ar:"القلم، حسن الخلق، قصة أصحاب الجنة"}},
+{n:69,en:"Al-Haqqah",ar:"الحاقة",v:52,mk:true,th:{en:"The Reality, Day of Judgment, destroyed nations",fr:"La Realite, Jour du Jugement, nations detruites",ar:"الحاقة، يوم القيامة، الأمم المهلكة"}},
+{n:70,en:"Al-Ma'arij",ar:"المعارج",v:44,mk:true,th:{en:"Ways of ascent, patience, prayer",fr:"Voies d'ascension, patience, priere",ar:"المعارج، الصبر، الصلاة"}},
+{n:71,en:"Nuh",ar:"نوح",v:28,mk:true,th:{en:"Prophet Nuh's dawah, persistence",fr:"Dawah du prophete Nuh, perseverance",ar:"دعوة نوح، المثابرة"}},
+{n:72,en:"Al-Jinn",ar:"الجن",v:28,mk:true,th:{en:"Jinn who believed, unseen world",fr:"Djinns croyants, monde invisible",ar:"الجن المؤمنون، عالم الغيب"}},
+{n:73,en:"Al-Muzzammil",ar:"المزمل",v:20,mk:true,th:{en:"Night prayer, patience in dawah",fr:"Priere de nuit, patience dans la dawah",ar:"قيام الليل، الصبر في الدعوة"}},
+{n:74,en:"Al-Muddaththir",ar:"المدثر",v:56,mk:true,th:{en:"Wrapped in garments, call to warn",fr:"Enveloppe dans ses vetements, appel a avertir",ar:"المدثر، الأمر بالإنذار"}},
+{n:75,en:"Al-Qiyamah",ar:"القيامة",v:40,mk:true,th:{en:"Resurrection, self-reproaching soul",fr:"Resurrection, ame qui se blame",ar:"القيامة، النفس اللوامة"}},
+{n:76,en:"Al-Insan",ar:"الإنسان",v:31,mk:false,th:{en:"Humans, gratitude, paradise description",fr:"Humains, gratitude, description du paradis",ar:"الإنسان، الشكر، وصف الجنة"}},
+{n:77,en:"Al-Mursalat",ar:"المرسلات",v:50,mk:true,th:{en:"Winds sent forth, Day of Judgment",fr:"Vents envoyes, Jour du Jugement",ar:"الرياح المرسلة، يوم القيامة"}},
+{n:78,en:"An-Naba",ar:"النبأ",v:40,mk:true,th:{en:"The Great News, resurrection",fr:"La Grande Nouvelle, resurrection",ar:"النبأ العظيم، البعث"}},
+{n:79,en:"An-Nazi'at",ar:"النازعات",v:46,mk:true,th:{en:"Angels who extract souls, Musa and Pharaoh",fr:"Anges qui arrachent les ames, Musa et Pharaon",ar:"الملائكة النازعات، موسى وفرعون"}},
+{n:80,en:"Abasa",ar:"عبس",v:42,mk:true,th:{en:"He frowned, treating people with respect",fr:"Il s'est renfrogne, traiter les gens avec respect",ar:"عبس، معاملة الناس باحترام"}},
+{n:81,en:"At-Takwir",ar:"التكوير",v:29,mk:true,th:{en:"Folding up, Day of Judgment signs",fr:"L'enroulement, signes du Jour du Jugement",ar:"التكوير، علامات يوم القيامة"}},
+{n:82,en:"Al-Infitar",ar:"الانفطار",v:19,mk:true,th:{en:"Cleaving asunder, recording angels",fr:"La fissure, anges enregistreurs",ar:"الانفطار، الملائكة الكتبة"}},
+{n:83,en:"Al-Mutaffifin",ar:"المطففين",v:36,mk:true,th:{en:"Defrauders, fairness in trade",fr:"Fraudeurs, equite dans le commerce",ar:"المطففين، العدل في التجارة"}},
+{n:84,en:"Al-Inshiqaq",ar:"الانشقاق",v:25,mk:true,th:{en:"Sky splitting, receiving books of deeds",fr:"Fissure du ciel, recevoir les livres des actes",ar:"انشقاق السماء، تلقي صحف الأعمال"}},
+{n:85,en:"Al-Buruj",ar:"البروج",v:22,mk:true,th:{en:"Constellations, People of the Trench",fr:"Constellations, Gens de la Tranchee",ar:"البروج، أصحاب الأخدود"}},
+{n:86,en:"At-Tariq",ar:"الطارق",v:17,mk:true,th:{en:"Night star, creation of humans",fr:"Etoile de nuit, creation des humains",ar:"الطارق، خلق الإنسان"}},
+{n:87,en:"Al-A'la",ar:"الأعلى",v:19,mk:true,th:{en:"The Most High, glorification",fr:"Le Tres Haut, glorification",ar:"الأعلى، التسبيح"}},
+{n:88,en:"Al-Ghashiyah",ar:"الغاشية",v:26,mk:true,th:{en:"Overwhelming event, paradise vs hellfire",fr:"Evenement accablant, paradis vs enfer",ar:"الغاشية، الجنة والنار"}},
+{n:89,en:"Al-Fajr",ar:"الفجر",v:30,mk:true,th:{en:"Dawn, destroyed civilizations, contentment",fr:"Aube, civilisations detruites, contentement",ar:"الفجر، الأمم المهلكة، الرضا"}},
+{n:90,en:"Al-Balad",ar:"البلد",v:20,mk:true,th:{en:"The City, struggle, freeing slaves",fr:"La Cite, lutte, affranchir les esclaves",ar:"البلد، المكابدة، تحرير الرقاب"}},
+{n:91,en:"Ash-Shams",ar:"الشمس",v:15,mk:true,th:{en:"The Sun, purifying the soul",fr:"Le Soleil, purifier l'ame",ar:"الشمس، تزكية النفس"}},
+{n:92,en:"Al-Layl",ar:"الليل",v:21,mk:true,th:{en:"The Night, generosity vs miserliness",fr:"La Nuit, generosite vs avarice",ar:"الليل، الكرم والبخل"}},
+{n:93,en:"Ad-Duha",ar:"الضحى",v:11,mk:true,th:{en:"Morning light, consolation, blessings",fr:"Lumiere du matin, consolation, bienfaits",ar:"الضحى، التسلية، النعم"}},
+{n:94,en:"Ash-Sharh",ar:"الشرح",v:8,mk:true,th:{en:"Relief, expansion of the chest",fr:"Soulagement, expansion de la poitrine",ar:"شرح الصدر، اليسر بعد العسر"}},
+{n:95,en:"At-Tin",ar:"التين",v:8,mk:true,th:{en:"The Fig, best creation, moral decline",fr:"Le Figuier, meilleure creation, declin moral",ar:"التين، أحسن تقويم، أسفل سافلين"}},
+{n:96,en:"Al-Alaq",ar:"العلق",v:19,mk:true,th:{en:"The Clot, first revelation, reading",fr:"L'Adherence, premiere revelation, lecture",ar:"العلق، أول الوحي، القراءة"}},
+{n:97,en:"Al-Qadr",ar:"القدر",v:5,mk:true,th:{en:"Night of Decree, better than 1000 months",fr:"Nuit du Destin, meilleure que 1000 mois",ar:"ليلة القدر، خير من ألف شهر"}},
+{n:98,en:"Al-Bayyinah",ar:"البينة",v:8,mk:false,th:{en:"Clear evidence, People of the Book",fr:"Preuve claire, Gens du Livre",ar:"البينة، أهل الكتاب"}},
+{n:99,en:"Az-Zalzalah",ar:"الزلزلة",v:8,mk:false,th:{en:"Earthquake, atoms of good and evil",fr:"Tremblement de terre, atomes de bien et de mal",ar:"الزلزلة، مثاقيل الذر"}},
+{n:100,en:"Al-Adiyat",ar:"العاديات",v:11,mk:true,th:{en:"War horses, human ingratitude",fr:"Chevaux de guerre, ingratitude humaine",ar:"العاديات، كفران الإنسان"}},
+{n:101,en:"Al-Qari'ah",ar:"القارعة",v:11,mk:true,th:{en:"Striking Hour, weighing of deeds",fr:"Heure frappante, pesee des actes",ar:"القارعة، وزن الأعمال"}},
+{n:102,en:"At-Takathur",ar:"التكاثر",v:8,mk:true,th:{en:"Competition in worldly increase, heedlessness",fr:"Competition pour les biens, insouciance",ar:"التكاثر، الغفلة"}},
+{n:103,en:"Al-Asr",ar:"العصر",v:3,mk:true,th:{en:"Time, formula for success",fr:"Le Temps, formule du succes",ar:"العصر، معادلة النجاح"}},
+{n:104,en:"Al-Humazah",ar:"الهمزة",v:9,mk:true,th:{en:"Slanderer, backbiting, hoarding wealth",fr:"Calomniateur, medisance, accumulation de richesses",ar:"الهمزة، الغيبة، كنز المال"}},
+{n:105,en:"Al-Fil",ar:"الفيل",v:5,mk:true,th:{en:"The Elephant, Abraha's army, divine protection",fr:"L'Elephant, armee d'Abraha, protection divine",ar:"الفيل، جيش أبرهة، الحماية الإلهية"}},
+{n:106,en:"Quraysh",ar:"قريش",v:4,mk:true,th:{en:"Quraysh tribe, blessings of security and trade",fr:"Tribu de Quraysh, bienfaits de securite et commerce",ar:"قريش، نعمة الأمن والتجارة"}},
+{n:107,en:"Al-Ma'un",ar:"الماعون",v:7,mk:true,th:{en:"Small kindnesses, neglecting prayer and charity",fr:"Petites bontes, negliger la priere et la charite",ar:"الماعون، إهمال الصلاة والصدقة"}},
+{n:108,en:"Al-Kawthar",ar:"الكوثر",v:3,mk:true,th:{en:"Abundance, river in paradise",fr:"L'Abondance, riviere au paradis",ar:"الكوثر، نهر في الجنة"}},
+{n:109,en:"Al-Kafirun",ar:"الكافرون",v:6,mk:true,th:{en:"Disbelievers, religious freedom",fr:"Mecreants, liberte religieuse",ar:"الكافرون، حرية الدين"}},
+{n:110,en:"An-Nasr",ar:"النصر",v:3,mk:false,th:{en:"Divine help, victory, seeking forgiveness",fr:"Aide divine, victoire, demander pardon",ar:"النصر، الفتح، الاستغفار"}},
+{n:111,en:"Al-Masad",ar:"المسد",v:5,mk:true,th:{en:"Palm fiber, Abu Lahab's fate",fr:"Fibres de palmier, sort d'Abu Lahab",ar:"المسد، مصير أبي لهب"}},
+{n:112,en:"Al-Ikhlas",ar:"الإخلاص",v:4,mk:true,th:{en:"Pure monotheism, Oneness of Allah",fr:"Monotheisme pur, Unicite d'Allah",ar:"التوحيد الخالص، وحدانية الله"}},
+{n:113,en:"Al-Falaq",ar:"الفلق",v:5,mk:true,th:{en:"Daybreak, seeking refuge from evil",fr:"L'Aube naissante, chercher refuge contre le mal",ar:"الفلق، الاستعاذة من الشر"}},
+{n:114,en:"An-Nas",ar:"الناس",v:6,mk:true,th:{en:"Mankind, seeking refuge from whisperers",fr:"Les Hommes, chercher refuge contre les chuchoteurs",ar:"الناس، الاستعاذة من الوسواس"}}
+];
+
+function render(){
+var q=(document.getElementById("searchBox").value||"").toLowerCase();
+var grid=document.getElementById("cardsGrid");
+grid.innerHTML="";
+var count=0;
+SURAHS.forEach(function(s){
+if(curFilter==="makki"&&!s.mk)return;
+if(curFilter==="madani"&&s.mk)return;
+var name=curLang==="ar"?s.ar:s.en;
+var searchStr=(s.en+" "+s.ar+" "+s.n).toLowerCase();
+if(q&&searchStr.indexOf(q)===-1)return;
+count++;
+var d=document.createElement("div");
+d.className="s-card";
+d.dataset.idx=s.n;
+var tagClass=s.mk?"tag-makki":"tag-madani";
+var tagText=s.mk?(curLang==="ar"?"مكية":curLang==="fr"?"Mecquoise":"Makki"):(curLang==="ar"?"مدنية":curLang==="fr"?"Medinoise":"Madani");
+var versesLabel=curLang==="ar"?"آية":curLang==="fr"?"versets":"verses";
+d.innerHTML='<div class="s-card-num">'+s.n+'</div><div class="s-card-name">'+s.en+'</div><div class="s-card-ar">'+s.ar+'</div><div class="s-card-meta"><span class="s-card-tag '+tagClass+'">'+tagText+'</span><span>'+s.v+' '+versesLabel+'</span></div><div class="s-card-detail">'+(s.th[curLang]||s.th.en)+'</div>';
+d.onclick=function(){snd("click");if(d.classList.contains("expanded")){d.classList.remove("expanded")}else{grid.querySelectorAll(".s-card.expanded").forEach(function(c){c.classList.remove("expanded")});d.classList.add("expanded")}};
+grid.appendChild(d);
+});
+document.getElementById("counter").textContent=count+" / 114";
+document.getElementById("countPill").textContent=count+" "+(curLang==="ar"?"سورة":"Surahs");
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+setLang("en");setTheme("terminal");
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click")})});
+document.getElementById("searchBox").addEventListener("input",render);
+document.querySelectorAll(".filter-btn").forEach(function(b){b.addEventListener("click",function(){curFilter=b.dataset.f;document.querySelectorAll(".filter-btn").forEach(function(x){x.classList.toggle("on",x.dataset.f===curFilter)});snd("click");render()})});
+document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";render()});
+document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07"});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp()});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active")});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active")});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active")})});
+try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="\uD83D\uDD07"}}catch(e){}
+var _osl=setLang,_ost=setTheme;
+setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l)}catch(e){}};
+setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t)}catch(e){}};
+document.getElementById("soundBtn").addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1")}catch(e){}});
+});
+</script></body></html>
