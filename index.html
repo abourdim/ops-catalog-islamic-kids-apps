@@ -1,84 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="terminal">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Workshop-DIY — Islamic Kids Apps</title>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{min-height:100vh;-webkit-font-smoothing:antialiased}
-
-[data-theme="terminal"]{--bg:#0a0c10;--bg2:#0d1117;--bg3:#161b22;--border:#21262d;--text:#c9d1d9;--text2:#8b949e;--heading:#e6edf3;--accent:#00ff88;--abg:rgba(0,255,136,.06);--abr:rgba(0,255,136,.2)}
-[data-theme="midnight"]{--bg:#08090d;--bg2:#0e1018;--bg3:#171a26;--border:#1e2235;--text:#b8c0d9;--text2:#7580a0;--heading:#e0e5f5;--accent:#6c5ce7;--abg:rgba(108,92,231,.06);--abr:rgba(108,92,231,.25)}
-[data-theme="ember"]{--bg:#0f0a08;--bg2:#161010;--bg3:#201816;--border:#2d2220;--text:#d4b8a8;--text2:#9a7e70;--heading:#f0ddd0;--accent:#ff6b35;--abg:rgba(255,107,53,.06);--abr:rgba(255,107,53,.25)}
-[data-theme="arctic"]{--bg:#f4f7fa;--bg2:#fff;--bg3:#eaeff5;--border:#d0d7e0;--text:#3a4555;--text2:#6b7a8d;--heading:#1a2535;--accent:#0066cc;--abg:rgba(0,102,204,.06);--abr:rgba(0,102,204,.2)}
-[data-theme="sand"]{--bg:#f5f0e8;--bg2:#faf7f0;--bg3:#ede6d8;--border:#d8cebb;--text:#4a4035;--text2:#7a6e60;--heading:#2a2018;--accent:#b8860b;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.2)}
-
-body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;padding:20px}
-.header{text-align:center;padding:40px 0 20px}
-.header h1{font-family:'Outfit',sans-serif;color:var(--heading);font-size:28px;margin-bottom:8px}
-.header p{color:var(--text2);font-size:14px;max-width:600px;margin:0 auto}
-.search{display:block;width:100%;max-width:500px;margin:20px auto;padding:12px 16px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px;outline:none}
-.search:focus{border-color:var(--accent)}
-.filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:20px 0;max-width:800px;margin-left:auto;margin-right:auto}
-.filter-btn{background:var(--bg2);border:1px solid var(--border);color:var(--text2);padding:6px 14px;border-radius:20px;cursor:pointer;font-family:inherit;font-size:12px}
-.filter-btn.active,.filter-btn:hover{background:var(--abg);border-color:var(--accent);color:var(--accent)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;max-width:1200px;margin:20px auto}
-.card{display:flex;align-items:center;gap:12px;padding:14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text);transition:.2s}
-.card:hover{border-color:var(--accent);background:var(--abg)}
-.card-emoji{font-size:24px;flex-shrink:0}
-.card-title{font-size:13px;color:var(--heading);flex:1}
-.card-cat{font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:1px}
-.themes{display:flex;gap:6px;justify-content:center;margin:20px 0}
-.themes button{width:28px;height:28px;border-radius:50%;border:2px solid var(--border);cursor:pointer}
-.count{text-align:center;color:var(--text2);font-size:12px;margin:10px 0}
-.foot{text-align:center;color:var(--text2);font-size:11px;padding:40px 0 20px}
-.foot a{color:var(--accent)}
-</style>
-</head>
-<body>
-<div class="header">
-<h1>441 Interactive Islamic Activities</h1>
-<div style="text-align:center;font-size:20px;color:var(--accent);margin:20px 0;font-family:'Noto Sans Arabic',serif">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
-<p>Interactive Islamic educational apps — Quran, Arabic, Seerah, Hadith, Dua, Fiqh, Aqeedah, Adab, History, Gazawat, Anbiya, Scientists, Sahaba, Tafsir, Life Tools, Arabic+.</p>
-</div>
-
-<div class="themes">
-<button onclick="setTheme('terminal')" style="background:#00ff88" title="Terminal"></button>
-<button onclick="setTheme('midnight')" style="background:#6c5ce7" title="Midnight"></button>
-<button onclick="setTheme('ember')" style="background:#ff6b35" title="Ember"></button>
-<button onclick="setTheme('arctic')" style="background:#0066cc" title="Arctic"></button>
-<button onclick="setTheme('sand')" style="background:#b8860b" title="Sand"></button>
-</div>
-
-<input class="search" type="text" placeholder="Search 441 activities..." id="search"/>
-
-<div class="filters" id="filters">
-<button class="filter-btn active" data-cat="all">All</button>
-<button class="filter-btn" data-cat="Arabic">🔤 Arabic</button>
-<button class="filter-btn" data-cat="Seerah">🕌 Seerah</button>
-<button class="filter-btn" data-cat="Fiqh">⚖️ Fiqh</button>
-
-<button class="filter-btn" data-cat="Quran">📖 Quran</button>
-<button class="filter-btn" data-cat="Dua">🤲 Dua</button>
-<button class="filter-btn" data-cat="Aqeedah">💎 Aqeedah</button>
-
-<button class="filter-btn" data-cat="Hadith">📜 Hadith</button>
-<button class="filter-btn" data-cat="Adab">🌟 Adab</button>
-<button class="filter-btn" data-cat="History">🏛️ History</button>
-<button class="filter-btn" data-cat="Gazawat">⚔️ Gazawat</button>
-<button class="filter-btn" data-cat="Anbiya">🕊️ Anbiya</button>
-<button class="filter-btn" data-cat="Scientists">🔬 Scientists</button>
-<button class="filter-btn" data-cat="Sahaba">⭐ Sahaba</button>
-<button class="filter-btn" data-cat="Tafsir">📝 Tafsir</button>
-<button class="filter-btn" data-cat="Life Tools">🛠️ Life Tools</button>
-<button class="filter-btn" data-cat="Arabic+">📚 Arabic+</button></div>
-
-<div class="count" id="count">441 activities</div>
-
-<div class="grid" id="grid">
 <div class="grid" id="grid">
 <a href="01-quran/001-ayah-order/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Ayah Order</span><span class="card-cat">Quran</span></a>
 <a href="01-quran/002-surah-match/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Surah Match</span><span class="card-cat">Quran</span></a>
@@ -281,60 +200,17 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospac
 <a href="10-gazawat/001-badr-strategy-board/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Badr Strategy Board</span><span class="card-cat">Gazawat</span></a>
 <a href="10-gazawat/002-uhud-mountain-defense/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Uhud Mountain Defense</span><span class="card-cat">Gazawat</span></a>
 <a href="10-gazawat/003-khandaq-trench-digger/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Khandaq Trench Digger</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/004-khaybar-fortress-siege/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Khaybar Fortress Siege</span><span class="card-cat">Gazawat</span></a>
 <a href="10-gazawat/005-mecca-conquest-planner/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Mecca Conquest Planner</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/006-hunayn-valley-trap/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Hunayn Valley Trap</span><span class="card-cat">Gazawat</span></a>
 <a href="10-gazawat/007-mutah-3-commanders/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Mutah 3 Commanders</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/008-tabuk-march/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Tabuk March</span><span class="card-cat">Gazawat</span></a>
 <a href="10-gazawat/009-battle-timeline-builder/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Battle Timeline Builder</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/010-siege-tactics-sandbox/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Siege Tactics Sandbox</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/011-badr-wells-control/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Badr Wells Control</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/012-uhud-archer-simulator/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Uhud Archer Simulator</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/013-khandaq-supply-line/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Khandaq Supply Line</span><span class="card-cat">Gazawat</span></a>
 <a href="10-gazawat/014-hudaybiyyah-peace-treaty/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Hudaybiyyah Peace Treaty</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/015-mecca-idol-remover/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Mecca Idol Remover</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/016-mecca-amnesty-decisions/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Mecca Amnesty Decisions</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/017-hunayn-spoils-distributor/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Hunayn Spoils Distributor</span><span class="card-cat">Gazawat</span></a>
 <a href="10-gazawat/018-taif-dua-moment/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Taif Dua Moment</span><span class="card-cat">Gazawat</span></a>
 <a href="10-gazawat/019-abyssinia-refuge/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Abyssinia Refuge</span><span class="card-cat">Gazawat</span></a>
 <a href="10-gazawat/020-hamza-last-stand/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Hamza Last Stand</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/021-khalid-cavalry-school/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Khalid Cavalry School</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/022-yarmouk-formation/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Yarmouk Formation</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/023-qadisiyyah-bridge/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Qadisiyyah Bridge</span><span class="card-cat">Gazawat</span></a>
 <a href="10-gazawat/024-ain-jalut-vs-mongols/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Ain Jalut Vs Mongols</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/025-nakhla-raid-dilemma/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Nakhla Raid Dilemma</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/026-hamra-al-asad-chase/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Hamra Al Asad Chase</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/027-banu-mustaliq-well/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Banu Mustaliq Well</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/028-dhat-al-riqa-patrol/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Dhat Al Riqa Patrol</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/029-dumat-al-jandal-march/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Dumat Al Jandal March</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/030-banu-qaynuqa-negotiation/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Banu Qaynuqa Negotiation</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/031-banu-nadir-evacuation/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Banu Nadir Evacuation</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/032-banu-qurayza-trial/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Banu Qurayza Trial</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/033-constantinople-siege/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Constantinople Siege</span><span class="card-cat">Gazawat</span></a>
 <a href="10-gazawat/034-saladin-jerusalem/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Saladin Jerusalem</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/035-naval-dhat-al-sawari/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Naval Dhat Al Sawari</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/036-riddah-wars-map/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Riddah Wars Map</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/089-uhud-aftermath-hospital/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Uhud Aftermath Hospital</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/090-khandaq-duel-arena/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Khandaq Duel Arena</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/091-khandaq-trench-engineering/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Khandaq Trench Engineering</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/092-khaybar-food-tester/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Khaybar Food Tester</span><span class="card-cat">Gazawat</span></a>
 <a href="10-gazawat/093-post-battle-mercy/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Post Battle Mercy</span><span class="card-cat">Gazawat</span></a>
 <a href="10-gazawat/094-war-prisoner-rights/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">War Prisoner Rights</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/095-commander-assignment/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Commander Assignment</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/096-battle-terrain-analyzer/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Battle Terrain Analyzer</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/097-armor-weapons-workshop/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Armor Weapons Workshop</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/098-scout-mission/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Scout Mission</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/099-battle-supply-calculator/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Battle Supply Calculator</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/100-dhat-al-riqa-fear-prayer/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Dhat Al Riqa Fear Prayer</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/101-al-muraysi-campaign/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Al Muraysi Campaign</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/102-banu-lihyan-pursuit/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Banu Lihyan Pursuit</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/103-tabuk-bluff-strategy/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Tabuk Bluff Strategy</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/104-taif-siege-decision/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Taif Siege Decision</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/105-farewell-pilgrimage-guard/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Farewell Pilgrimage Guard</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/106-conquest-of-egypt/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Conquest Of Egypt</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/107-conquest-of-persia/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Conquest Of Persia</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/108-conquest-of-syria/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Conquest Of Syria</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/109-conquest-of-iraq/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Conquest Of Iraq</span><span class="card-cat">Gazawat</span></a>
 <a href="10-gazawat/110-battle-summary-encyclopedia/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Battle Summary Encyclopedia</span><span class="card-cat">Gazawat</span></a>
 <a href="11-anbiya/001-adam-creation-story/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Adam Creation Story</span><span class="card-cat">Anbiya</span></a>
 <a href="11-anbiya/002-adam-first-family/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Adam First Family</span><span class="card-cat">Anbiya</span></a>
@@ -552,16 +428,12 @@ function filter(){
   const q=search.value.toLowerCase();
   let shown=0;
   cards.forEach(c=>{
-    const title=c.querySelector(".card-title").textContent.toLowerCase();
-    const cat=c.dataset.cat;
-    const matchQ=!q||title.includes(q);
-    const matchCat=activeCat==="all"||cat===activeCat;
-    const show=matchQ&&matchCat;
-    c.style.display=show?"":"none";
-    if(show)shown++;
+    const matchCat=activeCat==="all"||c.dataset.cat===activeCat;
+    const matchQ=!q||c.textContent.toLowerCase().includes(q);
+    c.style.display=matchCat&&matchQ?"":"none";
+    if(matchCat&&matchQ)shown++;
   });
-  countEl.textContent=shown+" activit"+(shown===1?"y":"ies");
+  countEl.textContent=shown+" activities";
 }
 </script>
-</body>
-</html>
+</body></html>
