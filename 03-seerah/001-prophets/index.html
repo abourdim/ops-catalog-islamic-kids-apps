@@ -158,24 +158,24 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 <button class="sw-btn" data-thm="parchment">&#128220;</button>
 </div>
 </div>
-<div class="status" id="status">Pick the right answer!</div>
+<div class="status" id="status">اختر الإجابة الصحيحة!</div>
 <div class="game-area">
 <div class="big-text" id="question">?</div>
 <div class="answer-row" id="choices"></div>
 <div class="timer-display" id="timerDisp"></div>
 <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
 </div>
-<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">صحيح</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">المجموع</div><div class="score-num" id="tot">0</div></div></div>
 <div class="best-score" id="bestDisp"></div>
 <div class="log-box" id="logBox"></div>
-<div class="foot">Prophets of Islam &mdash; Seerah Series v2.0</div>
+<div class="foot" id="footerText">أنبياء الإسلام &mdash; سلسلة السيرة v2.0</div>
 </div>
 
 <!-- HELP SIDEBAR -->
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel">
-<div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">&times;</button></div>
-<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
+<div class="sidebar-header"><span class="sidebar-title" id="sidebarTitle">&#10067; المساعدة</span><button class="btn-close" onclick="closeHelp()">&times;</button></div>
+<div class="help-tabs"><button class="help-tab active" data-tab="faq" id="tabFaq">أسئلة شائعة</button><button class="help-tab" data-tab="howto" id="tabHowto">كيفية اللعب</button><button class="help-tab" data-tab="wiki" id="tabWiki">معلومات</button></div>
 <div class="sidebar-body">
 <div class="help-content active" id="help-faq">
 <div class="i18n-en"><details class="help-item"><summary>What is this app?</summary><p>A fun quiz game to learn about the noble prophets mentioned in the Holy Quran. Test your knowledge!</p></details>
@@ -210,7 +210,7 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 </div>
 </div>
 </div>
-<div class="sidebar-footer">Seerah Series &mdash; v2.0</div>
+<div class="sidebar-footer">سلسلة السيرة &mdash; v2.0</div>
 </aside>
 
 <script>
@@ -353,7 +353,7 @@ var Q=[
 {q:{en:"The prophet who lived the longest (950 years of dawah)?",fr:"Le proph\u00e8te qui a v\u00e9cu le plus longtemps (950 ans de dawah)?",ar:"\u0627\u0644\u0646\u0628\u064a \u0627\u0644\u0630\u064a \u062f\u0639\u0627 950 \u0633\u0646\u0629\u061f"},a:"Nuh (AS)",o:["Nuh (AS)","Adam (AS)","Ibrahim (AS)","Idris (AS)"]}
 ];
 
-var curLang="en",soundOn=true,actx,total=15,current=0,correct=0,ans,locked=false,qi=0;
+var curLang="ar",soundOn=true,actx,total=15,current=0,correct=0,ans,locked=false,qi=0;
 function t(k){return UI[k]?UI[k][curLang]||UI[k].en:"";}
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}

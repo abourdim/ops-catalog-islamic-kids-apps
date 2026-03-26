@@ -362,8 +362,8 @@ total:{en:"Total",fr:"Total",ar:"المجموع"},
 new_game:{en:"▶ New Game",fr:"▶ Nouveau jeu",ar:"▶ لعبة جديدة"},
 next:{en:"Next →",fr:"Suivant →",ar:"← التالي"}
 };
-var curLang="en";function t(k){return UI[k]?UI[k][curLang]||UI[k]["en"]:"";}
-function renderLang(){curLang=document.documentElement.lang||"en";document.getElementById("status").textContent=t("status_q");document.getElementById("startBtn").textContent=t("new_game");document.querySelectorAll(".score-label").forEach(function(el,i){el.textContent=i===0?t("matched"):t("total");});}
+var curLang="ar";function t(k){return UI[k]?UI[k][curLang]||UI[k]["en"]:"";}
+function renderLang(){curLang=document.documentElement.lang||"ar";document.getElementById("status").textContent=t("status_q");document.getElementById("startBtn").textContent=t("new_game");document.querySelectorAll(".score-label").forEach(function(el,i){el.textContent=i===0?t("matched"):t("total");});}
 
 var correct=0,total=0,current=0,order=[],locked=false;
 var timerInterval,timerSeconds=0;

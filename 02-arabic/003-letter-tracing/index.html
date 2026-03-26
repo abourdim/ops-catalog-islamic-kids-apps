@@ -1,584 +1,204 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="teal-ink">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Letter Tracing — Arabic Workshop</title>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
+<title>تتبع الحروف — السبورة</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
-
-[data-theme="teal-ink"]{--bg:#FFF8F0;--bg2:#FFF5EB;--bg3:#FAEBD7;--border:#DEB887;--border2:#C4956A;--text:#3A2F28;--text2:#6B5D52;--text3:#9A8B7A;--heading:#1A1A2E;--accent:#008080;--accent2:#20B2AA;--accent-glow:rgba(0,128,128,.25);--accent-glow-bg:rgba(0,128,128,.08);--card-bg:#FFFAF5;--card-border:#DEB887;--pattern-color:rgba(0,128,128,.04);--glow:0 4px 24px rgba(0,128,128,.1);--splash-bg:linear-gradient(135deg,#FFF8F0 0%,#FAEBD7 50%,#F5DEB3 100%)}
-[data-theme="desert-night"]{--bg:#1A1612;--bg2:#221E18;--bg3:#2C261E;--border:#3D3428;--border2:#4E4538;--text:#D4C8B8;--text2:#A89880;--text3:#7A6E5E;--heading:#F0E6D6;--accent:#D4A017;--accent2:#FFC947;--accent-glow:rgba(212,160,23,.25);--accent-glow-bg:rgba(212,160,23,.08);--card-bg:#282218;--card-border:#3D3428;--pattern-color:rgba(212,160,23,.04);--glow:0 4px 24px rgba(212,160,23,.12);--splash-bg:linear-gradient(135deg,#1A1612 0%,#2C261E 50%,#1A1612 100%)}
-[data-theme="calligraphy"]{--bg:#F5F0E8;--bg2:#FAF7F0;--bg3:#EDE6D8;--border:#D8CEBB;--border2:#C5B8A0;--text:#2A2018;--text2:#5A4E3E;--text3:#8A7E6E;--heading:#1A1A2E;--accent:#1A1A2E;--accent2:#3A3A5E;--accent-glow:rgba(26,26,46,.2);--accent-glow-bg:rgba(26,26,46,.06);--card-bg:#FAF7F0;--card-border:#D8CEBB;--pattern-color:rgba(26,26,46,.03);--glow:0 4px 24px rgba(26,26,46,.08);--splash-bg:linear-gradient(135deg,#F5F0E8 0%,#EDE6D8 50%,#E8E0D0 100%)}
-[data-theme="medina"]{--bg:#0D1F0D;--bg2:#142814;--bg3:#1B341B;--border:#2A4D2A;--border2:#3A6D3A;--text:#B8D4B8;--text2:#7AA87A;--text3:#5A8A5A;--heading:#E0F0E0;--accent:#4CAF50;--accent2:#81C784;--accent-glow:rgba(76,175,80,.25);--accent-glow-bg:rgba(76,175,80,.08);--card-bg:#1B301B;--card-border:#2A4D2A;--pattern-color:rgba(76,175,80,.04);--glow:0 4px 24px rgba(76,175,80,.12);--splash-bg:linear-gradient(135deg,#0D1F0D 0%,#1B341B 50%,#0D1F0D 100%)}
-[data-theme="oud"]{--bg:#1A0E0E;--bg2:#241616;--bg3:#2E1E1E;--border:#4A2E2E;--border2:#5A3E3E;--text:#D4B8A8;--text2:#A88878;--text3:#7A6058;--heading:#F0DDD0;--accent:#B8860B;--accent2:#D4A537;--accent-glow:rgba(184,134,11,.25);--accent-glow-bg:rgba(184,134,11,.08);--card-bg:#281818;--card-border:#4A2E2E;--pattern-color:rgba(184,134,11,.04);--glow:0 4px 24px rgba(184,134,11,.12);--splash-bg:linear-gradient(135deg,#1A0E0E 0%,#2E1E1E 50%,#1A0E0E 100%)}
-[data-theme="ocean"]{--bg:#002B36;--bg2:#003844;--bg3:#004D5A;--border:#006670;--border2:#008090;--text:#B8D8E0;--text2:#7AB0C0;--text3:#5A90A0;--heading:#E0F4F8;--accent:#00BCD4;--accent2:#4DD0E1;--accent-glow:rgba(0,188,212,.25);--accent-glow-bg:rgba(0,188,212,.08);--card-bg:#003444;--card-border:#006670;--pattern-color:rgba(0,188,212,.04);--glow:0 4px 24px rgba(0,188,212,.12);--splash-bg:linear-gradient(135deg,#002B36 0%,#004D5A 50%,#002B36 100%)}
-[data-theme="sunrise"]{--bg:#FFF5EE;--bg2:#FFF0E6;--bg3:#FFE4D4;--border:#FFCBB0;--border2:#FFB898;--text:#4A3028;--text2:#7A5A48;--text3:#A08070;--heading:#2A1810;--accent:#E06050;--accent2:#FF8A75;--accent-glow:rgba(224,96,80,.2);--accent-glow-bg:rgba(224,96,80,.06);--card-bg:#FFF8F2;--card-border:#FFCBB0;--pattern-color:rgba(224,96,80,.04);--glow:0 4px 24px rgba(224,96,80,.1);--splash-bg:linear-gradient(135deg,#FFF5EE 0%,#FFE4D4 50%,#FFDBC4 100%)}
-[data-theme="manuscript"]{--bg:#EDE0CB;--bg2:#F2E8D5;--bg3:#E0D0B8;--border:#C8B898;--border2:#B0A080;--text:#3A2E20;--text2:#5A4E38;--text3:#8A7E68;--heading:#1A1208;--accent:#6B4226;--accent2:#8B6240;--accent-glow:rgba(107,66,38,.2);--accent-glow-bg:rgba(107,66,38,.06);--card-bg:#F0E4D0;--card-border:#C8B898;--pattern-color:rgba(107,66,38,.04);--glow:0 4px 24px rgba(107,66,38,.1);--splash-bg:linear-gradient(135deg,#EDE0CB 0%,#E0D0B8 50%,#D8C8A8 100%)}
-
-
+:root{--chalk:#2D5A27;--chalk2:#3A7A33;--ink:#1A1A2E;--cream:#F5E6C8;--cream2:#E8D5B0;--board:#1B3B1A;--board2:#244D22;--board3:#163016;--chalk-white:#E8E0D0;--chalk-dim:#9AAA8E;--ok:#27AE60;--err:#C0392B}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Outfit','Noto Sans Arabic',sans-serif;font-size:14px;min-height:100vh;position:relative}
-body::before{content:'';position:fixed;inset:0;background:repeating-conic-gradient(var(--pattern-color) 0% 25%,transparent 0% 50%) 0 0/40px 40px;pointer-events:none;z-index:0;opacity:.6}
-[lang="ar"] body{font-family:'Amiri','Noto Sans Arabic',sans-serif}
-h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
-.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--splash-bg);position:relative;z-index:1}
-.splash-box{background:var(--card-bg);border:2px solid var(--border);border-radius:20px;padding:36px 28px;max-width:420px;width:100%;text-align:center;box-shadow:var(--glow),0 8px 32px rgba(0,0,0,.08);animation:fadeUp .6s ease-out;position:relative;overflow:hidden}
-.splash-box::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:repeating-conic-gradient(var(--pattern-color) 0% 25%,transparent 0% 50%) 0 0/60px 60px;opacity:.4;pointer-events:none}
-.splash-bism{font-family:'Amiri',serif;color:var(--accent);font-size:18px;margin-bottom:16px;line-height:1.8;position:relative;z-index:1}
-.splash-bism::after{content:'';display:block;width:60px;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);margin:10px auto 0}
-.splash h1{font-size:26px;margin-bottom:6px;position:relative;z-index:1}
-.splash-sub{color:var(--accent);font-family:'Amiri',serif;font-size:13px;letter-spacing:2px;margin-bottom:16px;position:relative;z-index:1}
-.splash-desc{color:var(--text2);font-size:13px;line-height:1.7;margin-bottom:22px;position:relative;z-index:1}
-.btn-go{padding:14px 38px;background:var(--accent);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase;transition:all .2s;position:relative;z-index:1;box-shadow:0 4px 16px var(--accent-glow)}
-.btn-go:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 6px 24px var(--accent-glow)}
-.btn-go:active{transform:translateY(0) scale(.98)}
+body{background:var(--board);color:var(--chalk-white);font-family:'Noto Naskh Arabic','Amiri',serif;font-size:15px;min-height:100vh;position:relative}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(245,230,200,.02) 28px,rgba(245,230,200,.02) 29px),repeating-linear-gradient(90deg,transparent,transparent 28px,rgba(245,230,200,.02) 28px,rgba(245,230,200,.02) 29px);pointer-events:none;z-index:0;opacity:.5}
+body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(60,100,55,.25),transparent 70%);pointer-events:none;z-index:0}
+h1,.heading{font-family:'Amiri','Noto Naskh Arabic',serif;color:var(--cream)}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(180deg,#0F260F 0%,#1B3B1A 60%,#122612 100%);position:relative;z-index:1}
+.splash-box{background:var(--board2);border:3px solid var(--chalk);border-radius:6px;padding:40px 28px;max-width:440px;width:100%;text-align:center;box-shadow:inset 0 0 60px rgba(0,0,0,.3),0 8px 32px rgba(0,0,0,.4);animation:fadeUp .6s ease-out;position:relative;overflow:hidden}
+.splash-box::before{content:'';position:absolute;bottom:0;left:0;right:0;height:12px;background:linear-gradient(90deg,#7A6B50,#9A8B6A,#7A6B50);border-radius:0 0 4px 4px}
+.splash-bism{font-family:'Amiri',serif;color:var(--cream);font-size:20px;margin-bottom:20px;line-height:1.8;text-shadow:0 0 8px rgba(245,230,200,.15)}
+.splash-bism::after{content:'';display:block;width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--cream2),transparent);margin:12px auto 0}
+.splash-art{position:relative;width:130px;height:130px;margin:0 auto 24px}
+.splash-art::before{content:'';position:absolute;top:50%;left:50%;width:80px;height:80px;border:3px dashed rgba(245,230,200,.2);border-radius:50%;transform:translate(-50%,-50%);animation:tracePulse 4s ease-in-out infinite}
+.splash-art::after{content:'';position:absolute;top:22px;right:22px;width:20px;height:20px;background:var(--cream);border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 0 12px rgba(245,230,200,.3);animation:penBob 2s ease-in-out infinite}
+@keyframes tracePulse{0%,100%{border-color:rgba(245,230,200,.15);transform:translate(-50%,-50%) scale(1)}50%{border-color:rgba(245,230,200,.3);transform:translate(-50%,-50%) scale(1.05)}}
+@keyframes penBob{0%,100%{transform:rotate(-45deg) translateY(0)}50%{transform:rotate(-45deg) translateY(-6px)}}
+.splash h1{font-size:28px;margin-bottom:6px;text-shadow:0 2px 4px rgba(0,0,0,.3)}
+.splash-sub{color:var(--chalk-dim);font-family:'Amiri',serif;font-size:14px;letter-spacing:3px;margin-bottom:18px}
+.splash-desc{color:var(--chalk-dim);font-size:14px;line-height:1.8;margin-bottom:24px}
+.btn-go{padding:14px 42px;background:var(--chalk);color:var(--cream);border:2px solid var(--cream2);border-radius:6px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Amiri',serif;transition:all .2s;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.btn-go:hover{background:var(--chalk2);transform:translateY(-2px)}
 .sw{display:flex;gap:4px;justify-content:center;margin-top:14px;flex-wrap:wrap;position:relative;z-index:1}
-.sw-btn{width:34px;height:34px;border-radius:10px;border:2px solid var(--border);background:var(--card-bg);color:var(--text2);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
-.sw-btn:hover{border-color:var(--accent);transform:translateY(-1px)}
-.sw-btn.on{background:var(--accent-glow-bg);border-color:var(--accent);color:var(--accent);box-shadow:0 2px 8px var(--accent-glow)}
-.sw-label{color:var(--text3);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;margin-right:8px;align-self:center;font-weight:600}
+.sw-btn{width:34px;height:34px;border-radius:6px;border:1px solid rgba(245,230,200,.15);background:rgba(245,230,200,.05);color:var(--chalk-dim);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;font-family:'Noto Naskh Arabic',serif}
+.sw-btn:hover{border-color:var(--cream2);color:var(--cream)}
+.sw-btn.on{background:rgba(245,230,200,.12);border-color:var(--cream);color:var(--cream)}
+.sw-label{color:var(--chalk-dim);font-size:10px;letter-spacing:1.5px;margin-left:8px;align-self:center;font-weight:600}
 .app{display:none;max-width:580px;margin:0 auto;padding:16px 20px;position:relative;z-index:1}.app.on{display:block}
-.hdr-bism{text-align:center;font-family:'Amiri',serif;color:var(--accent);font-size:15px;margin-bottom:10px;opacity:.7}
+.hdr-bism{text-align:center;font-family:'Amiri',serif;color:var(--cream);font-size:15px;margin-bottom:10px;opacity:.5}
 .hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;flex-wrap:wrap}
 .hdr h1{font-size:22px}
-.pill{background:var(--accent-glow-bg);border:2px solid var(--accent);color:var(--accent);padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700}
+.pill{background:rgba(245,230,200,.08);border:1px solid var(--cream2);color:var(--cream);padding:4px 14px;border-radius:4px;font-size:12px;font-weight:700;font-family:'Amiri',serif}
 .ctrl{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;align-items:center;justify-content:center}
-.ctrl select,.ctrl button{padding:8px 14px;background:var(--card-bg);border:2px solid var(--border);border-radius:10px;color:var(--heading);font-size:12px;font-family:inherit;cursor:pointer;transition:all .2s;font-weight:600}
-.ctrl select:hover,.ctrl button:hover{border-color:var(--accent);transform:translateY(-1px)}
-.status{text-align:center;font-size:16px;margin-bottom:14px;font-weight:700;color:var(--heading);min-height:26px;font-family:'Amiri',serif}
-.status.win{color:var(--accent)}.status.lose{color:#E06050}
-.game-area{background:var(--card-bg);border:2px solid var(--border);border-radius:16px;padding:20px;margin-bottom:14px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;box-shadow:0 2px 12px rgba(0,0,0,.04);position:relative;overflow:hidden}
-.game-area::before{content:'';position:absolute;inset:0;background:repeating-conic-gradient(var(--pattern-color) 0% 25%,transparent 0% 50%) 0 0/50px 50px;opacity:.3;pointer-events:none}
-.big-text{font-family:'Amiri',serif;font-size:42px;font-weight:700;color:var(--heading);text-align:center;position:relative;z-index:1}
-.answer-row{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
-.answer-btn{padding:12px 22px;border-radius:14px;border:2px solid var(--border);background:var(--card-bg);color:var(--heading);font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;min-width:60px}
-.answer-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-glow-bg);transform:translateY(-2px);box-shadow:0 4px 12px var(--accent-glow)}
-.answer-btn:active{transform:translateY(0)}
-.answer-btn.correct{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 4px 16px var(--accent-glow);animation:correctPop .3s ease-out}
-.answer-btn.wrong{background:#E06050;color:#fff;border-color:#E06050;animation:shake .4s ease-out}
-@keyframes correctPop{0%{transform:scale(1)}50%{transform:scale(1.1)}100%{transform:scale(1)}}
-@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
-.input-row{display:flex;gap:8px;align-items:center;justify-content:center;position:relative;z-index:1}
-.input-row input{width:90px;padding:10px 14px;border-radius:12px;border:2px solid var(--border);background:var(--card-bg);color:var(--heading);font-family:'Amiri',serif;font-size:22px;font-weight:700;text-align:center;transition:border-color .2s}
-.input-row input:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px var(--accent-glow)}
-.input-row button{padding:10px 20px;border-radius:12px;border:none;background:var(--accent);color:#fff;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s}
-.input-row button:hover{transform:translateY(-1px);box-shadow:0 4px 12px var(--accent-glow)}
-.progress{width:100%;max-width:320px;height:10px;background:var(--bg3);border-radius:6px;overflow:hidden;position:relative;z-index:1}
-.progress-bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:6px;transition:width .4s ease-out}
-.score-row{display:flex;gap:24px;justify-content:center;font-family:'Outfit',sans-serif;position:relative;z-index:1}
-.score-item{text-align:center}.score-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;font-weight:600}.score-num{font-size:26px;font-weight:800;color:var(--heading)}
-.grid-pick{display:grid;gap:10px;justify-content:center;margin:10px auto;position:relative;z-index:1}
-.grid-pick.g2{grid-template-columns:repeat(2,1fr);max-width:220px}
-.grid-pick.g3{grid-template-columns:repeat(3,1fr);max-width:320px}
-.grid-pick.g4{grid-template-columns:repeat(4,1fr);max-width:400px}
-.pick-card{padding:16px 12px;border-radius:14px;border:2px solid var(--border);background:var(--card-bg);color:var(--heading);font-family:'Amiri',serif;font-size:18px;font-weight:600;cursor:pointer;text-align:center;transition:all .2s}
-.pick-card:hover{border-color:var(--accent);background:var(--accent-glow-bg);transform:translateY(-2px);box-shadow:0 4px 12px var(--accent-glow)}
-.pick-card.correct{background:var(--accent);color:#fff;border-color:var(--accent)}
-.pick-card.wrong{background:#E06050;color:#fff;border-color:#E06050}
-.log-box{background:var(--bg2);border:2px solid var(--border);border-radius:12px;padding:12px 14px;max-height:80px;overflow-y:auto;font-size:11px;color:var(--text2);margin-bottom:12px}
-.log-line{padding:2px 0}.log-line.success{color:var(--accent)}.log-line.error{color:#E06050}
-.foot{text-align:center;color:var(--text3);font-size:11px;padding:16px 0;border-top:2px solid var(--border);font-family:'Outfit',sans-serif;position:relative;z-index:1}
+.ctrl select,.ctrl button{padding:8px 14px;background:var(--board3);border:1px solid rgba(245,230,200,.15);border-radius:6px;color:var(--cream);font-size:12px;font-family:'Noto Naskh Arabic',serif;cursor:pointer;transition:all .2s;font-weight:600}
+.ctrl select:hover,.ctrl button:hover{border-color:var(--cream2)}
+.status{text-align:center;font-size:17px;margin-bottom:14px;font-weight:700;color:var(--cream);min-height:26px;font-family:'Amiri',serif}
+.status.win{color:var(--ok)}
+.game-area{background:var(--board3);border:2px solid var(--chalk);border-radius:6px;padding:20px;margin-bottom:14px;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;box-shadow:inset 0 0 40px rgba(0,0,0,.2);position:relative;overflow:hidden}
+.letter-info{font-family:'Amiri',serif;font-size:20px;color:var(--cream);text-align:center;position:relative;z-index:1}
+.translit{color:var(--chalk-dim);font-size:14px}
+.canvas-wrap{position:relative;width:100%;max-width:340px;aspect-ratio:1;margin:0 auto;border:2px dashed rgba(245,230,200,.12);border-radius:6px;background:rgba(0,0,0,.15)}
+.canvas-wrap canvas{position:absolute;top:0;left:0;width:100%;height:100%}
+.progress{width:100%;max-width:320px;height:8px;background:var(--board3);border:1px solid rgba(245,230,200,.1);border-radius:4px;overflow:hidden;position:relative;z-index:1}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--chalk),var(--chalk2));border-radius:4px;transition:width .4s}
+.score-row{display:flex;gap:24px;justify-content:center;position:relative;z-index:1}
+.score-item{text-align:center}.score-label{font-size:11px;color:var(--chalk-dim);letter-spacing:1px;font-weight:600}.score-num{font-size:28px;font-weight:700;color:var(--cream)}
+.log-box{background:rgba(0,0,0,.2);border:1px solid rgba(245,230,200,.08);border-radius:6px;padding:12px 14px;max-height:80px;overflow-y:auto;font-size:11px;color:var(--chalk-dim);margin-bottom:12px}
+.log-line{padding:2px 0}.log-line.success{color:var(--ok)}.log-line.error{color:var(--err)}
+.foot{text-align:center;color:var(--chalk-dim);font-size:11px;padding:16px 0;border-top:1px solid rgba(245,230,200,.08)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.back-link{position:fixed;top:12px;left:12px;z-index:100;padding:8px 14px;border-radius:10px;background:var(--card-bg);border:2px solid var(--border);color:var(--text2);font-size:12px;text-decoration:none;font-family:'Outfit',sans-serif;font-weight:600;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.back-link:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
-[dir="rtl"] .back-link{left:auto;right:12px}
-.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(2px)}
+.back-link{position:fixed;top:12px;right:12px;z-index:100;padding:8px 14px;border-radius:6px;background:var(--board2);border:1px solid rgba(245,230,200,.15);color:var(--chalk-dim);font-size:12px;text-decoration:none;font-weight:600;transition:all .2s}
+.back-link:hover{border-color:var(--cream);color:var(--cream)}
+.timer-pill{background:var(--board3);border:1px solid rgba(245,230,200,.12);color:var(--chalk-dim);padding:2px 8px;border-radius:4px;font-size:10px;font-family:monospace;margin-right:6px}
+.hs-badge{display:inline-flex;padding:3px 10px;border-radius:4px;background:rgba(245,230,200,.08);border:1px solid var(--cream2);color:var(--cream);font-size:11px;font-weight:700;margin-right:8px}
+.btn-help{background:none;border:1px solid rgba(245,230,200,.15);color:var(--chalk-dim);padding:8px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:600;transition:all .2s}
+.btn-help:hover{border-color:var(--cream);color:var(--cream)}
+.ctrl-btn{padding:8px 14px;border-radius:6px;border:1px solid rgba(245,230,200,.15);background:var(--board3);color:var(--cream);font-family:'Noto Naskh Arabic',serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s}
+.ctrl-btn:hover{border-color:var(--cream2)}
+.ctrl-btn-accent{background:var(--chalk);border:none;color:var(--cream);font-weight:700}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(2px)}
 .sidebar-overlay.open{opacity:1;pointer-events:auto}
-.sidebar{position:fixed;top:0;width:340px;max-width:85vw;height:100%;background:var(--card-bg);border:2px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .3s ease;box-shadow:4px 0 24px rgba(0,0,0,.1)}
-.sidebar-left{left:0;transform:translateX(-100%)}
-[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}
+.sidebar{position:fixed;top:0;width:340px;max-width:85vw;height:100%;background:var(--board2);border-left:2px solid var(--chalk);z-index:201;display:flex;flex-direction:column;transition:transform .3s;box-shadow:-4px 0 24px rgba(0,0,0,.3)}
+.sidebar-left{right:0;transform:translateX(100%)}
 .sidebar-left.open{transform:translateX(0)}
-.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:2px solid var(--border)}
-.sidebar-title{font-family:'Amiri',serif;font-weight:700;font-size:17px;color:var(--heading)}
-.btn-close{background:none;border:2px solid var(--border);color:var(--text2);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .2s}
-.btn-close:hover{border-color:var(--accent);color:var(--accent)}
-.help-tabs{display:flex;border-bottom:2px solid var(--border)}
-.help-tab{flex:1;padding:10px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:3px solid transparent;transition:all .2s}
-.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid rgba(245,230,200,.1)}
+.sidebar-title{font-family:'Amiri',serif;font-weight:700;font-size:17px;color:var(--cream)}
+.btn-close{background:none;border:1px solid rgba(245,230,200,.15);color:var(--chalk-dim);width:32px;height:32px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.btn-close:hover{border-color:var(--cream);color:var(--cream)}
+.help-tabs{display:flex;border-bottom:1px solid rgba(245,230,200,.1)}
+.help-tab{flex:1;padding:10px;background:none;border:none;color:var(--chalk-dim);font-family:'Noto Naskh Arabic',serif;font-size:12px;font-weight:700;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s}
+.help-tab:hover{color:var(--cream)}.help-tab.active{color:var(--cream);border-bottom-color:var(--cream)}
 .sidebar-body{flex:1;overflow-y:auto;padding:16px 18px}
 .help-content{display:none}.help-content.active{display:block}
-.help-item{margin-bottom:10px;border:2px solid var(--border);border-radius:12px;overflow:hidden}
-.help-item summary{padding:12px 14px;cursor:pointer;font-size:13px;font-weight:700;color:var(--heading);list-style:none;display:flex;align-items:center;gap:8px}
-.help-item summary::before{content:'\25B8';color:var(--accent);font-size:11px;transition:transform .2s}
-.help-item[open] summary::before{transform:rotate(90deg)}
-.help-item p{padding:0 14px 12px;font-size:12px;color:var(--text2);line-height:1.7}
+.help-item{margin-bottom:10px;border:1px solid rgba(245,230,200,.08);border-radius:6px;overflow:hidden}
+.help-item summary{padding:12px 14px;cursor:pointer;font-size:13px;font-weight:700;color:var(--cream);list-style:none;display:flex;align-items:center;gap:8px}
+.help-item summary::before{content:'\25C2';color:var(--cream2);font-size:11px;transition:transform .2s}
+.help-item[open] summary::before{transform:rotate(-90deg)}
+.help-item p{padding:0 14px 12px;font-size:12px;color:var(--chalk-dim);line-height:1.8}
 .help-step{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
-.help-step-num{width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.help-step p{font-size:12px;color:var(--text2);line-height:1.7;margin:0}
-.wiki-entry{margin-bottom:16px}.wiki-entry h3{font-size:14px;margin-bottom:6px;color:var(--heading);font-family:'Amiri',serif}.wiki-entry p{font-size:12px;color:var(--text2);line-height:1.7}
-.sidebar-footer{padding:12px 18px;border-top:2px solid var(--border);text-align:center;color:var(--text3);font-size:11px}
-.btn-help{background:none;border:2px solid var(--border);color:var(--text2);padding:8px 14px;border-radius:10px;font-size:12px;font-family:inherit;cursor:pointer;font-weight:600;transition:all .2s}
-.btn-help:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
-.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:14px;background:rgba(212,160,23,.1);border:2px solid rgba(212,160,23,.3);color:#D4A017;font-size:11px;font-weight:700;font-family:'Outfit',sans-serif;margin-left:8px}
-.timer-pill{background:var(--bg3);border:2px solid var(--border);color:var(--text2);padding:3px 10px;border-radius:14px;font-size:11px;font-family:'Outfit',sans-serif;margin-left:8px;font-weight:600}
-.timer-display{font-family:'Outfit',sans-serif;font-size:14px;color:var(--text2);text-align:center;margin-bottom:4px;font-weight:600}
-.best-score{font-size:11px;color:var(--accent);text-align:center;margin-top:6px;opacity:.8;font-weight:600}
-.help-btn{position:fixed;top:12px;right:12px;z-index:100;padding:8px 14px;border-radius:10px;background:var(--card-bg);border:2px solid var(--border);color:var(--text2);font-size:14px;cursor:pointer;transition:all .2s;font-weight:600}
-.help-btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
-[dir="rtl"] .help-btn{right:auto;left:12px}
-.help-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:200;backdrop-filter:blur(2px)}
-.help-overlay.open{display:flex;align-items:center;justify-content:center}
-.help-box{background:var(--card-bg);border:2px solid var(--border);border-radius:16px;padding:28px;max-width:440px;width:90%;max-height:80vh;overflow-y:auto;color:var(--text);font-size:13px;line-height:1.7;box-shadow:var(--glow)}
-.help-box h2{font-family:'Amiri',serif;color:var(--heading);font-size:18px;margin-bottom:14px}
-.help-box h3{color:var(--accent);font-size:13px;margin:14px 0 6px;text-transform:uppercase;letter-spacing:1px;font-weight:700}
-.help-box ul{padding-left:18px;margin:4px 0}
-.help-close{float:right;background:none;border:none;color:var(--text2);font-size:20px;cursor:pointer;padding:0 6px}
-.help-close:hover{color:var(--accent)}
-.flip-card{width:280px;height:180px;perspective:600px;cursor:pointer;margin:0 auto;position:relative;z-index:1}
-.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
-.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
-.flip-front,.flip-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:14px;display:flex;align-items:center;justify-content:center;padding:16px;font-family:'Amiri',serif;font-weight:700;text-align:center}
-.flip-front{background:var(--card-bg);border:2px solid var(--border);color:var(--heading);font-size:22px}
-.flip-back{background:var(--accent);color:#fff;font-size:18px;transform:rotateY(180deg)}
-.flip-hint{font-size:11px;color:var(--text3);text-align:center;margin-top:8px}
-.stats-row{display:flex;gap:16px;justify-content:center;font-family:'Outfit',sans-serif;font-size:13px;color:var(--text2);position:relative;z-index:1}.stats-row span{color:var(--heading);font-weight:700}
-
-
-.splash-art{position:relative;width:120px;height:120px;margin:0 auto 18px}
-.splash-art::before{content:'';position:absolute;top:50%;left:50%;width:60px;height:60px;border:3px dashed var(--accent);border-radius:50%;transform:translate(-50%,-50%);animation:traceSpin 6s linear infinite}
-.splash-art::after{content:'✍';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:42px;filter:drop-shadow(0 0 12px var(--accent-glow))}
-@keyframes traceSpin{0%{transform:translate(-50%,-50%) rotate(0)}100%{transform:translate(-50%,-50%) rotate(360deg)}}
-.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
-.well-done{font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;color:var(--accent);animation:fadeUp .3s}
-
-.i18n-ar{display:none}.i18n-en{display:block}
-[lang="ar"] .i18n-ar{display:block}[lang="ar"] .i18n-en{display:none}
+.help-step-num{width:28px;height:28px;border-radius:50%;background:var(--chalk);color:var(--cream);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:12px;color:var(--chalk-dim);line-height:1.8;margin:0}
+.wiki-entry{margin-bottom:16px}.wiki-entry h3{font-size:14px;margin-bottom:6px;color:var(--cream);font-family:'Amiri',serif}.wiki-entry p{font-size:12px;color:var(--chalk-dim);line-height:1.8}
+.sidebar-footer{padding:12px 18px;border-top:1px solid rgba(245,230,200,.08);text-align:center;color:var(--chalk-dim);font-size:11px}
+.i18n-ar{display:block}.i18n-en{display:none}
+[lang="en"] .i18n-ar{display:none}[lang="en"] .i18n-en{display:block}
 </style>
 </head>
 <body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
-
-<div class="splash" id="splash">
-<div class="splash-box">
-<div class="splash-bism">بِسْمِ ٱللَّـهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
-<div class="splash-art" data-icon="✍"></div>
-<h1 class="heading" id="splashTitle">Letter Tracing</h1>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">→ الفهرس</a>
+<div class="splash" id="splash"><div class="splash-box">
+<div class="splash-bism">بِسْمِ ٱللَّـهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
+<div class="splash-art"></div>
+<h1 class="heading" id="splashTitle">تتبع الحروف</h1>
 <div class="splash-sub" id="splashSub">ورشة اللغة العربية</div>
-<p class="splash-desc" id="splashDesc">Trace Arabic letters with your finger!</p>
-<button class="btn-go" id="enterBtn">Start</button>
-<div class="sw" style="margin-top:18px">
-<span class="sw-label">Lang</span>
-<button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button>
-</div>
-<div class="sw" style="margin-top:8px">
-<span class="sw-label">Theme</span>
-<button class="sw-btn on" data-thm="teal-ink">🕌</button><button class="sw-btn" data-thm="desert-night">🌙</button><button class="sw-btn" data-thm="calligraphy">✒</button><button class="sw-btn" data-thm="medina">🌿</button><button class="sw-btn" data-thm="oud">🪘</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="sunrise">🌅</button><button class="sw-btn" data-thm="manuscript">📜</button>
-</div>
-</div>
-</div>
-
+<p class="splash-desc" id="splashDesc">تتبّع الحروف العربية بإصبعك!</p>
+<button class="btn-go" id="enterBtn">ابدأ</button>
+<div class="sw" style="margin-top:18px"><span class="sw-label">اللغة</span>
+<button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div></div></div>
 <div class="app" id="app">
-<div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Letter Tracing</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="10">Easy (10)</option><option value="20" selected>Medium (20)</option><option value="28">Hard (28)</option></select>
-    <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
-    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
-    <div class="sw"><button class="sw-btn on" data-thm="teal-ink">🕌</button><button class="sw-btn" data-thm="desert-night">🌙</button><button class="sw-btn" data-thm="calligraphy">✒</button><button class="sw-btn" data-thm="medina">🌿</button><button class="sw-btn" data-thm="oud">🪘</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="sunrise">🌅</button><button class="sw-btn" data-thm="manuscript">📜</button></div></div>
-<div class="status" id="status">Trace the letter!</div>
+<div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
+<div class="hdr"><h1 id="appTitle">تتبع الحروف</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="10">سهل (10)</option><option value="20" selected>متوسط (20)</option><option value="28">صعب (28)</option></select>
+<button id="startBtn">▶ حرف جديد</button><button class="btn-help" onclick="openHelp()">❓</button>
+<button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div></div>
+<div class="status" id="status">تتبّع الحرف!</div>
 <div class="game-area">
-  <div class="letter-info" id="letterInfo">ا — Alif</div>
-  <div class="canvas-wrap" id="canvasWrap">
-    <canvas id="guideCanvas"></canvas>
-    <canvas id="drawCanvas"></canvas>
-  </div>
-  <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
-    <button class="ctrl-btn" id="prevBtn" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;cursor:pointer">◀ Prev</button>
-    <button class="ctrl-btn" id="clearBtn" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;cursor:pointer">✕ Clear</button>
-    <button class="ctrl-btn" id="doneBtn" style="padding:8px 14px;border-radius:8px;border:none;background:var(--accent);color:var(--bg);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer">✓ Done</button>
-    <button class="ctrl-btn" id="nextBtn" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;cursor:pointer">Next ▶</button>
-  </div>
-  <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
-</div>
-<div class="score-row"><div class="score-item"><div class="score-label">Traced</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
-<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Letter Tracing v1.0</div></div>
-
-
-
+<div class="letter-info" id="letterInfo">ا — أَلِف</div>
+<div class="canvas-wrap" id="canvasWrap"><canvas id="guideCanvas"></canvas><canvas id="drawCanvas"></canvas></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+<button class="ctrl-btn" id="prevBtn">◀ السابق</button><button class="ctrl-btn" id="clearBtn">✕ مسح</button>
+<button class="ctrl-btn ctrl-btn-accent" id="doneBtn">✓ تم</button><button class="ctrl-btn" id="nextBtn">التالي ▶</button></div>
+<div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">تم تتبعه</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">المجموع</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot" id="footTxt">تتبع الحروف — الإصدار 1.0</div></div>
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
-<aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
-  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
-  <div class="help-tabs">
-    <button class="help-tab active" data-tab="faq">FAQ</button>
-    <button class="help-tab" data-tab="howto">How-To</button>
-    <button class="help-tab" data-tab="wiki">Wiki</button>
-  </div>
-  <div class="sidebar-body">
-    <div class="help-content active" id="help-faq">
-<div class="i18n-en"><details class="help-item"><summary>What is Letter Tracing?</summary><p>Practice writing Arabic letters by tracing over guides on a canvas. Great for beginners learning the alphabet!</p></details>
-        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
-        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Touch support is built in. Use your finger to trace letters on any device.</p></details>
-        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
-        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
-        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details></div>
-<div class="i18n-ar" style="display:none"><details class="help-item"><summary>ما هو تطبيق تتبع الحروف؟</summary><p>تدرّب على كتابة الحروف العربية بتتبعها على الشاشة.</p></details>
+<aside class="sidebar sidebar-left" id="helpPanel">
+<div class="sidebar-header"><span class="sidebar-title">المساعدة</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+<div class="help-tabs"><button class="help-tab active" data-tab="faq">أسئلة شائعة</button><button class="help-tab" data-tab="howto">كيفية اللعب</button><button class="help-tab" data-tab="wiki">معلومات</button></div>
+<div class="sidebar-body">
+<div class="help-content active" id="help-faq">
+<div class="i18n-ar"><details class="help-item"><summary>ما هو تطبيق تتبع الحروف؟</summary><p>تدرّب على كتابة الحروف العربية بتتبعها على الشاشة.</p></details>
 <details class="help-item"><summary>هل يعمل باللمس؟</summary><p>نعم! يعمل باللمس على الهاتف والجهاز اللوحي، وبالماوس على الحاسوب.</p></details>
 <details class="help-item"><summary>هل يعمل بدون إنترنت؟</summary><p>نعم. يعمل بالكامل في المتصفح.</p></details>
-<details class="help-item"><summary>كيف أعرف إذا تتبعت الحرف بشكل صحيح؟</summary><p>سيظهر لك تقييم فوري بعد تتبع كل حرف.</p></details>
-<details class="help-item"><summary>هل بياناتي محمية؟</summary><p>نعم. كل شيء يعمل محلياً.</p></details>
-</div>
-</div>
-    <div class="help-content" id="help-howto">
-<div class="i18n-en"><div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
-        <div class="help-step"><span class="help-step-num">2</span><p>Choose difficulty: Easy (10), Medium (20), or Hard (all 28 letters)</p></div>
-        <div class="help-step"><span class="help-step-num">3</span><p>Press ▶ New Game to begin</p></div>
-        <div class="help-step"><span class="help-step-num">4</span><p>Trace over the faded guide letter using mouse or finger</p></div>
-        <div class="help-step"><span class="help-step-num">5</span><p>Press ✓ Done when finished tracing, or ✕ Clear to retry</p></div>
-        <div class="help-step"><span class="help-step-num">6</span><p>Use ◀ Prev / Next ▶ to navigate between letters</p></div>
-        <div class="help-step"><span class="help-step-num">7</span><p>Complete all letters to finish the game!</p></div>
-        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div></div>
-<div class="i18n-ar" style="display:none"><div class="help-step"><span class="help-step-num">1</span><p>اضغط ابدأ للدخول</p></div>
+<details class="help-item"><summary>هل بياناتي محمية؟</summary><p>نعم. كل شيء يعمل محلياً.</p></details></div>
+<div class="i18n-en"><details class="help-item"><summary>What is Letter Tracing?</summary><p>Practice writing Arabic letters by tracing over guides.</p></details></div></div>
+<div class="help-content" id="help-howto">
+<div class="i18n-ar"><div class="help-step"><span class="help-step-num">1</span><p>اضغط ابدأ للدخول</p></div>
 <div class="help-step"><span class="help-step-num">2</span><p>انظر إلى الحرف المعروض</p></div>
 <div class="help-step"><span class="help-step-num">3</span><p>تتبّع الحرف بإصبعك أو بالماوس</p></div>
-<div class="help-step"><span class="help-step-num">4</span><p>حاول أن يكون خطك قريباً من النموذج</p></div>
-<div class="help-step"><span class="help-step-num">5</span><p>انتقل للحرف التالي بعد الانتهاء</p></div>
-</div>
-</div>
-    <div class="help-content" id="help-wiki">
-<div class="i18n-en"><div class="wiki-entry"><h3>🎯 Purpose</h3><p>Practice the Arabic alphabet by tracing each letter. Builds muscle memory for handwriting.</p></div>
-        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
-        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Fran&ccedil;ais, العربية. Arabic auto-enables RTL layout.</p></div>
-        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Completion = rising tone, clear = buzz, win = melody. Toggle with 🔊 button.</p></div>
-        <div class="wiki-entry"><h3>✏️ Canvas</h3><p>Two-layer canvas: guide layer shows the letter, draw layer captures your strokes. Responsive and touch-friendly.</p></div>
-        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div></div>
-<div class="i18n-ar" style="display:none"><div class="wiki-entry"><h3>🎯 الهدف</h3><p>تعلّم كتابة الحروف العربية بالتتبع.</p></div>
-<div class="wiki-entry"><h3>✍️ الكتابة</h3><p>تدرّب على شكل كل حرف ونقاطه.</p></div>
-<div class="wiki-entry"><h3>🔒 الخصوصية</h3><p>تطبيق محلي بالكامل.</p></div>
-</div>
-</div>
-  </div>
-  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
-</aside>
-
+<div class="help-step"><span class="help-step-num">4</span><p>اضغط ✓ تم عند الانتهاء أو ✕ مسح لإعادة المحاولة</p></div>
+<div class="help-step"><span class="help-step-num">5</span><p>انتقل للحرف التالي</p></div></div>
+<div class="i18n-en"><div class="help-step"><span class="help-step-num">1</span><p>Trace the letter with finger or mouse</p></div></div></div>
+<div class="help-content" id="help-wiki">
+<div class="i18n-ar"><div class="wiki-entry"><h3>الهدف</h3><p>تعلّم كتابة الحروف العربية بالتتبع.</p></div>
+<div class="wiki-entry"><h3>الخصوصية</h3><p>تطبيق محلي بالكامل.</p></div></div>
+<div class="i18n-en"><div class="wiki-entry"><h3>Purpose</h3><p>Practice tracing Arabic letters.</p></div></div></div>
+</div><div class="sidebar-footer">السبورة العربية — الإصدار 1.0</div></aside>
 <script>
-
-const T = {
-  ar: {
-    title: "تتبع الحروف",
-    sub: "ورشة اللغة العربية",
-    desc: "تتبّع الحروف العربية بإصبعك!",
-    start: "ابدأ",
-    new_game: "▶ حرف جديد",
-    correct_lbl: "صحيح",
-    total_lbl: "المجموع",
-    pick: "اختر الإجابة الصحيحة!",
-    done: "🏆 أحسنت!",
-    easy: "سهل (10)",
-    medium: "متوسط (15)",
-    hard: "صعب (20)",
-    lang_label: "اللغة",
-    theme_label: "المظهر",
-    help_title: "❓ المساعدة",
-    faq_tab: "أسئلة شائعة",
-    howto_tab: "كيفية اللعب",
-    wiki_tab: "معلومات",
-    catalog: "→ الفهرس",
-    correct_log: "✓ صحيح!",
-    wrong_log: "✗ الإجابة:",
-    high_score: "🏆 أعلى نتيجة جديدة!",
-    best: "★ الأفضل:",
-    footer: "تتبع الحروف — الإصدار 1.0"
-  },
-  en: {
-    title: "Letter Tracing",
-    sub: "Arabic Workshop",
-    start: "Start",
-    new_game: "▶ New Game",
-    correct_lbl: "Correct",
-    total_lbl: "Total",
-    easy: "Easy (10)",
-    medium: "Medium (15)",
-    hard: "Hard (20)",
-    lang_label: "Lang",
-    theme_label: "Theme",
-    help_title: "❓ Help",
-    faq_tab: "FAQ",
-    howto_tab: "How-To",
-    wiki_tab: "Wiki",
-    catalog: "← Catalog",
-    footer: ""
-  }
-};
-function tr(key) { var lang = document.documentElement.lang || "ar"; return (T[lang] && T[lang][key]) || (T.en && T.en[key]) || key; }
-function updateUI() {
-  var lang = document.documentElement.lang || "ar";
-  // Splash elements
-  var el;
-  el = document.getElementById("splashTitle") || document.getElementById("splTitle");
-  if (el && T[lang] && T[lang].title) el.textContent = T[lang].title;
-  el = document.getElementById("splashDesc") || document.getElementById("splDesc");
-  if (el && T[lang] && T[lang].desc) el.textContent = T[lang].desc;
-  el = document.getElementById("enterBtn");
-  if (el) el.textContent = tr("start");
-  // App elements
-  el = document.getElementById("appTitle");
-  if (el && T[lang] && T[lang].title) el.textContent = T[lang].title;
-  el = document.getElementById("startBtn");
-  if (el) el.textContent = tr("new_game");
-  // Score labels
-  el = document.getElementById("lbl0");
-  if (el) el.textContent = tr("correct_lbl");
-  el = document.getElementById("lbl1");
-  if (el) el.textContent = tr("total_lbl");
-  // Difficulty select
-  var sel = document.getElementById("diffSel");
-  if (sel && sel.options) {
-    for (var i = 0; i < sel.options.length; i++) {
-      var v = sel.options[i].value;
-      if (v === "10") sel.options[i].textContent = tr("easy");
-      else if (v === "15") sel.options[i].textContent = tr("medium");
-      else if (v === "20") sel.options[i].textContent = tr("hard");
-    }
-  }
-  // Status
-  el = document.getElementById("status");
-  if (el && el.textContent.indexOf("/") === -1) el.textContent = tr("pick");
-  // Back link
-  el = document.getElementById("backLink");
-  if (el) el.textContent = tr("catalog");
-  // Help sidebar
-  var st = document.querySelector(".sidebar-title");
-  if (st) st.textContent = tr("help_title");
-  var tabs = document.querySelectorAll(".help-tab");
-  if (tabs.length >= 3) {
-    tabs[0].textContent = tr("faq_tab");
-    tabs[1].textContent = tr("howto_tab");
-    tabs[2].textContent = tr("wiki_tab");
-  }
-  // Lang/Theme labels
-  document.querySelectorAll(".sw-label").forEach(function(lbl, idx) {
-    if (idx === 0) lbl.textContent = tr("lang_label");
-    else if (idx === 1) lbl.textContent = tr("theme_label");
-  });
-  // Toggle bilingual sidebar content
-  document.querySelectorAll(".i18n-ar").forEach(function(el) { el.style.display = lang === "ar" ? "block" : "none"; });
-  document.querySelectorAll(".i18n-en").forEach(function(el) { el.style.display = lang === "ar" ? "none" : "block"; });
-}
-
-
-
+const T={ar:{title:"تتبع الحروف",sub:"ورشة اللغة العربية",desc:"تتبّع الحروف العربية بإصبعك!",start:"ابدأ",new_game:"▶ حرف جديد",correct_lbl:"تم تتبعه",total_lbl:"المجموع",pick:"تتبّع الحرف!",done:"أحسنت!",easy:"سهل (10)",medium:"متوسط (20)",hard:"صعب (28)",lang_label:"اللغة",help_title:"المساعدة",faq_tab:"أسئلة شائعة",howto_tab:"كيفية اللعب",wiki_tab:"معلومات",catalog:"→ الفهرس",footer:"تتبع الحروف — الإصدار 1.0"},en:{title:"Letter Tracing",sub:"Arabic Workshop",desc:"Trace Arabic letters!",start:"Start",new_game:"▶ New Game",correct_lbl:"Traced",total_lbl:"Total",pick:"Trace the letter!",easy:"Easy (10)",medium:"Medium (20)",hard:"Hard (28)",lang_label:"Lang",help_title:"Help",faq_tab:"FAQ",howto_tab:"How-To",wiki_tab:"Wiki",catalog:"← Catalog",footer:"Letter Tracing — v1.0"}};
+function tr(k){var l=document.documentElement.lang||"ar";return(T[l]&&T[l][k])||(T.en&&T.en[k])||k;}
+function updateAllUI(){var l=document.documentElement.lang||"ar",e;e=document.getElementById("splashTitle");if(e&&T[l])e.textContent=T[l].title;e=document.getElementById("splashDesc");if(e&&T[l]&&T[l].desc)e.textContent=T[l].desc;e=document.getElementById("enterBtn");if(e)e.textContent=tr("start");e=document.getElementById("appTitle");if(e)e.textContent=tr("title");e=document.getElementById("startBtn");if(e)e.textContent=tr("new_game");e=document.getElementById("lbl0");if(e)e.textContent=tr("correct_lbl");e=document.getElementById("lbl1");if(e)e.textContent=tr("total_lbl");var sel=document.getElementById("diffSel");if(sel){for(var i=0;i<sel.options.length;i++){var v=sel.options[i].value;if(v==="10")sel.options[i].textContent=tr("easy");else if(v==="20")sel.options[i].textContent=tr("medium");else if(v==="28")sel.options[i].textContent=tr("hard");}}e=document.getElementById("backLink");if(e)e.textContent=tr("catalog");var st=document.querySelector(".sidebar-title");if(st)st.textContent=tr("help_title");var tabs=document.querySelectorAll(".help-tab");if(tabs.length>=3){tabs[0].textContent=tr("faq_tab");tabs[1].textContent=tr("howto_tab");tabs[2].textContent=tr("wiki_tab");}document.querySelectorAll(".sw-label").forEach(function(lbl){lbl.textContent=tr("lang_label");});e=document.getElementById("footTxt");if(e)e.textContent=tr("footer");document.querySelectorAll(".i18n-ar").forEach(function(el){el.style.display=l==="ar"?"block":"none";});document.querySelectorAll(".i18n-en").forEach(function(el){el.style.display=l==="ar"?"none":"block";});}
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
-function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));updateUI();}
-function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));updateAllUI();}
 let soundOn=true,actx;
 function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
 function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
-
-const AR=[
-  {l:"ا",n:"Alif",ar:"أَلِف"},{l:"ب",n:"Ba",ar:"بَاء"},{l:"ت",n:"Ta",ar:"تَاء"},{l:"ث",n:"Tha",ar:"ثَاء"},
-  {l:"ج",n:"Jim",ar:"جِيم"},{l:"ح",n:"Ha",ar:"حَاء"},{l:"خ",n:"Kha",ar:"خَاء"},{l:"د",n:"Dal",ar:"دَال"},
-  {l:"ذ",n:"Dhal",ar:"ذَال"},{l:"ر",n:"Ra",ar:"رَاء"},{l:"ز",n:"Zay",ar:"زَاي"},{l:"س",n:"Sin",ar:"سِين"},
-  {l:"ش",n:"Shin",ar:"شِين"},{l:"ص",n:"Sad",ar:"صَاد"},{l:"ض",n:"Dad",ar:"ضَاد"},{l:"ط",n:"Taa",ar:"طَاء"},
-  {l:"ظ",n:"Dhaa",ar:"ظَاء"},{l:"ع",n:"Ain",ar:"عَيْن"},{l:"غ",n:"Ghain",ar:"غَيْن"},{l:"ف",n:"Fa",ar:"فَاء"},
-  {l:"ق",n:"Qaf",ar:"قَاف"},{l:"ك",n:"Kaf",ar:"كَاف"},{l:"ل",n:"Lam",ar:"لَام"},{l:"م",n:"Mim",ar:"مِيم"},
-  {l:"ن",n:"Nun",ar:"نُون"},{l:"ه",n:"Ha2",ar:"هَاء"},{l:"و",n:"Waw",ar:"وَاو"},{l:"ي",n:"Ya",ar:"يَاء"}
-];
-
+const AR=[{l:"ا",n:"Alif",ar:"أَلِف"},{l:"ب",n:"Ba",ar:"بَاء"},{l:"ت",n:"Ta",ar:"تَاء"},{l:"ث",n:"Tha",ar:"ثَاء"},{l:"ج",n:"Jim",ar:"جِيم"},{l:"ح",n:"Ha",ar:"حَاء"},{l:"خ",n:"Kha",ar:"خَاء"},{l:"د",n:"Dal",ar:"دَال"},{l:"ذ",n:"Dhal",ar:"ذَال"},{l:"ر",n:"Ra",ar:"رَاء"},{l:"ز",n:"Zay",ar:"زَاي"},{l:"س",n:"Sin",ar:"سِين"},{l:"ش",n:"Shin",ar:"شِين"},{l:"ص",n:"Sad",ar:"صَاد"},{l:"ض",n:"Dad",ar:"ضَاد"},{l:"ط",n:"Taa",ar:"طَاء"},{l:"ظ",n:"Dhaa",ar:"ظَاء"},{l:"ع",n:"Ain",ar:"عَيْن"},{l:"غ",n:"Ghain",ar:"غَيْن"},{l:"ف",n:"Fa",ar:"فَاء"},{l:"ق",n:"Qaf",ar:"قَاف"},{l:"ك",n:"Kaf",ar:"كَاف"},{l:"ل",n:"Lam",ar:"لَام"},{l:"م",n:"Mim",ar:"مِيم"},{l:"ن",n:"Nun",ar:"نُون"},{l:"ه",n:"Ha2",ar:"هَاء"},{l:"و",n:"Waw",ar:"وَاو"},{l:"ي",n:"Ya",ar:"يَاء"}];
 let total=20,currentIdx=0,traced=0,completed=new Set(),drawing=false,lastX=0,lastY=0;
 let guideCanvas,drawCanvas,guideCtx,drawCtx,canvasSize=340;
-
 function setDiff(){total=parseInt(document.getElementById("diffSel").value);}
-
 let timerInterval,timerSeconds=0;
 function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
 function stopTimer(){clearInterval(timerInterval);}
-
-function resizeCanvases(){
-  const wrap=document.getElementById("canvasWrap");
-  const w=wrap.clientWidth;
-  const h=wrap.clientHeight;
-  canvasSize=Math.min(w,h);
-  [guideCanvas,drawCanvas].forEach(c=>{
-    c.width=canvasSize*2;c.height=canvasSize*2;
-    c.style.width=canvasSize+"px";c.style.height=canvasSize+"px";
-  });
-  drawGuide();
-}
-
-function drawGuide(){
-  if(!guideCtx)return;
-  const s=canvasSize*2;
-  guideCtx.clearRect(0,0,s,s);
-  const letter=AR[currentIdx];
-  guideCtx.save();
-  guideCtx.textAlign="center";guideCtx.textBaseline="middle";
-  guideCtx.font="bold "+Math.floor(s*0.55)+"px 'Noto Sans Arabic','Outfit',sans-serif";
-  guideCtx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue("--heading").trim();
-  guideCtx.globalAlpha=0.12;
-  guideCtx.fillText(letter.l,s/2,s/2+s*0.04);
-  guideCtx.globalAlpha=0.25;
-  guideCtx.strokeStyle=getComputedStyle(document.documentElement).getPropertyValue("--accent").trim();
-  guideCtx.lineWidth=2;
-  guideCtx.setLineDash([8,8]);
-  guideCtx.strokeText(letter.l,s/2,s/2+s*0.04);
-  guideCtx.restore();
-}
-
-function clearDraw(){
-  if(!drawCtx)return;
-  drawCtx.clearRect(0,0,canvasSize*2,canvasSize*2);
-}
-
-function showLetter(){
-  const letter=AR[currentIdx];
-  document.getElementById("letterInfo").innerHTML=
-    '<span style="font-size:28px;font-family:Noto Sans Arabic,sans-serif">'+letter.l+'</span> — '+letter.ar+' <span class="translit">('+letter.n+')</span>';
-  clearDraw();
-  drawGuide();
-  updateUI();
-}
-
-function updateUI(){
-  const done=completed.size;
-  document.getElementById("sc").textContent=done;
-  document.getElementById("tot").textContent=total;
-  document.getElementById("scorePill").textContent=done+" / "+total;
-  document.getElementById("prog").style.width=(done/total*100)+"%";
-  document.getElementById("status").textContent=(currentIdx+1)+"/"+total+" — Trace the letter!";
-  document.getElementById("status").className="status";
-}
-
-function getPos(e){
-  const rect=drawCanvas.getBoundingClientRect();
-  const scaleX=drawCanvas.width/rect.width;
-  const scaleY=drawCanvas.height/rect.height;
-  let cx,cy;
-  if(e.touches){cx=e.touches[0].clientX;cy=e.touches[0].clientY;}
-  else{cx=e.clientX;cy=e.clientY;}
-  return{x:(cx-rect.left)*scaleX,y:(cy-rect.top)*scaleY};
-}
-
-function startDraw(e){
-  e.preventDefault();drawing=true;
-  const p=getPos(e);lastX=p.x;lastY=p.y;
-  drawCtx.beginPath();drawCtx.moveTo(lastX,lastY);
-}
-function moveDraw(e){
-  if(!drawing)return;e.preventDefault();
-  const p=getPos(e);
-  const accent=getComputedStyle(document.documentElement).getPropertyValue("--accent").trim();
-  drawCtx.strokeStyle=accent;
-  drawCtx.lineWidth=Math.max(6,canvasSize*2*0.02);
-  drawCtx.lineCap="round";drawCtx.lineJoin="round";
-  drawCtx.beginPath();drawCtx.moveTo(lastX,lastY);drawCtx.lineTo(p.x,p.y);drawCtx.stroke();
-  lastX=p.x;lastY=p.y;
-}
+function resizeCanvases(){const wrap=document.getElementById("canvasWrap");const w=wrap.clientWidth;const h=wrap.clientHeight;canvasSize=Math.min(w,h);[guideCanvas,drawCanvas].forEach(c=>{c.width=canvasSize*2;c.height=canvasSize*2;c.style.width=canvasSize+"px";c.style.height=canvasSize+"px";});drawGuide();}
+function drawGuide(){if(!guideCtx)return;const s=canvasSize*2;guideCtx.clearRect(0,0,s,s);const letter=AR[currentIdx];guideCtx.save();guideCtx.textAlign="center";guideCtx.textBaseline="middle";guideCtx.font="bold "+Math.floor(s*0.55)+"px 'Noto Naskh Arabic','Amiri',sans-serif";guideCtx.fillStyle="#E8E0D0";guideCtx.globalAlpha=0.1;guideCtx.fillText(letter.l,s/2,s/2+s*0.04);guideCtx.globalAlpha=0.2;guideCtx.strokeStyle="#9AAA8E";guideCtx.lineWidth=2;guideCtx.setLineDash([8,8]);guideCtx.strokeText(letter.l,s/2,s/2+s*0.04);guideCtx.restore();}
+function clearDraw(){if(!drawCtx)return;drawCtx.clearRect(0,0,canvasSize*2,canvasSize*2);}
+function showLetter(){const letter=AR[currentIdx];document.getElementById("letterInfo").innerHTML='<span style="font-size:28px">'+letter.l+'</span> — '+letter.ar+' <span class="translit">('+letter.n+')</span>';clearDraw();drawGuide();updateUI();}
+function updateUI(){const done=completed.size;document.getElementById("sc").textContent=done;document.getElementById("tot").textContent=total;document.getElementById("scorePill").textContent=done+" / "+total;document.getElementById("prog").style.width=(done/total*100)+"%";document.getElementById("status").textContent=(currentIdx+1)+"/"+total+" — "+tr("pick");document.getElementById("status").className="status";}
+function getPos(e){const rect=drawCanvas.getBoundingClientRect();const scaleX=drawCanvas.width/rect.width;const scaleY=drawCanvas.height/rect.height;let cx,cy;if(e.touches){cx=e.touches[0].clientX;cy=e.touches[0].clientY;}else{cx=e.clientX;cy=e.clientY;}return{x:(cx-rect.left)*scaleX,y:(cy-rect.top)*scaleY};}
+function startDraw(e){e.preventDefault();drawing=true;const p=getPos(e);lastX=p.x;lastY=p.y;drawCtx.beginPath();drawCtx.moveTo(lastX,lastY);}
+function moveDraw(e){if(!drawing)return;e.preventDefault();const p=getPos(e);drawCtx.strokeStyle="#F5E6C8";drawCtx.lineWidth=Math.max(6,canvasSize*2*0.02);drawCtx.lineCap="round";drawCtx.lineJoin="round";drawCtx.beginPath();drawCtx.moveTo(lastX,lastY);drawCtx.lineTo(p.x,p.y);drawCtx.stroke();lastX=p.x;lastY=p.y;}
 function endDraw(e){if(e)e.preventDefault();drawing=false;}
-
-function markDone(){
-  if(completed.has(currentIdx))return;
-  const pixels=drawCtx.getImageData(0,0,drawCanvas.width,drawCanvas.height).data;
-  let drawn=0;for(let i=3;i<pixels.length;i+=4){if(pixels[i]>0)drawn++;}
-  if(drawn<50){
-    snd("err");log("Draw something first!","error");return;
-  }
-  completed.add(currentIdx);traced=completed.size;
-  snd("ok");
-  log("✓ Traced: "+AR[currentIdx].l+" ("+AR[currentIdx].n+")","success");
-  updateUI();
-  if(traced>=total){
-    checkHS();stopTimer();snd("win");
-    document.getElementById("status").textContent="🏆 All done! "+traced+"/"+total+" letters traced!";
-    document.getElementById("status").className="status win";
-    log("🏆 Completed all "+total+" letters!","success");
-    return;
-  }
-  // Auto-advance to next untraced
-  setTimeout(()=>{
-    goNext();
-  },600);
-}
-
-function goNext(){
-  if(currentIdx<total-1){currentIdx++;showLetter();}
-  else{currentIdx=0;showLetter();}
-}
-function goPrev(){
-  if(currentIdx>0){currentIdx--;showLetter();}
-  else{currentIdx=total-1;showLetter();}
-}
-
-function newGame(){
-  startTimer();
-  total=parseInt(document.getElementById("diffSel").value);
-  currentIdx=0;traced=0;completed=new Set();
-  document.getElementById("logBox").innerHTML="";
-  log("New game started — "+total+" letters","success");
-  showLetter();
-}
-
-// High Score
+function markDone(){if(completed.has(currentIdx))return;const pixels=drawCtx.getImageData(0,0,drawCanvas.width,drawCanvas.height).data;let drawn=0;for(let i=3;i<pixels.length;i+=4){if(pixels[i]>0)drawn++;}if(drawn<50){snd("err");log("ارسم شيئاً أولاً!","error");return;}completed.add(currentIdx);traced=completed.size;snd("ok");log("✓ "+AR[currentIdx].l+" ("+AR[currentIdx].ar+")","success");updateUI();if(traced>=total){checkHS();stopTimer();snd("win");document.getElementById("status").textContent=tr("done")+" "+traced+"/"+total;document.getElementById("status").className="status win";return;}setTimeout(goNext,600);}
+function goNext(){if(currentIdx<total-1)currentIdx++;else currentIdx=0;showLetter();}
+function goPrev(){if(currentIdx>0)currentIdx--;else currentIdx=total-1;showLetter();}
+function newGame(){startTimer();total=parseInt(document.getElementById("diffSel").value);currentIdx=0;traced=0;completed=new Set();document.getElementById("logBox").innerHTML="";log("بدأت اللعبة — "+total+" حرف","success");showLetter();}
 const HS_KEY="wdiy-hs-letter-tracing";
 function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0;}}
 function saveHS(score){try{const best=loadHS();if(score>best){localStorage.setItem(HS_KEY,score);return true;}}catch(e){}return false;}
-function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">🏆 '+best+'</span>';}}
-function checkHS(){
-  if(traced>=total){
-    const pct=Math.round(traced/total*100);
-    if(saveHS(pct)){log("🏆 NEW HIGH SCORE: "+pct+"%!","success");}
-  }
-}
-
+function showHS(){const best=loadHS();if(best>0){const pill=document.getElementById("scorePill");if(pill&&!pill.querySelector(".hs-badge"))pill.innerHTML+=' <span class="hs-badge">'+best+'</span>';}}
+function checkHS(){if(traced>=total){const pct=Math.round(traced/total*100);if(saveHS(pct))log("أعلى نتيجة: "+pct+"%!","success");}}
 document.addEventListener("DOMContentLoaded",()=>{
-  setLang("ar");setTheme("teal-ink");
-  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
-  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");setTimeout(()=>{drawGuide();},50);}));
-
-  guideCanvas=document.getElementById("guideCanvas");
-  drawCanvas=document.getElementById("drawCanvas");
-  guideCtx=guideCanvas.getContext("2d");
-  drawCtx=drawCanvas.getContext("2d");
-
-  drawCanvas.addEventListener("mousedown",startDraw);
-  drawCanvas.addEventListener("mousemove",moveDraw);
-  drawCanvas.addEventListener("mouseup",endDraw);
-  drawCanvas.addEventListener("mouseleave",endDraw);
-  drawCanvas.addEventListener("touchstart",startDraw,{passive:false});
-  drawCanvas.addEventListener("touchmove",moveDraw,{passive:false});
-  drawCanvas.addEventListener("touchend",endDraw,{passive:false});
-  drawCanvas.addEventListener("touchcancel",endDraw,{passive:false});
-
-  document.getElementById("clearBtn").addEventListener("click",()=>{clearDraw();snd("err");log("Canvas cleared");});
+  setLang("ar");
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");setTimeout(drawGuide,50);}));
+  guideCanvas=document.getElementById("guideCanvas");drawCanvas=document.getElementById("drawCanvas");guideCtx=guideCanvas.getContext("2d");drawCtx=drawCanvas.getContext("2d");
+  drawCanvas.addEventListener("mousedown",startDraw);drawCanvas.addEventListener("mousemove",moveDraw);drawCanvas.addEventListener("mouseup",endDraw);drawCanvas.addEventListener("mouseleave",endDraw);
+  drawCanvas.addEventListener("touchstart",startDraw,{passive:false});drawCanvas.addEventListener("touchmove",moveDraw,{passive:false});drawCanvas.addEventListener("touchend",endDraw,{passive:false});drawCanvas.addEventListener("touchcancel",endDraw,{passive:false});
+  document.getElementById("clearBtn").addEventListener("click",()=>{clearDraw();snd("err");});
   document.getElementById("doneBtn").addEventListener("click",markDone);
   document.getElementById("nextBtn").addEventListener("click",()=>{goNext();snd("click");});
   document.getElementById("prevBtn").addEventListener("click",()=>{goPrev();snd("click");});
-
   showHS();
-  document.getElementById("enterBtn").addEventListener("click",()=>{
-    document.querySelector(".splash").style.display="none";
-    document.getElementById("app").classList.add("on");
-    document.getElementById("backLink").style.display="block";
-    setTimeout(resizeCanvases,50);
-    newGame();
-  });
+  document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";setTimeout(resizeCanvases,50);newGame();});
   document.getElementById("startBtn").addEventListener("click",()=>{newGame();setTimeout(resizeCanvases,50);});
   document.getElementById("soundBtn").addEventListener("click",()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
-
   window.addEventListener("resize",()=>{if(document.getElementById("app").classList.contains("on"))resizeCanvases();});
-
   document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
   document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
 });
-
-// Keyboard shortcuts
-document.addEventListener("keydown",function(e){
-  if(e.key==="ArrowRight"||e.key==="n"){var nb=document.getElementById("nextBtn");if(nb&&nb.offsetParent!==null){nb.click();}}
-  if(e.key==="ArrowLeft"||e.key==="p"){var pb=document.getElementById("prevBtn");if(pb&&pb.offsetParent!==null){pb.click();}}
-  if(e.key===" "||e.key==="d"){e.preventDefault();var db=document.getElementById("doneBtn");if(db&&db.offsetParent!==null){db.click();}}
-  if(e.key==="c"){var cb=document.getElementById("clearBtn");if(cb&&cb.offsetParent!==null){cb.click();}}
-  if(e.key==="Enter"){var go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();var start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}
-});
-
-// Persist sound preference
-try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;var sb=document.getElementById("soundBtn");if(sb)sb.textContent="🔇";}}catch(e){}
-var _origSoundClick=document.getElementById("soundBtn");
-if(_origSoundClick){_origSoundClick.addEventListener("click",function(){try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});}
-
-// Persist theme and language
-try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);var _st=localStorage.getItem("wdiy-theme");if(_st)setTheme(_st);}catch(e){}
-(function(){var _osl=setLang,_ost=setTheme;
-setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};
-setTheme=function(t){_ost(t);try{localStorage.setItem("wdiy-theme",t);}catch(e){}};})();
-
+document.addEventListener("keydown",function(e){if(e.key==="ArrowRight"||e.key==="n"){var nb=document.getElementById("nextBtn");if(nb&&nb.offsetParent!==null)nb.click();}if(e.key==="ArrowLeft"||e.key==="p"){var pb=document.getElementById("prevBtn");if(pb&&pb.offsetParent!==null)pb.click();}if(e.key===" "||e.key==="d"){e.preventDefault();var db=document.getElementById("doneBtn");if(db&&db.offsetParent!==null)db.click();}if(e.key==="c"){var cb=document.getElementById("clearBtn");if(cb&&cb.offsetParent!==null)cb.click();}if(e.key==="Enter"){var go=document.getElementById("enterBtn");if(go&&go.offsetParent!==null)go.click();var start=document.getElementById("startBtn");if(start&&start.offsetParent!==null)start.click();}});
+try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;}}catch(e){}
+try{var _sl=localStorage.getItem("wdiy-lang");if(_sl)setLang(_sl);}catch(e){}
+(function(){var _osl=setLang;setLang=function(l){_osl(l);try{localStorage.setItem("wdiy-lang",l);}catch(e){}};})();
 </script>
 </body>
 </html>

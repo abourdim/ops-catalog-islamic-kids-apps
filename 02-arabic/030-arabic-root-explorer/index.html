@@ -4,10 +4,10 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Root Explorer — Arabic Workshop</title>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Naskh+Arabic:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 
-[data-theme="teal-ink"]{--bg:#FFF8F0;--bg2:#FFF5EB;--bg3:#FAEBD7;--border:#DEB887;--border2:#C4956A;--text:#3A2F28;--text2:#6B5D52;--text3:#9A8B7A;--heading:#1A1A2E;--accent:#008080;--accent2:#20B2AA;--accent-glow:rgba(0,128,128,.25);--accent-glow-bg:rgba(0,128,128,.08);--card-bg:#FFFAF5;--card-border:#DEB887;--pattern-color:rgba(0,128,128,.04);--glow:0 4px 24px rgba(0,128,128,.1);--splash-bg:linear-gradient(135deg,#FFF8F0 0%,#FAEBD7 50%,#F5DEB3 100%)}
+[data-theme="teal-ink"]{--bg:#182818;--bg2:#1C2E1C;--bg3:#213421;--border:#365636;--border2:#486848;--text:#CCE0C0;--text2:#98BC88;--text3:#649854;--heading:#F5E6C8;--accent:#8ED48E;--accent2:#B0E8B0;--accent-glow:rgba(142,212,142,.25);--accent-glow-bg:rgba(142,212,142,.08);--card-bg:#1E2E1E;--card-border:#365636;--pattern-color:rgba(245,230,200,.03);--glow:0 4px 24px rgba(142,212,142,.12);--splash-bg:linear-gradient(135deg,#101C10 0%,#182818 50%,#0C160C 100%)}
 [data-theme="desert-night"]{--bg:#1A1612;--bg2:#221E18;--bg3:#2C261E;--border:#3D3428;--border2:#4E4538;--text:#D4C8B8;--text2:#A89880;--text3:#7A6E5E;--heading:#F0E6D6;--accent:#D4A017;--accent2:#FFC947;--accent-glow:rgba(212,160,23,.25);--accent-glow-bg:rgba(212,160,23,.08);--card-bg:#282218;--card-border:#3D3428;--pattern-color:rgba(212,160,23,.04);--glow:0 4px 24px rgba(212,160,23,.12);--splash-bg:linear-gradient(135deg,#1A1612 0%,#2C261E 50%,#1A1612 100%)}
 [data-theme="calligraphy"]{--bg:#F5F0E8;--bg2:#FAF7F0;--bg3:#EDE6D8;--border:#D8CEBB;--border2:#C5B8A0;--text:#2A2018;--text2:#5A4E3E;--text3:#8A7E6E;--heading:#1A1A2E;--accent:#1A1A2E;--accent2:#3A3A5E;--accent-glow:rgba(26,26,46,.2);--accent-glow-bg:rgba(26,26,46,.06);--card-bg:#FAF7F0;--card-border:#D8CEBB;--pattern-color:rgba(26,26,46,.03);--glow:0 4px 24px rgba(26,26,46,.08);--splash-bg:linear-gradient(135deg,#F5F0E8 0%,#EDE6D8 50%,#E8E0D0 100%)}
 [data-theme="medina"]{--bg:#0D1F0D;--bg2:#142814;--bg3:#1B341B;--border:#2A4D2A;--border2:#3A6D3A;--text:#B8D4B8;--text2:#7AA87A;--text3:#5A8A5A;--heading:#E0F0E0;--accent:#4CAF50;--accent2:#81C784;--accent-glow:rgba(76,175,80,.25);--accent-glow-bg:rgba(76,175,80,.08);--card-bg:#1B301B;--card-border:#2A4D2A;--pattern-color:rgba(76,175,80,.04);--glow:0 4px 24px rgba(76,175,80,.12);--splash-bg:linear-gradient(135deg,#0D1F0D 0%,#1B341B 50%,#0D1F0D 100%)}
@@ -19,12 +19,12 @@
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:'Outfit','Noto Sans Arabic',sans-serif;font-size:14px;min-height:100vh;position:relative}
-body::before{content:'';position:fixed;inset:0;background:repeating-conic-gradient(var(--pattern-color) 0% 25%,transparent 0% 50%) 0 0/40px 40px;pointer-events:none;z-index:0;opacity:.6}
-[lang="ar"] body{font-family:'Amiri','Noto Sans Arabic',sans-serif}
-h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(245,230,200,.04) 39px,rgba(245,230,200,.04) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(245,230,200,.04) 39px,rgba(245,230,200,.04) 40px);pointer-events:none;z-index:0;opacity:.8}
+[lang="ar"] body{font-family:'Amiri','Noto Naskh Arabic',sans-serif}
+h1,.heading{font-family:'Amiri','Noto Naskh Arabic',serif;color:var(--heading)}
 .splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--splash-bg);position:relative;z-index:1}
 .splash-box{background:var(--card-bg);border:2px solid var(--border);border-radius:20px;padding:36px 28px;max-width:420px;width:100%;text-align:center;box-shadow:var(--glow),0 8px 32px rgba(0,0,0,.08);animation:fadeUp .6s ease-out;position:relative;overflow:hidden}
-.splash-box::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:repeating-conic-gradient(var(--pattern-color) 0% 25%,transparent 0% 50%) 0 0/60px 60px;opacity:.4;pointer-events:none}
+.splash-box::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(245,230,200,.03) 39px,rgba(245,230,200,.03) 40px);opacity:.5;pointer-events:none}
 .splash-bism{font-family:'Amiri',serif;color:var(--accent);font-size:18px;margin-bottom:16px;line-height:1.8;position:relative;z-index:1}
 .splash-bism::after{content:'';display:block;width:60px;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);margin:10px auto 0}
 .splash h1{font-size:26px;margin-bottom:6px;position:relative;z-index:1}
@@ -49,7 +49,7 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 .status{text-align:center;font-size:16px;margin-bottom:14px;font-weight:700;color:var(--heading);min-height:26px;font-family:'Amiri',serif}
 .status.win{color:var(--accent)}.status.lose{color:#E06050}
 .game-area{background:var(--card-bg);border:2px solid var(--border);border-radius:16px;padding:20px;margin-bottom:14px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;box-shadow:0 2px 12px rgba(0,0,0,.04);position:relative;overflow:hidden}
-.game-area::before{content:'';position:absolute;inset:0;background:repeating-conic-gradient(var(--pattern-color) 0% 25%,transparent 0% 50%) 0 0/50px 50px;opacity:.3;pointer-events:none}
+.game-area::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 29px,rgba(245,230,200,.03) 29px,rgba(245,230,200,.03) 30px);opacity:.5;pointer-events:none}
 .big-text{font-family:'Amiri',serif;font-size:42px;font-weight:700;color:var(--heading);text-align:center;position:relative;z-index:1}
 .answer-row{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
 .answer-btn{padding:12px 22px;border-radius:14px;border:2px solid var(--border);background:var(--card-bg);color:var(--heading);font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;min-width:60px}
@@ -135,11 +135,10 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 .stats-row{display:flex;gap:16px;justify-content:center;font-family:'Outfit',sans-serif;font-size:13px;color:var(--text2);position:relative;z-index:1}.stats-row span{color:var(--heading);font-weight:700}
 
 
-.splash-art{position:relative;width:100px;height:100px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center}
-.splash-art::before{content:attr(data-icon);font-size:52px;animation:bounceIn .6s ease-out}
-.splash-art::after{content:'';position:absolute;inset:-5px;border:2px solid var(--accent);border-radius:50%;opacity:.3;animation:pulseRing 2s ease-in-out infinite}
-@keyframes bounceIn{0%{transform:scale(0) rotate(-10deg)}50%{transform:scale(1.2) rotate(5deg)}100%{transform:scale(1) rotate(0)}}
-@keyframes pulseRing{0%,100%{transform:scale(1);opacity:.3}50%{transform:scale(1.15);opacity:.1}}
+.splash-art{position:relative;width:120px;height:120px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2);border-radius:16px;border:2px solid rgba(142,212,142,.15)}
+.splash-art::before{content:'ك-ت-ب';font-family:'Noto Naskh Arabic','Amiri',serif;font-size:28px;color:#F5E6C8;text-shadow:0 0 20px rgba(142,212,142,.4);letter-spacing:2px;animation:rootGrow .8s ease-out}
+.splash-art::after{content:'';position:absolute;bottom:18px;width:60px;height:1px;background:linear-gradient(90deg,transparent,rgba(142,212,142,.4),transparent)}
+@keyframes rootGrow{0%{opacity:0;letter-spacing:12px}100%{opacity:1;letter-spacing:2px}}
 .root-selector{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
 .root-btn{padding:8px 16px;border-radius:8px;border:2px solid var(--border);background:var(--bg3);font-family:'Noto Sans Arabic',sans-serif;font-size:18px;font-weight:700;color:var(--heading);cursor:pointer;transition:all .15s}.root-btn:hover,.root-btn.active{border-color:var(--accent);color:var(--accent);background:var(--abg)}
 .tree-container{width:100%;position:relative;min-height:300px}
@@ -162,11 +161,11 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 <div class="splash" id="splash">
 <div class="splash-box">
 <div class="splash-bism">بِسْمِ ٱللَّـهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
-<div class="splash-art" data-icon="🌱"></div>
-<h1 class="heading" id="splashTitle">Root Explorer</h1>
+<div class="splash-art"></div>
+<h1 class="heading" id="splashTitle">مستكشف الجذور</h1>
 <div class="splash-sub" id="splashSub">ورشة اللغة العربية</div>
-<p class="splash-desc" id="splashDesc">Explore Arabic word roots!</p>
-<button class="btn-go" id="enterBtn">Start</button>
+<p class="splash-desc" id="splashDesc">استكشف جذور الكلمات العربية!</p>
+<button class="btn-go" id="enterBtn">ابدأ</button>
 <div class="sw" style="margin-top:18px">
 <span class="sw-label">Lang</span>
 <button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button>
@@ -179,9 +178,9 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 </div>
 
 <div class="app" id="app">
-<div class="hdr-bism">\u0628\u0650\u0633\u0652\u0645\u0650 \u0671\u0644\u0644\u0651\u064e\u0640\u0647\u0650 \u0671\u0644\u0631\u0651\u064e\u062d\u0652\u0645\u064e\u0640\u0670\u0646\u0650 \u0671\u0644\u0631\u0651\u064e\u062d\u0650\u064a\u0645\u0650</div><div class="hdr"><h1 id="appTitle">Root Explorer</h1><span class="pill" id="scorePill">0 explored</span></div>
-<div class="ctrl"><button class="btn-help" onclick="openHelp()">\u2753</button><button id="soundBtn">\ud83d\udd0a</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">\u0639</button></div><div class="sw"><button class="sw-btn on" data-thm="teal-ink">🕌</button><button class="sw-btn" data-thm="desert-night">🌙</button><button class="sw-btn" data-thm="calligraphy">✒</button><button class="sw-btn" data-thm="medina">🌿</button><button class="sw-btn" data-thm="oud">🪘</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="sunrise">🌅</button><button class="sw-btn" data-thm="manuscript">📜</button></div></div>
-<div class="status" id="status">Select a root to explore its word family!</div>
+<div class="hdr-bism">\u0628\u0650\u0633\u0652\u0645\u0650 \u0671\u0644\u0644\u0651\u064e\u0640\u0647\u0650 \u0671\u0644\u0631\u0651\u064e\u062d\u0652\u0645\u064e\u0640\u0670\u0646\u0650 \u0671\u0644\u0631\u0651\u064e\u062d\u0650\u064a\u0645\u0650</div><div class="hdr"><h1 id="appTitle">مستكشف الجذور</h1><span class="pill" id="scorePill">٠ مستكشف</span></div>
+<div class="ctrl"><button class="btn-help" onclick="openHelp()">\u2753</button><button id="soundBtn">\ud83d\udd0a</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">\u0639</button></div><div class="sw"><button class="sw-btn on" data-thm="teal-ink">🕌</button><button class="sw-btn" data-thm="desert-night">🌙</button><button class="sw-btn" data-thm="calligraphy">✒</button><button class="sw-btn" data-thm="medina">🌿</button><button class="sw-btn" data-thm="oud">🪘</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="sunrise">🌅</button><button class="sw-btn" data-thm="manuscript">📜</button></div></div>
+<div class="status" id="status">اختر جذراً لاستكشافه!</div>
 <div class="game-area">
 <div class="root-selector" id="rootSelector"></div>
 <div class="tree-container" id="treeContainer">
@@ -191,11 +190,11 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 </div>
 <div class="explored-count" id="exploredCount"></div>
 </div>
-<div class="foot">Workshop-Diy &mdash; Arabic Root Explorer v1.0</div></div>
+<div class="foot">مستكشف الجذور — الإصدار 1.0</div></div>
 
 
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
-<aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">\u2753 Help</span><button class="btn-close" onclick="closeHelp()">\u2715</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div><div class="sidebar-body">
+<aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">❓ المساعدة</span><button class="btn-close" onclick="closeHelp()">✕</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">أسئلة شائعة</button><button class="help-tab" data-tab="howto">كيفية اللعب</button><button class="help-tab" data-tab="wiki">معلومات</button></div><div class="sidebar-body">
 <div class="help-content active" id="help-faq">
 <div class="i18n-en"><details class="help-item"><summary>What is a root?</summary><p>Most Arabic words come from a 3-letter root. The root carries the core meaning, and patterns (awzan) create related words.</p></details><details class="help-item"><summary>Why is this important?</summary><p>Understanding roots helps you guess word meanings and build vocabulary quickly. It is key to understanding Quranic Arabic.</p></details></div>
 <div class="i18n-ar" style="display:none"><details class="help-item"><summary>ما هو هذا التطبيق؟</summary><p>تعلّم نظام الجذور الثلاثية في اللغة العربية.</p></details>
@@ -221,7 +220,7 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 <div class="wiki-entry"><h3>🔒 الخصوصية</h3><p>تطبيق محلي. لا تتبع ولا تحليلات.</p></div>
 </div>
 </div>
-</div><div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div></aside>
+</div><div class="sidebar-footer">ورشة اللغة العربية — الإصدار 1.0</div></aside>
 
 <script>
 
@@ -379,7 +378,7 @@ var ROOTS=[
 {word:"\u0641\u064e\u062a\u0651\u0627\u062d",pattern:"fa''aal",meaning:{en:"Opener (Allah's name)",fr:"Celui qui ouvre",ar:"\u0627\u0633\u0645 \u0645\u0646 \u0623\u0633\u0645\u0627\u0621 \u0627\u0644\u0644\u0647"}}
 ]}
 ];
-var curLang="en",soundOn=true,actx,HS_KEY="wdiy-hs-arabic-root-explorer",exploredCount=0;
+var curLang="ar",soundOn=true,actx,HS_KEY="wdiy-hs-arabic-root-explorer",exploredCount=0;
 var UI={title:{en:"Root Explorer",fr:"Explorateur de racines",ar:"\u0645\u0633\u062a\u0643\u0634\u0641 \u0627\u0644\u062c\u0630\u0648\u0631"},status:{en:"Select a root to explore!",fr:"S\u00e9lectionnez une racine !",ar:"\u0627\u062e\u062a\u0631 \u062c\u0630\u0631\u0627\u064b \u0644\u0627\u0633\u062a\u0643\u0634\u0627\u0641\u0647!"}};
 function t(k){return UI[k]?UI[k][curLang]||UI[k]["en"]:"";}
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}

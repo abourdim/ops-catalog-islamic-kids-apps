@@ -4,10 +4,10 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Number Match — Arabic Workshop</title>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Naskh+Arabic:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 
-[data-theme="teal-ink"]{--bg:#FFF8F0;--bg2:#FFF5EB;--bg3:#FAEBD7;--border:#DEB887;--border2:#C4956A;--text:#3A2F28;--text2:#6B5D52;--text3:#9A8B7A;--heading:#1A1A2E;--accent:#008080;--accent2:#20B2AA;--accent-glow:rgba(0,128,128,.25);--accent-glow-bg:rgba(0,128,128,.08);--card-bg:#FFFAF5;--card-border:#DEB887;--pattern-color:rgba(0,128,128,.04);--glow:0 4px 24px rgba(0,128,128,.1);--splash-bg:linear-gradient(135deg,#FFF8F0 0%,#FAEBD7 50%,#F5DEB3 100%)}
+[data-theme="teal-ink"]{--bg:#1B2E1B;--bg2:#1E331E;--bg3:#243824;--border:#3A5A3A;--border2:#4D6D4D;--text:#D4E8C8;--text2:#A0C490;--text3:#6A9A5A;--heading:#F5E6C8;--accent:#7BC67B;--accent2:#A8E6A8;--accent-glow:rgba(123,198,123,.25);--accent-glow-bg:rgba(123,198,123,.08);--card-bg:#223322;--card-border:#3A5A3A;--pattern-color:rgba(245,230,200,.03);--glow:0 4px 24px rgba(123,198,123,.12);--splash-bg:linear-gradient(135deg,#142014 0%,#1B2E1B 50%,#0F1A0F 100%)}
 [data-theme="desert-night"]{--bg:#1A1612;--bg2:#221E18;--bg3:#2C261E;--border:#3D3428;--border2:#4E4538;--text:#D4C8B8;--text2:#A89880;--text3:#7A6E5E;--heading:#F0E6D6;--accent:#D4A017;--accent2:#FFC947;--accent-glow:rgba(212,160,23,.25);--accent-glow-bg:rgba(212,160,23,.08);--card-bg:#282218;--card-border:#3D3428;--pattern-color:rgba(212,160,23,.04);--glow:0 4px 24px rgba(212,160,23,.12);--splash-bg:linear-gradient(135deg,#1A1612 0%,#2C261E 50%,#1A1612 100%)}
 [data-theme="calligraphy"]{--bg:#F5F0E8;--bg2:#FAF7F0;--bg3:#EDE6D8;--border:#D8CEBB;--border2:#C5B8A0;--text:#2A2018;--text2:#5A4E3E;--text3:#8A7E6E;--heading:#1A1A2E;--accent:#1A1A2E;--accent2:#3A3A5E;--accent-glow:rgba(26,26,46,.2);--accent-glow-bg:rgba(26,26,46,.06);--card-bg:#FAF7F0;--card-border:#D8CEBB;--pattern-color:rgba(26,26,46,.03);--glow:0 4px 24px rgba(26,26,46,.08);--splash-bg:linear-gradient(135deg,#F5F0E8 0%,#EDE6D8 50%,#E8E0D0 100%)}
 [data-theme="medina"]{--bg:#0D1F0D;--bg2:#142814;--bg3:#1B341B;--border:#2A4D2A;--border2:#3A6D3A;--text:#B8D4B8;--text2:#7AA87A;--text3:#5A8A5A;--heading:#E0F0E0;--accent:#4CAF50;--accent2:#81C784;--accent-glow:rgba(76,175,80,.25);--accent-glow-bg:rgba(76,175,80,.08);--card-bg:#1B301B;--card-border:#2A4D2A;--pattern-color:rgba(76,175,80,.04);--glow:0 4px 24px rgba(76,175,80,.12);--splash-bg:linear-gradient(135deg,#0D1F0D 0%,#1B341B 50%,#0D1F0D 100%)}
@@ -19,12 +19,12 @@
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:'Outfit','Noto Sans Arabic',sans-serif;font-size:14px;min-height:100vh;position:relative}
-body::before{content:'';position:fixed;inset:0;background:repeating-conic-gradient(var(--pattern-color) 0% 25%,transparent 0% 50%) 0 0/40px 40px;pointer-events:none;z-index:0;opacity:.6}
-[lang="ar"] body{font-family:'Amiri','Noto Sans Arabic',sans-serif}
-h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(245,230,200,.04) 39px,rgba(245,230,200,.04) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(245,230,200,.04) 39px,rgba(245,230,200,.04) 40px);pointer-events:none;z-index:0;opacity:.8}
+[lang="ar"] body{font-family:'Amiri','Noto Naskh Arabic',sans-serif}
+h1,.heading{font-family:'Amiri','Noto Naskh Arabic',serif;color:var(--heading)}
 .splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--splash-bg);position:relative;z-index:1}
 .splash-box{background:var(--card-bg);border:2px solid var(--border);border-radius:20px;padding:36px 28px;max-width:420px;width:100%;text-align:center;box-shadow:var(--glow),0 8px 32px rgba(0,0,0,.08);animation:fadeUp .6s ease-out;position:relative;overflow:hidden}
-.splash-box::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:repeating-conic-gradient(var(--pattern-color) 0% 25%,transparent 0% 50%) 0 0/60px 60px;opacity:.4;pointer-events:none}
+.splash-box::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(245,230,200,.03) 39px,rgba(245,230,200,.03) 40px);opacity:.5;pointer-events:none}
 .splash-bism{font-family:'Amiri',serif;color:var(--accent);font-size:18px;margin-bottom:16px;line-height:1.8;position:relative;z-index:1}
 .splash-bism::after{content:'';display:block;width:60px;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);margin:10px auto 0}
 .splash h1{font-size:26px;margin-bottom:6px;position:relative;z-index:1}
@@ -49,7 +49,7 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 .status{text-align:center;font-size:16px;margin-bottom:14px;font-weight:700;color:var(--heading);min-height:26px;font-family:'Amiri',serif}
 .status.win{color:var(--accent)}.status.lose{color:#E06050}
 .game-area{background:var(--card-bg);border:2px solid var(--border);border-radius:16px;padding:20px;margin-bottom:14px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;box-shadow:0 2px 12px rgba(0,0,0,.04);position:relative;overflow:hidden}
-.game-area::before{content:'';position:absolute;inset:0;background:repeating-conic-gradient(var(--pattern-color) 0% 25%,transparent 0% 50%) 0 0/50px 50px;opacity:.3;pointer-events:none}
+.game-area::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 29px,rgba(245,230,200,.03) 29px,rgba(245,230,200,.03) 30px);opacity:.5;pointer-events:none}
 .big-text{font-family:'Amiri',serif;font-size:42px;font-weight:700;color:var(--heading);text-align:center;position:relative;z-index:1}
 .answer-row{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
 .answer-btn{padding:12px 22px;border-radius:14px;border:2px solid var(--border);background:var(--card-bg);color:var(--heading);font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;min-width:60px}
@@ -135,11 +135,10 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 .stats-row{display:flex;gap:16px;justify-content:center;font-family:'Outfit',sans-serif;font-size:13px;color:var(--text2);position:relative;z-index:1}.stats-row span{color:var(--heading);font-weight:700}
 
 
-.splash-art{position:relative;width:100px;height:100px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center}
-.splash-art::before{content:attr(data-icon);font-size:52px;animation:bounceIn .6s ease-out}
-.splash-art::after{content:'';position:absolute;inset:-5px;border:2px solid var(--accent);border-radius:50%;opacity:.3;animation:pulseRing 2s ease-in-out infinite}
-@keyframes bounceIn{0%{transform:scale(0) rotate(-10deg)}50%{transform:scale(1.2) rotate(5deg)}100%{transform:scale(1) rotate(0)}}
-@keyframes pulseRing{0%,100%{transform:scale(1);opacity:.3}50%{transform:scale(1.15);opacity:.1}}
+.splash-art{position:relative;width:120px;height:120px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2);border-radius:16px;border:2px dashed rgba(245,230,200,.2)}
+.splash-art::before{content:'١٢٣';font-family:'Noto Naskh Arabic','Amiri',serif;font-size:44px;color:#F5E6C8;text-shadow:0 0 20px rgba(123,198,123,.4);animation:chalkWrite .8s ease-out}
+.splash-art::after{content:'';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);width:40px;height:3px;background:rgba(245,230,200,.15);border-radius:2px}
+@keyframes chalkWrite{0%{opacity:0;transform:translateY(10px) scale(.8)}60%{opacity:1;transform:translateY(-3px) scale(1.05)}100%{opacity:1;transform:translateY(0) scale(1)}}
 .timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
 
 .i18n-ar{display:none}.i18n-en{display:block}
@@ -152,11 +151,11 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 <div class="splash" id="splash">
 <div class="splash-box">
 <div class="splash-bism">بِسْمِ ٱللَّـهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
-<div class="splash-art" data-icon="٣"></div>
-<h1 class="heading" id="splashTitle">Number Match</h1>
+<div class="splash-art"></div>
+<h1 class="heading" id="splashTitle">مطابقة الأرقام</h1>
 <div class="splash-sub" id="splashSub">ورشة اللغة العربية</div>
-<p class="splash-desc" id="splashDesc">Match Arabic numbers with their values!</p>
-<button class="btn-go" id="enterBtn">Start</button>
+<p class="splash-desc" id="splashDesc">طابق الأرقام العربية مع قيمها!</p>
+<button class="btn-go" id="enterBtn">ابدأ</button>
 <div class="sw" style="margin-top:18px">
 <span class="sw-label">Lang</span>
 <button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button>
@@ -169,24 +168,24 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 </div>
 
 <div class="app" id="app">
-<div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Arabic Numbers</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="easy">Easy (0-10)</option><option value="medium" selected>Medium (0-20)</option><option value="hard">Hard (0-100)</option></select>
-    <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+<div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>مطابقة الأرقام</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="easy">سهل (٠-١٠)</option><option value="medium" selected>متوسط (٠-٢٠)</option><option value="hard">صعب (٠-١٠٠)</option></select>
+    <button id="startBtn">▶ لعبة جديدة</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
     <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
     <div class="sw"><button class="sw-btn on" data-thm="teal-ink">🕌</button><button class="sw-btn" data-thm="desert-night">🌙</button><button class="sw-btn" data-thm="calligraphy">✒</button><button class="sw-btn" data-thm="medina">🌿</button><button class="sw-btn" data-thm="oud">🪘</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="sunrise">🌅</button><button class="sw-btn" data-thm="manuscript">📜</button></div></div>
-<div class="status" id="status">Pick the right answer!</div>
+<div class="status" id="status">اختر الإجابة الصحيحة!</div>
 <div class="game-area"><div class="big-text" id="question">?</div><div class="answer-row" id="choices"></div><div class="info-row" id="infoRow"></div><div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div></div>
-<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
-<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Arabic Numbers v1.0</div></div>
+<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">صحيح</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">المجموع</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">مطابقة الأرقام — الإصدار 1.0</div></div>
 
 
 
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
-  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="sidebar-header"><span class="sidebar-title">❓ المساعدة</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
   <div class="help-tabs">
-    <button class="help-tab active" data-tab="faq">FAQ</button>
-    <button class="help-tab" data-tab="howto">How-To</button>
-    <button class="help-tab" data-tab="wiki">Wiki</button>
+    <button class="help-tab active" data-tab="faq">أسئلة شائعة</button>
+    <button class="help-tab" data-tab="howto">كيفية اللعب</button>
+    <button class="help-tab" data-tab="wiki">معلومات</button>
   </div>
   <div class="sidebar-body">
     <div class="help-content active" id="help-faq">
@@ -229,7 +228,7 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 </div>
 </div>
   </div>
-  <div class="sidebar-footer">Workshop-DIY — v1.0</div>
+  <div class="sidebar-footer">ورشة اللغة العربية — الإصدار 1.0</div>
 </aside>
 
 <script>

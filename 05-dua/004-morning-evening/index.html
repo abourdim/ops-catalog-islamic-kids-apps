@@ -184,62 +184,62 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 </head>
 <body>
 
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Morning &amp; Evening</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Daily adhkar practice</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Read and memorize your morning &amp; evening adhkar!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Morning &amp; Evening</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← الفهرس</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">أذكار الصباح والمساء</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">تمرين الأذكار اليومية</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">اقرأ واحفظ أذكار الصباح والمساء!</p><button class="btn-go" id="enterBtn">ابدأ المهمة</button><div class="sw" style="margin-top:18px"><span class="sw-label">اللغة</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">السمة</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>أذكار الصباح والمساء</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div>
 <div class="ctrl">
-<div class="period-tabs"><button class="period-tab on" data-period="morning" onclick="setPeriod('morning')">🌅 Morning</button><button class="period-tab" data-period="evening" onclick="setPeriod('evening')">🌙 Evening</button></div>
-<div class="mode-tabs"><button class="mode-tab on" data-mode="read" onclick="setMode('read')">📖 Read</button><button class="mode-tab" data-mode="quiz" onclick="setMode('quiz')">❓ Quiz</button></div>
-<select id="diffSel" onchange="setDiff()"><option value="6">Easy (6)</option><option value="10" selected>Medium (10)</option><option value="12">Hard (12)</option></select>
-<button id="startBtn">▶ New Session</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+<div class="period-tabs"><button class="period-tab on" data-period="morning" onclick="setPeriod('morning')">🌅 الصباح</button><button class="period-tab" data-period="evening" onclick="setPeriod('evening')">🌙 المساء</button></div>
+<div class="mode-tabs"><button class="mode-tab on" data-mode="read" onclick="setMode('read')">📖 قراءة</button><button class="mode-tab" data-mode="quiz" onclick="setMode('quiz')">❓ اختبار</button></div>
+<select id="diffSel" onchange="setDiff()"><option value="6">سهل (6)</option><option value="10" selected>متوسط (10)</option><option value="12">صعب (12)</option></select>
+<button id="startBtn">▶ جلسة جديدة</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
 <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
 <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
-<div class="status" id="status">Choose morning or evening adhkar</div>
+<div class="status" id="status">اختر أذكار الصباح أو المساء</div>
 <div id="dailyStatus"></div>
 <div class="checklist" id="checklist"></div>
 <div class="game-area" id="gameArea">
 <div id="readArea" style="width:100%"></div>
 <div id="quizArea" style="width:100%;display:none"></div>
 </div>
-<div class="score-row"><div class="score-item"><div class="score-label">Completed</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
-<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Morning &amp; Evening v1.0</div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">مكتمل</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">المجموع</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — أذكار الصباح والمساء v1.0</div></div>
 
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
-  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="sidebar-header"><span class="sidebar-title">❓ مساعدة</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
   <div class="help-tabs">
-    <button class="help-tab active" data-tab="faq">FAQ</button>
-    <button class="help-tab" data-tab="howto">How-To</button>
-    <button class="help-tab" data-tab="wiki">Wiki</button>
+    <button class="help-tab active" data-tab="faq">الأسئلة</button>
+    <button class="help-tab" data-tab="howto">كيفية الاستخدام</button>
+    <button class="help-tab" data-tab="wiki">الموسوعة</button>
   </div>
   <div class="sidebar-body">
     <div class="help-content active" id="help-faq">
-        <details class="help-item"><summary>What is Morning &amp; Evening?</summary><p>A daily adhkar practice app for Muslim kids. Read and memorize your morning and evening remembrances of Allah.</p></details>
-        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
-        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
-        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
-        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
-        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
-        <details class="help-item"><summary>What are the two modes?</summary><p>READ mode: scroll through adhkar cards and tap to count repetitions. QUIZ mode: match the dhikr to its description from 4 options.</p></details>
+        <details class="help-item"><summary>ما هي أذكار الصباح والمساء؟</summary><p>تطبيق لممارسة الأذكار اليومية للأطفال المسلمين. اقرأ واحفظ أذكار الصباح والمساء.</p></details>
+        <details class="help-item"><summary>هل يعمل بدون إنترنت؟</summary><p>نعم. بمجرد التحميل، كل شيء يعمل في متصفحك بدون حاجة للإنترنت.</p></details>
+        <details class="help-item"><summary>هل يمكنني اللعب على هاتفي؟</summary><p>نعم. يعمل على أي جهاز بمتصفح حديث — هاتف، جهاز لوحي، حاسوب.</p></details>
+        <details class="help-item"><summary>كيف أغيّر السمة؟</summary><p>انقر على أي زر سمة (🖥 🌌 🔥 إلخ) في شريط التحكم.</p></details>
+        <details class="help-item"><summary>كيف أغيّر اللغة؟</summary><p>انقر EN / FR / ع. العربية تفعّل التنسيق من اليمين لليسار تلقائياً.</p></details>
+        <details class="help-item"><summary>هل بياناتي خاصة؟</summary><p>نعم. كل شيء يعمل محلياً في متصفحك. لا تُرسل أي بيانات لأي مكان.</p></details>
+        <details class="help-item"><summary>ما هما الوضعان؟</summary><p>وضع القراءة: تصفّح بطاقات الأذكار وانقر لعدّ التكرارات. وضع الاختبار: طابق الذكر مع وصفه من 4 خيارات.</p></details>
     </div>
     <div class="help-content" id="help-howto">
-        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
-        <div class="help-step"><span class="help-step-num">2</span><p>Choose Morning or Evening adhkar</p></div>
-        <div class="help-step"><span class="help-step-num">3</span><p>Select Read or Quiz mode and difficulty</p></div>
-        <div class="help-step"><span class="help-step-num">4</span><p>Press ▶ New Session to begin</p></div>
-        <div class="help-step"><span class="help-step-num">5</span><p>READ: Tap the counter circle to count repetitions. It auto-advances when done.</p></div>
-        <div class="help-step"><span class="help-step-num">6</span><p>QUIZ: Read the description and pick the correct Arabic text from 4 choices.</p></div>
-        <div class="help-step"><span class="help-step-num">7</span><p>Completed adhkar show checkmarks. Daily progress is saved.</p></div>
-        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another app</p></div>
+        <div class="help-step"><span class="help-step-num">1</span><p>انقر "ابدأ المهمة" في شاشة البداية</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>اختر أذكار الصباح أو المساء</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>اختر وضع القراءة أو الاختبار والمستوى</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>اضغط ▶ جلسة جديدة للبدء</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>القراءة: انقر دائرة العدّ لعدّ التكرارات. ينتقل تلقائياً عند الإكمال.</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>الاختبار: اقرأ الوصف واختر النص العربي الصحيح من 4 خيارات.</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>الأذكار المكتملة تظهر بعلامة ✓. التقدم اليومي يُحفظ.</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>انقر ← الفهرس للعودة وتجربة تطبيق آخر</p></div>
     </div>
     <div class="help-content" id="help-wiki">
-        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Practice daily morning and evening adhkar. Build the habit of remembering Allah every day.</p></div>
-        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
-        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Français, العربية. Arabic auto-enables RTL layout.</p></div>
-        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Toggle with 🔊 button.</p></div>
-        <div class="wiki-entry"><h3>📖 Read Mode</h3><p>Scroll through each dhikr with Arabic text, transliteration, meaning, and repetition counter.</p></div>
-        <div class="wiki-entry"><h3>❓ Quiz Mode</h3><p>Match the benefit/description to the correct Arabic text from 4 options.</p></div>
-        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+        <div class="wiki-entry"><h3>🎯 الهدف</h3><p>تمرّن على أذكار الصباح والمساء اليومية. ابنِ عادة ذكر الله كل يوم.</p></div>
+        <div class="wiki-entry"><h3>🎨 السمات</h3><p>8 سمات مدمجة: Terminal، Midnight، Ember، Phosphor، Signal، Redshift، Arctic، Sand.</p></div>
+        <div class="wiki-entry"><h3>🌐 اللغات</h3><p>ثلاث لغات: English، Français، العربية. العربية تفعّل تنسيق RTL تلقائياً.</p></div>
+        <div class="wiki-entry"><h3>🔊 الصوت</h3><p>Web Audio API — لا حاجة لملفات. التبديل بزر 🔊.</p></div>
+        <div class="wiki-entry"><h3>📖 وضع القراءة</h3><p>تصفّح كل ذكر مع النص العربي والنطق والمعنى وعدّاد التكرار.</p></div>
+        <div class="wiki-entry"><h3>❓ وضع الاختبار</h3><p>طابق الفائدة/الوصف مع النص العربي الصحيح من 4 خيارات.</p></div>
+        <div class="wiki-entry"><h3>🔒 الخصوصية</h3><p>محلي أولاً. لا تتبع، لا تحليلات، لا اتصالات خارجية. كل البيانات تبقى في متصفحك.</p></div>
     </div>
   </div>
   <div class="sidebar-footer">Workshop-DIY — v1.0</div>

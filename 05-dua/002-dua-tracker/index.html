@@ -184,26 +184,26 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 </head>
 <body>
 
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Dua Practice</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Learn and practice daily supplications</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Learn and memorize beautiful daily duas</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div></div>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; الفهرس</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">تمرين الدعاء</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">تعلّم وتمرّن على الأدعية اليومية</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">تعلّم واحفظ الأدعية اليومية الجميلة</p><button class="btn-go" id="enterBtn">ابدأ المهمة</button><div class="sw" style="margin-top:18px"><span class="sw-label">اللغة</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">السمة</span><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div></div>
 
 <div class="app" id="app">
   <div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
-  <div class="hdr"><h1>Dua Practice</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div>
+  <div class="hdr"><h1>تمرين الدعاء</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div>
   <div class="mode-tabs">
-    <button class="mode-tab on" id="modeLearn" onclick="setMode('learn')">Learn</button>
-    <button class="mode-tab" id="modeQuiz" onclick="setMode('quiz')">Quiz</button>
+    <button class="mode-tab on" id="modeLearn" onclick="setMode('learn')">تعلّم</button>
+    <button class="mode-tab" id="modeQuiz" onclick="setMode('quiz')">اختبار</button>
   </div>
   <div class="ctrl">
-    <select id="diffSel" onchange="setDiff()"><option value="10">Easy (10)</option><option value="15" selected>Medium (15)</option><option value="25">Hard (25+)</option></select>
-    <select id="timeSel" onchange="setTimeFilter()"><option value="all">All Times</option><option value="morning">Morning</option><option value="afternoon">Afternoon</option><option value="evening">Evening</option><option value="night">Night</option><option value="anytime">Anytime</option></select>
-    <button id="startBtn">&#9654; New Quiz</button>
+    <select id="diffSel" onchange="setDiff()"><option value="10">سهل (10)</option><option value="15" selected>متوسط (15)</option><option value="25">صعب (+25)</option></select>
+    <select id="timeSel" onchange="setTimeFilter()"><option value="all">كل الأوقات</option><option value="morning">الصباح</option><option value="afternoon">الظهيرة</option><option value="evening">المساء</option><option value="night">الليل</option><option value="anytime">أي وقت</option></select>
+    <button id="startBtn">&#9654; اختبار جديد</button>
     <button class="btn-help" id="helpBtn" onclick="openHelp()">&#10067;</button>
     <button id="soundBtn">&#x1F50A;</button>
     <div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
     <div class="sw"><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div>
   </div>
-  <div class="status" id="status">Browse duas or start a quiz!</div>
+  <div class="status" id="status">تصفّح الأدعية أو ابدأ الاختبار!</div>
 
   <!-- LEARN MODE -->
   <div id="learnArea" class="game-area" style="display:flex">
@@ -217,7 +217,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
         <div class="dua-translit" id="duaTranslit"></div>
         <div class="dua-meaning" id="duaMeaning"></div>
       </div>
-      <div class="dua-flip-hint" id="flipHint">Tap to flip</div>
+      <div class="dua-flip-hint" id="flipHint">انقر للقلب</div>
     </div>
     <div class="dua-nav">
       <button class="dua-nav-btn" onclick="prevDua()">&#9664;</button>
@@ -229,51 +229,51 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
   <!-- QUIZ MODE -->
   <div id="quizArea" class="game-area" style="display:none">
     <div class="quiz-occasion" id="quizOccasion"></div>
-    <div class="quiz-hint" id="quizHint">Pick the correct dua</div>
+    <div class="quiz-hint" id="quizHint">اختر الدعاء الصحيح</div>
     <div class="grid-pick g2" id="quizChoices"></div>
     <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
   </div>
 
-  <div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
+  <div class="score-row"><div class="score-item"><div class="score-label">صحيح</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">المجموع</div><div class="score-num" id="tot">0</div></div></div>
   <div class="log-box" id="logBox"></div>
-  <div class="foot">Workshop-Diy &mdash; Dua Practice v1.0</div>
+  <div class="foot">Workshop-Diy &mdash; تمرين الدعاء v1.0</div>
 </div>
 
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
-  <div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
+  <div class="sidebar-header"><span class="sidebar-title">&#10067; مساعدة</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
   <div class="help-tabs">
-    <button class="help-tab active" data-tab="faq">FAQ</button>
-    <button class="help-tab" data-tab="howto">How-To</button>
-    <button class="help-tab" data-tab="wiki">Wiki</button>
+    <button class="help-tab active" data-tab="faq">الأسئلة</button>
+    <button class="help-tab" data-tab="howto">كيفية اللعب</button>
+    <button class="help-tab" data-tab="wiki">الموسوعة</button>
   </div>
   <div class="sidebar-body">
     <div class="help-content active" id="help-faq">
-      <details class="help-item"><summary>What is Dua Practice?</summary><p>An interactive tool to learn and memorize daily Islamic supplications (duas). Browse duas organized by time of day, or test yourself with quizzes.</p></details>
-      <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
-      <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser &mdash; phone, tablet, laptop, desktop.</p></details>
-      <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
-      <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / &#1593;. Arabic enables right-to-left layout automatically.</p></details>
-      <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
-      <details class="help-item"><summary>What do the difficulty levels mean?</summary><p>Easy = 10 common duas. Medium = 15 duas. Hard = all 25+ duas including less common ones.</p></details>
+      <details class="help-item"><summary>ما هو تمرين الدعاء؟</summary><p>أداة تفاعلية لتعلّم وحفظ الأدعية الإسلامية اليومية. تصفّح الأدعية حسب وقت اليوم أو اختبر نفسك.</p></details>
+      <details class="help-item"><summary>هل يعمل بدون إنترنت؟</summary><p>نعم. بمجرد التحميل، كل شيء يعمل في متصفحك بدون حاجة للإنترنت.</p></details>
+      <details class="help-item"><summary>هل يمكنني اللعب على هاتفي؟</summary><p>نعم. يعمل على أي جهاز بمتصفح حديث &mdash; هاتف، جهاز لوحي، حاسوب.</p></details>
+      <details class="help-item"><summary>كيف أغيّر السمة؟</summary><p>انقر على أي زر سمة في شريط التحكم.</p></details>
+      <details class="help-item"><summary>كيف أغيّر اللغة؟</summary><p>انقر EN / FR / ع. العربية تفعّل التنسيق من اليمين لليسار تلقائياً.</p></details>
+      <details class="help-item"><summary>هل بياناتي خاصة؟</summary><p>نعم. كل شيء يعمل محلياً في متصفحك. لا تُرسل أي بيانات لأي مكان.</p></details>
+      <details class="help-item"><summary>ماذا تعني مستويات الصعوبة؟</summary><p>سهل = 10 أدعية شائعة. متوسط = 15 دعاء. صعب = كل الأدعية +25 بما فيها الأقل شيوعاً.</p></details>
     </div>
     <div class="help-content" id="help-howto">
-      <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
-      <div class="help-step"><span class="help-step-num">2</span><p>Use Learn mode to browse duas &mdash; tap a card to flip between Arabic and translation</p></div>
-      <div class="help-step"><span class="help-step-num">3</span><p>Use arrows or swipe to navigate between duas</p></div>
-      <div class="help-step"><span class="help-step-num">4</span><p>Filter duas by time of day (Morning, Afternoon, Evening, Night, Anytime)</p></div>
-      <div class="help-step"><span class="help-step-num">5</span><p>Switch to Quiz mode and press New Quiz to test yourself</p></div>
-      <div class="help-step"><span class="help-step-num">6</span><p>In quiz, read the occasion shown and pick the correct Arabic dua</p></div>
-      <div class="help-step"><span class="help-step-num">7</span><p>Watch your score and progress bar</p></div>
-      <div class="help-step"><span class="help-step-num">8</span><p>Click &larr; Catalog to go back and try another game</p></div>
+      <div class="help-step"><span class="help-step-num">1</span><p>انقر "ابدأ المهمة" في شاشة البداية</p></div>
+      <div class="help-step"><span class="help-step-num">2</span><p>استخدم وضع التعلّم لتصفح الأدعية &mdash; انقر البطاقة للقلب بين العربي والترجمة</p></div>
+      <div class="help-step"><span class="help-step-num">3</span><p>استخدم الأسهم للتنقل بين الأدعية</p></div>
+      <div class="help-step"><span class="help-step-num">4</span><p>فلتر الأدعية حسب وقت اليوم (الصباح، الظهيرة، المساء، الليل، أي وقت)</p></div>
+      <div class="help-step"><span class="help-step-num">5</span><p>انتقل لوضع الاختبار واضغط اختبار جديد لاختبار نفسك</p></div>
+      <div class="help-step"><span class="help-step-num">6</span><p>في الاختبار، اقرأ المناسبة واختر الدعاء العربي الصحيح</p></div>
+      <div class="help-step"><span class="help-step-num">7</span><p>تابع نتيجتك وشريط التقدم</p></div>
+      <div class="help-step"><span class="help-step-num">8</span><p>انقر &larr; الفهرس للعودة وتجربة لعبة أخرى</p></div>
     </div>
     <div class="help-content" id="help-wiki">
-      <div class="wiki-entry"><h3>Purpose</h3><p>Learn and memorize daily Islamic supplications (duas) organized by time of day. Practice with interactive flashcards and test knowledge in quiz mode.</p></div>
-      <div class="wiki-entry"><h3>Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
-      <div class="wiki-entry"><h3>Languages</h3><p>Trilingual: English, Fran&ccedil;ais, &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;. Arabic auto-enables RTL layout.</p></div>
-      <div class="wiki-entry"><h3>Sound</h3><p>Web Audio API &mdash; no files needed. Correct = rising tone, wrong = buzz, win = melody. Toggle with sound button.</p></div>
-      <div class="wiki-entry"><h3>Duas</h3><p>25+ authentic daily duas organized into Morning, Afternoon, Evening, Night, and Anytime categories. Each includes Arabic text with tashkeel, transliteration, and English meaning.</p></div>
-      <div class="wiki-entry"><h3>Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+      <div class="wiki-entry"><h3>الهدف</h3><p>تعلّم واحفظ الأدعية الإسلامية اليومية مرتبة حسب وقت اليوم. تمرّن بالبطاقات التفاعلية واختبر معلوماتك في وضع الاختبار.</p></div>
+      <div class="wiki-entry"><h3>السمات</h3><p>8 سمات مدمجة: Terminal، Midnight، Ember، Phosphor، Signal، Redshift، Arctic، Sand.</p></div>
+      <div class="wiki-entry"><h3>اللغات</h3><p>ثلاث لغات: English، Fran&ccedil;ais، العربية. العربية تفعّل تنسيق RTL تلقائياً.</p></div>
+      <div class="wiki-entry"><h3>الصوت</h3><p>Web Audio API &mdash; لا حاجة لملفات. صحيح = نغمة صاعدة، خطأ = صفير، فوز = لحن. التبديل بزر الصوت.</p></div>
+      <div class="wiki-entry"><h3>الأدعية</h3><p>أكثر من 25 دعاء يومي أصيل مرتب في فئات: الصباح، الظهيرة، المساء، الليل، وأي وقت. كل دعاء يشمل النص العربي بالتشكيل والنطق والمعنى.</p></div>
+      <div class="wiki-entry"><h3>الخصوصية</h3><p>محلي أولاً. لا تتبع، لا تحليلات، لا اتصالات خارجية. كل البيانات تبقى في متصفحك.</p></div>
     </div>
   </div>
   <div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div>

@@ -1,5 +1,5 @@
-<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="sahara"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Surah Rhythm Tapper</title>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
+<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="midnight-gold"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>نقر إيقاع السور</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 [data-theme="sahara"]{--bg:#FFF8E7;--bg2:#FFFDF5;--bg3:#F5ECD7;--border:#E8D5A8;--border2:#D4C48E;--text:#4A3F2F;--text2:#7A6E5A;--text3:#A09580;--heading:#2C1810;--accent:#E6C200;--abg:#E6C2000A;--abr:#E6C20033;--glow:0 0 20px #E6C20015;--accent2:#388E3C}
 [data-theme="emerald"]{--bg:#F0F7F2;--bg2:#F8FBF9;--bg3:#E2EDE5;--border:#B8D4BE;--border2:#98C4A2;--text:#2D4A35;--text2:#527A5E;--text3:#7EA08A;--heading:#1A3322;--accent:#388E3C;--abg:#388E3C0A;--abr:#388E3C33;--glow:0 0 20px #388E3C15;--accent2:#E6C200}
@@ -11,8 +11,8 @@
 [data-theme="night-sky"]{--bg:#0A0C18;--bg2:#101428;--bg3:#181E38;--border:#202850;--border2:#283268;--text:#B0B8D8;--text2:#7080B0;--text3:#485088;--heading:#D8E0FF;--accent:#FFD700;--abg:#FFD7000A;--abr:#FFD70033;--glow:0 0 20px #FFD70015;--accent2:#4488FF}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:'Outfit','Noto Sans Arabic',sans-serif;font-size:14px;min-height:100vh;background-image:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTIiIGhlaWdodD0iNTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBvbHlnb24gcG9pbnRzPSIyNiwyIDM0LDE4IDUyLDE4IDM4LDMwIDQyLDQ4IDI2LDM4IDEwLDQ4IDE0LDMwIDAsMTggMTgsMTgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0U2QzIwMCIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuMDQiLz48L3N2Zz4=");background-size:60px}
-[lang="ar"] body{font-family:'Noto Sans Arabic','Amiri','Outfit',sans-serif}
-h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+[lang="ar"] body{font-family:'Noto Naskh Arabic','Noto Sans Arabic','Amiri','Outfit',sans-serif}
+h1,.heading{font-family:'Amiri','Noto Naskh Arabic','Outfit',sans-serif;color:var(--heading)}
 @keyframes splashEnter{0%{opacity:0;transform:scale(.5)}40%{transform:scale(1.1)}60%{transform:scale(.95)}80%{transform:scale(1.02)}100%{opacity:1;transform:scale(1)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
@@ -180,32 +180,32 @@ input[type="range"]{width:90px}
 .flashcard-front{background:linear-gradient(135deg,#E6C20011,#388E3C11);border:1px solid var(--border)}
 .flashcard-back{background:var(--bg3);border:1px solid var(--accent);transform:rotateY(180deg)}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8594; الفهرس</a>
 <div class="splash" id="splash"><div class="splash-box">
 <span class="splash-emoji">🥁</span>
 <div class="splash-art"><div class="sa-arch"><div class="sa-arch-top"></div><div class="sa-arch-body"></div></div></div>
 <div class="splash-bism" dir="rtl">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
-<h1 class="splash-title">Surah Rhythm Tapper</h1>
-<div class="splash-subtitle">Tap the rhythm of Quran recitation</div>
-<p class="splash-desc" id="splDesc">Tap the rhythm of Quran recitation</p>
-<button class="btn-go" id="enterBtn">Start</button>
-<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
-<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">&fdfc;</div><div class="hdr"><h1>Surah Rhythm Tapper</h1><span class="pill" id="comboPill">Combo: 0</span></div>
-<div class="ctrl"><button id="startBtn">Play</button><button class="btn-help" onclick="openHelp()">? Help</button><button id="soundBtn">Sound ON</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw"><button class="sw-btn on" data-thm="sahara">T</button><button class="sw-btn" data-thm="emerald">M</button><button class="sw-btn" data-thm="midnight-gold">E</button><button class="sw-btn" data-thm="deep-emerald">P</button><button class="sw-btn" data-thm="royal">S</button><button class="sw-btn" data-thm="sunset">R</button><button class="sw-btn" data-thm="ocean">A</button><button class="sw-btn" data-thm="night-sky">D</button></div></div>
-<div class="status" id="status">Press Play, then tap the button when beats reach the circle</div>
+<h1 class="splash-title">نقر إيقاع السور</h1>
+<div class="splash-subtitle">انقر على إيقاع تلاوة القرآن</div>
+<p class="splash-desc" id="splDesc">انقر على إيقاع تلاوة القرآن</p>
+<button class="btn-go" id="enterBtn">ابدأ</button>
+<div class="sw" style="margin-top:20px"><span class="sw-label">اللغة</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">المظهر</span><button class="sw-btn" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn on" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">&fdfc;</div><div class="hdr"><h1>نقر إيقاع السور</h1><span class="pill" id="comboPill">متتالية: 0</span></div>
+<div class="ctrl"><button id="startBtn">تشغيل</button><button class="btn-help" onclick="openHelp()">؟ المساعدة</button><button id="soundBtn">الصوت مفعّل</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&ayn;</button></div><div class="sw"><button class="sw-btn" data-thm="sahara">T</button><button class="sw-btn" data-thm="emerald">M</button><button class="sw-btn" data-thm="midnight-gold">E</button><button class="sw-btn" data-thm="deep-emerald">P</button><button class="sw-btn" data-thm="royal">S</button><button class="sw-btn" data-thm="sunset">R</button><button class="sw-btn" data-thm="ocean">A</button><button class="sw-btn" data-thm="night-sky">D</button></div></div>
+<div class="status" id="status">اضغط تشغيل، ثم انقر الزر عندما تصل النبضات للدائرة</div>
 <div class="verse-info" id="verseInfo"></div>
-<div class="lane" id="lane"><div class="beat-track"></div><div class="hit-zone" id="hitZone">TAP</div></div>
-<button class="tap-btn" id="tapBtn">TAP</button>
+<div class="lane" id="lane"><div class="beat-track"></div><div class="hit-zone" id="hitZone">انقر</div></div>
+<button class="tap-btn" id="tapBtn">انقر</button>
 <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
-<div class="score-row"><div class="score-item"><div class="score-label">Hits</div><div class="score-num" id="hitNum">0</div></div><div class="score-item"><div class="score-label">Misses</div><div class="score-num" id="missNum">0</div></div><div class="score-item"><div class="score-label">Combo</div><div class="score-num" id="comboNum">0</div></div></div>
-<div class="foot">Amaloun &mdash; Surah Rhythm Tapper v1.0</div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">إصابات</div><div class="score-num" id="hitNum">0</div></div><div class="score-item"><div class="score-label">أخطاء</div><div class="score-num" id="missNum">0</div></div><div class="score-item"><div class="score-label">متتالية</div><div class="score-num" id="comboNum">0</div></div></div>
+<div class="foot">أمالون &mdash; نقر إيقاع السور الإصدار ١.٠</div></div>
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
-<aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">&times;</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div><div class="sidebar-body">
-<div class="help-content active" id="help-faq"><details class="help-item"><summary>What is Rhythm Tapper?</summary><p>A rhythm game where beats scroll across the screen and you tap when they reach the target circle. Rhythms are based on tajweed patterns.</p></details><details class="help-item"><summary>How do I score?</summary><p>Tap when a beat is within the hit zone. Consecutive hits build combos for higher scores.</p></details></div>
-<div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>Press Play to start beats scrolling</p></div><div class="help-step"><span class="help-step-num">2</span><p>Watch beats move from right to left</p></div><div class="help-step"><span class="help-step-num">3</span><p>Tap the button (or press Space) when a beat reaches the circle</p></div><div class="help-step"><span class="help-step-num">4</span><p>Build combos by hitting consecutive beats accurately</p></div></div>
-<div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>Tajweed Rhythm</h3><p>Tajweed rules create natural rhythmic patterns in Quran recitation. Short vowels, long vowels, and stops each have specific timing.</p></div></div>
-</div><div class="sidebar-footer">Amaloun &mdash; v1.0</div></aside>
+<aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">&#10067; المساعدة</span><button class="btn-close" onclick="closeHelp()">&times;</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">الأسئلة الشائعة</button><button class="help-tab" data-tab="howto">كيفية الاستخدام</button><button class="help-tab" data-tab="wiki">معلومات</button></div><div class="sidebar-body">
+<div class="help-content active" id="help-faq"><details class="help-item"><summary>ما هو نقر الإيقاع؟</summary><p>لعبة تفاعلية لتعلم إيقاع تلاوة القرآن من خلال النقر على الشاشة.</p></details><details class="help-item"><summary>كيف أحصل على نقاط؟</summary><p>انقر في الوقت الصحيح عندما تصل النبضات إلى الدائرة. كلما كان توقيتك أدق، زادت نقاطك.</p></details></div>
+<div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>اضغط على زر ابدأ في شاشة البداية</p></div><div class="help-step"><span class="help-step-num">2</span><p>اختر مستوى الصعوبة إذا كان متاحاً</p></div><div class="help-step"><span class="help-step-num">3</span><p>اقرأ التعليمات المعروضة على الشاشة</p></div><div class="help-step"><span class="help-step-num">4</span><p>تفاعل مع العناصر على الشاشة</p></div></div>
+<div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>إيقاع التجويد</h3><p>تُنشئ أحكام التجويد أنماطاً إيقاعية طبيعية في تلاوة القرآن. للحركات القصيرة والطويلة والوقفات توقيت محدد.</p></div></div>
+</div><div class="sidebar-footer">أمالون &mdash; الإصدار ١.٠</div></aside>
 <script>
 // === i18n SYSTEM ===
 let currentLang="ar";
@@ -253,8 +253,8 @@ const T={
     howto1:"اختر مستوى الصعوبة إذا كان متاحاً",
     howto2:"اقرأ التعليمات المعروضة على الشاشة",
     howto3:"تفاعل مع العناصر على الشاشة",
-    wiki0t:"Tajweed Rhythm",
-    wiki0c:"Tajweed rules create natural rhythmic patterns in Quran recitation. Short vowels, long vowels, and stops each have specific timing."
+    wiki0t:"إيقاع التجويد",
+    wiki0c:"تُنشئ أحكام التجويد أنماطاً إيقاعية طبيعية في تلاوة القرآن. للحركات القصيرة والطويلة والوقفات توقيت محدد."
   },
   en:{
     title:"Surah Rhythm Tapper",
@@ -470,7 +470,7 @@ document.addEventListener("keydown",function(e){if(e.code==="Space"||e.key===" "
 document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
 document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
 document.getElementById("enterBtn").onclick=function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";};
-document.getElementById("soundBtn").onclick=function(){soundOn=!soundOn;this.textContent=soundOn?"Sound ON":"Sound OFF";};
+document.getElementById("soundBtn").onclick=function(){soundOn=!soundOn;this.textContent=soundOn?(currentLang==="ar"?"الصوت مفعّل":"Sound ON"):(currentLang==="ar"?"الصوت مطفأ":"Sound OFF");};
 document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
 setLang("ar");try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);}catch(e){}
 });

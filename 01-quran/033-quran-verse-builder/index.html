@@ -1,18 +1,19 @@
-<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="sahara"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Quran Verse Builder</title>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
+<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="midnight-gold"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Quran Verse Builder</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
-[data-theme="sahara"]{--bg:#FFF8E7;--bg2:#FFFDF5;--bg3:#F5ECD7;--border:#E8D5A8;--border2:#D4C48E;--text:#4A3F2F;--text2:#7A6E5A;--text3:#A09580;--heading:#2C1810;--accent:#E6C200;--abg:#E6C2000A;--abr:#E6C20033;--glow:0 0 20px #E6C20015;--accent2:#2E8B57}
-[data-theme="emerald"]{--bg:#F0F7F2;--bg2:#F8FBF9;--bg3:#E2EDE5;--border:#B8D4BE;--border2:#98C4A2;--text:#2D4A35;--text2:#527A5E;--text3:#7EA08A;--heading:#1A3322;--accent:#2E8B57;--abg:#2E8B570A;--abr:#2E8B5733;--glow:0 0 20px #2E8B5715;--accent2:#E6C200}
-[data-theme="midnight-gold"]{--bg:#0E1117;--bg2:#161B22;--bg3:#1E2530;--border:#2A3444;--border2:#3A4858;--text:#C8CDD5;--text2:#8A94A2;--text3:#5A6472;--heading:#F0E6D0;--accent:#E6C200;--abg:#E6C2000A;--abr:#E6C20033;--glow:0 0 20px #E6C20015;--accent2:#2E8B57}
-[data-theme="deep-emerald"]{--bg:#081210;--bg2:#0E1A16;--bg3:#162520;--border:#1E3328;--border2:#2A4438;--text:#B8D4C8;--text2:#7AA090;--text3:#4A7060;--heading:#E0F0E8;--accent:#2E8B57;--abg:#2E8B570A;--abr:#2E8B5733;--glow:0 0 20px #2E8B5715;--accent2:#E6C200}
-[data-theme="royal"]{--bg:#12101A;--bg2:#1A1628;--bg3:#242035;--border:#342E50;--border2:#443E65;--text:#C8C0E0;--text2:#8880B0;--text3:#585080;--heading:#F0E8FF;--accent:#E6C200;--abg:#E6C2000A;--abr:#E6C20033;--glow:0 0 20px #E6C20015;--accent2:#9C7AEA}
+[data-theme="midnight-gold"]{--bg:#FFF8E7;--bg2:#FFFDF5;--bg3:#F5ECD7;--border:#E8D5A8;--border2:#D4C48E;--text:#4A3F2F;--text2:#7A6E5A;--text3:#A09580;--heading:#2C1810;--accent:#C5A028;--abg:#C5A0280A;--abr:#C5A02833;--glow:0 0 20px #C5A02815;--accent2:#2E8B57}
+[data-theme="emerald"]{--bg:#F0F7F2;--bg2:#F8FBF9;--bg3:#E2EDE5;--border:#B8D4BE;--border2:#98C4A2;--text:#2D4A35;--text2:#527A5E;--text3:#7EA08A;--heading:#1A3322;--accent:#2E8B57;--abg:#2E8B570A;--abr:#2E8B5733;--glow:0 0 20px #2E8B5715;--accent2:#C5A028}
+[data-theme="midnight-gold"]{--bg:#0A1628;--bg2:#0E1B30;--bg3:#132240;--border:#1E3355;--border2:#2A4468;--text:#C8D0E0;--text2:#8A96B2;--text3:#5A6882;--heading:#F0E6D0;--accent:#C5A028;--abg:#C5A0280A;--abr:#C5A02833;--glow:0 0 20px #C5A02815;--accent2:#2E8B57}
+[data-theme="deep-emerald"]{--bg:#081210;--bg2:#0E1A16;--bg3:#162520;--border:#1E3328;--border2:#2A4438;--text:#B8D4C8;--text2:#7AA090;--text3:#4A7060;--heading:#E0F0E8;--accent:#2E8B57;--abg:#2E8B570A;--abr:#2E8B5733;--glow:0 0 20px #2E8B5715;--accent2:#C5A028}
+[data-theme="royal"]{--bg:#12101A;--bg2:#1A1628;--bg3:#242035;--border:#342E50;--border2:#443E65;--text:#C8C0E0;--text2:#8880B0;--text3:#585080;--heading:#F0E8FF;--accent:#C5A028;--abg:#C5A0280A;--abr:#C5A02833;--glow:0 0 20px #C5A02815;--accent2:#9C7AEA}
 [data-theme="sunset"]{--bg:#FFF5EB;--bg2:#FFFAF5;--bg3:#F5E8D8;--border:#E8D0B0;--border2:#D4BC98;--text:#4A3828;--text2:#7A6850;--text3:#A09078;--heading:#2C1808;--accent:#D4820A;--abg:#D4820A0A;--abr:#D4820A33;--glow:0 0 20px #D4820A15;--accent2:#2E8B57}
 [data-theme="ocean"]{--bg:#F0F5FA;--bg2:#F8FBFF;--bg3:#E0EAF5;--border:#B0C8E0;--border2:#90B0D0;--text:#2A3A50;--text2:#4A6A88;--text3:#7090A8;--heading:#142840;--accent:#2070B0;--abg:#2070B00A;--abr:#2070B033;--glow:0 0 20px #2070B015;--accent2:#2E8B57}
 [data-theme="night-sky"]{--bg:#0A0C18;--bg2:#101428;--bg3:#181E38;--border:#202850;--border2:#283268;--text:#B0B8D8;--text2:#7080B0;--text3:#485088;--heading:#D8E0FF;--accent:#FFD700;--abg:#FFD7000A;--abr:#FFD70033;--glow:0 0 20px #FFD70015;--accent2:#4488FF}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Outfit','Noto Sans Arabic',sans-serif;font-size:14px;min-height:100vh;background-image:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTIwIDBMNDAgMjBMMjAgNDBMMCAyMFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0U2QzIwMCIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuMDUiLz48L3N2Zz4=");background-size:60px}
-[lang="ar"] body{font-family:'Noto Sans Arabic','Amiri','Outfit',sans-serif}
-h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+body{background:var(--bg);color:var(--text);font-family:'Outfit','Noto Naskh Arabic',sans-serif;font-size:14px;min-height:100vh;background-image:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTIwIDBMNDAgMjBMMjAgNDBMMCAyMFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0U2QzIwMCIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuMDUiLz48L3N2Zz4=");background-size:60px}
+[lang="ar"] body{font-family:'Noto Naskh Arabic','Amiri','Outfit',sans-serif}
+[lang="ar"] h1,[lang="ar"] .heading,[lang="ar"] .splash-title{font-family:'Amiri','Noto Naskh Arabic',serif}
+h1,.heading{font-family:'Outfit','Noto Naskh Arabic',sans-serif;color:var(--heading)}
 @keyframes splashEnter{from{opacity:0;transform:translateY(40px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
@@ -21,19 +22,19 @@ h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--headi
 
 /* === SPLASH === */
 .splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;position:relative;overflow:hidden}
-.splash::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,#E6C20008,transparent 70%);pointer-events:none}
-.splash-box{background:var(--bg2);border:1px solid #E6C20044;border-radius:16px;box-shadow:inset 0 0 30px #E6C20008;padding:44px 36px;max-width:420px;width:100%;text-align:center;box-shadow:var(--glow),0 8px 32px rgba(0,0,0,.08);animation:splashEnter .7s ease-out;position:relative;overflow:hidden}
-.splash-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#E6C200,#2E8B57,#E6C200);background-size:200% auto;animation:shimmer 3s linear infinite}
-.splash-bism{font-family:'Amiri','Noto Sans Arabic',serif;font-size:24px;color:#E6C200;font-weight:700;text-shadow:1px 1px 0 #E6C20022;margin-bottom:18px;direction:rtl}
+.splash::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,#C5A02808,transparent 70%);pointer-events:none}
+.splash-box{background:var(--bg2);border:1px solid #C5A02844;border-radius:16px;box-shadow:inset 0 0 30px #C5A02808;padding:44px 36px;max-width:420px;width:100%;text-align:center;box-shadow:var(--glow),0 8px 32px rgba(0,0,0,.08);animation:splashEnter .7s ease-out;position:relative;overflow:hidden}
+.splash-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#C5A028,#2E8B57,#C5A028);background-size:200% auto;animation:shimmer 3s linear infinite}
+.splash-bism{font-family:'Amiri','Noto Naskh Arabic',serif;font-size:24px;color:#C5A028;font-weight:700;text-shadow:1px 1px 0 #C5A02822;margin-bottom:18px;direction:rtl}
 .splash-title{font-family:'Outfit',sans-serif;font-size:28px;font-weight:800;letter-spacing:-1px;color:var(--heading);margin-bottom:6px}
 .splash-subtitle{color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;font-weight:600}
 .splash-desc{color:var(--text2);font-size:13px;line-height:1.7;margin-bottom:28px}
 .splash-emoji{font-size:48px;margin-bottom:16px;animation:float 3s ease-in-out infinite;display:block}
 .sa-crescent{position:relative;width:80px;height:80px;margin:10px auto}
-.sa-moon{width:60px;height:60px;border-radius:50%;background:#E6C200;position:absolute;top:10px;left:5px;box-shadow:15px -5px 0 0 #FFF8E7}
-.sa-star-shape{position:absolute;top:8px;right:8px;color:#E6C200;font-size:24px;text-shadow:0 0 10px #E6C20066}
-.btn-go{border:none;color:#fff;cursor:pointer;font-family:'Outfit',sans-serif;padding:12px 34px;background:linear-gradient(180deg,#E6C200,#2E8B57);border-radius:10px;font-size:15px;font-weight:800;box-shadow:0 6px 20px #E6C20033;transition:all .25s;position:relative;overflow:hidden}
-.btn-go:hover{transform:translateY(-2px);filter:brightness(1.1);box-shadow:0 6px 24px #E6C20044}
+.sa-moon{width:60px;height:60px;border-radius:50%;background:#C5A028;position:absolute;top:10px;left:5px;box-shadow:15px -5px 0 0 #FFF8E7}
+.sa-star-shape{position:absolute;top:8px;right:8px;color:#C5A028;font-size:24px;text-shadow:0 0 10px #C5A02866}
+.btn-go{border:none;color:#fff;cursor:pointer;font-family:'Outfit',sans-serif;padding:12px 34px;background:linear-gradient(180deg,#C5A028,#2E8B57);border-radius:10px;font-size:15px;font-weight:800;box-shadow:0 6px 20px #C5A02833;transition:all .25s;position:relative;overflow:hidden}
+.btn-go:hover{transform:translateY(-2px);filter:brightness(1.1);box-shadow:0 6px 24px #C5A02844}
 .btn-go:active{transform:translateY(0) scale(.98)}
 
 /* === SWITCHERS === */
@@ -45,7 +46,7 @@ h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--headi
 
 /* === APP AREA === */
 .app{display:none;max-width:600px;margin:0 auto;padding:16px 20px}.app.on{display:block}
-.hdr-bism{text-align:center;font-family:'Amiri','Noto Sans Arabic',serif;font-size:16px;color:#E6C200;margin-bottom:10px;direction:rtl;opacity:.7}
+.hdr-bism{text-align:center;font-family:'Amiri','Noto Naskh Arabic',serif;font-size:16px;color:#C5A028;margin-bottom:10px;direction:rtl;opacity:.7}
 .hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;gap:8px;flex-wrap:wrap}
 .hdr h1{font-size:20px;font-weight:700}
 .pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:4px 14px;border-radius:20px;font-size:12px;font-weight:600;backdrop-filter:blur(4px)}
@@ -57,14 +58,14 @@ h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--headi
 .game-area{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:22px;margin-bottom:14px;min-height:200px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
 
 /* === WORD GAME ELEMENTS === */
-.surah-label{font-family:'Noto Sans Arabic','Amiri',serif;font-size:14px;color:var(--text2);text-align:center}
+.surah-label{font-family:'Noto Naskh Arabic','Amiri',serif;font-size:14px;color:var(--text2);text-align:center}
 .answer-line{width:100%;min-height:58px;background:var(--bg3);border:2px dashed var(--border2);border-radius:14px;display:flex;flex-wrap:wrap;gap:8px;padding:12px 14px;justify-content:center;direction:rtl;align-items:center;transition:border-color .3s}
 .answer-line:hover{border-color:var(--accent)}
-.answer-line .word-placed{padding:8px 16px;border-radius:10px;background:linear-gradient(135deg,#E6C200,#2E8B57);color:#fff;font-family:'Noto Sans Arabic','Amiri',serif;font-size:20px;font-weight:700;animation:fadeUp .2s;box-shadow:0 2px 8px #E6C20033}
+.answer-line .word-placed{padding:8px 16px;border-radius:10px;background:linear-gradient(135deg,#C5A028,#2E8B57);color:#fff;font-family:'Noto Naskh Arabic','Amiri',serif;font-size:20px;font-weight:700;animation:fadeUp .2s;box-shadow:0 2px 8px #C5A02833}
 .word-grid{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;direction:rtl;width:100%;max-width:500px}
-.word-card{padding:14px 18px;border-radius:12px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Noto Sans Arabic','Amiri',serif;font-size:22px;font-weight:700;cursor:pointer;text-align:center;transition:all .2s;user-select:none}
-.word-card:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 8px 25px #E6C20022}
-.word-card.correct{background:linear-gradient(135deg,#E6C200,#2E8B57);color:#fff;border-color:transparent;pointer-events:none;opacity:.4}
+.word-card{padding:14px 18px;border-radius:12px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Noto Naskh Arabic','Amiri',serif;font-size:22px;font-weight:700;cursor:pointer;text-align:center;transition:all .2s;user-select:none}
+.word-card:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 8px 25px #C5A02822}
+.word-card.correct{background:linear-gradient(135deg,#C5A028,#2E8B57);color:#fff;border-color:transparent;pointer-events:none;opacity:.4}
 .word-card.wrong{background:#E53935;color:#fff;border-color:#E53935;animation:shake .3s}
 .word-card.used{opacity:0;pointer-events:none;transform:scale(.8)}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
@@ -72,7 +73,7 @@ h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--headi
 
 /* === SCORING === */
 .progress{width:100%;max-width:320px;height:10px;background:var(--bg3);border-radius:6px;overflow:hidden}
-.progress-bar{height:100%;background:linear-gradient(90deg,#E6C200,#2E8B57);border-radius:6px;transition:width .4s ease}
+.progress-bar{height:100%;background:linear-gradient(90deg,#C5A028,#2E8B57);border-radius:6px;transition:width .4s ease}
 .score-row{display:flex;gap:24px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:12px}
 .score-item{text-align:center}.score-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px}.score-num{font-size:24px;font-weight:800;color:var(--heading)}
 .log-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px 14px;max-height:80px;overflow-y:auto;font-size:11px;color:var(--text2);margin-bottom:12px}
@@ -103,12 +104,12 @@ h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--headi
 .help-item summary::before{content:"\25B8";color:var(--accent);font-size:10px;transition:transform .2s}.help-item[open] summary::before{transform:rotate(90deg)}
 .help-item p{padding:0 14px 12px;font-size:12px;color:var(--text2);line-height:1.7}
 .help-step{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
-.help-step-num{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#E6C200,#2E8B57);color:#fff;font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step-num{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#C5A028,#2E8B57);color:#fff;font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .help-step p{font-size:12px;color:var(--text2);line-height:1.7;margin:0}
 .wiki-entry{margin-bottom:16px}.wiki-entry h3{font-size:14px;margin-bottom:6px;color:var(--heading)}.wiki-entry p{font-size:12px;color:var(--text2);line-height:1.7}
 .sidebar-footer{padding:12px 18px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:11px}
 .btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:8px 14px;border-radius:10px;font-size:12px;font-family:inherit;cursor:pointer;transition:all .2s}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
-.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:14px;background:#E6C20015;border:1px solid #E6C20033;color:#E6C200;font-size:11px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:14px;background:#C5A02815;border:1px solid #C5A02833;color:#C5A028;font-size:11px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
 .timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:3px 10px;border-radius:14px;font-size:11px;font-family:'Outfit',monospace;margin-left:6px}
 
 /* === APP-SPECIFIC CSS OVERRIDES === */
@@ -121,14 +122,14 @@ canvas{border-radius:10px;cursor:crosshair;touch-action:none;max-width:100%}
 input[type="color"]{width:34px;height:30px;padding:2px;border-radius:8px}
 input[type="range"]{width:90px}
 .verse-sel{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;justify-content:center}
-.verse-btn{padding:10px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'Noto Sans Arabic','Amiri',serif;font-size:15px;cursor:pointer;direction:rtl;transition:all .2s}
+.verse-btn{padding:10px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'Noto Naskh Arabic','Amiri',serif;font-size:15px;cursor:pointer;direction:rtl;transition:all .2s}
 .verse-btn:hover,.verse-btn.active{border-color:var(--accent);color:var(--accent);background:var(--abg)}
-.guide-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Noto Sans Arabic','Amiri',serif;font-size:48px;color:var(--accent);opacity:0.15;pointer-events:none;direction:rtl;text-align:center;line-height:1.4;white-space:nowrap}
+.guide-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Noto Naskh Arabic','Amiri',serif;font-size:48px;color:var(--accent);opacity:0.15;pointer-events:none;direction:rtl;text-align:center;line-height:1.4;white-space:nowrap}
 
 /* Extra app-specific classes */
 .dua-card{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:12px;animation:fadeUp .3s;transition:all .2s}
-.dua-card:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 8px 25px #E6C20022}
-.dua-ar{font-family:'Amiri','Noto Sans Arabic',serif;font-size:22px;font-weight:700;color:var(--heading);direction:rtl;line-height:2;text-align:center;margin-bottom:10px}
+.dua-card:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 8px 25px #C5A02822}
+.dua-ar{font-family:'Amiri','Noto Naskh Arabic',serif;font-size:22px;font-weight:700;color:var(--heading);direction:rtl;line-height:2;text-align:center;margin-bottom:10px}
 .dua-trans{font-size:13px;color:var(--text);line-height:1.7;font-style:italic;text-align:center;margin-bottom:8px}
 .dua-ref{font-size:11px;color:var(--accent);text-align:center;font-weight:600;margin-bottom:6px}
 .dua-who{font-size:11px;color:var(--text3);text-align:center;margin-bottom:8px}
@@ -143,8 +144,8 @@ input[type="range"]{width:90px}
 
 /* Match cards, info panels, etc */
 .match-card,.info-card,.story-card,.q-card{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:10px;cursor:pointer;transition:all .2s}
-.match-card:hover,.info-card:hover,.story-card:hover,.q-card:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 8px 25px #E6C20022}
-.match-card.matched,.match-card.correct{background:linear-gradient(135deg,#2E8B5722,#E6C20011);border-color:#2E8B57}
+.match-card:hover,.info-card:hover,.story-card:hover,.q-card:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 8px 25px #C5A02822}
+.match-card.matched,.match-card.correct{background:linear-gradient(135deg,#2E8B5722,#C5A02811);border-color:#2E8B57}
 .match-card.wrong{background:#E5393522;border-color:#E53935;animation:shake .3s}
 
 /* Timeline elements */
@@ -156,16 +157,16 @@ input[type="range"]{width:90px}
 .sort-item:active{cursor:grabbing;box-shadow:0 4px 16px rgba(0,0,0,.1)}
 
 /* Grid/puzzle elements */
-.grid-cell{display:flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:8px;background:var(--bg3);font-family:'Noto Sans Arabic','Amiri',serif;font-size:18px;cursor:pointer;transition:all .2s;aspect-ratio:1}
+.grid-cell{display:flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:8px;background:var(--bg3);font-family:'Noto Naskh Arabic','Amiri',serif;font-size:18px;cursor:pointer;transition:all .2s;aspect-ratio:1}
 .grid-cell:hover{border-color:var(--accent);background:var(--abg)}
-.grid-cell.found{background:linear-gradient(135deg,#E6C20022,#2E8B5722);border-color:#E6C200}
+.grid-cell.found{background:linear-gradient(135deg,#C5A02822,#2E8B5722);border-color:#C5A028}
 
 /* Tracker/progress elements */
 .tracker-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;background:var(--bg3);border:1px solid var(--border);margin-bottom:6px}
 .tracker-item.done{background:linear-gradient(135deg,#2E8B5711,transparent);border-color:#2E8B5744}
 
 /* Animation/interactive elements */
-.rain-verse,.verse-drop{position:absolute;font-family:'Noto Sans Arabic','Amiri',serif;color:var(--accent);opacity:.7;pointer-events:none}
+.rain-verse,.verse-drop{position:absolute;font-family:'Noto Naskh Arabic','Amiri',serif;color:var(--accent);opacity:.7;pointer-events:none}
 .maze-cell{border:1px solid var(--border);display:flex;align-items:center;justify-content:center}
 .pixel-cell{border:1px solid var(--border2);cursor:pointer;transition:background .1s}
 .web-node{position:absolute;border-radius:50%;background:var(--accent);cursor:pointer;transition:all .2s}
@@ -177,22 +178,34 @@ input[type="range"]{width:90px}
 .flashcard-inner{transition:transform .6s;transform-style:preserve-3d;position:relative}
 .flashcard.flipped .flashcard-inner{transform:rotateY(180deg)}
 .flashcard-front,.flashcard-back{backface-visibility:hidden;border-radius:16px;padding:24px;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column}
-.flashcard-front{background:linear-gradient(135deg,#E6C20011,#2E8B5711);border:1px solid var(--border)}
+.flashcard-front{background:linear-gradient(135deg,#C5A02811,#2E8B5711);border:1px solid var(--border)}
 .flashcard-back{background:var(--bg3);border:1px solid var(--accent);transform:rotateY(180deg)}
 </style></head><body>
 <a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
 <div class="splash" id="splash"><div class="splash-box">
-<span class="splash-emoji">🏗️</span>
-<div class="splash-art"><div class="sa-crescent"><div class="sa-moon"></div><div class="sa-star-shape">★</div></div></div>
+<div class="splash-art-033" style="margin:18px auto;animation:float 3s ease-in-out infinite">
+<svg width="130" height="100" viewBox="0 0 130 100" style="filter:drop-shadow(0 0 12px #C5A02844)">
+<defs><linearGradient id="blkGr" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#C5A028"/><stop offset="100%" stop-color="#2E8B57"/></linearGradient></defs>
+<rect x="15" y="60" width="22" height="28" rx="3" fill="#C5A028" opacity="0.7"><animate attributeName="y" values="60;55;60" dur="1.5s" repeatCount="indefinite"/></rect>
+<rect x="42" y="50" width="22" height="38" rx="3" fill="#2E8B57" opacity="0.6"><animate attributeName="y" values="50;45;50" dur="1.8s" repeatCount="indefinite"/></rect>
+<rect x="69" y="42" width="22" height="46" rx="3" fill="url(#blkGr)" opacity="0.7"><animate attributeName="y" values="42;37;42" dur="2s" repeatCount="indefinite"/></rect>
+<rect x="96" y="55" width="22" height="33" rx="3" fill="#C5A028" opacity="0.5"><animate attributeName="y" values="55;50;55" dur="1.6s" repeatCount="indefinite"/></rect>
+<text x="26" y="78" text-anchor="middle" font-family="Amiri,serif" font-size="11" fill="#0A1628" opacity="0.8">بسم</text>
+<text x="53" y="75" text-anchor="middle" font-family="Amiri,serif" font-size="11" fill="#fff" opacity="0.7">الله</text>
+<text x="80" y="72" text-anchor="middle" font-family="Amiri,serif" font-size="10" fill="#fff" opacity="0.8">الرحمن</text>
+<text x="107" y="76" text-anchor="middle" font-family="Amiri,serif" font-size="10" fill="#0A1628" opacity="0.7">الرحيم</text>
+<path d="M10 95L120 95" stroke="#C5A028" stroke-width="1" opacity="0.3" stroke-dasharray="3,3"/>
+</svg>
+</div>
 <div class="splash-bism" dir="rtl">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
 <h1 class="splash-title">Quran Verse Builder</h1>
 <div class="splash-subtitle">Build verses word by word</div>
 <p class="splash-desc" id="splDesc">Build verses word by word</p>
 <button class="btn-go" id="enterBtn">Start</button>
-<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
-<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
+<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn on" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
 <div class="app" id="app"><div class="hdr-bism">&fdfc;</div><div class="hdr"><h1>Quran Verse Builder</h1><span class="pill" id="lvlPill">Level 1</span></div>
-<div class="ctrl"><button id="newBtn">New Verse</button><button class="btn-help" onclick="openHelp()">? Help</button><button id="soundBtn">Sound ON</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw"><button class="sw-btn on" data-thm="sahara">T</button><button class="sw-btn" data-thm="emerald">M</button><button class="sw-btn" data-thm="midnight-gold">E</button><button class="sw-btn" data-thm="deep-emerald">P</button><button class="sw-btn" data-thm="royal">S</button><button class="sw-btn" data-thm="sunset">R</button><button class="sw-btn" data-thm="ocean">A</button><button class="sw-btn" data-thm="night-sky">D</button></div></div>
+<div class="ctrl"><button id="newBtn">New Verse</button><button class="btn-help" onclick="openHelp()">? Help</button><button id="soundBtn">Sound ON</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&ayn;</button></div><div class="sw"><button class="sw-btn" data-thm="sahara">T</button><button class="sw-btn" data-thm="emerald">M</button><button class="sw-btn on" data-thm="midnight-gold">E</button><button class="sw-btn" data-thm="deep-emerald">P</button><button class="sw-btn" data-thm="royal">S</button><button class="sw-btn" data-thm="sunset">R</button><button class="sw-btn" data-thm="ocean">A</button><button class="sw-btn" data-thm="night-sky">D</button></div></div>
 <div class="status" id="status">Arrange the words to form the verse</div>
 <div class="game-area" id="gameArea">
 <div class="ref-text" id="refText"></div>
@@ -258,10 +271,10 @@ const T={
     howto2:"اقرأ التعليمات المعروضة على الشاشة",
     howto3:"تفاعل مع العناصر على الشاشة",
     howto4:"أكمل المهمة للحصول على نتيجتك",
-    wiki0t:"Quran Word Order",
-    wiki0c:"Arabic reads right-to-left. Each word in the Quran carries precise meaning in its position.",
-    wiki1t:"Memorization",
-    wiki1c:"مساعدة الأطفال المسلمين على تعلم القرآن الكريم من خلال ابنِ الآيات كلمة بكلمة."
+    wiki0t:"ترتيب كلمات القرآن",
+    wiki0c:"العربية تُقرأ من اليمين إلى اليسار. كل كلمة في القرآن تحمل معنى دقيقاً في موضعها.",
+    wiki1t:"الحفظ والاستذكار",
+    wiki1c:"إعادة بناء الآيات يساعد على التآلف مع نص القرآن ويُعين على الحفظ والتذكّر."
   },
   en:{
     title:"Quran Verse Builder",

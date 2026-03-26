@@ -184,15 +184,15 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 </head>
 <body>
 
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Adhkar Counter</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Your digital tasbeeh</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Count your adhkar with ease. Tap, track, and stay consistent.</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Adhkar Counter</h1><span class="pill" id="scorePill">0 / 33</span><span class="timer-pill" id="dailyPill">Today: 0</span></div><div class="ctrl">
-<select id="dhikrSel"><option value="0">سُبْحَانَ اللَّهِ × 33</option><option value="1">الْحَمْدُ لِلَّهِ × 33</option><option value="2">اللَّهُ أَكْبَرُ × 34</option><option value="3">لَا إِلَهَ إِلَّا اللَّهُ × 100</option><option value="4">أَسْتَغْفِرُ اللَّهَ × 100</option><option value="5">صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ × 100</option><option value="6">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ × 100</option><option value="7">Custom</option></select>
-<button id="resetBtn">↺ Reset</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button><button id="soundBtn">🔊</button>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← الفهرس</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">عدّاد الأذكار</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">تسبيحك الرقمي</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">عدّ أذكارك بسهولة. انقر، تابع، وحافظ على الاستمرار.</p><button class="btn-go" id="enterBtn">ابدأ المهمة</button><div class="sw" style="margin-top:18px"><span class="sw-label">اللغة</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">السمة</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>عدّاد الأذكار</h1><span class="pill" id="scorePill">0 / 33</span><span class="timer-pill" id="dailyPill">اليوم: 0</span></div><div class="ctrl">
+<select id="dhikrSel"><option value="0">سُبْحَانَ اللَّهِ × 33</option><option value="1">الْحَمْدُ لِلَّهِ × 33</option><option value="2">اللَّهُ أَكْبَرُ × 34</option><option value="3">لَا إِلَهَ إِلَّا اللَّهُ × 100</option><option value="4">أَسْتَغْفِرُ اللَّهَ × 100</option><option value="5">صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ × 100</option><option value="6">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ × 100</option><option value="7">مخصص</option></select>
+<button id="resetBtn">↺ إعادة</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button><button id="soundBtn">🔊</button>
 <div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
 <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
-<div class="custom-row" id="customRow"><input type="text" id="customText" placeholder="Your dhikr text"/><input type="number" id="customTarget" placeholder="33" min="1" max="9999" value="33"/><button id="customSet">Set</button></div>
-<div class="status" id="status">Tap the circle or press Space</div>
+<div class="custom-row" id="customRow"><input type="text" id="customText" placeholder="نص الذكر"/><input type="number" id="customTarget" placeholder="33" min="1" max="9999" value="33"/><button id="customSet">تعيين</button></div>
+<div class="status" id="status">انقر الدائرة أو اضغط المسافة</div>
 <div class="game-area" id="gameArea">
 <div class="dhikr-arabic" id="dhikrArabic">سُبْحَانَ اللَّهِ</div>
 <div class="counter-ring" id="counterRing">
@@ -202,44 +202,44 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 <div class="dhikr-translit" id="dhikrTranslit">SubhanAllah</div>
 <div id="completeBadge"></div>
 </div>
-<div class="daily-box"><div class="daily-item"><div class="daily-label">This Dhikr</div><div class="daily-num" id="dhikrTotal">0</div></div><div class="daily-item"><div class="daily-label">Daily Total</div><div class="daily-num" id="dailyTotal">0</div></div></div>
-<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Adhkar Counter v1.0</div></div>
+<div class="daily-box"><div class="daily-item"><div class="daily-label">هذا الذكر</div><div class="daily-num" id="dhikrTotal">0</div></div><div class="daily-item"><div class="daily-label">المجموع اليومي</div><div class="daily-num" id="dailyTotal">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — عدّاد الأذكار v1.0</div></div>
 
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
-  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="sidebar-header"><span class="sidebar-title">❓ مساعدة</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
   <div class="help-tabs">
-    <button class="help-tab active" data-tab="faq">FAQ</button>
-    <button class="help-tab" data-tab="howto">How-To</button>
-    <button class="help-tab" data-tab="wiki">Wiki</button>
+    <button class="help-tab active" data-tab="faq">الأسئلة</button>
+    <button class="help-tab" data-tab="howto">كيفية الاستخدام</button>
+    <button class="help-tab" data-tab="wiki">الموسوعة</button>
   </div>
   <div class="sidebar-body">
     <div class="help-content active" id="help-faq">
-        <details class="help-item"><summary>What is Adhkar Counter?</summary><p>A digital tasbeeh (counter) to help you keep track of your daily adhkar (remembrance of Allah). Select a dhikr, tap to count, and stay consistent.</p></details>
-        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
-        <details class="help-item"><summary>Can I use it on my phone?</summary><p>Yes. Works on any device with a modern browser. Tap the circle to count. Vibration feedback on supported devices.</p></details>
-        <details class="help-item"><summary>How does auto-advance work?</summary><p>After completing SubhanAllah (33), it auto-switches to Alhamdulillah (33), then Allahu Akbar (34) — the post-salah sequence.</p></details>
-        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
-        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere. Your daily count is saved in localStorage.</p></details>
+        <details class="help-item"><summary>ما هو عدّاد الأذكار؟</summary><p>تسبيح رقمي يساعدك على تتبع أذكارك اليومية (ذكر الله). اختر ذكراً، انقر للعدّ، وحافظ على الاستمرار.</p></details>
+        <details class="help-item"><summary>هل يعمل بدون إنترنت؟</summary><p>نعم. بمجرد التحميل، كل شيء يعمل في متصفحك بدون حاجة للإنترنت.</p></details>
+        <details class="help-item"><summary>هل يمكنني استخدامه على هاتفي؟</summary><p>نعم. يعمل على أي جهاز بمتصفح حديث. انقر الدائرة للعدّ. اهتزاز على الأجهزة المدعومة.</p></details>
+        <details class="help-item"><summary>كيف يعمل التقدم التلقائي؟</summary><p>بعد إكمال سبحان الله (33)، ينتقل تلقائياً إلى الحمد لله (33)، ثم الله أكبر (34) — تسلسل ما بعد الصلاة.</p></details>
+        <details class="help-item"><summary>كيف أغيّر السمة؟</summary><p>انقر على أي زر سمة في شريط التحكم.</p></details>
+        <details class="help-item"><summary>هل بياناتي خاصة؟</summary><p>نعم. كل شيء يعمل محلياً في متصفحك. لا تُرسل أي بيانات. عدّك اليومي يُحفظ في التخزين المحلي.</p></details>
     </div>
     <div class="help-content" id="help-howto">
-        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
-        <div class="help-step"><span class="help-step-num">2</span><p>Select a dhikr from the dropdown</p></div>
-        <div class="help-step"><span class="help-step-num">3</span><p>Tap the counter circle or press Space to count</p></div>
-        <div class="help-step"><span class="help-step-num">4</span><p>Watch the progress ring fill up as you count</p></div>
-        <div class="help-step"><span class="help-step-num">5</span><p>When complete, a celebration appears and auto-advance kicks in for post-salah sequence</p></div>
-        <div class="help-step"><span class="help-step-num">6</span><p>Use Reset to start the current dhikr over</p></div>
-        <div class="help-step"><span class="help-step-num">7</span><p>Choose Custom to set your own dhikr text and target</p></div>
-        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back</p></div>
+        <div class="help-step"><span class="help-step-num">1</span><p>انقر "ابدأ المهمة" في شاشة البداية</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>اختر ذكراً من القائمة المنسدلة</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>انقر دائرة العدّ أو اضغط المسافة للعدّ</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>شاهد حلقة التقدم تمتلئ مع كل عدّة</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>عند الإكمال، يظهر احتفال وينتقل تلقائياً لتسلسل ما بعد الصلاة</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>استخدم إعادة لبدء الذكر الحالي من جديد</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>اختر مخصص لتعيين نص ذكرك وهدفك</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>انقر ← الفهرس للعودة</p></div>
     </div>
     <div class="help-content" id="help-wiki">
-        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>A digital tasbeeh to help Muslim kids and adults track their daily adhkar consistently.</p></div>
-        <div class="wiki-entry"><h3>📿 Post-Salah Sequence</h3><p>SubhanAllah ×33, Alhamdulillah ×33, Allahu Akbar ×34 — auto-advances through the full sequence.</p></div>
-        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
-        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Francais, Arabic. Arabic auto-enables RTL layout.</p></div>
-        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API click sound on each tap. Toggle with the sound button.</p></div>
-        <div class="wiki-entry"><h3>📳 Vibration</h3><p>Haptic feedback on each tap if your device supports it.</p></div>
-        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+        <div class="wiki-entry"><h3>🎯 الهدف</h3><p>تسبيح رقمي يساعد الأطفال والكبار المسلمين على تتبع أذكارهم اليومية باستمرار.</p></div>
+        <div class="wiki-entry"><h3>📿 تسلسل ما بعد الصلاة</h3><p>سبحان الله ×33، الحمد لله ×33، الله أكبر ×34 — ينتقل تلقائياً عبر التسلسل الكامل.</p></div>
+        <div class="wiki-entry"><h3>🎨 السمات</h3><p>8 سمات مدمجة: Terminal، Midnight، Ember، Phosphor، Signal، Redshift، Arctic، Sand.</p></div>
+        <div class="wiki-entry"><h3>🌐 اللغات</h3><p>ثلاث لغات: English، Francais، العربية. العربية تفعّل تنسيق RTL تلقائياً.</p></div>
+        <div class="wiki-entry"><h3>🔊 الصوت</h3><p>Web Audio API صوت نقر مع كل ضغطة. التبديل بزر الصوت.</p></div>
+        <div class="wiki-entry"><h3>📳 الاهتزاز</h3><p>ردود فعل لمسية مع كل نقرة إذا كان جهازك يدعمها.</p></div>
+        <div class="wiki-entry"><h3>🔒 الخصوصية</h3><p>محلي أولاً. لا تتبع، لا تحليلات، لا اتصالات خارجية. كل البيانات تبقى في متصفحك.</p></div>
     </div>
   </div>
   <div class="sidebar-footer">Workshop-DIY — v1.0</div>
@@ -315,7 +315,7 @@ function selectDhikr(idx,resetCount){
   }
   if(resetCount!==false){count=0;dhikrSessionTotal=0;}
   document.getElementById("dhikrSel").value=String(idx);
-  document.getElementById("status").textContent="Tap the circle or press Space";
+  document.getElementById("status").textContent="انقر الدائرة أو اضغط المسافة";
   document.getElementById("status").className="status";
   updateDisplay();
 }
@@ -361,7 +361,7 @@ function increment(){
 function resetCounter(){
   count=0;completed=false;dhikrSessionTotal=0;
   document.getElementById("completeBadge").textContent="";
-  document.getElementById("status").textContent="Tap the circle or press Space";
+  document.getElementById("status").textContent="انقر الدائرة أو اضغط المسافة";
   document.getElementById("status").className="status";
   updateDisplay();
   log("Counter reset","");

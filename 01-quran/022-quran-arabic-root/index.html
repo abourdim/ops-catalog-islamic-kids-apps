@@ -193,9 +193,9 @@ input[type="range"]{width:90px}
 <div class="splash-subtitle">Explore Arabic root words</div>
 <p class="splash-desc" id="splDesc">Explore Arabic root words</p>
 <button class="btn-go" id="enterBtn">Start</button>
-<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
 <div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>Arabic Root Explorer</h1><span class="pill">15 Roots</span></div><div class="ctrl"><button class="btn-help" onclick="openHelp()">&#10067;</button><button id="soundBtn">&#128266;</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div><div class="sw"><button class="sw-btn on" data-thm="sahara">&#128421;</button><button class="sw-btn" data-thm="emerald">&#127748;</button><button class="sw-btn" data-thm="midnight-gold">&#128293;</button><button class="sw-btn" data-thm="deep-emerald">&#128154;</button><button class="sw-btn" data-thm="royal">&#128225;</button><button class="sw-btn" data-thm="sunset">&#128308;</button><button class="sw-btn" data-thm="ocean">&#10052;&#65039;</button><button class="sw-btn" data-thm="night-sky">&#127964;</button></div></div>
+<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>Arabic Root Explorer</h1><span class="pill">15 Roots</span></div><div class="ctrl"><button class="btn-help" onclick="openHelp()">&#10067;</button><button id="soundBtn">&#128266;</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div><div class="sw"><button class="sw-btn on" data-thm="sahara">&#128421;</button><button class="sw-btn" data-thm="emerald">&#127748;</button><button class="sw-btn" data-thm="midnight-gold">&#128293;</button><button class="sw-btn" data-thm="deep-emerald">&#128154;</button><button class="sw-btn" data-thm="royal">&#128225;</button><button class="sw-btn" data-thm="sunset">&#128308;</button><button class="sw-btn" data-thm="ocean">&#10052;&#65039;</button><button class="sw-btn" data-thm="night-sky">&#127964;</button></div></div>
 <input class="search-box" id="searchBox" type="text" placeholder="Search roots or meanings..."/>
 <div class="game-area" id="rootList"></div>
 <div class="foot">Amaloun &#8212; Quran Arabic Root v1.0</div></div>
@@ -243,8 +243,11 @@ const T={
     faq1a:"معرفة الجذور تساعدك على فهم معاني الكلمات القرآنية المتشابهة.",
     howto0:"اضغط على زر ابدأ في شاشة البداية",
     howto1:"اختر مستوى الصعوبة إذا كان متاحاً",
-    wiki0t:"&#128218; Arabic Root System",
-    wiki0c:"Most Arabic words trace back to a 3-letter root (trilateral). This system makes Arabic extremely logical and learnable."
+    wiki0t:"\uD83D\uDCDA نظام الجذور العربية",
+    wiki0c:"معظم الكلمات العربية ترجع إلى جذر ثلاثي الأحرف. هذا النظام يجعل العربية لغة منطقية وسهلة التعلم.",
+    howto0:"تصفّح بطاقات الجذور أو ابحث",
+    howto1:"اضغط على البطاقة لرؤية المشتقات المستخدمة في القرآن",
+    searchPlaceholder:"ابحث عن جذور أو معانٍ..."
   },
   en:{
     title:"Quran Arabic Root",
@@ -284,8 +287,9 @@ const T={
     faq1a:"Understanding roots lets you recognize word families in the Quran, making it easier to understand Arabic vocabulary.",
     howto0:"Browse root word cards or search",
     howto1:"Click a card to see its derivatives used in the Quran",
-    wiki0t:"&#128218; Arabic Root System",
-    wiki0c:"Most Arabic words trace back to a 3-letter root (trilateral). This system makes Arabic extremely logical and learnable."
+    wiki0t:"\uD83D\uDCDA Arabic Root System",
+    wiki0c:"Most Arabic words trace back to a 3-letter root (trilateral). This system makes Arabic extremely logical and learnable.",
+    searchPlaceholder:"Search roots or meanings..."
   }
 };
 function tr(key){return T[currentLang]&&T[currentLang][key]||T["en"][key]||key;}
@@ -333,6 +337,8 @@ function updateUI(){
   });
   // Sidebar footer
   var sf=document.querySelector(".sidebar-footer");if(sf)sf.textContent=tr("footer");
+  // Search box placeholder
+  var sb2=document.getElementById("searchBox");if(sb2)sb2.placeholder=tr("searchPlaceholder");
   // Play button if exists
   var pb=document.querySelector("#playBtn,button:not(.sw-btn):not(.btn-go):not(.btn-close):not(.btn-help):not(.help-tab)");
   // Filter buttons with specific text
@@ -345,7 +351,7 @@ function updateUI(){
 
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open")}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
-var curLang="en";function setLang(l){currentLang=l==="ar"?"ar":"en";curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));render();updateUI();}
+var curLang="ar";function setLang(l){currentLang=l==="ar"?"ar":"en";curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));render();updateUI();}
 function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===t))}
 var soundOn=true,actx;function snd(){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;var n=actx.currentTime;o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.06);o.start(n);o.stop(n+.06)}
 var ROOTS=[
@@ -374,7 +380,7 @@ var searchStr=(r.root+" "+r.en+" "+r.fr+" "+r.ar).toLowerCase();
 if(q&&searchStr.indexOf(q)===-1)return;
 var card=document.createElement("div");card.className="root-card";
 var derivHtml="";r.derivs.forEach(function(d){derivHtml+='<span class="deriv">'+d.ar+'<span class="deriv-en">'+d.en+'</span></span>'});
-card.innerHTML='<div class="root-ar">'+r.root+'</div><div class="root-meaning">'+meaning+'</div><div class="root-count">'+r.derivs.length+' derivatives</div><div class="root-detail">'+derivHtml+'</div>';
+card.innerHTML='<div class="root-ar">'+r.root+'</div><div class="root-meaning">'+meaning+'</div><div class="root-count">'+r.derivs.length+(currentLang==="ar"?" مشتقات":" derivatives")+'</div><div class="root-detail">'+derivHtml+'</div>';
 card.onclick=function(){snd();card.classList.toggle("open")};
 list.appendChild(card);
 });

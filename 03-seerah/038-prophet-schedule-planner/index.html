@@ -119,8 +119,8 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel">
-<div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">&times;</button></div>
-<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
+<div class="sidebar-header"><span class="sidebar-title">❓ المساعدة</span><button class="btn-close" onclick="closeHelp()">&times;</button></div>
+<div class="help-tabs"><button class="help-tab active" data-tab="faq">أسئلة شائعة</button><button class="help-tab" data-tab="howto">كيفية اللعب</button><button class="help-tab" data-tab="wiki">معلومات</button></div>
 <div class="sidebar-body">
 <div class="help-content active" id="help-faq">
 <div class="i18n-en"><details class="help-item"><summary>What is this app?</summary><p>Organize your day following the Prophet's balanced routine.</p></details>
@@ -265,7 +265,7 @@ sub:{en:"Plan Like the Prophet",fr:"Plan Like the Prophet",ar:"Plan Like the Pro
 desc:{en:"Organize your day following the Prophet's balanced routine.",fr:"Organize your day following the Prophet's balanced routine.",ar:"Organize your day following the Prophet's balanced routine."},
 new_game:{en:"\u25b6 New Game",fr:"\u25b6 Nouveau jeu",ar:"\u25b6 \u0644\u0639\u0628\u0629 \u062c\u062f\u064a\u062f\u0629"}
 };
-var curLang="en",soundOn=true,actx;
+var curLang="ar",soundOn=true,actx;
 function t(k){return UI[k]?UI[k][curLang]||UI[k].en:"";}
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}

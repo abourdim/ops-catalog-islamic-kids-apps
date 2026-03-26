@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="desert-dawn"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Masjid Nabawi Builder</title>
+<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="desert-dawn"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>بناء المسجد النبوي</title>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 [data-theme="desert-dawn"]{--bg:#1a1408;--bg2:#231c0e;--bg3:#2e2514;--border:#3d3420;--border2:#4e432c;--text:#d4c4a0;--text2:#a08c60;--text3:#6b5c3a;--heading:#f5e6c8;--accent:#FFBF00;--abg:rgba(255,191,0,.08);--abr:rgba(255,191,0,.25);--glow:0 0 20px rgba(255,191,0,.15)}
@@ -87,14 +87,14 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 .i18n-ar{display:none}.i18n-en{display:block}
 [lang="ar"] .i18n-ar{display:block}[lang="ar"] .i18n-en{display:none}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink">&larr; Catalog</a>
+<a href="../../index.html" class="back-link" id="backLink">&rarr; الفهرس</a>
 <div class="splash" id="splash"><div class="splash-dunes"></div><div class="splash-box">
 <div class="splash-bism">بِسْمِ ٱللَّوهِ ٱلرَّحْمَـنِ ٱلرَّحِيمِ</div>
 <div style="display:flex;justify-content:center;gap:4px;margin-bottom:16px;align-items:flex-end"><div style="width:16px;height:20px;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--accent),var(--bg3));opacity:.7"></div><div style="width:16px;height:28px;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--accent),var(--bg3));opacity:.7"></div><div style="width:16px;height:36px;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--accent),var(--bg3));opacity:.7"></div><div style="width:16px;height:44px;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--accent),var(--bg3));opacity:.7"></div><div style="width:16px;height:52px;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--accent),var(--bg3));opacity:.7"></div><div style="width:16px;height:60px;border-radius:3px 3px 0 0;background:linear-gradient(180deg,var(--accent),var(--bg3));opacity:.7"></div></div>
-<h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splTitle">Masjid Nabawi Builder</h1>
-<div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px" id="splSub">Sacred Architect</div>
-<p style="color:var(--text2);font-size:13px;line-height:1.7;margin-bottom:24px" id="splDesc">Build the Prophet's Mosque in Medina step by step.</p>
-<button class="btn-go" id="enterBtn">Start Mission</button>
+<h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splTitle">بناء المسجد النبوي</h1>
+<div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px" id="splSub">المعماري المقدس</div>
+<p style="color:var(--text2);font-size:13px;line-height:1.7;margin-bottom:24px" id="splDesc">ابنِ المسجد النبوي في المدينة خطوة بخطوة.</p>
+<button class="btn-go" id="enterBtn">ابدأ المهمة</button>
 <div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
 <div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span>
 <button class="sw-btn on" data-thm="desert-dawn">&#9728;</button><button class="sw-btn" data-thm="midnight-desert">&#127769;</button><button class="sw-btn" data-thm="sandstone">&#127966;</button><button class="sw-btn" data-thm="oasis">&#127795;</button><button class="sw-btn" data-thm="sunset">&#127773;</button><button class="sw-btn" data-thm="night-sky">&#11088;</button><button class="sw-btn" data-thm="caravan">&#128042;</button><button class="sw-btn" data-thm="parchment">&#128220;</button>
@@ -102,25 +102,25 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 
 <div class="app" id="app">
 <div class="hdr-bism">بِسْمِ ٱللَّوهِ ٱلرَّحْمَـنِ ٱلرَّحِيمِ</div>
-<div class="hdr"><h1 id="appTitle">Masjid Nabawi Builder</h1><span class="pill" id="scorePill">0 / 0</span></div>
+<div class="hdr"><h1 id="appTitle">بناء المسجد النبوي</h1><span class="pill" id="scorePill">0 / 0</span></div>
 <div class="ctrl">
-<button id="startBtn">&#9654; New Game</button>
+<button id="startBtn">&#9654; لعبة جديدة</button>
 <button class="btn-help" onclick="openHelp()">?</button>
 <button id="soundBtn">&#128266;</button>
 <div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
 <div class="sw"><button class="sw-btn on" data-thm="desert-dawn">&#9728;</button><button class="sw-btn" data-thm="midnight-desert">&#127769;</button><button class="sw-btn" data-thm="sandstone">&#127966;</button><button class="sw-btn" data-thm="oasis">&#127795;</button><button class="sw-btn" data-thm="sunset">&#127773;</button><button class="sw-btn" data-thm="night-sky">&#11088;</button><button class="sw-btn" data-thm="caravan">&#128042;</button><button class="sw-btn" data-thm="parchment">&#128220;</button></div>
 </div>
-<div class="status" id="status">Loading...</div>
+<div class="status" id="status">جارٍ التحميل...</div>
 <div id="itemsArea" class="items-area"></div>
-<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">Score</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">النتيجة</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">المجموع</div><div class="score-num" id="tot">0</div></div></div>
 <div class="log-box" id="logBox"></div>
-<div class="foot">Masjid Nabawi Builder &mdash; Seerah Series v2.0</div>
+<div class="foot">بناء المسجد النبوي &mdash; سلسلة السيرة الإصدار 2.0</div>
 </div>
 
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel">
-<div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">&times;</button></div>
-<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
+<div class="sidebar-header"><span class="sidebar-title">❓ المساعدة</span><button class="btn-close" onclick="closeHelp()">&times;</button></div>
+<div class="help-tabs"><button class="help-tab active" data-tab="faq">أسئلة شائعة</button><button class="help-tab" data-tab="howto">كيفية اللعب</button><button class="help-tab" data-tab="wiki">معلومات</button></div>
 <div class="sidebar-body">
 <div class="help-content active" id="help-faq">
 <div class="i18n-en"><details class="help-item"><summary>What is this app?</summary><p>Build the Prophet's Mosque in Medina step by step.</p></details>
@@ -150,7 +150,7 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 <div class="wiki-entry"><h3>الدروس المستفادة</h3><p>في كل حدث من أحداث السيرة دروس وعبر نتعلم منها.</p></div>
 </div>
 </div></div>
-<div class="sidebar-footer">Seerah Series &mdash; v2.0</div>
+<div class="sidebar-footer">سلسلة السيرة &mdash; الإصدار 2.0</div>
 </aside>
 
 <script>
@@ -261,11 +261,11 @@ function updateUI() {
 
 var UI={
 title:{en:"Masjid Nabawi Builder",fr:"Constructeur du Masjid Nabawi",ar:"بناء المسجد النبوي"},
-sub:{en:"Sacred Architect",fr:"Sacred Architect",ar:"Sacred Architect"},
-desc:{en:"Build the Prophet's Mosque in Medina step by step.",fr:"Build the Prophet's Mosque in Medina step by step.",ar:"Build the Prophet's Mosque in Medina step by step."},
+sub:{en:"Sacred Architect",fr:"L'architecte sacré",ar:"المعماري المقدس"},
+desc:{en:"Build the Prophet's Mosque in Medina step by step.",fr:"Construisez la mosquée du Prophète à Médine étape par étape.",ar:"ابنِ المسجد النبوي في المدينة خطوة بخطوة."},
 new_game:{en:"\u25b6 New Game",fr:"\u25b6 Nouveau jeu",ar:"\u25b6 \u0644\u0639\u0628\u0629 \u062c\u062f\u064a\u062f\u0629"}
 };
-var curLang="en",soundOn=true,actx;
+var curLang="ar",soundOn=true,actx;
 function t(k){return UI[k]?UI[k][curLang]||UI[k].en:"";}
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
@@ -278,7 +278,7 @@ var HS_KEY="seerah-hs-015-masjid-nabawi-builder";
 function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0;}catch(e){return 0;}}
 function saveHS(s){try{localStorage.setItem(HS_KEY,s);}catch(e){}}
 
-var ITEMS=[{name:{en:"Choose the land",fr:"Choose the land",ar:"Choose the land"},desc:{en:"The Prophet's camel knelt here - the spot was chosen",fr:"The Prophet's camel knelt here - the spot was chosen",ar:"The Prophet's camel knelt here - the spot was chosen"}},{name:{en:"Laying foundations",fr:"Laying foundations",ar:"Laying foundations"},desc:{en:"Date palm trunks used as pillars",fr:"Date palm trunks used as pillars",ar:"Date palm trunks used as pillars"}},{name:{en:"Building walls",fr:"Building walls",ar:"Building walls"},desc:{en:"Made from sun-dried mud bricks",fr:"Made from sun-dried mud bricks",ar:"Made from sun-dried mud bricks"}},{name:{en:"Palm leaf roof",fr:"Palm leaf roof",ar:"Palm leaf roof"},desc:{en:"Covered with palm leaves and branches",fr:"Covered with palm leaves and branches",ar:"Covered with palm leaves and branches"}},{name:{en:"The Minbar",fr:"The Minbar",ar:"The Minbar"},desc:{en:"A simple pulpit for sermons",fr:"A simple pulpit for sermons",ar:"A simple pulpit for sermons"}},{name:{en:"The Suffah",fr:"The Suffah",ar:"The Suffah"},desc:{en:"A covered area for poor companions",fr:"A covered area for poor companions",ar:"A covered area for poor companions"}},{name:{en:"Qiblah direction",fr:"Qiblah direction",ar:"Qiblah direction"},desc:{en:"Initially faced Jerusalem, then changed to Mecca",fr:"Initially faced Jerusalem, then changed to Mecca",ar:"Initially faced Jerusalem, then changed to Mecca"}}];
+var ITEMS=[{name:{en:"Choose the land",fr:"Choisir le terrain",ar:"اختيار الأرض"},desc:{en:"The Prophet's camel knelt here - the spot was chosen",fr:"Le chameau du Prophète s'est agenouillé ici",ar:"بركت ناقة النبي ﷺ هنا فاختير المكان"}},{name:{en:"Laying foundations",fr:"Poser les fondations",ar:"وضع الأساسات"},desc:{en:"Date palm trunks used as pillars",fr:"Des troncs de palmiers utilisés comme piliers",ar:"استُخدمت جذوع النخل كأعمدة"}},{name:{en:"Building walls",fr:"Construire les murs",ar:"بناء الجدران"},desc:{en:"Made from sun-dried mud bricks",fr:"Faits de briques de boue séchées au soleil",ar:"بُنيت من الطوب اللبن المجفف بالشمس"}},{name:{en:"Palm leaf roof",fr:"Toit en feuilles de palmier",ar:"سقف من سعف النخل"},desc:{en:"Covered with palm leaves and branches",fr:"Couvert de feuilles et branches de palmier",ar:"غُطي بسعف النخل والأغصان"}},{name:{en:"The Minbar",fr:"Le Minbar",ar:"المنبر"},desc:{en:"A simple pulpit for sermons",fr:"Une chaire simple pour les sermons",ar:"منبر بسيط للخطب"}},{name:{en:"The Suffah",fr:"La Suffah",ar:"الصُّفة"},desc:{en:"A covered area for poor companions",fr:"Un espace couvert pour les compagnons pauvres",ar:"مكان مظلل للصحابة الفقراء"}},{name:{en:"Qiblah direction",fr:"Direction de la Qiblah",ar:"اتجاه القبلة"},desc:{en:"Initially faced Jerusalem, then changed to Mecca",fr:"D'abord vers Jérusalem, puis changé vers La Mecque",ar:"كانت أولاً نحو القدس ثم تحولت نحو مكة"}}];
 var explored=new Set();
 function renderItems(){var area=document.getElementById("itemsArea");area.innerHTML="";ITEMS.forEach(function(p,i){var card=document.createElement("div");card.className="item-card"+(explored.has(i)?" active":"");card.style.animationDelay=(i*.06)+"s";card.innerHTML='<h3>'+(p.name[curLang]||p.name.en)+'</h3><p>'+(p.desc[curLang]||p.desc.en)+'</p>';card.onclick=function(){if(!explored.has(i)){explored.add(i);snd("ok");log("Explored: "+(p.name.en),"success");document.getElementById("sc").textContent=explored.size;document.getElementById("scorePill").textContent=explored.size+" / "+ITEMS.length;if(explored.size>=ITEMS.length){snd("win");document.getElementById("status").textContent="All explored! MashaAllah!";document.getElementById("status").className="status win";}}card.classList.toggle("active");};area.appendChild(card);});}
 function newGame(){explored.clear();document.getElementById("sc").textContent="0";document.getElementById("tot").textContent=ITEMS.length;document.getElementById("scorePill").textContent="0 / "+ITEMS.length;document.getElementById("status").textContent="Tap each item to explore";document.getElementById("status").className="status";document.getElementById("logBox").innerHTML="";renderItems();}

@@ -184,20 +184,20 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 </head>
 <body>
 
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">Daily Duas</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">Learn the supplications for every moment</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">Flip the card, learn the dua, pick the meaning!</p><button class="btn-go" id="enterBtn">Start Mission</button><div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Daily Duas</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="10">Easy (10)</option><option value="15" selected>Medium (15)</option><option value="20">Hard (20+)</option></select>
-    <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← الفهرس</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">الأدعية اليومية</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">تعلّم الأدعية لكل لحظة</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">اقلب البطاقة، تعلّم الدعاء، واختر المعنى!</p><button class="btn-go" id="enterBtn">ابدأ المهمة</button><div class="sw" style="margin-top:18px"><span class="sw-label">اللغة</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">السمة</span><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>الأدعية اليومية</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="10">سهل (10)</option><option value="15" selected>متوسط (15)</option><option value="20">صعب (+20)</option></select>
+    <button id="startBtn">▶ لعبة جديدة</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
     <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
     <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
-<div class="status" id="status">Flip the card, then pick the meaning!</div>
+<div class="status" id="status">اقلب البطاقة ثم اختر المعنى!</div>
 <div class="game-area" id="gameArea">
-    <div class="phase-label" id="phaseLabel">Tap the card to reveal the dua</div>
+    <div class="phase-label" id="phaseLabel">انقر على البطاقة لكشف الدعاء</div>
     <div class="flashcard" id="flashcard">
         <div class="flashcard-inner">
             <div class="flashcard-front">
                 <div class="occasion-text" id="occasionText">?</div>
-                <div class="tap-hint">Tap to flip</div>
+                <div class="tap-hint">انقر للقلب</div>
             </div>
             <div class="flashcard-back">
                 <div class="arabic-dua" id="arabicDua"></div>
@@ -208,43 +208,43 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
     <div class="meaning-grid" id="choices" style="display:none"></div>
     <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
 </div>
-<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
-<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Daily Duas v1.0</div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">صحيح</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">المجموع</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — الأدعية اليومية v1.0</div></div>
 
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
-  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="sidebar-header"><span class="sidebar-title">❓ مساعدة</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
   <div class="help-tabs">
-    <button class="help-tab active" data-tab="faq">FAQ</button>
-    <button class="help-tab" data-tab="howto">How-To</button>
-    <button class="help-tab" data-tab="wiki">Wiki</button>
+    <button class="help-tab active" data-tab="faq">الأسئلة</button>
+    <button class="help-tab" data-tab="howto">كيفية اللعب</button>
+    <button class="help-tab" data-tab="wiki">الموسوعة</button>
   </div>
   <div class="sidebar-body">
     <div class="help-content active" id="help-faq">
-        <details class="help-item"><summary>What is Daily Duas?</summary><p>A flashcard game to learn the daily supplications (duas) that Muslims say throughout the day — before eating, sleeping, traveling, and more.</p></details>
-        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
-        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
-        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
-        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
-        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+        <details class="help-item"><summary>ما هي الأدعية اليومية؟</summary><p>لعبة بطاقات تعليمية لتعلّم الأدعية اليومية التي يقولها المسلم خلال يومه — قبل الأكل والنوم والسفر وغيرها.</p></details>
+        <details class="help-item"><summary>هل تعمل بدون إنترنت؟</summary><p>نعم. بمجرد التحميل، كل شيء يعمل في متصفحك بدون حاجة للإنترنت.</p></details>
+        <details class="help-item"><summary>هل يمكنني اللعب على هاتفي؟</summary><p>نعم. تعمل على أي جهاز بمتصفح حديث — هاتف، جهاز لوحي، حاسوب.</p></details>
+        <details class="help-item"><summary>كيف أغيّر السمة؟</summary><p>انقر على أي زر سمة (🖥 🌌 🔥 إلخ) في شريط التحكم.</p></details>
+        <details class="help-item"><summary>كيف أغيّر اللغة؟</summary><p>انقر EN / FR / ع. العربية تفعّل التنسيق من اليمين لليسار تلقائياً.</p></details>
+        <details class="help-item"><summary>هل بياناتي خاصة؟</summary><p>نعم. كل شيء يعمل محلياً في متصفحك. لا تُرسل أي بيانات لأي مكان.</p></details>
     </div>
     <div class="help-content" id="help-howto">
-        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
-        <div class="help-step"><span class="help-step-num">2</span><p>Choose difficulty: Easy (10 common duas), Medium (15), or Hard (20+)</p></div>
-        <div class="help-step"><span class="help-step-num">3</span><p>Press ▶ New Game to begin</p></div>
-        <div class="help-step"><span class="help-step-num">4</span><p>Read the occasion on the card, then tap to flip and see the Arabic dua</p></div>
-        <div class="help-step"><span class="help-step-num">5</span><p>Pick the correct English meaning from 4 choices</p></div>
-        <div class="help-step"><span class="help-step-num">6</span><p>Watch your score and progress bar</p></div>
-        <div class="help-step"><span class="help-step-num">7</span><p>Check the Activity Log for your history</p></div>
-        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div>
+        <div class="help-step"><span class="help-step-num">1</span><p>انقر "ابدأ المهمة" في شاشة البداية</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>اختر المستوى: سهل (10 أدعية)، متوسط (15)، أو صعب (+20)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>اضغط ▶ لعبة جديدة للبدء</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>اقرأ المناسبة على البطاقة ثم انقر لقلبها ورؤية الدعاء</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>اختر المعنى الصحيح من 4 خيارات</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>تابع نتيجتك وشريط التقدم</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>راجع سجل النشاط لمعرفة تاريخك</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>انقر ← الفهرس للعودة وتجربة لعبة أخرى</p></div>
     </div>
     <div class="help-content" id="help-wiki">
-        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Learn daily Islamic supplications (duas) through interactive flashcards. Each card shows a situation, the Arabic dua, transliteration, and you pick the correct meaning.</p></div>
-        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
-        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Français, العربية. Arabic auto-enables RTL layout.</p></div>
-        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Correct = rising tone, wrong = buzz, win = melody. Toggle with 🔊 button.</p></div>
-        <div class="wiki-entry"><h3>📖 Duas</h3><p>20+ authentic daily duas covering eating, sleeping, travel, mosque, bathroom, weather, clothing, studying, and more.</p></div>
-        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+        <div class="wiki-entry"><h3>🎯 الهدف</h3><p>تعلّم الأدعية الإسلامية اليومية من خلال بطاقات تفاعلية. كل بطاقة تعرض المناسبة والدعاء العربي والنطق وتختار المعنى الصحيح.</p></div>
+        <div class="wiki-entry"><h3>🎨 السمات</h3><p>8 سمات مدمجة: Terminal، Midnight، Ember، Phosphor، Signal، Redshift، Arctic، Sand.</p></div>
+        <div class="wiki-entry"><h3>🌐 اللغات</h3><p>ثلاث لغات: English، Français، العربية. العربية تفعّل تنسيق RTL تلقائياً.</p></div>
+        <div class="wiki-entry"><h3>🔊 الصوت</h3><p>Web Audio API — لا حاجة لملفات. صحيح = نغمة صاعدة، خطأ = صفير، فوز = لحن. التبديل بزر 🔊.</p></div>
+        <div class="wiki-entry"><h3>📖 الأدعية</h3><p>أكثر من 20 دعاء يومي أصيل يشمل الأكل والنوم والسفر والمسجد ودخول الخلاء والطقس واللباس والدراسة وغيرها.</p></div>
+        <div class="wiki-entry"><h3>🔒 الخصوصية</h3><p>محلي أولاً. لا تتبع، لا تحليلات، لا اتصالات خارجية. كل البيانات تبقى في متصفحك.</p></div>
     </div>
   </div>
   <div class="sidebar-footer">Workshop-DIY — v1.0</div>
@@ -310,17 +310,17 @@ function newGame(){
   document.getElementById("tot").textContent="0";
   document.getElementById("scorePill").textContent="0 / 0";
   deck=shuffle(DUAS.slice()).slice(0,total);
-  log("New game started — "+total+" duas","");
+  log("بدأت لعبة جديدة — "+total+" دعاء","");
   nextQ();
 }
 
 function nextQ(){
   if(current>=total){
     stopTimer();checkHS();snd("win");
-    document.getElementById("status").textContent="🏆 Done! "+correct+"/"+total;
+    document.getElementById("status").textContent="🏆 أحسنت! "+correct+"/"+total;
     document.getElementById("status").className="status win";
     log("🏆 Score: "+correct+"/"+total,"success");
-    document.getElementById("phaseLabel").textContent="Game complete! Press ▶ New Game to play again.";
+    document.getElementById("phaseLabel").textContent="اكتملت اللعبة! اضغط ▶ لعبة جديدة للعب مرة أخرى.";
     document.getElementById("flashcard").style.display="none";
     document.getElementById("choices").style.display="none";
     return;
@@ -346,7 +346,7 @@ function nextQ(){
     document.getElementById("choices").appendChild(b);
   });
 
-  document.getElementById("phaseLabel").textContent="Tap the card to reveal the dua";
+  document.getElementById("phaseLabel").textContent="انقر على البطاقة لكشف الدعاء";
   document.getElementById("status").textContent=(current+1)+"/"+total;
   document.getElementById("status").className="status";
   document.getElementById("prog").style.width=(current/total*100)+"%";
@@ -358,7 +358,7 @@ document.getElementById("flashcard").addEventListener("click",function(){
   snd("click");
   phase="choose";
   document.getElementById("choices").style.display="";
-  document.getElementById("phaseLabel").textContent="Now pick the correct meaning!";
+  document.getElementById("phaseLabel").textContent="الآن اختر المعنى الصحيح!";
 });
 
 function pick(btn,val){

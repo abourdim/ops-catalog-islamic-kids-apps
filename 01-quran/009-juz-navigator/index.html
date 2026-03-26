@@ -184,23 +184,23 @@ input[type="range"]{width:90px}
 .flashcard-front{background:linear-gradient(135deg,#C5A02811,#2E8B5711);border:1px solid var(--border)}
 .flashcard-back{background:var(--bg3);border:1px solid var(--accent);transform:rotateY(180deg)}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">→ الفهرس</a>
 <div class="splash" id="splash"><div class="splash-box">
 <span class="splash-emoji">🗺️</span>
 <div class="splash-art"><div class="sa-minbar"><div class="sa-minbar-top"></div><div class="sa-minbar-steps"><div class="sa-step"></div><div class="sa-step"></div><div class="sa-step"></div></div></div></div>
 <div class="splash-bism" dir="rtl">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
-<h1 class="splash-title">Juz Navigator</h1>
-<div class="splash-subtitle">Navigate the 30 Juz of Quran</div>
-<p class="splash-desc" id="splDesc">Navigate the 30 Juz of Quran</p>
-<button class="btn-go" id="enterBtn">Start</button>
-<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
-<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>Juz Navigator</h1><span class="pill" id="juzPill">30 Juz</span></div><div class="ctrl"><button class="btn-help" onclick="openHelp()">&#10067;</button><button id="soundBtn">&#128266;</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div><div class="sw"><button class="sw-btn on" data-thm="sahara">&#128421;</button><button class="sw-btn" data-thm="emerald">&#127748;</button><button class="sw-btn" data-thm="midnight-gold">&#128293;</button><button class="sw-btn" data-thm="deep-emerald">&#128154;</button><button class="sw-btn" data-thm="royal">&#128225;</button><button class="sw-btn" data-thm="sunset">&#128308;</button><button class="sw-btn" data-thm="ocean">&#10052;&#65039;</button><button class="sw-btn" data-thm="night-sky">&#127964;</button></div></div>
+<h1 class="splash-title">متصفح الأجزاء</h1>
+<div class="splash-subtitle">تصفّح أجزاء القرآن الثلاثين</div>
+<p class="splash-desc" id="splDesc">تصفّح أجزاء القرآن الثلاثين</p>
+<button class="btn-go" id="enterBtn">ابدأ</button>
+<div class="sw" style="margin-top:20px"><span class="sw-label">اللغة</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">المظهر</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>متصفح الأجزاء</h1><span class="pill" id="juzPill">٣٠ جزءاً</span></div><div class="ctrl"><button class="btn-help" onclick="openHelp()">&#10067;</button><button id="soundBtn">&#128266;</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div><div class="sw"><button class="sw-btn on" data-thm="sahara">&#128421;</button><button class="sw-btn" data-thm="emerald">&#127748;</button><button class="sw-btn" data-thm="midnight-gold">&#128293;</button><button class="sw-btn" data-thm="deep-emerald">&#128154;</button><button class="sw-btn" data-thm="royal">&#128225;</button><button class="sw-btn" data-thm="sunset">&#128308;</button><button class="sw-btn" data-thm="ocean">&#10052;&#65039;</button><button class="sw-btn" data-thm="night-sky">&#127964;</button></div></div>
 <div class="juz-grid" id="juzGrid"></div>
-<div class="game-area" id="juzDetail"><p style="text-align:center;color:var(--text3)">Select a Juz above to see its contents</p></div>
-<div class="foot">Amaloun &#8212; Juz Navigator v1.0</div></div>
+<div class="game-area" id="juzDetail"><p style="text-align:center;color:var(--text3)">اختر جزءاً من الأعلى لعرض محتواه</p></div>
+<div class="foot">أمالون — متصفح الأجزاء الإصدار ١.٠</div></div>
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
-<aside class="sidebar sidebar-left" id="helpPanel" role="dialog" aria-modal="true"><div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div><div class="sidebar-body"><div class="help-content active" id="help-faq"><details class="help-item"><summary>What is a Juz?</summary><p>A juz (plural: ajza) is one of 30 equal parts of the Quran. This division helps organize reading and memorization.</p></details><details class="help-item"><summary>Why 30 parts?</summary><p>The 30-part division allows Muslims to complete the entire Quran in one month by reading one juz per day, especially during Ramadan.</p></details><details class="help-item"><summary>Does it work offline?</summary><p>Yes. Everything runs locally in your browser.</p></details></div><div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>Click any juz number in the grid</p></div><div class="help-step"><span class="help-step-num">2</span><p>See which surahs and verse ranges are included</p></div><div class="help-step"><span class="help-step-num">3</span><p>Navigate between juz to explore the full Quran</p></div></div><div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>&#128214; Juz</h3><p>Each juz contains roughly 20 pages of the Quran. The first juz starts with Al-Fatihah and the beginning of Al-Baqarah.</p></div><div class="wiki-entry"><h3>&#128330; Hizb</h3><p>Each juz is further divided into 2 hizb, and each hizb into 4 quarters, for a total of 240 quarters in the Quran.</p></div></div></div><div class="sidebar-footer">Amaloun &#8212; v1.0</div></aside>
+<aside class="sidebar sidebar-left" id="helpPanel" role="dialog" aria-modal="true"><div class="sidebar-header"><span class="sidebar-title">&#10067; المساعدة</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">الأسئلة الشائعة</button><button class="help-tab" data-tab="howto">كيفية الاستخدام</button><button class="help-tab" data-tab="wiki">معلومات</button></div><div class="sidebar-body"><div class="help-content active" id="help-faq"><details class="help-item"><summary>What is a Juz?</summary><p>A juz (plural: ajza) is one of 30 equal parts of the Quran. This division helps organize reading and memorization.</p></details><details class="help-item"><summary>Why 30 parts?</summary><p>The 30-part division allows Muslims to complete the entire Quran in one month by reading one juz per day, especially during Ramadan.</p></details><details class="help-item"><summary>Does it work offline?</summary><p>Yes. Everything runs locally in your browser.</p></details></div><div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>Click any juz number in the grid</p></div><div class="help-step"><span class="help-step-num">2</span><p>See which surahs and verse ranges are included</p></div><div class="help-step"><span class="help-step-num">3</span><p>Navigate between juz to explore the full Quran</p></div></div><div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>&#128214; Juz</h3><p>Each juz contains roughly 20 pages of the Quran. The first juz starts with Al-Fatihah and the beginning of Al-Baqarah.</p></div><div class="wiki-entry"><h3>&#128330; Hizb</h3><p>Each juz is further divided into 2 hizb, and each hizb into 4 quarters, for a total of 240 quarters in the Quran.</p></div></div></div><div class="sidebar-footer">أمالون — الإصدار ١.٠</div></aside>
 <script>
 // === i18n SYSTEM ===
 let currentLang="ar";
@@ -237,19 +237,21 @@ const T={
     ui_prophets_stories:"قصص الأنبياء",
     ui_islamic_law:"الشريعة الإسلامية",
     ui_nature___creation:"الطبيعة / الخلق",
+    juzPill:"٣٠ جزءاً",
+    selectJuz:"اختر جزءاً من الأعلى لعرض محتواه",
     faq0q:"ما هو الجزء؟",
     faq0a:"الجزء هو قسم من أقسام القرآن الثلاثين، يُستخدم لتسهيل قراءة وحفظ القرآن.",
     faq1q:"لماذا ٣٠ جزءاً؟",
     faq1a:"قُسّم القرآن إلى ٣٠ جزءاً ليسهل إتمام قراءته في شهر رمضان (جزء كل يوم).",
     faq2q:"هل يعمل بدون إنترنت؟",
     faq2a:"نعم. بمجرد تحميل الصفحة، يعمل كل شيء في المتصفح بدون الحاجة للإنترنت.",
-    howto0:"اضغط على زر ابدأ في شاشة البداية",
-    howto1:"اختر مستوى الصعوبة إذا كان متاحاً",
-    howto2:"اقرأ التعليمات المعروضة على الشاشة",
-    wiki0t:"&#128214; Juz",
-    wiki0c:"الفاتحة، الإخلاص، الفلق، الناس، الكوثر، العصر، الفيل، قريش، الماعون، النصر.",
-    wiki1t:"&#128330; Hizb",
-    wiki1c:"Each juz is further divided into 2 hizb, and each hizb into 4 quarters, for a total of 240 quarters in the Quran."
+    howto0:"اضغط على أي رقم جزء في الشبكة",
+    howto1:"شاهد السور ونطاقات الآيات المتضمنة في الجزء",
+    howto2:"تنقّل بين الأجزاء لاستكشاف القرآن كاملاً",
+    wiki0t:"📖 الجزء",
+    wiki0c:"كل جزء يحتوي على نحو ٢٠ صفحة من القرآن الكريم. الجزء الأول يبدأ بسورة الفاتحة وبداية سورة البقرة.",
+    wiki1t:"🕌 الحزب",
+    wiki1c:"كل جزء ينقسم إلى حزبين، وكل حزب إلى ٤ أرباع، ليكون المجموع ٢٤٠ ربعاً في القرآن الكريم."
   },
   en:{
     title:"Juz Navigator",
@@ -355,7 +357,7 @@ function updateUI(){
 
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open")}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
-var curLang="en";
+var curLang="ar";
 function setLang(l){currentLang=l==="ar"?"ar":"en";curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));renderGrid();updateUI();}
 function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===t))}
 var soundOn=true,actx;function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;var n=actx.currentTime;o.frequency.value=t==="ok"?660:800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.06);o.start(n);o.stop(n+.06)}

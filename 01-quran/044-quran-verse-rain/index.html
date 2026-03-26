@@ -190,10 +190,10 @@ input[type="range"]{width:90px}
 <div class="splash-subtitle">Watch Quran verses rain down</div>
 <p class="splash-desc" id="splDesc">Watch Quran verses rain down</p>
 <button class="btn-go" id="enterBtn">Start</button>
-<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
 <div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
 <div class="app" id="app"><div class="hdr-bism">&fdfc;</div><div class="hdr"><h1>Quran Verse Rain</h1><span class="pill" id="lvlPill">Level 1</span></div>
-<div class="ctrl"><button id="startBtn">Play</button><button class="btn-help" onclick="openHelp()">? Help</button><button id="soundBtn">Sound ON</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw"><button class="sw-btn on" data-thm="sahara">T</button><button class="sw-btn" data-thm="emerald">M</button><button class="sw-btn" data-thm="midnight-gold">E</button><button class="sw-btn" data-thm="deep-emerald">P</button><button class="sw-btn" data-thm="royal">S</button><button class="sw-btn" data-thm="sunset">R</button><button class="sw-btn" data-thm="ocean">A</button><button class="sw-btn" data-thm="night-sky">D</button></div></div>
+<div class="ctrl"><button id="startBtn">Play</button><button class="btn-help" onclick="openHelp()">? Help</button><button id="soundBtn">Sound ON</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&ayn;</button></div><div class="sw"><button class="sw-btn on" data-thm="sahara">T</button><button class="sw-btn" data-thm="emerald">M</button><button class="sw-btn" data-thm="midnight-gold">E</button><button class="sw-btn" data-thm="deep-emerald">P</button><button class="sw-btn" data-thm="royal">S</button><button class="sw-btn" data-thm="sunset">R</button><button class="sw-btn" data-thm="ocean">A</button><button class="sw-btn" data-thm="night-sky">D</button></div></div>
 <div class="status" id="status">Click falling words in the correct verse order</div>
 <div class="target-verse" id="targetVerse"></div>
 <div class="game-wrap"><canvas id="rainCanvas" width="540" height="310"></canvas><div class="catch-zone" id="catchZone"></div></div>
@@ -246,13 +246,13 @@ const T={
     faq0q:"كيف تعمل اللعبة؟",
     faq0a:"تتساقط كلمات من آية قرآنية من الأعلى. اضغط عليها بالترتيب الصحيح (من اليمين لليسار) قبل أن تصل للأسفل.",
     faq1q:"ماذا يحدث عندما تزداد السرعة؟",
-    faq1a:"Each level, words fall faster, adding challenge as you advance.",
+    faq1a:"في كل مستوى تتساقط الكلمات أسرع، مما يزيد التحدي كلما تقدمت.",
     howto0:"اضغط على زر ابدأ في شاشة البداية",
     howto1:"اختر مستوى الصعوبة إذا كان متاحاً",
     howto2:"اقرأ التعليمات المعروضة على الشاشة",
     howto3:"تفاعل مع العناصر على الشاشة",
-    wiki0t:"Active Learning",
-    wiki0c:"Catching words under time pressure builds rapid recognition of Arabic Quran vocabulary."
+    wiki0t:"التعلّم النشط",
+    wiki0c:"التقاط الكلمات تحت ضغط الوقت يبني التعرّف السريع على مفردات القرآن العربية."
   },
   en:{
     title:"Quran Verse Rain",

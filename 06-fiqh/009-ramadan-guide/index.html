@@ -104,50 +104,50 @@ canvas{width:100%;border-radius:12px;cursor:pointer;display:block;touch-action:n
 .cat-badge{display:inline-block;padding:1px 6px;border-radius:4px;font-size:9px;font-weight:600;background:var(--abg);border:1px solid var(--abr);color:var(--accent);margin-bottom:8px}
 </style></head><body>
 <a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><span class="splash-icon">🌜</span><h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splashTitle">Ramadan Guide</h1><p style="color:rgba(255,255,255,.6);font-size:12px;line-height:1.7;margin:12px 0 28px" id="splashDesc"></p><button class="btn-go" id="enterBtn">Start</button><div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🏰</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>Ramadan Guide</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="easy">Easy (10)</option><option value="medium" selected>Medium (20)</option><option value="hard">Hard (30+)</option></select>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><span class="splash-icon">🌜</span><h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splashTitle">دليل رمضان</h1><p style="color:rgba(255,255,255,.6);font-size:12px;line-height:1.7;margin:12px 0 28px" id="splashDesc"></p><button class="btn-go" id="enterBtn">ابدأ</button><div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🏰</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>دليل رمضان</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="easy">Easy (10)</option><option value="medium" selected>Medium (20)</option><option value="hard">Hard (30+)</option></select>
     <button id="startBtn">&#9654; New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">&#10067;</button>
     <button id="soundBtn">&#x1F50A;</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
     <div class="sw"><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div>
-<div class="status" id="status">Pick the right answer!</div>
+<div class="status" id="status">اختر الإجابة الصحيحة!</div>
 <div class="game-area" id="gameArea"><div class="big-text" id="question">?</div><div id="explainArea"></div><div class="answer-row" id="choices"></div><div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div></div>
-<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">صحيح</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">المجموع</div><div class="score-num" id="tot">0</div></div></div>
 <div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy &#8212; Ramadan Guide v1.0</div></div>
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel">
-  <div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
+  <div class="sidebar-header"><span class="sidebar-title">&#10067; مساعدة</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
   <div class="help-tabs">
-    <button class="help-tab active" data-tab="faq">FAQ</button>
-    <button class="help-tab" data-tab="howto">How-To</button>
-    <button class="help-tab" data-tab="wiki">Wiki</button>
+    <button class="help-tab active" data-tab="faq">الأسئلة</button>
+    <button class="help-tab" data-tab="howto">كيفية اللعب</button>
+    <button class="help-tab" data-tab="wiki">معلومات</button>
   </div>
   <div class="sidebar-body">
     <div class="help-content active" id="help-faq">
-        <details class="help-item"><summary>What is Ramadan Guide?</summary><p>A comprehensive quiz about Ramadan covering fasting rules, Taraweeh, Laylat al-Qadr, Zakat al-Fitr, Eid, Itikaf, Quran, charity, and more. Learn through fun questions with detailed explanations and references.</p></details>
-        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
-        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
-        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
-        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / &#1593;. Arabic enables right-to-left layout automatically.</p></details>
-        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
-        <details class="help-item"><summary>What are the difficulty levels?</summary><p>Easy: 10 basic questions. Medium: 20 mixed questions. Hard: 30+ questions including detailed fiqh topics.</p></details>
+        <details class="help-item"><summary>ما هو دليل رمضان؟</summary><p>اختبار شامل عن رمضان يغطي أحكام الصيام، التراويح، ليلة القدر، زكاة الفطر، العيد، الاعتكاف، القرآن، الصدقة، وأكثر.</p></details>
+        <details class="help-item"><summary>هل يعمل بدون إنترنت؟</summary><p>نعم. بعد التحميل، كل شيء يعمل في المتصفح بدون حاجة للإنترنت.</p></details>
+        <details class="help-item"><summary>هل يعمل على الهاتف؟</summary><p>نعم. يعمل على أي جهاز بمتصفح حديث — هاتف، جهاز لوحي، حاسوب.</p></details>
+        <details class="help-item"><summary>كيف أغيّر السمة؟</summary><p>انقر على أي زر سمة في شريط التحكم.</p></details>
+        <details class="help-item"><summary>كيف أغيّر اللغة؟</summary><p>انقر EN / FR / &#1593;. العربية تفعّل تخطيط اليمين لليسار تلقائياً.</p></details>
+        <details class="help-item"><summary>هل بياناتي خاصة؟</summary><p>نعم. كل شيء يعمل محلياً في متصفحك. لا تُرسل أي بيانات.</p></details>
+        <details class="help-item"><summary>ما هي مستويات الصعوبة؟</summary><p>سهل: 10 أسئلة أساسية. متوسط: 20 سؤالاً متنوعاً. صعب: 30+ سؤالاً تشمل مواضيع فقهية مفصلة.</p></details>
     </div>
     <div class="help-content" id="help-howto">
-        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
-        <div class="help-step"><span class="help-step-num">2</span><p>Choose your difficulty (Easy, Medium, or Hard)</p></div>
-        <div class="help-step"><span class="help-step-num">3</span><p>Press &#9654; New Game to begin</p></div>
-        <div class="help-step"><span class="help-step-num">4</span><p>Read the question and pick from 4 answers</p></div>
-        <div class="help-step"><span class="help-step-num">5</span><p>After each correct answer, read the explanation with Quran/Hadith references</p></div>
-        <div class="help-step"><span class="help-step-num">6</span><p>Watch your score and progress bar</p></div>
-        <div class="help-step"><span class="help-step-num">7</span><p>Press &#9654; New Game to play again</p></div>
-        <div class="help-step"><span class="help-step-num">8</span><p>Click &#8592; Catalog to go back and try another game</p></div>
+        <div class="help-step"><span class="help-step-num">1</span><p>انقر ابدأ في شاشة البداية</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>اختر مستوى الصعوبة (سهل، متوسط، أو صعب)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>اضغط &#9654; لعبة جديدة للبدء</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>اقرأ السؤال واختر من 4 إجابات</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>بعد كل إجابة صحيحة، اقرأ الشرح مع مراجع القرآن والحديث</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>تابع نتيجتك وشريط التقدم</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>اضغط &#9654; لعبة جديدة للعب مرة أخرى</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>انقر &#8592; الفهرس للعودة وتجربة لعبة أخرى</p></div>
     </div>
     <div class="help-content" id="help-wiki">
-        <div class="wiki-entry"><h3>&#127775; Purpose</h3><p>Learn everything about Ramadan: fasting, prayers, charity, Quran, Laylat al-Qadr, Zakat al-Fitr, Eid, and more.</p></div>
-        <div class="wiki-entry"><h3>&#127752; Topics</h3><p>Fasting rules, Taraweeh, Laylat al-Qadr, Zakat al-Fitr, Eid al-Fitr, Itikaf, Quran in Ramadan, charity, good deeds, history.</p></div>
-        <div class="wiki-entry"><h3>&#127912; Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
-        <div class="wiki-entry"><h3>&#127760; Languages</h3><p>Trilingual: English, Fran&#231;ais, &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;. Arabic auto-enables RTL layout.</p></div>
-        <div class="wiki-entry"><h3>&#128266; Sound</h3><p>Web Audio API — no files needed. Correct = rising tone, wrong = buzz, win = melody. Toggle with sound button.</p></div>
-        <div class="wiki-entry"><h3>&#128274; Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+        <div class="wiki-entry"><h3>&#127775; الهدف</h3><p>تعلم كل شيء عن رمضان: الصيام، الصلاة، الصدقة، القرآن، ليلة القدر، زكاة الفطر، العيد، وأكثر.</p></div>
+        <div class="wiki-entry"><h3>&#127752; المواضيع</h3><p>أحكام الصيام، التراويح، ليلة القدر، زكاة الفطر، عيد الفطر، الاعتكاف، القرآن في رمضان، الصدقة، الأعمال الصالحة، التاريخ.</p></div>
+        <div class="wiki-entry"><h3>&#127912; السمات</h3><p>8 سمات مدمجة: Terminal، Midnight، Ember، Phosphor، Signal، Redshift، Arctic، Sand.</p></div>
+        <div class="wiki-entry"><h3>&#127760; اللغات</h3><p>ثلاث لغات: English، Fran&#231;ais، &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;. العربية تفعّل تخطيط اليمين لليسار تلقائياً.</p></div>
+        <div class="wiki-entry"><h3>&#128266; الصوت</h3><p>Web Audio API — لا حاجة لملفات. صحيح = نغمة صاعدة، خطأ = طنين، فوز = لحن. التبديل بزر الصوت.</p></div>
+        <div class="wiki-entry"><h3>&#128274; الخصوصية</h3><p>محلي أولاً. لا تتبع، لا تحليلات، لا اتصالات خارجية. جميع البيانات تبقى في متصفحك.</p></div>
     </div>
   </div>
   <div class="sidebar-footer">Workshop-DIY — v1.0</div>

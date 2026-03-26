@@ -179,24 +179,24 @@ input[type="range"]{width:90px}
 .flashcard-front{background:linear-gradient(135deg,#DAA52011,#2E7D3211);border:1px solid var(--border)}
 .flashcard-back{background:var(--bg3);border:1px solid var(--accent);transform:rotateY(180deg)}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">→ الفهرس</a>
 <div class="splash" id="splash"><div class="splash-box">
 <span class="splash-emoji">🔍</span>
 <div class="splash-art"><div class="sa-rosette"><div class="sa-petal" style="--r:0deg"></div><div class="sa-petal" style="--r:45deg"></div><div class="sa-petal" style="--r:90deg"></div><div class="sa-petal" style="--r:135deg"></div></div></div>
 <div class="splash-bism" dir="rtl">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
-<h1 class="splash-title">Quran Explorer</h1>
-<div class="splash-subtitle">Explore the Holy Quran</div>
-<p class="splash-desc" id="splDesc">Explore the Holy Quran</p>
-<button class="btn-go" id="enterBtn">Start</button>
-<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
-<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Quran Explorer</h1><span class="pill" id="scorePill">0 explored</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel"><option value="easy">Easy (Explore)</option><option value="medium" selected>Medium (Quiz after)</option><option value="hard">Hard (Quiz only)</option></select>
+<h1 class="splash-title">مستكشف القرآن</h1>
+<div class="splash-subtitle">استكشف القرآن الكريم</div>
+<p class="splash-desc" id="splDesc">استكشف القرآن الكريم</p>
+<button class="btn-go" id="enterBtn">ابدأ</button>
+<div class="sw" style="margin-top:20px"><span class="sw-label">اللغة</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">المظهر</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>مستكشف القرآن</h1><span class="pill" id="scorePill">٠ مُستكشَفة</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel"><option value="easy">سهل (استكشاف)</option><option value="medium" selected>متوسط (اختبار بعده)</option><option value="hard">صعب (اختبار فقط)</option></select>
     <select id="surahSel"></select>
-    <button id="prevBtn">◀ Prev</button><button id="nextBtn">Next ▶</button><button id="randBtn">🎲 Random</button>
+    <button id="prevBtn">◀ السابقة</button><button id="nextBtn">التالية ▶</button><button id="randBtn">🎲 عشوائي</button>
     <button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
-    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
     <div class="sw"><button class="sw-btn on" data-thm="sahara">🖥</button><button class="sw-btn" data-thm="emerald">🌌</button><button class="sw-btn" data-thm="midnight-gold">🔥</button><button class="sw-btn" data-thm="deep-emerald">💚</button><button class="sw-btn" data-thm="royal">📡</button><button class="sw-btn" data-thm="sunset">🔴</button><button class="sw-btn" data-thm="ocean">❄️</button><button class="sw-btn" data-thm="night-sky">🏜</button></div></div>
-<div class="status" id="status">Select a surah to explore</div>
+<div class="status" id="status">اختر سورة لاستكشافها</div>
 <div class="game-area" id="gameArea">
   <div id="cardView">
     <div class="surah-card">
@@ -207,57 +207,57 @@ input[type="range"]{width:90px}
       <ul class="lessons" id="lessonsList"></ul>
     </div>
     <div class="nav-row" style="margin-top:12px">
-      <button class="nav-btn" id="quizBtn" style="display:none">📝 Take Quiz</button>
+      <button class="nav-btn" id="quizBtn" style="display:none">📝 اختبر نفسك</button>
     </div>
   </div>
   <div class="quiz-area" id="quizArea">
     <div class="quiz-q" id="quizQ"></div>
     <div class="answer-row" id="quizChoices"></div>
-    <div style="text-align:center;margin-top:10px"><button class="nav-btn" id="backCardBtn">← Back to Card</button></div>
+    <div style="text-align:center;margin-top:10px"><button class="nav-btn" id="backCardBtn">→ العودة للبطاقة</button></div>
   </div>
 </div>
 <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
-<div class="score-row"><div class="score-item"><div class="score-label">Explored</div><div class="score-num" id="exploredNum">0</div></div><div class="score-item"><div class="score-label">Quiz Score</div><div class="score-num" id="quizScoreNum">0</div></div><div class="score-item"><div class="score-label">Total Surahs</div><div class="score-num">37</div></div></div>
-<div class="log-box" id="logBox"></div><div class="foot">Amaloun — Quran Explorer v1.0</div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">مُستكشَفة</div><div class="score-num" id="exploredNum">0</div></div><div class="score-item"><div class="score-label">نتيجة الاختبار</div><div class="score-num" id="quizScoreNum">0</div></div><div class="score-item"><div class="score-label">إجمالي السور</div><div class="score-num">37</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">أمالون — مستكشف القرآن الإصدار ١.٠</div></div>
 
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
-  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="sidebar-header"><span class="sidebar-title">❓ المساعدة</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
   <div class="help-tabs">
-    <button class="help-tab active" data-tab="faq">FAQ</button>
-    <button class="help-tab" data-tab="howto">How-To</button>
-    <button class="help-tab" data-tab="wiki">Wiki</button>
+    <button class="help-tab active" data-tab="faq">الأسئلة الشائعة</button>
+    <button class="help-tab" data-tab="howto">كيفية الاستخدام</button>
+    <button class="help-tab" data-tab="wiki">معلومات</button>
   </div>
   <div class="sidebar-body">
     <div class="help-content active" id="help-faq">
-        <details class="help-item"><summary>What is Quran Explorer?</summary><p>An interactive tool to browse and learn about the surahs of Juz Amma (the 30th part of the Quran). Explore surah facts, themes, and test your knowledge!</p></details>
-        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
-        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
-        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
-        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
-        <details class="help-item"><summary>What are the difficulty levels?</summary><p>Easy: explore surahs freely. Medium: quiz appears after exploring each surah. Hard: quiz questions without seeing the card first.</p></details>
-        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+        <details class="help-item"><summary>ما هو مستكشف القرآن؟</summary><p>أداة تفاعلية لتصفح سور جزء عمّ والتعلّم عنها. استكشف حقائق السور وموضوعاتها واختبر معلوماتك!</p></details>
+        <details class="help-item"><summary>هل يعمل بدون إنترنت؟</summary><p>نعم. بمجرد تحميل الصفحة، يعمل كل شيء في المتصفح بدون الحاجة للإنترنت.</p></details>
+        <details class="help-item"><summary>هل يمكنني اللعب على الجوال؟</summary><p>نعم. يعمل على أي جهاز يحتوي على متصفح حديث.</p></details>
+        <details class="help-item"><summary>كيف أغيّر المظهر؟</summary><p>اضغط على أي زر مظهر في شريط التحكم.</p></details>
+        <details class="help-item"><summary>كيف أغيّر اللغة؟</summary><p>اضغط على EN / FR / ع. اللغة العربية تفعّل التنسيق من اليمين لليسار تلقائياً.</p></details>
+        <details class="help-item"><summary>ما هي مستويات الصعوبة؟</summary><p>سهل: استكشاف السور بحرية. متوسط: اختبار بعد كل سورة. صعب: أسئلة اختبار بدون رؤية البطاقة أولاً.</p></details>
+        <details class="help-item"><summary>هل بياناتي محمية؟</summary><p>نعم. كل شيء يعمل محلياً في متصفحك. لا تُرسل أي بيانات لأي مكان.</p></details>
     </div>
     <div class="help-content" id="help-howto">
-        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
-        <div class="help-step"><span class="help-step-num">2</span><p>Choose a difficulty level from the dropdown</p></div>
-        <div class="help-step"><span class="help-step-num">3</span><p>Select a surah from the dropdown or use Prev/Next/Random buttons</p></div>
-        <div class="help-step"><span class="help-step-num">4</span><p>Read the surah card — Arabic name, English name, ayah count, and lessons</p></div>
-        <div class="help-step"><span class="help-step-num">5</span><p>Click "Take Quiz" to test your knowledge on the current surah</p></div>
-        <div class="help-step"><span class="help-step-num">6</span><p>Track your progress — how many surahs you have explored</p></div>
-        <div class="help-step"><span class="help-step-num">7</span><p>Use keyboard shortcuts: Left/Right arrows for navigation, R for random</p></div>
-        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div>
+        <div class="help-step"><span class="help-step-num">1</span><p>اضغط على زر ابدأ في شاشة البداية</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>اختر مستوى الصعوبة من القائمة</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>اختر سورة من القائمة أو استخدم أزرار السابقة/التالية/عشوائي</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>اقرأ بطاقة السورة — الاسم العربي، عدد الآيات، والدروس المستفادة</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>اضغط "اختبر نفسك" لاختبار معلوماتك عن السورة الحالية</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>تابع تقدمك — كم سورة استكشفت</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>استخدم اختصارات لوحة المفاتيح: الأسهم للتنقل، R لعشوائي</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>اضغط → الفهرس للعودة وتجربة لعبة أخرى</p></div>
     </div>
     <div class="help-content" id="help-wiki">
-        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Help Muslim kids discover and memorize facts about Juz Amma surahs in an interactive, fun way.</p></div>
-        <div class="wiki-entry"><h3>📖 Juz Amma</h3><p>The 30th part of the Quran, containing 37 surahs from An-Naba (#78) to An-Nas (#114). These are the most commonly memorized surahs.</p></div>
-        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
-        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Francais, العربية. Arabic auto-enables RTL layout.</p></div>
-        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Toggle with 🔊 button.</p></div>
-        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+        <div class="wiki-entry"><h3>🎯 الهدف</h3><p>مساعدة الأطفال المسلمين على اكتشاف وحفظ حقائق عن سور جزء عمّ بطريقة تفاعلية وممتعة.</p></div>
+        <div class="wiki-entry"><h3>📖 جزء عمّ</h3><p>الجزء الثلاثون من القرآن الكريم، يحتوي على ٣٧ سورة من النبأ إلى الناس. هذه أكثر السور حفظاً.</p></div>
+        <div class="wiki-entry"><h3>🎨 المظاهر</h3><p>٨ مظاهر مدمجة: صحراوي، زمردي، ذهبي، أخضر داكن، ملكي، غروب، محيط، سماء الليل.</p></div>
+        <div class="wiki-entry"><h3>🌐 اللغات</h3><p>ثلاثي اللغات: العربية، English، Français. العربية تفعّل التنسيق من اليمين لليسار تلقائياً.</p></div>
+        <div class="wiki-entry"><h3>🔊 الصوت</h3><p>واجهة صوت الويب. التحكم بزر الصوت.</p></div>
+        <div class="wiki-entry"><h3>🔒 الخصوصية</h3><p>محلي أولاً. لا تتبع، لا تحليلات، لا اتصالات خارجية. جميع البيانات تبقى في متصفحك.</p></div>
     </div>
   </div>
-  <div class="sidebar-footer">Amaloun — v1.0</div>
+  <div class="sidebar-footer">أمالون — الإصدار ١.٠</div>
 </aside>
 <script>
 // === i18n SYSTEM ===
@@ -324,9 +324,9 @@ const T={
     howto6:"استكشف المزيد من المحتوى",
     howto7:"شارك ما تعلمته مع أصدقائك",
     wiki0t:"🎯 الهدف",
-    wiki0c:"مساعدة الأطفال المسلمين على تعلم القرآن الكريم من خلال استكشف القرآن الكريم.",
-    wiki1t:"📖 Juz Amma",
-    wiki1c:"The 30th part of the Quran, containing 37 surahs from An-Naba (#78) to An-Nas (#114). These are the most commonly memorized surahs.",
+    wiki0c:"مساعدة الأطفال المسلمين على اكتشاف وحفظ حقائق عن سور جزء عمّ بطريقة تفاعلية وممتعة.",
+    wiki1t:"📖 جزء عمّ",
+    wiki1c:"الجزء الثلاثون من القرآن الكريم، يحتوي على ٣٧ سورة من النبأ إلى الناس. هذه أكثر السور حفظاً.",
     wiki2t:"🎨 المظاهر",
     wiki2c:"٨ مظاهر مدمجة: صحراوي، زمردي، ذهبي، أخضر داكن، ملكي، غروب، محيط، سماء الليل.",
     wiki3t:"🌐 اللغات",

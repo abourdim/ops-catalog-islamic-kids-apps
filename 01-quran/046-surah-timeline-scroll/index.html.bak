@@ -1,0 +1,423 @@
+<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="sahara"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Surah Timeline Scroll</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+[data-theme="sahara"]{--bg:#FFF8E7;--bg2:#FFFDF5;--bg3:#F5ECD7;--border:#E8D5A8;--border2:#D4C48E;--text:#4A3F2F;--text2:#7A6E5A;--text3:#A09580;--heading:#2C1810;--accent:#C5A028;--abg:#C5A0280A;--abr:#C5A02833;--glow:0 0 20px #C5A02815;--accent2:#388E3C}
+[data-theme="emerald"]{--bg:#F0F7F2;--bg2:#F8FBF9;--bg3:#E2EDE5;--border:#B8D4BE;--border2:#98C4A2;--text:#2D4A35;--text2:#527A5E;--text3:#7EA08A;--heading:#1A3322;--accent:#388E3C;--abg:#388E3C0A;--abr:#388E3C33;--glow:0 0 20px #388E3C15;--accent2:#C5A028}
+[data-theme="midnight-gold"]{--bg:#0E1117;--bg2:#161B22;--bg3:#1E2530;--border:#2A3444;--border2:#3A4858;--text:#C8CDD5;--text2:#8A94A2;--text3:#5A6472;--heading:#F0E6D0;--accent:#C5A028;--abg:#C5A0280A;--abr:#C5A02833;--glow:0 0 20px #C5A02815;--accent2:#388E3C}
+[data-theme="deep-emerald"]{--bg:#081210;--bg2:#0E1A16;--bg3:#162520;--border:#1E3328;--border2:#2A4438;--text:#B8D4C8;--text2:#7AA090;--text3:#4A7060;--heading:#E0F0E8;--accent:#388E3C;--abg:#388E3C0A;--abr:#388E3C33;--glow:0 0 20px #388E3C15;--accent2:#C5A028}
+[data-theme="royal"]{--bg:#12101A;--bg2:#1A1628;--bg3:#242035;--border:#342E50;--border2:#443E65;--text:#C8C0E0;--text2:#8880B0;--text3:#585080;--heading:#F0E8FF;--accent:#C5A028;--abg:#C5A0280A;--abr:#C5A02833;--glow:0 0 20px #C5A02815;--accent2:#9C7AEA}
+[data-theme="sunset"]{--bg:#FFF5EB;--bg2:#FFFAF5;--bg3:#F5E8D8;--border:#E8D0B0;--border2:#D4BC98;--text:#4A3828;--text2:#7A6850;--text3:#A09078;--heading:#2C1808;--accent:#D4820A;--abg:#D4820A0A;--abr:#D4820A33;--glow:0 0 20px #D4820A15;--accent2:#388E3C}
+[data-theme="ocean"]{--bg:#F0F5FA;--bg2:#F8FBFF;--bg3:#E0EAF5;--border:#B0C8E0;--border2:#90B0D0;--text:#2A3A50;--text2:#4A6A88;--text3:#7090A8;--heading:#142840;--accent:#2070B0;--abg:#2070B00A;--abr:#2070B033;--glow:0 0 20px #2070B015;--accent2:#388E3C}
+[data-theme="night-sky"]{--bg:#0A0C18;--bg2:#101428;--bg3:#181E38;--border:#202850;--border2:#283268;--text:#B0B8D8;--text2:#7080B0;--text3:#485088;--heading:#D8E0FF;--accent:#FFD700;--abg:#FFD7000A;--abr:#FFD70033;--glow:0 0 20px #FFD70015;--accent2:#4488FF}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Outfit','Noto Sans Arabic',sans-serif;font-size:14px;min-height:100vh;background-image:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iMzQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBvbHlnb24gcG9pbnRzPSIyMCwwIDQwLDM0IDAsMzQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M1QTAyOCIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuMDQiLz48L3N2Zz4=");background-size:60px}
+[lang="ar"] body{font-family:'Noto Sans Arabic','Amiri','Outfit',sans-serif}
+h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+@keyframes splashEnter{from{opacity:0;transform:translateY(-40px) scaleY(.8)}to{opacity:1;transform:translateY(0) scaleY(1)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes gentlePulse{0%,100%{opacity:.6}50%{opacity:1}}
+
+/* === SPLASH === */
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;position:relative;overflow:hidden}
+.splash::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,#C5A02808,transparent 70%);pointer-events:none}
+.splash-box{background:var(--bg2);border-image:linear-gradient(135deg,#C5A028,#388E3C) 1;border-width:2px;padding:44px 36px;max-width:420px;width:100%;text-align:center;box-shadow:var(--glow),0 8px 32px rgba(0,0,0,.08);animation:splashEnter .7s ease-out;position:relative;overflow:hidden}
+.splash-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#C5A028,#388E3C,#C5A028);background-size:200% auto;animation:shimmer 3s linear infinite}
+.splash-bism{font-family:'Amiri','Noto Sans Arabic',serif;font-size:22px;color:#C5A028;text-shadow:0 0 10px #C5A02822;letter-spacing:2px;margin-bottom:18px;direction:rtl}
+.splash-title{font-family:'Outfit',sans-serif;font-size:26px;font-weight:800;letter-spacing:-0.5px;color:var(--heading);margin-bottom:6px}
+.splash-subtitle{color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.splash-desc{color:var(--text2);font-size:13px;line-height:1.7;margin-bottom:28px}
+.splash-emoji{font-size:48px;margin-bottom:16px;animation:float 3s ease-in-out infinite;display:block}
+.sa-beads{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;width:100px;margin:15px auto;padding:10px}
+.sa-bead{width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#C5A028,#388E3C);box-shadow:0 2px 4px #388E3C44;animation:beadPulse 2s ease calc(var(--i) * .2s) infinite}
+@keyframes beadPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+.btn-go{border:none;color:#fff;cursor:pointer;font-family:'Outfit',sans-serif;padding:14px 36px;background:linear-gradient(135deg,#C5A028,#388E3C);border-radius:12px;font-size:15px;font-weight:700;letter-spacing:1px;box-shadow:0 4px 15px #C5A02844;transition:all .25s;position:relative;overflow:hidden}
+.btn-go:hover{transform:translateY(-2px);filter:brightness(1.1);box-shadow:0 6px 24px #C5A02844}
+.btn-go:active{transform:translateY(0) scale(.98)}
+
+/* === SWITCHERS === */
+.sw{display:flex;gap:4px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sw-btn{width:30px;height:30px;border-radius:8px;border:1px solid var(--border);background:var(--bg3);color:var(--text2);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.sw-btn:hover{border-color:var(--accent);transform:scale(1.08)}
+.sw-btn.on{background:var(--abg);border-color:var(--accent);color:var(--accent);box-shadow:0 0 8px var(--abr)}
+.sw-label{color:var(--text3);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;margin-right:8px;align-self:center;font-weight:600}
+
+/* === APP AREA === */
+.app{display:none;max-width:600px;margin:0 auto;padding:16px 20px}.app.on{display:block}
+.hdr-bism{text-align:center;font-family:'Amiri','Noto Sans Arabic',serif;font-size:16px;color:#C5A028;margin-bottom:10px;direction:rtl;opacity:.7}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;gap:8px;flex-wrap:wrap}
+.hdr h1{font-size:20px;font-weight:700}
+.pill{background:var(--abg);border:1px solid var(--abr);color:var(--accent);padding:4px 14px;border-radius:20px;font-size:12px;font-weight:600;backdrop-filter:blur(4px)}
+.ctrl{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;align-items:center;justify-content:center}
+.ctrl select,.ctrl button{padding:8px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;color:var(--heading);font-size:12px;font-family:inherit;cursor:pointer;transition:all .2s}
+.ctrl select:hover,.ctrl button:hover{border-color:var(--accent);transform:translateY(-1px)}
+.status{text-align:center;font-size:15px;margin-bottom:14px;font-weight:600;color:var(--heading);min-height:24px}
+.status.win{color:#388E3C}.status.lose{color:#E53935}
+.game-area{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:22px;margin-bottom:14px;min-height:200px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+
+/* === WORD GAME ELEMENTS === */
+.surah-label{font-family:'Noto Sans Arabic','Amiri',serif;font-size:14px;color:var(--text2);text-align:center}
+.answer-line{width:100%;min-height:58px;background:var(--bg3);border:2px dashed var(--border2);border-radius:14px;display:flex;flex-wrap:wrap;gap:8px;padding:12px 14px;justify-content:center;direction:rtl;align-items:center;transition:border-color .3s}
+.answer-line:hover{border-color:var(--accent)}
+.answer-line .word-placed{padding:8px 16px;border-radius:10px;background:linear-gradient(135deg,#C5A028,#388E3C);color:#fff;font-family:'Noto Sans Arabic','Amiri',serif;font-size:20px;font-weight:700;animation:fadeUp .2s;box-shadow:0 2px 8px #C5A02833}
+.word-grid{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;direction:rtl;width:100%;max-width:500px}
+.word-card{padding:14px 18px;border-radius:12px;border:2px solid var(--border);background:var(--bg3);color:var(--heading);font-family:'Noto Sans Arabic','Amiri',serif;font-size:22px;font-weight:700;cursor:pointer;text-align:center;transition:all .2s;user-select:none}
+.word-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px #C5A02833}
+.word-card.correct{background:linear-gradient(135deg,#C5A028,#388E3C);color:#fff;border-color:transparent;pointer-events:none;opacity:.4}
+.word-card.wrong{background:#E53935;color:#fff;border-color:#E53935;animation:shake .3s}
+.word-card.used{opacity:0;pointer-events:none;transform:scale(.8)}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.translation-box{width:100%;text-align:center;font-size:14px;color:var(--text2);font-style:italic;padding:10px;background:var(--bg3);border-radius:10px;line-height:1.7;animation:fadeUp .3s;border:1px solid var(--border)}
+
+/* === SCORING === */
+.progress{width:100%;max-width:320px;height:10px;background:var(--bg3);border-radius:6px;overflow:hidden}
+.progress-bar{height:100%;background:linear-gradient(90deg,#C5A028,#388E3C);border-radius:6px;transition:width .4s ease}
+.score-row{display:flex;gap:24px;justify-content:center;font-family:'Outfit',sans-serif;margin-bottom:12px}
+.score-item{text-align:center}.score-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px}.score-num{font-size:24px;font-weight:800;color:var(--heading)}
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px 14px;max-height:80px;overflow-y:auto;font-size:11px;color:var(--text2);margin-bottom:12px}
+.log-line{padding:2px 0}.log-line.success{color:#388E3C}.log-line.error{color:#E53935}
+
+/* === FOOTER === */
+.foot{text-align:center;color:var(--text3);font-size:11px;padding:16px 0;border-top:1px solid var(--border);margin-top:12px}
+
+/* === NAVIGATION === */
+.back-link{position:fixed;top:10px;left:10px;z-index:100;padding:6px 14px;border-radius:10px;background:var(--bg2);border:1px solid var(--border);color:var(--text2);font-size:12px;text-decoration:none;font-family:'Outfit',sans-serif;transition:all .2s;backdrop-filter:blur(8px)}
+.back-link:hover{border-color:var(--accent);color:var(--accent);transform:translateX(-2px)}
+[dir="rtl"] .back-link{left:auto;right:10px}
+[dir="rtl"] .back-link:hover{transform:translateX(2px)}
+
+/* === HELP SIDEBAR === */
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(2px)}.sidebar-overlay.open{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;width:340px;max-width:85vw;height:100%;background:var(--bg2);border:1px solid var(--border);z-index:201;display:flex;flex-direction:column;transition:transform .3s ease;box-shadow:-4px 0 24px rgba(0,0,0,.1)}
+.sidebar-left{left:0;transform:translateX(-100%)}[dir="rtl"] .sidebar-left{left:auto;right:0;transform:translateX(100%)}.sidebar-left.open{transform:translateX(0)}
+.sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,var(--abg),transparent)}
+.sidebar-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:16px;color:var(--heading)}
+.btn-close{background:none;border:1px solid var(--border);color:var(--text2);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;transition:all .2s}.btn-close:hover{border-color:var(--accent);color:var(--accent);transform:rotate(90deg)}
+.help-tabs{display:flex;border-bottom:1px solid var(--border)}
+.help-tab{flex:1;padding:10px;background:none;border:none;color:var(--text3);font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid transparent;transition:all .2s}.help-tab:hover{color:var(--text)}.help-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.sidebar-body{flex:1;overflow-y:auto;padding:16px 18px}
+.help-content{display:none}.help-content.active{display:block}
+.help-item{margin-bottom:10px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.help-item summary{padding:12px 14px;cursor:pointer;font-size:13px;font-weight:600;color:var(--heading);list-style:none;display:flex;align-items:center;gap:8px}
+.help-item summary::before{content:"\25B8";color:var(--accent);font-size:10px;transition:transform .2s}.help-item[open] summary::before{transform:rotate(90deg)}
+.help-item p{padding:0 14px 12px;font-size:12px;color:var(--text2);line-height:1.7}
+.help-step{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
+.help-step-num{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#C5A028,#388E3C);color:#fff;font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step p{font-size:12px;color:var(--text2);line-height:1.7;margin:0}
+.wiki-entry{margin-bottom:16px}.wiki-entry h3{font-size:14px;margin-bottom:6px;color:var(--heading)}.wiki-entry p{font-size:12px;color:var(--text2);line-height:1.7}
+.sidebar-footer{padding:12px 18px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:11px}
+.btn-help{background:none;border:1px solid var(--border);color:var(--text2);padding:8px 14px;border-radius:10px;font-size:12px;font-family:inherit;cursor:pointer;transition:all .2s}.btn-help:hover{border-color:var(--accent);color:var(--accent)}
+.hs-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:14px;background:#C5A02815;border:1px solid #C5A02833;color:#C5A028;font-size:11px;font-weight:600;font-family:'Outfit',sans-serif;margin-left:6px}
+.timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:3px 10px;border-radius:14px;font-size:11px;font-family:'Outfit',monospace;margin-left:6px}
+
+/* === APP-SPECIFIC CSS OVERRIDES === */
+.canvas-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:10px;margin-bottom:14px;position:relative;display:flex;align-items:center;justify-content:center}
+canvas{border-radius:10px;cursor:crosshair;touch-action:none;max-width:100%}
+.toolbar{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.toolbar button,.toolbar select,.toolbar input{padding:8px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--heading);font-size:12px;font-family:inherit;cursor:pointer;transition:all .2s}
+.toolbar button:hover{border-color:var(--accent);color:var(--accent)}
+.toolbar button.active{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+input[type="color"]{width:34px;height:30px;padding:2px;border-radius:8px}
+input[type="range"]{width:90px}
+.verse-sel{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;justify-content:center}
+.verse-btn{padding:10px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'Noto Sans Arabic','Amiri',serif;font-size:15px;cursor:pointer;direction:rtl;transition:all .2s}
+.verse-btn:hover,.verse-btn.active{border-color:var(--accent);color:var(--accent);background:var(--abg)}
+.guide-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Noto Sans Arabic','Amiri',serif;font-size:48px;color:var(--accent);opacity:0.15;pointer-events:none;direction:rtl;text-align:center;line-height:1.4;white-space:nowrap}
+
+/* Extra app-specific classes */
+.dua-card{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:12px;animation:fadeUp .3s;transition:all .2s}
+.dua-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px #C5A02833}
+.dua-ar{font-family:'Amiri','Noto Sans Arabic',serif;font-size:22px;font-weight:700;color:var(--heading);direction:rtl;line-height:2;text-align:center;margin-bottom:10px}
+.dua-trans{font-size:13px;color:var(--text);line-height:1.7;font-style:italic;text-align:center;margin-bottom:8px}
+.dua-ref{font-size:11px;color:var(--accent);text-align:center;font-weight:600;margin-bottom:6px}
+.dua-who{font-size:11px;color:var(--text3);text-align:center;margin-bottom:8px}
+.dua-actions{display:flex;gap:8px;justify-content:center}
+.dua-btn{padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:none;color:var(--text2);font-size:11px;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .2s}
+.dua-btn:hover{border-color:var(--accent);color:var(--accent)}
+.dua-btn.saved{background:var(--abg);border-color:var(--accent);color:var(--accent)}
+.filter-row{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;justify-content:center}
+.filter-btn{padding:6px 14px;border-radius:16px;border:1px solid var(--border);background:none;color:var(--text2);font-size:11px;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .2s}
+.filter-btn:hover,.filter-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
+.coll-count{font-size:12px;color:var(--text3);text-align:center;margin-bottom:10px}
+
+/* Match cards, info panels, etc */
+.match-card,.info-card,.story-card,.q-card{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:10px;cursor:pointer;transition:all .2s}
+.match-card:hover,.info-card:hover,.story-card:hover,.q-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px #C5A02833}
+.match-card.matched,.match-card.correct{background:linear-gradient(135deg,#388E3C22,#C5A02811);border-color:#388E3C}
+.match-card.wrong{background:#E5393522;border-color:#E53935;animation:shake .3s}
+
+/* Timeline elements */
+.tl-item{position:relative;padding:14px 14px 14px 36px;border-left:2px solid var(--border);margin-bottom:8px}
+.tl-item::before{content:'';position:absolute;left:-6px;top:18px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+
+/* Sort/drag elements */
+.sort-item{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:12px;margin-bottom:8px;cursor:grab;transition:all .2s}
+.sort-item:active{cursor:grabbing;box-shadow:0 4px 16px rgba(0,0,0,.1)}
+
+/* Grid/puzzle elements */
+.grid-cell{display:flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:8px;background:var(--bg3);font-family:'Noto Sans Arabic','Amiri',serif;font-size:18px;cursor:pointer;transition:all .2s;aspect-ratio:1}
+.grid-cell:hover{border-color:var(--accent);background:var(--abg)}
+.grid-cell.found{background:linear-gradient(135deg,#C5A02822,#388E3C22);border-color:#C5A028}
+
+/* Tracker/progress elements */
+.tracker-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;background:var(--bg3);border:1px solid var(--border);margin-bottom:6px}
+.tracker-item.done{background:linear-gradient(135deg,#388E3C11,transparent);border-color:#388E3C44}
+
+/* Animation/interactive elements */
+.rain-verse,.verse-drop{position:absolute;font-family:'Noto Sans Arabic','Amiri',serif;color:var(--accent);opacity:.7;pointer-events:none}
+.maze-cell{border:1px solid var(--border);display:flex;align-items:center;justify-content:center}
+.pixel-cell{border:1px solid var(--border2);cursor:pointer;transition:background .1s}
+.web-node{position:absolute;border-radius:50%;background:var(--accent);cursor:pointer;transition:all .2s}
+.web-node:hover{transform:scale(1.3)}
+.web-line{position:absolute;background:var(--border);transform-origin:left center}
+
+/* Flashcard */
+.flashcard{perspective:600px;cursor:pointer}
+.flashcard-inner{transition:transform .6s;transform-style:preserve-3d;position:relative}
+.flashcard.flipped .flashcard-inner{transform:rotateY(180deg)}
+.flashcard-front,.flashcard-back{backface-visibility:hidden;border-radius:16px;padding:24px;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column}
+.flashcard-front{background:linear-gradient(135deg,#C5A02811,#388E3C11);border:1px solid var(--border)}
+.flashcard-back{background:var(--bg3);border:1px solid var(--accent);transform:rotateY(180deg)}
+</style></head><body>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
+<div class="splash" id="splash"><div class="splash-box">
+<span class="splash-emoji">📜</span>
+<div class="splash-art"><div class="sa-beads"><div class="sa-bead" style="--i:0"></div><div class="sa-bead" style="--i:1"></div><div class="sa-bead" style="--i:2"></div><div class="sa-bead" style="--i:3"></div><div class="sa-bead" style="--i:4"></div><div class="sa-bead" style="--i:5"></div><div class="sa-bead" style="--i:6"></div></div></div>
+<div class="splash-bism" dir="rtl">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
+<h1 class="splash-title">Surah Timeline Scroll</h1>
+<div class="splash-subtitle">Scroll through surah history</div>
+<p class="splash-desc" id="splDesc">Scroll through surah history</p>
+<button class="btn-go" id="enterBtn">Start</button>
+<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">&fdfc;</div><div class="hdr"><h1>Surah Timeline Scroll</h1><span class="pill" id="expPill">Read: 0</span></div>
+<div class="ctrl"><button class="btn-help" onclick="openHelp()">? Help</button><button id="soundBtn">Sound ON</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw"><button class="sw-btn on" data-thm="sahara">T</button><button class="sw-btn" data-thm="emerald">M</button><button class="sw-btn" data-thm="midnight-gold">E</button><button class="sw-btn" data-thm="deep-emerald">P</button><button class="sw-btn" data-thm="royal">S</button><button class="sw-btn" data-thm="sunset">R</button><button class="sw-btn" data-thm="ocean">A</button><button class="sw-btn" data-thm="night-sky">D</button></div></div>
+<div class="era-bar"><button class="era-btn active" data-era="all">All</button><button class="era-btn" data-era="meccan">Meccan</button><button class="era-btn" data-era="medinan">Medinan</button></div>
+<div class="timeline" id="timeline"></div>
+<div class="score-row"><div class="score-item"><div class="score-label">Read</div><div class="score-num" id="readNum">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num">28</div></div></div>
+<div class="foot">Amaloun &mdash; Surah Timeline Scroll v1.0</div></div>
+<div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
+<aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">&times;</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div><div class="sidebar-body">
+<div class="help-content active" id="help-faq"><details class="help-item"><summary>What is this timeline?</summary><p>A chronological view of Quran revelation, showing surahs in the approximate order they were revealed over 23 years.</p></details><details class="help-item"><summary>What is Meccan vs Medinan?</summary><p>Meccan surahs were revealed before the Hijrah (migration), Medinan after. They have different themes and styles.</p></details></div>
+<div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>Scroll through the timeline to browse surahs</p></div><div class="help-step"><span class="help-step-num">2</span><p>Click a surah card to expand details</p></div><div class="help-step"><span class="help-step-num">3</span><p>Filter by Meccan or Medinan using the buttons above</p></div></div>
+<div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>23 Years of Revelation</h3><p>The Quran was revealed over approximately 23 years (610-632 CE), beginning in Mecca and continuing in Medina.</p></div></div>
+</div><div class="sidebar-footer">Amaloun &mdash; v1.0</div></aside>
+<script>
+// === i18n SYSTEM ===
+let currentLang="ar";
+const T={
+  ar:{
+    title:"شريط زمني للسور",
+    subtitle:"تصفّح تاريخ السور",
+    desc:"تصفّح تاريخ السور",
+    startMission:"ابدأ",
+    newGame:"▶ لعبة جديدة",
+    status:"",
+    footer:"أمالون — شريط زمني للسور الإصدار ١.٠",
+    help:"المساعدة",
+    faq:"الأسئلة الشائعة",
+    howTo:"كيفية الاستخدام",
+    wiki:"معلومات",
+    lang:"اللغة",
+    theme:"المظهر",
+    catalog:"→ الفهرس",
+    play:"تشغيل",
+    score0:"مقروءة",
+    score1:"المجموع",
+    ui_start:"ابدأ",
+    ui_help:"المساعدة",
+    ui_faq:"الأسئلة الشائعة",
+    ui_how_to:"كيفية الاستخدام",
+    ui_wiki:"معلومات",
+    ui_lang:"اللغة",
+    ui_theme:"المظهر",
+    ui_catalog:"الفهرس",
+    ui_play:"تشغيل",
+    ui_10_qs:"١٠ أسئلة",
+    ui_15_qs:"١٥ سؤالاً",
+    ui_all_themes:"كل المواضيع",
+    ui_faith___tawheed:"الإيمان / التوحيد",
+    ui_prophets_stories:"قصص الأنبياء",
+    ui_islamic_law:"الشريعة الإسلامية",
+    ui_nature___creation:"الطبيعة / الخلق",
+    faq0q:"ما هو هذا الخط الزمني؟",
+    faq0a:"عرض زمني لنزول القرآن يُظهر السور بترتيب النزول التقريبي.",
+    faq1q:"ما الفرق بين المكي والمدني؟",
+    faq1a:"السور المكية نزلت قبل الهجرة والمدنية بعدها. لكل منهما أسلوب ومواضيع مميزة.",
+    howto0:"اضغط على زر ابدأ في شاشة البداية",
+    howto1:"اختر مستوى الصعوبة إذا كان متاحاً",
+    howto2:"اقرأ التعليمات المعروضة على الشاشة",
+    wiki0t:"23 Years of Revelation",
+    wiki0c:"The Quran was revealed over approximately 23 years (610-632 CE), beginning in Mecca and continuing in Medina."
+  },
+  en:{
+    title:"Surah Timeline Scroll",
+    subtitle:"Scroll through surah history",
+    desc:"Scroll through surah history",
+    startMission:"Start",
+    newGame:"▶ New Game",
+    status:"",
+    footer:"Amaloun — Surah Timeline Scroll v1.0",
+    help:"Help",
+    faq:"FAQ",
+    howTo:"How-To",
+    wiki:"Wiki",
+    lang:"Lang",
+    theme:"Theme",
+    catalog:"← Catalog",
+    play:"Play",
+    score0:"Read",
+    score1:"Total",
+    ui_start:"Start",
+    ui_help:"Help",
+    ui_faq:"FAQ",
+    ui_how_to:"How-To",
+    ui_wiki:"Wiki",
+    ui_lang:"Lang",
+    ui_theme:"Theme",
+    ui_catalog:"Catalog",
+    ui_play:"Play",
+    ui_10_qs:"10 Qs",
+    ui_15_qs:"15 Qs",
+    ui_all_themes:"All Themes",
+    ui_faith___tawheed:"Faith / Tawheed",
+    ui_prophets_stories:"Prophets Stories",
+    ui_islamic_law:"Islamic Law",
+    ui_nature___creation:"Nature / Creation",
+    faq0q:"What is this timeline?",
+    faq0a:"A chronological view of Quran revelation, showing surahs in the approximate order they were revealed over 23 years.",
+    faq1q:"What is Meccan vs Medinan?",
+    faq1a:"Meccan surahs were revealed before the Hijrah (migration), Medinan after. They have different themes and styles.",
+    howto0:"Scroll through the timeline to browse surahs",
+    howto1:"Click a surah card to expand details",
+    howto2:"Filter by Meccan or Medinan using the buttons above",
+    wiki0t:"23 Years of Revelation",
+    wiki0c:"The Quran was revealed over approximately 23 years (610-632 CE), beginning in Mecca and continuing in Medina."
+  }
+};
+function tr(key){return T[currentLang]&&T[currentLang][key]||T["en"][key]||key;}
+function updateUI(){
+  // Title & splash
+  var st=document.querySelector(".splash-title");if(st)st.textContent=tr("title");
+  var ss=document.querySelector(".splash-subtitle");if(ss)ss.textContent=tr("subtitle");
+  var sd=document.getElementById("splDesc");if(sd)sd.textContent=tr("desc");
+  var eb=document.getElementById("enterBtn");if(eb)eb.textContent=tr("startMission");
+  // App header
+  var h1=document.querySelector(".app h1, .hdr h1");if(h1)h1.textContent=tr("title");
+  // Status
+  var sta=document.getElementById("status");if(sta&&!sta.classList.contains("win")&&!sta.classList.contains("lose"))sta.textContent=tr("status");
+  // Start button
+  var sb=document.getElementById("startBtn");if(sb)sb.textContent=tr("newGame");
+  // Footer
+  var ft=document.querySelector(".foot");if(ft)ft.textContent=tr("footer");
+  // Help sidebar
+  var ht=document.querySelector(".sidebar-title");if(ht)ht.innerHTML="\u2753 "+tr("help");
+  var tabs=document.querySelectorAll(".help-tab");
+  if(tabs.length>=3){tabs[0].textContent=tr("faq");tabs[1].textContent=tr("howTo");tabs[2].textContent=tr("wiki");}
+  // Back link
+  var bl=document.getElementById("backLink");if(bl)bl.textContent=tr("catalog");
+  // Lang/Theme labels
+  document.querySelectorAll(".sw-label").forEach(function(el,i){if(i===0)el.textContent=tr("lang");else if(i===1)el.textContent=tr("theme");});
+  // Score labels
+  document.querySelectorAll(".score-label").forEach(function(el,i){var k="score"+i;if(T[currentLang][k])el.textContent=tr(k);});
+  // Difficulty options
+  var ds=document.getElementById("diffSel");
+  if(ds){var opts=ds.querySelectorAll("option");opts.forEach(function(o,i){var k="diff"+i;if(T[currentLang][k])o.textContent=tr(k);});};
+  // FAQ items
+  var faqItems=document.querySelectorAll("#help-faq .help-item");
+  faqItems.forEach(function(item,i){
+    var sum=item.querySelector("summary");if(sum)sum.textContent=tr("faq"+i+"q");
+    var p=item.querySelector("p");if(p)p.textContent=tr("faq"+i+"a");
+  });
+  // Howto steps
+  var howtoSteps=document.querySelectorAll("#help-howto .help-step p");
+  howtoSteps.forEach(function(p,i){p.textContent=tr("howto"+i);});
+  // Wiki entries
+  var wikiEntries=document.querySelectorAll("#help-wiki .wiki-entry");
+  wikiEntries.forEach(function(entry,i){
+    var h=entry.querySelector("h3");if(h)h.textContent=tr("wiki"+i+"t");
+    var p=entry.querySelector("p");if(p)p.textContent=tr("wiki"+i+"c");
+  });
+  // Sidebar footer
+  var sf=document.querySelector(".sidebar-footer");if(sf)sf.textContent=tr("footer");
+  // Play button if exists
+  var pb=document.querySelector("#playBtn,button:not(.sw-btn):not(.btn-go):not(.btn-close):not(.btn-help):not(.help-tab)");
+  // Filter buttons with specific text
+  document.querySelectorAll(".filter-btn").forEach(function(btn){
+    var txt=btn.textContent.trim();
+    var k="ui_"+txt.replace(/ /g,"_").replace(/\//g,"_").toLowerCase();
+    if(T[currentLang][k])btn.textContent=tr(k);
+  });
+}
+
+var SURAHS=[
+{ord:1,n:96,ar:"العلق",en:"Al-Alaq",era:"meccan",year:"610 CE",v:19,desc:{en:"First revelation. The angel Jibreel commanded 'Read!' in the cave of Hira.",fr:"Premiere revelation. L'ange Jibril ordonna 'Lis!' dans la grotte de Hira.",ar:"أول ما نزل. أمر جبريل بـ'اقرأ' في غار حراء."}},
+{ord:2,n:68,ar:"القلم",en:"Al-Qalam",era:"meccan",year:"610 CE",v:52,desc:{en:"The Pen — emphasizes morality and the Prophet's noble character.",fr:"Le Calame — met l'accent sur la moralite et le noble caractere du Prophete.",ar:"القلم — تؤكد على الأخلاق وشخصية النبي ﷺ النبيلة."}},
+{ord:3,n:73,ar:"المزمل",en:"Al-Muzzammil",era:"meccan",year:"610 CE",v:20,desc:{en:"The Enwrapped One — instructions for night prayer and patience.",fr:"L'Enveloppe — instructions pour la priere nocturne.",ar:"المزمل — تعليمات لقيام الليل والصبر."}},
+{ord:4,n:74,ar:"المدثر",en:"Al-Muddathir",era:"meccan",year:"610 CE",v:56,desc:{en:"The Cloaked One — command to rise and warn mankind.",fr:"Le Revetu — ordre de se lever et d'avertir l'humanite.",ar:"المدثر — الأمر بالقيام وإنذار البشرية."}},
+{ord:5,n:1,ar:"الفاتحة",en:"Al-Fatiha",era:"meccan",year:"610 CE",v:7,desc:{en:"The Opening — the most recited surah, essence of the Quran.",fr:"L'Ouverture — la sourate la plus recitee, essence du Coran.",ar:"الفاتحة — أكثر سورة تلاوة، خلاصة القرآن."}},
+{ord:6,n:111,ar:"المسد",en:"Al-Masad",era:"meccan",year:"611 CE",v:5,desc:{en:"The Palm Fibre — about Abu Lahab's opposition to Islam.",fr:"Les Fibres — sur l'opposition d'Abu Lahab a l'Islam.",ar:"المسد — عن معاداة أبي لهب للإسلام."}},
+{ord:7,n:112,ar:"الإخلاص",en:"Al-Ikhlas",era:"meccan",year:"611 CE",v:4,desc:{en:"Sincerity — pure monotheism, equals one-third of the Quran.",fr:"Le Monotheisme pur — egal a un tiers du Coran.",ar:"الإخلاص — التوحيد الخالص، تعدل ثلث القرآن."}},
+{ord:8,n:113,ar:"الفلق",en:"Al-Falaq",era:"meccan",year:"611 CE",v:5,desc:{en:"The Daybreak — seeking refuge from evil of creation.",fr:"L'Aube naissante — chercher refuge contre le mal.",ar:"الفلق — الاستعاذة من شر المخلوقات."}},
+{ord:9,n:114,ar:"الناس",en:"An-Nas",era:"meccan",year:"611 CE",v:6,desc:{en:"Mankind — seeking refuge from the whisperer of evil.",fr:"Les Hommes — chercher refuge contre le tentateur.",ar:"الناس — الاستعاذة من الوسواس الخناس."}},
+{ord:10,n:108,ar:"الكوثر",en:"Al-Kawthar",era:"meccan",year:"612 CE",v:3,desc:{en:"Abundance — shortest surah, divine gift to the Prophet.",fr:"L'Abondance — plus courte sourate, don divin au Prophete.",ar:"الكوثر — أقصر سورة، عطاء إلهي للنبي ﷺ."}},
+{ord:11,n:53,ar:"النجم",en:"An-Najm",era:"meccan",year:"613 CE",v:62,desc:{en:"The Star — describes the Prophet's ascension (Mi'raj).",fr:"L'Etoile — decrit l'ascension du Prophete.",ar:"النجم — تصف معراج النبي ﷺ."}},
+{ord:12,n:55,ar:"الرحمن",en:"Ar-Rahman",era:"medinan",year:"614 CE",v:78,desc:{en:"The Most Merciful — catalogues of Allah's blessings to creation.",fr:"Le Misericordieux — catalogue des bienfaits d'Allah.",ar:"الرحمن — تعداد نعم الله على الخلق."}},
+{ord:13,n:36,ar:"يس",en:"Ya-Sin",era:"meccan",year:"615 CE",v:83,desc:{en:"Ya-Sin — the Heart of the Quran, themes of resurrection.",fr:"Ya-Sin — le Coeur du Coran, themes de resurrection.",ar:"يس — قلب القرآن، موضوعات البعث."}},
+{ord:14,n:18,ar:"الكهف",en:"Al-Kahf",era:"meccan",year:"616 CE",v:110,desc:{en:"The Cave — four profound stories of faith and trial.",fr:"La Caverne — quatre recits profonds de foi et d'epreuve.",ar:"الكهف — أربع قصص عميقة عن الإيمان والابتلاء."}},
+{ord:15,n:19,ar:"مريم",en:"Maryam",era:"meccan",year:"616 CE",v:98,desc:{en:"Mary — story of Maryam and the birth of Isa (Jesus).",fr:"Marie — l'histoire de Maryam et la naissance de Issa.",ar:"مريم — قصة مريم وولادة عيسى عليه السلام."}},
+{ord:16,n:12,ar:"يوسف",en:"Yusuf",era:"meccan",year:"617 CE",v:111,desc:{en:"Joseph — the best of stories, patience through hardship.",fr:"Joseph — le plus beau recit, patience dans l'epreuve.",ar:"يوسف — أحسن القصص، الصبر في الشدائد."}},
+{ord:17,n:17,ar:"الإسراء",en:"Al-Isra",era:"meccan",year:"619 CE",v:111,desc:{en:"The Night Journey — from Mecca to Jerusalem in one night.",fr:"Le Voyage nocturne — de La Mecque a Jerusalem en une nuit.",ar:"الإسراء — من مكة إلى القدس في ليلة واحدة."}},
+{ord:18,n:2,ar:"البقرة",en:"Al-Baqarah",era:"medinan",year:"623 CE",v:286,desc:{en:"The Cow — longest surah, comprehensive legal and spiritual guidance.",fr:"La Vache — plus longue sourate, guide juridique et spirituel.",ar:"البقرة — أطول سورة، توجيهات شرعية وروحانية شاملة."}},
+{ord:19,n:8,ar:"الأنفال",en:"Al-Anfal",era:"medinan",year:"624 CE",v:75,desc:{en:"The Spoils of War — revealed after the Battle of Badr.",fr:"Le Butin — revelee apres la bataille de Badr.",ar:"الأنفال — نزلت بعد غزوة بدر."}},
+{ord:20,n:3,ar:"آل عمران",en:"Ali 'Imran",era:"medinan",year:"625 CE",v:200,desc:{en:"Family of Imran — after Uhud, perseverance and faith.",fr:"La Famille d'Imran — apres Uhud, perseverance et foi.",ar:"آل عمران — بعد أحد، المثابرة والإيمان."}},
+{ord:21,n:33,ar:"الأحزاب",en:"Al-Ahzab",era:"medinan",year:"627 CE",v:73,desc:{en:"The Confederates — Battle of the Trench, social reforms.",fr:"Les Coalises — bataille du Fosse, reformes sociales.",ar:"الأحزاب — غزوة الخندق، إصلاحات اجتماعية."}},
+{ord:22,n:48,ar:"الفتح",en:"Al-Fath",era:"medinan",year:"628 CE",v:29,desc:{en:"The Victory — Treaty of Hudaybiyyah declared a clear victory.",fr:"La Victoire eclatante — Traite de Hudaybiyyah.",ar:"الفتح — صلح الحديبية أُعلن فتحاً مبيناً."}},
+{ord:23,n:49,ar:"الحجرات",en:"Al-Hujurat",era:"medinan",year:"629 CE",v:18,desc:{en:"The Chambers — manners, brotherhood, avoiding suspicion.",fr:"Les Appartements — manieres, fraternite, eviter les soupcons.",ar:"الحجرات — الآداب، الأخوة، اجتناب الظن."}},
+{ord:24,n:62,ar:"الجمعة",en:"Al-Jumu'ah",era:"medinan",year:"630 CE",v:11,desc:{en:"Friday — importance of congregational Friday prayer.",fr:"Le Vendredi — importance de la priere du vendredi.",ar:"الجمعة — أهمية صلاة الجمعة."}},
+{ord:25,n:110,ar:"النصر",en:"An-Nasr",era:"medinan",year:"630 CE",v:3,desc:{en:"The Divine Support — after the Conquest of Mecca.",fr:"Le Secours — apres la conquete de La Mecque.",ar:"النصر — بعد فتح مكة."}},
+{ord:26,n:4,ar:"النساء",en:"An-Nisa",era:"medinan",year:"626 CE",v:176,desc:{en:"The Women — rights, inheritance, and social justice.",fr:"Les Femmes — droits, heritage et justice sociale.",ar:"النساء — الحقوق، الميراث، والعدالة الاجتماعية."}},
+{ord:27,n:5,ar:"المائدة",en:"Al-Ma'idah",era:"medinan",year:"631 CE",v:120,desc:{en:"The Table Spread — last surah on legal matters.",fr:"La Table servie — derniere sourate sur les questions juridiques.",ar:"المائدة — آخر سورة في الأحكام."}},
+{ord:28,n:9,ar:"التوبة",en:"At-Tawbah",era:"medinan",year:"631 CE",v:129,desc:{en:"Repentance — only surah without Bismillah opening.",fr:"Le Repentir — seule sourate sans Bismillah.",ar:"التوبة — السورة الوحيدة بدون بسملة."}}
+];
+
+var curLang="ar",soundOn=true,actx,readCount=0,filter="all",readSet={};
+var HS_KEY="wdiy-hs-surah-timeline-scroll";
+function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
+function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
+function setLang(l){currentLang=l==="ar"?"ar":"en";curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l);});updateUI();buildTimeline();try{localStorage.setItem("wdiy-lang",l);}catch(e){}}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th);});try{localStorage.setItem("wdiy-theme",th);}catch(e){}}
+function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.03;var n=actx.currentTime;o.frequency.value=t==="open"?600:500;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.08);o.start(n);o.stop(n+.08);}
+
+function buildTimeline(){
+var tl=document.getElementById("timeline");tl.innerHTML="";
+var lastYear="";
+var items=SURAHS.filter(function(s){return filter==="all"||s.era===filter;});
+items.forEach(function(s){
+if(s.year!==lastYear){lastYear=s.year;var ym=document.createElement("div");ym.className="year-marker";ym.textContent=s.year;tl.appendChild(ym);}
+var item=document.createElement("div");item.className="tl-item";
+var dot=document.createElement("div");dot.className="tl-dot "+s.era;
+var card=document.createElement("div");card.className="tl-card"+(readSet[s.n]?" expanded":"");
+card.innerHTML='<div class="tl-num">#'+s.ord+' (Surah '+s.n+')</div><div class="tl-name">'+s.ar+'</div><div class="tl-en">'+s.en+' — '+s.v+' verses — '+s.era+'</div><div class="tl-meta">'+s.year+'</div><div class="tl-desc">'+(s.desc[curLang]||s.desc.en)+'</div>';
+card.onclick=function(){
+card.classList.toggle("expanded");
+if(!readSet[s.n]){readSet[s.n]=true;readCount++;document.getElementById("readNum").textContent=readCount;document.getElementById("expPill").textContent="Read: "+readCount;}
+snd("open");
+try{var best=parseInt(localStorage.getItem(HS_KEY))||0;if(readCount>best)localStorage.setItem(HS_KEY,readCount);}catch(e){}
+};
+item.appendChild(dot);item.appendChild(card);tl.appendChild(item);
+});
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+document.querySelectorAll(".era-btn").forEach(function(b){b.onclick=function(){filter=b.dataset.era;document.querySelectorAll(".era-btn").forEach(function(x){x.classList.remove("active");});b.classList.add("active");buildTimeline();snd("click");};});
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
+document.getElementById("enterBtn").onclick=function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";buildTimeline();};
+document.getElementById("soundBtn").onclick=function(){soundOn=!soundOn;this.textContent=soundOn?"Sound ON":"Sound OFF";};
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
+document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
+setLang("ar");try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);}catch(e){}
+});
+</script></body></html>

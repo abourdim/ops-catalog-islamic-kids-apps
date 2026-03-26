@@ -115,7 +115,7 @@ canvas{width:100%;border-radius:12px;cursor:pointer;display:block;touch-action:n
 .done-row .step-num{font-family:'Outfit',sans-serif;font-size:48px;font-weight:800;color:var(--accent)}
 </style></head><body>
 <a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><span class="splash-icon">💧</span><h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splashTitle">Wudu Steps</h1><p style="color:rgba(255,255,255,.6);font-size:12px;line-height:1.7;margin:12px 0 28px" id="splashDesc"></p><button class="btn-go" id="enterBtn">Start</button><div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🏰</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><span class="splash-icon">💧</span><h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splashTitle">خطوات الوضوء</h1><p style="color:rgba(255,255,255,.6);font-size:12px;line-height:1.7;margin:12px 0 28px" id="splashDesc"></p><button class="btn-go" id="enterBtn">ابدأ</button><div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🏰</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
 <div class="app" id="app"><div class="hdr-bism">&rlm;بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Wudu Steps</h1><span class="pill" id="scorePill">0 / 0</span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="4">Easy (4)</option><option value="6">Medium (6)</option><option value="8" selected>Hard (8)</option></select>
     <button id="startBtn">&#9654; New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">&#10067;</button>
     <button id="soundBtn">&#128266;</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
@@ -131,39 +131,39 @@ canvas{width:100%;border-radius:12px;cursor:pointer;display:block;touch-action:n
 <div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy &mdash; Wudu Steps v1.0</div></div>
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel">
-  <div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
+  <div class="sidebar-header"><span class="sidebar-title">&#10067; مساعدة</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
   <div class="help-tabs">
-    <button class="help-tab active" data-tab="faq">FAQ</button>
-    <button class="help-tab" data-tab="howto">How-To</button>
-    <button class="help-tab" data-tab="wiki">Wiki</button>
+    <button class="help-tab active" data-tab="faq">الأسئلة</button>
+    <button class="help-tab" data-tab="howto">كيفية اللعب</button>
+    <button class="help-tab" data-tab="wiki">معلومات</button>
   </div>
   <div class="sidebar-body">
     <div class="help-content active" id="help-faq">
-        <details class="help-item"><summary>What is Wudu Steps?</summary><p>An interactive trainer to learn the correct order of wudu (ablution) before prayer. Tap the steps in order!</p></details>
-        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
-        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser &mdash; phone, tablet, laptop, desktop.</p></details>
-        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
-        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / &#1593;. Arabic enables right-to-left layout automatically.</p></details>
-        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
-        <details class="help-item"><summary>What are the difficulty levels?</summary><p>Easy = 4 steps, Medium = 6 steps, Hard = all 8 steps of wudu.</p></details>
+        <details class="help-item"><summary>ما هي خطوات الوضوء؟</summary><p>مدرّب تفاعلي لتعلم الترتيب الصحيح للوضوء قبل الصلاة. انقر على الخطوات بالترتيب!</p></details>
+        <details class="help-item"><summary>هل يعمل بدون إنترنت؟</summary><p>نعم. بعد التحميل، كل شيء يعمل في المتصفح بدون حاجة للإنترنت.</p></details>
+        <details class="help-item"><summary>هل يعمل على الهاتف؟</summary><p>نعم. يعمل على أي جهاز بمتصفح حديث &mdash; هاتف، جهاز لوحي، حاسوب.</p></details>
+        <details class="help-item"><summary>كيف أغيّر السمة؟</summary><p>انقر على أي زر سمة في شريط التحكم.</p></details>
+        <details class="help-item"><summary>كيف أغيّر اللغة؟</summary><p>انقر EN / FR / &#1593;. العربية تفعّل تخطيط اليمين لليسار تلقائياً.</p></details>
+        <details class="help-item"><summary>هل بياناتي خاصة؟</summary><p>نعم. كل شيء يعمل محلياً في متصفحك. لا تُرسل أي بيانات.</p></details>
+        <details class="help-item"><summary>ما هي مستويات الصعوبة؟</summary><p>سهل = 4 خطوات، متوسط = 6 خطوات، صعب = جميع خطوات الوضوء الـ 8.</p></details>
     </div>
     <div class="help-content" id="help-howto">
-        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
-        <div class="help-step"><span class="help-step-num">2</span><p>Choose your difficulty (Easy, Medium, Hard)</p></div>
-        <div class="help-step"><span class="help-step-num">3</span><p>Press New Game to begin</p></div>
-        <div class="help-step"><span class="help-step-num">4</span><p>Steps appear shuffled &mdash; tap them in the correct wudu order</p></div>
-        <div class="help-step"><span class="help-step-num">5</span><p>Green = correct! Red flash = wrong, try again</p></div>
-        <div class="help-step"><span class="help-step-num">6</span><p>After each correct step, read the Islamic teaching shown</p></div>
-        <div class="help-step"><span class="help-step-num">7</span><p>Complete all steps to finish &mdash; aim for fewest mistakes!</p></div>
-        <div class="help-step"><span class="help-step-num">8</span><p>Click &larr; Catalog to go back and try another game</p></div>
+        <div class="help-step"><span class="help-step-num">1</span><p>انقر ابدأ في شاشة البداية</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>اختر مستوى الصعوبة (سهل، متوسط، صعب)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>اضغط لعبة جديدة للبدء</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>تظهر الخطوات مبعثرة &mdash; انقر عليها بترتيب الوضوء الصحيح</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>أخضر = صحيح! وميض أحمر = خطأ، حاول مرة أخرى</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>بعد كل خطوة صحيحة، اقرأ التعليم الإسلامي المعروض</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>أكمل جميع الخطوات &mdash; حاول بأقل عدد أخطاء!</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>انقر &larr; الفهرس للعودة وتجربة لعبة أخرى</p></div>
     </div>
     <div class="help-content" id="help-wiki">
-        <div class="wiki-entry"><h3>&#127919; Purpose</h3><p>Teach Muslim children the correct order and method of wudu (ritual ablution) performed before salah (prayer).</p></div>
-        <div class="wiki-entry"><h3>&#128166; What is Wudu?</h3><p>Wudu is the Islamic ritual purification using water. It is required before performing salah. The Prophet (peace be upon him) taught us the steps in a specific order.</p></div>
-        <div class="wiki-entry"><h3>&#127912; Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
-        <div class="wiki-entry"><h3>&#127760; Languages</h3><p>Trilingual: English, Fran&ccedil;ais, &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;. Arabic auto-enables RTL layout.</p></div>
-        <div class="wiki-entry"><h3>&#128266; Sound</h3><p>Web Audio API &mdash; no files needed. Correct = rising tone, wrong = buzz, win = melody. Toggle with sound button.</p></div>
-        <div class="wiki-entry"><h3>&#128274; Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+        <div class="wiki-entry"><h3>&#127919; الهدف</h3><p>تعليم الأطفال المسلمين الترتيب الصحيح وطريقة الوضوء قبل الصلاة.</p></div>
+        <div class="wiki-entry"><h3>&#128166; ما هو الوضوء؟</h3><p>الوضوء هو الطهارة الإسلامية بالماء. يجب قبل أداء الصلاة. علّمنا النبي ﷺ الخطوات بترتيب محدد.</p></div>
+        <div class="wiki-entry"><h3>&#127912; السمات</h3><p>8 سمات مدمجة: Terminal، Midnight، Ember، Phosphor، Signal، Redshift، Arctic، Sand.</p></div>
+        <div class="wiki-entry"><h3>&#127760; اللغات</h3><p>ثلاث لغات: English، Fran&ccedil;ais، &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;. العربية تفعّل تخطيط اليمين لليسار تلقائياً.</p></div>
+        <div class="wiki-entry"><h3>&#128266; الصوت</h3><p>Web Audio API &mdash; لا حاجة لملفات. صحيح = نغمة صاعدة، خطأ = طنين، فوز = لحن. التبديل بزر الصوت.</p></div>
+        <div class="wiki-entry"><h3>&#128274; الخصوصية</h3><p>محلي أولاً. لا تتبع، لا تحليلات، لا اتصالات خارجية. جميع البيانات تبقى في متصفحك.</p></div>
     </div>
   </div>
   <div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div>

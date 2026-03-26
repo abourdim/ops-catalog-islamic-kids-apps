@@ -180,22 +180,22 @@ input[type="range"]{width:90px}
 .flashcard-front{background:linear-gradient(135deg,#B8860B11,#1B5E2011);border:1px solid var(--border)}
 .flashcard-back{background:var(--bg3);border:1px solid var(--accent);transform:rotateY(180deg)}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">→ الفهرس</a>
 <div class="splash" id="splash"><div class="splash-box">
 <span class="splash-emoji">📚</span>
 <div class="splash-art"><div class="sa-scroll"><div class="sa-scroll-top"></div><div class="sa-scroll-body"></div><div class="sa-scroll-bottom"></div></div></div>
 <div class="splash-bism" dir="rtl">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
-<h1 class="splash-title">Quran Stories</h1>
-<div class="splash-subtitle">Discover stories from the Quran</div>
-<p class="splash-desc" id="splDesc">Discover stories from the Quran</p>
-<button class="btn-go" id="enterBtn">Start</button>
-<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
-<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">&rlm;&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>Quran Stories</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="10">Easy (10)</option><option value="15" selected>Medium (15)</option><option value="20">Hard (20+)</option></select>
-    <button id="startBtn">&#x25B6; New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">&#x2753;</button>
-    <button id="soundBtn">&#x1F50A;</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div>
+<h1 class="splash-title">قصص القرآن</h1>
+<div class="splash-subtitle">اكتشف قصص القرآن الكريم</div>
+<p class="splash-desc" id="splDesc">اكتشف قصص القرآن الكريم</p>
+<button class="btn-go" id="enterBtn">ابدأ</button>
+<div class="sw" style="margin-top:20px"><span class="sw-label">اللغة</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">المظهر</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">&rlm;&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>قصص القرآن</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="10">سهل (١٠)</option><option value="15" selected>متوسط (١٥)</option><option value="20">صعب (٢٠+)</option></select>
+    <button id="startBtn">&#x25B6; لعبة جديدة</button><button class="btn-help" id="helpBtn" onclick="openHelp()">&#x2753;</button>
+    <button id="soundBtn">&#x1F50A;</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
     <div class="sw"><button class="sw-btn on" data-thm="sahara">&#x1F5A5;</button><button class="sw-btn" data-thm="emerald">&#x1F30C;</button><button class="sw-btn" data-thm="midnight-gold">&#x1F525;</button><button class="sw-btn" data-thm="deep-emerald">&#x1F49A;</button><button class="sw-btn" data-thm="royal">&#x1F4E1;</button><button class="sw-btn" data-thm="sunset">&#x1F534;</button><button class="sw-btn" data-thm="ocean">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="night-sky">&#x1F3DC;</button></div></div>
-<div class="status" id="status">Pick the correct answer!</div>
+<div class="status" id="status">اختر الإجابة الصحيحة!</div>
 <div class="game-area" id="gameArea">
   <div class="scene-emoji" id="sceneEmoji"></div>
   <div class="scene-text" id="sceneText">?</div>
@@ -203,16 +203,16 @@ input[type="range"]{width:90px}
   <div id="infoSlot"></div>
   <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
 </div>
-<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
-<div class="log-box" id="logBox"></div><div class="foot">Amaloun &mdash; Quran Stories v1.0</div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">صحيح</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">المجموع</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">أمالون — قصص القرآن الإصدار ١.٠</div></div>
 
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
-  <div class="sidebar-header"><span class="sidebar-title">&#x2753; Help</span><button class="btn-close" onclick="closeHelp()">&#x2715;</button></div>
+  <div class="sidebar-header"><span class="sidebar-title">&#x2753; المساعدة</span><button class="btn-close" onclick="closeHelp()">&#x2715;</button></div>
   <div class="help-tabs">
-    <button class="help-tab active" data-tab="faq">FAQ</button>
-    <button class="help-tab" data-tab="howto">How-To</button>
-    <button class="help-tab" data-tab="wiki">Wiki</button>
+    <button class="help-tab active" data-tab="faq">الأسئلة الشائعة</button>
+    <button class="help-tab" data-tab="howto">كيفية الاستخدام</button>
+    <button class="help-tab" data-tab="wiki">معلومات</button>
   </div>
   <div class="sidebar-body">
     <div class="help-content active" id="help-faq">
@@ -243,7 +243,7 @@ input[type="range"]{width:90px}
         <div class="wiki-entry"><h3>Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
     </div>
   </div>
-  <div class="sidebar-footer">Amaloun &mdash; v1.0</div>
+  <div class="sidebar-footer">أمالون — الإصدار ١.٠</div>
 </aside>
 <script>
 // === i18n SYSTEM ===
@@ -308,17 +308,17 @@ const T={
     howto5:"حاول مرة أخرى لتحسين أدائك",
     howto6:"استكشف المزيد من المحتوى",
     howto7:"شارك ما تعلمته مع أصدقائك",
-    wiki0t:"Purpose",
-    wiki0c:"Discover the amazing stories of the Quran! Learn which surahs contain famous stories and the lessons they teach.",
-    wiki1t:"Themes",
+    wiki0t:"🎯 الهدف",
+    wiki0c:"اكتشف قصص القرآن العظيمة! تعرّف على السور التي تحتوي على قصص مشهورة والدروس المستفادة منها.",
+    wiki1t:"🎨 المظاهر",
     wiki1c:"٨ مظاهر مدمجة: صحراوي، زمردي، ذهبي، أخضر داكن، ملكي، غروب، محيط، سماء الليل.",
-    wiki2t:"Languages",
+    wiki2t:"🌐 اللغات",
     wiki2c:"ثلاثي اللغات: العربية، English، Français. العربية تفعّل التنسيق من اليمين لليسار تلقائياً.",
-    wiki3t:"Sound",
+    wiki3t:"🔊 الصوت",
     wiki3c:"واجهة صوت الويب. صحيح = نغمة صاعدة، خطأ = صوت تنبيه، فوز = لحن. التحكم بزر الصوت.",
-    wiki4t:"Keyboard",
-    wiki4c:"مساعدة الأطفال المسلمين على تعلم القرآن الكريم من خلال اكتشف قصص القرآن الكريم.",
-    wiki5t:"Privacy",
+    wiki4t:"⌨️ لوحة المفاتيح",
+    wiki4c:"المفاتيح ١-٤ لاختيار الإجابات. Enter لبدء لعبة جديدة. Escape لإغلاق المساعدة.",
+    wiki5t:"🔒 الخصوصية",
     wiki5c:"محلي أولاً. لا تتبع، لا تحليلات، لا اتصالات خارجية. جميع البيانات تبقى في متصفحك."
   },
   en:{

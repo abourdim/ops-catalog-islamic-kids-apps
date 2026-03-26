@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="desert-dawn"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Seerah Rap Battle</title>
+<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="desert-dawn"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>تحدي السيرة</title>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 [data-theme="desert-dawn"]{--bg:#1a1408;--bg2:#231c0e;--bg3:#2e2514;--border:#3d3420;--border2:#4e432c;--text:#d4c4a0;--text2:#a08c60;--text3:#6b5c3a;--heading:#f5e6c8;--accent:#FFBF00;--abg:rgba(255,191,0,.08);--abr:rgba(255,191,0,.25);--glow:0 0 20px rgba(255,191,0,.15)}
@@ -93,10 +93,10 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 <div class="splash" id="splash"><div class="splash-dunes"></div><div class="splash-box">
 <div class="splash-bism">بِسْمِ ٱللَّوهِ ٱلرَّحْمَـنِ ٱلرَّحِيمِ</div>
 <div style="display:flex;justify-content:center;gap:6px;margin-bottom:16px"><div style="width:44px;height:44px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);display:flex;align-items:center;justify-content:center;font-family:Outfit;font-weight:700;color:var(--text3);font-size:16px">A</div><div style="width:44px;height:44px;border-radius:10px;border:2px solid var(--accent);background:var(--abg);display:flex;align-items:center;justify-content:center;font-family:Outfit;font-weight:700;color:var(--accent);font-size:16px">B</div><div style="width:44px;height:44px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);display:flex;align-items:center;justify-content:center;font-family:Outfit;font-weight:700;color:var(--text3);font-size:16px">C</div><div style="width:44px;height:44px;border-radius:10px;border:2px solid var(--border);background:var(--bg3);display:flex;align-items:center;justify-content:center;font-family:Outfit;font-weight:700;color:var(--text3);font-size:16px">D</div></div>
-<h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splTitle">Seerah Rap Battle</h1>
-<div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px" id="splSub">Poetry Slam</div>
-<p style="color:var(--text2);font-size:13px;line-height:1.7;margin-bottom:24px" id="splDesc">Compete with Seerah knowledge in a fast-paced challenge.</p>
-<button class="btn-go" id="enterBtn">Start Mission</button>
+<h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splTitle">تحدي السيرة</h1>
+<div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px" id="splSub">تحدي الشعر</div>
+<p style="color:var(--text2);font-size:13px;line-height:1.7;margin-bottom:24px" id="splDesc">تنافس بمعرفتك في السيرة في تحدٍّ سريع.</p>
+<button class="btn-go" id="enterBtn">ابدأ المهمة</button>
 <div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
 <div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span>
 <button class="sw-btn on" data-thm="desert-dawn">&#9728;</button><button class="sw-btn" data-thm="midnight-desert">&#127769;</button><button class="sw-btn" data-thm="sandstone">&#127966;</button><button class="sw-btn" data-thm="oasis">&#127795;</button><button class="sw-btn" data-thm="sunset">&#127773;</button><button class="sw-btn" data-thm="night-sky">&#11088;</button><button class="sw-btn" data-thm="caravan">&#128042;</button><button class="sw-btn" data-thm="parchment">&#128220;</button>
@@ -104,7 +104,7 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 
 <div class="app" id="app">
 <div class="hdr-bism">بِسْمِ ٱللَّوهِ ٱلرَّحْمَـنِ ٱلرَّحِيمِ</div>
-<div class="hdr"><h1 id="appTitle">Seerah Rap Battle</h1><span class="pill" id="scorePill">0 / 0</span></div>
+<div class="hdr"><h1 id="appTitle">تحدي السيرة</h1><span class="pill" id="scorePill">0 / 0</span></div>
 <div class="ctrl">
 <button id="startBtn">&#9654; New Game</button>
 <button class="btn-help" onclick="openHelp()">?</button>
@@ -112,17 +112,17 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 <div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
 <div class="sw"><button class="sw-btn on" data-thm="desert-dawn">&#9728;</button><button class="sw-btn" data-thm="midnight-desert">&#127769;</button><button class="sw-btn" data-thm="sandstone">&#127966;</button><button class="sw-btn" data-thm="oasis">&#127795;</button><button class="sw-btn" data-thm="sunset">&#127773;</button><button class="sw-btn" data-thm="night-sky">&#11088;</button><button class="sw-btn" data-thm="caravan">&#128042;</button><button class="sw-btn" data-thm="parchment">&#128220;</button></div>
 </div>
-<div class="status" id="status">Loading...</div>
+<div class="status" id="status">جارٍ التحميل...</div>
 <div class="game-area"><div class="big-text" id="question">?</div><div class="answer-row" id="choices"></div><div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div></div>
-<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">Score</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">النتيجة</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">المجموع</div><div class="score-num" id="tot">0</div></div></div>
 <div class="log-box" id="logBox"></div>
-<div class="foot">Seerah Rap Battle &mdash; Seerah Series v2.0</div>
+<div class="foot">تحدي السيرة &mdash; سلسلة السيرة الإصدار 2.0</div>
 </div>
 
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel">
-<div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">&times;</button></div>
-<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
+<div class="sidebar-header"><span class="sidebar-title">❓ المساعدة</span><button class="btn-close" onclick="closeHelp()">&times;</button></div>
+<div class="help-tabs"><button class="help-tab active" data-tab="faq">أسئلة شائعة</button><button class="help-tab" data-tab="howto">كيفية اللعب</button><button class="help-tab" data-tab="wiki">معلومات</button></div>
 <div class="sidebar-body">
 <div class="help-content active" id="help-faq">
 <div class="i18n-en"><details class="help-item"><summary>What is this app?</summary><p>Compete with Seerah knowledge in a fast-paced challenge.</p></details>
@@ -147,12 +147,13 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 </div>
 <div class="help-content" id="help-wiki">
 <div class="i18n-en"><div class="wiki-entry"><h3>About</h3><p>Compete with Seerah knowledge in a fast-paced challenge. Part of the Seerah learning series for Muslim kids.</p></div></div>
-<div class="i18n-ar" style="display:none"><div class="wiki-entry"><h3>السيرة النبوية</h3><p>سيرة النبي محمد ﷺ هي قصة حياته ورسالته وأخلاقه العظيمة.</p></div>
+<div class="i18n-ar" style="display:none"><div class="wiki-entry"><h3>حول التطبيق</h3><p>تنافس بمعرفتك في السيرة في تحدٍّ سريع. جزء من سلسلة تعلّم السيرة للأطفال المسلمين.</p></div>
+<div class="wiki-entry"><h3>السيرة النبوية</h3><p>سيرة النبي محمد ﷺ هي قصة حياته ورسالته وأخلاقه العظيمة.</p></div>
 <div class="wiki-entry"><h3>الصحابة الكرام</h3><p>رفاق النبي ﷺ الذين آمنوا به ونصروه وساعدوا في نشر الإسلام.</p></div>
 <div class="wiki-entry"><h3>الدروس المستفادة</h3><p>في كل حدث من أحداث السيرة دروس وعبر نتعلم منها.</p></div>
 </div>
 </div></div>
-<div class="sidebar-footer">Seerah Series &mdash; v2.0</div>
+<div class="sidebar-footer">سلسلة السيرة &mdash; الإصدار 2.0</div>
 </aside>
 
 <script>
@@ -263,11 +264,11 @@ function updateUI() {
 
 var UI={
 title:{en:"Seerah Rap Battle",fr:"Bataille de Poésie",ar:"مبارزة الشعر"},
-sub:{en:"Poetry Slam",fr:"Poetry Slam",ar:"Poetry Slam"},
-desc:{en:"Compete with Seerah knowledge in a fast-paced challenge.",fr:"Compete with Seerah knowledge in a fast-paced challenge.",ar:"Compete with Seerah knowledge in a fast-paced challenge."},
+sub:{en:"Poetry Slam",fr:"Poetry Slam",ar:"تحدي الشعر"},
+desc:{en:"Compete with Seerah knowledge in a fast-paced challenge.",fr:"Compete with Seerah knowledge in a fast-paced challenge.",ar:"تنافس بمعرفتك في السيرة في تحدٍّ سريع."},
 new_game:{en:"\u25b6 New Game",fr:"\u25b6 Nouveau jeu",ar:"\u25b6 \u0644\u0639\u0628\u0629 \u062c\u062f\u064a\u062f\u0629"}
 };
-var curLang="en",soundOn=true,actx;
+var curLang="ar",soundOn=true,actx;
 function t(k){return UI[k]?UI[k][curLang]||UI[k].en:"";}
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}

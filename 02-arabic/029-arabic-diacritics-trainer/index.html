@@ -4,10 +4,10 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Diacritics Trainer — Arabic Workshop</title>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Naskh+Arabic:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 
-[data-theme="teal-ink"]{--bg:#FFF8F0;--bg2:#FFF5EB;--bg3:#FAEBD7;--border:#DEB887;--border2:#C4956A;--text:#3A2F28;--text2:#6B5D52;--text3:#9A8B7A;--heading:#1A1A2E;--accent:#008080;--accent2:#20B2AA;--accent-glow:rgba(0,128,128,.25);--accent-glow-bg:rgba(0,128,128,.08);--card-bg:#FFFAF5;--card-border:#DEB887;--pattern-color:rgba(0,128,128,.04);--glow:0 4px 24px rgba(0,128,128,.1);--splash-bg:linear-gradient(135deg,#FFF8F0 0%,#FAEBD7 50%,#F5DEB3 100%)}
+[data-theme="teal-ink"]{--bg:#1C2C1C;--bg2:#203020;--bg3:#263826;--border:#3C5C3C;--border2:#4E6E4E;--text:#D2E6C6;--text2:#A0C290;--text3:#6C9A5C;--heading:#F5E6C8;--accent:#C8A84C;--accent2:#E0C870;--accent-glow:rgba(200,168,76,.25);--accent-glow-bg:rgba(200,168,76,.08);--card-bg:#223222;--card-border:#3C5C3C;--pattern-color:rgba(245,230,200,.03);--glow:0 4px 24px rgba(200,168,76,.12);--splash-bg:linear-gradient(135deg,#141E14 0%,#1C2C1C 50%,#101A10 100%)}
 [data-theme="desert-night"]{--bg:#1A1612;--bg2:#221E18;--bg3:#2C261E;--border:#3D3428;--border2:#4E4538;--text:#D4C8B8;--text2:#A89880;--text3:#7A6E5E;--heading:#F0E6D6;--accent:#D4A017;--accent2:#FFC947;--accent-glow:rgba(212,160,23,.25);--accent-glow-bg:rgba(212,160,23,.08);--card-bg:#282218;--card-border:#3D3428;--pattern-color:rgba(212,160,23,.04);--glow:0 4px 24px rgba(212,160,23,.12);--splash-bg:linear-gradient(135deg,#1A1612 0%,#2C261E 50%,#1A1612 100%)}
 [data-theme="calligraphy"]{--bg:#F5F0E8;--bg2:#FAF7F0;--bg3:#EDE6D8;--border:#D8CEBB;--border2:#C5B8A0;--text:#2A2018;--text2:#5A4E3E;--text3:#8A7E6E;--heading:#1A1A2E;--accent:#1A1A2E;--accent2:#3A3A5E;--accent-glow:rgba(26,26,46,.2);--accent-glow-bg:rgba(26,26,46,.06);--card-bg:#FAF7F0;--card-border:#D8CEBB;--pattern-color:rgba(26,26,46,.03);--glow:0 4px 24px rgba(26,26,46,.08);--splash-bg:linear-gradient(135deg,#F5F0E8 0%,#EDE6D8 50%,#E8E0D0 100%)}
 [data-theme="medina"]{--bg:#0D1F0D;--bg2:#142814;--bg3:#1B341B;--border:#2A4D2A;--border2:#3A6D3A;--text:#B8D4B8;--text2:#7AA87A;--text3:#5A8A5A;--heading:#E0F0E0;--accent:#4CAF50;--accent2:#81C784;--accent-glow:rgba(76,175,80,.25);--accent-glow-bg:rgba(76,175,80,.08);--card-bg:#1B301B;--card-border:#2A4D2A;--pattern-color:rgba(76,175,80,.04);--glow:0 4px 24px rgba(76,175,80,.12);--splash-bg:linear-gradient(135deg,#0D1F0D 0%,#1B341B 50%,#0D1F0D 100%)}
@@ -19,12 +19,12 @@
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:'Outfit','Noto Sans Arabic',sans-serif;font-size:14px;min-height:100vh;position:relative}
-body::before{content:'';position:fixed;inset:0;background:repeating-conic-gradient(var(--pattern-color) 0% 25%,transparent 0% 50%) 0 0/40px 40px;pointer-events:none;z-index:0;opacity:.6}
-[lang="ar"] body{font-family:'Amiri','Noto Sans Arabic',sans-serif}
-h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(245,230,200,.04) 39px,rgba(245,230,200,.04) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(245,230,200,.04) 39px,rgba(245,230,200,.04) 40px);pointer-events:none;z-index:0;opacity:.8}
+[lang="ar"] body{font-family:'Amiri','Noto Naskh Arabic',sans-serif}
+h1,.heading{font-family:'Amiri','Noto Naskh Arabic',serif;color:var(--heading)}
 .splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--splash-bg);position:relative;z-index:1}
 .splash-box{background:var(--card-bg);border:2px solid var(--border);border-radius:20px;padding:36px 28px;max-width:420px;width:100%;text-align:center;box-shadow:var(--glow),0 8px 32px rgba(0,0,0,.08);animation:fadeUp .6s ease-out;position:relative;overflow:hidden}
-.splash-box::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:repeating-conic-gradient(var(--pattern-color) 0% 25%,transparent 0% 50%) 0 0/60px 60px;opacity:.4;pointer-events:none}
+.splash-box::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(245,230,200,.03) 39px,rgba(245,230,200,.03) 40px);opacity:.5;pointer-events:none}
 .splash-bism{font-family:'Amiri',serif;color:var(--accent);font-size:18px;margin-bottom:16px;line-height:1.8;position:relative;z-index:1}
 .splash-bism::after{content:'';display:block;width:60px;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);margin:10px auto 0}
 .splash h1{font-size:26px;margin-bottom:6px;position:relative;z-index:1}
@@ -49,7 +49,7 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 .status{text-align:center;font-size:16px;margin-bottom:14px;font-weight:700;color:var(--heading);min-height:26px;font-family:'Amiri',serif}
 .status.win{color:var(--accent)}.status.lose{color:#E06050}
 .game-area{background:var(--card-bg);border:2px solid var(--border);border-radius:16px;padding:20px;margin-bottom:14px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;box-shadow:0 2px 12px rgba(0,0,0,.04);position:relative;overflow:hidden}
-.game-area::before{content:'';position:absolute;inset:0;background:repeating-conic-gradient(var(--pattern-color) 0% 25%,transparent 0% 50%) 0 0/50px 50px;opacity:.3;pointer-events:none}
+.game-area::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 29px,rgba(245,230,200,.03) 29px,rgba(245,230,200,.03) 30px);opacity:.5;pointer-events:none}
 .big-text{font-family:'Amiri',serif;font-size:42px;font-weight:700;color:var(--heading);text-align:center;position:relative;z-index:1}
 .answer-row{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
 .answer-btn{padding:12px 22px;border-radius:14px;border:2px solid var(--border);background:var(--card-bg);color:var(--heading);font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;min-width:60px}
@@ -135,11 +135,10 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 .stats-row{display:flex;gap:16px;justify-content:center;font-family:'Outfit',sans-serif;font-size:13px;color:var(--text2);position:relative;z-index:1}.stats-row span{color:var(--heading);font-weight:700}
 
 
-.splash-art{position:relative;width:100px;height:100px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center}
-.splash-art::before{content:attr(data-icon);font-size:52px;animation:bounceIn .6s ease-out}
-.splash-art::after{content:'';position:absolute;inset:-5px;border:2px solid var(--accent);border-radius:50%;opacity:.3;animation:pulseRing 2s ease-in-out infinite}
-@keyframes bounceIn{0%{transform:scale(0) rotate(-10deg)}50%{transform:scale(1.2) rotate(5deg)}100%{transform:scale(1) rotate(0)}}
-@keyframes pulseRing{0%,100%{transform:scale(1);opacity:.3}50%{transform:scale(1.15);opacity:.1}}
+.splash-art{position:relative;width:120px;height:120px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;flex-direction:column;background:rgba(0,0,0,.2);border-radius:16px;border:2px solid rgba(200,168,76,.15)}
+.splash-art::before{content:'بَ سُ كِ';font-family:'Noto Naskh Arabic','Amiri',serif;font-size:32px;color:#F5E6C8;text-shadow:0 0 18px rgba(200,168,76,.4);letter-spacing:6px;animation:harakaFade 3s ease-in-out infinite}
+.splash-art::after{content:'فتحة ضمة كسرة';font-family:'Noto Naskh Arabic',sans-serif;font-size:10px;color:rgba(200,168,76,.5);position:absolute;bottom:14px;letter-spacing:2px}
+@keyframes harakaFade{0%,100%{opacity:.7}50%{opacity:1}}
 .word-display{direction:rtl;display:flex;gap:4px;justify-content:center;flex-wrap:wrap;min-height:70px;align-items:center}
 .letter-unit{display:flex;flex-direction:column;align-items:center;cursor:pointer;padding:4px 6px;border-radius:8px;border:2px solid transparent;transition:all .15s}.letter-unit:hover{border-color:var(--accent)}.letter-unit.selected{border-color:var(--accent);background:var(--abg)}.letter-unit.correct{border-color:var(--accent);background:rgba(0,255,136,.1)}.letter-unit.wrong{border-color:#ff4444;background:rgba(255,68,68,.1)}
 .letter-char{font-family:'Noto Sans Arabic',sans-serif;font-size:36px;font-weight:700;color:var(--heading);line-height:1}
@@ -160,11 +159,11 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 <div class="splash" id="splash">
 <div class="splash-box">
 <div class="splash-bism">بِسْمِ ٱللَّـهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
-<div class="splash-art" data-icon="بَ"></div>
-<h1 class="heading" id="splashTitle">Diacritics Trainer</h1>
+<div class="splash-art"></div>
+<h1 class="heading" id="splashTitle">مدرب التشكيل</h1>
 <div class="splash-sub" id="splashSub">ورشة اللغة العربية</div>
-<p class="splash-desc" id="splashDesc">Learn Arabic diacritical marks!</p>
-<button class="btn-go" id="enterBtn">Start</button>
+<p class="splash-desc" id="splashDesc">تعلّم التشكيل العربي!</p>
+<button class="btn-go" id="enterBtn">ابدأ</button>
 <div class="sw" style="margin-top:18px">
 <span class="sw-label">Lang</span>
 <button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button>
@@ -177,21 +176,21 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 </div>
 
 <div class="app" id="app">
-<div class="hdr-bism">\u0628\u0650\u0633\u0652\u0645\u0650 \u0671\u0644\u0644\u0651\u064e\u0640\u0647\u0650 \u0671\u0644\u0631\u0651\u064e\u062d\u0652\u0645\u064e\u0640\u0670\u0646\u0650 \u0671\u0644\u0631\u0651\u064e\u062d\u0650\u064a\u0645\u0650</div><div class="hdr"><h1 id="appTitle">Diacritics Trainer</h1><span class="pill" id="scorePill">0/0</span></div>
-<div class="ctrl"><button id="newBtn">\u25b6 New</button><button id="checkBtn">\u2705 Check</button><button class="btn-help" onclick="openHelp()">\u2753</button><button id="soundBtn">\ud83d\udd0a</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">\u0639</button></div><div class="sw"><button class="sw-btn on" data-thm="teal-ink">🕌</button><button class="sw-btn" data-thm="desert-night">🌙</button><button class="sw-btn" data-thm="calligraphy">✒</button><button class="sw-btn" data-thm="medina">🌿</button><button class="sw-btn" data-thm="oud">🪘</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="sunrise">🌅</button><button class="sw-btn" data-thm="manuscript">📜</button></div></div>
-<div class="status" id="status">Select a letter, then add the correct haraka!</div>
+<div class="hdr-bism">\u0628\u0650\u0633\u0652\u0645\u0650 \u0671\u0644\u0644\u0651\u064e\u0640\u0647\u0650 \u0671\u0644\u0631\u0651\u064e\u062d\u0652\u0645\u064e\u0640\u0670\u0646\u0650 \u0671\u0644\u0631\u0651\u064e\u062d\u0650\u064a\u0645\u0650</div><div class="hdr"><h1 id="appTitle">مدرب التشكيل</h1><span class="pill" id="scorePill">0/0</span></div>
+<div class="ctrl"><button id="newBtn">▶ جديد</button><button id="checkBtn">✅ تحقق</button><button class="btn-help" onclick="openHelp()">\u2753</button><button id="soundBtn">\ud83d\udd0a</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw"><button class="sw-btn on" data-thm="teal-ink">🕌</button><button class="sw-btn" data-thm="desert-night">🌙</button><button class="sw-btn" data-thm="calligraphy">✒</button><button class="sw-btn" data-thm="medina">🌿</button><button class="sw-btn" data-thm="oud">🪘</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="sunrise">🌅</button><button class="sw-btn" data-thm="manuscript">📜</button></div></div>
+<div class="status" id="status">اختر حرفاً ثم أضف الحركة الصحيحة!</div>
 <div class="game-area">
 <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
 <div class="meaning-text" id="meaning"></div>
 <div class="word-display" id="wordDisplay"></div>
 <div class="harakat-bar" id="harakatBar"></div>
 </div>
-<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="correctNum">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="totalNum">0</div></div></div>
-<div class="foot">Workshop-Diy &mdash; Arabic Diacritics Trainer v1.0</div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">صحيح</div><div class="score-num" id="correctNum">0</div></div><div class="score-item"><div class="score-label">المجموع</div><div class="score-num" id="totalNum">0</div></div></div>
+<div class="foot">مدرب التشكيل — الإصدار 1.0</div></div>
 
 
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
-<aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">\u2753 Help</span><button class="btn-close" onclick="closeHelp()">\u2715</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div><div class="sidebar-body">
+<aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">❓ المساعدة</span><button class="btn-close" onclick="closeHelp()">✕</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">أسئلة شائعة</button><button class="help-tab" data-tab="howto">كيفية اللعب</button><button class="help-tab" data-tab="wiki">معلومات</button></div><div class="sidebar-body">
 <div class="help-content active" id="help-faq">
 <div class="i18n-en"><details class="help-item"><summary>What are harakat?</summary><p>Harakat are the vowel marks placed above or below Arabic letters: fatha (\u064e), damma (\u064f), kasra (\u0650), sukun (\u0652), shadda (\u0651), and tanwin forms.</p></details><details class="help-item"><summary>Why are they important?</summary><p>Harakat change the meaning and pronunciation of words. They are essential for correct Quran recitation (tajweed).</p></details></div>
 <div class="i18n-ar" style="display:none"><details class="help-item"><summary>ما هو هذا التطبيق؟</summary><p>تعرّف على الحركات: فتحة، ضمة، كسرة، سكون، شدة، تنوين.</p></details>
@@ -217,7 +216,7 @@ h1,.heading{font-family:'Amiri','Noto Sans Arabic',serif;color:var(--heading)}
 <div class="wiki-entry"><h3>🔒 الخصوصية</h3><p>تطبيق محلي. لا تتبع ولا تحليلات.</p></div>
 </div>
 </div>
-</div><div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div></aside>
+</div><div class="sidebar-footer">ورشة اللغة العربية — الإصدار 1.0</div></aside>
 
 <script>
 
@@ -339,7 +338,7 @@ var WORDS=[
 {bare:"\u0634\u0643\u0631",voweled:[{l:"\u0634",m:"\u064F"},{l:"\u0643",m:"\u0652"},{l:"\u0631",m:"\u064F"}],meaning:{en:"Gratitude",fr:"Gratitude",ar:"\u0627\u0644\u0634\u0643\u0631 \u0644\u0644\u0647"}},
 {bare:"\u0635\u0628\u0631",voweled:[{l:"\u0635",m:"\u064E"},{l:"\u0628",m:"\u0652"},{l:"\u0631",m:"\u064F"}],meaning:{en:"Patience",fr:"Patience",ar:"\u0627\u0644\u0635\u0628\u0631"}}
 ];
-var curLang="en",soundOn=true,actx,HS_KEY="wdiy-hs-arabic-diacritics-trainer";
+var curLang="ar",soundOn=true,actx,HS_KEY="wdiy-hs-arabic-diacritics-trainer";
 var curWordIdx=0,selectedLetterIdx=-1,userMarks=[],correctCount=0,totalWords=0,wordOrder=[];
 var UI={title:{en:"Diacritics Trainer",fr:"Entra\u00eeneur de diacritiques",ar:"\u0645\u062f\u0631\u0628 \u0627\u0644\u062a\u0634\u0643\u064a\u0644"},status:{en:"Select a letter, then add the correct haraka!",fr:"S\u00e9lectionnez une lettre, puis ajoutez la bonne haraka !",ar:"\u0627\u062e\u062a\u0631 \u062d\u0631\u0641\u0627\u064b \u062b\u0645 \u0623\u0636\u0641 \u0627\u0644\u062d\u0631\u0643\u0629 \u0627\u0644\u0635\u062d\u064a\u062d\u0629!"},correct:{en:"Perfect!",fr:"Parfait !",ar:"\u0645\u0645\u062a\u0627\u0632!"},wrong:{en:"Some marks are wrong. Try again!",fr:"Certaines marques sont fausses.",ar:"\u0628\u0639\u0636 \u0627\u0644\u062d\u0631\u0643\u0627\u062a \u062e\u0627\u0637\u0626\u0629."},done:{en:"All words completed!",fr:"Tous les mots termin\u00e9s !",ar:"\u0627\u0643\u062a\u0645\u0644\u062a \u062c\u0645\u064a\u0639 \u0627\u0644\u0643\u0644\u0645\u0627\u062a!"}};
 function t(k){return UI[k]?UI[k][curLang]||UI[k]["en"]:"";}

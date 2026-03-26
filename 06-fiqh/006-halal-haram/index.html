@@ -108,8 +108,8 @@ canvas{width:100%;border-radius:12px;cursor:pointer;display:block;touch-action:n
 .slide-right{animation:slideRight .35s ease forwards}
 </style></head><body>
 <a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><span class="splash-icon">✅</span><h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splashTitle">Halal or Haram?</h1><p style="color:rgba(255,255,255,.6);font-size:12px;line-height:1.7;margin:12px 0 28px" id="splashDesc"></p><button class="btn-go" id="enterBtn">Start</button><div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🏰</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>Halal or Haram?</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><span class="splash-icon">✅</span><h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splashTitle">حلال أم حرام؟</h1><p style="color:rgba(255,255,255,.6);font-size:12px;line-height:1.7;margin:12px 0 28px" id="splashDesc"></p><button class="btn-go" id="enterBtn">ابدأ</button><div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🏰</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>حلال أم حرام؟</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div>
 <div class="ctrl">
   <select id="diffSel" onchange="setDiff()"><option value="10">Easy (10)</option><option value="15" selected>Medium (15)</option><option value="20">Hard (20)</option></select>
   <button id="startBtn">&#9654; New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">&#10067;</button>
@@ -117,7 +117,7 @@ canvas{width:100%;border-radius:12px;cursor:pointer;display:block;touch-action:n
   <div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
   <div class="sw"><button class="sw-btn on" data-thm="terminal">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="ember">&#128293;</button><button class="sw-btn" data-thm="phosphor">&#128154;</button><button class="sw-btn" data-thm="signal">&#128225;</button><button class="sw-btn" data-thm="redshift">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127988;</button></div>
 </div>
-<div class="status" id="status">Sort each item: Halal or Haram?</div>
+<div class="status" id="status">صنّف كل عنصر: حلال أم حرام؟</div>
 <div class="game-area" id="gameArea">
   <div class="item-card" id="itemCard">
     <div class="item-emoji" id="itemEmoji">?</div>
@@ -132,45 +132,45 @@ canvas{width:100%;border-radius:12px;cursor:pointer;display:block;touch-action:n
   <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
 </div>
 <div id="expArea"></div>
-<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">صحيح</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">المجموع</div><div class="score-num" id="tot">0</div></div></div>
 <div class="log-box" id="logBox"></div>
 <div class="foot">Workshop-Diy &#8212; Halal or Haram v1.0</div>
 </div>
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel">
-  <div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
+  <div class="sidebar-header"><span class="sidebar-title">&#10067; مساعدة</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
   <div class="help-tabs">
-    <button class="help-tab active" data-tab="faq">FAQ</button>
-    <button class="help-tab" data-tab="howto">How-To</button>
-    <button class="help-tab" data-tab="wiki">Wiki</button>
+    <button class="help-tab active" data-tab="faq">الأسئلة</button>
+    <button class="help-tab" data-tab="howto">كيفية اللعب</button>
+    <button class="help-tab" data-tab="wiki">معلومات</button>
   </div>
   <div class="sidebar-body">
     <div class="help-content active" id="help-faq">
-      <details class="help-item"><summary>What is Halal or Haram?</summary><p>An Islamic sorting game. A food, drink, action, or behavior appears and you decide whether it is Halal (permissible) or Haram (forbidden) in Islam.</p></details>
-      <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
-      <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser. You can swipe left for Haram and right for Halal, or use the buttons.</p></details>
-      <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
-      <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / &#1593;. Arabic enables right-to-left layout automatically.</p></details>
-      <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
-      <details class="help-item"><summary>What are the difficulty levels?</summary><p>Easy (10 items): obvious foods and actions. Medium (15 items): includes trickier items. Hard (20 items): edge cases with detailed explanations.</p></details>
+      <details class="help-item"><summary>ما هي لعبة حلال أو حرام؟</summary><p>لعبة فرز إسلامية. يظهر طعام أو شراب أو فعل أو سلوك وعليك تحديد هل هو حلال أم حرام في الإسلام.</p></details>
+      <details class="help-item"><summary>هل يعمل بدون إنترنت؟</summary><p>نعم. بعد التحميل، كل شيء يعمل في المتصفح بدون حاجة للإنترنت.</p></details>
+      <details class="help-item"><summary>هل يعمل على الهاتف؟</summary><p>نعم. يعمل على أي جهاز بمتصفح حديث. يمكنك السحب يساراً للحرام ويميناً للحلال أو استخدام الأزرار.</p></details>
+      <details class="help-item"><summary>كيف أغيّر السمة؟</summary><p>انقر على أي زر سمة في شريط التحكم.</p></details>
+      <details class="help-item"><summary>كيف أغيّر اللغة؟</summary><p>انقر EN / FR / &#1593;. العربية تفعّل تخطيط اليمين لليسار تلقائياً.</p></details>
+      <details class="help-item"><summary>هل بياناتي خاصة؟</summary><p>نعم. كل شيء يعمل محلياً في متصفحك. لا تُرسل أي بيانات.</p></details>
+      <details class="help-item"><summary>ما هي مستويات الصعوبة؟</summary><p>سهل (10 عناصر): أطعمة وأفعال واضحة. متوسط (15 عنصراً): عناصر أكثر تعقيداً. صعب (20 عنصراً): حالات دقيقة مع شروحات مفصلة.</p></details>
     </div>
     <div class="help-content" id="help-howto">
-      <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
-      <div class="help-step"><span class="help-step-num">2</span><p>Choose your difficulty (Easy, Medium, Hard)</p></div>
-      <div class="help-step"><span class="help-step-num">3</span><p>Press New Game to begin a round</p></div>
-      <div class="help-step"><span class="help-step-num">4</span><p>A food, drink, action, or behavior appears</p></div>
-      <div class="help-step"><span class="help-step-num">5</span><p>Tap Halal (green) or Haram (red) to sort it</p></div>
-      <div class="help-step"><span class="help-step-num">6</span><p>You can also swipe right for Halal, left for Haram</p></div>
-      <div class="help-step"><span class="help-step-num">7</span><p>Read the Islamic explanation after each answer</p></div>
-      <div class="help-step"><span class="help-step-num">8</span><p>Try to get the highest score!</p></div>
+      <div class="help-step"><span class="help-step-num">1</span><p>انقر ابدأ في شاشة البداية</p></div>
+      <div class="help-step"><span class="help-step-num">2</span><p>اختر مستوى الصعوبة (سهل، متوسط، صعب)</p></div>
+      <div class="help-step"><span class="help-step-num">3</span><p>اضغط لعبة جديدة لبدء الجولة</p></div>
+      <div class="help-step"><span class="help-step-num">4</span><p>يظهر طعام أو شراب أو فعل أو سلوك</p></div>
+      <div class="help-step"><span class="help-step-num">5</span><p>انقر حلال (أخضر) أو حرام (أحمر) لفرزه</p></div>
+      <div class="help-step"><span class="help-step-num">6</span><p>يمكنك أيضاً السحب يميناً للحلال ويساراً للحرام</p></div>
+      <div class="help-step"><span class="help-step-num">7</span><p>اقرأ الشرح الإسلامي بعد كل إجابة</p></div>
+      <div class="help-step"><span class="help-step-num">8</span><p>حاول الحصول على أعلى نتيجة!</p></div>
     </div>
     <div class="help-content" id="help-wiki">
-      <div class="wiki-entry"><h3>Purpose</h3><p>Teach Muslim kids the basics of Halal and Haram through an interactive sorting game with Islamic references.</p></div>
-      <div class="wiki-entry"><h3>Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
-      <div class="wiki-entry"><h3>Languages</h3><p>Trilingual: English, Fran&#231;ais, &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;. Arabic auto-enables RTL layout.</p></div>
-      <div class="wiki-entry"><h3>Sound</h3><p>Web Audio API &#8212; no files needed. Correct = rising tone, wrong = buzz, win = melody. Toggle with the sound button.</p></div>
-      <div class="wiki-entry"><h3>Controls</h3><p>Keyboard: H = Haram, L = Halal, Enter = New Game. Touch: swipe left = Haram, swipe right = Halal.</p></div>
-      <div class="wiki-entry"><h3>Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+      <div class="wiki-entry"><h3>الهدف</h3><p>تعليم الأطفال المسلمين أساسيات الحلال والحرام من خلال لعبة فرز تفاعلية مع مراجع إسلامية.</p></div>
+      <div class="wiki-entry"><h3>السمات</h3><p>8 سمات مدمجة: Terminal، Midnight، Ember، Phosphor، Signal، Redshift، Arctic، Sand.</p></div>
+      <div class="wiki-entry"><h3>اللغات</h3><p>ثلاث لغات: English، Fran&#231;ais، &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;. العربية تفعّل تخطيط اليمين لليسار تلقائياً.</p></div>
+      <div class="wiki-entry"><h3>الصوت</h3><p>Web Audio API &#8212; لا حاجة لملفات. صحيح = نغمة صاعدة، خطأ = طنين، فوز = لحن. التبديل بزر الصوت.</p></div>
+      <div class="wiki-entry"><h3>التحكم</h3><p>لوحة المفاتيح: H = حرام، L = حلال، Enter = لعبة جديدة. اللمس: سحب يسار = حرام، سحب يمين = حلال.</p></div>
+      <div class="wiki-entry"><h3>الخصوصية</h3><p>محلي أولاً. لا تتبع، لا تحليلات، لا اتصالات خارجية. جميع البيانات تبقى في متصفحك.</p></div>
     </div>
   </div>
   <div class="sidebar-footer">Workshop-DIY &#8212; v1.0</div>

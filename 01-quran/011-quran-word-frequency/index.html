@@ -191,9 +191,9 @@ input[type="range"]{width:90px}
 <div class="splash-subtitle">Discover word patterns in the Quran</div>
 <p class="splash-desc" id="splDesc">Discover word patterns in the Quran</p>
 <button class="btn-go" id="enterBtn">Start</button>
-<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
 <div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>Quran Word Cloud</h1><span class="pill">Interactive</span></div><div class="ctrl"><button class="btn-help" onclick="openHelp()">&#10067;</button><button id="soundBtn">&#128266;</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div><div class="sw"><button class="sw-btn on" data-thm="sahara">&#128421;</button><button class="sw-btn" data-thm="emerald">&#127748;</button><button class="sw-btn" data-thm="midnight-gold">&#128293;</button><button class="sw-btn" data-thm="deep-emerald">&#128154;</button><button class="sw-btn" data-thm="royal">&#128225;</button><button class="sw-btn" data-thm="sunset">&#128308;</button><button class="sw-btn" data-thm="ocean">&#10052;&#65039;</button><button class="sw-btn" data-thm="night-sky">&#127964;</button></div></div>
+<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>Quran Word Cloud</h1><span class="pill">Interactive</span></div><div class="ctrl"><button class="btn-help" onclick="openHelp()">&#10067;</button><button id="soundBtn">&#128266;</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div><div class="sw"><button class="sw-btn on" data-thm="sahara">&#128421;</button><button class="sw-btn" data-thm="emerald">&#127748;</button><button class="sw-btn" data-thm="midnight-gold">&#128293;</button><button class="sw-btn" data-thm="deep-emerald">&#128154;</button><button class="sw-btn" data-thm="royal">&#128225;</button><button class="sw-btn" data-thm="sunset">&#128308;</button><button class="sw-btn" data-thm="ocean">&#10052;&#65039;</button><button class="sw-btn" data-thm="night-sky">&#127964;</button></div></div>
 <div class="game-area"><div class="cloud" id="cloud"></div><div id="wordDetail"></div></div>
 <div class="foot">Amaloun &#8212; Quran Word Frequency v1.0</div></div>
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
@@ -241,8 +241,11 @@ const T={
     howto0:"اضغط على زر ابدأ في شاشة البداية",
     howto1:"اختر مستوى الصعوبة إذا كان متاحاً",
     howto2:"اقرأ التعليمات المعروضة على الشاشة",
-    wiki0t:"&#128218; Quranic Vocabulary",
-    wiki0c:"The Quran uses approximately 77,430 words with about 14,870 unique words (including different forms)."
+    howto0:"تصفّح سحابة الكلمات — الكلمات الأكبر تتكرر أكثر",
+    howto1:"اضغط على أي كلمة لمعرفة معناها وعدد تكرارها",
+    howto2:"تعرّف على أهم مواضيع القرآن من خلال مفرداته",
+    wiki0t:"المفردات القرآنية",
+    wiki0c:"يحتوي القرآن الكريم على نحو 77,430 كلمة منها حوالي 14,870 كلمة فريدة بأشكالها المختلفة."
   },
   en:{
     title:"Quran Word Frequency",
@@ -344,7 +347,7 @@ function updateUI(){
 
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open")}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
-var curLang="en";
+var curLang="ar";
 function setLang(l){currentLang=l==="ar"?"ar":"en";curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));renderCloud();updateUI();}
 function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===t))}
 var soundOn=true,actx;function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;var n=actx.currentTime;o.frequency.value=600+Math.random()*400;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.08);o.start(n);o.stop(n+.08)}

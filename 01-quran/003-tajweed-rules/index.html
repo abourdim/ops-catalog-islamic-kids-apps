@@ -180,66 +180,66 @@ input[type="range"]{width:90px}
 .flashcard-front{background:linear-gradient(135deg,#D4AF3711,#1B5E2011);border:1px solid var(--border)}
 .flashcard-back{background:var(--bg3);border:1px solid var(--accent);transform:rotateY(180deg)}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">→ الفهرس</a>
 <div class="splash" id="splash"><div class="splash-box">
 <span class="splash-emoji">🎙️</span>
 <div class="splash-art"><div class="sa-crescent"><div class="sa-moon"></div><div class="sa-star-shape">★</div></div></div>
 <div class="splash-bism" dir="rtl">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
-<h1 class="splash-title">Tajweed Rules</h1>
-<div class="splash-subtitle">Learn the rules of Quran recitation</div>
-<p class="splash-desc" id="splDesc">Learn the rules of Quran recitation</p>
-<button class="btn-go" id="enterBtn">Start</button>
-<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
-<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Tajweed Rules</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="easy">Easy (5 rules)</option><option value="medium" selected>Medium (10 rules)</option><option value="hard">Hard (15+ rules)</option></select><select id="roundSel"><option value="10" selected>10 Qs</option><option value="15">15 Qs</option><option value="20">20 Qs</option></select>
-    <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">?</button>
-    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<h1 class="splash-title">أحكام التجويد</h1>
+<div class="splash-subtitle">تعلّم أحكام تلاوة القرآن الكريم</div>
+<p class="splash-desc" id="splDesc">تعلّم أحكام تلاوة القرآن الكريم</p>
+<button class="btn-go" id="enterBtn">ابدأ</button>
+<div class="sw" style="margin-top:20px"><span class="sw-label">اللغة</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">المظهر</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>أحكام التجويد</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="easy">سهل (٥ أحكام)</option><option value="medium" selected>متوسط (١٠ أحكام)</option><option value="hard">صعب (١٥+ حكم)</option></select><select id="roundSel"><option value="10" selected>١٠ أسئلة</option><option value="15">١٥ سؤالاً</option><option value="20">٢٠ سؤالاً</option></select>
+    <button id="startBtn">▶ لعبة جديدة</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+    <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
     <div class="sw"><button class="sw-btn on" data-thm="sahara">🖥</button><button class="sw-btn" data-thm="emerald">🌌</button><button class="sw-btn" data-thm="midnight-gold">🔥</button><button class="sw-btn" data-thm="deep-emerald">💚</button><button class="sw-btn" data-thm="royal">📡</button><button class="sw-btn" data-thm="sunset">🔴</button><button class="sw-btn" data-thm="ocean">❄️</button><button class="sw-btn" data-thm="night-sky">🏜</button></div></div>
-<div class="status" id="status">Pick the correct tajweed rule!</div>
+<div class="status" id="status">اختر حكم التجويد الصحيح!</div>
 <div class="game-area" id="gameArea"><div class="big-text" id="question">?</div><div class="grid-pick g2" id="choices"></div><div id="explainWrap"></div><div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div></div>
-<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
-<div class="log-box" id="logBox"></div><div class="foot">Amaloun — Tajweed Rules v1.0</div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">صحيح</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">المجموع</div><div class="score-num" id="tot">0</div></div></div>
+<div class="log-box" id="logBox"></div><div class="foot">أمالون — أحكام التجويد الإصدار ١.٠</div></div>
 
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
-  <div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="sidebar-header"><span class="sidebar-title">❓ المساعدة</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
   <div class="help-tabs">
-    <button class="help-tab active" data-tab="faq">FAQ</button>
-    <button class="help-tab" data-tab="howto">How-To</button>
-    <button class="help-tab" data-tab="wiki">Wiki</button>
+    <button class="help-tab active" data-tab="faq">الأسئلة الشائعة</button>
+    <button class="help-tab" data-tab="howto">كيفية الاستخدام</button>
+    <button class="help-tab" data-tab="wiki">معلومات</button>
   </div>
   <div class="sidebar-body">
     <div class="help-content active" id="help-faq">
-        <details class="help-item"><summary>What is Tajweed Rules?</summary><p>A game to learn tajweed — the rules of proper Quran recitation. You see a verse with highlighted text and pick which tajweed rule applies.</p></details>
-        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
-        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
-        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
-        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
-        <details class="help-item"><summary>What are the difficulty levels?</summary><p>Easy: 5 basic rules (Izhar, Idgham, Iqlab, Ikhfa, Qalqalah). Medium: 10 rules (adds Meem Sakinah, Madd, Ghunnah). Hard: 15+ rules (all rules including Lam rules and Madd subtypes).</p></details>
-        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+        <details class="help-item"><summary>ما هي أحكام التجويد؟</summary><p>لعبة لتعلّم التجويد — أحكام تلاوة القرآن الكريم. ترى آية مع نص مُظلّل وتختار حكم التجويد المناسب.</p></details>
+        <details class="help-item"><summary>هل يعمل بدون إنترنت؟</summary><p>نعم. بمجرد تحميل الصفحة، يعمل كل شيء في المتصفح بدون الحاجة للإنترنت.</p></details>
+        <details class="help-item"><summary>هل يمكنني اللعب على الجوال؟</summary><p>نعم. يعمل على أي جهاز يحتوي على متصفح حديث.</p></details>
+        <details class="help-item"><summary>كيف أغيّر المظهر؟</summary><p>اضغط على أي زر مظهر في شريط التحكم.</p></details>
+        <details class="help-item"><summary>كيف أغيّر اللغة؟</summary><p>اضغط على EN / FR / ع. اللغة العربية تفعّل التنسيق من اليمين لليسار تلقائياً.</p></details>
+        <details class="help-item"><summary>ما هي مستويات الصعوبة؟</summary><p>سهل: ٥ أحكام أساسية (إظهار، إدغام، إقلاب، إخفاء، قلقلة). متوسط: ١٠ أحكام. صعب: ١٥+ حكم شاملة.</p></details>
+        <details class="help-item"><summary>هل بياناتي محمية؟</summary><p>نعم. كل شيء يعمل محلياً في متصفحك. لا تُرسل أي بيانات لأي مكان.</p></details>
     </div>
     <div class="help-content" id="help-howto">
-        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
-        <div class="help-step"><span class="help-step-num">2</span><p>Choose difficulty (Easy/Medium/Hard) and number of questions</p></div>
-        <div class="help-step"><span class="help-step-num">3</span><p>Press ▶ New Game to begin</p></div>
-        <div class="help-step"><span class="help-step-num">4</span><p>Read the Arabic text — the highlighted part shows where the rule applies</p></div>
-        <div class="help-step"><span class="help-step-num">5</span><p>Pick one of the 4 choices for the correct tajweed rule</p></div>
-        <div class="help-step"><span class="help-step-num">6</span><p>After each answer, read the explanation to learn the rule</p></div>
-        <div class="help-step"><span class="help-step-num">7</span><p>Press ▶ New Game to play again and beat your high score</p></div>
-        <div class="help-step"><span class="help-step-num">8</span><p>Click ← Catalog to go back and try another game</p></div>
+        <div class="help-step"><span class="help-step-num">1</span><p>اضغط على زر ابدأ في شاشة البداية</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>اختر مستوى الصعوبة وعدد الأسئلة</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>اضغط ▶ لعبة جديدة للبدء</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>اقرأ النص العربي — الجزء المُظلّل يوضح موضع الحكم</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>اختر حكم التجويد الصحيح من ٤ خيارات</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>بعد كل إجابة، اقرأ الشرح لتعلّم الحكم</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>اضغط ▶ لعبة جديدة للعب مرة أخرى وتحسين نتيجتك</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>اضغط → الفهرس للعودة وتجربة لعبة أخرى</p></div>
     </div>
     <div class="help-content" id="help-wiki">
-        <div class="wiki-entry"><h3>Noon Sakinah & Tanween</h3><p>Rules for ن with sukoon or tanween before other letters: Izhar (clear), Idgham (merge), Iqlab (convert to meem), Ikhfa (hide).</p></div>
-        <div class="wiki-entry"><h3>Meem Sakinah</h3><p>Rules for م with sukoon: Ikhfa Shafawi (hide before ب), Idgham Shafawi (merge with م), Izhar Shafawi (clear before others).</p></div>
-        <div class="wiki-entry"><h3>Madd (Elongation)</h3><p>Madd Tabii (2 counts), Madd Muttasil (connected, 4-5 counts), Madd Munfasil (separated, 4-5 counts), Madd Lazim (6 counts).</p></div>
-        <div class="wiki-entry"><h3>Qalqalah</h3><p>Echoing sound on sukoon letters: ق ط ب ج د (Qaf, Taa, Ba, Jim, Dal).</p></div>
-        <div class="wiki-entry"><h3>Ghunnah</h3><p>Nasalization — a sound from the nose held for 2 counts on noon and meem with shaddah.</p></div>
-        <div class="wiki-entry"><h3>Lam Rules</h3><p>Lam Shamsiyyah: lam of ال merges into sun letters. Lam Qamariyyah: lam is pronounced before moon letters.</p></div>
-        <div class="wiki-entry"><h3>Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
-        <div class="wiki-entry"><h3>Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+        <div class="wiki-entry"><h3>النون الساكنة والتنوين</h3><p>أحكام النون الساكنة والتنوين: إظهار، إدغام، إقلاب (تحويل لميم)، إخفاء.</p></div>
+        <div class="wiki-entry"><h3>الميم الساكنة</h3><p>أحكام الميم الساكنة: إخفاء شفوي (قبل الباء)، إدغام شفوي (مع الميم)، إظهار شفوي (قبل بقية الحروف).</p></div>
+        <div class="wiki-entry"><h3>المدود</h3><p>مد طبيعي (حركتان)، مد متصل (٤-٥ حركات)، مد منفصل (٤-٥ حركات)، مد لازم (٦ حركات).</p></div>
+        <div class="wiki-entry"><h3>القلقلة</h3><p>صوت ارتدادي عند سكون حروف: ق ط ب ج د.</p></div>
+        <div class="wiki-entry"><h3>الغُنّة</h3><p>صوت يخرج من الأنف مقداره حركتان عند النون والميم المشددتين.</p></div>
+        <div class="wiki-entry"><h3>أحكام اللام</h3><p>لام شمسية: تُدغم اللام في الحروف الشمسية. لام قمرية: تُظهر اللام قبل الحروف القمرية.</p></div>
+        <div class="wiki-entry"><h3>المظاهر</h3><p>٨ مظاهر مدمجة: صحراوي، زمردي، ذهبي، أخضر داكن، ملكي، غروب، محيط، سماء الليل.</p></div>
+        <div class="wiki-entry"><h3>الخصوصية</h3><p>محلي أولاً. لا تتبع، لا تحليلات، لا اتصالات خارجية. جميع البيانات تبقى في متصفحك.</p></div>
     </div>
   </div>
-  <div class="sidebar-footer">Amaloun — v1.0</div>
+  <div class="sidebar-footer">أمالون — الإصدار ١.٠</div>
 </aside>
 <script>
 // === i18n SYSTEM ===
@@ -304,21 +304,21 @@ const T={
     howto5:"حاول مرة أخرى لتحسين أدائك",
     howto6:"استكشف المزيد من المحتوى",
     howto7:"شارك ما تعلمته مع أصدقائك",
-    wiki0t:"Noon Sakinah & Tanween",
-    wiki0c:"Rules for ن with sukoon or tanween before other letters: Izhar (clear), Idgham (merge), Iqlab (convert to meem), Ikhfa (hide).",
-    wiki1t:"Meem Sakinah",
-    wiki1c:"Rules for م with sukoon: Ikhfa Shafawi (hide before ب), Idgham Shafawi (merge with م), Izhar Shafawi (clear before others).",
-    wiki2t:"Madd (Elongation)",
-    wiki2c:"Madd Tabii (2 counts), Madd Muttasil (connected, 4-5 counts), Madd Munfasil (separated, 4-5 counts), Madd Lazim (6 counts).",
-    wiki3t:"Qalqalah",
-    wiki3c:"Echoing sound on sukoon letters: ق ط ب ج د (Qaf, Taa, Ba, Jim, Dal).",
-    wiki4t:"Ghunnah",
-    wiki4c:"Nasalization — a sound from the nose held for 2 counts on noon and meem with shaddah.",
-    wiki5t:"Lam Rules",
-    wiki5c:"Lam Shamsiyyah: lam of ال merges into sun letters. Lam Qamariyyah: lam is pronounced before moon letters.",
-    wiki6t:"Themes",
+    wiki0t:"النون الساكنة والتنوين",
+    wiki0c:"أحكام النون الساكنة والتنوين: إظهار، إدغام، إقلاب (تحويل لميم)، إخفاء.",
+    wiki1t:"الميم الساكنة",
+    wiki1c:"أحكام الميم الساكنة: إخفاء شفوي (قبل الباء)، إدغام شفوي (مع الميم)، إظهار شفوي (قبل بقية الحروف).",
+    wiki2t:"المدود",
+    wiki2c:"مد طبيعي (حركتان)، مد متصل (٤-٥ حركات)، مد منفصل (٤-٥ حركات)، مد لازم (٦ حركات).",
+    wiki3t:"القلقلة",
+    wiki3c:"صوت ارتدادي عند سكون حروف: ق ط ب ج د.",
+    wiki4t:"الغُنّة",
+    wiki4c:"صوت يخرج من الأنف مقداره حركتان عند النون والميم المشددتين.",
+    wiki5t:"أحكام اللام",
+    wiki5c:"لام شمسية: تُدغم اللام في الحروف الشمسية. لام قمرية: تُظهر اللام قبل الحروف القمرية.",
+    wiki6t:"المظاهر",
     wiki6c:"٨ مظاهر مدمجة: صحراوي، زمردي، ذهبي، أخضر داكن، ملكي، غروب، محيط، سماء الليل.",
-    wiki7t:"Privacy",
+    wiki7t:"الخصوصية",
     wiki7c:"محلي أولاً. لا تتبع، لا تحليلات، لا اتصالات خارجية. جميع البيانات تبقى في متصفحك."
   },
   en:{

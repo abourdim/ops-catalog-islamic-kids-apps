@@ -326,7 +326,7 @@ function updateUI() {
 
 var LETTERS="\u0627,\u0628,\u062a,\u062b,\u062c,\u062d,\u062e,\u062f,\u0630,\u0631,\u0632,\u0633,\u0634,\u0635,\u0636,\u0637,\u0638,\u0639,\u063a,\u0641,\u0642,\u0643,\u0644,\u0645,\u0646,\u0647,\u0648,\u064a".split(",");
 var UI={title:{en:"Arabic Handwriting",fr:"Calligraphie arabe",ar:"\u0627\u0644\u062e\u0637 \u0627\u0644\u0639\u0631\u0628\u064a"},desc:{en:"Practice writing Arabic letters on a drawing canvas.",fr:"Pratiquez l'\u00e9criture des lettres arabes sur un canevas.",ar:"\u062a\u062f\u0631\u0628 \u0639\u0644\u0649 \u0643\u062a\u0627\u0628\u0629 \u0627\u0644\u062d\u0631\u0648\u0641 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0639\u0644\u0649 \u0644\u0648\u062d\u0629 \u0627\u0644\u0631\u0633\u0645."},status:{en:"Select a letter and draw it!",fr:"Choisissez une lettre et dessinez-la !",ar:"\u0627\u062e\u062a\u0631 \u062d\u0631\u0641\u0627\u064b \u0648\u0627\u0631\u0633\u0645\u0647!"},clear:{en:"\ud83d\uddd1 Clear",fr:"\ud83d\uddd1 Effacer",ar:"\ud83d\uddd1 \u0645\u0633\u062d"},check:{en:"\u2705 Check",fr:"\u2705 V\u00e9rifier",ar:"\u2705 \u062a\u062d\u0642\u0642"},guide:{en:"\ud83d\udc41 Guide",fr:"\ud83d\udc41 Guide",ar:"\ud83d\udc41 \u062f\u0644\u064a\u0644"}};
-var curLang="en",soundOn=true,actx,selectedLetter=0,guideVisible=true,drawing=false,bestScore=0;
+var curLang="ar",soundOn=true,actx,selectedLetter=0,guideVisible=true,drawing=false,bestScore=0;
 var HS_KEY="wdiy-hs-arabic-handwriting";
 function t(k){return UI[k]?UI[k][curLang]||UI[k]["en"]:"";}
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}

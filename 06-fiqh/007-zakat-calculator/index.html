@@ -132,7 +132,7 @@ canvas{width:100%;border-radius:12px;cursor:pointer;display:block;touch-action:n
 .summary-item .s-lbl{font-size:9px;color:var(--text3)}
 </style></head><body>
 <a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><span class="splash-icon">🪙</span><h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splashTitle">Zakat Calculator</h1><p style="color:rgba(255,255,255,.6);font-size:12px;line-height:1.7;margin:12px 0 28px" id="splashDesc"></p><button class="btn-go" id="enterBtn">Start</button><div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🏰</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><span class="splash-icon">🪙</span><h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splashTitle">حاسبة الزكاة</h1><p style="color:rgba(255,255,255,.6);font-size:12px;line-height:1.7;margin:12px 0 28px" id="splashDesc"></p><button class="btn-go" id="enterBtn">ابدأ</button><div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🏰</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
 <div class="app" id="app">
 <div class="hdr-bism">&rlm;&#x628;&#x650;&#x633;&#x652;&#x645;&#x650; &#x671;&#x644;&#x644;&#x651;&#x64E;&#x647;&#x650; &#x671;&#x644;&#x631;&#x651;&#x64E;&#x62D;&#x652;&#x645;&#x64E;&#x640;&#x670;&#x646;&#x650; &#x671;&#x644;&#x631;&#x651;&#x64E;&#x62D;&#x650;&#x64A;&#x645;&#x650;</div>
 <div class="hdr"><h1>Zakat Calculator</h1><span class="pill" id="scorePill">Learn &amp; Quiz</span><span class="timer-pill" id="timerPill">0:00</span></div>
@@ -211,39 +211,39 @@ canvas{width:100%;border-radius:12px;cursor:pointer;display:block;touch-action:n
 </div>
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel">
-  <div class="sidebar-header"><span class="sidebar-title">&#x2753; Help</span><button class="btn-close" onclick="closeHelp()">&#x2715;</button></div>
+  <div class="sidebar-header"><span class="sidebar-title">&#x2753; مساعدة</span><button class="btn-close" onclick="closeHelp()">&#x2715;</button></div>
   <div class="help-tabs">
-    <button class="help-tab active" data-tab="faq">FAQ</button>
-    <button class="help-tab" data-tab="howto">How-To</button>
-    <button class="help-tab" data-tab="wiki">Wiki</button>
+    <button class="help-tab active" data-tab="faq">الأسئلة</button>
+    <button class="help-tab" data-tab="howto">كيفية الاستخدام</button>
+    <button class="help-tab" data-tab="wiki">معلومات</button>
   </div>
   <div class="sidebar-body">
     <div class="help-content active" id="help-faq">
-        <details class="help-item"><summary>What is Zakat Calculator?</summary><p>An interactive tool to learn about Zakat, the third pillar of Islam. Calculate Zakat on your savings and test your knowledge with quizzes.</p></details>
-        <details class="help-item"><summary>What is Zakat?</summary><p>Zakat is obligatory charity — one of the five pillars of Islam. Muslims with wealth above Nisab must give 2.5% annually to those in need.</p></details>
-        <details class="help-item"><summary>What is Nisab?</summary><p>Nisab is the minimum wealth threshold. It equals 85 grams of gold or 595 grams of silver. If your savings exceed this for one lunar year, Zakat is due.</p></details>
-        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
-        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser.</p></details>
-        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button in the controls bar.</p></details>
-        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally. No data is sent anywhere.</p></details>
+        <details class="help-item"><summary>ما هي حاسبة الزكاة؟</summary><p>أداة تفاعلية لتعلم الزكاة، الركن الثالث من أركان الإسلام. احسب زكاة مدخراتك واختبر معلوماتك.</p></details>
+        <details class="help-item"><summary>ما هي الزكاة؟</summary><p>الزكاة صدقة واجبة — أحد أركان الإسلام الخمسة. على المسلمين الذين يملكون مالاً فوق النصاب إخراج 2.5% سنوياً للمحتاجين.</p></details>
+        <details class="help-item"><summary>ما هو النصاب؟</summary><p>النصاب هو الحد الأدنى للثروة. يعادل 85 غراماً من الذهب أو 595 غراماً من الفضة. إذا تجاوزت مدخراتك هذا لمدة سنة هجرية، وجبت الزكاة.</p></details>
+        <details class="help-item"><summary>هل يعمل بدون إنترنت؟</summary><p>نعم. بعد التحميل، كل شيء يعمل في المتصفح بدون حاجة للإنترنت.</p></details>
+        <details class="help-item"><summary>هل يعمل على الهاتف؟</summary><p>نعم. يعمل على أي جهاز بمتصفح حديث.</p></details>
+        <details class="help-item"><summary>كيف أغيّر السمة؟</summary><p>انقر على أي زر سمة في شريط التحكم.</p></details>
+        <details class="help-item"><summary>هل بياناتي خاصة؟</summary><p>نعم. كل شيء يعمل محلياً. لا تُرسل أي بيانات.</p></details>
     </div>
     <div class="help-content" id="help-howto">
-        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
-        <div class="help-step"><span class="help-step-num">2</span><p>Choose Learn mode to explore Zakat calculation</p></div>
-        <div class="help-step"><span class="help-step-num">3</span><p>Enter a savings amount and click Calculate Zakat</p></div>
-        <div class="help-step"><span class="help-step-num">4</span><p>See the visual breakdown: 2.5% Zakat vs 97.5% remaining</p></div>
-        <div class="help-step"><span class="help-step-num">5</span><p>Read about the 8 Zakat recipients from Quran 9:60</p></div>
-        <div class="help-step"><span class="help-step-num">6</span><p>Switch to Quiz mode to test your knowledge</p></div>
-        <div class="help-step"><span class="help-step-num">7</span><p>Choose difficulty: Easy, Medium, or Hard</p></div>
-        <div class="help-step"><span class="help-step-num">8</span><p>Answer questions — use buttons or type your answer</p></div>
+        <div class="help-step"><span class="help-step-num">1</span><p>انقر ابدأ في شاشة البداية</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>اختر وضع التعلم لاستكشاف حساب الزكاة</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>أدخل مبلغ المدخرات وانقر احسب الزكاة</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>شاهد التوزيع البصري: 2.5% زكاة مقابل 97.5% متبقي</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>اقرأ عن مصارف الزكاة الثمانية من سورة التوبة آية 60</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>انتقل إلى وضع الاختبار لاختبار معلوماتك</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>اختر الصعوبة: سهل، متوسط، أو صعب</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>أجب عن الأسئلة — استخدم الأزرار أو اكتب إجابتك</p></div>
     </div>
     <div class="help-content" id="help-wiki">
-        <div class="wiki-entry"><h3>Purpose</h3><p>Learn Zakat — the obligatory charity in Islam. Understand how to calculate it and who receives it.</p></div>
-        <div class="wiki-entry"><h3>Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
-        <div class="wiki-entry"><h3>Languages</h3><p>Trilingual: English, Francais, Arabic. Arabic auto-enables RTL layout.</p></div>
-        <div class="wiki-entry"><h3>Sound</h3><p>Web Audio API — no files needed. Correct = rising tone, wrong = buzz, win = melody.</p></div>
-        <div class="wiki-entry"><h3>Zakat Rate</h3><p>2.5% of qualifying wealth held above Nisab for one lunar year.</p></div>
-        <div class="wiki-entry"><h3>Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+        <div class="wiki-entry"><h3>الهدف</h3><p>تعلم الزكاة — الصدقة الواجبة في الإسلام. افهم كيف تُحسب ومن يستحقها.</p></div>
+        <div class="wiki-entry"><h3>السمات</h3><p>8 سمات مدمجة: Terminal، Midnight، Ember، Phosphor، Signal، Redshift، Arctic، Sand.</p></div>
+        <div class="wiki-entry"><h3>اللغات</h3><p>ثلاث لغات: English، Français، العربية. العربية تفعّل تخطيط اليمين لليسار تلقائياً.</p></div>
+        <div class="wiki-entry"><h3>الصوت</h3><p>Web Audio API — لا حاجة لملفات. صحيح = نغمة صاعدة، خطأ = طنين، فوز = لحن.</p></div>
+        <div class="wiki-entry"><h3>نسبة الزكاة</h3><p>2.5% من الثروة المؤهلة فوق النصاب لمدة سنة هجرية كاملة.</p></div>
+        <div class="wiki-entry"><h3>الخصوصية</h3><p>محلي أولاً. لا تتبع، لا تحليلات، لا اتصالات خارجية. جميع البيانات تبقى في متصفحك.</p></div>
     </div>
   </div>
   <div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div>

@@ -181,28 +181,28 @@ input[type="range"]{width:90px}
 .flashcard-front{background:linear-gradient(135deg,#D4AF3711,#006B3F11);border:1px solid var(--border)}
 .flashcard-back{background:var(--bg3);border:1px solid var(--accent);transform:rotateY(180deg)}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">→ الفهرس</a>
 <div class="splash" id="splash"><div class="splash-box">
 <span class="splash-emoji">🃏</span>
 <div class="splash-art"><div class="sa-octstar"><div class="sa-sq sa-sq1"></div><div class="sa-sq sa-sq2"></div></div></div>
 <div class="splash-bism" dir="rtl">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
-<h1 class="splash-title">Surah Info Cards</h1>
-<div class="splash-subtitle">Learn about each Surah</div>
-<p class="splash-desc" id="splDesc">Learn about each Surah</p>
-<button class="btn-go" id="enterBtn">Start</button>
-<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
-<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>Surah Info Cards</h1><span class="pill" id="countPill">114 Surahs</span></div><div class="ctrl"><button id="helpBtn" class="btn-help" onclick="openHelp()">&#10067;</button><button id="soundBtn">&#128266;</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div><div class="sw"><button class="sw-btn on" data-thm="sahara">&#128421;</button><button class="sw-btn" data-thm="emerald">&#127748;</button><button class="sw-btn" data-thm="midnight-gold">&#128293;</button><button class="sw-btn" data-thm="deep-emerald">&#128154;</button><button class="sw-btn" data-thm="royal">&#128225;</button><button class="sw-btn" data-thm="sunset">&#128308;</button><button class="sw-btn" data-thm="ocean">&#10052;&#65039;</button><button class="sw-btn" data-thm="night-sky">&#127964;</button></div></div>
-<input class="search-box" id="searchBox" type="text" placeholder="Search surahs..."/>
-<div class="filter-row" id="filterRow"><button class="filter-btn on" data-f="all">All</button><button class="filter-btn" data-f="makki">Makki</button><button class="filter-btn" data-f="madani">Madani</button></div>
+<h1 class="splash-title">بطاقات معلومات السور</h1>
+<div class="splash-subtitle">تعرّف على كل سورة</div>
+<p class="splash-desc" id="splDesc">تعرّف على كل سورة</p>
+<button class="btn-go" id="enterBtn">ابدأ</button>
+<div class="sw" style="margin-top:20px"><span class="sw-label">اللغة</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">المظهر</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>بطاقات معلومات السور</h1><span class="pill" id="countPill">١١٤ سورة</span></div><div class="ctrl"><button id="helpBtn" class="btn-help" onclick="openHelp()">&#10067;</button><button id="soundBtn">&#128266;</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div><div class="sw"><button class="sw-btn on" data-thm="sahara">&#128421;</button><button class="sw-btn" data-thm="emerald">&#127748;</button><button class="sw-btn" data-thm="midnight-gold">&#128293;</button><button class="sw-btn" data-thm="deep-emerald">&#128154;</button><button class="sw-btn" data-thm="royal">&#128225;</button><button class="sw-btn" data-thm="sunset">&#128308;</button><button class="sw-btn" data-thm="ocean">&#10052;&#65039;</button><button class="sw-btn" data-thm="night-sky">&#127964;</button></div></div>
+<input class="search-box" id="searchBox" type="text" placeholder="ابحث عن سورة..."/>
+<div class="filter-row" id="filterRow"><button class="filter-btn on" data-f="all">الكل</button><button class="filter-btn" data-f="makki">مكية</button><button class="filter-btn" data-f="madani">مدنية</button></div>
 <div class="counter" id="counter"></div>
 <div class="game-area"><div class="cards-grid" id="cardsGrid"></div></div>
-<div class="foot">Amaloun &#8212; Surah Info Cards v1.0</div></div>
+<div class="foot">أمالون — بطاقات معلومات السور الإصدار ١.٠</div></div>
 
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" role="dialog" aria-modal="true">
-<div class="sidebar-header"><span class="sidebar-title">&#10067; Help</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
-<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
+<div class="sidebar-header"><span class="sidebar-title">&#10067; المساعدة</span><button class="btn-close" onclick="closeHelp()">&#10005;</button></div>
+<div class="help-tabs"><button class="help-tab active" data-tab="faq">الأسئلة الشائعة</button><button class="help-tab" data-tab="howto">كيفية الاستخدام</button><button class="help-tab" data-tab="wiki">معلومات</button></div>
 <div class="sidebar-body">
 <div class="help-content active" id="help-faq">
 <details class="help-item"><summary>What is Surah Info Cards?</summary><p>An interactive catalog of all 114 surahs of the Quran. Each card shows the surah name, number, revelation place, verse count, and key themes.</p></details>
@@ -221,7 +221,7 @@ input[type="range"]{width:90px}
 <div class="wiki-entry"><h3>&#128330; Makki vs Madani</h3><p>Makki surahs were revealed in Mecca (before Hijrah) and often discuss faith and the hereafter. Madani surahs were revealed in Medina and often contain laws and social guidance.</p></div>
 <div class="wiki-entry"><h3>&#127752; Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
 </div></div>
-<div class="sidebar-footer">Amaloun &#8212; v1.0</div></aside>
+<div class="sidebar-footer">أمالون — الإصدار ١.٠</div></aside>
 <script>
 // === i18n SYSTEM ===
 let currentLang="ar";
@@ -258,6 +258,11 @@ const T={
     ui_prophets_stories:"قصص الأنبياء",
     ui_islamic_law:"الشريعة الإسلامية",
     ui_nature___creation:"الطبيعة / الخلق",
+    searchPlaceholder:"ابحث عن سورة...",
+    ui_الكل:"الكل",
+    ui_مكية:"مكية",
+    ui_مدنية:"مدنية",
+    countSurahs:"سورة",
     faq0q:"ما هي بطاقات معلومات السور؟",
     faq0a:"بطاقات تعليمية تعرض معلومات عن كل سورة في القرآن الكريم.",
     faq1q:"هل يمكنني البحث عن سورة؟",
@@ -266,15 +271,15 @@ const T={
     faq2a:"نعم. يمكنك تصفية السور حسب مكان النزول: مكية أو مدنية.",
     faq3q:"هل يعمل بدون إنترنت؟",
     faq3a:"نعم. بمجرد تحميل الصفحة، يعمل كل شيء في المتصفح بدون الحاجة للإنترنت.",
-    howto0:"اضغط على زر ابدأ في شاشة البداية",
-    howto1:"اختر مستوى الصعوبة إذا كان متاحاً",
-    howto2:"اقرأ التعليمات المعروضة على الشاشة",
-    howto3:"تفاعل مع العناصر على الشاشة",
-    wiki0t:"&#128214; Surah",
-    wiki0c:"A surah is a chapter of the Quran. There are 114 surahs, varying in length from 3 to 286 verses.",
-    wiki1t:"&#128330; Makki vs Madani",
-    wiki1c:"Makki surahs were revealed in Mecca (before Hijrah) and often discuss faith and the hereafter. Madani surahs were revealed in Medina and often contain laws and social guidance.",
-    wiki2t:"&#127752; Themes",
+    howto0:"تصفّح البطاقات أو استخدم البحث للعثور على سورة",
+    howto1:"اضغط على بطاقة لتوسيعها ورؤية التفاصيل",
+    howto2:"استخدم فلاتر مكية/مدنية لتصنيف السور",
+    howto3:"بدّل بين اللغات والمظاهر حسب رغبتك",
+    wiki0t:"📖 السورة",
+    wiki0c:"السورة هي فصل من القرآن الكريم. يحتوي القرآن على ١١٤ سورة تتراوح أطوالها بين ٣ و٢٨٦ آية.",
+    wiki1t:"🕌 مكية ومدنية",
+    wiki1c:"السور المكية نزلت في مكة قبل الهجرة وتتناول العقيدة والآخرة. السور المدنية نزلت في المدينة وتتضمن الأحكام والتوجيهات الاجتماعية.",
+    wiki2t:"🎨 المظاهر",
     wiki2c:"٨ مظاهر مدمجة: صحراوي، زمردي، ذهبي، أخضر داكن، ملكي، غروب، محيط، سماء الليل."
   },
   en:{
@@ -390,7 +395,7 @@ function setLang(l){currentLang=l==="ar"?"ar":"en";document.documentElement.lang
 function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===t))}
 var soundOn=true,actx;
 function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;var n=actx.currentTime;o.frequency.value=t==="click"?800:600;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.06);o.start(n);o.stop(n+.06)}
-var curLang="en",curFilter="all",expanded=null;
+var curLang="ar",curFilter="all",expanded=null;
 var SURAHS=[
 {n:1,en:"Al-Fatihah",ar:"الفاتحة",v:7,mk:true,th:{en:"Opening prayer, praise of Allah, guidance",fr:"Priere d'ouverture, louange d'Allah, guidance",ar:"دعاء الافتتاح، حمد الله، الهداية"}},
 {n:2,en:"Al-Baqarah",ar:"البقرة",v:286,mk:false,th:{en:"Laws, stories of Bani Israel, faith foundations",fr:"Lois, histoires de Bani Israel, fondements de la foi",ar:"الأحكام، قصص بني إسرائيل، أصول الإيمان"}},

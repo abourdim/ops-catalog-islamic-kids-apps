@@ -103,7 +103,7 @@ canvas{width:100%;border-radius:12px;cursor:pointer;display:block;touch-action:n
 .pillar-zone{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:10px 0}.pillar-slot{width:80px;min-height:90px;border:2px dashed var(--border2);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px;font-size:11px;text-align:center;transition:all .2s;cursor:pointer;background:var(--bg3)}.pillar-slot.filled{border-color:var(--accent);border-style:solid;background:var(--abg)}.pillar-slot .p-num{font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;color:var(--accent)}.pillar-slot .p-name{font-size:10px;color:var(--heading);margin-top:4px;font-weight:600}.drag-pool{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:10px 0}.drag-item{padding:10px 16px;background:var(--bg3);border:2px solid var(--border);border-radius:10px;cursor:pointer;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;color:var(--heading);transition:all .15s;user-select:none}.drag-item:hover{border-color:var(--accent);color:var(--accent)}.drag-item.used{opacity:.3;pointer-events:none}.info-card{background:var(--abg);border:1px solid var(--abr);border-radius:10px;padding:14px;margin:8px 0;text-align:center;animation:fadeUp .3s}.info-card h3{font-family:'Outfit',sans-serif;color:var(--accent);font-size:15px;margin-bottom:6px}.info-card p{font-size:11px;color:var(--text2);line-height:1.6}
 </style></head><body>
 <a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><span class="splash-icon">🏛️</span><h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splashTitle">Five Pillars Builder</h1><p style="color:rgba(255,255,255,.6);font-size:12px;line-height:1.7;margin:12px 0 28px" id="splashDesc"></p><button class="btn-go" id="enterBtn">Start</button><div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🏰</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><span class="splash-icon">🏛️</span><h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splashTitle">Five Pillars Builder</h1><p style="color:rgba(255,255,255,.6);font-size:12px;line-height:1.7;margin:12px 0 28px" id="splashDesc"></p><button class="btn-go" id="enterBtn">ابدأ</button><div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🏰</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
 <div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1 id="appTitle">Five Pillars Builder</h1><span class="pill" id="scorePill">0 / 5</span></div><div class="ctrl"><button id="startBtn">&#x25B6; New Game</button><button class="btn-help" onclick="openHelp()">&#x2753;</button><button id="soundBtn">&#x1F50A;</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&omega;</button></div><div class="sw"><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div>
 <div class="status" id="status">Place each pillar in order</div>
 <div class="game-area" id="gameArea">
@@ -116,28 +116,28 @@ canvas{width:100%;border-radius:12px;cursor:pointer;display:block;touch-action:n
 <div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy &mdash; Five Pillars Builder v1.0</div></div>
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel">
-<div class="sidebar-header"><span class="sidebar-title">&#x2753; Help</span><button class="btn-close" onclick="closeHelp()">&#x2715;</button></div>
-<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
+<div class="sidebar-header"><span class="sidebar-title">&#x2753; مساعدة</span><button class="btn-close" onclick="closeHelp()">&#x2715;</button></div>
+<div class="help-tabs"><button class="help-tab active" data-tab="faq">الأسئلة</button><button class="help-tab" data-tab="howto">كيفية اللعب</button><button class="help-tab" data-tab="wiki">معلومات</button></div>
 <div class="sidebar-body">
 <div class="help-content active" id="help-faq">
-<details class="help-item"><summary>What is this app?</summary><p>An interactive builder to learn the 5 pillars of Islam by placing them in the correct order and exploring each pillar's meaning.</p></details>
-<details class="help-item"><summary>What are the 5 pillars?</summary><p>Shahada (testimony of faith), Salah (prayer), Zakat (charity), Sawm (fasting), and Hajj (pilgrimage).</p></details>
-<details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs locally in your browser.</p></details>
-<details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme icon in the controls bar.</p></details>
-<details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / AR. Arabic enables right-to-left layout.</p></details>
+<details class="help-item"><summary>ما هذا التطبيق؟</summary><p>بنّاء تفاعلي لتعلم أركان الإسلام الخمسة بوضعها في الترتيب الصحيح واستكشاف معنى كل ركن.</p></details>
+<details class="help-item"><summary>ما هي الأركان الخمسة؟</summary><p>الشهادة، الصلاة، الزكاة، الصيام، والحج.</p></details>
+<details class="help-item"><summary>هل يعمل بدون إنترنت؟</summary><p>نعم. بعد التحميل، كل شيء يعمل محلياً في متصفحك.</p></details>
+<details class="help-item"><summary>كيف أغيّر السمة؟</summary><p>انقر على أي أيقونة سمة في شريط التحكم.</p></details>
+<details class="help-item"><summary>كيف أغيّر اللغة؟</summary><p>انقر EN / FR / ع. العربية تفعّل تخطيط اليمين لليسار.</p></details>
 </div>
 <div class="help-content" id="help-howto">
-<div class="help-step"><span class="help-step-num">1</span><p>Click Start on the splash screen</p></div>
-<div class="help-step"><span class="help-step-num">2</span><p>You will see 5 empty slots numbered 1-5</p></div>
-<div class="help-step"><span class="help-step-num">3</span><p>Below are the 5 pillar names shuffled randomly</p></div>
-<div class="help-step"><span class="help-step-num">4</span><p>Click a pillar name, then click the slot where it belongs</p></div>
-<div class="help-step"><span class="help-step-num">5</span><p>If correct, the pillar fills in and you see details about it</p></div>
-<div class="help-step"><span class="help-step-num">6</span><p>Place all 5 pillars to complete the building!</p></div>
+<div class="help-step"><span class="help-step-num">1</span><p>انقر ابدأ في شاشة البداية</p></div>
+<div class="help-step"><span class="help-step-num">2</span><p>سترى 5 خانات فارغة مرقمة 1-5</p></div>
+<div class="help-step"><span class="help-step-num">3</span><p>أسفلها أسماء الأركان الخمسة مبعثرة عشوائياً</p></div>
+<div class="help-step"><span class="help-step-num">4</span><p>انقر على اسم ركن ثم على الخانة التي ينتمي إليها</p></div>
+<div class="help-step"><span class="help-step-num">5</span><p>إذا كان صحيحاً، يمتلئ الركن وترى تفاصيل عنه</p></div>
+<div class="help-step"><span class="help-step-num">6</span><p>ضع جميع الأركان الخمسة لإكمال البناء!</p></div>
 </div>
 <div class="help-content" id="help-wiki">
-<div class="wiki-entry"><h3>&#x1F54C; The Five Pillars</h3><p>The five pillars of Islam are the foundation of a Muslim's life. They are the framework for worship and a sign of commitment to the faith.</p></div>
-<div class="wiki-entry"><h3>&#x1F4D6; Source</h3><p>The hadith of Jibril (Gabriel) and the hadith narrated by Ibn Umar in Sahih al-Bukhari and Muslim establish these five pillars.</p></div>
-<div class="wiki-entry"><h3>&#x1F3A8; Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
+<div class="wiki-entry"><h3>&#x1F54C; أركان الإسلام الخمسة</h3><p>أركان الإسلام الخمسة هي أساس حياة المسلم. هي إطار العبادة وعلامة الالتزام بالدين.</p></div>
+<div class="wiki-entry"><h3>&#x1F4D6; المصدر</h3><p>حديث جبريل وحديث ابن عمر في صحيحي البخاري ومسلم يؤسسان هذه الأركان الخمسة.</p></div>
+<div class="wiki-entry"><h3>&#x1F3A8; السمات</h3><p>8 سمات مدمجة: Terminal، Midnight، Ember، Phosphor، Signal، Redshift، Arctic، Sand.</p></div>
 </div>
 </div>
 <div class="sidebar-footer">Workshop-DIY &mdash; v1.0</div>

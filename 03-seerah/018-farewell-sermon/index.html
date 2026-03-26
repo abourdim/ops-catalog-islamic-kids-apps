@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="desert-dawn"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Farewell Sermon</title>
+<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="desert-dawn"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>خطبة الوداع</title>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 [data-theme="desert-dawn"]{--bg:#1a1408;--bg2:#231c0e;--bg3:#2e2514;--border:#3d3420;--border2:#4e432c;--text:#d4c4a0;--text2:#a08c60;--text3:#6b5c3a;--heading:#f5e6c8;--accent:#FFBF00;--abg:rgba(255,191,0,.08);--abr:rgba(255,191,0,.25);--glow:0 0 20px rgba(255,191,0,.15)}
@@ -87,14 +87,14 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 .i18n-ar{display:none}.i18n-en{display:block}
 [lang="ar"] .i18n-ar{display:block}[lang="ar"] .i18n-en{display:none}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink">&larr; Catalog</a>
+<a href="../../index.html" class="back-link" id="backLink">&rarr; الفهرس</a>
 <div class="splash" id="splash"><div class="splash-dunes"></div><div class="splash-box">
 <div class="splash-bism">بِسْمِ ٱللَّوهِ ٱلرَّحْمَـنِ ٱلرَّحِيمِ</div>
 <div style="width:80px;height:80px;margin:0 auto 16px;border-radius:50%;background:radial-gradient(circle,var(--accent) 20%,transparent 70%);opacity:.3;animation:pulse 3s infinite"></div>
-<h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splTitle">Farewell Sermon</h1>
-<div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px" id="splSub">Final Words</div>
-<p style="color:var(--text2);font-size:13px;line-height:1.7;margin-bottom:24px" id="splDesc">Study the powerful final sermon of the Prophet Muhammad (SAW).</p>
-<button class="btn-go" id="enterBtn">Start Mission</button>
+<h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splTitle">خطبة الوداع</h1>
+<div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px" id="splSub">الكلمات الأخيرة</div>
+<p style="color:var(--text2);font-size:13px;line-height:1.7;margin-bottom:24px" id="splDesc">ادرس خطبة الوداع العظيمة للنبي محمد ﷺ.</p>
+<button class="btn-go" id="enterBtn">ابدأ المهمة</button>
 <div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
 <div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span>
 <button class="sw-btn on" data-thm="desert-dawn">&#9728;</button><button class="sw-btn" data-thm="midnight-desert">&#127769;</button><button class="sw-btn" data-thm="sandstone">&#127966;</button><button class="sw-btn" data-thm="oasis">&#127795;</button><button class="sw-btn" data-thm="sunset">&#127773;</button><button class="sw-btn" data-thm="night-sky">&#11088;</button><button class="sw-btn" data-thm="caravan">&#128042;</button><button class="sw-btn" data-thm="parchment">&#128220;</button>
@@ -102,25 +102,25 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 
 <div class="app" id="app">
 <div class="hdr-bism">بِسْمِ ٱللَّوهِ ٱلرَّحْمَـنِ ٱلرَّحِيمِ</div>
-<div class="hdr"><h1 id="appTitle">Farewell Sermon</h1><span class="pill" id="scorePill">0 / 0</span></div>
+<div class="hdr"><h1 id="appTitle">خطبة الوداع</h1><span class="pill" id="scorePill">0 / 0</span></div>
 <div class="ctrl">
-<button id="startBtn">&#9654; New Game</button>
+<button id="startBtn">&#9654; لعبة جديدة</button>
 <button class="btn-help" onclick="openHelp()">?</button>
 <button id="soundBtn">&#128266;</button>
 <div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
 <div class="sw"><button class="sw-btn on" data-thm="desert-dawn">&#9728;</button><button class="sw-btn" data-thm="midnight-desert">&#127769;</button><button class="sw-btn" data-thm="sandstone">&#127966;</button><button class="sw-btn" data-thm="oasis">&#127795;</button><button class="sw-btn" data-thm="sunset">&#127773;</button><button class="sw-btn" data-thm="night-sky">&#11088;</button><button class="sw-btn" data-thm="caravan">&#128042;</button><button class="sw-btn" data-thm="parchment">&#128220;</button></div>
 </div>
-<div class="status" id="status">Loading...</div>
+<div class="status" id="status">جارٍ التحميل...</div>
 <div id="itemsArea" class="items-area"></div>
-<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">Score</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">النتيجة</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">المجموع</div><div class="score-num" id="tot">0</div></div></div>
 <div class="log-box" id="logBox"></div>
-<div class="foot">Farewell Sermon &mdash; Seerah Series v2.0</div>
+<div class="foot">خطبة الوداع &mdash; سلسلة السيرة الإصدار 2.0</div>
 </div>
 
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel">
-<div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">&times;</button></div>
-<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
+<div class="sidebar-header"><span class="sidebar-title">❓ المساعدة</span><button class="btn-close" onclick="closeHelp()">&times;</button></div>
+<div class="help-tabs"><button class="help-tab active" data-tab="faq">أسئلة شائعة</button><button class="help-tab" data-tab="howto">كيفية اللعب</button><button class="help-tab" data-tab="wiki">معلومات</button></div>
 <div class="sidebar-body">
 <div class="help-content active" id="help-faq">
 <div class="i18n-en"><details class="help-item"><summary>What is this app?</summary><p>Study the powerful final sermon of the Prophet Muhammad (SAW).</p></details>
@@ -150,7 +150,7 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 <div class="wiki-entry"><h3>الدروس المستفادة</h3><p>في كل حدث من أحداث السيرة دروس وعبر نتعلم منها.</p></div>
 </div>
 </div></div>
-<div class="sidebar-footer">Seerah Series &mdash; v2.0</div>
+<div class="sidebar-footer">سلسلة السيرة &mdash; الإصدار 2.0</div>
 </aside>
 
 <script>
@@ -261,11 +261,11 @@ function updateUI() {
 
 var UI={
 title:{en:"Farewell Sermon",fr:"Le Sermon d'Adieu",ar:"خطبة الوداع"},
-sub:{en:"Final Words",fr:"Final Words",ar:"Final Words"},
-desc:{en:"Study the powerful final sermon of the Prophet Muhammad (SAW).",fr:"Study the powerful final sermon of the Prophet Muhammad (SAW).",ar:"Study the powerful final sermon of the Prophet Muhammad (SAW)."},
+sub:{en:"Final Words",fr:"Les dernières paroles",ar:"الكلمات الأخيرة"},
+desc:{en:"Study the powerful final sermon of the Prophet Muhammad (SAW).",fr:"Étudiez le puissant sermon d'adieu du Prophète Muhammad (SAW).",ar:"ادرس خطبة الوداع العظيمة للنبي محمد ﷺ."},
 new_game:{en:"\u25b6 New Game",fr:"\u25b6 Nouveau jeu",ar:"\u25b6 \u0644\u0639\u0628\u0629 \u062c\u062f\u064a\u062f\u0629"}
 };
-var curLang="en",soundOn=true,actx;
+var curLang="ar",soundOn=true,actx;
 function t(k){return UI[k]?UI[k][curLang]||UI[k].en:"";}
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
@@ -278,7 +278,7 @@ var HS_KEY="seerah-hs-018-farewell-sermon";
 function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0;}catch(e){return 0;}}
 function saveHS(s){try{localStorage.setItem(HS_KEY,s);}catch(e){}}
 
-var ITEMS=[{name:{en:"Day of Arafah",fr:"Day of Arafah",ar:"Day of Arafah"},desc:{en:"Delivered on 9th Dhul Hijjah, 10 AH",fr:"Delivered on 9th Dhul Hijjah, 10 AH",ar:"Delivered on 9th Dhul Hijjah, 10 AH"}},{name:{en:"Sanctity of life",fr:"Sanctity of life",ar:"Sanctity of life"},desc:{en:"Your lives, property and honor are sacred",fr:"Your lives, property and honor are sacred",ar:"Your lives, property and honor are sacred"}},{name:{en:"Equality",fr:"Equality",ar:"Equality"},desc:{en:"No Arab superior to non-Arab except by taqwa",fr:"No Arab superior to non-Arab except by taqwa",ar:"No Arab superior to non-Arab except by taqwa"}},{name:{en:"Women's rights",fr:"Women's rights",ar:"Women's rights"},desc:{en:"Treat women well, they are your partners",fr:"Treat women well, they are your partners",ar:"Treat women well, they are your partners"}},{name:{en:"No interest (riba)",fr:"No interest (riba)",ar:"No interest (riba)"},desc:{en:"All interest transactions abolished",fr:"All interest transactions abolished",ar:"All interest transactions abolished"}},{name:{en:"Hold to Quran",fr:"Hold to Quran",ar:"Hold to Quran"},desc:{en:"I leave you the Quran, hold firmly to it",fr:"I leave you the Quran, hold firmly to it",ar:"I leave you the Quran, hold firmly to it"}},{name:{en:"Brotherhood",fr:"Brotherhood",ar:"Brotherhood"},desc:{en:"All Muslims are brothers",fr:"All Muslims are brothers",ar:"All Muslims are brothers"}},{name:{en:"Final revelation",fr:"Final revelation",ar:"Final revelation"},desc:{en:"Today I have completed your religion for you",fr:"Today I have completed your religion for you",ar:"Today I have completed your religion for you"}}];
+var ITEMS=[{name:{en:"Day of Arafah",fr:"Le jour d'Arafah",ar:"يوم عرفة"},desc:{en:"Delivered on 9th Dhul Hijjah, 10 AH",fr:"Prononcé le 9 Dhul Hijjah, 10 H",ar:"أُلقيت في 9 ذي الحجة سنة 10 هـ"}},{name:{en:"Sanctity of life",fr:"Sacralité de la vie",ar:"حرمة الدماء"},desc:{en:"Your lives, property and honor are sacred",fr:"Vos vies, biens et honneur sont sacrés",ar:"دماؤكم وأموالكم وأعراضكم حرام عليكم"}},{name:{en:"Equality",fr:"L'égalité",ar:"المساواة"},desc:{en:"No Arab superior to non-Arab except by taqwa",fr:"Pas de supériorité d'un Arabe sauf par la piété",ar:"لا فضل لعربي على أعجمي إلا بالتقوى"}},{name:{en:"Women's rights",fr:"Droits des femmes",ar:"حقوق النساء"},desc:{en:"Treat women well, they are your partners",fr:"Traitez bien les femmes, elles sont vos partenaires",ar:"استوصوا بالنساء خيراً فإنهن شقائقكم"}},{name:{en:"No interest (riba)",fr:"Pas d'intérêt (riba)",ar:"تحريم الربا"},desc:{en:"All interest transactions abolished",fr:"Toutes les transactions d'intérêt abolies",ar:"كل ربا موضوع تحت أقدامنا"}},{name:{en:"Hold to Quran",fr:"S'accrocher au Coran",ar:"التمسك بالقرآن"},desc:{en:"I leave you the Quran, hold firmly to it",fr:"Je vous laisse le Coran, accrochez-vous-y",ar:"تركت فيكم القرآن فتمسكوا به"}},{name:{en:"Brotherhood",fr:"La fraternité",ar:"الأخوة"},desc:{en:"All Muslims are brothers",fr:"Tous les musulmans sont frères",ar:"المسلمون إخوة"}},{name:{en:"Final revelation",fr:"La dernière révélation",ar:"آخر الوحي"},desc:{en:"Today I have completed your religion for you",fr:"Aujourd'hui j'ai complété votre religion",ar:"اليوم أكملت لكم دينكم وأتممت عليكم نعمتي"}}];
 var explored=new Set();
 function renderItems(){var area=document.getElementById("itemsArea");area.innerHTML="";ITEMS.forEach(function(p,i){var card=document.createElement("div");card.className="item-card"+(explored.has(i)?" active":"");card.style.animationDelay=(i*.06)+"s";card.innerHTML='<h3>'+(p.name[curLang]||p.name.en)+'</h3><p>'+(p.desc[curLang]||p.desc.en)+'</p>';card.onclick=function(){if(!explored.has(i)){explored.add(i);snd("ok");log("Explored: "+(p.name.en),"success");document.getElementById("sc").textContent=explored.size;document.getElementById("scorePill").textContent=explored.size+" / "+ITEMS.length;if(explored.size>=ITEMS.length){snd("win");document.getElementById("status").textContent="All explored! MashaAllah!";document.getElementById("status").className="status win";}}card.classList.toggle("active");};area.appendChild(card);});}
 function newGame(){explored.clear();document.getElementById("sc").textContent="0";document.getElementById("tot").textContent=ITEMS.length;document.getElementById("scorePill").textContent="0 / "+ITEMS.length;document.getElementById("status").textContent="Tap each item to explore";document.getElementById("status").className="status";document.getElementById("logBox").innerHTML="";renderItems();}

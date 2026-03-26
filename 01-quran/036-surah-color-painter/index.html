@@ -1,5 +1,5 @@
-<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="sahara"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Surah Color Painter</title>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
+<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="midnight-gold"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>رسام ألوان السور</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 [data-theme="sahara"]{--bg:#FFF8E7;--bg2:#FFFDF5;--bg3:#F5ECD7;--border:#E8D5A8;--border2:#D4C48E;--text:#4A3F2F;--text2:#7A6E5A;--text3:#A09580;--heading:#2C1810;--accent:#CFB53B;--abg:#CFB53B0A;--abr:#CFB53B33;--glow:0 0 20px #CFB53B15;--accent2:#2E7D32}
 [data-theme="emerald"]{--bg:#F0F7F2;--bg2:#F8FBF9;--bg3:#E2EDE5;--border:#B8D4BE;--border2:#98C4A2;--text:#2D4A35;--text2:#527A5E;--text3:#7EA08A;--heading:#1A3322;--accent:#2E7D32;--abg:#2E7D320A;--abr:#2E7D3233;--glow:0 0 20px #2E7D3215;--accent2:#CFB53B}
@@ -11,8 +11,8 @@
 [data-theme="night-sky"]{--bg:#0A0C18;--bg2:#101428;--bg3:#181E38;--border:#202850;--border2:#283268;--text:#B0B8D8;--text2:#7080B0;--text3:#485088;--heading:#D8E0FF;--accent:#FFD700;--abg:#FFD7000A;--abr:#FFD70033;--glow:0 0 20px #FFD70015;--accent2:#4488FF}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:'Outfit','Noto Sans Arabic',sans-serif;font-size:14px;min-height:100vh;background-image:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iMzQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBvbHlnb24gcG9pbnRzPSIyMCwwIDQwLDM0IDAsMzQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0NGQjUzQiIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuMDQiLz48L3N2Zz4=");background-size:60px}
-[lang="ar"] body{font-family:'Noto Sans Arabic','Amiri','Outfit',sans-serif}
-h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+[lang="ar"] body{font-family:'Noto Naskh Arabic','Noto Sans Arabic','Amiri','Outfit',sans-serif}
+h1,.heading{font-family:'Amiri','Noto Naskh Arabic','Outfit',sans-serif;color:var(--heading)}
 @keyframes splashEnter{from{opacity:0;transform:scale(.6) rotate(10deg)}to{opacity:1;transform:scale(1) rotate(0)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
@@ -180,31 +180,31 @@ input[type="range"]{width:90px}
 .flashcard-front{background:linear-gradient(135deg,#CFB53B11,#2E7D3211);border:1px solid var(--border)}
 .flashcard-back{background:var(--bg3);border:1px solid var(--accent);transform:rotateY(180deg)}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8594; الفهرس</a>
 <div class="splash" id="splash"><div class="splash-box">
 <span class="splash-emoji">🎨</span>
 <div class="splash-art"><div class="sa-beads"><div class="sa-bead" style="--i:0"></div><div class="sa-bead" style="--i:1"></div><div class="sa-bead" style="--i:2"></div><div class="sa-bead" style="--i:3"></div><div class="sa-bead" style="--i:4"></div><div class="sa-bead" style="--i:5"></div><div class="sa-bead" style="--i:6"></div></div></div>
 <div class="splash-bism" dir="rtl">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
-<h1 class="splash-title">Surah Color Painter</h1>
-<div class="splash-subtitle">Paint surahs with beautiful colors</div>
-<p class="splash-desc" id="splDesc">Paint surahs with beautiful colors</p>
-<button class="btn-go" id="enterBtn">Start</button>
-<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
-<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">&fdfc;</div><div class="hdr"><h1>Surah Color Painter</h1><span class="pill" id="surahPill">Al-Fatiha</span></div>
-<div class="ctrl"><button id="clearBtn">Clear</button><button id="undoBtn">Undo</button><button class="btn-help" onclick="openHelp()">? Help</button><button id="soundBtn">Sound ON</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw"><button class="sw-btn on" data-thm="sahara">T</button><button class="sw-btn" data-thm="emerald">M</button><button class="sw-btn" data-thm="midnight-gold">E</button><button class="sw-btn" data-thm="deep-emerald">P</button><button class="sw-btn" data-thm="royal">S</button><button class="sw-btn" data-thm="sunset">R</button><button class="sw-btn" data-thm="ocean">A</button><button class="sw-btn" data-thm="night-sky">D</button></div></div>
+<h1 class="splash-title">رسام ألوان السور</h1>
+<div class="splash-subtitle">لوّن السور بألوان جميلة</div>
+<p class="splash-desc" id="splDesc">لوّن السور بألوان جميلة</p>
+<button class="btn-go" id="enterBtn">ابدأ</button>
+<div class="sw" style="margin-top:20px"><span class="sw-label">اللغة</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">المظهر</span><button class="sw-btn" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn on" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">&fdfc;</div><div class="hdr"><h1>رسام ألوان السور</h1><span class="pill" id="surahPill">الفاتحة</span></div>
+<div class="ctrl"><button id="clearBtn">مسح</button><button id="undoBtn">تراجع</button><button class="btn-help" onclick="openHelp()">؟ المساعدة</button><button id="soundBtn">الصوت مفعّل</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&ayn;</button></div><div class="sw"><button class="sw-btn" data-thm="sahara">T</button><button class="sw-btn" data-thm="emerald">M</button><button class="sw-btn" data-thm="midnight-gold">E</button><button class="sw-btn" data-thm="deep-emerald">P</button><button class="sw-btn" data-thm="royal">S</button><button class="sw-btn" data-thm="sunset">R</button><button class="sw-btn" data-thm="ocean">A</button><button class="sw-btn" data-thm="night-sky">D</button></div></div>
 <div class="surah-sel" id="surahSel"></div>
 <div class="status" id="status"></div>
 <div class="palette-bar" id="palBar"></div>
-<div class="brush-bar"><button class="active" data-bsz="3">Fine</button><button data-bsz="8">Medium</button><button data-bsz="16">Thick</button><button data-bsz="30">Wide</button><label style="color:var(--text2);font-size:10px">Opacity: <input type="range" id="opRange" min="10" max="100" value="100"/></label></div>
+<div class="brush-bar"><button class="active" data-bsz="3">دقيق</button><button data-bsz="8">متوسط</button><button data-bsz="16">سميك</button><button data-bsz="30">عريض</button><label style="color:var(--text2);font-size:10px">الشفافية: <input type="range" id="opRange" min="10" max="100" value="100"/></label></div>
 <div class="canvas-wrap"><canvas id="paintCanvas" width="680" height="380"></canvas></div>
-<div class="foot">Amaloun &mdash; Surah Color Painter v1.0</div></div>
+<div class="foot">أمالون &mdash; رسام ألوان السور الإصدار ١.٠</div></div>
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
-<aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">&times;</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div><div class="sidebar-body">
-<div class="help-content active" id="help-faq"><details class="help-item"><summary>What is Surah Color Painter?</summary><p>A painting app where each surah provides a themed color palette inspired by its meanings and themes.</p></details><details class="help-item"><summary>Why these colors?</summary><p>Colors are chosen to evoke the themes: green for paradise, blue for sky/water, gold for light, etc.</p></details></div>
-<div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>Select a surah to load its color palette</p></div><div class="help-step"><span class="help-step-num">2</span><p>Click a color swatch to select it</p></div><div class="help-step"><span class="help-step-num">3</span><p>Choose brush size and opacity</p></div><div class="help-step"><span class="help-step-num">4</span><p>Paint on the canvas freely</p></div></div>
-<div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>Color in the Quran</h3><p>The Quran mentions colors: green for paradise garments, white for radiant faces, and describes nature's vivid palette as signs of Allah.</p></div></div>
-</div><div class="sidebar-footer">Amaloun &mdash; v1.0</div></aside>
+<aside class="sidebar sidebar-left" id="helpPanel"><div class="sidebar-header"><span class="sidebar-title">&#10067; المساعدة</span><button class="btn-close" onclick="closeHelp()">&times;</button></div><div class="help-tabs"><button class="help-tab active" data-tab="faq">الأسئلة الشائعة</button><button class="help-tab" data-tab="howto">كيفية الاستخدام</button><button class="help-tab" data-tab="wiki">معلومات</button></div><div class="sidebar-body">
+<div class="help-content active" id="help-faq"><details class="help-item"><summary>ما هو رسام ألوان السور؟</summary><p>تطبيق يربط كل سورة بلون مميز يعبر عن موضوعها الرئيسي.</p></details><details class="help-item"><summary>لماذا هذه الألوان؟</summary><p>كل لون يعبر عن موضوع السورة الرئيسي مثل الأخضر للجنة والأزرق للسماء.</p></details></div>
+<div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>اضغط على زر ابدأ في شاشة البداية</p></div><div class="help-step"><span class="help-step-num">2</span><p>اختر مستوى الصعوبة إذا كان متاحاً</p></div><div class="help-step"><span class="help-step-num">3</span><p>اقرأ التعليمات المعروضة على الشاشة</p></div><div class="help-step"><span class="help-step-num">4</span><p>تفاعل مع العناصر على الشاشة</p></div></div>
+<div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>الألوان في القرآن</h3><p>يذكر القرآن الكريم الألوان: الأخضر للباس أهل الجنة، والأبيض للوجوه المشرقة، ويصف ألوان الطبيعة كآيات من آيات الله.</p></div></div>
+</div><div class="sidebar-footer">أمالون &mdash; الإصدار ١.٠</div></aside>
 <script>
 // === i18n SYSTEM ===
 let currentLang="ar";
@@ -249,8 +249,8 @@ const T={
     howto1:"اختر مستوى الصعوبة إذا كان متاحاً",
     howto2:"اقرأ التعليمات المعروضة على الشاشة",
     howto3:"تفاعل مع العناصر على الشاشة",
-    wiki0t:"Color in the Quran",
-    wiki0c:"The Quran mentions colors: green for paradise garments, white for radiant faces, and describes nature's vivid palette as signs of Allah."
+    wiki0t:"الألوان في القرآن",
+    wiki0c:"يذكر القرآن الكريم الألوان: الأخضر للباس أهل الجنة، والأبيض للوجوه المشرقة، ويصف ألوان الطبيعة كآيات من آيات الله."
   },
   en:{
     title:"Surah Color Painter",
@@ -426,7 +426,7 @@ document.querySelectorAll("[data-bsz]").forEach(function(b){b.onclick=function()
 document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
 document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
 document.getElementById("enterBtn").onclick=function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";buildSurahSel();selectSurah(0);};
-document.getElementById("soundBtn").onclick=function(){soundOn=!soundOn;this.textContent=soundOn?"Sound ON":"Sound OFF";};
+document.getElementById("soundBtn").onclick=function(){soundOn=!soundOn;this.textContent=soundOn?(currentLang==="ar"?"الصوت مفعّل":"Sound ON"):(currentLang==="ar"?"الصوت مطفأ":"Sound OFF");};
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();if(e.ctrlKey&&e.key==="z"){e.preventDefault();if(strokes.length){strokes.pop();redrawAll();}}});
 document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
 setLang("ar");try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);}catch(e){}

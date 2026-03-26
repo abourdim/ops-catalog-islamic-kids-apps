@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="sahara"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Quran Cipher Decoder</title>
+<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="midnight-gold"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Quran Cipher Decoder</title>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
 [data-theme="sahara"]{--bg:#FFF8E7;--bg2:#FFFDF5;--bg3:#F5ECD7;--border:#E8D5A8;--border2:#D4C48E;--text:#4A3F2F;--text2:#7A6E5A;--text3:#A09580;--heading:#2C1810;--accent:#C9960C;--abg:#C9960C0A;--abr:#C9960C33;--glow:0 0 20px #C9960C15;--accent2:#43A047}
@@ -191,10 +191,10 @@ input[type="range"]{width:90px}
 <div class="splash-subtitle">Decode Quranic letter puzzles</div>
 <p class="splash-desc" id="splDesc">Decode Quranic letter puzzles</p>
 <button class="btn-go" id="enterBtn">Start</button>
-<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
 <div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
 <div class="app" id="app"><div class="hdr-bism">&fdfc;</div><div class="hdr"><h1>Quran Cipher Decoder</h1><span class="pill" id="lvlPill">Level 1</span></div>
-<div class="ctrl"><button id="newBtn">New Cipher</button><button id="hintBtn">Hint</button><button class="btn-help" onclick="openHelp()">? Help</button><button id="soundBtn">Sound ON</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&ayn;</button></div><div class="sw"><button class="sw-btn on" data-thm="sahara">T</button><button class="sw-btn" data-thm="emerald">M</button><button class="sw-btn" data-thm="midnight-gold">E</button><button class="sw-btn" data-thm="deep-emerald">P</button><button class="sw-btn" data-thm="royal">S</button><button class="sw-btn" data-thm="sunset">R</button><button class="sw-btn" data-thm="ocean">A</button><button class="sw-btn" data-thm="night-sky">D</button></div></div>
+<div class="ctrl"><button id="newBtn">New Cipher</button><button id="hintBtn">Hint</button><button class="btn-help" onclick="openHelp()">? Help</button><button id="soundBtn">Sound ON</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&ayn;</button></div><div class="sw"><button class="sw-btn on" data-thm="sahara">T</button><button class="sw-btn" data-thm="emerald">M</button><button class="sw-btn" data-thm="midnight-gold">E</button><button class="sw-btn" data-thm="deep-emerald">P</button><button class="sw-btn" data-thm="royal">S</button><button class="sw-btn" data-thm="sunset">R</button><button class="sw-btn" data-thm="ocean">A</button><button class="sw-btn" data-thm="night-sky">D</button></div></div>
 <div class="status" id="status">Click an encoded letter, then click its real Arabic letter below</div>
 <div class="cipher-box" id="cipherBox"><div class="cipher-line" id="cipherLine"></div><div class="hint-text" id="hintText"></div><div class="key-row" id="keyRow"></div></div>
 <div class="score-row"><div class="score-item"><div class="score-label">Decoded</div><div class="score-num" id="decNum">0</div></div><div class="score-item"><div class="score-label">Solved</div><div class="score-num" id="solvedNum">0</div></div></div>
@@ -251,8 +251,8 @@ const T={
     howto1:"اختر مستوى الصعوبة إذا كان متاحاً",
     howto2:"اقرأ التعليمات المعروضة على الشاشة",
     howto3:"تفاعل مع العناصر على الشاشة",
-    wiki0t:"Substitution Cipher",
-    wiki0c:"One of the oldest encryption methods. Each letter is replaced by another. Used here to make Arabic letter recognition fun and engaging."
+    wiki0t:"شيفرة الاستبدال",
+    wiki0c:"من أقدم طرق التشفير. يُستبدل كل حرف بحرف آخر. تُستخدم هنا لجعل التعرّف على الحروف العربية ممتعاً وتفاعلياً."
   },
   en:{
     title:"Quran Cipher Decoder",

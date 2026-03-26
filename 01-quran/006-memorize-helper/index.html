@@ -180,27 +180,27 @@ input[type="range"]{width:90px}
 .flashcard-front{background:linear-gradient(135deg,#CFB53B11,#43A04711);border:1px solid var(--border)}
 .flashcard-back{background:var(--bg3);border:1px solid var(--accent);transform:rotateY(180deg)}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">&#8592; Catalog</a>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">→ الفهرس</a>
 <div class="splash" id="splash"><div class="splash-box">
 <span class="splash-emoji">🧠</span>
 <div class="splash-art"><div class="sa-beads"><div class="sa-bead" style="--i:0"></div><div class="sa-bead" style="--i:1"></div><div class="sa-bead" style="--i:2"></div><div class="sa-bead" style="--i:3"></div><div class="sa-bead" style="--i:4"></div><div class="sa-bead" style="--i:5"></div><div class="sa-bead" style="--i:6"></div></div></div>
 <div class="splash-bism" dir="rtl">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
-<h1 class="splash-title">Memorize Helper</h1>
-<div class="splash-subtitle">Memorize Quran with ease</div>
-<p class="splash-desc" id="splDesc">Memorize Quran with ease</p>
-<button class="btn-go" id="enterBtn">Start</button>
-<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
-<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Memorize Helper</h1><span class="pill" id="scorePill">Step 0/5</span><span class="timer-pill" id="timerPill">0:00</span></div>
+<h1 class="splash-title">مساعد الحفظ</h1>
+<div class="splash-subtitle">احفظ القرآن بسهولة</div>
+<p class="splash-desc" id="splDesc">احفظ القرآن بسهولة</p>
+<button class="btn-go" id="enterBtn">ابدأ</button>
+<div class="sw" style="margin-top:20px"><span class="sw-label">اللغة</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:8px"><span class="sw-label">المظهر</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>مساعد الحفظ</h1><span class="pill" id="scorePill">Step 0/5</span><span class="timer-pill" id="timerPill">0:00</span></div>
 <div class="ctrl">
-<select id="diffSel"><option value="easy">Easy</option><option value="medium" selected>Medium</option><option value="hard">Hard</option></select>
-<button id="startBtn">▶ New Surah</button>
+<select id="diffSel"><option value="easy">سهل</option><option value="medium" selected>متوسط</option><option value="hard">صعب</option></select>
+<button id="startBtn">▶ سورة جديدة</button>
 <button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
 <button id="soundBtn">🔊</button>
-<div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">ع</button></div>
+<div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
 <div class="sw"><button class="sw-btn on" data-thm="sahara">🖥</button><button class="sw-btn" data-thm="emerald">🌌</button><button class="sw-btn" data-thm="midnight-gold">🔥</button><button class="sw-btn" data-thm="deep-emerald">💚</button><button class="sw-btn" data-thm="royal">📡</button><button class="sw-btn" data-thm="sunset">🔴</button><button class="sw-btn" data-thm="ocean">❄️</button><button class="sw-btn" data-thm="night-sky">🏜</button></div>
 </div>
-<div class="status" id="status">Select a surah to begin memorizing</div>
+<div class="status" id="status">اختر سورة لبدء الحفظ</div>
 <div id="surahSelector" class="surah-grid"></div>
 <div class="step-indicator" id="stepIndicator"></div>
 <div class="game-area" id="gameArea">
@@ -208,17 +208,17 @@ input[type="range"]{width:90px}
 <div class="word-bank" id="wordBank"></div>
 <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
 </div>
-<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Errors</div><div class="score-num" id="tot">0</div></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">صحيح</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">أخطاء</div><div class="score-num" id="tot">0</div></div></div>
 <div class="log-box" id="logBox"></div>
-<div class="foot">Amaloun — Memorize Helper v1.0</div></div>
+<div class="foot">أمالون — مساعد الحفظ الإصدار ١.٠</div></div>
 
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" aria-label="Help" role="dialog" aria-modal="true">
-  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="sidebar-header"><span class="sidebar-title">❓ المساعدة</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
   <div class="help-tabs">
-    <button class="help-tab active" data-tab="faq">FAQ</button>
-    <button class="help-tab" data-tab="howto">How-To</button>
-    <button class="help-tab" data-tab="wiki">Wiki</button>
+    <button class="help-tab active" data-tab="faq">الأسئلة الشائعة</button>
+    <button class="help-tab" data-tab="howto">كيفية الاستخدام</button>
+    <button class="help-tab" data-tab="wiki">معلومات</button>
   </div>
   <div class="sidebar-body">
     <div class="help-content active" id="help-faq">
@@ -249,7 +249,7 @@ input[type="range"]{width:90px}
         <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
     </div>
   </div>
-  <div class="sidebar-footer">Amaloun — v1.0</div>
+  <div class="sidebar-footer">أمالون — الإصدار ١.٠</div>
 </aside>
 <script>
 // === i18n SYSTEM ===

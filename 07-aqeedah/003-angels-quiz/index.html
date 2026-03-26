@@ -105,51 +105,51 @@ h1,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--headi
 canvas{width:100%;border-radius:12px;cursor:pointer;display:block;touch-action:none}
 .timer-pill{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:2px 8px;border-radius:12px;font-size:10px;font-family:'IBM Plex Mono',monospace;margin-left:6px}
 </style></head><body>
-<a href="../../index.html" class="back-link" id="backLink" style="display:none">← Catalog</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><span class="splash-icon">👼</span><h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splashTitle">Angels of Islam</h1><p style="color:rgba(255,255,255,.6);font-size:12px;line-height:1.7;margin:12px 0 28px" id="splashDesc"></p><button class="btn-go" id="enterBtn">Start</button><div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="terminal">🏰</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Angels of Islam</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="easy">Easy (8)</option><option value="medium" selected>Medium (12)</option><option value="hard">Hard (15)</option></select>
-    <button id="startBtn">▶ New Game</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
+<a href="../../index.html" class="back-link" id="backLink" style="display:none">← الفهرس</a>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><span class="splash-icon">👼</span><h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splashTitle">Angels of Islam</h1><p style="color:rgba(255,255,255,.6);font-size:12px;line-height:1.7;margin:12px 0 28px" id="splashDesc"></p><button class="btn-go" id="enterBtn">ابدأ</button><div class="sw" style="margin-top:20px"><span class="sw-label">اللغة</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:8px"><span class="sw-label">السمة</span><button class="sw-btn on" data-thm="terminal">🏰</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div></div>
+<div class="app" id="app"><div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><div class="hdr"><h1>Angels of Islam</h1><span class="pill" id="scorePill"></span><span class="timer-pill" id="timerPill">0:00</span></div><div class="ctrl"><select id="diffSel" onchange="setDiff()"><option value="easy">سهل (٨)</option><option value="medium" selected>متوسط (١٢)</option><option value="hard">صعب (١٥)</option></select>
+    <button id="startBtn">▶ لعبة جديدة</button><button class="btn-help" id="helpBtn" onclick="openHelp()">❓</button>
     <button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
     <div class="sw"><button class="sw-btn on" data-thm="terminal">🖥</button><button class="sw-btn" data-thm="midnight">🌌</button><button class="sw-btn" data-thm="ember">🔥</button><button class="sw-btn" data-thm="phosphor">💚</button><button class="sw-btn" data-thm="signal">📡</button><button class="sw-btn" data-thm="redshift">🔴</button><button class="sw-btn" data-thm="arctic">❄️</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
-<div class="status" id="status">Pick the correct angel!</div>
+<div class="status" id="status">اختر الملك الصحيح!</div>
 <div class="game-area" id="gameArea"><div class="big-text" id="question">?</div><div class="answer-row" id="choices"></div><div id="infoSlot"></div><div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div></div>
-<div class="score-row"><div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">صحيح</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">المجموع</div><div class="score-num" id="tot">0</div></div></div>
 <div class="log-box" id="logBox"></div><div class="foot">Workshop-Diy — Angels of Islam v1.0</div></div>
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel">
-  <div class="sidebar-header"><span class="sidebar-title">❓ Help</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
+  <div class="sidebar-header"><span class="sidebar-title">❓ مساعدة</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
   <div class="help-tabs">
-    <button class="help-tab active" data-tab="faq">FAQ</button>
-    <button class="help-tab" data-tab="howto">How-To</button>
-    <button class="help-tab" data-tab="wiki">Wiki</button>
+    <button class="help-tab active" data-tab="faq">الأسئلة</button>
+    <button class="help-tab" data-tab="howto">الخطوات</button>
+    <button class="help-tab" data-tab="wiki">معلومات</button>
   </div>
   <div class="sidebar-body">
     <div class="help-content active" id="help-faq">
-        <details class="help-item"><summary>What is Angels of Islam?</summary><p>A quiz game to learn about the angels mentioned in the Quran and Hadith. You are shown a duty or description and must pick the correct angel.</p></details>
-        <details class="help-item"><summary>Does it work offline?</summary><p>Yes. Once loaded, everything runs in your browser with no internet needed.</p></details>
-        <details class="help-item"><summary>Can I play on my phone?</summary><p>Yes. Works on any device with a modern browser — phone, tablet, laptop, desktop.</p></details>
-        <details class="help-item"><summary>What are the difficulty levels?</summary><p>Easy covers the 4 main angels (8 questions). Medium adds 4 more angels (12 questions). Hard includes all angels (15 questions).</p></details>
-        <details class="help-item"><summary>How do I change the theme?</summary><p>Click any theme button (🖥 🌌 🔥 etc.) in the controls bar.</p></details>
-        <details class="help-item"><summary>How do I change the language?</summary><p>Click EN / FR / ع. Arabic enables right-to-left layout automatically.</p></details>
-        <details class="help-item"><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser. No data is sent anywhere.</p></details>
+        <details class="help-item"><summary>ما هي ملائكة الإسلام؟</summary><p>لعبة اختبار لتعلم الملائكة المذكورين في القرآن والحديث. تُعرض عليك مهمة أو وصف وعليك اختيار الملك الصحيح.</p></details>
+        <details class="help-item"><summary>هل يعمل بدون إنترنت؟</summary><p>نعم. بعد التحميل، كل شيء يعمل في متصفحك بدون إنترنت.</p></details>
+        <details class="help-item"><summary>هل يعمل على الهاتف؟</summary><p>نعم. يعمل على أي جهاز بمتصفح حديث — هاتف، جهاز لوحي، حاسوب.</p></details>
+        <details class="help-item"><summary>ما هي مستويات الصعوبة؟</summary><p>سهل: ٤ ملائكة رئيسيين (٨ أسئلة). متوسط: ٤ ملائكة إضافيين (١٢ سؤالاً). صعب: كل الملائكة (١٥ سؤالاً).</p></details>
+        <details class="help-item"><summary>كيف أغيّر السمة؟</summary><p>اضغط على أي زر سمة (🖥 🌌 🔥 إلخ) في شريط التحكم.</p></details>
+        <details class="help-item"><summary>كيف أغيّر اللغة؟</summary><p>اضغط EN / FR / ع. العربية تفعّل تخطيط اليمين لليسار تلقائياً.</p></details>
+        <details class="help-item"><summary>هل بياناتي خاصة؟</summary><p>نعم. كل شيء يعمل محلياً في متصفحك. لا تُرسل أي بيانات.</p></details>
     </div>
     <div class="help-content" id="help-howto">
-        <div class="help-step"><span class="help-step-num">1</span><p>Click Start Mission on the splash screen</p></div>
-        <div class="help-step"><span class="help-step-num">2</span><p>Choose your difficulty level (Easy, Medium, Hard)</p></div>
-        <div class="help-step"><span class="help-step-num">3</span><p>Press ▶ New Game to begin</p></div>
-        <div class="help-step"><span class="help-step-num">4</span><p>Read the question about an angel's duty or characteristic</p></div>
-        <div class="help-step"><span class="help-step-num">5</span><p>Pick the correct angel from 4 choices (or press 1-4 on keyboard)</p></div>
-        <div class="help-step"><span class="help-step-num">6</span><p>After a correct answer, see the Arabic name, role, and Quran/Hadith reference</p></div>
-        <div class="help-step"><span class="help-step-num">7</span><p>Watch your score and progress bar</p></div>
-        <div class="help-step"><span class="help-step-num">8</span><p>Press ▶ New Game to play again or ← Catalog to go back</p></div>
+        <div class="help-step"><span class="help-step-num">1</span><p>اضغط ابدأ المهمة في شاشة البداية</p></div>
+        <div class="help-step"><span class="help-step-num">2</span><p>اختر مستوى الصعوبة (سهل، متوسط، صعب)</p></div>
+        <div class="help-step"><span class="help-step-num">3</span><p>اضغط ▶ لعبة جديدة للبدء</p></div>
+        <div class="help-step"><span class="help-step-num">4</span><p>اقرأ السؤال عن مهمة الملك أو صفته</p></div>
+        <div class="help-step"><span class="help-step-num">5</span><p>اختر الملك الصحيح من ٤ خيارات (أو اضغط 1-4 على لوحة المفاتيح)</p></div>
+        <div class="help-step"><span class="help-step-num">6</span><p>بعد الإجابة الصحيحة، شاهد الاسم العربي والدور والمرجع القرآني</p></div>
+        <div class="help-step"><span class="help-step-num">7</span><p>تابع نتيجتك وشريط التقدم</p></div>
+        <div class="help-step"><span class="help-step-num">8</span><p>اضغط ▶ لعبة جديدة للعب مجدداً أو ← الفهرس للعودة</p></div>
     </div>
     <div class="help-content" id="help-wiki">
-        <div class="wiki-entry"><h3>🎯 Purpose</h3><p>Learn about the angels of Islam — their names, duties, and mentions in the Quran and Hadith. Belief in angels is the second pillar of Iman.</p></div>
-        <div class="wiki-entry"><h3>🎨 Themes</h3><p>8 built-in themes: Terminal, Midnight, Ember, Phosphor, Signal, Redshift, Arctic, Sand.</p></div>
-        <div class="wiki-entry"><h3>🌐 Languages</h3><p>Trilingual: English, Fran&ccedil;ais, العربية. Arabic auto-enables RTL layout.</p></div>
-        <div class="wiki-entry"><h3>🔊 Sound</h3><p>Web Audio API — no files needed. Correct = rising tone, wrong = buzz, win = melody. Toggle with 🔊 button.</p></div>
-        <div class="wiki-entry"><h3>📖 Angels Covered</h3><p>Jibril, Mikail, Israfil, Malak al-Mawt, Munkar &amp; Nakir, Raqib &amp; Atid, Malik, Ridwan, Kiraman Katibin, Hamalat al-Arsh.</p></div>
-        <div class="wiki-entry"><h3>🔒 Privacy</h3><p>Local-first. No tracking, no analytics, no external calls. All data stays in your browser.</p></div>
+        <div class="wiki-entry"><h3>🎯 الهدف</h3><p>تعلّم عن ملائكة الإسلام — أسماؤهم ومهامهم وذكرهم في القرآن والحديث. الإيمان بالملائكة هو الركن الثاني من أركان الإيمان.</p></div>
+        <div class="wiki-entry"><h3>🎨 السمات</h3><p>٨ سمات مدمجة: Terminal، Midnight، Ember، Phosphor، Signal، Redshift، Arctic، Sand.</p></div>
+        <div class="wiki-entry"><h3>🌐 اللغات</h3><p>ثلاث لغات: العربية، الإنجليزية، الفرنسية. العربية تفعّل تخطيط RTL تلقائياً.</p></div>
+        <div class="wiki-entry"><h3>🔊 الصوت</h3><p>Web Audio API — لا حاجة لملفات. صحيح = نغمة صاعدة، خطأ = صفير، فوز = لحن. التبديل بزر 🔊.</p></div>
+        <div class="wiki-entry"><h3>📖 الملائكة المشمولون</h3><p>جبريل، ميكائيل، إسرافيل، ملك الموت، منكر ونكير، رقيب وعتيد، مالك، رضوان، الكرام الكاتبين، حملة العرش.</p></div>
+        <div class="wiki-entry"><h3>🔒 الخصوصية</h3><p>محلي أولاً. لا تتبع، لا تحليلات، لا اتصالات خارجية. كل البيانات تبقى في متصفحك.</p></div>
     </div>
   </div>
   <div class="sidebar-footer">Workshop-DIY — v1.0</div>

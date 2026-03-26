@@ -1,0 +1,49 @@
+Islamic Kids Apps — Arabic Redesign Progress
+=============================================
+Date: 2026-03-26
+
+COMPLETED (7 categories, 305 apps)
+====================================
+[x] 01-quran      (50 apps)  — gold/blue mushaf design, full Arabic i18n
+[x] 02-arabic     (40 apps)  — chalkboard design, curLang fixed
+[x] 03-seerah     (50 apps)  — desert/caravan design, deep content translation
+[x] 04-hadith     (35 apps)  — manuscript design, buttons/forms translated
+[x] 05-dua        (35 apps)  — sky/moon design, interactive elements translated
+[x] 06-fiqh       (50 apps)  — geometric/mosque design, splash + sidebar translated
+[x] 08-adab       (45 apps)  — garden/nature design, wiki/howto translated
+
+PARTIAL (2 categories, 44 apps done)
+======================================
+[~] 07-aqeedah    (35 apps)  — 001-012 done, 013-035 TODO
+[~] 10-gazawat   (110 apps)  — 001-022 + 089-110 done, 023-088 TODO
+
+NOT STARTED (7 categories, 275 apps)
+======================================
+[ ] 09-history    (45 apps)
+[ ] 11-anbiya     (50 apps)
+[ ] 12-scientists  (40 apps)
+[ ] 13-sahaba     (40 apps)
+[ ] 14-tafsir     (30 apps)
+[ ] 15-life-tools  (35 apps)
+[ ] 16-arabic-immersion (35 apps)
+
+REMAINING WORK: 420 apps
+==========================
+- 07-aqeedah: 23 apps (013-035)
+- 09-history: 45 apps
+- 10-gazawat: 66 apps (023-088)
+- 11-anbiya: 50 apps
+- 12-scientists: 40 apps
+- 13-sahaba: 40 apps
+- 14-tafsir: 30 apps
+- 15-life-tools: 35 apps
+- 16-arabic-immersion: 35 apps
+- 05-dua: 12 apps (001-012 agent was stopped, may need verification)
+
+WHAT EACH FIX INCLUDES
+========================
+1. curLang="en" -> curLang="ar"
+2. .on class from EN to AR button in language switchers
+3. T.ar wiki/howto/faq translated from English to Arabic
+4. Hardcoded English HTML translated (sidebar, buttons, labels, footers)
+5. Deep fixes where needed: splash screens, educational data, form labels

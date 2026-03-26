@@ -349,7 +349,7 @@ var WORDS=[
 {word:"\u0633\u0648\u0631\u0629",hint:{en:"Chapter of the Quran",fr:"Chapitre du Coran",ar:"\u0641\u0635\u0644 \u0645\u0646 \u0627\u0644\u0642\u0631\u0622\u0646"}}
 ];
 var ARABIC="\u0627\u0628\u062a\u062b\u062c\u062d\u062e\u062f\u0630\u0631\u0632\u0633\u0634\u0635\u0636\u0637\u0638\u0639\u063a\u0641\u0642\u0643\u0644\u0645\u0646\u0647\u0648\u064a\u0621\u0623\u0625\u0624\u0626".split("");
-var curLang="en",soundOn=true,actx,HS_KEY="wdiy-hs-arabic-hangman";
+var curLang="ar",soundOn=true,actx,HS_KEY="wdiy-hs-arabic-hangman";
 var currentWord=null,guessed=[],wrongCount=0,gameOver=false,wins=0,losses=0,maxWrong=8;
 var UI={title:{en:"Arabic Hangman",fr:"Pendu arabe",ar:"\u0644\u0639\u0628\u0629 \u0627\u0644\u0645\u0634\u0646\u0642\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629"},guess:{en:"Guess the Arabic word!",fr:"Devinez le mot arabe !",ar:"\u062e\u0645\u0651\u0646 \u0627\u0644\u0643\u0644\u0645\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629!"},won:{en:"You got it!",fr:"Bravo, trouv\u00e9 !",ar:"\u0623\u062d\u0633\u0646\u062a! \u0648\u062c\u062f\u062a\u0647\u0627!"},lost:{en:"The word was: ",fr:"Le mot \u00e9tait : ",ar:"\u0627\u0644\u0643\u0644\u0645\u0629 \u0643\u0627\u0646\u062a: "},winsL:{en:"Wins",fr:"Victoires",ar:"\u0641\u0648\u0632"},lossL:{en:"Losses",fr:"D\u00e9faites",ar:"\u062e\u0633\u0627\u0631\u0629"}};
 function t(k){return UI[k]?UI[k][curLang]||UI[k]["en"]:"";}

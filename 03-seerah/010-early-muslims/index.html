@@ -110,17 +110,17 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 <div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
 <div class="sw"><button class="sw-btn on" data-thm="desert-dawn">&#9728;</button><button class="sw-btn" data-thm="midnight-desert">&#127769;</button><button class="sw-btn" data-thm="sandstone">&#127966;</button><button class="sw-btn" data-thm="oasis">&#127795;</button><button class="sw-btn" data-thm="sunset">&#127773;</button><button class="sw-btn" data-thm="night-sky">&#11088;</button><button class="sw-btn" data-thm="caravan">&#128042;</button><button class="sw-btn" data-thm="parchment">&#128220;</button></div>
 </div>
-<div class="status" id="status">Loading...</div>
+<div class="status" id="status">جاري التحميل...</div>
 <div id="itemsArea" class="items-area"></div>
-<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">Score</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label" id="lbl0">صحيح</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbl1">المجموع</div><div class="score-num" id="tot">0</div></div></div>
 <div class="log-box" id="logBox"></div>
-<div class="foot">Early Muslims &mdash; Seerah Series v2.0</div>
+<div class="foot" id="footerText">المسلمون الأوائل &mdash; سلسلة السيرة v2.0</div>
 </div>
 
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel">
-<div class="sidebar-header"><span class="sidebar-title">? Help</span><button class="btn-close" onclick="closeHelp()">&times;</button></div>
-<div class="help-tabs"><button class="help-tab active" data-tab="faq">FAQ</button><button class="help-tab" data-tab="howto">How-To</button><button class="help-tab" data-tab="wiki">Wiki</button></div>
+<div class="sidebar-header"><span class="sidebar-title" id="sidebarTitle">&#10067; المساعدة</span><button class="btn-close" onclick="closeHelp()">&times;</button></div>
+<div class="help-tabs"><button class="help-tab active" data-tab="faq" id="tabFaq">أسئلة شائعة</button><button class="help-tab" data-tab="howto" id="tabHowto">كيفية اللعب</button><button class="help-tab" data-tab="wiki" id="tabWiki">معلومات</button></div>
 <div class="sidebar-body">
 <div class="help-content active" id="help-faq">
 <div class="i18n-en"><details class="help-item"><summary>What is this app?</summary><p>Meet the courageous first converts to Islam.</p></details>
@@ -150,7 +150,7 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 <div class="wiki-entry"><h3>الدروس المستفادة</h3><p>في كل حدث من أحداث السيرة دروس وعبر نتعلم منها.</p></div>
 </div>
 </div></div>
-<div class="sidebar-footer">Seerah Series &mdash; v2.0</div>
+<div class="sidebar-footer">سلسلة السيرة &mdash; v2.0</div>
 </aside>
 
 <script>
@@ -265,7 +265,7 @@ sub:{en:"First Believers",fr:"First Believers",ar:"First Believers"},
 desc:{en:"Meet the courageous first converts to Islam.",fr:"Meet the courageous first converts to Islam.",ar:"Meet the courageous first converts to Islam."},
 new_game:{en:"\u25b6 New Game",fr:"\u25b6 Nouveau jeu",ar:"\u25b6 \u0644\u0639\u0628\u0629 \u062c\u062f\u064a\u062f\u0629"}
 };
-var curLang="en",soundOn=true,actx;
+var curLang="ar",soundOn=true,actx;
 function t(k){return UI[k]?UI[k][curLang]||UI[k].en:"";}
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}

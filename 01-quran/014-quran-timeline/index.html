@@ -190,9 +190,9 @@ input[type="range"]{width:90px}
 <div class="splash-subtitle">Journey through revelation history</div>
 <p class="splash-desc" id="splDesc">Journey through revelation history</p>
 <button class="btn-go" id="enterBtn">Start</button>
-<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div>
+<div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
 <div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span><button class="sw-btn on" data-thm="sahara">☀️</button><button class="sw-btn" data-thm="emerald">🌿</button><button class="sw-btn" data-thm="midnight-gold">🌙</button><button class="sw-btn" data-thm="deep-emerald">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="night-sky">🌌</button></div></div></div>
-<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>Quran Timeline</h1><span class="pill">23 Years</span></div><div class="ctrl"><button class="btn-help" onclick="openHelp()">&#10067;</button><button id="soundBtn">&#128266;</button><div class="sw"><button class="sw-btn on" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn" data-lang="ar">&#1593;</button></div><div class="sw"><button class="sw-btn on" data-thm="sahara">&#128421;</button><button class="sw-btn" data-thm="emerald">&#127748;</button><button class="sw-btn" data-thm="midnight-gold">&#128293;</button><button class="sw-btn" data-thm="deep-emerald">&#128154;</button><button class="sw-btn" data-thm="royal">&#128225;</button><button class="sw-btn" data-thm="sunset">&#128308;</button><button class="sw-btn" data-thm="ocean">&#10052;&#65039;</button><button class="sw-btn" data-thm="night-sky">&#127964;</button></div></div>
+<div class="app" id="app"><div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>Quran Timeline</h1><span class="pill" id="yearsPill">23 Years</span></div><div class="ctrl"><button class="btn-help" onclick="openHelp()">&#10067;</button><button id="soundBtn">&#128266;</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div><div class="sw"><button class="sw-btn on" data-thm="sahara">&#128421;</button><button class="sw-btn" data-thm="emerald">&#127748;</button><button class="sw-btn" data-thm="midnight-gold">&#128293;</button><button class="sw-btn" data-thm="deep-emerald">&#128154;</button><button class="sw-btn" data-thm="royal">&#128225;</button><button class="sw-btn" data-thm="sunset">&#128308;</button><button class="sw-btn" data-thm="ocean">&#10052;&#65039;</button><button class="sw-btn" data-thm="night-sky">&#127964;</button></div></div>
 <div class="game-area" id="timelineArea"></div>
 <div class="foot">Amaloun &#8212; Quran Timeline v1.0</div></div>
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
@@ -237,13 +237,14 @@ const T={
     faq0a:"نزل القرآن على مدى ٢٣ سنة تقريباً.",
     faq1q:"هل نزل القرآن دفعة واحدة؟",
     faq1a:"لا. نزل القرآن مُنجّماً (متفرقاً) على مدى ٢٣ سنة حسب الأحداث والمناسبات.",
-    howto0:"اضغط على زر ابدأ في شاشة البداية",
-    howto1:"اختر مستوى الصعوبة إذا كان متاحاً",
-    howto2:"اقرأ التعليمات المعروضة على الشاشة",
-    wiki0t:"&#128218; Wahy",
-    wiki0c:"Wahy means divine revelation. Angel Jibreel brought Allah's words to Prophet Muhammad over 23 years.",
-    wiki1t:"&#128197; Hijrah",
-    wiki1c:"The migration from Mecca to Medina in 622 CE marks the turning point between Makki and Madani revelations."
+    howto0:"تصفّح الخط الزمني لأحداث الوحي",
+    howto1:"اضغط على أي حدث لتوسيعه وقراءة تفاصيله",
+    howto2:"اكتشف السور المرتبطة بكل حدث تاريخي",
+    pill23:"٢٣ سنة",
+    wiki0t:"الوحي",
+    wiki0c:"الوحي هو الإعلام الإلهي. أنزل جبريل كلام الله على النبي محمد ﷺ على مدى ٢٣ سنة.",
+    wiki1t:"الهجرة",
+    wiki1c:"هجرة النبي ﷺ من مكة إلى المدينة سنة 622م تمثل نقطة التحول بين الوحي المكي والمدني."
   },
   en:{
     title:"Quran Timeline",
@@ -313,6 +314,8 @@ function updateUI(){
   var bl=document.getElementById("backLink");if(bl)bl.textContent=tr("catalog");
   // Lang/Theme labels
   document.querySelectorAll(".sw-label").forEach(function(el,i){if(i===0)el.textContent=tr("lang");else if(i===1)el.textContent=tr("theme");});
+  // Years pill
+  var yp=document.getElementById("yearsPill");if(yp)yp.textContent=tr("pill23")||"23 Years";
   // Score labels
   document.querySelectorAll(".score-label").forEach(function(el,i){var k="score"+i;if(T[currentLang][k])el.textContent=tr(k);});
   // Difficulty options
@@ -347,7 +350,7 @@ function updateUI(){
 
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open")}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
-var curLang="en";
+var curLang="ar";
 function setLang(l){currentLang=l==="ar"?"ar":"en";curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));renderTimeline();updateUI();}
 function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===t))}
 var soundOn=true,actx;function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;var n=actx.currentTime;o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.06);o.start(n);o.stop(n+.06)}

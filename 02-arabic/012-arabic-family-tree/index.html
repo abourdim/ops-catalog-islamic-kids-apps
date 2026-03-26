@@ -351,8 +351,8 @@ var FAMILY=[
 {emoji:"👩",ar:"خَالَة",en:"Aunt (maternal)",fr:"Tante (maternelle)"}
 ];
 var UI={status_q:{en:"Who is this family member?",fr:"Qui est ce membre de la famille ?",ar:"من هذا الفرد من العائلة؟"},status_ok:{en:"Correct!",fr:"Correct !",ar:"صحيح!"},status_no:{en:"Not quite!",fr:"Pas tout à fait !",ar:"ليس تماماً!"},status_done:{en:"Family tree complete!",fr:"Arbre généalogique complet !",ar:"اكتملت شجرة العائلة!"},matched:{en:"Matched",fr:"Réussi",ar:"موافق"},total:{en:"Total",fr:"Total",ar:"المجموع"},new_game:{en:"▶ New Game",fr:"▶ Nouveau jeu",ar:"▶ لعبة جديدة"}};
-var curLang="en";function t(k){return UI[k]?UI[k][curLang]||UI[k]["en"]:"";}
-function renderLang(){curLang=document.documentElement.lang||"en";document.getElementById("status").textContent=t("status_q");document.getElementById("startBtn").textContent=t("new_game");document.querySelectorAll(".score-label").forEach(function(el,i){el.textContent=i===0?t("matched"):t("total");});}
+var curLang="ar";function t(k){return UI[k]?UI[k][curLang]||UI[k]["en"]:"";}
+function renderLang(){curLang=document.documentElement.lang||"ar";document.getElementById("status").textContent=t("status_q");document.getElementById("startBtn").textContent=t("new_game");document.querySelectorAll(".score-label").forEach(function(el,i){el.textContent=i===0?t("matched"):t("total");});}
 var correct=0,tot=0,current=0,order=[],locked=false;
 var timerInterval,timerSeconds=0;
 function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(function(){timerSeconds++;var m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s;},1000);}
