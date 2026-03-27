@@ -416,7 +416,6 @@ correct++;snd("ok");
 document.getElementById(isMakki?"btnMk":"btnMd").classList.add(isMakki?"correct-m":"correct-d");
 log("\u2713 "+s.en+" — "+(s.mk?"Makki":"Madani"),"success");
 }else{
-snd("err");
 document.getElementById(isMakki?"btnMk":"btnMd").classList.add("wrong");
 document.getElementById(s.mk?"btnMk":"btnMd").classList.add(s.mk?"correct-m":"correct-d");
 log("\u2717 "+s.en+" — "+(s.mk?"Makki":"Madani"),"error");

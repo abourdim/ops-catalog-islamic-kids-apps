@@ -222,7 +222,6 @@ document.getElementById("prog").style.width=(current/5*100)+"%";
 setTimeout(function(){if(current<5)showQuestion();else endGame()},2000);
 }
 function endGame(){
-snd("win");
 document.getElementById("status").textContent=t("done");
 document.getElementById("status").className="status win";
 document.getElementById("prog").style.width="100%";

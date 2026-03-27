@@ -245,14 +245,12 @@ var info=document.getElementById("infoArea");
 info.innerHTML='<div class="info-card"><h3>'+p.icon+" "+(p.name[curLang]||p.name.en)+'</h3><p>'+(p.desc[curLang]||p.desc.en)+'</p></div>';
 if(placed>=5){endGame();}
 }else{
-snd("err");
 document.getElementById("status").textContent=t("status_wrong");
 document.getElementById("status").className="status lose";
 log("\u2717 Wrong slot","error");
 }
 }
 function endGame(){
-snd("win");
 document.getElementById("status").textContent=t("status_done");
 document.getElementById("status").className="status win";
 document.getElementById("prog").style.width="100%";

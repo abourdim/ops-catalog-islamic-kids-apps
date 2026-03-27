@@ -324,7 +324,6 @@ function increment(){
   if(completed)return;
   count++;dailyCount++;dhikrSessionTotal++;
   saveDaily(dailyCount);
-  snd("click");
   if(navigator.vibrate)try{navigator.vibrate(20);}catch(e){}
   const ring=document.getElementById("counterRing");
   ring.classList.add("pulse");
@@ -332,7 +331,6 @@ function increment(){
   updateDisplay();
   if(count>=target){
     completed=true;
-    snd("done");
     if(navigator.vibrate)try{navigator.vibrate([50,30,50]);}catch(e){}
     document.getElementById("completeBadge").textContent="✓ Complete!";
     document.getElementById("status").textContent="Completed "+target+"!";
@@ -346,7 +344,6 @@ function increment(){
       const nextIdx=ADHKAR.findIndex(d=>d.seq===nextSeq);
       if(nextIdx>=0){
         setTimeout(()=>{
-          snd("advance");
           log("Auto-advancing to "+ADHKAR[nextIdx].en,"success");
           count=0;completed=false;
           document.getElementById("completeBadge").textContent="";
@@ -371,7 +368,6 @@ document.addEventListener("DOMContentLoaded",()=>{
   setLang("ar");setTheme("terminal");
   dailyCount=loadDaily();
   document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
-  snd("click");}));
   showHS();
   document.getElementById("enterBtn").addEventListener("click",()=>{
     document.querySelector(".splash").style.display="none";

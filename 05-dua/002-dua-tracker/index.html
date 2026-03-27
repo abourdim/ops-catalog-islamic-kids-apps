@@ -354,7 +354,6 @@ function setMode(m){
   document.getElementById("startBtn").style.display=m==="quiz"?"inline-block":"none";
   if(m==="learn"){showDua();document.getElementById("status").textContent="Browse duas - tap to flip!";}
   else{document.getElementById("status").textContent="Press New Quiz to begin!";document.getElementById("quizChoices").innerHTML="";}
-  snd("click");
 }
 
 /* ===== LEARN MODE ===== */
@@ -514,7 +513,6 @@ document.addEventListener("touchend",function(e){
 document.addEventListener("DOMContentLoaded",()=>{
   setLang("ar");setTheme("terminal");
   document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
-  snd("click");}));
   showHS();
   buildTimeTabs();
   showDua();

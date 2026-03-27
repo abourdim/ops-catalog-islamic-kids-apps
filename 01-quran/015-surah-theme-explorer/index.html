@@ -418,7 +418,6 @@ html+='</div><div id="chipDetail"></div></div>';
 area.innerHTML=html;
 area.querySelectorAll(".surah-chip").forEach(function(chip){
 chip.onclick=function(){
-snd("click");
 var si=parseInt(chip.dataset.si);var s=th.surahs[si];
 var det=document.getElementById("chipDetail");
 det.innerHTML='<div class="chip-detail" style="display:block"><strong>'+s.en+' ('+s.ar+')</strong> — '+(s.d[curLang]||s.d.en)+'</div>';

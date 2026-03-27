@@ -316,7 +316,6 @@ function pickStep(card,step){
     card.classList.add("correct");
     card.style.pointerEvents="none";
     currentStep++;
-    snd("ok");
     log("\u2713 Step "+step.id+": "+T(step.key),"success");
     document.getElementById("sc").textContent=currentStep;
     document.getElementById("scorePill").textContent=currentStep+" / "+numSteps;
@@ -327,7 +326,6 @@ function pickStep(card,step){
       /* win */
       stopTimer();
       checkHS();
-      snd("win");
       var statusFn=T("statusWin");
       document.getElementById("status").textContent=typeof statusFn==="function"?statusFn(mistakes,fmtTime()):statusFn;
       document.getElementById("status").className="status win";
@@ -344,7 +342,6 @@ function pickStep(card,step){
     /* wrong */
     mistakes++;
     document.getElementById("mis").textContent=mistakes;
-    snd("err");
     card.classList.add("wrong");
     log("\u2717 Wrong! Expected step "+expected.id+": "+T(expected.key),"error");
     setTimeout(()=>{card.classList.remove("wrong");},500);
@@ -368,7 +365,6 @@ function checkHS(){
 document.addEventListener("DOMContentLoaded",()=>{
   setLang("ar");setTheme("terminal");
   document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
-  snd("click");}));
   showHS();
   document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
   document.getElementById("startBtn").addEventListener("click",newGame);

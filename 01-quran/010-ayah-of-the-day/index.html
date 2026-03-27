@@ -401,7 +401,6 @@ document.getElementById("favCount").textContent=curLang==="ar"?favorites.length+
 }
 function randomAyah(){
 var idx=Math.floor(Math.random()*AYAHS.length);
-snd("click");showAyah(AYAHS[idx]);
 }
 document.addEventListener("DOMContentLoaded",function(){
 try{var f=localStorage.getItem("wdiy-ayah-favs");if(f)favorites=JSON.parse(f)}catch(e){}

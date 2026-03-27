@@ -564,7 +564,6 @@ function nextAyah(){
     stopTimer();
     const pct=Math.round(perfect/roundSize*100);
     checkHS();
-    snd("win");
     document.getElementById("status").textContent="\uD83C\uDFC6 Done! "+perfect+"/"+roundSize+" perfect ("+pct+"%)";
     document.getElementById("status").className="status win";
     log("\uD83C\uDFC6 Final: "+perfect+"/"+roundSize+" perfect","success");
@@ -606,7 +605,6 @@ function tapWord(card,idx){
   if(locked) return;
   if(idx===curWordIdx){
     // correct
-    snd("ok");
     card.classList.add("used");
     const placed=document.createElement("span");
     placed.className="word-placed";
@@ -637,7 +635,6 @@ function tapWord(card,idx){
     }
   } else {
     // wrong
-    snd("err");
     ayahPerfect=false;
     card.classList.add("wrong");
     log("\u2717 Wrong word","error");
@@ -659,8 +656,7 @@ function checkHS(){
 
 document.addEventListener("DOMContentLoaded",()=>{
   setLang("ar");setTheme("sahara");
-  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
-  snd("click");}));
+  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click")}));
   showHS();
   document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
   document.getElementById("startBtn").addEventListener("click",newGame);

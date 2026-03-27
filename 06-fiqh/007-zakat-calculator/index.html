@@ -324,7 +324,6 @@ function calculateZakat(){
     else{nisabMsg="<strong>Zakat due:</strong> $"+zakat.toFixed(2)+". This assumes your savings have been held for one full lunar year (Hawl) and exceed the Nisab threshold.";}
     document.getElementById("nisabInfo").innerHTML=nisabMsg;
     document.getElementById("resultBox").classList.add("on");
-    snd("ok");
     log("Calculated Zakat: $"+zakat.toFixed(2)+" on $"+val.toFixed(2),"success");
 }
 
@@ -490,7 +489,6 @@ document.addEventListener("DOMContentLoaded",function(){
     setLang("ar");setTheme("terminal");
     renderRecipients();
     document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");}));
-    snd("click");}));
     showHS();
     document.getElementById("enterBtn").addEventListener("click",function(){
         document.querySelector(".splash").style.display="none";

@@ -312,7 +312,6 @@ if(sl)setLang(sl);else setLang("ar");
 var st;try{st=localStorage.getItem("wdiy-theme")}catch(e){}
 if(st)setTheme(st);else setTheme("terminal");
 document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
-snd("click");}));
 document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";init();updateUI();});
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"🔊":"🔇";try{localStorage.setItem("wdiy-mute",soundOn?"0":"1")}catch(e){}});
 try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="🔇";}}catch(e){}

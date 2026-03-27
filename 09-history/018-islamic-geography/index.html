@@ -275,7 +275,6 @@ function checkHS(){if(current>=total){const p=Math.round(correct/total*100);if(s
 document.addEventListener("DOMContentLoaded",()=>{
   setLang("ar");setTheme("parchment");
   document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click")}));
-  snd("click")}));
   showHS();
   document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame()});
   document.getElementById("startBtn").addEventListener("click",newGame);

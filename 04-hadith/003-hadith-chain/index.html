@@ -344,7 +344,6 @@ function newGame(){
 function nextQ(){
   if(current>=total){
     checkHS();stopTimer();
-    snd("win");
     document.getElementById("status").textContent="🏆 Done! "+correct+"/"+total;
     document.getElementById("status").className="status win";
     log("🏆 Score: "+correct+"/"+total,"success");

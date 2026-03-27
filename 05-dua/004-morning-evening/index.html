@@ -335,7 +335,6 @@ function showReadCard(){
 const list=getActive();
 if(currentIdx>=list.length){
 document.getElementById("readArea").innerHTML='<div style="text-align:center;padding:20px"><div style="font-size:32px;margin-bottom:12px">🎉</div><div class="big-text" style="font-size:20px">Session Complete!</div><div style="color:var(--text2);font-size:12px;margin-top:8px">'+correct+' / '+list.length+' adhkar completed</div></div>';
-snd("win");stopTimer();checkHS();
 log("Session complete! "+correct+"/"+list.length,"success");
 document.getElementById("status").textContent="Session complete!";
 document.getElementById("status").className="status win";
@@ -372,7 +371,6 @@ const d=list[currentIdx];
 repsDone++;
 const btn=document.getElementById("repBtn");
 if(btn){btn.textContent=repsDone;if(repsDone>=d.reps)btn.classList.add("done");}
-snd("click");
 if(repsDone>=d.reps){
 completedIds[d.id]=true;
 saveDaily();
@@ -381,7 +379,6 @@ document.getElementById("sc").textContent=correct;
 document.getElementById("tot").textContent=getActive().length;
 document.getElementById("scorePill").textContent=correct+" / "+getActive().length;
 log("Completed: "+d.translit.substring(0,30)+"...","success");
-snd("ok");
 setTimeout(()=>{currentIdx++;showReadCard();},600);
 }}
 
@@ -500,7 +497,6 @@ if(pct>0&&saveHS(pct)){log("NEW HIGH SCORE: "+pct+"%!","success");}
 document.addEventListener("DOMContentLoaded",()=>{
 setLang("ar");setTheme("terminal");
 document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
-snd("click");}));
 showHS();
 document.getElementById("enterBtn").addEventListener("click",()=>{
 document.querySelector(".splash").style.display="none";

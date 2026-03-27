@@ -729,7 +729,6 @@ function clickBlank(idx){
   if(blanks[idx].filled)return;
   activeBlankIdx=idx;
   highlightBlank(idx);
-  snd("click");
 }
 
 function highlightBlank(idx){
@@ -754,7 +753,6 @@ function pickWord(btn,word){
     setTimeout(()=>btn.classList.remove("correct"),400);
     correctCount++;
     document.getElementById("sc").textContent=correctCount;
-    snd("ok");
     log("✓ Correct: "+word,"success");
 
     // Move to next unfilled blank
@@ -769,7 +767,6 @@ function pickWord(btn,word){
       document.getElementById("status").textContent="✓ Step "+currentStep+" complete!";
       document.getElementById("status").className="status win";
       log("Step "+currentStep+" complete!","success");
-      snd("win");
       setTimeout(nextStep,1500);
     }else{
       activeBlankIdx=next;
@@ -783,7 +780,6 @@ function pickWord(btn,word){
     setTimeout(()=>blankEl.classList.remove("wrong-fill"),500);
     errorCount++;
     document.getElementById("tot").textContent=errorCount;
-    snd("err");
     log("✗ Wrong word for this blank","error");
   }
 }
@@ -811,7 +807,6 @@ function checkHS(){
 document.addEventListener("DOMContentLoaded",()=>{
   setLang("ar");setTheme("sahara");
   document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
-  snd("click");}));
   showHS();
   buildSurahGrid();
 

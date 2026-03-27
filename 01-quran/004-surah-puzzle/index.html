@@ -541,7 +541,6 @@ function pickAyah(card,idx){
   if(locked)return;
   if(idx===nextAyahIdx){
     // Correct
-    snd("ok");
     card.classList.add("disabled");
     card.style.pointerEvents="none";
     const placed=document.getElementById("placedArea");
@@ -558,7 +557,6 @@ function pickAyah(card,idx){
       document.getElementById("sc").textContent=surahsCompleted;
       document.getElementById("scorePill").textContent=surahsCompleted+" / "+roundSurahs.length;
       document.getElementById("prog").style.width=((surahIdx+1)/roundSurahs.length*100)+"%";
-      snd("win");
       document.getElementById("status").textContent="Surah complete!";
       document.getElementById("status").className="status win";
       log("Surah "+currentSurah.nameEn+" completed!","success");
@@ -568,7 +566,6 @@ function pickAyah(card,idx){
     }
   } else {
     // Wrong
-    snd("err");
     totalMistakes++;
     document.getElementById("mistakes").textContent=totalMistakes;
     card.classList.add("wrong-flash");
@@ -615,7 +612,6 @@ function checkHS(){
 document.addEventListener("DOMContentLoaded",()=>{
   setLang("ar");setTheme("sahara");
   document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
-  snd("click");}));
   showHS();
   document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newRound();});
   document.getElementById("startBtn").addEventListener("click",newRound);

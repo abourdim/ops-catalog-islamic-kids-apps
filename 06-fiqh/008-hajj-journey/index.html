@@ -324,7 +324,6 @@ const expectedStep=steps[currentIdx];
 if(step.id===expectedStep.id){
 locked=true;correct++;
 card.classList.add("correct");
-snd("ok");
 log("✓ Step "+(currentIdx+1)+": "+step.name,"success");
 showInfo(step);
 currentIdx++;
@@ -333,7 +332,6 @@ drawMinimap(currentIdx-1);
 setTimeout(()=>{
 if(currentIdx>=steps.length){
 gameActive=false;stopTimer();checkHS();
-snd("win");
 document.getElementById("status").textContent="🏆 Hajj Complete! "+correct+" correct, "+mistakes+" mistakes";
 document.getElementById("status").className="status win";
 log("🏆 Hajj Complete! Score: "+correct+"/"+(correct+mistakes),"success");
@@ -348,7 +346,6 @@ document.getElementById("status").textContent="Step "+(currentIdx+1)+" of "+step
 }else{
 mistakes++;
 card.classList.add("wrong");
-snd("err");
 log("✗ Wrong! Expected: "+expectedStep.name,"error");
 updateUI();
 setTimeout(()=>{card.classList.remove("wrong");},600);

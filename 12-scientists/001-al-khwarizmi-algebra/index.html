@@ -372,7 +372,6 @@ return h;
 function revealStep(idx){
 step=idx;
 for(var i=0;i<=idx;i++){document.getElementById("step"+i).style.opacity="1"}
-snd("click");
 }
 
 function checkAnswer(){
@@ -388,7 +387,6 @@ log(p.eq+" => x = "+p.answer+" ✓","success");
 document.getElementById("lhsSide").classList.add("correct-side");
 document.getElementById("rhsSide").classList.add("correct-side");
 }else{
-snd("err");
 document.getElementById("status").textContent=t("wrong")+" "+p.answer;
 document.getElementById("status").className="status lose";
 log(p.eq+" => x = "+p.answer+" (answered "+val+")","error");

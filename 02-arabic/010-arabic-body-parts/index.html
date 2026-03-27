@@ -419,7 +419,6 @@ var srcId=e.dataTransfer?e.dataTransfer.getData("text/plain"):e;
 attempts++;
 if(srcId===targetId){
 correct++;placed++;
-snd("ok");
 var dz=document.getElementById("dz-"+targetId);
 var part=PARTS.find(function(p){return p.id===targetId;});
 dz.classList.add("correct");
@@ -431,7 +430,6 @@ document.getElementById("status").textContent=t("status_correct");
 document.getElementById("status").className="status win";
 log("\u2713 "+part.ar+" ("+part.en+")","success");
 }else{
-snd("err");
 document.getElementById("status").textContent=t("status_wrong");
 document.getElementById("status").className="status lose";
 var part=PARTS.find(function(p){return p.id===srcId;});

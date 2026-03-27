@@ -586,7 +586,6 @@ function showCard(idx){
   document.getElementById("status").textContent="Exploring: "+s.en;
   document.getElementById("status").className="status";
   log("Opened surah "+s.en+" (#"+s.num+")","success");
-  snd("click");
 }
 
 function goNext(){showCard(currentIdx<SURAHS.length-1?currentIdx+1:0);}
@@ -650,13 +649,11 @@ function pickQuiz(btn,val,correct){
   if(val===correct){
     quizCorrect++;
     btn.classList.add("correct");
-    snd("ok");
     log("✓ Correct!","success");
     document.getElementById("status").textContent="Correct!";
     document.getElementById("status").className="status win";
   }else{
     btn.classList.add("wrong");
-    snd("err");
     log("✗ Answer: "+correct,"error");
     document.getElementById("status").textContent="Wrong — "+correct;
     document.getElementById("status").className="status lose";
@@ -681,7 +678,6 @@ document.addEventListener("DOMContentLoaded",()=>{
   showHS();
 
   document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
-  snd("click");}));
 
   document.getElementById("enterBtn").addEventListener("click",()=>{
     document.querySelector(".splash").style.display="none";

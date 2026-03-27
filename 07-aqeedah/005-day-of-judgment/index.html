@@ -382,12 +382,10 @@ function checkOrder(){
   document.getElementById("prog").style.width="100%";
   const pct=Math.round(correct/total*100);
   if(pct===100){
-    snd("win");
     document.getElementById("status").textContent="🏆 Perfect! All events in correct order!";
     document.getElementById("status").className="status win";
     log("🏆 Perfect score: "+correct+"/"+total,"success");
   }else{
-    snd(pct>=70?"ok":"err");
     document.getElementById("status").textContent=correct+"/"+total+" correct ("+pct+"%)";
     document.getElementById("status").className=pct>=70?"status win":"status lose";
     log("Score: "+correct+"/"+total+" ("+pct+"%)");
@@ -475,7 +473,6 @@ function checkHS(){
 document.addEventListener("DOMContentLoaded",()=>{
   setLang("ar");setTheme("terminal");
   document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
-  snd("click");}));
   showHS();
   document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
   document.getElementById("startBtn").addEventListener("click",newGame);
