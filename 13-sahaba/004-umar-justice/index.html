@@ -278,7 +278,6 @@ if(readChapters.length===chapters.length)snd("done");
 document.addEventListener("DOMContentLoaded",function(){
 loadProgress();setLang("ar");setTheme("terminal");
 document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
-snd("click");});});
 document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";renderApp();});
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔊":"🔇";});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();var chapters=CHAPTERS[curLang]||CHAPTERS["en"];if(e.key==="ArrowRight"){curChapter=Math.min(curChapter+1,chapters.length-1);renderApp();}if(e.key==="ArrowLeft"){curChapter=Math.max(curChapter-1,0);renderApp();}});

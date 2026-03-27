@@ -280,7 +280,6 @@ function newGame(){explored.clear();document.getElementById("sc").textContent="0
 document.addEventListener("DOMContentLoaded",function(){
 setLang("ar");setTheme("desert-caravan");
 document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
-snd("click");});});
 document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
 document.getElementById("startBtn").addEventListener("click",newGame);
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"\ud83d\udd0a":"\ud83d\udd07";try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});

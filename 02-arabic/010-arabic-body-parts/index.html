@@ -455,7 +455,6 @@ function checkHS(){if(placed>=totalParts){var pct=Math.round(correct/attempts*10
 document.addEventListener("DOMContentLoaded",function(){
 setLang("ar");setTheme("teal-ink");
 document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
-snd("click");});});
 showHS();
 document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
 document.getElementById("startBtn").addEventListener("click",newGame);

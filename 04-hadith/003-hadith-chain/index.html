@@ -402,7 +402,6 @@ function showExplain(wasCorrect){
 document.addEventListener("DOMContentLoaded",function(){
   setLang("ar");setTheme("terminal");
   document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
-  snd("click");});});
   showHS();
   document.getElementById("enterBtn").addEventListener("click",function(){
     document.querySelector(".splash").style.display="none";
