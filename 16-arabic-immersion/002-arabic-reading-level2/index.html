@@ -374,8 +374,7 @@ function loadProgress(){try{var d=JSON.parse(localStorage.getItem(HS_KEY));if(d)
 
 document.addEventListener("DOMContentLoaded",function(){
 loadProgress();
-document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
-snd("click")})});
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);
 document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";render()});
 document.getElementById("nextBtn").addEventListener("click",goNext);
 document.getElementById("prevBtn").addEventListener("click",goPrev);

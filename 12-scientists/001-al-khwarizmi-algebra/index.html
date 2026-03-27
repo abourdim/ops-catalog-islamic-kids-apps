@@ -406,8 +406,7 @@ document.addEventListener("DOMContentLoaded",function(){
 try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);else setLang("ar")}catch(e){setLang("ar")}
 try{var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);else setTheme("terminal")}catch(e){setTheme("terminal")}
 try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="\uD83D\uDD07"}}catch(e){}
-document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
-snd("click")})});
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);
 document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newProblem()});
 document.getElementById("startBtn").addEventListener("click",function(){newProblem()});
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07";try{localStorage.setItem("wdiy-mute",soundOn?"0":"1")}catch(e){}});

@@ -407,8 +407,7 @@ document.addEventListener("DOMContentLoaded",function(){
 try{var f=localStorage.getItem("wdiy-ayah-favs");if(f)favorites=JSON.parse(f)}catch(e){}
 setLang("ar");setTheme("sahara");
 document.getElementById("datePill").textContent=new Date().toLocaleDateString();
-document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
-snd("click")})});
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);
 document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";showAyah(AYAHS[getDailyIndex()])});
 document.getElementById("newBtn").addEventListener("click",randomAyah);
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07"});

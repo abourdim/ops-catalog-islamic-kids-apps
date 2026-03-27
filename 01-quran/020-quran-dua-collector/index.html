@@ -385,8 +385,7 @@ render();
 document.addEventListener("DOMContentLoaded",function(){
 try{var s=localStorage.getItem("wdiy-dua-saved");if(s)saved=JSON.parse(s)}catch(e){}
 setLang("ar");setTheme("midnight-gold");
-document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
-snd("click")})});
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);
 document.querySelectorAll(".filter-btn").forEach(function(b){b.addEventListener("click",function(){curFilter=b.dataset.f;document.querySelectorAll(".filter-btn").forEach(function(x){x.classList.toggle("on",x.dataset.f===curFilter)});snd("click");render()})});
 document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";render()});
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07"});

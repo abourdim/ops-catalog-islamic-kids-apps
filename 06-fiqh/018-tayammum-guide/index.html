@@ -199,8 +199,7 @@ document.addEventListener("DOMContentLoaded",function(){
 try{var sl=localStorage.getItem("wdiy-lang");if(sl)curLang=sl}catch(e){}
 try{var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st)}catch(e){}
 setLang(curLang);setTheme(document.documentElement.dataset.theme||"terminal");
-document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
-snd("click")})});
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);
 document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame()});
 document.getElementById("startBtn").addEventListener("click",newGame);
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"\U0001F50A":"\U0001F507";try{localStorage.setItem("wdiy-mute",soundOn?"0":"1")}catch(e){}});

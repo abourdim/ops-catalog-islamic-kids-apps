@@ -403,8 +403,7 @@ grid.appendChild(cell);
 }
 document.addEventListener("DOMContentLoaded",function(){
 loadProgress();setLang("ar");setTheme("midnight-gold");
-document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
-snd("click")})});
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);
 document.querySelectorAll(".filter-btn").forEach(function(b){b.addEventListener("click",function(){curFilter=b.dataset.f;document.querySelectorAll(".filter-btn").forEach(function(x){x.classList.toggle("on",x.dataset.f===curFilter)});snd("click");render()})});
 document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";render()});
 document.getElementById("resetBtn").addEventListener("click",function(){if(confirm(currentLang==="ar"?"هل تريد إعادة تعيين كل تقدم الحفظ؟":"Reset all memorization progress?")){progress={};saveProgress();snd("click");render()}});

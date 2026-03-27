@@ -1,29 +1,17 @@
-# Workshop-DIY — Islamic Kids Apps
+# تطبيقات إسلامية للأطفال
 
-**5 interactive Islamic educational activities. Real apps, not quizzes.**
+272 تطبيق تعليمي تفاعلي للأطفال المسلمين — يعمل بدون إنترنت
 
-بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
+## الفئات (13)
+- 📖 القرآن (30) — 📝 العربية (20) — 🕌 السيرة (24)
+- 📜 الحديث (15) — 🤲 الدعاء (18) — ⚖️ الفقه (25)
+- 💎 العقيدة (20) — 🌿 الأدب (20) — 🏛️ التاريخ (25)
+- 🌙 الأنبياء (10) — 🔬 العلماء (5) — ⭐ الصحابة (35)
+- 🗣️ تعمق عربي (25)
 
-## Categories
-
-| Category | Apps |
-|---|---|
-| 02-arabic | 2 |
-| 03-seerah | 1 |
-| 06-fiqh | 2 |
-
-## Features
-
-- 8 visual themes, 3 languages (EN, FR, AR with RTL)
-- Offline-capable, zero dependencies
-- Canvas games, custom interactive UI
-
-## Related
-
-- [ops-catalog-islamic-kids-quizzes](https://github.com/abourdim/ops-catalog-islamic-kids-quizzes) — 1,091 Islamic quizzes
-- [ops-catalog-kids-apps](https://github.com/abourdim/ops-catalog-kids-apps) — 190 general educational games
-- [ops-catalog-kids-quizzes](https://github.com/abourdim/ops-catalog-kids-quizzes) — 2,215 general quizzes
-
-## License
-
-Workshop-DIY — [abourdim](https://github.com/abourdim)
+## المميزات
+- عربي بالكامل (RTL) مع دعم EN/FR
+- تصميم إسلامي فريد لكل فئة
+- خط أميري + نوتو نسخ عربي
+- يعمل على الهاتف والحاسوب
+- بدون إنترنت — ملف HTML واحد لكل تطبيق

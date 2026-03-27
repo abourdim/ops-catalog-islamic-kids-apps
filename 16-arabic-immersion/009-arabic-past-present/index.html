@@ -266,8 +266,7 @@ document.getElementById("nextBtn").onclick=function(){curIdx=(curIdx+1)%VERBS.le
 document.getElementById("prevBtn").onclick=function(){curIdx=(curIdx-1+VERBS.length)%VERBS.length;render();snd("click")};
 function init(){render()}
 
-document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
-snd("click")})});
+document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);
 document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";if(typeof render==="function")render();updateUI();});
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07"});
 document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active")});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active")});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active")})});
