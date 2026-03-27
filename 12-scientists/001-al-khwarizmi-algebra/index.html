@@ -283,7 +283,7 @@ function t(k){return defined_i18n[k]?defined_i18n[k][curLang]||defined_i18n[k]["
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open")}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
 function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});renderLang();try{localStorage.setItem("wdiy-lang",l)}catch(e){}}
-function setTheme(th){document.documentElement.dataset.theme=th;try{localStorage.setItem("wdiy-theme",th)}catch(e){}}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th)});try{localStorage.setItem("wdiy-theme",th)}catch(e){}}
 function renderLang(){
 document.getElementById("splTitle").textContent=t("splTitle");
 document.getElementById("splSub").textContent=t("splSub");
@@ -313,19 +313,7 @@ var PROBLEMS=[
 {eq:"x² = 5x",lhs:[{c:1,v:"x²"}],rhs:[{c:5,v:"x"}],answer:5,steps:["x² = 5x","Divide both sides by x","x = 5"],desc:{en:"Squares equal roots — Al-Khwarizmi's Type 3",fr:"Carres egaux aux racines — Type 3 d'Al-Khwarizmi",ar:"مربعات تساوي جذوراً — النوع الثالث للخوارزمي"}},
 {eq:"4x + 8 = 2x + 20",lhs:[{c:4,v:"x"},{c:8,v:""}],rhs:[{c:2,v:"x"},{c:20,v:""}],answer:6,steps:["4x + 8 = 2x + 20","Al-Muqabala: subtract 2x from both","2x + 8 = 20","Al-Jabr: subtract 8 from both","2x = 12","x = 6"],desc:{en:"Balance both sides with al-jabr and al-muqabala",fr:"Equilibrez les deux cotes avec al-jabr et al-muqabala",ar:"وازن الطرفين بالجبر والمقابلة"}},
 {eq:"x² + 6x = 16",lhs:[{c:1,v:"x²"},{c:6,v:"x"}],rhs:[{c:16,v:""}],answer:2,steps:["x² + 6x = 16","Half of 6 is 3, square it: 9","x² + 6x + 9 = 25","(x + 3)² = 25","x + 3 = 5","x = 2"],desc:{en:"Completing the square — Al-Khwarizmi's method",fr:"Completer le carre — methode d'Al-Khwarizmi",ar:"إكمال المربع — طريقة الخوارزمي"}},
-{eq:"x² + 4x = 12",lhs:[{c:1,v:"x²"},{c:4,v:"x"}],rhs:[{c:12,v:""}],answer:2,steps:["x² + 4x = 12","Half of 4 is 2, square it: 4","x² + 4x + 4 = 16","(x + 2)² = 16","x + 2 = 4","x = 2"],desc:{en:"Quadratic solved by completing the square",fr:"Quadratique resolue par completion du carre",ar:"معادلة تربيعية محلولة بإكمال المربع"}},
-{eq:"7x = 56",lhs:[{c:7,v:"x"}],rhs:[{c:56,v:""}],answer:8,steps:["7x = 56","اقسم الطرفين على 7","x = 8"],desc:{en:"Roots equal numbers — division",fr:"Racines egaux aux nombres — division",ar:"جذور تساوي أعداداً — القسمة"}},
-{eq:"x² = 81",lhs:[{c:1,v:"x²"}],rhs:[{c:81,v:""}],answer:9,steps:["x² = 81","خذ الجذر التربيعي للطرفين","x = 9"],desc:{en:"Squares equal numbers — square root",fr:"Carres egaux aux nombres — racine carree",ar:"مربعات تساوي أعداداً — الجذر التربيعي"}},
-{eq:"3x + 9 = 30",lhs:[{c:3,v:"x"},{c:9,v:""}],rhs:[{c:30,v:""}],answer:7,steps:["3x + 9 = 30","الجبر: اطرح 9 من الطرفين","3x = 21","اقسم على 3","x = 7"],desc:{en:"Linear equation — al-jabr subtraction",fr:"Equation lineaire — soustraction al-jabr",ar:"معادلة خطية — طرح بالجبر"}},
-{eq:"x² + 8x = 20",lhs:[{c:1,v:"x²"},{c:8,v:"x"}],rhs:[{c:20,v:""}],answer:2,steps:["x² + 8x = 20","نصف 8 هو 4، مربعه: 16","x² + 8x + 16 = 36","(x + 4)² = 36","x + 4 = 6","x = 2"],desc:{en:"Completing the square — Al-Khwarizmi's geometric proof",fr:"Completer le carre — preuve geometrique d'Al-Khwarizmi",ar:"إكمال المربع — البرهان الهندسي للخوارزمي"}},
-{eq:"6x + 12 = 3x + 27",lhs:[{c:6,v:"x"},{c:12,v:""}],rhs:[{c:3,v:"x"},{c:27,v:""}],answer:5,steps:["6x + 12 = 3x + 27","المقابلة: اطرح 3x من الطرفين","3x + 12 = 27","الجبر: اطرح 12","3x = 15","x = 5"],desc:{en:"Two-step balancing with al-jabr and al-muqabala",fr:"Equilibrage en deux etapes avec al-jabr et al-muqabala",ar:"موازنة بخطوتين بالجبر والمقابلة"}},
-{eq:"x² = 8x",lhs:[{c:1,v:"x²"}],rhs:[{c:8,v:"x"}],answer:8,steps:["x² = 8x","اقسم الطرفين على x","x = 8"],desc:{en:"Squares equal roots — Al-Khwarizmi's Type 3",fr:"Carres egaux aux racines — Type 3 d'Al-Khwarizmi",ar:"مربعات تساوي جذوراً — النوع الثالث للخوارزمي"}},
-{eq:"9x = 36",lhs:[{c:9,v:"x"}],rhs:[{c:36,v:""}],answer:4,steps:["9x = 36","اقسم الطرفين على 9","x = 4"],desc:{en:"Simple roots equal numbers",fr:"Racines simples egales aux nombres",ar:"جذور بسيطة تساوي أعداداً"}},
-{eq:"x² + 12x = 45",lhs:[{c:1,v:"x²"},{c:12,v:"x"}],rhs:[{c:45,v:""}],answer:3,steps:["x² + 12x = 45","نصف 12 هو 6، مربعه: 36","x² + 12x + 36 = 81","(x + 6)² = 81","x + 6 = 9","x = 3"],desc:{en:"Completing the square — larger coefficients",fr:"Completer le carre — coefficients plus grands",ar:"إكمال المربع — معاملات أكبر"}},
-{eq:"x² + 45 = 14x",lhs:[{c:1,v:"x²"},{c:45,v:""}],rhs:[{c:14,v:"x"}],answer:5,steps:["x² + 45 = 14x","نصف 14 هو 7، مربعه: 49","49 - 45 = 4","√4 = 2","x = 7 - 2 = 5"],desc:{en:"Squares and numbers equal roots — Type 5",fr:"Carres et nombres egaux aux racines — Type 5",ar:"مربعات وأعداد تساوي جذوراً — النوع الخامس"}},
-{eq:"2x + 14 = 30",lhs:[{c:2,v:"x"},{c:14,v:""}],rhs:[{c:30,v:""}],answer:8,steps:["2x + 14 = 30","الجبر: اطرح 14 من الطرفين","2x = 16","اقسم على 2","x = 8"],desc:{en:"Linear equation — al-jabr method",fr:"Equation lineaire — methode al-jabr",ar:"معادلة خطية — طريقة الجبر"}},
-{eq:"x² = 64",lhs:[{c:1,v:"x²"}],rhs:[{c:64,v:""}],answer:8,steps:["x² = 64","خذ الجذر التربيعي","x = 8"],desc:{en:"Perfect square — direct root",fr:"Carre parfait — racine directe",ar:"مربع كامل — جذر مباشر"}},
-{eq:"5x + 10 = 3x + 24",lhs:[{c:5,v:"x"},{c:10,v:""}],rhs:[{c:3,v:"x"},{c:24,v:""}],answer:7,steps:["5x + 10 = 3x + 24","المقابلة: اطرح 3x","2x + 10 = 24","الجبر: اطرح 10","2x = 14","x = 7"],desc:{en:"Balancing with variables on both sides",fr:"Equilibrage avec variables des deux cotes",ar:"موازنة بمتغيرات في الطرفين"}}
+{eq:"x² + 4x = 12",lhs:[{c:1,v:"x²"},{c:4,v:"x"}],rhs:[{c:12,v:""}],answer:2,steps:["x² + 4x = 12","Half of 4 is 2, square it: 4","x² + 4x + 4 = 16","(x + 2)² = 16","x + 2 = 4","x = 2"],desc:{en:"Quadratic solved by completing the square",fr:"Quadratique resolue par completion du carre",ar:"معادلة تربيعية محلولة بإكمال المربع"}}
 ];
 
 var curProbIdx=0,step=0;
@@ -372,6 +360,7 @@ return h;
 function revealStep(idx){
 step=idx;
 for(var i=0;i<=idx;i++){document.getElementById("step"+i).style.opacity="1"}
+snd("click");
 }
 
 function checkAnswer(){
@@ -387,6 +376,7 @@ log(p.eq+" => x = "+p.answer+" ✓","success");
 document.getElementById("lhsSide").classList.add("correct-side");
 document.getElementById("rhsSide").classList.add("correct-side");
 }else{
+snd("err");
 document.getElementById("status").textContent=t("wrong")+" "+p.answer;
 document.getElementById("status").className="status lose";
 log(p.eq+" => x = "+p.answer+" (answered "+val+")","error");
@@ -404,7 +394,8 @@ document.addEventListener("DOMContentLoaded",function(){
 try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);else setLang("ar")}catch(e){setLang("ar")}
 try{var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);else setTheme("terminal")}catch(e){setTheme("terminal")}
 try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="\uD83D\uDD07"}}catch(e){}
-document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click")})});
 document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newProblem()});
 document.getElementById("startBtn").addEventListener("click",function(){newProblem()});
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07";try{localStorage.setItem("wdiy-mute",soundOn?"0":"1")}catch(e){}});

@@ -349,7 +349,8 @@ function openHelp(){document.getElementById("helpOverlay").classList.add("open")
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
 var curLang="ar";
 function setLang(l){currentLang=l==="ar"?"ar":"en";curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));renderCloud();updateUI();}
-function setTheme(t){document.documentElement.dataset.theme=t;function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;var n=actx.currentTime;o.frequency.value=600+Math.random()*400;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.08);o.start(n);o.stop(n+.08)}
+function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===t))}
+var soundOn=true,actx;function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;var n=actx.currentTime;o.frequency.value=600+Math.random()*400;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.08);o.start(n);o.stop(n+.08)}
 var WORDS=[
 {ar:"الله",en:"Allah",fr:"Allah",count:2699,desc:{en:"The name of God, the most frequently mentioned word in the Quran.",fr:"Le nom de Dieu, le mot le plus frequemment mentionne dans le Coran.",ar:"اسم الله، أكثر كلمة ذُكرت في القرآن."}},
 {ar:"رب",en:"Lord (Rabb)",fr:"Seigneur (Rabb)",count:970,desc:{en:"Rabb means Lord, Sustainer, Cherisher — one who nurtures and guides creation.",fr:"Rabb signifie Seigneur, Nourricier — celui qui nourrit et guide la creation.",ar:"الرب: المربي والمدبر والهادي للخلق."}},
@@ -400,7 +401,8 @@ d.innerHTML='<div class="word-detail"><h3>'+w.ar+'</h3><div class="wd-en">'+name
 }
 document.addEventListener("DOMContentLoaded",function(){
 setLang("ar");setTheme("sahara");
-document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click")})});
 document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";renderCloud()});
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07"});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp()});

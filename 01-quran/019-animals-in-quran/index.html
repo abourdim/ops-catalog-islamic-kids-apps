@@ -342,7 +342,8 @@ function openHelp(){document.getElementById("helpOverlay").classList.add("open")
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
 var curLang="ar";
 function setLang(l){currentLang=l==="ar"?"ar":"en";curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));render();updateUI();}
-function setTheme(t){document.documentElement.dataset.theme=t;function snd(){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;var n=actx.currentTime;o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.06);o.start(n);o.stop(n+.06)}
+function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===t))}
+var soundOn=true,actx;function snd(){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;var n=actx.currentTime;o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.06);o.start(n);o.stop(n+.06)}
 var ANIMALS=[
 {icon:"\uD83D\uDC2E",en:"Cow (Baqarah)",ar:"بقرة",ref:"Al-Baqarah 2:67-73",desc:{en:"The story of the cow of Bani Israel — Allah commanded them to sacrifice a cow, but they kept asking unnecessary questions, making it harder for themselves.",fr:"L'histoire de la vache de Bani Israel — Allah leur a ordonne de sacrifier une vache.",ar:"قصة بقرة بني إسرائيل — أمرهم الله بذبح بقرة لكنهم أكثروا الأسئلة فشددوا على أنفسهم."}},
 {icon:"\uD83D\uDC1D",en:"Bee (Nahl)",ar:"نحلة",ref:"An-Nahl 16:68-69",desc:{en:"Allah inspired the bee to build hives and produce honey. Honey is described as a healing for people — a sign of Allah's wisdom in creation.",fr:"Allah a inspire l'abeille pour construire des ruches et produire du miel. Le miel est decrit comme une guerison.",ar:"أوحى الله للنحلة أن تتخذ بيوتاً وتنتج العسل. العسل فيه شفاء للناس — آية من حكمة الله."}},
@@ -373,6 +374,7 @@ g.appendChild(d);
 document.addEventListener("DOMContentLoaded",function(){
 setLang("ar");setTheme("midnight-gold");
 document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd()})});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd()})});
 document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";render()});
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07"});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp()});

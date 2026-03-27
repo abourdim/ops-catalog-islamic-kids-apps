@@ -352,7 +352,8 @@ function openHelp(){document.getElementById("helpOverlay").classList.add("open")
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
 var curLang="ar";
 function setLang(l){currentLang=l==="ar"?"ar":"en";curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));renderTimeline();updateUI();}
-function setTheme(t){document.documentElement.dataset.theme=t;function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;var n=actx.currentTime;o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.06);o.start(n);o.stop(n+.06)}
+function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===t))}
+var soundOn=true,actx;function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;var n=actx.currentTime;o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.06);o.start(n);o.stop(n+.06)}
 var EVENTS=[
 {era:{en:"EARLY MECCAN PERIOD (610-615 CE)",fr:"PERIODE MECQUOISE ANCIENNE (610-615)",ar:"الفترة المكية المبكرة (610-615م)"}},
 {y:"610 CE",title:{en:"First Revelation in Cave Hira",fr:"Premiere revelation dans la grotte de Hira",ar:"أول وحي في غار حراء"},surah:"Al-Alaq (96:1-5)",desc:{en:"Angel Jibreel appeared to Prophet Muhammad in Cave Hira and commanded him to read. The first five verses of Surah Al-Alaq were revealed, marking the beginning of prophethood.",fr:"L'ange Jibreel est apparu au Prophete Muhammad dans la grotte de Hira et lui a ordonne de lire. Les cinq premiers versets de la sourate Al-Alaq ont ete reveles.",ar:"ظهر جبريل للنبي ﷺ في غار حراء وأمره بالقراءة. نزلت أول خمس آيات من سورة العلق، إيذاناً ببدء النبوة."}},
@@ -387,7 +388,8 @@ tl.appendChild(d);
 }
 document.addEventListener("DOMContentLoaded",function(){
 setLang("ar");setTheme("sahara");
-document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click")})});
 document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";renderTimeline()});
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07"});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp()});

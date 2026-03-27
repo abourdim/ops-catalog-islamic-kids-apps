@@ -365,7 +365,8 @@ function openHelp(){document.getElementById("helpOverlay").classList.add("open")
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
 var curLang="ar";
 function setLang(l){currentLang=l==="ar"?"ar":"en";curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));updateUI();}
-function setTheme(t){document.documentElement.dataset.theme=t;function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);var o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2)}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15)}else if(t==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12)})}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05)}}
+function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===t))}
+var soundOn=true,actx;function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);var o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2)}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15)}else if(t==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12)})}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05)}}
 function log(m,c){var b=document.getElementById("logBox"),d=document.createElement("div");d.className="log-line "+(c||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+m;b.appendChild(d);b.scrollTop=b.scrollHeight}
 var DATA=[
 {n:1,en:"Al-Fatihah",ar:"الفاتحة",mk:true,hint:{en:"The opening prayer — revealed early in Mecca",fr:"La priere d'ouverture — revelee tot a La Mecque",ar:"فاتحة الكتاب — نزلت مبكراً في مكة"}},
@@ -416,6 +417,7 @@ correct++;snd("ok");
 document.getElementById(isMakki?"btnMk":"btnMd").classList.add(isMakki?"correct-m":"correct-d");
 log("\u2713 "+s.en+" — "+(s.mk?"Makki":"Madani"),"success");
 }else{
+snd("err");
 document.getElementById(isMakki?"btnMk":"btnMd").classList.add("wrong");
 document.getElementById(s.mk?"btnMk":"btnMd").classList.add(s.mk?"correct-m":"correct-d");
 log("\u2717 "+s.en+" — "+(s.mk?"Makki":"Madani"),"error");
@@ -437,7 +439,8 @@ var HS_KEY="wdiy-hs-makki-madani";try{var best=parseInt(localStorage.getItem(HS_
 }
 document.addEventListener("DOMContentLoaded",function(){
 setLang("ar");setTheme("sahara");
-document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click")})});
 document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame()});
 document.getElementById("startBtn").addEventListener("click",newGame);
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07"});

@@ -261,7 +261,7 @@ function openHelp(){document.getElementById("helpOverlay").classList.add("open")
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
 var curLang="ar";
 function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});render();try{localStorage.setItem("wdiy-lang",l)}catch(e){}}
-function setTheme(t){document.documentElement.dataset.theme=t;try{localStorage.setItem("wdiy-theme",t)}catch(e){}}
+function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===t)});try{localStorage.setItem("wdiy-theme",t)}catch(e){}}
 var soundOn=true,actx;
 function snd(type){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(type==="click"){o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}else if(type==="nav"){o.frequency.value=600;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.08);o.start(n);o.stop(n+.08);}else if(type==="done"){[523,659,784].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.15+i*.1);oo.start(n+i*.1);oo.stop(n+.15+i*.1);});}}
 
@@ -430,7 +430,8 @@ function loadProgress(){try{var d=JSON.parse(localStorage.getItem(HS_KEY));if(d)
 
 document.addEventListener("DOMContentLoaded",function(){
 loadProgress();
-document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click")})});
 document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";render()});
 document.getElementById("nextBtn").addEventListener("click",goNext);
 document.getElementById("prevBtn").addEventListener("click",goPrev);

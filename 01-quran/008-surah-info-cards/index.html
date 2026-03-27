@@ -392,7 +392,8 @@ function updateUI(){
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open")}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
 function setLang(l){currentLang=l==="ar"?"ar":"en";document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));curLang=l;render();updateUI();}
-function setTheme(t){document.documentElement.dataset.theme=t;
+function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===t))}
+var soundOn=true,actx;
 function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;var n=actx.currentTime;o.frequency.value=t==="click"?800:600;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.06);o.start(n);o.stop(n+.06)}
 var curLang="ar",curFilter="all",expanded=null;
 var SURAHS=[
@@ -540,7 +541,8 @@ document.getElementById("countPill").textContent=count+" "+(curLang==="ar"?"سو
 
 document.addEventListener("DOMContentLoaded",function(){
 setLang("ar");setTheme("sahara");
-document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click")})});
 document.getElementById("searchBox").addEventListener("input",render);
 document.querySelectorAll(".filter-btn").forEach(function(b){b.addEventListener("click",function(){curFilter=b.dataset.f;document.querySelectorAll(".filter-btn").forEach(function(x){x.classList.toggle("on",x.dataset.f===curFilter)});snd("click");render()})});
 document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";render()});

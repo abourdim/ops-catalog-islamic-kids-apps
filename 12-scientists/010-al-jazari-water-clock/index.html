@@ -223,7 +223,7 @@ var oldST=localStorage.getItem("wdiy-theme");
 if(oldST&&THEME_MAP[oldST]){localStorage.setItem("wdiy-theme",THEME_MAP[oldST]);}
 })();
 
-var T={title:{en:"Elephant Water Clock",ar:"ساعة الفيل المائية"},subtitle:{en:"Assemble Step by Step",ar:"ركّب خطوة بخطوة"},desc:{en:"Assemble Al-Jazari elephant water clock.",ar:"ركّب ساعة الفيل المائية للجزري قطعة قطعة. تعلّم كيف عملت هذه الأعجوبة الهندسية من القرن الثاني عشر."},startBtn:{en:"Start Mission",ar:"ابدأ المهمة"},helpTitle:{en:"❓ Help",ar:"❓ المساعدة"},faqTab:{en:"FAQ",ar:"الأسئلة الشائعة"},howtoTab:{en:"How-To",ar:"كيف تستخدم"},wikiTab:{en:"Wiki",ar:"الموسوعة"},backLink:{en:"← Catalog",ar:"الفهرس →"},langLabel:{en:"Lang",ar:"اللغة"},themeLabel:{en:"Theme",ar:"المظهر"}};
+var T={title:{en:"Elephant Water Clock",ar:"ساعة الفيل المائية"},subtitle:{en:"Assemble Step by Step",ar:"من روائع الحضارة الإسلامية"},desc:{en:"Assemble Al-Jazari elephant water clock.",ar:"اكتشف إنجازات العلماء المسلمين الذين غيّروا العالم بعلمهم وإيمانهم. تعلّم كيف ساهمت الحضارة الإسلامية في تقدم البشرية."},startBtn:{en:"Start Mission",ar:"ابدأ المهمة"},helpTitle:{en:"❓ Help",ar:"❓ المساعدة"},faqTab:{en:"FAQ",ar:"الأسئلة الشائعة"},howtoTab:{en:"How-To",ar:"كيف تستخدم"},wikiTab:{en:"Wiki",ar:"الموسوعة"},backLink:{en:"← Catalog",ar:"الفهرس →"},langLabel:{en:"Lang",ar:"اللغة"},themeLabel:{en:"Theme",ar:"المظهر"}};
 function tr(k){return T[k]&&T[k][curLang]||T[k]&&T[k].en||k;}
 function updateUI(){
 var L=curLang;
@@ -244,17 +244,17 @@ var HS_KEY="wdiy-hs-al-jazari-water-clock";
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open")}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
 var curLang="ar";function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});try{localStorage.setItem("wdiy-lang",l)}catch(e){}}
-function setTheme(th){document.documentElement.dataset.theme=th;try{localStorage.setItem("wdiy-theme",th)}catch(e){}}
+function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th)});try{localStorage.setItem("wdiy-theme",th)}catch(e){}}
 var soundOn=true,actx;function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15)}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15)}else if(t==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12)})}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05)}}
 function log(m,c){var b=document.getElementById("logBox");if(!b)return;var d=document.createElement("div");d.className="log-line "+(c||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+m;b.appendChild(d);b.scrollTop=b.scrollHeight}
 
 
-var PARTS=[{name:"جسم الفيل المزخرف",icon:"\uD83D\uDC18",desc:"فيل مزخرف يحتوي جميع الآليات في داخله — الهيكل الأساسي للساعة",done:false},{name:"حوض الماء الداخلي",icon:"\uD83D\uDCA7",desc:"خزان ماء مخفي داخل جسم الفيل يوفر الطاقة للآليات",done:false},{name:"الدلو المثقوب",icon:"\uD83E\uDEA3",desc:"دلو صغير يغرق ببطء كلما دخل الماء من الثقوب — يقيس مرور الوقت",done:false},{name:"آلية العوّامة",icon:"\u26F5",desc:"عوامة ترتفع كلما امتلأ حوض الماء — تُحرّك باقي الآليات",done:false},{name:"الخيط والبكرة",icon:"\uD83E\uDDF5",desc:"يربط الدلو بشكل الكاتب عبر نظام بكرات دقيق",done:false},{name:"شكل الكاتب",icon:"\u270D\uFE0F",desc:"تمثال يحمل قلماً يدور ليُظهر الوقت على قرص مدرّج",done:false},{name:"آلية إطلاق الكرة",icon:"\u26BD",desc:"تُطلق كرة معدنية كل نصف ساعة كعلامة للتوقيت",done:false},{name:"طائر العنقاء",icon:"\uD83E\uDD85",desc:"طائر ميكانيكي يميل للأمام عندما تسقط الكرة — رمز مصري",done:false},{name:"قنوات التنينين",icon:"\uD83D\uDC09",desc:"تنينان يدوران لتوجيه الكرة المعدنية إلى الصنج — رمز صيني",done:false},{name:"قارع الصنج",icon:"\uD83D\uDD14",desc:"الكرة تضرب الصنج مُعلنة مرور نصف ساعة بصوت واضح",done:false},{name:"قرص الأبراج",icon:"\u2728",desc:"قرص دائري يعرض الأبراج الفلكية ويدور مع مرور الساعات",done:false},{name:"الفارس المتحرك",icon:"\uD83C\uDFC7",desc:"تمثال فارس على قمة الساعة يتحرك مع كل نصف ساعة — رمز عربي",done:false},{name:"صمام التفريغ",icon:"\uD83D\uDEBF",desc:"صمام يُفرغ الماء من الدلو تلقائياً لإعادة دورة التوقيت",done:false},{name:"الثقل الموازن",icon:"\u2696\uFE0F",desc:"ثقل يضمن حركة منتظمة ومتوازنة للآليات الداخلية",done:false},{name:"محور الدوران المركزي",icon:"\u267B\uFE0F",desc:"المحور الذي تدور حوله الأجزاء الرئيسية للساعة",done:false},{name:"حلقة الساعات",icon:"\u23F0",desc:"حلقة محيطية مقسمة إلى 12 ساعة لقراءة الوقت بدقة",done:false},{name:"آلية الإضاءة",icon:"\uD83D\uDD6F\uFE0F",desc:"شمعة أو مصباح يُضيء مع كل تغيير في الساعة ليلاً",done:false},{name:"الزخارف الذهبية",icon:"\u2B50",desc:"نقوش وزخارف إسلامية تُزيّن الساعة وتعكس جمال الفن الإسلامي",done:false},{name:"قاعدة الثبات",icon:"\uD83C\uDFDB\uFE0F",desc:"قاعدة متينة تحمل كامل وزن الساعة وتضمن استقرارها",done:false},{name:"خزان الكرات",icon:"\uD83C\uDFB1",desc:"مخزن يحتوي كرات معدنية كافية لعمل الساعة طوال اليوم",done:false},{name:"آلية الرنين",icon:"\uD83C\uDFB6",desc:"نظام صوتي يُصدر نغمات مختلفة مع كل ساعة جديدة",done:false},{name:"نظام إعادة التعبئة",icon:"\uD83D\uDD04",desc:"آلية لإعادة ملء حوض الماء لضمان استمرار عمل الساعة",done:false}];
+var PARTS=[{name:"Elephant Body",icon:"[E]",desc:"Decorated elephant housing all mechanisms",done:false},{name:"Water Basin",icon:"[W]",desc:"Hidden reservoir inside",done:false},{name:"Perforated Bucket",icon:"[B]",desc:"Sinks slowly as water enters",done:false},{name:"Float Mechanism",icon:"[F]",desc:"Rises as water fills basin",done:false},{name:"String and Pulley",icon:"[S]",desc:"Connects bucket to scribe figure",done:false},{name:"Scribe Figure",icon:"[P]",desc:"Pen rotates to show time",done:false},{name:"Ball Release",icon:"[O]",desc:"Ball drops every 30 minutes",done:false},{name:"Phoenix Bird",icon:"[X]",desc:"Tips forward as ball drops",done:false},{name:"Dragon Channels",icon:"[D]",desc:"Dragons pivot to guide ball",done:false},{name:"Cymbal Striker",icon:"[C]",desc:"Ball hits cymbal marking half hour",done:false}];
 var installed=0;
 function startApp(){
   installed=0;PARTS.forEach(function(p){p.done=false});
   document.getElementById("sc").textContent="0";document.getElementById("tot").textContent=PARTS.length;
-  renderParts();log("ساعة الفيل المائية جاهزة","success");snd("ok");
+  renderParts();log("Elephant Water Clock ready","success");snd("ok");
 }
 function renderParts(){
   var h="";
@@ -263,7 +263,7 @@ function renderParts(){
     h+="<div style='font-size:20px;display:inline-block;margin-right:8px'>"+p.icon+"</div>";
     h+="<strong style='color:"+(p.done?"var(--accent)":"var(--heading)")+"'>"+p.name+"</strong>";
     h+="<p style='font-size:11px;color:var(--text2);margin-top:4px'>"+p.desc+"</p>";
-    if(!p.done&&i<=installed){h+="<button style='margin-top:6px;padding:6px 16px;background:var(--accent);color:var(--bg);border:none;border-radius:6px;font-family:Outfit,sans-serif;font-size:11px;font-weight:700;cursor:pointer'>تركيب</button>"}
+    if(!p.done&&i<=installed){h+="<button style='margin-top:6px;padding:6px 16px;background:var(--accent);color:var(--bg);border:none;border-radius:6px;font-family:Outfit,sans-serif;font-size:11px;font-weight:700;cursor:pointer'>Install</button>"}
     h+="</div>";
   });
   document.getElementById("gameArea").innerHTML=h;
@@ -274,8 +274,8 @@ function installPart(i){
   PARTS[i].done=true;installed++;
   document.getElementById("sc").textContent=installed;
   document.getElementById("scorePill").textContent=installed+" / "+PARTS.length;
-  snd("ok");log("تم تركيب: "+PARTS[i].name,"success");
-  if(installed>=PARTS.length){document.getElementById("status").textContent="اكتمل! ما شاء الله!";document.getElementById("status").className="status win";snd("win");try{localStorage.setItem(HS_KEY,100)}catch(e){}}
+  snd("ok");log("Installed: "+PARTS[i].name,"success");
+  if(installed>=PARTS.length){document.getElementById("status").textContent="Complete! MashaAllah!";document.getElementById("status").className="status win";snd("win");try{localStorage.setItem(HS_KEY,100)}catch(e){}}
   renderParts();
 }
 
@@ -284,7 +284,8 @@ document.addEventListener("DOMContentLoaded",function(){
 try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl)}catch(e){}
 try{var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st)}catch(e){}
 try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="\uD83D\uDD07"}}catch(e){}
-document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click")})});
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07";try{localStorage.setItem("wdiy-mute",soundOn?"0":"1")}catch(e){}});
 document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active")});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active")});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active")})});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp()});

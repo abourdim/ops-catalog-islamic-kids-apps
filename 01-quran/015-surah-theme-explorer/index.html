@@ -342,7 +342,8 @@ function openHelp(){document.getElementById("helpOverlay").classList.add("open")
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
 var curLang="ar";
 function setLang(l){currentLang=l==="ar"?"ar":"en";curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));renderTabs();if(selTheme!==null)showTheme(selTheme);updateUI();}
-function setTheme(t){document.documentElement.dataset.theme=t;function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;var n=actx.currentTime;o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.06);o.start(n);o.stop(n+.06)}
+function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===t))}
+var soundOn=true,actx;function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;var n=actx.currentTime;o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.06);o.start(n);o.stop(n+.06)}
 var THEMES=[
 {id:"stories",icon:"\uD83D\uDCD6",name:{en:"Stories of Prophets",fr:"Histoires des Prophetes",ar:"قصص الأنبياء"},desc:{en:"Surahs featuring stories of prophets and previous nations.",fr:"Sourates contenant des histoires de prophetes et de nations anterieures.",ar:"سور تتضمن قصص الأنبياء والأمم السابقة."},surahs:[
 {n:7,en:"Al-A'raf",ar:"الأعراف",d:{en:"Adam, Nuh, Hud, Salih, Lut, Shu'ayb, Musa",fr:"Adam, Nuh, Hud, Salih, Lut, Shu'ayb, Musa",ar:"آدم، نوح، هود، صالح، لوط، شعيب، موسى"}},
@@ -418,6 +419,7 @@ html+='</div><div id="chipDetail"></div></div>';
 area.innerHTML=html;
 area.querySelectorAll(".surah-chip").forEach(function(chip){
 chip.onclick=function(){
+snd("click");
 var si=parseInt(chip.dataset.si);var s=th.surahs[si];
 var det=document.getElementById("chipDetail");
 det.innerHTML='<div class="chip-detail" style="display:block"><strong>'+s.en+' ('+s.ar+')</strong> — '+(s.d[curLang]||s.d.en)+'</div>';
@@ -426,7 +428,8 @@ det.innerHTML='<div class="chip-detail" style="display:block"><strong>'+s.en+' (
 }
 document.addEventListener("DOMContentLoaded",function(){
 setLang("ar");setTheme("sahara");
-document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);
+document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click")})});
 document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";renderTabs();selTheme=0;renderTabs();showTheme(0)});
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07"});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp()});

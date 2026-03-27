@@ -346,7 +346,8 @@ function openHelp(){document.getElementById("helpOverlay").classList.add("open")
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
 var curLang="ar";
 function setLang(l){currentLang=l==="ar"?"ar":"en";curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));render();updateUI();}
-function setTheme(t){document.documentElement.dataset.theme=t;function snd(){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;var n=actx.currentTime;o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.06);o.start(n);o.stop(n+.06)}
+function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===t))}
+var soundOn=true,actx;function snd(){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.05;var n=actx.currentTime;o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.06);o.start(n);o.stop(n+.06)}
 var PROPHETS=[
 {n:1,en:"Adam",ar:"آدم",title:{en:"The First Human",fr:"Le Premier Humain",ar:"أبو البشر"},surahs:"Al-Baqarah, Al-A'raf, Al-Hijr, Al-Isra, Ta-Ha",desc:{en:"The first human and first prophet. Allah created him from clay and taught him the names of all things. His story of the forbidden tree teaches repentance.",fr:"Le premier humain et premier prophete. Allah l'a cree d'argile et lui a enseigne les noms de toutes choses.",ar:"أول إنسان وأول نبي. خلقه الله من طين وعلمه الأسماء كلها. قصة الشجرة المحرمة تعلم التوبة."}},
 {n:2,en:"Idris",ar:"إدريس",title:{en:"Raised to a High Station",fr:"Eleve a un haut rang",ar:"رُفع مكاناً عالياً"},surahs:"Maryam, Al-Anbiya",desc:{en:"Known for his knowledge and piety. Allah raised him to a high station. Some scholars identify him with Enoch in the Bible.",fr:"Connu pour sa connaissance et sa piete. Allah l'a eleve a un haut rang.",ar:"عُرف بعلمه وتقواه. رفعه الله مكاناً علياً."}},
@@ -389,6 +390,7 @@ g.appendChild(d);
 document.addEventListener("DOMContentLoaded",function(){
 setLang("ar");setTheme("midnight-gold");
 document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd()})});
+document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd()})});
 document.getElementById("searchBox").addEventListener("input",render);
 document.getElementById("enterBtn").addEventListener("click",function(){document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";render()});
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07"});

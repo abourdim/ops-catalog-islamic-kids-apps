@@ -388,7 +388,7 @@ function checkHS(){
 document.addEventListener("DOMContentLoaded",()=>{
   setLang("ar");setTheme("terminal");
   document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
-  snd("click");if(gameActive||currentIdx>0)drawMinimap(currentIdx-1);}));
+  snd("click");if(gameActive||currentIdx>0)drawMinimap(currentIdx-1);});
   showHS();
   document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
   document.getElementById("startBtn").addEventListener("click",newGame);
@@ -396,7 +396,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
   document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp();});
   document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active");});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active");});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active");});});
-});
+;
 
 // Keyboard shortcuts: Enter for start
 document.addEventListener("keydown",function(e){
