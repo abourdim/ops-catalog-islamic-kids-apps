@@ -1,15 +1,8 @@
 <!DOCTYPE html><html lang="ar" dir="rtl" data-theme="default"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>الماضي والمضارع في العربية</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 
-[data-theme="default"]{--bg:#0f142d;--bg2:#161c3f;--bg3:#1c2451;--border:#25306c;--border2:#2c387e;--text:#d0dce8;--text2:#8899aa;--text3:#556677;--heading:#e8f0f8;--accent:#3f58b6;--abg:rgba(63,88,182,.08);--abr:rgba(63,88,182,.25);--glow:0 0 30px rgba(63,88,182,.12);--splash-bg:#192048}
-[data-theme="ocean"]{--bg:#0a1628;--bg2:#0e1e35;--bg3:#142840;--border:#1e3a5a;--border2:#284a6e;--text:#b8cee8;--text2:#6e8aaa;--text3:#4a6680;--heading:#dce8f5;--accent:#3370ce;--abg:rgba(63,88,182,.07);--abr:rgba(63,88,182,.22);--glow:0 0 25px rgba(63,88,182,.1);--splash-bg:#0c1a30}
-[data-theme="sunset"]{--bg:#1a0e0a;--bg2:#241410;--bg3:#301c16;--border:#4a2e22;--border2:#5a3a2e;--text:#e0c8b8;--text2:#aa8870;--text3:#7a6050;--heading:#f5e0d0;--accent:#9f647c;--abg:rgba(255,112,67,.07);--abr:rgba(255,112,67,.22);--glow:0 0 25px rgba(255,112,67,.1);--splash-bg:#1e1210}
-[data-theme="forest"]{--bg:#0a140a;--bg2:#0e1c0e;--bg3:#142414;--border:#1e3a1e;--border2:#284a28;--text:#b8d8b8;--text2:#6ea06e;--text3:#4a784a;--heading:#d8f0d8;--accent:#528990;--abg:rgba(102,187,106,.07);--abr:rgba(102,187,106,.22);--glow:0 0 25px rgba(102,187,106,.1);--splash-bg:#0c180c}
-[data-theme="royal"]{--bg:#10081a;--bg2:#180e28;--bg3:#201636;--border:#30224e;--border2:#402e62;--text:#c8b8e0;--text2:#8878b0;--text3:#5a4a80;--heading:#e0d0f5;--accent:#754fb9;--abg:rgba(171,71,188,.07);--abr:rgba(171,71,188,.22);--glow:0 0 25px rgba(171,71,188,.1);--splash-bg:#140a20}
-[data-theme="arctic"]{--bg:#f0f4f8;--bg2:#ffffff;--bg3:#e8eef5;--border:#c8d4e2;--border2:#b0c0d4;--text:#2a3a4e;--text2:#5a6e84;--text3:#8a9ab0;--heading:#14243a;--accent:#354a9a;--abg:rgba(63,88,182,.06);--abr:rgba(63,88,182,.18);--glow:0 0 15px rgba(63,88,182,.06);--splash-bg:#f4f8fc}
-[data-theme="sand"]{--bg:#f5f0e4;--bg2:#faf7ee;--bg3:#ede6d4;--border:#d4c8b0;--border2:#c0b498;--text:#3a3020;--text2:#6a5e4a;--text3:#9a8e78;--heading:#1e1608;--accent:#7b6f60;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.18);--glow:0 0 15px rgba(184,134,11,.06);--splash-bg:#f8f4e8}
-[data-theme="midnight"]{--bg:#08090e;--bg2:#0e1018;--bg3:#161a26;--border:#1e2238;--border2:#2a2f48;--text:#b0b8d4;--text2:#6e78a0;--text3:#4a5070;--heading:#d8dff5;--accent:#4d61bb;--abg:rgba(92,107,192,.07);--abr:rgba(92,107,192,.22);--glow:0 0 25px rgba(92,107,192,.1);--splash-bg:#0a0c14}
+[data-theme="default"],[data-theme="ocean"],[data-theme="sunset"],[data-theme="forest"],[data-theme="royal"],[data-theme="arctic"],[data-theme="sand"],[data-theme="midnight"]{--bg:#141414;--bg2:#1a1a1a;--bg3:#222;--border:#2A5B8C;--border2:#5A8AB5;--text:#c8d4e0;--text2:#8899aa;--text3:#556677;--heading:#e8eef5;--accent:#5A8AB5;--abg:rgba(42,91,140,.08);--abr:rgba(42,91,140,.25);--glow:0 0 30px rgba(42,91,140,.12);--splash-bg:#111}
 
 @keyframes revealUp{from{opacity:0;clip-path:inset(100% 0 0 0)}to{opacity:1;clip-path:inset(0 0 0 0)}}
 @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
@@ -17,24 +10,25 @@
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 @keyframes spinSlow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Outfit', 'Noto Sans Arabic', sans-serif;font-size:14px;min-height:100vh;-webkit-font-smoothing:antialiased}
-[lang="ar"] body{font-family:'Noto Sans Arabic',sans-serif}
-h1,h2,h3,.heading{font-family:'Outfit', 'Noto Sans Arabic', sans-serif;color:var(--heading)}
+body{background:var(--bg);background-image:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(90,138,181,.06) 27px,rgba(90,138,181,.06) 28px);color:var(--text);font-family:'Noto Naskh Arabic','Amiri',serif;font-size:14px;min-height:100vh;-webkit-font-smoothing:antialiased}
+[lang="ar"] body{font-family:'Noto Naskh Arabic','Amiri',serif}
+h1,h2,h3,.heading{font-family:'Amiri','Noto Naskh Arabic',serif;color:var(--heading)}
 
 /* ═══ SPLASH ═══ */
-.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(ellipse 100% 30% at 50% 60%, rgba(64,224,208,0.08) 0%, transparent 70%), linear-gradient(204deg, #25306c 0%, #207068 100%);position:relative;overflow:hidden}
-.splash::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(104deg, transparent, transparent 34px, rgba(255,255,255,0.05) 34px, rgba(255,255,255,0.05) 35px), repeating-linear-gradient(164deg, transparent, transparent 34px, rgba(255,255,255,0.05) 34px, rgba(255,255,255,0.05) 35px), repeating-linear-gradient(224deg, transparent, transparent 34px, rgba(255,255,255,0.05) 34px, rgba(255,255,255,0.05) 35px);pointer-events:none}
-.splash-box{position:relative;background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:44px 36px 36px;max-width:460px;width:100%;text-align:center;box-shadow:var(--glow),0 20px 60px rgba(0,0,0,0.15);animation:revealUp 0.7s ease-out;overflow:hidden}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(180deg,#141414 0%,#1a1a1a 100%);position:relative;overflow:hidden}
+.splash::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(90,138,181,.04) 27px,rgba(90,138,181,.04) 28px);pointer-events:none}
+.splash-box{position:relative;background:#1a1a1a;border:2px solid #2A5B8C;border-radius:14px;padding:44px 36px 36px;max-width:460px;width:100%;text-align:center;box-shadow:0 0 30px rgba(42,91,140,.12),0 20px 60px rgba(0,0,0,.3);animation:revealUp 0.7s ease-out;overflow:hidden}
 .splash-bism{margin-bottom:16px;font-size:19px;color:var(--accent);opacity:0.7;font-family:'Noto Sans Arabic',sans-serif;letter-spacing:2px}
 .splash-title{font-size:26px;font-weight:800;margin-bottom:6px;color:var(--heading);line-height:1.3}
 .splash-sub{color:var(--accent);font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;font-weight:600}
 .splash-arabic{font-family:'Noto Sans Arabic',sans-serif;font-size:20px;color:var(--accent);direction:rtl;margin-bottom:12px;opacity:0.8}
 .splash-desc{color:var(--text2);font-size:12px;line-height:1.8;margin-bottom:28px;max-width:360px;margin-left:auto;margin-right:auto}
-.splash-deco{position:absolute;bottom:20px;right:20px;width:40px;height:3px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0.3;pointer-events:none;border-radius:2px}
+.splash-deco{position:absolute;bottom:20px;right:20px;width:40px;height:3px;background:linear-gradient(90deg,#5A8AB5,transparent);opacity:0.3;pointer-events:none;border-radius:2px}
+.splash-art{width:50px;height:80px;margin:0 auto 18px;position:relative}.splash-art::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:40px;height:30px;border:3px solid #5A8AB5;border-bottom:none;border-radius:40px 40px 0 0;background:rgba(42,91,140,.1)}.splash-art::after{content:"";position:absolute;bottom:5px;left:50%;transform:translateX(-50%);width:40px;height:30px;border:3px solid #2A5B8C;border-top:none;border-radius:0 0 40px 40px;background:rgba(90,138,181,.15)}.splash-art span{display:block;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:6px;height:6px;border-radius:50%;background:#5A8AB5;box-shadow:0 -8px 0 #5A8AB5,0 8px 0 #2A5B8C}
 
 /* ═══ BUTTONS ═══ */
-.btn-go{padding:14px 40px;background:var(--accent);color:var(--bg);border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1.5px;text-transform:uppercase;transition:all .2s;box-shadow:0 4px 15px rgba(63,88,182,0.3)}
-.btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(63,88,182,0.4)}
+.btn-go{padding:14px 40px;background:#2A5B8C;color:#e8eef5;border:2px solid #5A8AB5;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Amiri','Noto Naskh Arabic',serif;letter-spacing:1.5px;text-transform:uppercase;transition:all .2s;box-shadow:0 4px 15px rgba(42,91,140,.3)}
+.btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(42,91,140,.4);background:#5A8AB5}
 .btn-go:active{transform:translateY(0)}
 
 /* ═══ SWITCHERS ═══ */
@@ -189,16 +183,17 @@ h1,h2,h3,.heading{font-family:'Outfit', 'Noto Sans Arabic', sans-serif;color:var
 <a href="../../index.html" class="back-link" id="backLink" style="display:none">الفهرس →</a>
 <div class="splash" id="splash"><div class="splash-box">
 <div class="splash-deco"></div>
+<div class="splash-art"><span></span></div>
 <div class="splash-bism">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
 <h1 class="splash-title heading">الماضي والمضارع في العربية</h1>
 <div class="splash-sub">تعلّم العربية بالممارسة</div>
 <p class="splash-desc">تعلّم اللغة العربية بطريقة تفاعلية وممتعة مصمّمة للأطفال.</p>
-<button class="btn-go" id="enterBtn">Start Practice</button>
+<button class="btn-go" id="enterBtn">ابدأ التمرين</button>
 <div class="sw" style="margin-top:20px"><span class="sw-label">اللغة</span><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div></div>
-<div class="sw" style="margin-top:8px"><span class="sw-label">المظهر</span><div class="sw"><button class="sw-btn on" data-thm="default">✨</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="forest">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="arctic">❄</button><button class="sw-btn" data-thm="sand">🏜</button><button class="sw-btn" data-thm="midnight">🌙</button></div></div>
+<div class="sw" style="margin-top:8px"></div>
 </div></div>
 <div class="app" id="app">
-<div class="hdr-bism">بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ</div><div class="hdr"><h1 id="appTitle">الماضي والمضارع في العربية</h1><span class="pill" id="progressPill"></span></div><div class="ctrl"><button class="btn-help" onclick="openHelp()">❓</button><button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw"><button class="sw-btn on" data-thm="default">✨</button><button class="sw-btn" data-thm="midnight">🌙</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="forest">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="arctic">❄</button><button class="sw-btn" data-thm="sand">🏜</button></div></div>
+<div class="hdr-bism">بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ</div><div class="hdr"><h1 id="appTitle">الماضي والمضارع في العربية</h1><span class="pill" id="progressPill"></span></div><div class="ctrl"><button class="btn-help" onclick="openHelp()">❓</button><button id="soundBtn">🔊</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div></div>
 <div class="status" id="status"></div>
 <div class="game-area" id="gameArea"><div id="content"></div><div class="nav-r"><button class="nbtn" id="prevBtn">←</button><button class="nbtn pri" id="nextBtn">→</button></div></div>
 <div class="foot">ورشة-صنعها — الماضي والمضارع في العربية v1.0</div>
@@ -208,9 +203,9 @@ h1,h2,h3,.heading{font-family:'Outfit', 'Noto Sans Arabic', sans-serif;color:var
 <div class="sidebar-header"><span class="sidebar-title">❓ المساعدة</span><button class="btn-close" onclick="closeHelp()">✕</button></div>
 <div class="help-tabs"><button class="help-tab active" data-tab="faq">الأسئلة الشائعة</button><button class="help-tab" data-tab="howto">كيف تستخدم</button><button class="help-tab" data-tab="wiki">الموسوعة</button></div>
 <div class="sidebar-body">
-<div class="help-content active" id="help-faq"><details class="help-item"><summary>What tenses?</summary><p>Past (madi) and present (mudari).</p></details><details class="help-item"><summary data-en="How many verbs?" data-ar="كم عدد الأفعال؟">كم عدد الأفعال؟</summary><p>4 common verbs.</p></details><details class="help-item"><summary data-en="Offline?" data-ar="يعمل بدون إنترنت؟">يعمل بدون إنترنت؟</summary><p>Yes.</p></details></div>
-<div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>Select a verb</p></div><div class="help-step"><span class="help-step-num">2</span><p>Study the table</p></div><div class="help-step"><span class="help-step-num">3</span><p>Compare past vs present</p></div><div class="help-step"><span class="help-step-num">4</span><p>Navigate with arrows</p></div></div>
-<div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>Past Tense</h3><p>Uses suffixes.</p></div><div class="wiki-entry"><h3>Present Tense</h3><p>Uses prefixes and suffixes.</p></div></div>
+<div class="help-content active" id="help-faq"><details class="help-item"><summary data-en="What tenses?" data-ar="ما الأزمنة؟">ما الأزمنة؟</summary><p>الماضي والمضارع.</p></details><details class="help-item"><summary data-en="How many verbs?" data-ar="كم عدد الأفعال؟">كم عدد الأفعال؟</summary><p>4 أفعال شائعة.</p></details><details class="help-item"><summary data-en="Offline?" data-ar="يعمل بدون إنترنت؟">يعمل بدون إنترنت؟</summary><p>نعم.</p></details></div>
+<div class="help-content" id="help-howto"><div class="help-step"><span class="help-step-num">1</span><p>اختر فعلاً</p></div><div class="help-step"><span class="help-step-num">2</span><p>ادرس الجدول</p></div><div class="help-step"><span class="help-step-num">3</span><p>قارن بين الماضي والمضارع</p></div><div class="help-step"><span class="help-step-num">4</span><p>تنقّل بالأسهم</p></div></div>
+<div class="help-content" id="help-wiki"><div class="wiki-entry"><h3>الفعل الماضي</h3><p>يستخدم لواحق (ضمائر متصلة).</p></div><div class="wiki-entry"><h3>الفعل المضارع</h3><p>يستخدم سوابق ولواحق.</p></div></div>
 </div>
 <div class="sidebar-footer">الماضي والمضارع في العربية &mdash; v2.0</div>
 </aside>
@@ -244,7 +239,7 @@ function openHelp(){document.getElementById("helpOverlay").classList.add("open")
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
 var curLang="ar";
 function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});if(typeof render==="function")render();try{localStorage.setItem("wdiy-lang",l)}catch(e){}}
-function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===t)});try{localStorage.setItem("wdiy-theme",t)}catch(e){}}
+function setTheme(t){document.documentElement.dataset.theme=t;try{localStorage.setItem("wdiy-theme",t)}catch(e){}}
 var soundOn=true,actx;
 function snd(type){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(type==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.12);o.start(n);o.stop(n+.12)}else if(type==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15)}else if(type==="done"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.15+i*.1);oo.start(n+i*.1);oo.stop(n+.15+i*.1)})}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05)}}
 
@@ -265,14 +260,14 @@ h+='<table class="tbl"><tr><th>Pronoun</th><th>Past</th><th>Present</th></tr>';
 PRON.forEach(function(p){h+='<tr><td>'+p.ar+' <span style="font-size:10px;color:var(--text3)">'+p.en+'</span></td><td class="ar-c">'+v.past[p.k]+'</td><td class="ar-c">'+v.pres[p.k]+'</td></tr>'});
 h+='</table>';
 document.getElementById("content").innerHTML=h;
-document.getElementById("status").textContent="Study past and present conjugation";
+document.getElementById("status").textContent="ادرس تصريف الماضي والمضارع";
 }
 document.getElementById("nextBtn").onclick=function(){curIdx=(curIdx+1)%VERBS.length;render();snd("click")};
 document.getElementById("prevBtn").onclick=function(){curIdx=(curIdx-1+VERBS.length)%VERBS.length;render();snd("click")};
 function init(){render()}
 
 document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
-document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click")})});
+snd("click")})});
 document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";if(typeof render==="function")render();updateUI();});
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07"});
 document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active")});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active")});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active")})});

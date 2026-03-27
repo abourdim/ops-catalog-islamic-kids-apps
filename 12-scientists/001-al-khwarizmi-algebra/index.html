@@ -2,14 +2,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 
-[data-theme="default"]{--bg:#2e1c0c;--bg2:#402811;--bg3:#523316;--border:#6e451e;--border2:#805023;--text:#d0dce8;--text2:#8899aa;--text3:#556677;--heading:#e8f0f8;--accent:#191970;--abg:rgba(25,25,112,.08);--abr:rgba(25,25,112,.25);--glow:0 0 30px rgba(25,25,112,.12);--splash-bg:#492e14}
-[data-theme="ocean"]{--bg:#0a1628;--bg2:#0e1e35;--bg3:#142840;--border:#1e3a5a;--border2:#284a6e;--text:#b8cee8;--text2:#6e8aaa;--text3:#4a6680;--heading:#dce8f5;--accent:#1c4ba4;--abg:rgba(25,25,112,.07);--abr:rgba(25,25,112,.22);--glow:0 0 25px rgba(25,25,112,.1);--splash-bg:#0c1a30}
-[data-theme="sunset"]{--bg:#1a0e0a;--bg2:#241410;--bg3:#301c16;--border:#4a2e22;--border2:#5a3a2e;--text:#e0c8b8;--text2:#aa8870;--text3:#7a6050;--heading:#f5e0d0;--accent:#8c4459;--abg:rgba(255,112,67,.07);--abr:rgba(255,112,67,.22);--glow:0 0 25px rgba(255,112,67,.1);--splash-bg:#1e1210}
-[data-theme="forest"]{--bg:#0a140a;--bg2:#0e1c0e;--bg3:#142414;--border:#1e3a1e;--border2:#284a28;--text:#b8d8b8;--text2:#6ea06e;--text3:#4a784a;--heading:#d8f0d8;--accent:#3f6a6d;--abg:rgba(102,187,106,.07);--abr:rgba(102,187,106,.22);--glow:0 0 25px rgba(102,187,106,.1);--splash-bg:#0c180c}
-[data-theme="royal"]{--bg:#10081a;--bg2:#180e28;--bg3:#201636;--border:#30224e;--border2:#402e62;--text:#c8b8e0;--text2:#8878b0;--text3:#5a4a80;--heading:#e0d0f5;--accent:#623096;--abg:rgba(171,71,188,.07);--abr:rgba(171,71,188,.22);--glow:0 0 25px rgba(171,71,188,.1);--splash-bg:#140a20}
-[data-theme="arctic"]{--bg:#f0f4f8;--bg2:#ffffff;--bg3:#e8eef5;--border:#c8d4e2;--border2:#b0c0d4;--text:#2a3a4e;--text2:#5a6e84;--text3:#8a9ab0;--heading:#14243a;--accent:#15155f;--abg:rgba(25,25,112,.06);--abr:rgba(25,25,112,.18);--glow:0 0 15px rgba(25,25,112,.06);--splash-bg:#f4f8fc}
-[data-theme="sand"]{--bg:#f5f0e4;--bg2:#faf7ee;--bg3:#ede6d4;--border:#d4c8b0;--border2:#c0b498;--text:#3a3020;--text2:#6a5e4a;--text3:#9a8e78;--heading:#1e1608;--accent:#684f3d;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.18);--glow:0 0 15px rgba(184,134,11,.06);--splash-bg:#f8f4e8}
-[data-theme="midnight"]{--bg:#08090e;--bg2:#0e1018;--bg3:#161a26;--border:#1e2238;--border2:#2a2f48;--text:#b0b8d4;--text2:#6e78a0;--text3:#4a5070;--heading:#d8dff5;--accent:#3a4298;--abg:rgba(92,107,192,.07);--abr:rgba(92,107,192,.22);--glow:0 0 25px rgba(92,107,192,.1);--splash-bg:#0a0c14}
+[data-theme="default"]{--bg:#0A1218;--bg2:#121E28;--bg3:#1A2A38;--border:#B8733325;--border2:#B8733340;--text:#B8C8D8;--text2:#7898A8;--text3:#587888;--heading:#D8E8F0;--accent:#B87333;--accent2:#1A3A4A;--abg:#B8733310;--abr:#B8733330;--glow:0 4px 24px #B8733315;--splash-bg:linear-gradient(135deg,#0A1218 0%,#1A2A38 50%,#0A1218 100%);--card-shadow:0 2px 12px rgba(184,115,51,.1)}
 
 @keyframes fadeSlideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
@@ -19,21 +12,25 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:'Outfit', 'Noto Sans Arabic', sans-serif;font-size:14px;min-height:100vh;-webkit-font-smoothing:antialiased}
 [lang="ar"] body{font-family:'Noto Sans Arabic',sans-serif}
+body::after{content:'';position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='20' fill='none' stroke='%23B87333' stroke-width='.4' opacity='.04'/%3E%3Ccircle cx='30' cy='30' r='12' fill='none' stroke='%231A3A4A' stroke-width='.3' opacity='.03'/%3E%3Cline x1='30' y1='10' x2='30' y2='50' stroke='%23B87333' stroke-width='.2' opacity='.03'/%3E%3Cline x1='10' y1='30' x2='50' y2='30' stroke='%23B87333' stroke-width='.2' opacity='.03'/%3E%3C/svg%3E") repeat;pointer-events:none;z-index:0;opacity:.5}
 h1,h2,h3,.heading{font-family:'Outfit', 'Noto Sans Arabic', sans-serif;color:var(--heading)}
 
 /* ═══ SPLASH ═══ */
-.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:conic-gradient(from 184deg, #805023 0%, #11114e 25%, #805023 50%, #11114e 75%, #805023 100%);position:relative;overflow:hidden}
-.splash::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(21deg, transparent, transparent 41px, rgba(255,255,255,0.034999999999999996) 41px, rgba(255,255,255,0.034999999999999996) 42px), repeating-linear-gradient(81deg, transparent, transparent 41px, rgba(255,255,255,0.034999999999999996) 41px, rgba(255,255,255,0.034999999999999996) 42px), repeating-linear-gradient(141deg, transparent, transparent 41px, rgba(255,255,255,0.034999999999999996) 41px, rgba(255,255,255,0.034999999999999996) 42px);pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--splash-bg);position:relative;overflow:hidden}
+.splash::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='20' fill='none' stroke='%23B87333' stroke-width='.4' opacity='.04'/%3E%3Ccircle cx='30' cy='30' r='12' fill='none' stroke='%231A3A4A' stroke-width='.3' opacity='.03'/%3E%3Cline x1='30' y1='10' x2='30' y2='50' stroke='%23B87333' stroke-width='.2' opacity='.03'/%3E%3Cline x1='10' y1='30' x2='50' y2='30' stroke='%23B87333' stroke-width='.2' opacity='.03'/%3E%3C/svg%3E") repeat;pointer-events:none}
+.splash-art{position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(0deg,#0A1218 0%,transparent 60%);pointer-events:none;overflow:hidden}
+.splash-art::before{content:'';position:absolute;bottom:15px;left:20%;width:50px;height:50px;border:3px solid rgba(184,115,51,.12);border-radius:50%;animation:spinSlow 15s linear infinite}
+.splash-art::after{content:'';position:absolute;bottom:25px;left:calc(20% + 10px);width:30px;height:30px;border:2px solid rgba(26,58,74,.15);border-radius:50%;animation:spinSlow 10s linear infinite reverse}
 .splash-box{position:relative;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:44px 36px 36px;max-width:460px;width:100%;text-align:center;box-shadow:var(--glow),0 20px 60px rgba(0,0,0,0.15);animation:fadeSlideUp 0.4s ease-out;overflow:hidden}
 .splash-bism{margin-bottom:16px;font-size:16px;color:var(--accent);opacity:0.6;font-family:'Noto Sans Arabic',sans-serif;letter-spacing:1px}
 .splash-title{font-size:26px;font-weight:800;margin-bottom:6px;color:var(--heading);line-height:1.3}
 .splash-sub{color:var(--accent);font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;font-weight:600}
 .splash-arabic{font-family:'Noto Sans Arabic',sans-serif;font-size:20px;color:var(--accent);direction:rtl;margin-bottom:12px;opacity:0.8}
 .splash-desc{color:var(--text2);font-size:12px;line-height:1.8;margin-bottom:28px;max-width:360px;margin-left:auto;margin-right:auto}
-.splash-deco{position:absolute;top:10px;right:10px;width:60px;height:60px;border:2px solid rgba(25,25,112,0.15);border-radius:50%;pointer-events:none}.splash-deco::before{content:'';position:absolute;top:50%;left:50%;width:40px;height:40px;border:1px solid rgba(25,25,112,0.1);border-radius:50%;transform:translate(-50%,-50%)}
+.splash-deco{position:absolute;top:-2px;left:-2px;right:-2px;height:6px;background:linear-gradient(90deg,#B87333,#1A3A4A,#B87333);border-radius:20px 20px 0 0;pointer-events:none}
 
 /* ═══ BUTTONS ═══ */
-.btn-go{padding:14px 40px;background:var(--accent);color:var(--bg);border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1.5px;text-transform:uppercase;transition:all .2s;box-shadow:0 4px 15px rgba(25,25,112,0.3)}
+.btn-go{padding:14px 40px;background:linear-gradient(135deg,#B87333,#1A3A4A);color:var(--bg);border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1.5px;text-transform:uppercase;transition:all .2s;box-shadow:0 4px 15px rgba(25,25,112,0.3)}
 .btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(25,25,112,0.4)}
 .btn-go:active{transform:translateY(0)}
 
@@ -189,26 +186,27 @@ h1,h2,h3,.heading{font-family:'Outfit', 'Noto Sans Arabic', sans-serif;color:var
 <a href="../../index.html" class="back-link" id="backLink" style="display:none">الفهرس →</a>
 <div class="splash" id="splash"><div class="splash-box">
 <div class="splash-deco"></div>
+<div class="splash-art"></div>
 <div class="splash-bism">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
 <h1 class="splash-title heading">جبر الخوارزمي</h1>
 <div class="splash-sub">وازن المعادلة</div>
 <button class="btn-go" id="enterBtn">ابدأ المهمة</button>
 <div class="sw" style="margin-top:20px"><span class="sw-label">اللغة</span><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div></div>
-<div class="sw" style="margin-top:8px"><span class="sw-label">المظهر</span><div class="sw"><button class="sw-btn on" data-thm="default">✨</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="forest">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="arctic">❄</button><button class="sw-btn" data-thm="sand">🏜</button><button class="sw-btn" data-thm="midnight">🌙</button></div></div>
+<div class="sw" style="margin-top:8px"></div>
 </div></div>
 <div class="app" id="app">
 <div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div>
 <div class="hdr"><h1 id="appTitle">جبر الخوارزمي</h1><span class="pill" id="scorePill">0 / 0</span></div>
 <div class="ctrl">
-<button id="startBtn">&#9654; New Problem</button>
+<button id="startBtn">&#9654; مسألة جديدة</button>
 <button class="btn-help" onclick="openHelp()">&#10067;</button>
 <button id="soundBtn">&#128266;</button>
 <div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div>
-<div class="sw"><button class="sw-btn on" data-thm="default">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="sunset">&#128293;</button><button class="sw-btn" data-thm="forest">&#128154;</button><button class="sw-btn" data-thm="royal">&#128225;</button><button class="sw-btn" data-thm="ocean">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div>
+
 </div>
-<div class="status" id="status">Balance the equation to find x</div>
+<div class="status" id="status">وازن المعادلة لإيجاد قيمة س</div>
 <div class="game-area" id="gameArea"></div>
-<div class="score-row"><div class="score-item"><div class="score-label" id="lbSolved">Solved</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbTotal">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label" id="lbSolved">محلول</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label" id="lbTotal">المجموع</div><div class="score-num" id="tot">0</div></div></div>
 <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
 <div class="log-box" id="logBox"></div>
 <div class="foot">ورشة-صنعها &#8212; جبر الخوارزمي v1.0</div>
@@ -285,7 +283,7 @@ function t(k){return defined_i18n[k]?defined_i18n[k][curLang]||defined_i18n[k]["
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open")}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
 function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});renderLang();try{localStorage.setItem("wdiy-lang",l)}catch(e){}}
-function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th)});try{localStorage.setItem("wdiy-theme",th)}catch(e){}}
+function setTheme(th){document.documentElement.dataset.theme=th;try{localStorage.setItem("wdiy-theme",th)}catch(e){}}
 function renderLang(){
 document.getElementById("splTitle").textContent=t("splTitle");
 document.getElementById("splSub").textContent=t("splSub");
@@ -315,7 +313,19 @@ var PROBLEMS=[
 {eq:"x² = 5x",lhs:[{c:1,v:"x²"}],rhs:[{c:5,v:"x"}],answer:5,steps:["x² = 5x","Divide both sides by x","x = 5"],desc:{en:"Squares equal roots — Al-Khwarizmi's Type 3",fr:"Carres egaux aux racines — Type 3 d'Al-Khwarizmi",ar:"مربعات تساوي جذوراً — النوع الثالث للخوارزمي"}},
 {eq:"4x + 8 = 2x + 20",lhs:[{c:4,v:"x"},{c:8,v:""}],rhs:[{c:2,v:"x"},{c:20,v:""}],answer:6,steps:["4x + 8 = 2x + 20","Al-Muqabala: subtract 2x from both","2x + 8 = 20","Al-Jabr: subtract 8 from both","2x = 12","x = 6"],desc:{en:"Balance both sides with al-jabr and al-muqabala",fr:"Equilibrez les deux cotes avec al-jabr et al-muqabala",ar:"وازن الطرفين بالجبر والمقابلة"}},
 {eq:"x² + 6x = 16",lhs:[{c:1,v:"x²"},{c:6,v:"x"}],rhs:[{c:16,v:""}],answer:2,steps:["x² + 6x = 16","Half of 6 is 3, square it: 9","x² + 6x + 9 = 25","(x + 3)² = 25","x + 3 = 5","x = 2"],desc:{en:"Completing the square — Al-Khwarizmi's method",fr:"Completer le carre — methode d'Al-Khwarizmi",ar:"إكمال المربع — طريقة الخوارزمي"}},
-{eq:"x² + 4x = 12",lhs:[{c:1,v:"x²"},{c:4,v:"x"}],rhs:[{c:12,v:""}],answer:2,steps:["x² + 4x = 12","Half of 4 is 2, square it: 4","x² + 4x + 4 = 16","(x + 2)² = 16","x + 2 = 4","x = 2"],desc:{en:"Quadratic solved by completing the square",fr:"Quadratique resolue par completion du carre",ar:"معادلة تربيعية محلولة بإكمال المربع"}}
+{eq:"x² + 4x = 12",lhs:[{c:1,v:"x²"},{c:4,v:"x"}],rhs:[{c:12,v:""}],answer:2,steps:["x² + 4x = 12","Half of 4 is 2, square it: 4","x² + 4x + 4 = 16","(x + 2)² = 16","x + 2 = 4","x = 2"],desc:{en:"Quadratic solved by completing the square",fr:"Quadratique resolue par completion du carre",ar:"معادلة تربيعية محلولة بإكمال المربع"}},
+{eq:"7x = 56",lhs:[{c:7,v:"x"}],rhs:[{c:56,v:""}],answer:8,steps:["7x = 56","اقسم الطرفين على 7","x = 8"],desc:{en:"Roots equal numbers — division",fr:"Racines egaux aux nombres — division",ar:"جذور تساوي أعداداً — القسمة"}},
+{eq:"x² = 81",lhs:[{c:1,v:"x²"}],rhs:[{c:81,v:""}],answer:9,steps:["x² = 81","خذ الجذر التربيعي للطرفين","x = 9"],desc:{en:"Squares equal numbers — square root",fr:"Carres egaux aux nombres — racine carree",ar:"مربعات تساوي أعداداً — الجذر التربيعي"}},
+{eq:"3x + 9 = 30",lhs:[{c:3,v:"x"},{c:9,v:""}],rhs:[{c:30,v:""}],answer:7,steps:["3x + 9 = 30","الجبر: اطرح 9 من الطرفين","3x = 21","اقسم على 3","x = 7"],desc:{en:"Linear equation — al-jabr subtraction",fr:"Equation lineaire — soustraction al-jabr",ar:"معادلة خطية — طرح بالجبر"}},
+{eq:"x² + 8x = 20",lhs:[{c:1,v:"x²"},{c:8,v:"x"}],rhs:[{c:20,v:""}],answer:2,steps:["x² + 8x = 20","نصف 8 هو 4، مربعه: 16","x² + 8x + 16 = 36","(x + 4)² = 36","x + 4 = 6","x = 2"],desc:{en:"Completing the square — Al-Khwarizmi's geometric proof",fr:"Completer le carre — preuve geometrique d'Al-Khwarizmi",ar:"إكمال المربع — البرهان الهندسي للخوارزمي"}},
+{eq:"6x + 12 = 3x + 27",lhs:[{c:6,v:"x"},{c:12,v:""}],rhs:[{c:3,v:"x"},{c:27,v:""}],answer:5,steps:["6x + 12 = 3x + 27","المقابلة: اطرح 3x من الطرفين","3x + 12 = 27","الجبر: اطرح 12","3x = 15","x = 5"],desc:{en:"Two-step balancing with al-jabr and al-muqabala",fr:"Equilibrage en deux etapes avec al-jabr et al-muqabala",ar:"موازنة بخطوتين بالجبر والمقابلة"}},
+{eq:"x² = 8x",lhs:[{c:1,v:"x²"}],rhs:[{c:8,v:"x"}],answer:8,steps:["x² = 8x","اقسم الطرفين على x","x = 8"],desc:{en:"Squares equal roots — Al-Khwarizmi's Type 3",fr:"Carres egaux aux racines — Type 3 d'Al-Khwarizmi",ar:"مربعات تساوي جذوراً — النوع الثالث للخوارزمي"}},
+{eq:"9x = 36",lhs:[{c:9,v:"x"}],rhs:[{c:36,v:""}],answer:4,steps:["9x = 36","اقسم الطرفين على 9","x = 4"],desc:{en:"Simple roots equal numbers",fr:"Racines simples egales aux nombres",ar:"جذور بسيطة تساوي أعداداً"}},
+{eq:"x² + 12x = 45",lhs:[{c:1,v:"x²"},{c:12,v:"x"}],rhs:[{c:45,v:""}],answer:3,steps:["x² + 12x = 45","نصف 12 هو 6، مربعه: 36","x² + 12x + 36 = 81","(x + 6)² = 81","x + 6 = 9","x = 3"],desc:{en:"Completing the square — larger coefficients",fr:"Completer le carre — coefficients plus grands",ar:"إكمال المربع — معاملات أكبر"}},
+{eq:"x² + 45 = 14x",lhs:[{c:1,v:"x²"},{c:45,v:""}],rhs:[{c:14,v:"x"}],answer:5,steps:["x² + 45 = 14x","نصف 14 هو 7، مربعه: 49","49 - 45 = 4","√4 = 2","x = 7 - 2 = 5"],desc:{en:"Squares and numbers equal roots — Type 5",fr:"Carres et nombres egaux aux racines — Type 5",ar:"مربعات وأعداد تساوي جذوراً — النوع الخامس"}},
+{eq:"2x + 14 = 30",lhs:[{c:2,v:"x"},{c:14,v:""}],rhs:[{c:30,v:""}],answer:8,steps:["2x + 14 = 30","الجبر: اطرح 14 من الطرفين","2x = 16","اقسم على 2","x = 8"],desc:{en:"Linear equation — al-jabr method",fr:"Equation lineaire — methode al-jabr",ar:"معادلة خطية — طريقة الجبر"}},
+{eq:"x² = 64",lhs:[{c:1,v:"x²"}],rhs:[{c:64,v:""}],answer:8,steps:["x² = 64","خذ الجذر التربيعي","x = 8"],desc:{en:"Perfect square — direct root",fr:"Carre parfait — racine directe",ar:"مربع كامل — جذر مباشر"}},
+{eq:"5x + 10 = 3x + 24",lhs:[{c:5,v:"x"},{c:10,v:""}],rhs:[{c:3,v:"x"},{c:24,v:""}],answer:7,steps:["5x + 10 = 3x + 24","المقابلة: اطرح 3x","2x + 10 = 24","الجبر: اطرح 10","2x = 14","x = 7"],desc:{en:"Balancing with variables on both sides",fr:"Equilibrage avec variables des deux cotes",ar:"موازنة بمتغيرات في الطرفين"}}
 ];
 
 var curProbIdx=0,step=0;
@@ -397,7 +407,7 @@ try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl);else setLang("ar"
 try{var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st);else setTheme("terminal")}catch(e){setTheme("terminal")}
 try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="\uD83D\uDD07"}}catch(e){}
 document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
-document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click")})});
+snd("click")})});
 document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newProblem()});
 document.getElementById("startBtn").addEventListener("click",function(){newProblem()});
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07";try{localStorage.setItem("wdiy-mute",soundOn?"0":"1")}catch(e){}});

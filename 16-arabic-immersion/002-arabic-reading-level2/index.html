@@ -1,15 +1,8 @@
 <!DOCTYPE html><html lang="ar" dir="rtl" data-theme="default"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>القراءة العربية - المستوى الثاني</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 
-[data-theme="default"]{--bg:#0f142d;--bg2:#161c3f;--bg3:#1c2451;--border:#25306c;--border2:#2c387e;--text:#d0dce8;--text2:#8899aa;--text3:#556677;--heading:#e8f0f8;--accent:#3f87bf;--abg:rgba(63,135,191,.08);--abr:rgba(63,135,191,.25);--glow:0 0 30px rgba(63,135,191,.12);--splash-bg:#192048}
-[data-theme="ocean"]{--bg:#0a1628;--bg2:#0e1e35;--bg3:#142840;--border:#1e3a5a;--border2:#284a6e;--text:#b8cee8;--text2:#6e8aaa;--text3:#4a6680;--heading:#dce8f5;--accent:#338dd3;--abg:rgba(63,135,191,.07);--abr:rgba(63,135,191,.22);--glow:0 0 25px rgba(63,135,191,.1);--splash-bg:#0c1a30}
-[data-theme="sunset"]{--bg:#1a0e0a;--bg2:#241410;--bg3:#301c16;--border:#4a2e22;--border2:#5a3a2e;--text:#e0c8b8;--text2:#aa8870;--text3:#7a6050;--heading:#f5e0d0;--accent:#9f7b81;--abg:rgba(255,112,67,.07);--abr:rgba(255,112,67,.22);--glow:0 0 25px rgba(255,112,67,.1);--splash-bg:#1e1210}
-[data-theme="forest"]{--bg:#0a140a;--bg2:#0e1c0e;--bg3:#142414;--border:#1e3a1e;--border2:#284a28;--text:#b8d8b8;--text2:#6ea06e;--text3:#4a784a;--heading:#d8f0d8;--accent:#52a194;--abg:rgba(102,187,106,.07);--abr:rgba(102,187,106,.22);--glow:0 0 25px rgba(102,187,106,.1);--splash-bg:#0c180c}
-[data-theme="royal"]{--bg:#10081a;--bg2:#180e28;--bg3:#201636;--border:#30224e;--border2:#402e62;--text:#c8b8e0;--text2:#8878b0;--text3:#5a4a80;--heading:#e0d0f5;--accent:#7567bd;--abg:rgba(171,71,188,.07);--abr:rgba(171,71,188,.22);--glow:0 0 25px rgba(171,71,188,.1);--splash-bg:#140a20}
-[data-theme="arctic"]{--bg:#f0f4f8;--bg2:#ffffff;--bg3:#e8eef5;--border:#c8d4e2;--border2:#b0c0d4;--text:#2a3a4e;--text2:#5a6e84;--text3:#8a9ab0;--heading:#14243a;--accent:#3572a2;--abg:rgba(63,135,191,.06);--abr:rgba(63,135,191,.18);--glow:0 0 15px rgba(63,135,191,.06);--splash-bg:#f4f8fc}
-[data-theme="sand"]{--bg:#f5f0e4;--bg2:#faf7ee;--bg3:#ede6d4;--border:#d4c8b0;--border2:#c0b498;--text:#3a3020;--text2:#6a5e4a;--text3:#9a8e78;--heading:#1e1608;--accent:#7b8665;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.18);--glow:0 0 15px rgba(184,134,11,.06);--splash-bg:#f8f4e8}
-[data-theme="midnight"]{--bg:#08090e;--bg2:#0e1018;--bg3:#161a26;--border:#1e2238;--border2:#2a2f48;--text:#b0b8d4;--text2:#6e78a0;--text3:#4a5070;--heading:#d8dff5;--accent:#4d79bf;--abg:rgba(92,107,192,.07);--abr:rgba(92,107,192,.22);--glow:0 0 25px rgba(92,107,192,.1);--splash-bg:#0a0c14}
+[data-theme="default"],[data-theme="ocean"],[data-theme="sunset"],[data-theme="forest"],[data-theme="royal"],[data-theme="arctic"],[data-theme="sand"],[data-theme="midnight"]{--bg:#141414;--bg2:#1a1a1a;--bg3:#222;--border:#2A5B8C;--border2:#5A8AB5;--text:#c8d4e0;--text2:#8899aa;--text3:#556677;--heading:#e8eef5;--accent:#5A8AB5;--abg:rgba(42,91,140,.08);--abr:rgba(42,91,140,.25);--glow:0 0 30px rgba(42,91,140,.12);--splash-bg:#111}
 
 @keyframes fadeScaleIn{from{opacity:0;transform:scale(0.9)}to{opacity:1;transform:scale(1)}}
 @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
@@ -17,24 +10,25 @@
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 @keyframes spinSlow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Outfit', 'Noto Sans Arabic', sans-serif;font-size:14px;min-height:100vh;-webkit-font-smoothing:antialiased}
-[lang="ar"] body{font-family:'Noto Sans Arabic',sans-serif}
-h1,h2,h3,.heading{font-family:'Outfit', 'Noto Sans Arabic', sans-serif;color:var(--heading)}
+body{background:var(--bg);background-image:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(90,138,181,.06) 27px,rgba(90,138,181,.06) 28px);color:var(--text);font-family:'Noto Naskh Arabic','Amiri',serif;font-size:14px;min-height:100vh;-webkit-font-smoothing:antialiased}
+[lang="ar"] body{font-family:'Noto Naskh Arabic','Amiri',serif}
+h1,h2,h3,.heading{font-family:'Amiri','Noto Naskh Arabic',serif;color:var(--heading)}
 
 /* ═══ SPLASH ═══ */
-.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(circle 40px at 50% 50%, rgba(63,81,181,0.12) 0%, transparent 70%), linear-gradient(146deg, #25306c 0%, #207068 100%);position:relative;overflow:hidden}
-.splash::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(151deg, transparent, transparent 21px, rgba(255,255,255,0.034999999999999996) 21px, rgba(255,255,255,0.034999999999999996) 22px), repeating-linear-gradient(211deg, transparent, transparent 21px, rgba(255,255,255,0.034999999999999996) 21px, rgba(255,255,255,0.034999999999999996) 22px), repeating-linear-gradient(271deg, transparent, transparent 21px, rgba(255,255,255,0.034999999999999996) 21px, rgba(255,255,255,0.034999999999999996) 22px);pointer-events:none}
-.splash-box{position:relative;background:var(--bg2);border:1px solid var(--border);border-radius:24px;padding:44px 36px 36px;max-width:460px;width:100%;text-align:center;box-shadow:var(--glow),0 20px 60px rgba(0,0,0,0.15);animation:fadeScaleIn 0.5s ease-out;overflow:hidden}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(180deg,#141414 0%,#1a1a1a 100%);position:relative;overflow:hidden}
+.splash::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(90,138,181,.04) 27px,rgba(90,138,181,.04) 28px);pointer-events:none}
+.splash-box{position:relative;background:#1a1a1a;border:2px solid #2A5B8C;border-radius:14px;padding:44px 36px 36px;max-width:460px;width:100%;text-align:center;box-shadow:0 0 30px rgba(42,91,140,.12),0 20px 60px rgba(0,0,0,.3);animation:fadeScaleIn 0.5s ease-out;overflow:hidden}
 .splash-bism{margin-bottom:16px;font-size:19px;color:var(--accent);opacity:0.7;font-family:'Noto Sans Arabic',sans-serif;letter-spacing:2px}
 .splash-title{font-size:26px;font-weight:800;margin-bottom:6px;color:var(--heading);line-height:1.3}
 .splash-sub{color:var(--accent);font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;font-weight:600}
 .splash-arabic{font-family:'Noto Sans Arabic',sans-serif;font-size:20px;color:var(--accent);direction:rtl;margin-bottom:12px;opacity:0.8}
 .splash-desc{color:var(--text2);font-size:12px;line-height:1.8;margin-bottom:28px;max-width:360px;margin-left:auto;margin-right:auto}
-.splash-deco{position:absolute;bottom:20px;right:20px;width:40px;height:3px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0.3;pointer-events:none;border-radius:2px}
+.splash-deco{position:absolute;bottom:20px;right:20px;width:40px;height:3px;background:linear-gradient(90deg,#5A8AB5,transparent);opacity:0.3;pointer-events:none;border-radius:2px}
+.splash-art{width:90px;height:90px;margin:0 auto 18px;position:relative}.splash-art::before{content:"";position:absolute;left:50%;bottom:10px;transform:translateX(-50%) rotate(-45deg);width:4px;height:60px;background:linear-gradient(to top,#5A8AB5 80%,#2A5B8C);border-radius:2px}.splash-art::after{content:"";position:absolute;left:50%;bottom:8px;width:12px;height:12px;border-radius:50% 50% 50% 0;background:#2A5B8C;transform:translateX(-50%) rotate(-45deg)}
 
 /* ═══ BUTTONS ═══ */
-.btn-go{padding:14px 40px;background:var(--accent);color:var(--bg);border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1.5px;text-transform:uppercase;transition:all .2s;box-shadow:0 4px 15px rgba(63,135,191,0.3)}
-.btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(63,135,191,0.4)}
+.btn-go{padding:14px 40px;background:#2A5B8C;color:#e8eef5;border:2px solid #5A8AB5;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Amiri','Noto Naskh Arabic',serif;letter-spacing:1.5px;text-transform:uppercase;transition:all .2s;box-shadow:0 4px 15px rgba(42,91,140,.3)}
+.btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(42,91,140,.4);background:#5A8AB5}
 .btn-go:active{transform:translateY(0)}
 
 /* ═══ SWITCHERS ═══ */
@@ -189,23 +183,24 @@ h1,h2,h3,.heading{font-family:'Outfit', 'Noto Sans Arabic', sans-serif;color:var
 <a href="../../index.html" class="back-link" id="backLink" style="display:none">الفهرس →</a>
 <div class="splash" id="splash"><div class="splash-box">
 <div class="splash-deco"></div>
+<div class="splash-art"></div>
 <div class="splash-bism">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
 <h1 class="splash-title heading">القراءة العربية - المستوى الثاني</h1>
 <div class="splash-sub">تعلّم العربية بالممارسة</div>
 <p class="splash-desc">تعلّم اللغة العربية بطريقة تفاعلية وممتعة مصمّمة للأطفال.</p>
-<button class="btn-go" id="enterBtn">Start Reading</button>
+<button class="btn-go" id="enterBtn">ابدأ القراءة</button>
 <div class="sw" style="margin-top:20px"><span class="sw-label">اللغة</span><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div></div>
-<div class="sw" style="margin-top:8px"><span class="sw-label">المظهر</span><div class="sw"><button class="sw-btn on" data-thm="default">✨</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="forest">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="arctic">❄</button><button class="sw-btn" data-thm="sand">🏜</button><button class="sw-btn" data-thm="midnight">🌙</button></div></div>
+<div class="sw" style="margin-top:8px"></div>
 </div></div>
 <div class="app" id="app">
-<div class="hdr-bism">&bismillah;</div><div class="hdr"><h1 id="appTitle">القراءة العربية - المستوى الثاني</h1><span class="pill" id="progressPill">1 / 10</span></div><div class="ctrl"><button class="btn-help" onclick="openHelp()">&#x2753;</button><button id="soundBtn">&#x1F50A;</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&ayn;</button></div><div class="sw"><button class="sw-btn on" data-thm="default">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="sunset">&#x1F525;</button><button class="sw-btn" data-thm="forest">&#x1F49A;</button><button class="sw-btn" data-thm="royal">&#x1F4E1;</button><button class="sw-btn" data-thm="ocean">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div>
-<div class="status" id="status">Read the paragraph, then answer the question</div>
+<div class="hdr-bism">&bismillah;</div><div class="hdr"><h1 id="appTitle">القراءة العربية - المستوى الثاني</h1><span class="pill" id="progressPill">1 / 10</span></div><div class="ctrl"><button class="btn-help" onclick="openHelp()">&#x2753;</button><button id="soundBtn">&#x1F50A;</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&ayn;</button></div></div>
+<div class="status" id="status">اقرأ الفقرة ثم أجب عن السؤال</div>
 <div class="progress-bar-wrap"><div class="progress-bar-inner" id="progBar" style="width:0%"></div></div>
 <div class="game-area" id="gameArea">
 <div class="story-title" id="storyTitle"></div>
 <div class="ar-para" id="arPara"></div>
 <div class="vocab-box" id="vocabBox" style="display:none"></div>
-<div class="trans-toggle"><button id="transBtn">Show Translation</button></div>
+<div class="trans-toggle"><button id="transBtn">إظهار الترجمة</button></div>
 <div class="trans-block" id="transBlock"></div>
 <div class="comp-area" id="compArea"></div>
 <div class="nav-row"><button class="nav-btn" id="prevBtn">&larr;</button><button class="nav-btn primary" id="nextBtn">&rarr;</button></div>
@@ -253,7 +248,7 @@ function openHelp(){document.getElementById("helpOverlay").classList.add("open")
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
 var curLang="ar";
 function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});render();try{localStorage.setItem("wdiy-lang",l)}catch(e){}}
-function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===t)});try{localStorage.setItem("wdiy-theme",t)}catch(e){}}
+function setTheme(t){document.documentElement.dataset.theme=t;try{localStorage.setItem("wdiy-theme",t)}catch(e){}}
 var soundOn=true,actx;
 function snd(type){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(type==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.12);o.start(n);o.stop(n+.12)}else if(type==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15)}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05)}}
 
@@ -380,7 +375,7 @@ function loadProgress(){try{var d=JSON.parse(localStorage.getItem(HS_KEY));if(d)
 document.addEventListener("DOMContentLoaded",function(){
 loadProgress();
 document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
-document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click")})});
+snd("click")})});
 document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";render()});
 document.getElementById("nextBtn").addEventListener("click",goNext);
 document.getElementById("prevBtn").addEventListener("click",goPrev);

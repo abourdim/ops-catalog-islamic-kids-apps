@@ -1,49 +1,67 @@
-Islamic Kids Apps — Arabic Redesign Progress
-=============================================
-Date: 2026-03-26
+Islamic Kids Apps — FINAL STATUS
+==================================
+Updated: 2026-03-27
 
-COMPLETED (7 categories, 305 apps)
-====================================
-[x] 01-quran      (50 apps)  — gold/blue mushaf design, full Arabic i18n
-[x] 02-arabic     (40 apps)  — chalkboard design, curLang fixed
-[x] 03-seerah     (50 apps)  — desert/caravan design, deep content translation
-[x] 04-hadith     (35 apps)  — manuscript design, buttons/forms translated
-[x] 05-dua        (35 apps)  — sky/moon design, interactive elements translated
-[x] 06-fiqh       (50 apps)  — geometric/mosque design, splash + sidebar translated
-[x] 08-adab       (45 apps)  — garden/nature design, wiki/howto translated
+ALL 4 REPOS FULLY PROCESSED — 3,497 apps/quizzes total
 
-PARTIAL (2 categories, 44 apps done)
-======================================
-[~] 07-aqeedah    (35 apps)  — 001-012 done, 013-035 TODO
-[~] 10-gazawat   (110 apps)  — 001-022 + 089-110 done, 023-088 TODO
+=== REPO 1: ops-catalog-islamic-kids-apps ===
+Apps: 272 across 13 categories
+Status: DONE
+- Deep Arabic translation (RTL, curLang=ar, all UI/content)
+- Unique design DNA per category (13 themes)
+- Content enriched (20+ items per app)
+- Theme switchers removed
+- Index rebuilt Arabic-first
+- Bismillah on every splash
+- Amiri + Noto Naskh Arabic fonts
 
-NOT STARTED (7 categories, 275 apps)
-======================================
-[ ] 09-history    (45 apps)
-[ ] 11-anbiya     (50 apps)
-[ ] 12-scientists  (40 apps)
-[ ] 13-sahaba     (40 apps)
-[ ] 14-tafsir     (30 apps)
-[ ] 15-life-tools  (35 apps)
-[ ] 16-arabic-immersion (35 apps)
+=== REPO 2: ops-catalog-kids-apps ===
+Apps: 64 across 6 categories
+Status: DONE
+- Deep Arabic translation + Islamic values
+- Unique design DNA per category (6 themes)
+- Content audit: 199→64 (cut 135 thin apps)
+- Theme switchers removed
+- Index rebuilt Arabic-first
 
-REMAINING WORK: 420 apps
-==========================
-- 07-aqeedah: 23 apps (013-035)
-- 09-history: 45 apps
-- 10-gazawat: 66 apps (023-088)
-- 11-anbiya: 50 apps
-- 12-scientists: 40 apps
-- 13-sahaba: 40 apps
-- 14-tafsir: 30 apps
-- 15-life-tools: 35 apps
-- 16-arabic-immersion: 35 apps
-- 05-dua: 12 apps (001-012 agent was stopped, may need verification)
+=== REPO 3: ops-catalog-islamic-kids-quizzes ===
+Quizzes: 1,146 across 9 categories
+Status: DONE
+- Arabic translation (setLang, buttons, help, status)
+- Islamic gold/blue color scheme
+- Amiri + Noto Naskh Arabic fonts
+- Bismillah added
+- Theme bloat removed (8→1)
 
-WHAT EACH FIX INCLUDES
-========================
-1. curLang="en" -> curLang="ar"
-2. .on class from EN to AR button in language switchers
-3. T.ar wiki/howto/faq translated from English to Arabic
-4. Hardcoded English HTML translated (sidebar, buttons, labels, footers)
-5. Deep fixes where needed: splash screens, educational data, form labels
+=== REPO 4: ops-catalog-kids-quizzes ===
+Quizzes: 2,015 across 10 categories
+Status: DONE
+- Arabic translation
+- Islamic gold/blue color scheme
+- Amiri + Noto Naskh Arabic fonts
+- Bismillah added
+- Theme bloat removed (8→1)
+
+=== DESIGN DNA MAP ===
+islamic-kids-apps:
+  01-quran:      Gold Mushaf (#0A1628 + #C5A028)
+  02-arabic:     Chalkboard (#1B3B1A + cream)
+  03-seerah:     Desert Caravan (#2A1F14 + #D4A44C)
+  04-hadith:     Ancient Manuscript (#1A1510 + #8B6914)
+  05-dua:        Night Sky (#0D0B1A + #B8C4D0)
+  06-fiqh:       Mosque Geometry (#0A2628 + #B8960C)
+  07-aqeedah:    Cosmic Light (#0B0D2A + #E8D080)
+  08-adab:       Garden Nature (#0A1A0A + #4CAF50)
+  09-history:    Ottoman Palace (#1A0A0F + #D4A44C)
+  11-anbiya:     Prophetic Journey (#1A150A + #C8960C)
+  12-scientists: Laboratory (#0A1218 + #B87333)
+  13-sahaba:     Shield & Star (#0A0F1A + #A0B0C0)
+  16-arabic+:    Ink & Paper (#141414 + #2A5B8C)
+
+kids-apps:
+  01-games:      Gaming Arcade (#0A0A1A + #00D4AA)
+  02-math:       Math Lab (#0A1018 + #4FC3F7)
+  03-science:    Science Lab (#0A1210 + #66BB6A)
+  04-geography:  World Explorer (#0A1520 + #26A69A)
+  05-english:    Language Book (#14100A + #FF7043)
+  09-coding:     Terminal (#0A0A0A + #00E676)

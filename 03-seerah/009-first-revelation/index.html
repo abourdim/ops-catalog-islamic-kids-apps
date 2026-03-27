@@ -1,32 +1,28 @@
-<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="desert-dawn"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>First Revelation</title>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
+<!DOCTYPE html><html lang="ar" dir="rtl" data-theme="desert-caravan"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>First Revelation</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 <style>
-[data-theme="desert-dawn"]{--bg:#1a1408;--bg2:#231c0e;--bg3:#2e2514;--border:#3d3420;--border2:#4e432c;--text:#d4c4a0;--text2:#a08c60;--text3:#6b5c3a;--heading:#f5e6c8;--accent:#FFBF00;--abg:rgba(255,191,0,.08);--abr:rgba(255,191,0,.25);--glow:0 0 20px rgba(255,191,0,.15)}
-[data-theme="midnight-desert"]{--bg:#0a0d1a;--bg2:#101528;--bg3:#171d35;--border:#1e2745;--border2:#2a3558;--text:#b8c0d9;--text2:#7580a0;--text3:#4a5070;--heading:#e0e5f5;--accent:#DAA520;--abg:rgba(218,165,32,.08);--abr:rgba(218,165,32,.25);--glow:0 0 20px rgba(218,165,32,.12)}
-[data-theme="sandstone"]{--bg:#f5ede0;--bg2:#faf5ea;--bg3:#ede4d2;--border:#d8ccb5;--border2:#c5b89e;--text:#4a3f2e;--text2:#7a6e55;--text3:#a09575;--heading:#2a2010;--accent:#8B6914;--abg:rgba(139,105,20,.08);--abr:rgba(139,105,20,.2);--glow:0 0 15px rgba(139,105,20,.1)}
-[data-theme="oasis"]{--bg:#0a1510;--bg2:#0e1c14;--bg3:#14261c;--border:#1e3528;--border2:#284535;--text:#a8d4b8;--text2:#6a9a78;--text3:#3a6848;--heading:#d0f0dc;--accent:#50C878;--abg:rgba(80,200,120,.08);--abr:rgba(80,200,120,.2);--glow:0 0 20px rgba(80,200,120,.1)}
-[data-theme="sunset"]{--bg:#1a0e08;--bg2:#221410;--bg3:#2e1c16;--border:#3d2a20;--border2:#4e382c;--text:#d4b8a0;--text2:#a07e60;--text3:#6a5038;--heading:#f5dcc8;--accent:#ff6b35;--abg:rgba(255,107,53,.08);--abr:rgba(255,107,53,.25);--glow:0 0 20px rgba(255,107,53,.12)}
-[data-theme="night-sky"]{--bg:#08091a;--bg2:#0e1028;--bg3:#151835;--border:#1e2248;--border2:#2a2e5a;--text:#b0b8d8;--text2:#7078a8;--text3:#484e78;--heading:#dde0f5;--accent:#7B68EE;--abg:rgba(123,104,238,.08);--abr:rgba(123,104,238,.25);--glow:0 0 20px rgba(123,104,238,.12)}
-[data-theme="caravan"]{--bg:#100808;--bg2:#180e0e;--bg3:#221616;--border:#331e1e;--border2:#442828;--text:#d4a8a8;--text2:#9a6e6e;--text3:#6a4848;--heading:#f0cccc;--accent:#CD853F;--abg:rgba(205,133,63,.08);--abr:rgba(205,133,63,.25);--glow:0 0 20px rgba(205,133,63,.12)}
-[data-theme="parchment"]{--bg:#f0e8d8;--bg2:#f8f2e5;--bg3:#e8ddc8;--border:#d0c4a8;--border2:#b8aa8e;--text:#3a3020;--text2:#6a5e45;--text3:#9a8e70;--heading:#1a1408;--accent:#A0522D;--abg:rgba(160,82,45,.08);--abr:rgba(160,82,45,.2);--glow:0 0 15px rgba(160,82,45,.1)}
+:root{--bg:#2A1F14;--bg2:#35291A;--bg3:#3F3222;--border:#5A4A35;--border2:#6B5A42;--text:#D4C4A0;--text2:#A08C60;--text3:#6B5C3A;--heading:#F5E6C8;--accent:#D4A44C;--abg:rgba(212,164,76,.1);--abr:rgba(212,164,76,.3);--glow:0 0 20px rgba(212,164,76,.15)}
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Amiri','Noto Sans Arabic',serif;font-size:14px;min-height:100vh;overflow-x:hidden}
-[lang="ar"] body{font-family:'Noto Sans Arabic','Amiri',serif}
-h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(--heading)}
+body{background:var(--bg);background-image:repeating-linear-gradient(175deg,transparent,transparent 40px,rgba(212,164,76,.02) 40px,rgba(212,164,76,.02) 42px,transparent 42px,transparent 80px);color:var(--text);font-family:'Amiri','Noto Naskh Arabic',serif;font-size:14px;min-height:100vh;overflow-x:hidden}
+[lang="ar"] body{font-family:'Noto Naskh Arabic','Amiri',serif}
+h1,h2,h3,.heading{font-family:'Outfit','Noto Naskh Arabic',sans-serif;color:var(--heading)}
 .splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;position:relative;overflow:hidden}
 .splash::before{content:'';position:absolute;bottom:0;left:0;right:0;height:35%;background:linear-gradient(0deg,var(--accent) 0%,transparent);opacity:.04;pointer-events:none}
 .splash-dunes{position:absolute;bottom:0;left:0;right:0;height:100px;overflow:hidden;pointer-events:none}
 .splash-dunes::before{content:'';position:absolute;bottom:-30px;left:-10%;width:120%;height:80px;border-radius:50%;background:var(--bg3);border-top:2px solid var(--border)}
 .splash-box{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:40px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow);animation:fadeUp .6s;position:relative;z-index:2}
 .splash-bism{color:var(--text3);font-size:13px;margin-bottom:14px;font-family:'Amiri',serif}
-.btn-go{padding:14px 36px;background:linear-gradient(135deg,var(--accent),#DAA520);color:#1a1408;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase;transition:transform .15s,box-shadow .15s}
+.btn-go{padding:14px 36px;background:linear-gradient(135deg,#D4A44C,#8B6914);color:#1a1408;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1px;text-transform:uppercase;transition:transform .15s,box-shadow .15s}
 .btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,191,0,.3)}
 .sw{display:flex;gap:4px;justify-content:center;margin-top:14px;flex-wrap:wrap}
 .sw-btn{width:30px;height:30px;border-radius:8px;border:1px solid var(--border);background:none;color:var(--text2);font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}
 .sw-btn.on{background:var(--abg);border-color:var(--abr);color:var(--accent)}
 .sw-btn:hover{border-color:var(--accent)}
 .sw-label{color:var(--text3);font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-right:6px;align-self:center}
+.splash-art{position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;overflow:hidden}
+.splash-art::before{content:'';position:absolute;top:8%;right:10%;width:100px;height:120px;background:radial-gradient(ellipse at 50% 0%,rgba(212,164,76,.15) 0%,transparent 70%);border-radius:50% 50% 0 0}
+.splash-art::after{content:'';position:absolute;top:8%;right:10%;width:100px;height:120px;border:2px solid #8B6914;border-bottom:none;border-radius:50% 50% 0 0;opacity:.15}
 .app{display:none;max-width:560px;margin:0 auto;padding:16px 20px}.app.on{display:block}
 .hdr-bism{text-align:center;color:var(--text3);font-size:12px;margin-bottom:10px;font-family:'Amiri',serif}
 .hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;flex-wrap:wrap}
@@ -75,7 +71,7 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 .help-item[open] summary::before{transform:rotate(90deg)}
 .help-item p{padding:0 14px 10px;font-size:12px;color:var(--text2);line-height:1.7}
 .help-step{display:flex;gap:10px;margin-bottom:14px;align-items:flex-start}
-.help-step-num{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#DAA520);color:#1a1408;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.help-step-num{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#D4A44C,#8B6914);color:#1a1408;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .help-step p{font-size:12px;color:var(--text2);line-height:1.6;margin:0}
 .wiki-entry{margin-bottom:16px}.wiki-entry h3{font-size:14px;margin-bottom:4px;color:var(--heading)}.wiki-entry p{font-size:12px;color:var(--text2);line-height:1.7}
 .sidebar-footer{padding:12px 16px;border-top:1px solid var(--border);text-align:center;color:var(--text3);font-size:10px}
@@ -88,7 +84,7 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 [lang="ar"] .i18n-ar{display:block}[lang="ar"] .i18n-en{display:none}
 </style></head><body>
 <a href="../../index.html" class="back-link" id="backLink">&larr; Catalog</a>
-<div class="splash" id="splash"><div class="splash-dunes"></div><div class="splash-box">
+<div class="splash" id="splash"><div class="splash-art"></div><div class="splash-dunes"></div><div class="splash-box">
 <div class="splash-bism">بِسْمِ ٱللَّوهِ ٱلرَّحْمَـنِ ٱلرَّحِيمِ</div>
 <div style="display:flex;justify-content:center;margin-bottom:16px"><div style="width:120px;height:60px;border-radius:4px;border:2px solid var(--accent);background:var(--bg3);position:relative;overflow:hidden"><div style="position:absolute;top:8px;left:8px;right:8px;height:2px;background:var(--text3);border-radius:1px"></div><div style="position:absolute;top:16px;left:8px;right:20px;height:2px;background:var(--text3);border-radius:1px"></div><div style="position:absolute;top:24px;left:8px;right:12px;height:2px;background:var(--text3);border-radius:1px"></div><div style="position:absolute;top:32px;left:8px;right:24px;height:2px;background:var(--accent);opacity:.5;border-radius:1px"></div></div></div>
 <h1 class="heading" style="font-size:24px;margin-bottom:6px" id="splTitle">First Revelation</h1>
@@ -96,9 +92,7 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 <p style="color:var(--text2);font-size:13px;line-height:1.7;margin-bottom:24px" id="splDesc">Experience the moment of the first Quranic revelation in Cave Hira.</p>
 <button class="btn-go" id="enterBtn">Start Mission</button>
 <div class="sw" style="margin-top:18px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
-<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span>
-<button class="sw-btn on" data-thm="desert-dawn">&#9728;</button><button class="sw-btn" data-thm="midnight-desert">&#127769;</button><button class="sw-btn" data-thm="sandstone">&#127966;</button><button class="sw-btn" data-thm="oasis">&#127795;</button><button class="sw-btn" data-thm="sunset">&#127773;</button><button class="sw-btn" data-thm="night-sky">&#11088;</button><button class="sw-btn" data-thm="caravan">&#128042;</button><button class="sw-btn" data-thm="parchment">&#128220;</button>
-</div></div></div>
+<div class="sw" style="margin-top:8px"></div></div></div>
 
 <div class="app" id="app">
 <div class="hdr-bism">بِسْمِ ٱللَّوهِ ٱلرَّحْمَـنِ ٱلرَّحِيمِ</div>
@@ -108,7 +102,7 @@ h1,h2,h3,.heading{font-family:'Outfit','Noto Sans Arabic',sans-serif;color:var(-
 <button class="btn-help" onclick="openHelp()">?</button>
 <button id="soundBtn">&#128266;</button>
 <div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
-<div class="sw"><button class="sw-btn on" data-thm="desert-dawn">&#9728;</button><button class="sw-btn" data-thm="midnight-desert">&#127769;</button><button class="sw-btn" data-thm="sandstone">&#127966;</button><button class="sw-btn" data-thm="oasis">&#127795;</button><button class="sw-btn" data-thm="sunset">&#127773;</button><button class="sw-btn" data-thm="night-sky">&#11088;</button><button class="sw-btn" data-thm="caravan">&#128042;</button><button class="sw-btn" data-thm="parchment">&#128220;</button></div>
+
 </div>
 <div class="status" id="status">جاري التحميل...</div>
 <div id="itemsArea" class="items-area"></div>
@@ -271,7 +265,7 @@ function openHelp(){document.getElementById("helpOverlay").classList.add("open")
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
 function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});
 document.getElementById("splTitle").textContent=t("title");document.getElementById("splSub").textContent=t("sub");document.getElementById("splDesc").textContent=t("desc");document.getElementById("appTitle").textContent=t("title");document.getElementById("startBtn").textContent=t("new_game");}
-function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th)});}
+function setTheme(th){document.documentElement.dataset.theme=th;}
 function snd(type){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(type==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(type==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(type==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
 function log(msg,cls){var b=document.getElementById("logBox"),d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
 var HS_KEY="seerah-hs-009-first-revelation";
@@ -284,9 +278,9 @@ function renderItems(){var area=document.getElementById("itemsArea");area.innerH
 function newGame(){explored.clear();document.getElementById("sc").textContent="0";document.getElementById("tot").textContent=ITEMS.length;document.getElementById("scorePill").textContent="0 / "+ITEMS.length;document.getElementById("status").textContent="Tap each item to explore";document.getElementById("status").className="status";document.getElementById("logBox").innerHTML="";renderItems();}
 
 document.addEventListener("DOMContentLoaded",function(){
-setLang("ar");setTheme("desert-dawn");
+setLang("ar");setTheme("desert-caravan");
 document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click");});});
-document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click");});});
+snd("click");});});
 document.getElementById("enterBtn").addEventListener("click",function(){document.getElementById("splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame();});
 document.getElementById("startBtn").addEventListener("click",newGame);
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"\ud83d\udd0a":"\ud83d\udd07";try{localStorage.setItem("wdiy-mute",soundOn?"0":"1");}catch(e){}});

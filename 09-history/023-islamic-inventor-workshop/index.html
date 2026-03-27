@@ -6,35 +6,31 @@
 <title>ورشة المخترع المسلم — أمالون كيدز</title>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Philosopher:wght@400;700&family=Nunito:wght@700;800;900&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
-[data-theme="parchment"]{--bg:#F5ECD7;--bg2:#FFF8E7;--bg3:#EDE0C8;--border:#CD7F3230;--border2:#CD7F3250;--text:#3D2B1F;--text2:#6B5344;--text3:#9A8574;--heading:#1A0E07;--accent:#CD7F32;--accent2:#B87333;--abg:#CD7F3210;--abr:#CD7F3235;--glow:0 4px 24px #CD7F3218;--splash-bg:linear-gradient(135deg,#F5ECD7 0%,#E8D5B5 50%,#F0E4CC 100%);--card-shadow:0 2px 16px rgba(0,0,0,.08)}
-[data-theme="manuscript"]{--bg:#F0E6D2;--bg2:#FAF3E5;--bg3:#E5D8C0;--border:#80002030;--border2:#80002050;--text:#3D1A10;--text2:#6B4434;--text3:#9A7464;--heading:#1A0500;--accent:#800020;--accent2:#C5A028;--abg:#80002010;--abr:#80002035;--glow:0 4px 24px #80002018;--splash-bg:linear-gradient(135deg,#F0E6D2 0%,#E0D0B5 50%,#E8DCCA 100%);--card-shadow:0 2px 16px rgba(128,0,32,.06)}
-[data-theme="bronze"]{--bg:#F8F0E0;--bg2:#FFFAF0;--bg3:#EDE2CE;--border:#B8733330;--border2:#B8733350;--text:#3D2815;--text2:#6B5035;--text3:#9A7855;--heading:#1A1005;--accent:#B87333;--accent2:#CD7F32;--abg:#B8733310;--abr:#B8733335;--glow:0 4px 24px #B8733318;--splash-bg:linear-gradient(135deg,#F8F0E0 0%,#E8D8C0 50%,#F0E6D4 100%);--card-shadow:0 2px 16px rgba(184,115,51,.06)}
-[data-theme="gold"]{--bg:#FFFDF0;--bg2:#FFFFFF;--bg3:#FFF5D5;--border:#C5A02830;--border2:#C5A02850;--text:#3D3010;--text2:#6B5830;--text3:#9A8050;--heading:#1A1500;--accent:#C5A028;--accent2:#FFD700;--abg:#C5A02810;--abr:#C5A02835;--glow:0 4px 24px #C5A02818;--splash-bg:linear-gradient(135deg,#FFFDF0 0%,#FFF0C0 50%,#FFF5D5 100%);--card-shadow:0 2px 16px rgba(197,160,40,.08)}
-[data-theme="midnight"]{--bg:#0E0A1A;--bg2:#161025;--bg3:#1E1535;--border:#C5A02830;--border2:#C5A02850;--text:#C8B8A0;--text2:#968870;--text3:#645840;--heading:#F0E8D0;--accent:#C5A028;--accent2:#CD7F32;--abg:#C5A02810;--abr:#C5A02835;--glow:0 4px 24px #C5A02818;--splash-bg:linear-gradient(135deg,#0E0A1A 0%,#1E1535 50%,#0E0A1A 100%);--card-shadow:0 2px 16px rgba(197,160,40,.08)}
-[data-theme="desert"]{--bg:#F5E6D0;--bg2:#FFF5E5;--bg3:#E8D5B8;--border:#CD7F3225;--border2:#CD7F3245;--text:#4A3020;--text2:#7A5840;--text3:#AA8860;--heading:#2A1508;--accent:#CD7F32;--accent2:#8B6914;--abg:#CD7F3210;--abr:#CD7F3235;--glow:0 4px 24px #CD7F3215;--splash-bg:linear-gradient(135deg,#F5E6D0 0%,#E8D0A8 50%,#F0DCC0 100%);--card-shadow:0 2px 16px rgba(205,127,50,.06)}
-[data-theme="calligraphy"]{--bg:#FAF5EE;--bg2:#FFFFFF;--bg3:#F0E8DD;--border:#1A0E0720;--border2:#1A0E0740;--text:#1A0E07;--text2:#4A3828;--text3:#7A6858;--heading:#0A0400;--accent:#1A0E07;--accent2:#CD7F32;--abg:#1A0E0708;--abr:#1A0E0720;--glow:0 4px 24px #1A0E0710;--splash-bg:linear-gradient(135deg,#FAF5EE 0%,#F0E8DD 50%,#F5EDE2 100%);--card-shadow:0 2px 16px rgba(26,14,7,.06)}
-[data-theme="emerald"]{--bg:#F0F8F0;--bg2:#FFFFFF;--bg3:#E0F0E0;--border:#2E7D3230;--border2:#2E7D3250;--text:#1A3A1A;--text2:#3A5A3A;--text3:#5A7A5A;--heading:#0A1A0A;--accent:#2E7D32;--accent2:#C5A028;--abg:#2E7D3210;--abr:#2E7D3230;--glow:0 4px 24px #2E7D3215;--splash-bg:linear-gradient(135deg,#F0F8F0 0%,#D8F0D8 50%,#E8F5E8 100%);--card-shadow:0 2px 16px rgba(46,125,50,.06)}
+[data-theme="parchment"]{--bg:#1A0A0F;--bg2:#241418;--bg3:#2E1E22;--border:#D4A44C25;--border2:#D4A44C40;--text:#D8C0A8;--text2:#A08868;--text3:#786048;--heading:#F0E0D0;--accent:#D4A44C;--accent2:#8B1A2B;--abg:#D4A44C10;--abr:#D4A44C30;--glow:0 4px 24px #D4A44C15;--splash-bg:linear-gradient(135deg,#1A0A0F 0%,#2E1E22 50%,#1A0A0F 100%);--card-shadow:0 2px 12px rgba(212,164,76,.1)}
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:'Philosopher','Noto Sans Arabic',serif;font-size:14px;min-height:100vh;overflow-x:hidden}
 [lang="ar"] body{font-family:'Amiri','Noto Sans Arabic',serif}
 h1,.heading{font-family:'Amiri','Philosopher',serif;color:var(--heading);font-weight:700}
 
-body::before{content:'';position:fixed;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#CD7F32,#B87333,#CD7F32);z-index:999;opacity:.5}
-body::after{content:'';position:fixed;bottom:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#B87333,#CD7F32,#B87333);z-index:999;opacity:.3}
+body::before{content:'';position:fixed;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#D4A44C,#8B1A2B,#D4A44C);z-index:999;opacity:.6}
+body::after{content:'';position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='5' y='5' width='50' height='50' fill='none' stroke='%23D4A44C' stroke-width='.3' opacity='.04' rx='2'/%3E%3Cline x1='5' y1='5' x2='55' y2='55' stroke='%238B1A2B' stroke-width='.2' opacity='.03'/%3E%3C/svg%3E") repeat;pointer-events:none;z-index:0}
 
 .splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--splash-bg);position:relative;overflow:hidden}
-.splash::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30 Z' fill='none' stroke='%23CD7F32' stroke-width='.5' opacity='.06'/%3E%3C/svg%3E") repeat}
+.splash::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='5' y='5' width='50' height='50' fill='none' stroke='%23D4A44C' stroke-width='.4' opacity='.05' rx='2'/%3E%3Cline x1='5' y1='5' x2='55' y2='55' stroke='%238B1A2B' stroke-width='.3' opacity='.04'/%3E%3C/svg%3E") repeat}
+.splash-art{position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(0deg,#1A0A0F 0%,transparent 60%);pointer-events:none;overflow:hidden}
+.splash-art::before{content:'';position:absolute;bottom:15px;left:50%;transform:translateX(-50%) rotate(-5deg);width:70px;height:50px;border:2px solid rgba(212,164,76,.1);border-radius:4px;background:linear-gradient(135deg,rgba(139,26,43,.05),rgba(212,164,76,.05))}
+.splash-art::after{content:'';position:absolute;bottom:25px;left:50%;transform:translateX(-50%);width:30px;height:1px;background:rgba(212,164,76,.15);box-shadow:0 8px 0 rgba(212,164,76,.1),0 16px 0 rgba(212,164,76,.08)}
 .splash-box{background:var(--bg2);border:2px solid var(--border2);border-radius:4px;padding:48px 36px;max-width:440px;width:100%;text-align:center;box-shadow:var(--glow),var(--card-shadow),inset 0 0 60px rgba(205,127,50,.03);animation:splashIn .6s ease-out;position:relative;overflow:hidden}
-.splash-frame{position:absolute;inset:8px;border:1px solid var(--border2);border-radius:2px;pointer-events:none}
+.splash-frame{position:absolute;inset:8px;border:1px solid rgba(212,164,76,.15);border-radius:2px;pointer-events:none}
 .splash-frame::before{content:'';position:absolute;inset:4px;border:1px solid var(--border);pointer-events:none}
 .splash-icon{font-size:56px;margin-bottom:12px;display:block;animation:uniqueFloat 4s ease-in-out infinite}
 .splash-bism{color:var(--accent);font-size:16px;margin-bottom:16px;font-family:'Amiri','Noto Sans Arabic',serif}
 .splash-title{font-size:30px;margin-bottom:6px;color:var(--heading);font-family:'Amiri',serif;letter-spacing:1px}
 .splash-sub{color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;font-weight:700;font-family:'Philosopher',sans-serif}
 .splash-desc{color:var(--text2);font-size:13px;line-height:1.8;margin-bottom:28px;font-family:'Philosopher',sans-serif}
-.btn-go{padding:14px 40px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:4px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Philosopher',sans-serif;letter-spacing:2px;text-transform:uppercase;box-shadow:0 4px 16px #CD7F3240;transition:all .2s}
-.btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 24px #CD7F3250}
+.btn-go{padding:14px 40px;background:linear-gradient(135deg,#D4A44C,#8B1A2B);color:#fff;border:none;border-radius:50px;font-size:15px;font-weight:800;cursor:pointer;font-family:'Philosopher',sans-serif;letter-spacing:2px;text-transform:uppercase;box-shadow:0 4px 16px rgba(212,164,76,.3);transition:all .2s}
+.btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(212,164,76,.4)}
 
 .sw{display:flex;gap:4px;justify-content:center;margin-top:14px;flex-wrap:wrap}
 .sw-btn{width:30px;height:30px;border-radius:4px;border:2px solid var(--border);background:var(--bg3);color:var(--text2);font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;font-weight:700}
@@ -118,61 +114,44 @@ body::after{content:'';position:fixed;bottom:0;left:0;right:0;height:5px;backgro
 <div class="splash" id="splash">
 <div class="splash-box">
 <div class="splash-frame"></div>
+<div class="splash-art"></div>
 <span class="splash-icon">⚙️</span>
 <div class="splash-bism">\u0628\u0650\u0633\u0652\u0645\u0650 \u0649\u0644\u0644\u0651\u064E\u0648\u0647\u0650 \u0649\u0644\u0631\u0651\u064E\u062D\u0652\u0645\u064E\u0640\u0648\u0646\u0650 \u0649\u0644\u0631\u0651\u064E\u062D\u0650\u064A\u0645\u0650</div>
-<h1 class="splash-title heading" id="splashTitle">Islamic Inventor Workshop</h1>
-<div class="splash-sub" id="splashSub">Invent like the Muslim pioneers</div>
-<p class="splash-desc" id="splashDesc">Build and test inventions from Islamic history!</p>
-<button class="btn-go" id="enterBtn">Start</button>
+<h1 class="splash-title heading" id="splashTitle">ورشة المخترع المسلم</h1>
+<div class="splash-sub" id="splashSub">ابتكر كعلماء المسلمين</div>
+<p class="splash-desc" id="splashDesc">صمّم اختراعات مستوحاة من العلماء المسلمين!</p>
+<button class="btn-go" id="enterBtn">ابدأ</button>
 <div class="sw" style="margin-top:20px"><span class="sw-label">Lang</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">\u0639</button></div>
-<div class="sw" style="margin-top:8px"><span class="sw-label">Theme</span>
-<button class="sw-btn on" data-thm="parchment">\ud83d\udcdc</button>
-<button class="sw-btn" data-thm="manuscript">\ud83d\udcd5</button>
-<button class="sw-btn" data-thm="bronze">\ud83e\ude99</button>
-<button class="sw-btn" data-thm="gold">\u2728</button>
-<button class="sw-btn" data-thm="midnight">\ud83c\udf19</button>
-<button class="sw-btn" data-thm="desert">\ud83c\udfdc\ufe0f</button>
-<button class="sw-btn" data-thm="calligraphy">\u270d\ufe0f</button>
-<button class="sw-btn" data-thm="emerald">\ud83d\udc8e</button>
-</div>
+<div class="sw" style="margin-top:8px"></div>
 </div>
 </div>
 
 <div class="app" id="app">
 <div class="hdr-bism">\u0628\u0650\u0633\u0652\u0645\u0650 \u0649\u0644\u0644\u0651\u064E\u0648\u0647\u0650 \u0649\u0644\u0631\u0651\u064E\u062D\u0652\u0645\u064E\u0640\u0648\u0646\u0650 \u0649\u0644\u0631\u0651\u064E\u062D\u0650\u064A\u0645\u0650</div>
 <div class="hdr">
-<h1><span class="hdr-icon">⚙️</span> <span id="appTitle">Islamic Inventor Workshop</span></h1>
+<h1><span class="hdr-icon">⚙️</span> <span id="appTitle">ورشة المخترع المسلم</span></h1>
 <span class="pill" id="scorePill">0 / 0</span>
 <span class="timer-pill" id="timerPill">0:00</span>
 </div>
 <div class="ctrl">
-<select id="diffSel"><option value="10">Easy (10)</option><option value="15" selected>Medium (15)</option><option value="25">Hard (25+)</option></select>
+<select id="diffSel"><option value="10">سهل (10)</option><option value="15" selected>متوسط (15)</option><option value="25">صعب (25+)</option></select>
 <button id="startBtn">\u25b6 New Game</button>
 <button class="btn-help" onclick="openHelp()">?</button>
 <button id="soundBtn">\ud83d\udd0a</button>
 <div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">\u0639</button></div>
-<div class="sw">
-<button class="sw-btn on" data-thm="parchment">\ud83d\udcdc</button>
-<button class="sw-btn" data-thm="manuscript">\ud83d\udcd5</button>
-<button class="sw-btn" data-thm="bronze">\ud83e\ude99</button>
-<button class="sw-btn" data-thm="gold">\u2728</button>
-<button class="sw-btn" data-thm="midnight">\ud83c\udf19</button>
-<button class="sw-btn" data-thm="desert">\ud83c\udfdc\ufe0f</button>
-<button class="sw-btn" data-thm="calligraphy">\u270d\ufe0f</button>
-<button class="sw-btn" data-thm="emerald">\ud83d\udc8e</button>
+
 </div>
-</div>
-<div class="status" id="status">Invent like the Muslim pioneers</div>
+<div class="status" id="status">ابتكر كعلماء المسلمين</div>
 <div class="game-area" id="gameArea">
 <div class="scenario-emoji" id="emoji">\ud83c\udf1f</div>
-<div class="scenario-text" id="question">Press New Game to start!</div>
+<div class="scenario-text" id="question">اضغط لعبة جديدة للبدء!</div>
 <div class="answer-row" id="choices"></div>
 <div id="teachingArea"></div>
 <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
 </div>
 <div class="score-row">
-<div class="score-item"><div class="score-label">Correct</div><div class="score-num" id="sc">0</div></div>
-<div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div>
+<div class="score-item"><div class="score-label">صحيح</div><div class="score-num" id="sc">0</div></div>
+<div class="score-item"><div class="score-label">المجموع</div><div class="score-num" id="tot">0</div></div>
 </div>
 <div class="log-box" id="logBox"></div>
 <div class="foot">أمالون كيدز — ورشة المخترع v2.0</div>
@@ -249,7 +228,7 @@ function closeHelp(){document.getElementById("helpOverlay").classList.remove("op
 function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));
 try{document.getElementById("splashTitle").textContent=UI.splashTitle[l];document.getElementById("splashSub").textContent=UI.splashSub[l];document.getElementById("splashDesc").textContent=UI.splashDesc[l];document.getElementById("appTitle").textContent=UI.appTitle[l]}catch(e){}
 try{localStorage.setItem("wdiy-lang",l)}catch(e){}}
-function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===t));try{localStorage.setItem("wdiy-theme",t)}catch(e){}}
+function setTheme(t){document.documentElement.dataset.theme=t;try{localStorage.setItem("wdiy-theme",t)}catch(e){}}
 let soundOn=true,actx;
 function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=440;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.12);o.start(n);o.stop(n+.12);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.04;o2.frequency.value=554;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.22);o2.start(n+.1);o2.stop(n+.22)}else if(t==="err"){o.frequency.value=180;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15)}else if(t==="win"){[440,554,659,880].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.3+i*.15);oo.start(n+i*.15);oo.stop(n+.3+i*.15)})}else{o.frequency.value=700;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05)}}
 function log(m,c){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(c||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+m;b.appendChild(d);b.scrollTop=b.scrollHeight}
@@ -286,17 +265,17 @@ let timerInterval,timerSeconds=0;
 function startTimer(){timerSeconds=0;clearInterval(timerInterval);timerInterval=setInterval(()=>{timerSeconds++;const m=Math.floor(timerSeconds/60),s=timerSeconds%60;document.getElementById("timerPill").textContent=m+":"+(s<10?"0":"")+s},1000)}
 function stopTimer(){clearInterval(timerInterval)}
 function newGame(){startTimer();total=parseInt(document.getElementById("diffSel").value)||15;current=0;correct=0;usedIdx=[];document.getElementById("sc").textContent="0";document.getElementById("tot").textContent="0";document.getElementById("scorePill").textContent="0 / 0";document.getElementById("teachingArea").innerHTML="";nextQ()}
-function nextQ(){if(current>=total){stopTimer();checkHS();snd("win");document.getElementById("status").textContent="Done! "+correct+"/"+total;document.getElementById("status").className="status win";document.getElementById("emoji").textContent="\ud83c\udfc6";document.getElementById("question").textContent="MashaAllah! You scored "+correct+" out of "+total+"!";document.getElementById("choices").innerHTML="";document.getElementById("teachingArea").innerHTML="";log("Score: "+correct+"/"+total,"success");return}locked=false;const q=genQ();document.getElementById("emoji").textContent=q.emoji;document.getElementById("question").textContent=q.text;ans=q.ans;curTeaching=q.teaching;const el=document.getElementById("choices");el.innerHTML="";document.getElementById("teachingArea").innerHTML="";q.opts.forEach(o=>{const b=document.createElement("button");b.className="answer-btn";b.textContent=o;b.onclick=()=>pick(b,o);el.appendChild(b)});document.getElementById("status").textContent="Question "+(current+1)+" of "+total;document.getElementById("status").className="status";document.getElementById("prog").style.width=(current/total*100)+"%"}
-function pick(btn,val){if(locked)return;locked=true;current++;if(val===ans){correct++;btn.classList.add("correct");snd("ok");log("Correct!","success")}else{btn.classList.add("wrong");snd("err");log("Answer: "+ans,"error");document.querySelectorAll(".answer-btn").forEach(b=>{if(b.textContent===ans)b.classList.add("correct")})}if(curTeaching)document.getElementById("teachingArea").innerHTML='<div class="teaching-box"><div class="teaching-label">Historical Insight</div>'+curTeaching+'</div>';document.getElementById("sc").textContent=correct;document.getElementById("tot").textContent=current;document.getElementById("scorePill").textContent=correct+" / "+current;document.getElementById("prog").style.width=(current/total*100)+"%";setTimeout(nextQ,2500)}
+function nextQ(){if(current>=total){stopTimer();checkHS();snd("win");document.getElementById("status").textContent="انتهى! "+correct+"/"+total;document.getElementById("status").className="status win";document.getElementById("emoji").textContent="\ud83c\udfc6";document.getElementById("question").textContent="ما شاء الله! حصلت على "+correct+" من "+total+"!";document.getElementById("choices").innerHTML="";document.getElementById("teachingArea").innerHTML="";log("النتيجة: "+correct+"/"+total,"success");return}locked=false;const q=genQ();document.getElementById("emoji").textContent=q.emoji;document.getElementById("question").textContent=q.text;ans=q.ans;curTeaching=q.teaching;const el=document.getElementById("choices");el.innerHTML="";document.getElementById("teachingArea").innerHTML="";q.opts.forEach(o=>{const b=document.createElement("button");b.className="answer-btn";b.textContent=o;b.onclick=()=>pick(b,o);el.appendChild(b)});document.getElementById("status").textContent="سؤال "+(current+1)+" من "+total;document.getElementById("status").className="status";document.getElementById("prog").style.width=(current/total*100)+"%"}
+function pick(btn,val){if(locked)return;locked=true;current++;if(val===ans){correct++;btn.classList.add("correct");snd("ok");log("صحيح!","success")}else{btn.classList.add("wrong");snd("err");log("الإجابة: "+ans,"error");document.querySelectorAll(".answer-btn").forEach(b=>{if(b.textContent===ans)b.classList.add("correct")})}if(curTeaching)document.getElementById("teachingArea").innerHTML='<div class="teaching-box"><div class="teaching-label">الفائدة الإسلامية</div>'+curTeaching+'</div>';document.getElementById("sc").textContent=correct;document.getElementById("tot").textContent=current;document.getElementById("scorePill").textContent=correct+" / "+current;document.getElementById("prog").style.width=(current/total*100)+"%";setTimeout(nextQ,2500)}
 const HS_KEY="wdiy-hs-023-islamic-inventor-workshop";
 function loadHS(){try{return parseInt(localStorage.getItem(HS_KEY))||0}catch(e){return 0}}
 function saveHS(s){try{const b=loadHS();if(s>b){localStorage.setItem(HS_KEY,s);return true}}catch(e){}return false}
 function showHS(){const b=loadHS();if(b>0){const p=document.getElementById("scorePill");if(p&&!p.querySelector(".hs-badge"))p.innerHTML+=' <span class="hs-badge">\u2605 '+b+'</span>'}}
-function checkHS(){if(current>=total){const p=Math.round(correct/total*100);if(saveHS(p))log("NEW HIGH SCORE: "+p+"%!","success")}}
+function checkHS(){if(current>=total){const p=Math.round(correct/total*100);if(saveHS(p))log("رقم قياسي جديد: "+p+"%!","success")}}
 document.addEventListener("DOMContentLoaded",()=>{
   setLang("ar");setTheme("parchment");
   document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click")}));
-  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click")}));
+  snd("click")}));
   showHS();
   document.getElementById("enterBtn").addEventListener("click",()=>{document.querySelector(".splash").style.display="none";document.getElementById("app").classList.add("on");document.getElementById("backLink").style.display="block";newGame()});
   document.getElementById("startBtn").addEventListener("click",newGame);

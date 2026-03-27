@@ -2,14 +2,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 
-[data-theme="default"]{--bg:#2e1c0c;--bg2:#402811;--bg3:#523316;--border:#6e451e;--border2:#805023;--text:#d0dce8;--text2:#8899aa;--text3:#556677;--heading:#e8f0f8;--accent:#af6d36;--abg:rgba(175,109,54,.08);--abr:rgba(175,109,54,.25);--glow:0 0 30px rgba(175,109,54,.12);--splash-bg:#492e14}
-[data-theme="ocean"]{--bg:#0a1628;--bg2:#0e1e35;--bg3:#142840;--border:#1e3a5a;--border2:#284a6e;--text:#b8cee8;--text2:#6e8aaa;--text3:#4a6680;--heading:#dce8f5;--accent:#767d81;--abg:rgba(175,109,54,.07);--abr:rgba(175,109,54,.22);--glow:0 0 25px rgba(175,109,54,.1);--splash-bg:#0c1a30}
-[data-theme="sunset"]{--bg:#1a0e0a;--bg2:#241410;--bg3:#301c16;--border:#4a2e22;--border2:#5a3a2e;--text:#e0c8b8;--text2:#aa8870;--text3:#7a6050;--heading:#f5e0d0;--accent:#d76e3c;--abg:rgba(255,112,67,.07);--abr:rgba(255,112,67,.22);--glow:0 0 25px rgba(255,112,67,.1);--splash-bg:#1e1210}
-[data-theme="forest"]{--bg:#0a140a;--bg2:#0e1c0e;--bg3:#142414;--border:#1e3a1e;--border2:#284a28;--text:#b8d8b8;--text2:#6ea06e;--text3:#4a784a;--heading:#d8f0d8;--accent:#8a9450;--abg:rgba(102,187,106,.07);--abr:rgba(102,187,106,.22);--glow:0 0 25px rgba(102,187,106,.1);--splash-bg:#0c180c}
-[data-theme="royal"]{--bg:#10081a;--bg2:#180e28;--bg3:#201636;--border:#30224e;--border2:#402e62;--text:#c8b8e0;--text2:#8878b0;--text3:#5a4a80;--heading:#e0d0f5;--accent:#ad5a79;--abg:rgba(171,71,188,.07);--abr:rgba(171,71,188,.22);--glow:0 0 25px rgba(171,71,188,.1);--splash-bg:#140a20}
-[data-theme="arctic"]{--bg:#f0f4f8;--bg2:#ffffff;--bg3:#e8eef5;--border:#c8d4e2;--border2:#b0c0d4;--text:#2a3a4e;--text2:#5a6e84;--text3:#8a9ab0;--heading:#14243a;--accent:#945c2d;--abg:rgba(175,109,54,.06);--abr:rgba(175,109,54,.18);--glow:0 0 15px rgba(175,109,54,.06);--splash-bg:#f4f8fc}
-[data-theme="sand"]{--bg:#f5f0e4;--bg2:#faf7ee;--bg3:#ede6d4;--border:#d4c8b0;--border2:#c0b498;--text:#3a3020;--text2:#6a5e4a;--text3:#9a8e78;--heading:#1e1608;--accent:#b37920;--abg:rgba(184,134,11,.06);--abr:rgba(184,134,11,.18);--glow:0 0 15px rgba(184,134,11,.06);--splash-bg:#f8f4e8}
-[data-theme="midnight"]{--bg:#08090e;--bg2:#0e1018;--bg3:#161a26;--border:#1e2238;--border2:#2a2f48;--text:#b0b8d4;--text2:#6e78a0;--text3:#4a5070;--heading:#d8dff5;--accent:#856c7b;--abg:rgba(92,107,192,.07);--abr:rgba(92,107,192,.22);--glow:0 0 25px rgba(92,107,192,.1);--splash-bg:#0a0c14}
+[data-theme="default"]{--bg:#0A1218;--bg2:#121E28;--bg3:#1A2A38;--border:#B8733325;--border2:#B8733340;--text:#B8C8D8;--text2:#7898A8;--text3:#587888;--heading:#D8E8F0;--accent:#B87333;--accent2:#1A3A4A;--abg:#B8733310;--abr:#B8733330;--glow:0 4px 24px #B8733315;--splash-bg:linear-gradient(135deg,#0A1218 0%,#1A2A38 50%,#0A1218 100%);--card-shadow:0 2px 12px rgba(184,115,51,.1)}
 
 @keyframes revealUp{from{opacity:0;clip-path:inset(100% 0 0 0)}to{opacity:1;clip-path:inset(0 0 0 0)}}
 @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
@@ -19,21 +12,25 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:'Outfit', 'Noto Sans Arabic', sans-serif;font-size:14px;min-height:100vh;-webkit-font-smoothing:antialiased}
 [lang="ar"] body{font-family:'Noto Sans Arabic',sans-serif}
+body::after{content:'';position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='20' fill='none' stroke='%23B87333' stroke-width='.4' opacity='.04'/%3E%3Ccircle cx='30' cy='30' r='12' fill='none' stroke='%231A3A4A' stroke-width='.3' opacity='.03'/%3E%3Cline x1='30' y1='10' x2='30' y2='50' stroke='%23B87333' stroke-width='.2' opacity='.03'/%3E%3Cline x1='10' y1='30' x2='50' y2='30' stroke='%23B87333' stroke-width='.2' opacity='.03'/%3E%3C/svg%3E") repeat;pointer-events:none;z-index:0;opacity:.5}
 h1,h2,h3,.heading{font-family:'Outfit', 'Noto Sans Arabic', sans-serif;color:var(--heading)}
 
 /* ═══ SPLASH ═══ */
-.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(135deg, transparent 40%, rgba(184,115,51,0.06) 41%, rgba(184,115,51,0.06) 42%, transparent 43%), linear-gradient(196deg, #0c0c38 0%, #6e451e 100%);position:relative;overflow:hidden}
-.splash::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(131deg, transparent, transparent 31px, rgba(255,255,255,0.034999999999999996) 31px, rgba(255,255,255,0.034999999999999996) 32px), repeating-linear-gradient(191deg, transparent, transparent 31px, rgba(255,255,255,0.034999999999999996) 31px, rgba(255,255,255,0.034999999999999996) 32px), repeating-linear-gradient(251deg, transparent, transparent 31px, rgba(255,255,255,0.034999999999999996) 31px, rgba(255,255,255,0.034999999999999996) 32px);pointer-events:none}
+.splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--splash-bg);position:relative;overflow:hidden}
+.splash::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='20' fill='none' stroke='%23B87333' stroke-width='.4' opacity='.04'/%3E%3Ccircle cx='30' cy='30' r='12' fill='none' stroke='%231A3A4A' stroke-width='.3' opacity='.03'/%3E%3Cline x1='30' y1='10' x2='30' y2='50' stroke='%23B87333' stroke-width='.2' opacity='.03'/%3E%3Cline x1='10' y1='30' x2='50' y2='30' stroke='%23B87333' stroke-width='.2' opacity='.03'/%3E%3C/svg%3E") repeat;pointer-events:none}
+.splash-art{position:absolute;bottom:0;left:0;right:0;height:130px;background:linear-gradient(0deg,#0A1218 0%,transparent 60%);pointer-events:none;overflow:hidden}
+.splash-art::before{content:'';position:absolute;bottom:15px;right:20%;width:55px;height:55px;border:3px solid rgba(184,115,51,.1);border-radius:50%}
+.splash-art::after{content:'';position:absolute;bottom:25px;right:calc(20% + 10px);width:35px;height:35px;border:2px dashed rgba(26,58,74,.12);border-radius:50%;animation:spinSlow 12s linear infinite}
 .splash-box{position:relative;background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:44px 36px 36px;max-width:460px;width:100%;text-align:center;box-shadow:var(--glow),0 20px 60px rgba(0,0,0,0.15);animation:revealUp 0.7s ease-out;overflow:hidden}
 .splash-bism{margin-bottom:16px;font-size:16px;color:var(--accent);opacity:0.6;font-family:'Noto Sans Arabic',sans-serif;letter-spacing:1px}
 .splash-title{font-size:26px;font-weight:800;margin-bottom:6px;color:var(--heading);line-height:1.3}
 .splash-sub{color:var(--accent);font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;font-weight:600}
 .splash-arabic{font-family:'Noto Sans Arabic',sans-serif;font-size:20px;color:var(--accent);direction:rtl;margin-bottom:12px;opacity:0.8}
 .splash-desc{color:var(--text2);font-size:12px;line-height:1.8;margin-bottom:28px;max-width:360px;margin-left:auto;margin-right:auto}
-.splash-deco{position:absolute;top:10px;right:10px;width:60px;height:60px;border:2px solid rgba(175,109,54,0.15);border-radius:50%;pointer-events:none}.splash-deco::before{content:'';position:absolute;top:50%;left:50%;width:40px;height:40px;border:1px solid rgba(175,109,54,0.1);border-radius:50%;transform:translate(-50%,-50%)}
+.splash-deco{position:absolute;top:-2px;left:-2px;right:-2px;height:6px;background:linear-gradient(90deg,#B87333,#1A3A4A,#B87333);border-radius:20px 20px 0 0;pointer-events:none}
 
 /* ═══ BUTTONS ═══ */
-.btn-go{padding:14px 40px;background:var(--accent);color:var(--bg);border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1.5px;text-transform:uppercase;transition:all .2s;box-shadow:0 4px 15px rgba(175,109,54,0.3)}
+.btn-go{padding:14px 40px;background:linear-gradient(135deg,#B87333,#1A3A4A);color:var(--bg);border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:1.5px;text-transform:uppercase;transition:all .2s;box-shadow:0 4px 15px rgba(175,109,54,0.3)}
 .btn-go:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(175,109,54,0.4)}
 .btn-go:active{transform:translateY(0)}
 
@@ -189,23 +186,24 @@ h1,h2,h3,.heading{font-family:'Outfit', 'Noto Sans Arabic', sans-serif;color:var
 <a href="../../index.html" class="back-link" id="backLink" style="display:none">الفهرس →</a>
 <div class="splash" id="splash"><div class="splash-box">
 <div class="splash-deco"></div>
+<div class="splash-art"></div>
 <div class="splash-bism">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
 <h1 class="splash-title heading">آلات الجزري الآلية</h1>
-<div class="splash-sub">من روائع الحضارة الإسلامية</div>
-<p class="splash-desc">اكتشف إنجازات العلماء المسلمين الذين أثروا الحضارة الإنسانية.</p>
+<div class="splash-sub">ركّب التروس وابنِ الآلات</div>
+<p class="splash-desc">ابنِ الآلات الميكانيكية التي اخترعها الجزري. تعلّم كيف عملت التروس والمكابس وعمود المرفق.</p>
 <button class="btn-go" id="enterBtn">ابدأ المهمة</button>
 <div class="sw" style="margin-top:20px"><span class="sw-label">اللغة</span><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div></div>
-<div class="sw" style="margin-top:8px"><span class="sw-label">المظهر</span><div class="sw"><button class="sw-btn on" data-thm="default">✨</button><button class="sw-btn" data-thm="ocean">🌊</button><button class="sw-btn" data-thm="sunset">🌅</button><button class="sw-btn" data-thm="forest">🌲</button><button class="sw-btn" data-thm="royal">👑</button><button class="sw-btn" data-thm="arctic">❄</button><button class="sw-btn" data-thm="sand">🏜</button><button class="sw-btn" data-thm="midnight">🌙</button></div></div>
+<div class="sw" style="margin-top:8px"></div>
 </div></div>
 <div class="app" id="app">
-<div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>Al-Jazari Automata Builder</h1><span class="pill" id="scorePill">0 / 0</span></div>
-<div class="ctrl"><button id="startBtn">&#9654; Reset</button><button class="btn-help" onclick="openHelp()">&#10067;</button><button id="soundBtn">&#128266;</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div><div class="sw"><button class="sw-btn on" data-thm="default">&#128421;</button><button class="sw-btn" data-thm="midnight">&#127748;</button><button class="sw-btn" data-thm="sunset">&#128293;</button><button class="sw-btn" data-thm="forest">&#128154;</button><button class="sw-btn" data-thm="royal">&#128225;</button><button class="sw-btn" data-thm="ocean">&#128308;</button><button class="sw-btn" data-thm="arctic">&#10052;&#65039;</button><button class="sw-btn" data-thm="sand">&#127964;</button></div></div>
-<div class="status" id="status">Drag Gears Build Machines</div>
+<div class="hdr-bism">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1649;&#1604;&#1604;&#1617;&#1614;&#1648;&#1607;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1600;&#1648;&#1606;&#1616; &#1649;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</div><div class="hdr"><h1>آلات الجزري الآلية</h1><span class="pill" id="scorePill">0 / 0</span></div>
+<div class="ctrl"><button id="startBtn">&#9654; إعادة</button><button class="btn-help" onclick="openHelp()">&#10067;</button><button id="soundBtn">&#128266;</button><div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">&#1593;</button></div></div>
+<div class="status" id="status">ركّب التروس وابنِ الآلات</div>
 <div class="game-area" id="gameArea"></div>
-<div class="score-row"><div class="score-item"><div class="score-label">Completed</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">Total</div><div class="score-num" id="tot">0</div></div></div>
+<div class="score-row"><div class="score-item"><div class="score-label">مكتمل</div><div class="score-num" id="sc">0</div></div><div class="score-item"><div class="score-label">المجموع</div><div class="score-num" id="tot">0</div></div></div>
 <div class="progress"><div class="progress-bar" id="prog" style="width:0%"></div></div>
 <div class="log-box" id="logBox"></div>
-<div class="foot">ورشة-صنعها &#8212; Al-Jazari Machines v1.0</div>
+<div class="foot">ورشة-صنعها &#8212; آلات الجزري الآلية v1.0</div>
 </div>
 <div class="sidebar-overlay" id="helpOverlay" onclick="closeHelp()"></div>
 <aside class="sidebar sidebar-left" id="helpPanel" role="dialog" aria-modal="true">
@@ -225,7 +223,7 @@ var oldST=localStorage.getItem("wdiy-theme");
 if(oldST&&THEME_MAP[oldST]){localStorage.setItem("wdiy-theme",THEME_MAP[oldST]);}
 })();
 
-var T={title:{en:"Al-Jazari Automata Builder",ar:"آلات الجزري الآلية"},subtitle:{en:"Drag Gears Build Machines",ar:"من روائع الحضارة الإسلامية"},desc:{en:"Build Al-Jazari mechanical automata.",ar:"اكتشف إنجازات العلماء المسلمين الذين غيّروا العالم بعلمهم وإيمانهم. تعلّم كيف ساهمت الحضارة الإسلامية في تقدم البشرية."},startBtn:{en:"Start Mission",ar:"ابدأ المهمة"},helpTitle:{en:"❓ Help",ar:"❓ المساعدة"},faqTab:{en:"FAQ",ar:"الأسئلة الشائعة"},howtoTab:{en:"How-To",ar:"كيف تستخدم"},wikiTab:{en:"Wiki",ar:"الموسوعة"},backLink:{en:"← Catalog",ar:"الفهرس →"},langLabel:{en:"Lang",ar:"اللغة"},themeLabel:{en:"Theme",ar:"المظهر"}};
+var T={title:{en:"Al-Jazari Automata Builder",ar:"آلات الجزري الآلية"},subtitle:{en:"Drag Gears Build Machines",ar:"ركّب التروس وابنِ الآلات"},desc:{en:"Build Al-Jazari mechanical automata.",ar:"ابنِ الآلات الميكانيكية التي اخترعها الجزري. تعلّم كيف عملت التروس والمكابس وعمود المرفق."},startBtn:{en:"Start Mission",ar:"ابدأ المهمة"},helpTitle:{en:"❓ Help",ar:"❓ المساعدة"},faqTab:{en:"FAQ",ar:"الأسئلة الشائعة"},howtoTab:{en:"How-To",ar:"كيف تستخدم"},wikiTab:{en:"Wiki",ar:"الموسوعة"},backLink:{en:"← Catalog",ar:"الفهرس →"},langLabel:{en:"Lang",ar:"اللغة"},themeLabel:{en:"Theme",ar:"المظهر"}};
 function tr(k){return T[k]&&T[k][curLang]||T[k]&&T[k].en||k;}
 function updateUI(){
 var L=curLang;
@@ -246,17 +244,17 @@ var HS_KEY="wdiy-hs-al-jazari-machines";
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open")}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open")}
 var curLang="ar";function setLang(l){curLang=l;document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(function(b){b.classList.toggle("on",b.dataset.lang===l)});try{localStorage.setItem("wdiy-lang",l)}catch(e){}}
-function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(function(b){b.classList.toggle("on",b.dataset.thm===th)});try{localStorage.setItem("wdiy-theme",th)}catch(e){}}
+function setTheme(th){document.documentElement.dataset.theme=th;try{localStorage.setItem("wdiy-theme",th)}catch(e){}}
 var soundOn=true,actx;function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;var n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15)}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15)}else if(t==="win"){[523,659,784,1047].forEach(function(f,i){var oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12)})}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05)}}
 function log(m,c){var b=document.getElementById("logBox");if(!b)return;var d=document.createElement("div");d.className="log-line "+(c||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+m;b.appendChild(d);b.scrollTop=b.scrollHeight}
 
 
-var PARTS=[{name:"Water Wheel",icon:"[G]",desc:"Primary power source - water flow to rotation",done:false},{name:"Gear Train",icon:"[T]",desc:"Interlocking gears transfer motion",done:false},{name:"Camshaft",icon:"[C]",desc:"Al-Jazari invented this to program actions",done:false},{name:"Crankshaft",icon:"[K]",desc:"Rotary to linear motion - used in every engine today",done:false},{name:"Piston",icon:"[P]",desc:"Moves up and down driven by crankshaft",done:false},{name:"Water Channel",icon:"[W]",desc:"Directs water flow to power the machine",done:false},{name:"Automaton Figure",icon:"[R]",desc:"Mechanical figure that performs actions - early robot",done:false},{name:"Musical Mechanism",icon:"[M]",desc:"Drums and pipes activated by camshaft",done:false}];
+var PARTS=[{name:"الناعورة (عجلة الماء)",icon:"\uD83C\uDF0A",desc:"مصدر الطاقة الرئيسي — تحويل تدفق الماء إلى حركة دورانية",done:false},{name:"مجموعة التروس",icon:"\u2699\uFE0F",desc:"تروس متشابكة تنقل الحركة بين الأجزاء المختلفة",done:false},{name:"عمود الحدبات",icon:"\uD83D\uDD27",desc:"اخترعه الجزري لبرمجة الحركات الآلية — أساس المحركات الحديثة",done:false},{name:"عمود المرفق",icon:"\uD83D\uDD29",desc:"يحوّل الحركة الدورانية إلى حركة خطية — يُستخدم في كل محرك اليوم",done:false},{name:"المكبس",icon:"\u2B06\uFE0F",desc:"يتحرك صعوداً وهبوطاً مدفوعاً بعمود المرفق",done:false},{name:"قناة الماء",icon:"\uD83D\uDCA7",desc:"توجّه تدفق الماء لتشغيل الآلة بالقوة المطلوبة",done:false},{name:"التمثال الآلي",icon:"\uD83E\uDD16",desc:"شكل ميكانيكي يؤدي حركات — أول روبوت في التاريخ",done:false},{name:"الآلية الموسيقية",icon:"\uD83C\uDFB5",desc:"طبول وأنابيب تُفعَّل بواسطة عمود الحدبات",done:false},{name:"صمام التحكم",icon:"\uD83D\uDEBF",desc:"يتحكم في تدفق الماء وضغطه — ابتكار رائد للجزري في الهندسة المائية",done:false},{name:"الأسطوانة الدوارة",icon:"\uD83C\uDFAF",desc:"أسطوانة مثقوبة تُبرمج تسلسل الحركات كالبيانولا الحديثة",done:false},{name:"ذراع الرفع",icon:"\uD83E\uDDBE",desc:"ذراع ميكانيكي يرفع الماء من مستوى منخفض إلى مرتفع",done:false},{name:"الدلو المتأرجح",icon:"\uD83E\uDEA3",desc:"دلو يمتلئ بالماء ثم ينقلب ليفرغ محتواه — آلية التفريغ التلقائي",done:false},{name:"محور الدوران",icon:"\u267B\uFE0F",desc:"النقطة المركزية التي تدور حولها الأجزاء المتحركة",done:false},{name:"السلسلة الناقلة",icon:"\u26D3\uFE0F",desc:"سلسلة معدنية تنقل الحركة بين التروس والأجزاء البعيدة",done:false},{name:"الطاحونة المائية",icon:"\uD83C\uDF3E",desc:"آلة تستخدم قوة الماء لطحن الحبوب — من أشهر تطبيقات الجزري",done:false},{name:"مضخة الماء ذات المكبسين",icon:"\uD83D\uDCA6",desc:"مضخة مزدوجة المكبس ترفع الماء بتدفق مستمر — سبقت المضخات الأوروبية بقرون",done:false},{name:"آلية القفل التوافقي",icon:"\uD83D\uDD10",desc:"قفل ميكانيكي يُفتح بتسلسل حركات محدد — من أوائل أقفال الأمان",done:false},{name:"الميزان المائي",icon:"\u2696\uFE0F",desc:"جهاز لقياس مستوى الماء بدقة لضبط عمل الآلات",done:false},{name:"العوّامة",icon:"\u26F5",desc:"جسم طافٍ يتحرك مع مستوى الماء لتشغيل الآليات تلقائياً",done:false},{name:"الخزان العلوي",icon:"\uD83C\uDFDA\uFE0F",desc:"حوض ماء مرتفع يوفر ضغطاً ثابتاً لتشغيل الآلة بانتظام",done:false},{name:"الذراع الكاتبة",icon:"\u270D\uFE0F",desc:"ذراع آلي يحرك قلماً للكتابة أو الرسم — من أوائل أنظمة التحكم الآلي",done:false},{name:"نظام التوقيت",icon:"\u23F0",desc:"آلية لقياس الزمن بدقة تعتمد على تدفق الماء المنتظم",done:false}];
 var installed=0;
 function startApp(){
   installed=0;PARTS.forEach(function(p){p.done=false});
   document.getElementById("sc").textContent="0";document.getElementById("tot").textContent=PARTS.length;
-  renderParts();log("Al-Jazari Automata Builder ready","success");snd("ok");
+  renderParts();log("بنّاء آلات الجزري جاهز","success");snd("ok");
 }
 function renderParts(){
   var h="";
@@ -265,7 +263,7 @@ function renderParts(){
     h+="<div style='font-size:20px;display:inline-block;margin-right:8px'>"+p.icon+"</div>";
     h+="<strong style='color:"+(p.done?"var(--accent)":"var(--heading)")+"'>"+p.name+"</strong>";
     h+="<p style='font-size:11px;color:var(--text2);margin-top:4px'>"+p.desc+"</p>";
-    if(!p.done&&i<=installed){h+="<button style='margin-top:6px;padding:6px 16px;background:var(--accent);color:var(--bg);border:none;border-radius:6px;font-family:Outfit,sans-serif;font-size:11px;font-weight:700;cursor:pointer'>Install</button>"}
+    if(!p.done&&i<=installed){h+="<button style='margin-top:6px;padding:6px 16px;background:var(--accent);color:var(--bg);border:none;border-radius:6px;font-family:Outfit,sans-serif;font-size:11px;font-weight:700;cursor:pointer'>تركيب</button>"}
     h+="</div>";
   });
   document.getElementById("gameArea").innerHTML=h;
@@ -276,8 +274,8 @@ function installPart(i){
   PARTS[i].done=true;installed++;
   document.getElementById("sc").textContent=installed;
   document.getElementById("scorePill").textContent=installed+" / "+PARTS.length;
-  snd("ok");log("Installed: "+PARTS[i].name,"success");
-  if(installed>=PARTS.length){document.getElementById("status").textContent="Complete! MashaAllah!";document.getElementById("status").className="status win";snd("win");try{localStorage.setItem(HS_KEY,100)}catch(e){}}
+  snd("ok");log("تم تركيب: "+PARTS[i].name,"success");
+  if(installed>=PARTS.length){document.getElementById("status").textContent="اكتمل! ما شاء الله!";document.getElementById("status").className="status win";snd("win");try{localStorage.setItem(HS_KEY,100)}catch(e){}}
   renderParts();
 }
 
@@ -287,7 +285,7 @@ try{var sl=localStorage.getItem("wdiy-lang");if(sl)setLang(sl)}catch(e){}
 try{var st=localStorage.getItem("wdiy-theme");if(st)setTheme(st)}catch(e){}
 try{if(localStorage.getItem("wdiy-mute")==="1"){soundOn=false;document.getElementById("soundBtn").textContent="\uD83D\uDD07"}}catch(e){}
 document.querySelectorAll("[data-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);snd("click")})});
-document.querySelectorAll("[data-thm]").forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.thm);snd("click")})});
+snd("click")})});
 document.getElementById("soundBtn").addEventListener("click",function(){soundOn=!soundOn;this.textContent=soundOn?"\uD83D\uDD0A":"\uD83D\uDD07";try{localStorage.setItem("wdiy-mute",soundOn?"0":"1")}catch(e){}});
 document.querySelectorAll(".help-tab").forEach(function(tab){tab.addEventListener("click",function(){document.querySelectorAll(".help-tab").forEach(function(t){t.classList.remove("active")});document.querySelectorAll(".help-content").forEach(function(c){c.classList.remove("active")});tab.classList.add("active");document.getElementById("help-"+tab.dataset.tab).classList.add("active")})});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp()});

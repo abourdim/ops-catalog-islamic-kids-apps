@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Dua Tracker — Dua Collection</title>
 <style>
-[data-theme="terminal"]{--bg:#0D1B2A;--bg2:#121f33;--bg3:#1a2940;--border:#243350;--border2:#2e3d60;--text:#c5c8e0;--text2:#8a8db5;--text3:#5a5d85;--heading:#e8e5f8;--accent:#9370DB;--accent2:#E8E8E8;--abg:rgba(147,112,219,.08);--abr:rgba(147,112,219,.25);--glow:0 0 20px rgba(147,112,219,.15);--cat1:#6A0DAD;--cat2:#9370DB;--cat3:#E8E8E8;--cat4:#0D1B2A}
+[data-theme="terminal"]{--bg:#0D0B1A;--bg2:#151228;--bg3:#1E1A35;--border:#2A2545;--border2:#363055;--text:#B8C4D0;--text2:#8890A0;--text3:#585E70;--heading:#E8E4F0;--accent:#B8C4D0;--accent2:#7B68AE;--abg:rgba(123,104,174,.1);--abr:rgba(184,196,208,.25);--glow:0 0 20px rgba(123,104,174,.2);--cat1:#7B68AE;--cat2:#B8C4D0;--cat3:#E8E4F0;--cat4:#0D0B1A}
 [data-theme="midnight"]{--bg:#08081a;--bg2:#0e0e28;--bg3:#161638;--border:#20204a;--border2:#2c2c5c;--text:#b8b5d8;--text2:#7878a8;--text3:#505080;--heading:#e0ddf5;--accent:#a080e0;--accent2:#d0c8e8;--abg:rgba(160,128,224,.08);--abr:rgba(160,128,224,.25);--glow:0 0 20px rgba(160,128,224,.15);--cat1:#4a0a8a;--cat2:#7050b8;--cat3:#d0c8e8;--cat4:#0a0a1a}
 [data-theme="ember"]{--bg:#180e18;--bg2:#201420;--bg3:#2d1c2d;--border:#3d2838;--border2:#4d3448;--text:#d4b0c8;--text2:#9a7088;--text3:#6a4860;--heading:#f0d0e0;--accent:#c060a0;--accent2:#d898c0;--abg:rgba(192,96,160,.08);--abr:rgba(192,96,160,.25);--glow:0 0 20px rgba(192,96,160,.12);--cat1:#8a0a6a;--cat2:#b050a0;--cat3:#d898c0;--cat4:#1a0e18}
 [data-theme="arctic"]{--bg:#f0f0fa;--bg2:#ffffff;--bg3:#e6e4f5;--border:#ccc8e0;--border2:#b4b0d0;--text:#2a2840;--text2:#5a5880;--text3:#8a88a8;--heading:#100e28;--accent:#6A0DAD;--accent2:#9370DB;--abg:rgba(106,13,173,.06);--abr:rgba(106,13,173,.2);--glow:0 0 15px rgba(106,13,173,.08);--cat1:#6A0DAD;--cat2:#9370DB;--cat3:#8080a0;--cat4:#f0f0fa}
@@ -13,11 +13,11 @@
 [data-theme="signal"]{--bg:#0e081c;--bg2:#140e2c;--bg3:#1e1840;--border:#2a2058;--border2:#382c70;--text:#c8b8e8;--text2:#8878b8;--text3:#5a4a88;--heading:#e8ddf8;--accent:#b088f0;--accent2:#c8a8f0;--abg:rgba(176,136,240,.08);--abr:rgba(176,136,240,.25);--glow:0 0 20px rgba(176,136,240,.15);--cat1:#4a1a8a;--cat2:#7040c0;--cat3:#c8a8f0;--cat4:#0e081c}
 [data-theme="redshift"]{--bg:#140810;--bg2:#1c1018;--bg3:#281820;--border:#3a2030;--border2:#4a2a3a;--text:#d4a8b8;--text2:#9a6e7e;--text3:#6a4858;--heading:#f0ccdc;--accent:#d050a0;--accent2:#e088c0;--abg:rgba(208,80,160,.08);--abr:rgba(208,80,160,.25);--glow:0 0 20px rgba(208,80,160,.12);--cat1:#8a1a5a;--cat2:#b03080;--cat3:#e088c0;--cat4:#140810}
 [data-theme="sand"]{--bg:#f0e8f0;--bg2:#f8f4f8;--bg3:#e8dce8;--border:#d0c0d0;--border2:#b8a8b8;--text:#3a2838;--text2:#6a5868;--text3:#9a8898;--heading:#1a0818;--accent:#7a2aa0;--accent2:#a060c0;--abg:rgba(122,42,160,.08);--abr:rgba(122,42,160,.2);--glow:0 0 15px rgba(122,42,160,.08);--cat1:#6a1a8a;--cat2:#9050b0;--cat3:#a060c0;--cat4:#f0e8f0}
-@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Outfit:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Outfit:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans','Noto Sans Arabic',sans-serif;font-size:14px;min-height:100vh;overflow-x:hidden;position:relative;line-height:1.6}
-[lang="ar"] body{font-family:'Noto Sans Arabic','IBM Plex Sans','Noto Sans Arabic',sans-serif}
-h1,.heading{font-family:'Aref Ruqaa','Noto Sans Arabic',serif;color:var(--heading)}
+body{background:var(--bg);color:var(--text);font-family:'Noto Naskh Arabic','IBM Plex Sans',sans-serif;font-size:14px;min-height:100vh;overflow-x:hidden;position:relative;line-height:1.6;background-image:radial-gradient(1px 1px at 10% 20%,rgba(184,196,208,.25) 50%,transparent 50%),radial-gradient(1px 1px at 40% 60%,rgba(123,104,174,.2) 50%,transparent 50%),radial-gradient(1px 1px at 70% 15%,rgba(184,196,208,.2) 50%,transparent 50%),radial-gradient(1px 1px at 85% 45%,rgba(123,104,174,.15) 50%,transparent 50%),radial-gradient(1px 1px at 25% 80%,rgba(184,196,208,.18) 50%,transparent 50%),radial-gradient(1px 1px at 55% 35%,rgba(184,196,208,.12) 50%,transparent 50%),radial-gradient(1.5px 1.5px at 92% 75%,rgba(123,104,174,.22) 50%,transparent 50%),radial-gradient(1px 1px at 5% 50%,rgba(184,196,208,.15) 50%,transparent 50%);background-size:200px 200px}
+[lang="ar"] body{font-family:'Noto Naskh Arabic','IBM Plex Sans',sans-serif}
+h1,.heading{font-family:'Amiri','Noto Naskh Arabic',serif;color:var(--heading)}
 /* Splash Screen */
 .splash{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;position:relative;z-index:1}
 .splash-box{background:var(--bg2);padding:36px 28px;max-width:420px;width:100%;text-align:center;box-shadow:var(--glow);animation:splashEntry .6s cubic-bezier(.22,1,.36,1)}
@@ -177,7 +177,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 /* Star divider */
 .star-divider{display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 0;opacity:.3}.star-divider::before,.star-divider::after{content:'';width:40px;height:1px;background:var(--cat3)}.star-divider span{font-size:8px;color:var(--accent)}
 
-.splash-art{width:100px;height:100px;margin:0 auto 16px;position:relative;display:flex;align-items:center;justify-content:center}.splash-art::before{content:'';width:70px;height:70px;border:4px solid var(--cat2);border-top-color:var(--accent);border-radius:50%;animation:trackerSpin 3s linear infinite}@keyframes trackerSpin{to{transform:rotate(360deg)}}.splash-art::after{content:'';width:45px;height:45px;border:3px solid var(--cat1);border-bottom-color:var(--accent);border-radius:50%;position:absolute;animation:trackerSpin 2s linear infinite reverse}
+.splash-art{width:120px;height:100px;margin:0 auto 16px;position:relative;display:flex;align-items:center;justify-content:center}.splash-art::before{content:'';position:absolute;width:50px;height:70px;background:linear-gradient(to top,#7B68AE,#1E1A35);border-radius:0 0 25px 25px;box-shadow:0 0 20px rgba(123,104,174,.3)}.splash-art::after{content:'';position:absolute;top:0;width:30px;height:30px;border-left:3px solid #B8C4D0;border-top:3px solid #B8C4D0;border-radius:50% 50% 0 50%;transform:rotate(45deg);box-shadow:0 0 15px rgba(184,196,208,.3)}
 @keyframes splashEntry{0%{opacity:0;transform:scale(.8) rotate(-3deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
 @keyframes rewardPop{0%{transform:rotate(-10deg) scale(0)}100%{transform:rotate(0) scale(1)}}
 </style>
@@ -185,7 +185,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 <body>
 
 <a href="../../index.html" class="back-link" id="backLink" style="display:none">&larr; الفهرس</a>
-<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">تمرين الدعاء</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">تعلّم وتمرّن على الأدعية اليومية</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">تعلّم واحفظ الأدعية اليومية الجميلة</p><button class="btn-go" id="enterBtn">ابدأ المهمة</button><div class="sw" style="margin-top:18px"><span class="sw-label">اللغة</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"><span class="sw-label">السمة</span><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div></div></div>
+<div class="splash" id="splash"><div class="splash-box"><div class="splash-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div><h1 class="heading" style="font-size:22px;margin-bottom:4px">تمرين الدعاء</h1><div style="color:var(--accent);font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px">تعلّم وتمرّن على الأدعية اليومية</div><p style="color:var(--text2);font-size:11px;line-height:1.7;margin-bottom:24px">تعلّم واحفظ الأدعية اليومية الجميلة</p><button class="btn-go" id="enterBtn">ابدأ المهمة</button><div class="sw" style="margin-top:18px"><span class="sw-label">اللغة</span><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div><div class="sw" style="margin-top:6px"></div></div></div>
 
 <div class="app" id="app">
   <div class="hdr-bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
@@ -201,7 +201,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
     <button class="btn-help" id="helpBtn" onclick="openHelp()">&#10067;</button>
     <button id="soundBtn">&#x1F50A;</button>
     <div class="sw"><button class="sw-btn" data-lang="en">EN</button><button class="sw-btn" data-lang="fr">FR</button><button class="sw-btn on" data-lang="ar">ع</button></div>
-    <div class="sw"><button class="sw-btn on" data-thm="terminal">&#x1F5A5;</button><button class="sw-btn" data-thm="midnight">&#x1F30C;</button><button class="sw-btn" data-thm="ember">&#x1F525;</button><button class="sw-btn" data-thm="phosphor">&#x1F49A;</button><button class="sw-btn" data-thm="signal">&#x1F4E1;</button><button class="sw-btn" data-thm="redshift">&#x1F534;</button><button class="sw-btn" data-thm="arctic">&#x2744;&#xFE0F;</button><button class="sw-btn" data-thm="sand">&#x1F3DC;</button></div>
+    
   </div>
   <div class="status" id="status">تصفّح الأدعية أو ابدأ الاختبار!</div>
 
@@ -286,7 +286,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;bac
 function openHelp(){document.getElementById("helpOverlay").classList.add("open");document.getElementById("helpPanel").classList.add("open");}
 function closeHelp(){document.getElementById("helpOverlay").classList.remove("open");document.getElementById("helpPanel").classList.remove("open");}
 function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
-function setTheme(th){document.documentElement.dataset.theme=th;document.querySelectorAll("[data-thm]").forEach(b=>b.classList.toggle("on",b.dataset.thm===th));}
+function setTheme(th){document.documentElement.dataset.theme=th;}
 let soundOn=true,actx;
 function snd(t){if(!soundOn)return;if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);g.gain.value=.06;const n=actx.currentTime;if(t==="ok"){o.frequency.value=523;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.1);o.start(n);o.stop(n+.1);const o2=actx.createOscillator(),g2=actx.createGain();o2.connect(g2);g2.connect(actx.destination);g2.gain.value=.05;o2.frequency.value=659;o2.type="sine";g2.gain.exponentialRampToValueAtTime(.001,n+.2);o2.start(n+.08);o2.stop(n+.2);}else if(t==="err"){o.frequency.value=200;o.type="square";g.gain.exponentialRampToValueAtTime(.001,n+.15);o.start(n);o.stop(n+.15);}else if(t==="win"){[523,659,784,1047].forEach((f,i)=>{const oo=actx.createOscillator(),gg=actx.createGain();oo.connect(gg);gg.connect(actx.destination);gg.gain.value=.04;oo.frequency.value=f;oo.type="sine";gg.gain.exponentialRampToValueAtTime(.001,n+.2+i*.12);oo.start(n+i*.12);oo.stop(n+.2+i*.12);});}else{o.frequency.value=800;o.type="sine";g.gain.exponentialRampToValueAtTime(.001,n+.05);o.start(n);o.stop(n+.05);}}
 function log(msg,cls){const b=document.getElementById("logBox");if(!b)return;const d=document.createElement("div");d.className="log-line "+(cls||"");d.textContent="["+new Date().toLocaleTimeString()+"] "+msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
@@ -514,7 +514,7 @@ document.addEventListener("touchend",function(e){
 document.addEventListener("DOMContentLoaded",()=>{
   setLang("ar");setTheme("terminal");
   document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);snd("click");}));
-  document.querySelectorAll("[data-thm]").forEach(b=>b.addEventListener("click",()=>{setTheme(b.dataset.thm);snd("click");}));
+  snd("click");}));
   showHS();
   buildTimeTabs();
   showDua();

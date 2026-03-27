@@ -1,439 +1,372 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تطبيقات إسلامية للأطفال</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Naskh Arabic','Amiri',sans-serif;background:#0A1628;color:#E8E0D0;min-height:100vh}
+.header{text-align:center;padding:2.5rem 1rem 1.5rem;background:linear-gradient(180deg,#0F1F3A 0%,#0A1628 100%);border-bottom:2px solid #C5A02833}
+.header h1{font-family:'Amiri',serif;font-size:2.4rem;color:#C5A028;text-shadow:0 2px 8px #C5A02844;margin-bottom:.4rem}
+.header .bismillah{font-family:'Amiri',serif;color:#C5A028aa;font-size:1.2rem;margin-bottom:1rem}
+.header .count{color:#888;font-size:.95rem}
+.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;padding:1rem;max-width:900px;margin:0 auto}
+.cat-btn{background:#1A2A44;border:1px solid #C5A02833;color:#C5A028;padding:.45rem 1rem;border-radius:20px;cursor:pointer;font-family:'Noto Naskh Arabic',sans-serif;font-size:.85rem;transition:all .2s}
+.cat-btn:hover,.cat-btn.active{background:#C5A028;color:#0A1628;border-color:#C5A028;font-weight:700}
+.search-box{display:block;margin:1rem auto;padding:.7rem 1.2rem;width:90%;max-width:500px;border-radius:25px;border:1px solid #C5A02844;background:#0F1F3A;color:#E8E0D0;font-family:'Noto Naskh Arabic',sans-serif;font-size:1rem;text-align:center}
+.search-box::placeholder{color:#555}
+.search-box:focus{outline:none;border-color:#C5A028;box-shadow:0 0 15px #C5A02833}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;padding:1.5rem;max-width:1200px;margin:0 auto}
+.card{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:1.1rem .8rem;background:linear-gradient(135deg,#111D30,#0F1928);border:1px solid #1A2A44;border-radius:14px;text-decoration:none;color:#E8E0D0;transition:all .25s;cursor:pointer;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;right:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,#C5A02866,transparent);opacity:0;transition:opacity .3s}
+.card:hover::before{opacity:1}
+.card:hover{background:linear-gradient(135deg,#1A2A44,#162238);border-color:#C5A028;transform:translateY(-4px);box-shadow:0 8px 24px #C5A02822}
+.card-emoji{font-size:2rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))}
+.card-title{font-size:.88rem;font-weight:600;text-align:center;line-height:1.4;min-height:2.5em;display:flex;align-items:center}
+.card-cat{font-size:.7rem;color:#C5A028;background:#C5A02812;padding:2px 12px;border-radius:10px;border:1px solid #C5A02822}
+.footer{text-align:center;padding:2rem;color:#444;font-size:.8rem;border-top:1px solid #1A2A44;margin-top:2rem}
+.footer a{color:#C5A028;text-decoration:none}
+@media(max-width:600px){
+  .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.8rem;padding:1rem}
+  .card{padding:.8rem .6rem}
+  .card-emoji{font-size:1.6rem}
+  .card-title{font-size:.8rem}
+  .header h1{font-size:1.7rem}
+  .header .bismillah{font-size:1rem}
+}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="bismillah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
+<h1>✨ تطبيقات إسلامية للأطفال ✨</h1>
+<div class="count" id="count">272 نشاط تعليمي</div>
+</div>
+<input type="text" class="search-box" id="search" placeholder="🔍 ابحث عن نشاط...">
+<div class="filters" id="filters">
+<button class="cat-btn active" data-cat="all">الكل</button>
+<button class="cat-btn" data-cat="Quran">📖 القرآن</button>
+<button class="cat-btn" data-cat="Arabic">🔤 العربية</button>
+<button class="cat-btn" data-cat="Seerah">🕌 السيرة</button>
+<button class="cat-btn" data-cat="Hadith">📜 الحديث</button>
+<button class="cat-btn" data-cat="Dua">🤲 الدعاء</button>
+<button class="cat-btn" data-cat="Fiqh">⚖️ الفقه</button>
+<button class="cat-btn" data-cat="Aqeedah">💎 العقيدة</button>
+<button class="cat-btn" data-cat="Adab">🌿 الأدب</button>
+<button class="cat-btn" data-cat="History">🏛️ التاريخ</button>
+<button class="cat-btn" data-cat="Anbiya">🌙 الأنبياء</button>
+<button class="cat-btn" data-cat="Scientists">🔬 العلماء</button>
+<button class="cat-btn" data-cat="Sahaba">⭐ الصحابة</button>
+<button class="cat-btn" data-cat="Arabic+">🗣️ تعمق عربي</button>
+
+</div>
 <div class="grid" id="grid">
-<a href="01-quran/001-ayah-order/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Ayah Order</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/002-surah-match/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Surah Match</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/003-tajweed-rules/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Tajweed Rules</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/004-surah-puzzle/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Surah Puzzle</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/005-quran-explorer/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Quran Explorer</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/006-memorize-helper/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Memorize Helper</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/007-quran-stories/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Quran Stories</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/008-surah-info-cards/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Surah Info Cards</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/009-juz-navigator/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Juz Navigator</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/010-ayah-of-the-day/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Ayah Of The Day</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/011-quran-word-frequency/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Quran Word Frequency</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/012-surah-opening-match/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Surah Opening Match</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/013-makki-madani-sort/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Makki Madani Sort</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/014-quran-timeline/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Quran Timeline</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/015-surah-theme-explorer/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Surah Theme Explorer</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/016-ayah-completion/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Ayah Completion</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/017-quran-numbers/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Quran Numbers</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/018-prophets-in-quran/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Prophets In Quran</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/019-animals-in-quran/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Animals In Quran</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/020-quran-dua-collector/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Quran Dua Collector</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/021-surah-last-ayah/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Surah Last Ayah</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/022-quran-arabic-root/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Quran Arabic Root</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/023-tajweed-practice/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Tajweed Practice</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/024-surah-name-meaning/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Surah Name Meaning</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/025-quran-story-sequencer/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Quran Story Sequencer</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/026-revelation-reasons/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Revelation Reasons</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/027-quran-comparison/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Quran Comparison</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/028-surah-benefits/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Surah Benefits</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/029-quran-geography/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Quran Geography</span><span class="card-cat">Quran</span></a>
-<a href="01-quran/030-hifz-tracker/index.html" class="card" data-cat="Quran"><span class="card-emoji">📖</span><span class="card-title">Hifz Tracker</span><span class="card-cat">Quran</span></a>
-<a href="02-arabic/001-arabic-letters/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Arabic Letters</span><span class="card-cat">Arabic</span></a>
-<a href="02-arabic/002-arabic-words/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Arabic Words</span><span class="card-cat">Arabic</span></a>
-<a href="02-arabic/003-letter-tracing/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Letter Tracing</span><span class="card-cat">Arabic</span></a>
-<a href="02-arabic/004-word-builder/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Word Builder</span><span class="card-cat">Arabic</span></a>
-<a href="02-arabic/005-sentence-builder/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Sentence Builder</span><span class="card-cat">Arabic</span></a>
-<a href="02-arabic/006-number-match/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Number Match</span><span class="card-cat">Arabic</span></a>
-<a href="02-arabic/007-arabic-colors/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Arabic Colors</span><span class="card-cat">Arabic</span></a>
-<a href="02-arabic/008-arabic-animals/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Arabic Animals</span><span class="card-cat">Arabic</span></a>
-<a href="02-arabic/009-arabic-days-months/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Arabic Days Months</span><span class="card-cat">Arabic</span></a>
-<a href="02-arabic/010-arabic-body-parts/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Arabic Body Parts</span><span class="card-cat">Arabic</span></a>
-<a href="02-arabic/011-arabic-food-vocab/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Arabic Food Vocab</span><span class="card-cat">Arabic</span></a>
-<a href="02-arabic/012-arabic-family-tree/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Arabic Family Tree</span><span class="card-cat">Arabic</span></a>
-<a href="02-arabic/013-arabic-classroom/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Arabic Classroom</span><span class="card-cat">Arabic</span></a>
-<a href="02-arabic/014-arabic-opposites/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Arabic Opposites</span><span class="card-cat">Arabic</span></a>
-<a href="02-arabic/015-arabic-verbs/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Arabic Verbs</span><span class="card-cat">Arabic</span></a>
-<a href="02-arabic/016-arabic-prepositions/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Arabic Prepositions</span><span class="card-cat">Arabic</span></a>
-<a href="02-arabic/017-arabic-weather/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Arabic Weather</span><span class="card-cat">Arabic</span></a>
-<a href="02-arabic/018-arabic-time/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Arabic Time</span><span class="card-cat">Arabic</span></a>
-<a href="02-arabic/019-arabic-shapes/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Arabic Shapes</span><span class="card-cat">Arabic</span></a>
-<a href="02-arabic/020-arabic-quran-vocab/index.html" class="card" data-cat="Arabic"><span class="card-emoji">🔤</span><span class="card-title">Arabic Quran Vocab</span><span class="card-cat">Arabic</span></a>
-<a href="03-seerah/001-prophets/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Prophets</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/002-prophet-timeline/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Prophet Timeline</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/003-seerah-map/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Seerah Map</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/004-companion-cards/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Companion Cards</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/005-battles-strategy/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Battles Strategy</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/006-hijrah-journey/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Hijrah Journey</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/007-family-tree/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Family Tree</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/008-mecca-life/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Mecca Life</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/009-first-revelation/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">First Revelation</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/010-early-muslims/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Early Muslims</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/011-boycott-years/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Boycott Years</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/012-isra-miraj/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Isra Miraj</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/013-medina-charter/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Medina Charter</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/014-brotherhood-pairs/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Brotherhood Pairs</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/015-masjid-nabawi-builder/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Masjid Nabawi Builder</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/016-treaty-hudaybiyyah/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Treaty Hudaybiyyah</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/017-conquest-mecca/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Conquest Mecca</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/018-farewell-sermon/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Farewell Sermon</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/019-prophet-miracles/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Prophet Miracles</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/020-prophet-daily-routine/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Prophet Daily Routine</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/021-wives-of-prophet/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Wives Of Prophet</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/022-children-of-prophet/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Children Of Prophet</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/023-prophet-animals/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Prophet Animals</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/024-prophet-neighbors/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Prophet Neighbors</span><span class="card-cat">Seerah</span></a>
-<a href="03-seerah/025-prophet-humor/index.html" class="card" data-cat="Seerah"><span class="card-emoji">🕌</span><span class="card-title">Prophet Humor</span><span class="card-cat">Seerah</span></a>
-<a href="04-hadith/001-hadith-match/index.html" class="card" data-cat="Hadith"><span class="card-emoji">📜</span><span class="card-title">Hadith Match</span><span class="card-cat">Hadith</span></a>
-<a href="04-hadith/002-hadith-garden/index.html" class="card" data-cat="Hadith"><span class="card-emoji">📜</span><span class="card-title">Hadith Garden</span><span class="card-cat">Hadith</span></a>
-<a href="04-hadith/003-hadith-chain/index.html" class="card" data-cat="Hadith"><span class="card-emoji">📜</span><span class="card-title">Hadith Chain</span><span class="card-cat">Hadith</span></a>
-<a href="04-hadith/004-forty-nawawi/index.html" class="card" data-cat="Hadith"><span class="card-emoji">📜</span><span class="card-title">Forty Nawawi</span><span class="card-cat">Hadith</span></a>
-<a href="04-hadith/005-hadith-categories/index.html" class="card" data-cat="Hadith"><span class="card-emoji">📜</span><span class="card-title">Hadith Categories</span><span class="card-cat">Hadith</span></a>
-<a href="04-hadith/006-hadith-narrator-match/index.html" class="card" data-cat="Hadith"><span class="card-emoji">📜</span><span class="card-title">Hadith Narrator Match</span><span class="card-cat">Hadith</span></a>
-<a href="04-hadith/007-hadith-completion/index.html" class="card" data-cat="Hadith"><span class="card-emoji">📜</span><span class="card-title">Hadith Completion</span><span class="card-cat">Hadith</span></a>
-<a href="04-hadith/008-hadith-authenticity/index.html" class="card" data-cat="Hadith"><span class="card-emoji">📜</span><span class="card-title">Hadith Authenticity</span><span class="card-cat">Hadith</span></a>
-<a href="04-hadith/009-hadith-collections/index.html" class="card" data-cat="Hadith"><span class="card-emoji">📜</span><span class="card-title">Hadith Collections</span><span class="card-cat">Hadith</span></a>
-<a href="04-hadith/010-hadith-about-kindness/index.html" class="card" data-cat="Hadith"><span class="card-emoji">📜</span><span class="card-title">Hadith About Kindness</span><span class="card-cat">Hadith</span></a>
-<a href="04-hadith/011-hadith-about-knowledge/index.html" class="card" data-cat="Hadith"><span class="card-emoji">📜</span><span class="card-title">Hadith About Knowledge</span><span class="card-cat">Hadith</span></a>
-<a href="04-hadith/012-hadith-about-parents/index.html" class="card" data-cat="Hadith"><span class="card-emoji">📜</span><span class="card-title">Hadith About Parents</span><span class="card-cat">Hadith</span></a>
-<a href="04-hadith/013-hadith-daily-life/index.html" class="card" data-cat="Hadith"><span class="card-emoji">📜</span><span class="card-title">Hadith Daily Life</span><span class="card-cat">Hadith</span></a>
-<a href="04-hadith/014-hadith-prophet-sayings/index.html" class="card" data-cat="Hadith"><span class="card-emoji">📜</span><span class="card-title">Hadith Prophet Sayings</span><span class="card-cat">Hadith</span></a>
-<a href="04-hadith/015-hadith-qudsi/index.html" class="card" data-cat="Hadith"><span class="card-emoji">📜</span><span class="card-title">Hadith Qudsi</span><span class="card-cat">Hadith</span></a>
-<a href="05-dua/001-dua-flashcards/index.html" class="card" data-cat="Dua"><span class="card-emoji">🤲</span><span class="card-title">Dua Flashcards</span><span class="card-cat">Dua</span></a>
-<a href="05-dua/002-dua-tracker/index.html" class="card" data-cat="Dua"><span class="card-emoji">🤲</span><span class="card-title">Dua Tracker</span><span class="card-cat">Dua</span></a>
-<a href="05-dua/003-adhkar-counter/index.html" class="card" data-cat="Dua"><span class="card-emoji">🤲</span><span class="card-title">Adhkar Counter</span><span class="card-cat">Dua</span></a>
-<a href="05-dua/004-morning-evening/index.html" class="card" data-cat="Dua"><span class="card-emoji">🤲</span><span class="card-title">Morning Evening</span><span class="card-cat">Dua</span></a>
-<a href="05-dua/005-travel-duas/index.html" class="card" data-cat="Dua"><span class="card-emoji">🤲</span><span class="card-title">Travel Duas</span><span class="card-cat">Dua</span></a>
-<a href="05-dua/006-dua-before-eating/index.html" class="card" data-cat="Dua"><span class="card-emoji">🤲</span><span class="card-title">Dua Before Eating</span><span class="card-cat">Dua</span></a>
-<a href="05-dua/007-dua-entering-mosque/index.html" class="card" data-cat="Dua"><span class="card-emoji">🤲</span><span class="card-title">Dua Entering Mosque</span><span class="card-cat">Dua</span></a>
-<a href="05-dua/008-dua-sleeping/index.html" class="card" data-cat="Dua"><span class="card-emoji">🤲</span><span class="card-title">Dua Sleeping</span><span class="card-cat">Dua</span></a>
-<a href="05-dua/009-dua-weather/index.html" class="card" data-cat="Dua"><span class="card-emoji">🤲</span><span class="card-title">Dua Weather</span><span class="card-cat">Dua</span></a>
-<a href="05-dua/010-dua-protection/index.html" class="card" data-cat="Dua"><span class="card-emoji">🤲</span><span class="card-title">Dua Protection</span><span class="card-cat">Dua</span></a>
-<a href="05-dua/011-dua-parents/index.html" class="card" data-cat="Dua"><span class="card-emoji">🤲</span><span class="card-title">Dua Parents</span><span class="card-cat">Dua</span></a>
-<a href="05-dua/012-dua-studying/index.html" class="card" data-cat="Dua"><span class="card-emoji">🤲</span><span class="card-title">Dua Studying</span><span class="card-cat">Dua</span></a>
-<a href="05-dua/013-dua-distress/index.html" class="card" data-cat="Dua"><span class="card-emoji">🤲</span><span class="card-title">Dua Distress</span><span class="card-cat">Dua</span></a>
-<a href="05-dua/014-dua-builder/index.html" class="card" data-cat="Dua"><span class="card-emoji">🤲</span><span class="card-title">Dua Builder</span><span class="card-cat">Dua</span></a>
-<a href="05-dua/015-dua-pronunciation/index.html" class="card" data-cat="Dua"><span class="card-emoji">🤲</span><span class="card-title">Dua Pronunciation</span><span class="card-cat">Dua</span></a>
-<a href="05-dua/016-dua-garden-grower/index.html" class="card" data-cat="Dua"><span class="card-emoji">🤲</span><span class="card-title">Dua Garden Grower</span><span class="card-cat">Dua</span></a>
-<a href="05-dua/017-dua-calligraphy/index.html" class="card" data-cat="Dua"><span class="card-emoji">🤲</span><span class="card-title">Dua Calligraphy</span><span class="card-cat">Dua</span></a>
-<a href="05-dua/018-dua-bead-counter/index.html" class="card" data-cat="Dua"><span class="card-emoji">🤲</span><span class="card-title">Dua Bead Counter</span><span class="card-cat">Dua</span></a>
-<a href="06-fiqh/001-chronology/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Chronology</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/002-islamic-inventions/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Islamic Inventions</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/003-wudu-trainer/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Wudu Trainer</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/004-salah-trainer/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Salah Trainer</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/005-hijri-calendar/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Hijri Calendar</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/006-halal-haram/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Halal Haram</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/007-zakat-calculator/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Zakat Calculator</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/008-hajj-journey/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Hajj Journey</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/009-ramadan-guide/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Ramadan Guide</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/010-five-pillars-builder/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Five Pillars Builder</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/011-salah-times/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Salah Times</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/012-salah-positions/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Salah Positions</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/013-fasting-rules/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Fasting Rules</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/014-zakat-types/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Zakat Types</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/015-hajj-steps/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Hajj Steps</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/016-umrah-guide/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Umrah Guide</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/017-ghusl-guide/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Ghusl Guide</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/018-tayammum-guide/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Tayammum Guide</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/019-islamic-months/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Islamic Months</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/020-friday-prayer/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Friday Prayer</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/021-eid-celebrations/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Eid Celebrations</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/022-food-rules/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Food Rules</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/023-clothing-rules/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Clothing Rules</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/024-trade-ethics/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Trade Ethics</span><span class="card-cat">Fiqh</span></a>
-<a href="06-fiqh/025-inheritance-basics/index.html" class="card" data-cat="Fiqh"><span class="card-emoji">⚖️</span><span class="card-title">Inheritance Basics</span><span class="card-cat">Fiqh</span></a>
-<a href="07-aqeedah/001-99-names-match/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">99 Names Match</span><span class="card-cat">Aqeedah</span></a>
-<a href="07-aqeedah/002-pillars-builder/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">Pillars Builder</span><span class="card-cat">Aqeedah</span></a>
-<a href="07-aqeedah/003-angels-quiz/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">Angels Quiz</span><span class="card-cat">Aqeedah</span></a>
-<a href="07-aqeedah/004-books-prophets/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">Books Prophets</span><span class="card-cat">Aqeedah</span></a>
-<a href="07-aqeedah/005-day-of-judgment/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">Day Of Judgment</span><span class="card-cat">Aqeedah</span></a>
-<a href="07-aqeedah/006-six-pillars-faith/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">Six Pillars Faith</span><span class="card-cat">Aqeedah</span></a>
-<a href="07-aqeedah/007-names-allah-explorer/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">Names Allah Explorer</span><span class="card-cat">Aqeedah</span></a>
-<a href="07-aqeedah/008-prophets-chain/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">Prophets Chain</span><span class="card-cat">Aqeedah</span></a>
-<a href="07-aqeedah/009-divine-books/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">Divine Books</span><span class="card-cat">Aqeedah</span></a>
-<a href="07-aqeedah/010-angels-roles/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">Angels Roles</span><span class="card-cat">Aqeedah</span></a>
-<a href="07-aqeedah/011-qadr-scenarios/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">Qadr Scenarios</span><span class="card-cat">Aqeedah</span></a>
-<a href="07-aqeedah/012-jannah-descriptions/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">Jannah Descriptions</span><span class="card-cat">Aqeedah</span></a>
-<a href="07-aqeedah/013-day-of-judgment-events/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">Day Of Judgment Events</span><span class="card-cat">Aqeedah</span></a>
-<a href="07-aqeedah/014-tawheed-categories/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">Tawheed Categories</span><span class="card-cat">Aqeedah</span></a>
-<a href="07-aqeedah/015-shirk-awareness/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">Shirk Awareness</span><span class="card-cat">Aqeedah</span></a>
-<a href="07-aqeedah/016-names-allah-calligraphy/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">Names Allah Calligraphy</span><span class="card-cat">Aqeedah</span></a>
-<a href="07-aqeedah/017-creation-explorer/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">Creation Explorer</span><span class="card-cat">Aqeedah</span></a>
-<a href="07-aqeedah/018-fitrah-garden/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">Fitrah Garden</span><span class="card-cat">Aqeedah</span></a>
-<a href="07-aqeedah/019-tawheed-tower/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">Tawheed Tower</span><span class="card-cat">Aqeedah</span></a>
-<a href="07-aqeedah/020-prophet-stories-map/index.html" class="card" data-cat="Aqeedah"><span class="card-emoji">💎</span><span class="card-title">Prophet Stories Map</span><span class="card-cat">Aqeedah</span></a>
-<a href="08-adab/001-adab-scenarios/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Adab Scenarios</span><span class="card-cat">Adab</span></a>
-<a href="08-adab/002-salam-game/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Salam Game</span><span class="card-cat">Adab</span></a>
-<a href="08-adab/003-kindness-tree/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Kindness Tree</span><span class="card-cat">Adab</span></a>
-<a href="08-adab/004-rights-game/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Rights Game</span><span class="card-cat">Adab</span></a>
-<a href="08-adab/005-mosque-etiquette/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Mosque Etiquette</span><span class="card-cat">Adab</span></a>
-<a href="08-adab/006-greeting-etiquette/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Greeting Etiquette</span><span class="card-cat">Adab</span></a>
-<a href="08-adab/007-eating-manners/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Eating Manners</span><span class="card-cat">Adab</span></a>
-<a href="08-adab/008-sleeping-etiquette/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Sleeping Etiquette</span><span class="card-cat">Adab</span></a>
-<a href="08-adab/009-visiting-sick/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Visiting Sick</span><span class="card-cat">Adab</span></a>
-<a href="08-adab/010-neighbor-rights/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Neighbor Rights</span><span class="card-cat">Adab</span></a>
-<a href="08-adab/011-guest-hosting/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Guest Hosting</span><span class="card-cat">Adab</span></a>
-<a href="08-adab/012-elder-respect/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Elder Respect</span><span class="card-cat">Adab</span></a>
-<a href="08-adab/013-friendship-values/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Friendship Values</span><span class="card-cat">Adab</span></a>
-<a href="08-adab/014-anger-management/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Anger Management</span><span class="card-cat">Adab</span></a>
-<a href="08-adab/015-honesty-game/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Honesty Game</span><span class="card-cat">Adab</span></a>
-<a href="08-adab/016-gratitude-journal/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Gratitude Journal</span><span class="card-cat">Adab</span></a>
-<a href="08-adab/017-patience-stories/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Patience Stories</span><span class="card-cat">Adab</span></a>
-<a href="08-adab/018-forgiveness-practice/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Forgiveness Practice</span><span class="card-cat">Adab</span></a>
-<a href="08-adab/019-social-media-adab/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Social Media Adab</span><span class="card-cat">Adab</span></a>
-<a href="08-adab/020-environmental-care/index.html" class="card" data-cat="Adab"><span class="card-emoji">🌟</span><span class="card-title">Environmental Care</span><span class="card-cat">Adab</span></a>
-<a href="09-history/001-mosque-builder/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Mosque Builder</span><span class="card-cat">History</span></a>
-<a href="09-history/002-islamic-inventions-match/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Islamic Inventions Match</span><span class="card-cat">History</span></a>
-<a href="09-history/003-calligraphy-draw/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Calligraphy Draw</span><span class="card-cat">History</span></a>
-<a href="09-history/004-golden-age-timeline/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Golden Age Timeline</span><span class="card-cat">History</span></a>
-<a href="09-history/005-islamic-map/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Islamic Map</span><span class="card-cat">History</span></a>
-<a href="09-history/006-islamic-spain/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Islamic Spain</span><span class="card-cat">History</span></a>
-<a href="09-history/007-ottoman-highlights/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Ottoman Highlights</span><span class="card-cat">History</span></a>
-<a href="09-history/008-four-caliphs/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Four Caliphs</span><span class="card-cat">History</span></a>
-<a href="09-history/009-islamic-scholars/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Islamic Scholars</span><span class="card-cat">History</span></a>
-<a href="09-history/010-islamic-universities/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Islamic Universities</span><span class="card-cat">History</span></a>
-<a href="09-history/011-islamic-architecture/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Islamic Architecture</span><span class="card-cat">History</span></a>
-<a href="09-history/012-islamic-science/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Islamic Science</span><span class="card-cat">History</span></a>
-<a href="09-history/013-islamic-art-patterns/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Islamic Art Patterns</span><span class="card-cat">History</span></a>
-<a href="09-history/014-trade-routes/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Trade Routes</span><span class="card-cat">History</span></a>
-<a href="09-history/015-islamic-libraries/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Islamic Libraries</span><span class="card-cat">History</span></a>
-<a href="09-history/016-islamic-medicine/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Islamic Medicine</span><span class="card-cat">History</span></a>
-<a href="09-history/017-islamic-astronomy/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Islamic Astronomy</span><span class="card-cat">History</span></a>
-<a href="09-history/018-islamic-geography/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Islamic Geography</span><span class="card-cat">History</span></a>
-<a href="09-history/019-islamic-mathematics/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Islamic Mathematics</span><span class="card-cat">History</span></a>
-<a href="09-history/020-islamic-coins/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Islamic Coins</span><span class="card-cat">History</span></a>
-<a href="09-history/021-silk-road-trader/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Silk Road Trader</span><span class="card-cat">History</span></a>
-<a href="09-history/022-bayt-al-hikma-librarian/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Bayt Al Hikma Librarian</span><span class="card-cat">History</span></a>
-<a href="09-history/023-islamic-inventor-workshop/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Islamic Inventor Workshop</span><span class="card-cat">History</span></a>
-<a href="09-history/024-alhambra-tile-designer/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Alhambra Tile Designer</span><span class="card-cat">History</span></a>
-<a href="09-history/025-ibn-battuta-journey/index.html" class="card" data-cat="History"><span class="card-emoji">🏛️</span><span class="card-title">Ibn Battuta Journey</span><span class="card-cat">History</span></a>
-<a href="10-gazawat/001-badr-strategy-board/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Badr Strategy Board</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/002-uhud-mountain-defense/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Uhud Mountain Defense</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/003-khandaq-trench-digger/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Khandaq Trench Digger</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/005-mecca-conquest-planner/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Mecca Conquest Planner</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/007-mutah-3-commanders/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Mutah 3 Commanders</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/009-battle-timeline-builder/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Battle Timeline Builder</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/014-hudaybiyyah-peace-treaty/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Hudaybiyyah Peace Treaty</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/018-taif-dua-moment/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Taif Dua Moment</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/019-abyssinia-refuge/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Abyssinia Refuge</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/020-hamza-last-stand/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Hamza Last Stand</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/024-ain-jalut-vs-mongols/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Ain Jalut Vs Mongols</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/034-saladin-jerusalem/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Saladin Jerusalem</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/093-post-battle-mercy/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Post Battle Mercy</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/094-war-prisoner-rights/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">War Prisoner Rights</span><span class="card-cat">Gazawat</span></a>
-<a href="10-gazawat/110-battle-summary-encyclopedia/index.html" class="card" data-cat="Gazawat"><span class="card-emoji">⚔️</span><span class="card-title">Battle Summary Encyclopedia</span><span class="card-cat">Gazawat</span></a>
-<a href="11-anbiya/001-adam-creation-story/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Adam Creation Story</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/002-adam-first-family/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Adam First Family</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/003-idris-knowledge-seeker/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Idris Knowledge Seeker</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/004-nuh-ark-builder/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Nuh Ark Builder</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/005-nuh-flood-journey/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Nuh Flood Journey</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/006-hud-wind-storm/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Hud Wind Storm</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/007-salih-she-camel/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Salih She Camel</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/008-ibrahim-fire-trial/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Ibrahim Fire Trial</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/009-ibrahim-kaaba-builder/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Ibrahim Kaaba Builder</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/010-ibrahim-star-debate/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Ibrahim Star Debate</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/011-ismail-sacrifice-story/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Ismail Sacrifice Story</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/012-ismail-zamzam-discovery/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Ismail Zamzam Discovery</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/013-lut-warning-mission/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Lut Warning Mission</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/014-ishaq-family-tree/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Ishaq Family Tree</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/015-yaqub-patience-story/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Yaqub Patience Story</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/016-yusuf-dream-interpreter/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Yusuf Dream Interpreter</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/017-yusuf-egypt-journey/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Yusuf Egypt Journey</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/018-yusuf-forgiveness/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Yusuf Forgiveness</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/019-ayyub-patience-master/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Ayyub Patience Master</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/020-shuayb-fair-trade/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Shuayb Fair Trade</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/021-musa-basket-journey/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Musa Basket Journey</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/022-musa-staff-miracles/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Musa Staff Miracles</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/023-musa-pharaoh-debate/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Musa Pharaoh Debate</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/024-musa-ten-plagues/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Musa Ten Plagues</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/025-musa-exodus/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Musa Exodus</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/026-musa-mount-sinai/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Musa Mount Sinai</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/027-harun-golden-calf/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Harun Golden Calf</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/028-dhul-kifl-patience/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Dhul Kifl Patience</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/029-dawud-psalms/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Dawud Psalms</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/030-dawud-armor-maker/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Dawud Armor Maker</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/031-dawud-judgment/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Dawud Judgment</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/032-sulayman-kingdom/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Sulayman Kingdom</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/033-sulayman-ants/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Sulayman Ants</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/034-sulayman-queen-sheba/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Sulayman Queen Sheba</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/035-sulayman-jinn-builder/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Sulayman Jinn Builder</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/036-ilyas-mountain-prophet/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Ilyas Mountain Prophet</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/037-al-yasa-successor/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Al Yasa Successor</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/038-yunus-whale-journey/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Yunus Whale Journey</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/039-yunus-nineveh/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Yunus Nineveh</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/040-zakariya-prayer/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Zakariya Prayer</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/041-yahya-righteous/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Yahya Righteous</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/042-isa-miracles/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Isa Miracles</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/043-isa-disciples/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Isa Disciples</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/044-muhammad-birth/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Muhammad Birth</span><span class="card-cat">Anbiya</span></a>
-<a href="11-anbiya/045-muhammad-childhood/index.html" class="card" data-cat="Anbiya"><span class="card-emoji">🕊️</span><span class="card-title">Muhammad Childhood</span><span class="card-cat">Anbiya</span></a>
-<a href="12-scientists/001-al-khwarizmi-algebra/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Al Khwarizmi Algebra</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/002-al-khwarizmi-algorithm/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Al Khwarizmi Algorithm</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/003-ibn-al-haytham-optics/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Ibn Al Haytham Optics</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/004-ibn-al-haytham-scientific-method/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Ibn Al Haytham Scientific Method</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/005-ibn-sina-diagnosis/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Ibn Sina Diagnosis</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/006-ibn-sina-canon/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Ibn Sina Canon</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/007-al-zahrawi-surgery/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Al Zahrawi Surgery</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/008-al-zahrawi-techniques/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Al Zahrawi Techniques</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/009-al-jazari-machines/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Al Jazari Machines</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/010-al-jazari-water-clock/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Al Jazari Water Clock</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/011-al-idrisi-world-map/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Al Idrisi World Map</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/012-ibn-battuta-routes/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Ibn Battuta Routes</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/013-al-biruni-measurements/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Al Biruni Measurements</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/014-al-biruni-minerals/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Al Biruni Minerals</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/015-jabir-ibn-hayyan-chemistry/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Jabir Ibn Hayyan Chemistry</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/016-jabir-distillation/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Jabir Distillation</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/017-al-razi-medicine/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Al Razi Medicine</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/018-al-razi-smallpox/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Al Razi Smallpox</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/019-ibn-al-nafis-circulation/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Ibn Al Nafis Circulation</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/020-thabit-ibn-qurra-math/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Thabit Ibn Qurra Math</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/021-al-kindi-cryptography/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Al Kindi Cryptography</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/022-al-kindi-philosophy/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Al Kindi Philosophy</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/023-abbas-ibn-firnas-flight/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Abbas Ibn Firnas Flight</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/024-fatima-al-fihri-university/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Fatima Al Fihri University</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/025-mariam-al-astrolabi-craft/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Mariam Al Astrolabi Craft</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/026-al-tusi-astronomy/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Al Tusi Astronomy</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/027-ulugh-beg-observatory/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Ulugh Beg Observatory</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/028-ibn-yunus-pendulum/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Ibn Yunus Pendulum</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/029-al-zarqali-tables/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Al Zarqali Tables</span><span class="card-cat">Scientists</span></a>
-<a href="12-scientists/030-ibn-zuhr-nutrition/index.html" class="card" data-cat="Scientists"><span class="card-emoji">🔬</span><span class="card-title">Ibn Zuhr Nutrition</span><span class="card-cat">Scientists</span></a>
-<a href="13-sahaba/001-abu-bakr-biography/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Abu Bakr Biography</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/002-abu-bakr-cave/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Abu Bakr Cave</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/003-umar-ibn-khattab/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Umar Ibn Khattab</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/004-umar-justice/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Umar Justice</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/005-uthman-ibn-affan/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Uthman Ibn Affan</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/006-uthman-quran-compiler/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Uthman Quran Compiler</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/007-ali-ibn-abi-talib/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Ali Ibn Abi Talib</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/008-ali-wisdom/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Ali Wisdom</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/009-khadijah-first-believer/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Khadijah First Believer</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/010-aisha-scholar/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Aisha Scholar</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/011-fatimah-daughter/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Fatimah Daughter</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/012-bilal-muezzin/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Bilal Muezzin</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/013-salman-farisi/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Salman Farisi</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/014-khalid-ibn-walid/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Khalid Ibn Walid</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/015-amr-ibn-al-as/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Amr Ibn Al As</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/016-saad-ibn-abi-waqqas/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Saad Ibn Abi Waqqas</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/017-abu-dharr-ghifari/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Abu Dharr Ghifari</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/018-abu-hurairah-narrator/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Abu Hurairah Narrator</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/019-musab-ibn-umayr/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Musab Ibn Umayr</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/020-hamza-lion-allah/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Hamza Lion Allah</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/021-zubair-ibn-awwam/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Zubair Ibn Awwam</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/022-talha-ibn-ubaydillah/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Talha Ibn Ubaydillah</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/023-abdur-rahman-ibn-awf/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Abdur Rahman Ibn Awf</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/024-abu-ubayda/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Abu Ubayda</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/025-saeed-ibn-zayd/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Saeed Ibn Zayd</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/026-ten-promised-paradise/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Ten Promised Paradise</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/027-women-companions/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Women Companions</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/028-young-companions/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Young Companions</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/029-ansar-helpers/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Ansar Helpers</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/030-muhajirun-emigrants/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Muhajirun Emigrants</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/031-scribes-revelation/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Scribes Revelation</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/032-people-of-suffah/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">People Of Suffah</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/033-sahaba-at-badr/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Sahaba At Badr</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/034-sahaba-at-uhud/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Sahaba At Uhud</span><span class="card-cat">Sahaba</span></a>
-<a href="13-sahaba/035-sahaba-sacrifices/index.html" class="card" data-cat="Sahaba"><span class="card-emoji">⭐</span><span class="card-title">Sahaba Sacrifices</span><span class="card-cat">Sahaba</span></a>
-<a href="14-tafsir/001-word-by-word/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Word By Word</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/002-surah-context/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Surah Context</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/003-ayah-themes/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Ayah Themes</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/004-quran-vocabulary-builder/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Quran Vocabulary Builder</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/005-root-word-analyzer/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Root Word Analyzer</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/006-surah-structure-map/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Surah Structure Map</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/007-quran-cross-reference/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Quran Cross Reference</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/008-makki-madani-analyzer/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Makki Madani Analyzer</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/009-occasion-revelation/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Occasion Revelation</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/010-quran-parables/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Quran Parables</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/011-quran-commands/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Quran Commands</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/012-quran-promises/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Quran Promises</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/013-quran-stories-index/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Quran Stories Index</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/014-quran-science-verses/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Quran Science Verses</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/015-quran-ethics-guide/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Quran Ethics Guide</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/016-quran-dua-extractor/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Quran Dua Extractor</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/017-surah-intro-builder/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Surah Intro Builder</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/018-quran-repetition-finder/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Quran Repetition Finder</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/019-quran-question-explorer/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Quran Question Explorer</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/020-quran-dialogue-reader/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Quran Dialogue Reader</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/021-quran-nature-catalog/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Quran Nature Catalog</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/022-quran-number-explorer/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Quran Number Explorer</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/023-quran-color-study/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Quran Color Study</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/024-quran-food-catalog/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Quran Food Catalog</span><span class="card-cat">Tafsir</span></a>
-<a href="14-tafsir/025-quran-animal-encyclopedia/index.html" class="card" data-cat="Tafsir"><span class="card-emoji">📝</span><span class="card-title">Quran Animal Encyclopedia</span><span class="card-cat">Tafsir</span></a>
-<a href="15-life-tools/001-salah-tracker/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Salah Tracker</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/002-quran-reading-planner/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Quran Reading Planner</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/003-ramadan-planner/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Ramadan Planner</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/004-dua-of-the-day/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Dua Of The Day</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/005-adhkar-morning-evening/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Adhkar Morning Evening</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/006-habit-builder/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Habit Builder</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/007-fasting-tracker/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Fasting Tracker</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/008-charity-tracker/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Charity Tracker</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/009-quran-memorization-log/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Quran Memorization Log</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/010-islamic-journal/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Islamic Journal</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/011-gratitude-log/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Gratitude Log</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/012-prayer-time-calculator/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Prayer Time Calculator</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/013-qibla-finder/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Qibla Finder</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/014-hijri-converter/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Hijri Converter</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/015-islamic-event-calendar/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Islamic Event Calendar</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/016-zakat-calculator/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Zakat Calculator</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/017-sadaqah-jar/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Sadaqah Jar</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/018-good-deed-log/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Good Deed Log</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/019-family-dua-list/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Family Dua List</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/020-islamic-goal-setter/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Islamic Goal Setter</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/021-wudu-checklist/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Wudu Checklist</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/022-salah-learning-guide/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Salah Learning Guide</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/023-ramadan-countdown/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Ramadan Countdown</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/024-eid-planner/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Eid Planner</span><span class="card-cat">Life Tools</span></a>
-<a href="15-life-tools/025-hajj-checklist/index.html" class="card" data-cat="Life Tools"><span class="card-emoji">🛠️</span><span class="card-title">Hajj Checklist</span><span class="card-cat">Life Tools</span></a>
-<a href="16-arabic-immersion/001-arabic-reading-level1/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Reading Level1</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/002-arabic-reading-level2/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Reading Level2</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/003-arabic-reading-level3/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Reading Level3</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/004-arabic-letter-forms/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Letter Forms</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/005-arabic-word-building/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Word Building</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/006-arabic-sentence-structure/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Sentence Structure</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/007-arabic-plural-patterns/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Plural Patterns</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/008-arabic-verb-forms/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Verb Forms</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/009-arabic-past-present/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Past Present</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/010-arabic-pronouns-master/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Pronouns Master</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/011-arabic-numbers-deep/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Numbers Deep</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/012-arabic-question-builder/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Question Builder</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/013-arabic-negation/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Negation</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/014-arabic-possessives/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Possessives</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/015-arabic-adjective-agreement/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Adjective Agreement</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/016-arabic-daily-phrases/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Daily Phrases</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/017-arabic-mosque-vocabulary/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Mosque Vocabulary</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/018-arabic-home-vocabulary/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Home Vocabulary</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/019-arabic-nature-vocabulary/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Nature Vocabulary</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/020-arabic-emotion-words/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Emotion Words</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/021-arabic-islamic-terms/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Islamic Terms</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/022-arabic-letter-writing/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Letter Writing</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/023-arabic-diary-writer/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Diary Writer</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/024-arabic-news-reader/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic News Reader</span><span class="card-cat">Arabic+</span></a>
-<a href="16-arabic-immersion/025-arabic-recipe-reader/index.html" class="card" data-cat="Arabic+"><span class="card-emoji">📚</span><span class="card-title">Arabic Recipe Reader</span><span class="card-cat">Arabic+</span></a>
+<a href="01-quran/001-ayah-order/index.html" class="card" data-cat="Quran" data-en="ayah order"><span class="card-emoji">📖</span><span class="card-title">رتّب كلمات القرآن الكريم</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/002-surah-match/index.html" class="card" data-cat="Quran" data-en="surah match"><span class="card-emoji">📖</span><span class="card-title">طابق السور بمعانيها</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/003-tajweed-rules/index.html" class="card" data-cat="Quran" data-en="tajweed rules"><span class="card-emoji">📖</span><span class="card-title">تعلّم أحكام تلاوة القرآن</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/004-surah-puzzle/index.html" class="card" data-cat="Quran" data-en="surah puzzle"><span class="card-emoji">📖</span><span class="card-title">حلّ أحجيات قرآنية</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/005-quran-explorer/index.html" class="card" data-cat="Quran" data-en="quran explorer"><span class="card-emoji">📖</span><span class="card-title">استكشف القرآن الكريم</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/006-memorize-helper/index.html" class="card" data-cat="Quran" data-en="memorize helper"><span class="card-emoji">📖</span><span class="card-title">احفظ القرآن بسهولة</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/007-quran-stories/index.html" class="card" data-cat="Quran" data-en="quran stories"><span class="card-emoji">📖</span><span class="card-title">اكتشف قصص القرآن الكريم</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/008-surah-info-cards/index.html" class="card" data-cat="Quran" data-en="surah info cards"><span class="card-emoji">📖</span><span class="card-title">تعرّف على كل سورة</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/009-juz-navigator/index.html" class="card" data-cat="Quran" data-en="juz navigator"><span class="card-emoji">📖</span><span class="card-title">تصفّح أجزاء القرآن الثلاثين</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/010-ayah-of-the-day/index.html" class="card" data-cat="Quran" data-en="ayah of the day"><span class="card-emoji">📖</span><span class="card-title">إلهام قرآني يومي</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/011-quran-word-frequency/index.html" class="card" data-cat="Quran" data-en="quran word frequency"><span class="card-emoji">📖</span><span class="card-title">اكتشف أنماط الكلمات في القرآن</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/012-surah-opening-match/index.html" class="card" data-cat="Quran" data-en="surah opening match"><span class="card-emoji">📖</span><span class="card-title">طابق السور بفواتحها</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/013-makki-madani-sort/index.html" class="card" data-cat="Quran" data-en="makki madani sort"><span class="card-emoji">📖</span><span class="card-title">صنّف السور حسب مكان النزول</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/014-quran-timeline/index.html" class="card" data-cat="Quran" data-en="quran timeline"><span class="card-emoji">📖</span><span class="card-title">رحلة عبر تاريخ الوحي</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/015-surah-theme-explorer/index.html" class="card" data-cat="Quran" data-en="surah theme explorer"><span class="card-emoji">📖</span><span class="card-title">استكشف المواضيع عبر السور</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/016-ayah-completion/index.html" class="card" data-cat="Quran" data-en="ayah completion"><span class="card-emoji">📖</span><span class="card-title">أكمل الكلمات الناقصة</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/017-quran-numbers/index.html" class="card" data-cat="Quran" data-en="quran numbers"><span class="card-emoji">📖</span><span class="card-title">الأرقام والعدّ في القرآن</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/018-prophets-in-quran/index.html" class="card" data-cat="Quran" data-en="prophets in quran"><span class="card-emoji">📖</span><span class="card-title">تعرّف على الأنبياء المذكورين في القرآن</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/019-animals-in-quran/index.html" class="card" data-cat="Quran" data-en="animals in quran"><span class="card-emoji">📖</span><span class="card-title">اكتشف الحيوانات المذكورة في القرآن</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/020-quran-dua-collector/index.html" class="card" data-cat="Quran" data-en="quran dua collector"><span class="card-emoji">📖</span><span class="card-title">اجمع الأدعية القرآنية الجميلة</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/021-surah-last-ayah/index.html" class="card" data-cat="Quran" data-en="surah last ayah"><span class="card-emoji">📖</span><span class="card-title">تعرّف على آخر آية في كل سورة</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/022-quran-arabic-root/index.html" class="card" data-cat="Quran" data-en="quran arabic root"><span class="card-emoji">📖</span><span class="card-title">استكشف جذور الكلمات العربية</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/023-tajweed-practice/index.html" class="card" data-cat="Quran" data-en="tajweed practice"><span class="card-emoji">📖</span><span class="card-title">تدرّب على التجويد بالتمارين</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/024-surah-name-meaning/index.html" class="card" data-cat="Quran" data-en="surah name meaning"><span class="card-emoji">📖</span><span class="card-title">اكتشف معاني أسماء السور</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/025-quran-story-sequencer/index.html" class="card" data-cat="Quran" data-en="quran story sequencer"><span class="card-emoji">📖</span><span class="card-title">رتّب قصص القرآن بالتسلسل</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/026-revelation-reasons/index.html" class="card" data-cat="Quran" data-en="revelation reasons"><span class="card-emoji">📖</span><span class="card-title">تعرّف على أسباب نزول الآيات</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/027-quran-comparison/index.html" class="card" data-cat="Quran" data-en="quran comparison"><span class="card-emoji">📖</span><span class="card-title">قارن الترجمات جنباً إلى جنب</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/028-surah-benefits/index.html" class="card" data-cat="Quran" data-en="surah benefits"><span class="card-emoji">📖</span><span class="card-title">اكتشف فضائل تلاوة السور</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/029-quran-geography/index.html" class="card" data-cat="Quran" data-en="quran geography"><span class="card-emoji">📖</span><span class="card-title">استكشف الأماكن المذكورة في القرآن</span><span class="card-cat">القرآن</span></a>
+<a href="01-quran/030-hifz-tracker/index.html" class="card" data-cat="Quran" data-en="hifz tracker"><span class="card-emoji">📖</span><span class="card-title">تابع تقدمك في حفظ القرآن</span><span class="card-cat">القرآن</span></a>
+<a href="02-arabic/001-arabic-letters/index.html" class="card" data-cat="Arabic" data-en="arabic letters"><span class="card-emoji">🔤</span><span class="card-title">المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="02-arabic/002-arabic-words/index.html" class="card" data-cat="Arabic" data-en="arabic words"><span class="card-emoji">🔤</span><span class="card-title">المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="02-arabic/003-letter-tracing/index.html" class="card" data-cat="Arabic" data-en="letter tracing"><span class="card-emoji">🔤</span><span class="card-title">المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="02-arabic/004-word-builder/index.html" class="card" data-cat="Arabic" data-en="word builder"><span class="card-emoji">🔤</span><span class="card-title">المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="02-arabic/005-sentence-builder/index.html" class="card" data-cat="Arabic" data-en="sentence builder"><span class="card-emoji">🔤</span><span class="card-title">المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="02-arabic/006-number-match/index.html" class="card" data-cat="Arabic" data-en="number match"><span class="card-emoji">🔤</span><span class="card-title">❓ المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="02-arabic/007-arabic-colors/index.html" class="card" data-cat="Arabic" data-en="arabic colors"><span class="card-emoji">🔤</span><span class="card-title">❓ المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="02-arabic/008-arabic-animals/index.html" class="card" data-cat="Arabic" data-en="arabic animals"><span class="card-emoji">🔤</span><span class="card-title">❓ المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="02-arabic/009-arabic-days-months/index.html" class="card" data-cat="Arabic" data-en="arabic days months"><span class="card-emoji">🔤</span><span class="card-title">❓ المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="02-arabic/010-arabic-body-parts/index.html" class="card" data-cat="Arabic" data-en="arabic body parts"><span class="card-emoji">🔤</span><span class="card-title">❓ المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="02-arabic/011-arabic-food-vocab/index.html" class="card" data-cat="Arabic" data-en="arabic food vocab"><span class="card-emoji">🔤</span><span class="card-title">❓ المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="02-arabic/012-arabic-family-tree/index.html" class="card" data-cat="Arabic" data-en="arabic family tree"><span class="card-emoji">🔤</span><span class="card-title">❓ المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="02-arabic/013-arabic-classroom/index.html" class="card" data-cat="Arabic" data-en="arabic classroom"><span class="card-emoji">🔤</span><span class="card-title">❓ المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="02-arabic/014-arabic-opposites/index.html" class="card" data-cat="Arabic" data-en="arabic opposites"><span class="card-emoji">🔤</span><span class="card-title">❓ المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="02-arabic/015-arabic-verbs/index.html" class="card" data-cat="Arabic" data-en="arabic verbs"><span class="card-emoji">🔤</span><span class="card-title">❓ المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="02-arabic/016-arabic-prepositions/index.html" class="card" data-cat="Arabic" data-en="arabic prepositions"><span class="card-emoji">🔤</span><span class="card-title">❓ المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="02-arabic/017-arabic-weather/index.html" class="card" data-cat="Arabic" data-en="arabic weather"><span class="card-emoji">🔤</span><span class="card-title">❓ المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="02-arabic/018-arabic-time/index.html" class="card" data-cat="Arabic" data-en="arabic time"><span class="card-emoji">🔤</span><span class="card-title">❓ المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="02-arabic/019-arabic-shapes/index.html" class="card" data-cat="Arabic" data-en="arabic shapes"><span class="card-emoji">🔤</span><span class="card-title">❓ المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="02-arabic/020-arabic-quran-vocab/index.html" class="card" data-cat="Arabic" data-en="arabic quran vocab"><span class="card-emoji">🔤</span><span class="card-title">❓ المساعدة</span><span class="card-cat">العربية</span></a>
+<a href="03-seerah/001-prophets/index.html" class="card" data-cat="Seerah" data-en="prophets"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/002-prophet-timeline/index.html" class="card" data-cat="Seerah" data-en="prophet timeline"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/003-seerah-map/index.html" class="card" data-cat="Seerah" data-en="seerah map"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/004-companion-cards/index.html" class="card" data-cat="Seerah" data-en="companion cards"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/006-hijrah-journey/index.html" class="card" data-cat="Seerah" data-en="hijrah journey"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/007-family-tree/index.html" class="card" data-cat="Seerah" data-en="family tree"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/008-mecca-life/index.html" class="card" data-cat="Seerah" data-en="mecca life"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/009-first-revelation/index.html" class="card" data-cat="Seerah" data-en="first revelation"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/010-early-muslims/index.html" class="card" data-cat="Seerah" data-en="early muslims"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/011-boycott-years/index.html" class="card" data-cat="Seerah" data-en="boycott years"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/012-isra-miraj/index.html" class="card" data-cat="Seerah" data-en="isra miraj"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/013-medina-charter/index.html" class="card" data-cat="Seerah" data-en="medina charter"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/014-brotherhood-pairs/index.html" class="card" data-cat="Seerah" data-en="brotherhood pairs"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/015-masjid-nabawi-builder/index.html" class="card" data-cat="Seerah" data-en="masjid nabawi builder"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/016-treaty-hudaybiyyah/index.html" class="card" data-cat="Seerah" data-en="treaty hudaybiyyah"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/017-conquest-mecca/index.html" class="card" data-cat="Seerah" data-en="conquest mecca"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/018-farewell-sermon/index.html" class="card" data-cat="Seerah" data-en="farewell sermon"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/019-prophet-miracles/index.html" class="card" data-cat="Seerah" data-en="prophet miracles"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/020-prophet-daily-routine/index.html" class="card" data-cat="Seerah" data-en="prophet daily routine"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/021-wives-of-prophet/index.html" class="card" data-cat="Seerah" data-en="wives of prophet"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/022-children-of-prophet/index.html" class="card" data-cat="Seerah" data-en="children of prophet"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/023-prophet-animals/index.html" class="card" data-cat="Seerah" data-en="prophet animals"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/024-prophet-neighbors/index.html" class="card" data-cat="Seerah" data-en="prophet neighbors"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="03-seerah/025-prophet-humor/index.html" class="card" data-cat="Seerah" data-en="prophet humor"><span class="card-emoji">🕌</span><span class="card-title">❓ المساعدة</span><span class="card-cat">السيرة</span></a>
+<a href="04-hadith/001-hadith-match/index.html" class="card" data-cat="Hadith" data-en="hadith match"><span class="card-emoji">📜</span><span class="card-title">Hadith Match — Hadith Library</span><span class="card-cat">الحديث</span></a>
+<a href="04-hadith/002-hadith-garden/index.html" class="card" data-cat="Hadith" data-en="hadith garden"><span class="card-emoji">📜</span><span class="card-title">Hadith Garden — Hadith Library</span><span class="card-cat">الحديث</span></a>
+<a href="04-hadith/003-hadith-chain/index.html" class="card" data-cat="Hadith" data-en="hadith chain"><span class="card-emoji">📜</span><span class="card-title">Hadith Chain — Hadith Library</span><span class="card-cat">الحديث</span></a>
+<a href="04-hadith/004-forty-nawawi/index.html" class="card" data-cat="Hadith" data-en="forty nawawi"><span class="card-emoji">📜</span><span class="card-title">Forty Nawawi — Hadith Library</span><span class="card-cat">الحديث</span></a>
+<a href="04-hadith/005-hadith-categories/index.html" class="card" data-cat="Hadith" data-en="hadith categories"><span class="card-emoji">📜</span><span class="card-title">Hadith Categories — Hadith Library</span><span class="card-cat">الحديث</span></a>
+<a href="04-hadith/006-hadith-narrator-match/index.html" class="card" data-cat="Hadith" data-en="hadith narrator match"><span class="card-emoji">📜</span><span class="card-title">Narrator Match — Hadith Library</span><span class="card-cat">الحديث</span></a>
+<a href="04-hadith/007-hadith-completion/index.html" class="card" data-cat="Hadith" data-en="hadith completion"><span class="card-emoji">📜</span><span class="card-title">Hadith Completion — Hadith Library</span><span class="card-cat">الحديث</span></a>
+<a href="04-hadith/008-hadith-authenticity/index.html" class="card" data-cat="Hadith" data-en="hadith authenticity"><span class="card-emoji">📜</span><span class="card-title">Hadith Authenticity — Hadith Library</span><span class="card-cat">الحديث</span></a>
+<a href="04-hadith/009-hadith-collections/index.html" class="card" data-cat="Hadith" data-en="hadith collections"><span class="card-emoji">📜</span><span class="card-title">Hadith Collections — Hadith Library</span><span class="card-cat">الحديث</span></a>
+<a href="04-hadith/010-hadith-about-kindness/index.html" class="card" data-cat="Hadith" data-en="hadith about kindness"><span class="card-emoji">📜</span><span class="card-title">Kindness Hadiths — Hadith Library</span><span class="card-cat">الحديث</span></a>
+<a href="04-hadith/011-hadith-about-knowledge/index.html" class="card" data-cat="Hadith" data-en="hadith about knowledge"><span class="card-emoji">📜</span><span class="card-title">Knowledge Hadiths — Hadith Library</span><span class="card-cat">الحديث</span></a>
+<a href="04-hadith/012-hadith-about-parents/index.html" class="card" data-cat="Hadith" data-en="hadith about parents"><span class="card-emoji">📜</span><span class="card-title">Parents Hadiths — Hadith Library</span><span class="card-cat">الحديث</span></a>
+<a href="04-hadith/013-hadith-daily-life/index.html" class="card" data-cat="Hadith" data-en="hadith daily life"><span class="card-emoji">📜</span><span class="card-title">Daily Life Hadiths — Hadith Library</span><span class="card-cat">الحديث</span></a>
+<a href="04-hadith/014-hadith-prophet-sayings/index.html" class="card" data-cat="Hadith" data-en="hadith prophet sayings"><span class="card-emoji">📜</span><span class="card-title">Prophet Sayings — Hadith Library</span><span class="card-cat">الحديث</span></a>
+<a href="04-hadith/015-hadith-qudsi/index.html" class="card" data-cat="Hadith" data-en="hadith qudsi"><span class="card-emoji">📜</span><span class="card-title">Hadith Qudsi — Hadith Library</span><span class="card-cat">الحديث</span></a>
+<a href="05-dua/001-dua-flashcards/index.html" class="card" data-cat="Dua" data-en="dua flashcards"><span class="card-emoji">🤲</span><span class="card-title">Dua Flashcards — Dua Collection</span><span class="card-cat">الدعاء</span></a>
+<a href="05-dua/002-dua-tracker/index.html" class="card" data-cat="Dua" data-en="dua tracker"><span class="card-emoji">🤲</span><span class="card-title">Dua Tracker — Dua Collection</span><span class="card-cat">الدعاء</span></a>
+<a href="05-dua/003-adhkar-counter/index.html" class="card" data-cat="Dua" data-en="adhkar counter"><span class="card-emoji">🤲</span><span class="card-title">Adhkar Counter — Dua Collection</span><span class="card-cat">الدعاء</span></a>
+<a href="05-dua/004-morning-evening/index.html" class="card" data-cat="Dua" data-en="morning evening"><span class="card-emoji">🤲</span><span class="card-title">Morning & Evening — Dua Collection</span><span class="card-cat">الدعاء</span></a>
+<a href="05-dua/005-travel-duas/index.html" class="card" data-cat="Dua" data-en="travel duas"><span class="card-emoji">🤲</span><span class="card-title">Travel Duas — Dua Collection</span><span class="card-cat">الدعاء</span></a>
+<a href="05-dua/006-dua-before-eating/index.html" class="card" data-cat="Dua" data-en="dua before eating"><span class="card-emoji">🤲</span><span class="card-title">Before Eating — Dua Collection</span><span class="card-cat">الدعاء</span></a>
+<a href="05-dua/007-dua-entering-mosque/index.html" class="card" data-cat="Dua" data-en="dua entering mosque"><span class="card-emoji">🤲</span><span class="card-title">Entering Mosque — Dua Collection</span><span class="card-cat">الدعاء</span></a>
+<a href="05-dua/008-dua-sleeping/index.html" class="card" data-cat="Dua" data-en="dua sleeping"><span class="card-emoji">🤲</span><span class="card-title">Sleeping Duas — Dua Collection</span><span class="card-cat">الدعاء</span></a>
+<a href="05-dua/009-dua-weather/index.html" class="card" data-cat="Dua" data-en="dua weather"><span class="card-emoji">🤲</span><span class="card-title">Weather Duas — Dua Collection</span><span class="card-cat">الدعاء</span></a>
+<a href="05-dua/010-dua-protection/index.html" class="card" data-cat="Dua" data-en="dua protection"><span class="card-emoji">🤲</span><span class="card-title">Protection Duas — Dua Collection</span><span class="card-cat">الدعاء</span></a>
+<a href="05-dua/011-dua-parents/index.html" class="card" data-cat="Dua" data-en="dua parents"><span class="card-emoji">🤲</span><span class="card-title">Duas for Parents — Dua Collection</span><span class="card-cat">الدعاء</span></a>
+<a href="05-dua/012-dua-studying/index.html" class="card" data-cat="Dua" data-en="dua studying"><span class="card-emoji">🤲</span><span class="card-title">Study Duas — Dua Collection</span><span class="card-cat">الدعاء</span></a>
+<a href="05-dua/013-dua-distress/index.html" class="card" data-cat="Dua" data-en="dua distress"><span class="card-emoji">🤲</span><span class="card-title">Distress Duas — Dua Collection</span><span class="card-cat">الدعاء</span></a>
+<a href="05-dua/014-dua-builder/index.html" class="card" data-cat="Dua" data-en="dua builder"><span class="card-emoji">🤲</span><span class="card-title">Dua Builder — Dua Collection</span><span class="card-cat">الدعاء</span></a>
+<a href="05-dua/015-dua-pronunciation/index.html" class="card" data-cat="Dua" data-en="dua pronunciation"><span class="card-emoji">🤲</span><span class="card-title">Pronunciation Guide — Dua Collection</span><span class="card-cat">الدعاء</span></a>
+<a href="05-dua/016-dua-garden-grower/index.html" class="card" data-cat="Dua" data-en="dua garden grower"><span class="card-emoji">🤲</span><span class="card-title">Dua Garden Grower — Dua Collection</span><span class="card-cat">الدعاء</span></a>
+<a href="05-dua/017-dua-calligraphy/index.html" class="card" data-cat="Dua" data-en="dua calligraphy"><span class="card-emoji">🤲</span><span class="card-title">Dua Calligraphy — Dua Collection</span><span class="card-cat">الدعاء</span></a>
+<a href="05-dua/018-dua-bead-counter/index.html" class="card" data-cat="Dua" data-en="dua bead counter"><span class="card-emoji">🤲</span><span class="card-title">Bead Counter — Dua Collection</span><span class="card-cat">الدعاء</span></a>
+<a href="06-fiqh/001-chronology/index.html" class="card" data-cat="Fiqh" data-en="chronology"><span class="card-emoji">⚖️</span><span class="card-title">Chronology — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/002-islamic-inventions/index.html" class="card" data-cat="Fiqh" data-en="islamic inventions"><span class="card-emoji">⚖️</span><span class="card-title">Islamic Golden Age — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/003-wudu-trainer/index.html" class="card" data-cat="Fiqh" data-en="wudu trainer"><span class="card-emoji">⚖️</span><span class="card-title">Wudu Steps — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/004-salah-trainer/index.html" class="card" data-cat="Fiqh" data-en="salah trainer"><span class="card-emoji">⚖️</span><span class="card-title">Salah Positions — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/005-hijri-calendar/index.html" class="card" data-cat="Fiqh" data-en="hijri calendar"><span class="card-emoji">⚖️</span><span class="card-title">Hijri Calendar — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/006-halal-haram/index.html" class="card" data-cat="Fiqh" data-en="halal haram"><span class="card-emoji">⚖️</span><span class="card-title">Halal or Haram? — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/007-zakat-calculator/index.html" class="card" data-cat="Fiqh" data-en="zakat calculator"><span class="card-emoji">⚖️</span><span class="card-title">Zakat Calculator — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/008-hajj-journey/index.html" class="card" data-cat="Fiqh" data-en="hajj journey"><span class="card-emoji">⚖️</span><span class="card-title">Hajj Journey — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/009-ramadan-guide/index.html" class="card" data-cat="Fiqh" data-en="ramadan guide"><span class="card-emoji">⚖️</span><span class="card-title">Ramadan Guide — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/010-five-pillars-builder/index.html" class="card" data-cat="Fiqh" data-en="five pillars builder"><span class="card-emoji">⚖️</span><span class="card-title">Five Pillars Builder — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/011-salah-times/index.html" class="card" data-cat="Fiqh" data-en="salah times"><span class="card-emoji">⚖️</span><span class="card-title">Salah Times — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/012-salah-positions/index.html" class="card" data-cat="Fiqh" data-en="salah positions"><span class="card-emoji">⚖️</span><span class="card-title">Salah Positions — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/013-fasting-rules/index.html" class="card" data-cat="Fiqh" data-en="fasting rules"><span class="card-emoji">⚖️</span><span class="card-title">Fasting Rules — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/014-zakat-types/index.html" class="card" data-cat="Fiqh" data-en="zakat types"><span class="card-emoji">⚖️</span><span class="card-title">Zakat Types — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/015-hajj-steps/index.html" class="card" data-cat="Fiqh" data-en="hajj steps"><span class="card-emoji">⚖️</span><span class="card-title">Hajj Steps — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/016-umrah-guide/index.html" class="card" data-cat="Fiqh" data-en="umrah guide"><span class="card-emoji">⚖️</span><span class="card-title">Umrah Guide — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/017-ghusl-guide/index.html" class="card" data-cat="Fiqh" data-en="ghusl guide"><span class="card-emoji">⚖️</span><span class="card-title">Ghusl Guide — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/018-tayammum-guide/index.html" class="card" data-cat="Fiqh" data-en="tayammum guide"><span class="card-emoji">⚖️</span><span class="card-title">دليل التيمم — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/019-islamic-months/index.html" class="card" data-cat="Fiqh" data-en="islamic months"><span class="card-emoji">⚖️</span><span class="card-title">الأشهر الهجرية — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/020-friday-prayer/index.html" class="card" data-cat="Fiqh" data-en="friday prayer"><span class="card-emoji">⚖️</span><span class="card-title">صلاة الجمعة — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/021-eid-celebrations/index.html" class="card" data-cat="Fiqh" data-en="eid celebrations"><span class="card-emoji">⚖️</span><span class="card-title">احتفالات العيد — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/022-food-rules/index.html" class="card" data-cat="Fiqh" data-en="food rules"><span class="card-emoji">⚖️</span><span class="card-title">أحكام الطعام — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/023-clothing-rules/index.html" class="card" data-cat="Fiqh" data-en="clothing rules"><span class="card-emoji">⚖️</span><span class="card-title">أحكام اللباس — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/024-trade-ethics/index.html" class="card" data-cat="Fiqh" data-en="trade ethics"><span class="card-emoji">⚖️</span><span class="card-title">Trade Ethics — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="06-fiqh/025-inheritance-basics/index.html" class="card" data-cat="Fiqh" data-en="inheritance basics"><span class="card-emoji">⚖️</span><span class="card-title">Inheritance Basics — Workshop-Diy</span><span class="card-cat">الفقه</span></a>
+<a href="07-aqeedah/001-99-names-match/index.html" class="card" data-cat="Aqeedah" data-en="99 names match"><span class="card-emoji">💎</span><span class="card-title">99 Names of Allah — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="07-aqeedah/002-pillars-builder/index.html" class="card" data-cat="Aqeedah" data-en="pillars builder"><span class="card-emoji">💎</span><span class="card-title">Pillars Builder — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="07-aqeedah/003-angels-quiz/index.html" class="card" data-cat="Aqeedah" data-en="angels quiz"><span class="card-emoji">💎</span><span class="card-title">Angels of Islam — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="07-aqeedah/004-books-prophets/index.html" class="card" data-cat="Aqeedah" data-en="books prophets"><span class="card-emoji">💎</span><span class="card-title">Books &amp; Prophets — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="07-aqeedah/005-day-of-judgment/index.html" class="card" data-cat="Aqeedah" data-en="day of judgment"><span class="card-emoji">💎</span><span class="card-title">Day of Judgment — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="07-aqeedah/006-six-pillars-faith/index.html" class="card" data-cat="Aqeedah" data-en="six pillars faith"><span class="card-emoji">💎</span><span class="card-title">Six Pillars of Faith — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="07-aqeedah/007-names-allah-explorer/index.html" class="card" data-cat="Aqeedah" data-en="names allah explorer"><span class="card-emoji">💎</span><span class="card-title">Names of Allah Explorer — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="07-aqeedah/008-prophets-chain/index.html" class="card" data-cat="Aqeedah" data-en="prophets chain"><span class="card-emoji">💎</span><span class="card-title">Prophets Chain — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="07-aqeedah/009-divine-books/index.html" class="card" data-cat="Aqeedah" data-en="divine books"><span class="card-emoji">💎</span><span class="card-title">Divine Books — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="07-aqeedah/010-angels-roles/index.html" class="card" data-cat="Aqeedah" data-en="angels roles"><span class="card-emoji">💎</span><span class="card-title">Angels Roles — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="07-aqeedah/011-qadr-scenarios/index.html" class="card" data-cat="Aqeedah" data-en="qadr scenarios"><span class="card-emoji">💎</span><span class="card-title">Qadr Scenarios — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="07-aqeedah/012-jannah-descriptions/index.html" class="card" data-cat="Aqeedah" data-en="jannah descriptions"><span class="card-emoji">💎</span><span class="card-title">Jannah Descriptions — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="07-aqeedah/013-day-of-judgment-events/index.html" class="card" data-cat="Aqeedah" data-en="day of judgment events"><span class="card-emoji">💎</span><span class="card-title">Day of Judgment Events — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="07-aqeedah/014-tawheed-categories/index.html" class="card" data-cat="Aqeedah" data-en="tawheed categories"><span class="card-emoji">💎</span><span class="card-title">Tawheed Categories — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="07-aqeedah/015-shirk-awareness/index.html" class="card" data-cat="Aqeedah" data-en="shirk awareness"><span class="card-emoji">💎</span><span class="card-title">Shirk Awareness — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="07-aqeedah/016-names-allah-calligraphy/index.html" class="card" data-cat="Aqeedah" data-en="names allah calligraphy"><span class="card-emoji">💎</span><span class="card-title">Names of Allah Calligraphy — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="07-aqeedah/017-creation-explorer/index.html" class="card" data-cat="Aqeedah" data-en="creation explorer"><span class="card-emoji">💎</span><span class="card-title">Creation Explorer — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="07-aqeedah/018-fitrah-garden/index.html" class="card" data-cat="Aqeedah" data-en="fitrah garden"><span class="card-emoji">💎</span><span class="card-title">Fitrah Garden — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="07-aqeedah/019-tawheed-tower/index.html" class="card" data-cat="Aqeedah" data-en="tawheed tower"><span class="card-emoji">💎</span><span class="card-title">Tawheed Tower — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="07-aqeedah/020-prophet-stories-map/index.html" class="card" data-cat="Aqeedah" data-en="prophet stories map"><span class="card-emoji">💎</span><span class="card-title">Prophet Stories Map — Workshop-Diy</span><span class="card-cat">العقيدة</span></a>
+<a href="08-adab/001-adab-scenarios/index.html" class="card" data-cat="Adab" data-en="adab scenarios"><span class="card-emoji">🌿</span><span class="card-title">الآداب الإسلامية</span><span class="card-cat">الأدب</span></a>
+<a href="08-adab/002-salam-game/index.html" class="card" data-cat="Adab" data-en="salam game"><span class="card-emoji">🌿</span><span class="card-title">لعبة السلام</span><span class="card-cat">الأدب</span></a>
+<a href="08-adab/003-kindness-tree/index.html" class="card" data-cat="Adab" data-en="kindness tree"><span class="card-emoji">🌿</span><span class="card-title">شجرة الإحسان</span><span class="card-cat">الأدب</span></a>
+<a href="08-adab/004-rights-game/index.html" class="card" data-cat="Adab" data-en="rights game"><span class="card-emoji">🌿</span><span class="card-title">لعبة الحقوق</span><span class="card-cat">الأدب</span></a>
+<a href="08-adab/005-mosque-etiquette/index.html" class="card" data-cat="Adab" data-en="mosque etiquette"><span class="card-emoji">🌿</span><span class="card-title">آداب المسجد</span><span class="card-cat">الأدب</span></a>
+<a href="08-adab/006-greeting-etiquette/index.html" class="card" data-cat="Adab" data-en="greeting etiquette"><span class="card-emoji">🌿</span><span class="card-title">آداب التحية</span><span class="card-cat">الأدب</span></a>
+<a href="08-adab/007-eating-manners/index.html" class="card" data-cat="Adab" data-en="eating manners"><span class="card-emoji">🌿</span><span class="card-title">آداب الطعام</span><span class="card-cat">الأدب</span></a>
+<a href="08-adab/008-sleeping-etiquette/index.html" class="card" data-cat="Adab" data-en="sleeping etiquette"><span class="card-emoji">🌿</span><span class="card-title">آداب النوم</span><span class="card-cat">الأدب</span></a>
+<a href="08-adab/009-visiting-sick/index.html" class="card" data-cat="Adab" data-en="visiting sick"><span class="card-emoji">🌿</span><span class="card-title">زيارة المريض</span><span class="card-cat">الأدب</span></a>
+<a href="08-adab/010-neighbor-rights/index.html" class="card" data-cat="Adab" data-en="neighbor rights"><span class="card-emoji">🌿</span><span class="card-title">حقوق الجار</span><span class="card-cat">الأدب</span></a>
+<a href="08-adab/011-guest-hosting/index.html" class="card" data-cat="Adab" data-en="guest hosting"><span class="card-emoji">🌿</span><span class="card-title">إكرام الضيف</span><span class="card-cat">الأدب</span></a>
+<a href="08-adab/012-elder-respect/index.html" class="card" data-cat="Adab" data-en="elder respect"><span class="card-emoji">🌿</span><span class="card-title">احترام الكبار</span><span class="card-cat">الأدب</span></a>
+<a href="08-adab/013-friendship-values/index.html" class="card" data-cat="Adab" data-en="friendship values"><span class="card-emoji">🌿</span><span class="card-title">قيم الصداقة</span><span class="card-cat">الأدب</span></a>
+<a href="08-adab/014-anger-management/index.html" class="card" data-cat="Adab" data-en="anger management"><span class="card-emoji">🌿</span><span class="card-title">إدارة الغضب</span><span class="card-cat">الأدب</span></a>
+<a href="08-adab/015-honesty-game/index.html" class="card" data-cat="Adab" data-en="honesty game"><span class="card-emoji">🌿</span><span class="card-title">لعبة الصدق</span><span class="card-cat">الأدب</span></a>
+<a href="08-adab/016-gratitude-journal/index.html" class="card" data-cat="Adab" data-en="gratitude journal"><span class="card-emoji">🌿</span><span class="card-title">دفتر الشكر</span><span class="card-cat">الأدب</span></a>
+<a href="08-adab/017-patience-stories/index.html" class="card" data-cat="Adab" data-en="patience stories"><span class="card-emoji">🌿</span><span class="card-title">قصص الصبر</span><span class="card-cat">الأدب</span></a>
+<a href="08-adab/018-forgiveness-practice/index.html" class="card" data-cat="Adab" data-en="forgiveness practice"><span class="card-emoji">🌿</span><span class="card-title">التسامح والعفو</span><span class="card-cat">الأدب</span></a>
+<a href="08-adab/019-social-media-adab/index.html" class="card" data-cat="Adab" data-en="social media adab"><span class="card-emoji">🌿</span><span class="card-title">آداب التواصل الرقمي</span><span class="card-cat">الأدب</span></a>
+<a href="08-adab/020-environmental-care/index.html" class="card" data-cat="Adab" data-en="environmental care"><span class="card-emoji">🌿</span><span class="card-title">حماية البيئة</span><span class="card-cat">الأدب</span></a>
+<a href="09-history/001-mosque-builder/index.html" class="card" data-cat="History" data-en="mosque builder"><span class="card-emoji">🏛️</span><span class="card-title">بناء المسجد</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/002-islamic-inventions-match/index.html" class="card" data-cat="History" data-en="islamic inventions match"><span class="card-emoji">🏛️</span><span class="card-title">مطابقة الاختراعات الإسلامية</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/003-calligraphy-draw/index.html" class="card" data-cat="History" data-en="calligraphy draw"><span class="card-emoji">🏛️</span><span class="card-title">رسم الخط العربي</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/004-golden-age-timeline/index.html" class="card" data-cat="History" data-en="golden age timeline"><span class="card-emoji">🏛️</span><span class="card-title">الخط الزمني للعصر الذهبي</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/005-islamic-map/index.html" class="card" data-cat="History" data-en="islamic map"><span class="card-emoji">🏛️</span><span class="card-title">خريطة العالم الإسلامي</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/006-islamic-spain/index.html" class="card" data-cat="History" data-en="islamic spain"><span class="card-emoji">🏛️</span><span class="card-title">الأندلس الإسلامية</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/007-ottoman-highlights/index.html" class="card" data-cat="History" data-en="ottoman highlights"><span class="card-emoji">🏛️</span><span class="card-title">أبرز أحداث الدولة العثمانية</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/008-four-caliphs/index.html" class="card" data-cat="History" data-en="four caliphs"><span class="card-emoji">🏛️</span><span class="card-title">الخلفاء الراشدون</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/009-islamic-scholars/index.html" class="card" data-cat="History" data-en="islamic scholars"><span class="card-emoji">🏛️</span><span class="card-title">علماء المسلمين</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/010-islamic-universities/index.html" class="card" data-cat="History" data-en="islamic universities"><span class="card-emoji">🏛️</span><span class="card-title">الجامعات الإسلامية</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/011-islamic-architecture/index.html" class="card" data-cat="History" data-en="islamic architecture"><span class="card-emoji">🏛️</span><span class="card-title">العمارة الإسلامية</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/012-islamic-science/index.html" class="card" data-cat="History" data-en="islamic science"><span class="card-emoji">🏛️</span><span class="card-title">العلوم الإسلامية</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/013-islamic-art-patterns/index.html" class="card" data-cat="History" data-en="islamic art patterns"><span class="card-emoji">🏛️</span><span class="card-title">أنماط الفن الإسلامي</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/014-trade-routes/index.html" class="card" data-cat="History" data-en="trade routes"><span class="card-emoji">🏛️</span><span class="card-title">طرق التجارة</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/015-islamic-libraries/index.html" class="card" data-cat="History" data-en="islamic libraries"><span class="card-emoji">🏛️</span><span class="card-title">المكتبات الإسلامية</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/016-islamic-medicine/index.html" class="card" data-cat="History" data-en="islamic medicine"><span class="card-emoji">🏛️</span><span class="card-title">الطب الإسلامي</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/017-islamic-astronomy/index.html" class="card" data-cat="History" data-en="islamic astronomy"><span class="card-emoji">🏛️</span><span class="card-title">علم الفلك الإسلامي</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/018-islamic-geography/index.html" class="card" data-cat="History" data-en="islamic geography"><span class="card-emoji">🏛️</span><span class="card-title">الجغرافيا الإسلامية</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/019-islamic-mathematics/index.html" class="card" data-cat="History" data-en="islamic mathematics"><span class="card-emoji">🏛️</span><span class="card-title">الرياضيات الإسلامية</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/020-islamic-coins/index.html" class="card" data-cat="History" data-en="islamic coins"><span class="card-emoji">🏛️</span><span class="card-title">العملات الإسلامية</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/021-silk-road-trader/index.html" class="card" data-cat="History" data-en="silk road trader"><span class="card-emoji">🏛️</span><span class="card-title">تاجر طريق الحرير</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/022-bayt-al-hikma-librarian/index.html" class="card" data-cat="History" data-en="bayt al hikma librarian"><span class="card-emoji">🏛️</span><span class="card-title">أمين بيت الحكمة</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/023-islamic-inventor-workshop/index.html" class="card" data-cat="History" data-en="islamic inventor workshop"><span class="card-emoji">🏛️</span><span class="card-title">ورشة المخترع المسلم</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/024-alhambra-tile-designer/index.html" class="card" data-cat="History" data-en="alhambra tile designer"><span class="card-emoji">🏛️</span><span class="card-title">مصمم بلاط الحمراء</span><span class="card-cat">التاريخ</span></a>
+<a href="09-history/025-ibn-battuta-journey/index.html" class="card" data-cat="History" data-en="ibn battuta journey"><span class="card-emoji">🏛️</span><span class="card-title">رحلة ابن بطوطة</span><span class="card-cat">التاريخ</span></a>
+<a href="11-anbiya/001-adam-creation-story/index.html" class="card" data-cat="Anbiya" data-en="adam creation story"><span class="card-emoji">🌙</span><span class="card-title">قصة خلق آدم عليه السلام</span><span class="card-cat">الأنبياء</span></a>
+<a href="11-anbiya/004-nuh-ark-builder/index.html" class="card" data-cat="Anbiya" data-en="nuh ark builder"><span class="card-emoji">🌙</span><span class="card-title">بناء سفينة نوح عليه السلام</span><span class="card-cat">الأنبياء</span></a>
+<a href="11-anbiya/008-ibrahim-fire-trial/index.html" class="card" data-cat="Anbiya" data-en="ibrahim fire trial"><span class="card-emoji">🌙</span><span class="card-title">إبراهيم عليه السلام والنار</span><span class="card-cat">الأنبياء</span></a>
+<a href="11-anbiya/016-yusuf-dream-interpreter/index.html" class="card" data-cat="Anbiya" data-en="yusuf dream interpreter"><span class="card-emoji">🌙</span><span class="card-title">يوسف عليه السلام مفسّر الأحلام</span><span class="card-cat">الأنبياء</span></a>
+<a href="11-anbiya/021-musa-basket-journey/index.html" class="card" data-cat="Anbiya" data-en="musa basket journey"><span class="card-emoji">🌙</span><span class="card-title">الطفل موسى عليه السلام</span><span class="card-cat">الأنبياء</span></a>
+<a href="11-anbiya/029-dawud-psalms/index.html" class="card" data-cat="Anbiya" data-en="dawud psalms"><span class="card-emoji">🌙</span><span class="card-title">النبي داود عليه السلام والزبور</span><span class="card-cat">الأنبياء</span></a>
+<a href="11-anbiya/032-sulayman-kingdom/index.html" class="card" data-cat="Anbiya" data-en="sulayman kingdom"><span class="card-emoji">🌙</span><span class="card-title">مملكة سليمان عليه السلام</span><span class="card-cat">الأنبياء</span></a>
+<a href="11-anbiya/038-yunus-whale-journey/index.html" class="card" data-cat="Anbiya" data-en="yunus whale journey"><span class="card-emoji">🌙</span><span class="card-title">يونس عليه السلام في بطن الحوت</span><span class="card-cat">الأنبياء</span></a>
+<a href="11-anbiya/042-isa-miracles/index.html" class="card" data-cat="Anbiya" data-en="isa miracles"><span class="card-emoji">🌙</span><span class="card-title">معجزات عيسى عليه السلام</span><span class="card-cat">الأنبياء</span></a>
+<a href="11-anbiya/044-muhammad-birth/index.html" class="card" data-cat="Anbiya" data-en="muhammad birth"><span class="card-emoji">🌙</span><span class="card-title">ميلاد محمد ﷺ</span><span class="card-cat">الأنبياء</span></a>
+<a href="12-scientists/001-al-khwarizmi-algebra/index.html" class="card" data-cat="Scientists" data-en="al khwarizmi algebra"><span class="card-emoji">🔬</span><span class="card-title">جبر الخوارزمي</span><span class="card-cat">العلماء</span></a>
+<a href="12-scientists/007-al-zahrawi-surgery/index.html" class="card" data-cat="Scientists" data-en="al zahrawi surgery"><span class="card-emoji">🔬</span><span class="card-title">أدوات الزهراوي الجراحية</span><span class="card-cat">العلماء</span></a>
+<a href="12-scientists/008-al-zahrawi-techniques/index.html" class="card" data-cat="Scientists" data-en="al zahrawi techniques"><span class="card-emoji">🔬</span><span class="card-title">تقنيات الزهراوي</span><span class="card-cat">العلماء</span></a>
+<a href="12-scientists/009-al-jazari-machines/index.html" class="card" data-cat="Scientists" data-en="al jazari machines"><span class="card-emoji">🔬</span><span class="card-title">آلات الجزري الآلية</span><span class="card-cat">العلماء</span></a>
+<a href="12-scientists/010-al-jazari-water-clock/index.html" class="card" data-cat="Scientists" data-en="al jazari water clock"><span class="card-emoji">🔬</span><span class="card-title">ساعة الفيل المائية</span><span class="card-cat">العلماء</span></a>
+<a href="13-sahaba/001-abu-bakr-biography/index.html" class="card" data-cat="Sahaba" data-en="abu bakr biography"><span class="card-emoji">⭐</span><span class="card-title">سيرة أبو بكر الصديق رضي الله عنه</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/002-abu-bakr-cave/index.html" class="card" data-cat="Sahaba" data-en="abu bakr cave"><span class="card-emoji">⭐</span><span class="card-title">أبو بكر الصديق رضي الله عنه في الغار</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/003-umar-ibn-khattab/index.html" class="card" data-cat="Sahaba" data-en="umar ibn khattab"><span class="card-emoji">⭐</span><span class="card-title">عمر بن الخطاب رضي الله عنه</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/004-umar-justice/index.html" class="card" data-cat="Sahaba" data-en="umar justice"><span class="card-emoji">⭐</span><span class="card-title">عدل عمر رضي الله عنه</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/005-uthman-ibn-affan/index.html" class="card" data-cat="Sahaba" data-en="uthman ibn affan"><span class="card-emoji">⭐</span><span class="card-title">عثمان بن عفان رضي الله عنه</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/006-uthman-quran-compiler/index.html" class="card" data-cat="Sahaba" data-en="uthman quran compiler"><span class="card-emoji">⭐</span><span class="card-title">جمع القرآن الكريم</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/007-ali-ibn-abi-talib/index.html" class="card" data-cat="Sahaba" data-en="ali ibn abi talib"><span class="card-emoji">⭐</span><span class="card-title">علي بن أبي طالب رضي الله عنه</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/008-ali-wisdom/index.html" class="card" data-cat="Sahaba" data-en="ali wisdom"><span class="card-emoji">⭐</span><span class="card-title">حكمة علي رضي الله عنه</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/009-khadijah-first-believer/index.html" class="card" data-cat="Sahaba" data-en="khadijah first believer"><span class="card-emoji">⭐</span><span class="card-title">خديجة رضي الله عنها أول المؤمنات</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/010-aisha-scholar/index.html" class="card" data-cat="Sahaba" data-en="aisha scholar"><span class="card-emoji">⭐</span><span class="card-title">عائشة رضي الله عنها العالِمة</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/011-fatimah-daughter/index.html" class="card" data-cat="Sahaba" data-en="fatimah daughter"><span class="card-emoji">⭐</span><span class="card-title">فاطمة الزهراء رضي الله عنها</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/012-bilal-muezzin/index.html" class="card" data-cat="Sahaba" data-en="bilal muezzin"><span class="card-emoji">⭐</span><span class="card-title">بلال بن رباح رضي الله عنه المؤذن</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/013-salman-farisi/index.html" class="card" data-cat="Sahaba" data-en="salman farisi"><span class="card-emoji">⭐</span><span class="card-title">سلمان الفارسي رضي الله عنه</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/014-khalid-ibn-walid/index.html" class="card" data-cat="Sahaba" data-en="khalid ibn walid"><span class="card-emoji">⭐</span><span class="card-title">خالد بن الوليد رضي الله عنه</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/015-amr-ibn-al-as/index.html" class="card" data-cat="Sahaba" data-en="amr ibn al as"><span class="card-emoji">⭐</span><span class="card-title">عمرو بن العاص رضي الله عنه</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/016-saad-ibn-abi-waqqas/index.html" class="card" data-cat="Sahaba" data-en="saad ibn abi waqqas"><span class="card-emoji">⭐</span><span class="card-title">سعد بن أبي وقاص رضي الله عنه</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/017-abu-dharr-ghifari/index.html" class="card" data-cat="Sahaba" data-en="abu dharr ghifari"><span class="card-emoji">⭐</span><span class="card-title">أبو ذر الغفاري رضي الله عنه</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/018-abu-hurairah-narrator/index.html" class="card" data-cat="Sahaba" data-en="abu hurairah narrator"><span class="card-emoji">⭐</span><span class="card-title">أبو هريرة رضي الله عنه: الراوي</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/019-musab-ibn-umayr/index.html" class="card" data-cat="Sahaba" data-en="musab ibn umayr"><span class="card-emoji">⭐</span><span class="card-title">مصعب بن عمير رضي الله عنه</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/020-hamza-lion-allah/index.html" class="card" data-cat="Sahaba" data-en="hamza lion allah"><span class="card-emoji">⭐</span><span class="card-title">حمزة بن عبد المطلب رضي الله عنه أسد الله</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/021-zubair-ibn-awwam/index.html" class="card" data-cat="Sahaba" data-en="zubair ibn awwam"><span class="card-emoji">⭐</span><span class="card-title">الزبير بن العوام رضي الله عنه</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/022-talha-ibn-ubaydillah/index.html" class="card" data-cat="Sahaba" data-en="talha ibn ubaydillah"><span class="card-emoji">⭐</span><span class="card-title">طلحة بن عبيد الله رضي الله عنه</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/023-abdur-rahman-ibn-awf/index.html" class="card" data-cat="Sahaba" data-en="abdur rahman ibn awf"><span class="card-emoji">⭐</span><span class="card-title">عبد الرحمن بن عوف رضي الله عنه</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/024-abu-ubayda/index.html" class="card" data-cat="Sahaba" data-en="abu ubayda"><span class="card-emoji">⭐</span><span class="card-title">أبو عبيدة بن الجراح رضي الله عنه</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/025-saeed-ibn-zayd/index.html" class="card" data-cat="Sahaba" data-en="saeed ibn zayd"><span class="card-emoji">⭐</span><span class="card-title">سعيد بن زيد رضي الله عنه</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/026-ten-promised-paradise/index.html" class="card" data-cat="Sahaba" data-en="ten promised paradise"><span class="card-emoji">⭐</span><span class="card-title">العشرة المبشرون بالجنة</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/027-women-companions/index.html" class="card" data-cat="Sahaba" data-en="women companions"><span class="card-emoji">⭐</span><span class="card-title">الصحابيات رضي الله عنهن</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/028-young-companions/index.html" class="card" data-cat="Sahaba" data-en="young companions"><span class="card-emoji">⭐</span><span class="card-title">صغار الصحابة رضي الله عنهم</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/029-ansar-helpers/index.html" class="card" data-cat="Sahaba" data-en="ansar helpers"><span class="card-emoji">⭐</span><span class="card-title">الأنصار أهل المدينة</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/030-muhajirun-emigrants/index.html" class="card" data-cat="Sahaba" data-en="muhajirun emigrants"><span class="card-emoji">⭐</span><span class="card-title">المهاجرون</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/031-scribes-revelation/index.html" class="card" data-cat="Sahaba" data-en="scribes revelation"><span class="card-emoji">⭐</span><span class="card-title">كتّاب الوحي</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/032-people-of-suffah/index.html" class="card" data-cat="Sahaba" data-en="people of suffah"><span class="card-emoji">⭐</span><span class="card-title">أهل الصُّفّة</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/033-sahaba-at-badr/index.html" class="card" data-cat="Sahaba" data-en="sahaba at badr"><span class="card-emoji">⭐</span><span class="card-title">الصحابة في غزوة بدر</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/034-sahaba-at-uhud/index.html" class="card" data-cat="Sahaba" data-en="sahaba at uhud"><span class="card-emoji">⭐</span><span class="card-title">الصحابة في غزوة أحد</span><span class="card-cat">الصحابة</span></a>
+<a href="13-sahaba/035-sahaba-sacrifices/index.html" class="card" data-cat="Sahaba" data-en="sahaba sacrifices"><span class="card-emoji">⭐</span><span class="card-title">أعظم التضحيات</span><span class="card-cat">الصحابة</span></a>
+<a href="16-arabic-immersion/001-arabic-reading-level1/index.html" class="card" data-cat="Arabic+" data-en="arabic reading level1"><span class="card-emoji">🗣️</span><span class="card-title">القراءة العربية - المستوى الأول</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/002-arabic-reading-level2/index.html" class="card" data-cat="Arabic+" data-en="arabic reading level2"><span class="card-emoji">🗣️</span><span class="card-title">القراءة العربية - المستوى الثاني</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/003-arabic-reading-level3/index.html" class="card" data-cat="Arabic+" data-en="arabic reading level3"><span class="card-emoji">🗣️</span><span class="card-title">القراءة العربية - المستوى الثالث</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/004-arabic-letter-forms/index.html" class="card" data-cat="Arabic+" data-en="arabic letter forms"><span class="card-emoji">🗣️</span><span class="card-title">أشكال الحروف العربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/005-arabic-word-building/index.html" class="card" data-cat="Arabic+" data-en="arabic word building"><span class="card-emoji">🗣️</span><span class="card-title">بناء الكلمات العربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/006-arabic-sentence-structure/index.html" class="card" data-cat="Arabic+" data-en="arabic sentence structure"><span class="card-emoji">🗣️</span><span class="card-title">بنية الجملة العربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/007-arabic-plural-patterns/index.html" class="card" data-cat="Arabic+" data-en="arabic plural patterns"><span class="card-emoji">🗣️</span><span class="card-title">أوزان الجمع في العربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/008-arabic-verb-forms/index.html" class="card" data-cat="Arabic+" data-en="arabic verb forms"><span class="card-emoji">🗣️</span><span class="card-title">أوزان الأفعال العربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/009-arabic-past-present/index.html" class="card" data-cat="Arabic+" data-en="arabic past present"><span class="card-emoji">🗣️</span><span class="card-title">الماضي والمضارع في العربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/010-arabic-pronouns-master/index.html" class="card" data-cat="Arabic+" data-en="arabic pronouns master"><span class="card-emoji">🗣️</span><span class="card-title">الضمائر العربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/011-arabic-numbers-deep/index.html" class="card" data-cat="Arabic+" data-en="arabic numbers deep"><span class="card-emoji">🗣️</span><span class="card-title">الأعداد في العربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/012-arabic-question-builder/index.html" class="card" data-cat="Arabic+" data-en="arabic question builder"><span class="card-emoji">🗣️</span><span class="card-title">بناء الأسئلة بالعربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/013-arabic-negation/index.html" class="card" data-cat="Arabic+" data-en="arabic negation"><span class="card-emoji">🗣️</span><span class="card-title">النفي في العربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/014-arabic-possessives/index.html" class="card" data-cat="Arabic+" data-en="arabic possessives"><span class="card-emoji">🗣️</span><span class="card-title">الإضافة في العربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/015-arabic-adjective-agreement/index.html" class="card" data-cat="Arabic+" data-en="arabic adjective agreement"><span class="card-emoji">🗣️</span><span class="card-title">تطابق الصفات في العربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/016-arabic-daily-phrases/index.html" class="card" data-cat="Arabic+" data-en="arabic daily phrases"><span class="card-emoji">🗣️</span><span class="card-title">عبارات يومية بالعربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/017-arabic-mosque-vocabulary/index.html" class="card" data-cat="Arabic+" data-en="arabic mosque vocabulary"><span class="card-emoji">🗣️</span><span class="card-title">مفردات المسجد بالعربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/018-arabic-home-vocabulary/index.html" class="card" data-cat="Arabic+" data-en="arabic home vocabulary"><span class="card-emoji">🗣️</span><span class="card-title">مفردات المنزل بالعربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/019-arabic-nature-vocabulary/index.html" class="card" data-cat="Arabic+" data-en="arabic nature vocabulary"><span class="card-emoji">🗣️</span><span class="card-title">مفردات الطبيعة بالعربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/020-arabic-emotion-words/index.html" class="card" data-cat="Arabic+" data-en="arabic emotion words"><span class="card-emoji">🗣️</span><span class="card-title">كلمات المشاعر بالعربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/021-arabic-islamic-terms/index.html" class="card" data-cat="Arabic+" data-en="arabic islamic terms"><span class="card-emoji">🗣️</span><span class="card-title">المصطلحات الإسلامية بالعربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/022-arabic-letter-writing/index.html" class="card" data-cat="Arabic+" data-en="arabic letter writing"><span class="card-emoji">🗣️</span><span class="card-title">كتابة الرسائل بالعربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/023-arabic-diary-writer/index.html" class="card" data-cat="Arabic+" data-en="arabic diary writer"><span class="card-emoji">🗣️</span><span class="card-title">كتابة اليوميات بالعربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/024-arabic-news-reader/index.html" class="card" data-cat="Arabic+" data-en="arabic news reader"><span class="card-emoji">🗣️</span><span class="card-title">قراءة الأخبار بالعربية</span><span class="card-cat">تعمق عربي</span></a>
+<a href="16-arabic-immersion/025-arabic-recipe-reader/index.html" class="card" data-cat="Arabic+" data-en="arabic recipe reader"><span class="card-emoji">🗣️</span><span class="card-title">قراءة الوصفات بالعربية</span><span class="card-cat">تعمق عربي</span></a>
 
 </div>
-
-<div class="foot">
-Workshop-DIY — <a href="https://github.com/abourdim">abourdim</a>
-</div>
-
+<div class="footer">أمالون — Workshop-DIY — الإصدار ٢.٠</div>
 <script>
-function setTheme(t){document.documentElement.dataset.theme=t;localStorage.setItem("theme",t)}
-const saved=localStorage.getItem("theme");if(saved)setTheme(saved);
-
-const search=document.getElementById("search");
-const grid=document.getElementById("grid");
-const cards=[...grid.querySelectorAll(".card")];
-const countEl=document.getElementById("count");
+const grid=document.getElementById("grid"),
+      cards=[...grid.querySelectorAll(".card")],
+      search=document.getElementById("search"),
+      countEl=document.getElementById("count"),
+      btns=[...document.querySelectorAll(".cat-btn")];
 let activeCat="all";
-
-document.getElementById("filters").addEventListener("click",e=>{
-  if(!e.target.classList.contains("filter-btn"))return;
-  document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
-  e.target.classList.add("active");
-  activeCat=e.target.dataset.cat;
-  filter();
-});
-
-search.addEventListener("input",filter);
-
 function filter(){
   const q=search.value.toLowerCase();
-  let shown=0;
+  let n=0;
   cards.forEach(c=>{
-    const matchCat=activeCat==="all"||c.dataset.cat===activeCat;
-    const matchQ=!q||c.textContent.toLowerCase().includes(q);
-    c.style.display=matchCat&&matchQ?"":"none";
-    if(matchCat&&matchQ)shown++;
+    const cat=c.dataset.cat,
+          title=c.querySelector(".card-title").textContent.toLowerCase(),
+          catName=c.querySelector(".card-cat").textContent.toLowerCase(),
+          enName=(c.dataset.en||"").toLowerCase(),
+          matchCat=activeCat==="all"||cat===activeCat,
+          matchQ=!q||title.includes(q)||catName.includes(q)||enName.includes(q);
+    if(matchCat&&matchQ){c.style.display="";n++}
+    else{c.style.display="none"}
   });
-  countEl.textContent=shown+" activities";
+  countEl.textContent=n+" نشاط تعليمي";
 }
+btns.forEach(b=>b.addEventListener("click",()=>{
+  btns.forEach(x=>x.classList.remove("active"));
+  b.classList.add("active");
+  activeCat=b.dataset.cat;
+  filter();
+}));
+search.addEventListener("input",filter);
 </script>
-</body></html>
+</body>
+</html>
